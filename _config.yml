@@ -43,6 +43,7 @@ webmaster_verifications:
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
+  naver: 0e7a7b1ba7cf0598f2b6b86ccd066543f5db3b1e
   baidu: # fill in your Baidu verification code
   facebook: # fill in your Facebook verification code
 
