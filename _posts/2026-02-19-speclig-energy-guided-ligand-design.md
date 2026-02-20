@@ -149,13 +149,15 @@ Peptide 결과가 더 인상적이다. $\text{Ratio}_{20}$에서 기존 best 52.
 
 ---
 
-## 내 생각
+## Discussion
 
-**Energy guidance의 확장성이 가장 인상적이다.** Statistical prior에서 energy를 계산하고 gradient로 밀어주는 구조는 diffusion에만 국한되지 않는다. Flow matching의 velocity field에 같은 gradient를 주입하면 바로 적용 가능하다. 모델 자체를 바꾸지 않고 "외부 지식"을 주입하는 방식이라 plug-and-play로 쓸 수 있다는 점이 실용적이다.
+저자들은 몇 가지 limitation을 명시적으로 밝히고 있다.
 
-다만 **small molecule에서의 한계**는 분명히 보인다. Peptide와 달리 small molecule은 block vocabulary가 더 복잡하고, fragment 간 연결의 자유도가 높아서 frequency matrix만으로 포착하기 어려운 interaction이 많다. 논문 저자들도 인정하듯, electrostatic interaction이나 force field term을 추가하면 small molecule 쪽 성능이 더 올라갈 여지가 있다.
+**Small molecule에서의 한계.** Peptide와 달리 small molecule은 block vocabulary가 더 복잡하고, fragment 간 연결의 자유도가 높다. Block-block frequency matrix만으로는 electrostatic interaction 등 세밀한 energy landscape를 충분히 포착하기 어렵다. 저자들은 explicit force field term이나 electrostatic field를 추가하는 것을 향후 방향으로 제시한다.
 
-가장 큰 아쉬움은 **experimental validation의 부재**다. 모든 결과가 in silico이고, Vina/PyRosetta score에 의존한다. Drug discovery에서 specificity를 주장하려면 결국 selectivity assay나 proteome-wide off-target profiling 같은 wet-lab 데이터가 필요하다. 하지만 computational 논문으로서는 precision/breadth test paradigm 자체가 의미 있는 기여이고, 향후 SBDD benchmark의 새로운 기준이 될 수 있다.
+**Experimental validation의 부재.** 모든 결과가 in silico이며 Vina/PyRosetta score에 의존한다. 저자들은 wet-lab validation을 핵심 후속 과제로 언급하고 있다.
+
+**향후 방향.** 저자들은 energy guidance mechanism이 model-agnostic하다는 점을 강조하며, 다른 generative framework에도 적용 가능함을 시사한다. 또한 precision/breadth test paradigm을 SBDD benchmark의 새로운 evaluation standard로 제안하고 있다.
 
 ---
 
@@ -163,4 +165,11 @@ Peptide 결과가 더 인상적이다. $\text{Ratio}_{20}$에서 기존 best 52.
 
 1. **기존 SBDD 모델은 affinity는 높지만 specificity가 낮은 "아무 데나 잘 붙는" 분자를 만든다.**
 2. **SpecLig는 자연 복합체의 block-block 접촉 통계를 에너지 함수로 변환해 diffusion 과정을 가이드하여, 특정 타겟에만 선택적으로 결합하는 분자를 생성한다.**
-3. **소분자·펩타이드 모두에서 specificity 1위, 특히 펩타이드에서는 유일하게 음수 $\Delta G$를 달성했다.**
+3. **Small molecule·peptide 모두에서 specificity 1위, 특히 peptide에서는 유일하게 음수 $\Delta G$를 달성했다.**
+
+---
+
+> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다. 
+> 논문의 내용을 기반으로 작성되었으나, 부정확한 내용이 있을 수 있습니다.
+> 오류 지적이나 피드백은 언제든 환영합니다.
+{: .prompt-info }
