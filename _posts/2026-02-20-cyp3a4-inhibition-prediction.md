@@ -1,7 +1,7 @@
 ---
 title: "CYP3A4 Inhibition Prediction: Multi-Modal GNN with Molecular Fingerprints"
 date: 2026-02-20 10:02:00 +0900
-categories: [Projects, Drug Discovery]
+categories: [Projects, ADMET]
 tags: [gnn, cyp3a4, molecular-fingerprint, drug-metabolism, multi-modal]
 math: true
 ---
