@@ -1,165 +1,570 @@
 ---
-title: "Attention Is All You Need: The Beginning of Transformer"
+title: "Attention Is All You Need: Transformer의 탄생"
 date: 2026-02-20 15:00:00 +0900
-categories: [AI, Paper Review]
+categories: [AI, Fundamentals]
 tags: [transformer, attention, self-attention, NLP, deep-learning, foundational]
 math: true
 mermaid: true
 ---
 
-## 2017년, 모든 것이 바뀌었다
+## RNN과 CNN을 버리고 Attention만으로
 
-GPT, BERT, Vision Transformer, AlphaFold2 — 지금 우리가 쓰는 거의 모든 AI 모델의 뿌리를 하나만 꼽으라면, 이 논문이다. Vaswani et al.의 "Attention Is All You Need"는 RNN과 CNN 없이 **attention만으로** sequence-to-sequence 모델을 만들 수 있다는 걸 보여줬다. 2017년 NeurIPS에서 발표된 이 논문은 현재 인용 수 13만 회를 넘겼고, 말 그대로 딥러닝의 판을 바꿨다.
+2017년, Google Brain팀이 발표한 "Attention Is All You Need"는 현대 AI의 판도를 바꾼 논문이다. 
 
-## RNN의 근본적 한계
+**핵심 주장:**
+- Recurrence (RNN) 필요 없다
+- Convolution (CNN) 필요 없다
+- **Attention mechanism만으로 충분하다**
 
-2017년 이전, sequence modeling의 왕좌는 RNN(특히 LSTM, GRU)이 차지하고 있었다. 하지만 RNN에는 태생적인 문제가 있었다.
+이 논문이 제안한 **Transformer** 아키텍처는:
+- Machine translation에서 state-of-the-art 달성
+- Training 시간 획기적 단축 (8 GPUs, 12시간)
+- 이후 BERT, GPT, LLM 시대의 foundation이 됨
 
-첫째, **순차적 연산**이라는 구조적 병목이 있다. RNN은 $h_t$를 계산하려면 반드시 $h_{t-1}$이 필요하다. 이건 GPU 병렬화와 정면으로 충돌한다. 시퀀스가 길어질수록 학습 속도는 선형으로 느려진다.
-
-둘째, **장거리 의존성 학습이 어렵다.** 문장 앞쪽의 정보가 뒤쪽까지 도달하려면 여러 타임스텝을 거쳐야 하는데, gradient가 vanish하거나 explode하기 십상이다. LSTM이 이걸 완화하긴 했지만, 근본적으로 해결하진 못했다.
-
-CNN 기반 접근(ByteNet, ConvS2S)도 병렬화 문제는 해결했지만, 두 위치 사이의 관계를 파악하려면 여러 레이어를 쌓아야 해서 — 거리에 비례하는 path length 문제가 남아있었다.
-
-> 핵심 질문: RNN의 순차성도, CNN의 거리 제한도 없이 — 시퀀스의 모든 위치 간 관계를 **한 번에** 볼 수 있는 방법은 없을까?
-{: .prompt-info }
-
-## Attention만으로 충분하다
-
-Transformer의 핵심 아이디어는 놀랍도록 간단하다. **Recurrence를 완전히 버리고, self-attention으로 대체한다.**
-
-기존에도 attention은 쓰이고 있었다 — Bahdanau attention처럼, RNN 위에 얹혀서 encoder-decoder 사이를 연결하는 보조 장치로. 하지만 이 논문은 attention을 보조가 아닌 **주인공**으로 끌어올렸다. 시퀀스의 모든 위치가 다른 모든 위치를 직접 참조할 수 있으니, path length는 $O(1)$이 되고, 연산은 완전히 병렬화된다.
-
-비유하자면 이런 거다. RNN이 "한 단어씩 차례로 읽는 사람"이라면, Transformer는 "문장 전체를 한눈에 보고, 관련 있는 단어들을 동시에 연결짓는 사람"이다.
-
-## 어떻게 동작하는가
-
-### 전체 아키텍처
-
-Transformer는 전형적인 encoder-decoder 구조를 따른다. 다만 내부가 완전히 attention으로 채워져 있다는 게 다르다.
-
-```mermaid
-graph TB
-    subgraph Encoder["Encoder (×6)"]
-        E_IN[Input Embedding + Positional Encoding] --> E_SA[Multi-Head Self-Attention]
-        E_SA --> E_AN1[Add & LayerNorm]
-        E_AN1 --> E_FF[Feed-Forward Network]
-        E_FF --> E_AN2[Add & LayerNorm]
-    end
-    
-    subgraph Decoder["Decoder (×6)"]
-        D_IN[Output Embedding + Positional Encoding] --> D_MSA[Masked Multi-Head Self-Attention]
-        D_MSA --> D_AN1[Add & LayerNorm]
-        D_AN1 --> D_CA[Multi-Head Cross-Attention]
-        D_CA --> D_AN2[Add & LayerNorm]
-        D_AN2 --> D_FF[Feed-Forward Network]
-        D_FF --> D_AN3[Add & LayerNorm]
-    end
-    
-    E_AN2 -->|K, V| D_CA
-    D_AN3 --> Linear[Linear + Softmax]
-    Linear --> Output[Output Probabilities]
-    
-    style Encoder fill:#e1f5fe
-    style Decoder fill:#fff3e0
-```
-
-큰 그림은 이렇다: 입력 시퀀스가 Encoder를 통과해 연속 표현 $\mathbf{z}$로 변환되고, Decoder는 이 $\mathbf{z}$를 참조하면서 출력 토큰을 하나씩 auto-regressive하게 생성한다. Encoder와 Decoder 모두 6개의 동일한 레이어를 쌓아 올린다.
-
-### 입력 표현: 토큰 임베딩 + 위치 인코딩
-
-Transformer에는 recurrence가 없으니, 모델이 토큰의 순서를 알 방법이 없다. 이 문제를 해결하기 위해 **positional encoding**을 도입한다. 토큰 임베딩에 위치 정보를 더해주는 것이다.
-
-$$PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right), \quad PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)$$
-
-각 차원마다 서로 다른 주파수의 사인/코사인 함수를 사용한다. 이렇게 하면 임의의 고정 오프셋 $k$에 대해 $PE_{pos+k}$를 $PE_{pos}$의 선형 함수로 표현할 수 있어서, 모델이 상대적 위치 관계를 쉽게 학습할 수 있다. Learned positional embedding과 성능 차이가 거의 없었지만, sinusoidal 방식은 학습 데이터보다 긴 시퀀스에 대한 외삽 가능성이 있다는 장점이 있다.
-
-> 임베딩에 $\sqrt{d_{\text{model}}}$을 곱한다는 점도 주목할 만하다. Positional encoding의 스케일과 맞추기 위한 트릭이다.
-{: .prompt-tip }
-
-### Self-Attention: 이 논문의 심장
-
-Self-attention은 시퀀스 내 모든 위치가 다른 모든 위치와의 관계를 직접 계산하는 메커니즘이다. 각 토큰이 Query, Key, Value 세 가지 역할을 동시에 수행한다.
-
-**Scaled Dot-Product Attention:**
-
-$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
-
-직관적으로 풀면 이렇다: Query가 "나는 무엇을 찾고 있는가", Key가 "나는 이런 정보를 갖고 있다", Value가 "내가 줄 수 있는 실제 정보"다. $QK^T$로 유사도를 구하고, softmax로 가중치를 만들어, Value의 가중합을 출력한다.
-
-$\sqrt{d_k}$로 나누는 이유가 재밌다. $d_k$가 크면 내적 값의 분산이 $d_k$에 비례해서 커지는데, 이러면 softmax가 극단적인 분포(거의 one-hot)로 수렴해서 gradient가 사라진다. Scaling은 이걸 방지하는 간단하지만 핵심적인 트릭이다.
-
-**Multi-Head Attention:**
-
-단일 attention은 하나의 관점에서만 관계를 포착한다. Multi-head attention은 이걸 $h$개의 서로 다른 부분공간에서 병렬로 수행한다.
-
-$$\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h)W^O$$
-
-$$\text{where } \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$
-
-$d_{\text{model}} = 512$를 $h = 8$개 head로 나누면 각 head는 $d_k = d_v = 64$ 차원에서 작동한다. 총 연산량은 single-head full-dimension attention과 비슷하지만, 각 head가 서로 다른 패턴(구문 관계, 의미 관계, 위치 관계 등)을 독립적으로 학습할 수 있다. 논문의 attention visualization을 보면, 실제로 특정 head가 장거리 의존성(making...more difficult)이나 대명사 참조(its → Law)를 담당하는 것을 확인할 수 있다.
-
-> Multi-head attention이 왜 잘 되는지 한 줄로 요약하면: **"여러 관점에서 동시에 바라보는 것이 하나의 관점보다 낫다."**
-{: .prompt-tip }
-
-### Encoder-Decoder 구조의 디테일
-
-**Encoder 레이어**는 두 개의 sub-layer로 구성된다: (1) Multi-Head Self-Attention → (2) Position-wise Feed-Forward Network. 각 sub-layer 주위에 **residual connection**과 **layer normalization**이 감싸고 있다: $\text{LayerNorm}(x + \text{Sublayer}(x))$. 모든 sub-layer의 출력 차원은 $d_{\text{model}} = 512$로 통일된다.
-
-**Decoder 레이어**는 여기에 하나를 더 끼워넣는다: encoder 출력을 참조하는 **cross-attention** sub-layer. 그리고 decoder의 self-attention에는 **masking**이 추가된다 — position $i$가 $i$ 이후의 위치를 참조하지 못하도록, 미래 정보를 차단하는 것이다. softmax 입력에서 해당 위치를 $-\infty$로 설정하면 간단히 구현된다.
-
-**Feed-Forward Network**은 위치별로 독립적으로 적용되는 2-layer MLP다:
-
-$$\text{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2$$
-
-내부 차원은 $d_{ff} = 2048$로, $d_{\text{model}}$의 4배다. 레이어마다 파라미터가 다르지만, 같은 레이어 내에서는 모든 위치에 동일하게 적용된다.
-
-### 학습 디테일: 작은 트릭들의 합
-
-Transformer의 학습에는 몇 가지 세심한 설계가 들어간다.
-
-**Warmup + Inverse Square Root Schedule:** 학습률을 처음 4000스텝 동안 선형으로 올린 뒤, 그 후에는 step 수의 역제곱근에 비례해 감소시킨다. 이 스케줄은 이후 수많은 Transformer 변종들의 표준이 되었다.
-
-$$lr = d_{\text{model}}^{-0.5} \cdot \min(step^{-0.5},\ step \cdot warmup^{-1.5})$$
-
-**Label Smoothing** ($\epsilon_{ls} = 0.1$): 정답 레이블을 one-hot이 아닌 부드러운 분포로 만든다. Perplexity는 약간 나빠지지만 BLEU score와 accuracy는 올라간다 — 모델이 과도하게 확신하는 것을 방지하는 효과다.
-
-**Dropout** ($P_{drop} = 0.1$): 각 sub-layer 출력과 embedding + positional encoding의 합에 dropout을 적용한다.
-
-놀라운 건 학습 비용이다. Base 모델은 **P100 8장에서 12시간**, Big 모델도 **3.5일**이면 충분했다. 당시 경쟁 모델들이 수 주씩 걸렸던 것과 비교하면 압도적인 효율이다.
-
-## 결과: 빠르고 강하다
-
-| Model | EN-DE BLEU | EN-FR BLEU | Training Cost |
-|---|---|---|---|
-| GNMT + RL (ensemble) | 26.3 | 39.92 | — |
-| ConvS2S (ensemble) | 25.16 | 40.46 | — |
-| **Transformer (big)** | **28.4** | **41.0** | **3.5일 × 8 P100** |
-| Transformer (base) | 27.3 | 38.1 | 12시간 × 8 P100 |
-
-WMT 2014 EN-DE에서 기존 SOTA(앙상블 포함)를 **2 BLEU 이상** 갱신했다. 그것도 단일 모델로. EN-FR에서도 41.0 BLEU로 새로운 single-model SOTA를 달성했는데, 학습 비용은 이전 SOTA의 1/4에 불과했다.
-
-Ablation study도 인상적이다. Head 수를 바꾸면 — 1개는 확실히 나쁘고, 8개가 최적이며, 32개는 오히려 살짝 떨어진다. $d_k$를 줄이면 성능이 하락하고, 모델을 키우면 올라간다. 각 구성 요소의 기여를 체계적으로 보여준 Table 3은 Transformer 이해의 필독 자료다.
-
-English constituency parsing에서도 task-specific 튜닝 없이 거의 SOTA급 성능을 보여줬는데, 이는 Transformer의 **범용성**을 입증하는 결과였다.
-
-## Discussion
-
-저자들은 self-attention의 computational complexity가 $O(n^2)$이라는 점을 인지하고 있었다. 논문 Section 4에서 매우 긴 시퀀스를 다룰 때는 neighborhood size $r$로 제한하는 restricted self-attention을 향후 연구로 제안했다.
-
-Positional encoding에 대해서도 sinusoidal과 learned embedding 두 가지를 실험했는데, 성능 차이는 거의 없었다(Table 3 row E). 저자들은 sinusoidal 방식이 학습 시 접한 것보다 긴 시퀀스에 대한 extrapolation 가능성을 이유로 이를 선택했다고 밝혔다.
-
-논문의 conclusion에서 저자들은 세 가지 향후 방향을 명시했다: (1) text 외의 input/output modality(image, audio, video)로의 확장, (2) large input/output을 효율적으로 처리하기 위한 local, restricted attention mechanism 연구, (3) generation의 sequential 특성을 줄이는 연구.
-
-## TL;DR
-
-- **문제:** RNN은 순차적이라 느리고, 장거리 의존성을 잘 못 잡는다.
-- **해법:** Self-attention만으로 encoder-decoder를 구성한 Transformer — 병렬화 가능, $O(1)$ path length.
-- **결과:** WMT 2014에서 SOTA 갱신, 학습 비용 대폭 절감.
+> 📄 [Paper (arXiv)](https://arxiv.org/abs/1706.03762) | Google Brain, Google Research, University of Toronto | NIPS 2017
 
 ---
 
-> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다. 
+## 당시 배경: RNN의 지배와 한계
+
+### Sequence Transduction의 표준: RNN
+
+2017년 당시, sequence-to-sequence 모델의 표준은:
+
+**Encoder-Decoder + Attention**
+
+```mermaid
+graph LR
+    X["Input<br/>Sequence"] --> ENC["RNN<br/>Encoder"]
+    ENC --> H["Hidden<br/>States"]
+    H --> ATT["Attention<br/>Mechanism"]
+    ATT --> DEC["RNN<br/>Decoder"]
+    DEC --> Y["Output<br/>Sequence"]
+    
+    style ENC fill:#e1f5fe
+    style DEC fill:#e1f5fe
+    style ATT fill:#fff3e0
+```
+
+**대표적 모델:**
+- **LSTM/GRU:** Long short-term memory, Gated recurrent units
+- **Seq2Seq with Attention:** Bahdanau et al. (2015)
+
+### RNN의 근본적 한계
+
+**1. Sequential Computation**
+
+RNN은 position $t$의 hidden state $h_t$를 계산하려면:
+
+$$
+h_t = f(h_{t-1}, x_t)
+$$
+
+- $h_{t-1}$이 먼저 계산되어야 함
+- **Parallelization 불가능**
+- Long sequence에서 **memory constraint** (batch size 제한)
+
+**2. Long-Range Dependencies**
+
+- Position 1과 position 100 사이의 dependency를 학습하려면 100 steps 거쳐야 함
+- **Gradient vanishing/exploding** 문제
+- LSTM/GRU가 완화했지만 근본적 해결은 못함
+
+**3. Computational Complexity**
+
+Sequence length $n$, representation dimension $d$에 대해:
+
+| Layer Type | Operations | Sequential |
+|---|---|---|
+| **Recurrent** | $O(n \cdot d^2)$ | $O(n)$ |
+| **Convolutional** | $O(k \cdot n \cdot d^2)$ | $O(1)$ |
+| **Self-Attention** | $O(n^2 \cdot d)$ | $O(1)$ |
+
+---
+
+## 핵심 아이디어: Self-Attention으로 모든 것을
+
+### Self-Attention이란?
+
+**정의:** 하나의 sequence 내에서 서로 다른 position들 간의 relation을 계산하여 sequence representation을 만드는 메커니즘.
+
+**직관:**
+- "The animal didn't cross the street because **it** was too tired."
+- "it"이 "animal"을 가리키는지 "street"를 가리키는지 → **attention**으로 학습
+
+**기존 attention:**
+- Decoder가 encoder의 모든 position을 attend
+- Query는 decoder, Key/Value는 encoder
+
+**Self-attention:**
+- Query, Key, Value가 **모두 같은 sequence**에서 옴
+- Encoder/Decoder 각각 내부에서 self-attention 수행
+
+### Transformer의 대담한 선택
+
+**"Recurrence와 convolution을 완전히 제거하고 attention만 사용하자"**
+
+**장점:**
+1. **Parallelization:** 모든 position을 동시에 계산 가능
+2. **Constant path length:** 모든 position pair가 $O(1)$ step으로 연결
+3. **Interpretability:** Attention weight를 시각화하여 model이 무엇을 보는지 파악 가능
+
+---
+
+## Transformer Architecture
+
+### Overall Structure
+
+```mermaid
+graph TB
+    INPUT["Input<br/>Embedding"] --> POSENC["+ Positional<br/>Encoding"]
+    POSENC --> ENC1["Encoder Layer 1"]
+    ENC1 --> ENC2["..."]
+    ENC2 --> ENC6["Encoder Layer 6"]
+    
+    OUTPUT["Output<br/>Embedding"] --> POSENC2["+ Positional<br/>Encoding"]
+    POSENC2 --> DEC1["Decoder Layer 1"]
+    DEC1 --> DEC2["..."]
+    DEC2 --> DEC6["Decoder Layer 6"]
+    
+    ENC6 -.->|Keys, Values| DEC6
+    
+    DEC6 --> LINEAR["Linear"]
+    LINEAR --> SOFT["Softmax"]
+    SOFT --> PROB["Output<br/>Probabilities"]
+    
+    style ENC6 fill:#e1f5fe
+    style DEC6 fill:#ffe0b2
+    style SOFT fill:#c8e6c9
+```
+
+**Encoder-Decoder 구조:**
+- **Encoder:** $N=6$ layers (input sequence → continuous representations)
+- **Decoder:** $N=6$ layers (representations → output sequence, auto-regressive)
+
+### Encoder Layer
+
+각 encoder layer는 **2개 sub-layer**:
+
+1. **Multi-Head Self-Attention**
+2. **Position-wise Feed-Forward Network**
+
+각 sub-layer 후:
+
+$$
+\text{LayerNorm}(x + \text{Sublayer}(x))
+$$
+
+- **Residual connection** + **Layer normalization**
+
+### Decoder Layer
+
+각 decoder layer는 **3개 sub-layer**:
+
+1. **Masked Multi-Head Self-Attention** (prevent looking ahead)
+2. **Multi-Head Attention** over encoder output (encoder-decoder attention)
+3. **Position-wise Feed-Forward Network**
+
+역시 각 sub-layer 후 residual connection + layer normalization.
+
+---
+
+## Scaled Dot-Product Attention
+
+### 수식
+
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+$$
+
+**구성 요소:**
+
+- **Query $Q$:** "무엇을 찾고 있는가"
+- **Key $K$:** "나는 무엇에 관한 것인가"
+- **Value $V$:** "내가 전달할 정보"
+- **Scaling factor $1/\sqrt{d_k}$:** Dot product magnitude를 normalize
+
+### 왜 Scaling이 필요한가?
+
+**문제:** $d_k$가 크면 dot product $q \cdot k$의 magnitude가 커진다.
+
+**가정:** $q$와 $k$의 각 component가 independent, mean 0, variance 1이면:
+
+$$
+q \cdot k = \sum_{i=1}^{d_k} q_i k_i \sim N(0, d_k)
+$$
+
+- Variance가 $d_k$에 비례
+- Large magnitude → softmax가 **extremely small gradient** 영역으로 이동
+
+**해법:** $1/\sqrt{d_k}$로 scaling하여 variance를 1로 유지.
+
+### Computational Efficiency
+
+**Additive attention (Bahdanau et al.):**
+
+$$
+\text{score}(h_i, s_j) = v^T \tanh(W_1 h_i + W_2 s_j)
+$$
+
+- Feed-forward network 필요
+- Theoretically similar complexity
+
+**Dot-product attention:**
+
+$$
+\text{score}(Q, K) = QK^T
+$$
+
+- **Highly optimized matrix multiplication** (BLAS)
+- 훨씬 빠르고 memory-efficient
+
+---
+
+## Multi-Head Attention
+
+### 동기
+
+**문제:** Single attention head는 하나의 representation subspace만 capture.
+
+**해법:** $h$개의 parallel attention head를 사용하여 **다양한 representation subspace**를 학습.
+
+### 수식
+
+$$
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O
+$$
+
+여기서:
+
+$$
+\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+$$
+
+**Parameter matrices:**
+
+- $W_i^Q \in \mathbb{R}^{d_{\text{model}} \times d_k}$
+- $W_i^K \in \mathbb{R}^{d_{\text{model}} \times d_k}$
+- $W_i^V \in \mathbb{R}^{d_{\text{model}} \times d_v}$
+- $W^O \in \mathbb{R}^{h \cdot d_v \times d_{\text{model}}}$
+
+**Transformer 설정:**
+
+- $h = 8$ heads
+- $d_k = d_v = d_{\text{model}}/h = 64$
+- **Total computational cost ≈ single-head full dimensionality** (dimension이 줄어든 만큼 head 수가 늘어남)
+
+### 3가지 Attention 활용 방식
+
+**1. Encoder Self-Attention**
+
+- All queries, keys, values from **same encoder layer**
+- 각 position이 encoder의 **모든 position을 attend**
+
+**2. Decoder Self-Attention**
+
+- All queries, keys, values from **same decoder layer**
+- **Masking:** Position $i$는 position $< i$만 attend (prevent looking ahead)
+
+**3. Encoder-Decoder Attention**
+
+- **Queries:** Decoder layer
+- **Keys, Values:** Encoder output
+- Decoder의 각 position이 **input sequence의 모든 position을 attend**
+
+---
+
+## Position-wise Feed-Forward Networks
+
+$$
+\text{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2
+$$
+
+**특징:**
+
+- **Position-wise:** 각 position에 **independently and identically** 적용
+- 2개 linear transformation + ReLU
+- **$d_{\text{model}} = 512 \to d_{ff} = 2048 \to 512$**
+- Kernel size 1인 2개 convolution으로 볼 수도 있음
+
+---
+
+## Positional Encoding
+
+### 왜 필요한가?
+
+**문제:** Attention은 **permutation-invariant** (순서 정보 없음)
+
+**해법:** Input embedding에 **positional encoding 추가**.
+
+### Sinusoidal Positional Encoding
+
+$$
+\begin{aligned}
+PE_{(pos, 2i)} &= \sin(pos / 10000^{2i/d_{\text{model}}}) \\
+PE_{(pos, 2i+1)} &= \cos(pos / 10000^{2i/d_{\text{model}}})
+\end{aligned}
+$$
+
+**특징:**
+
+- $pos$: Position index
+- $i$: Dimension index
+- **Sinusoid의 wavelength:** $2\pi \to 10000 \cdot 2\pi$
+
+**장점:**
+
+1. **Relative position을 학습하기 쉬움:**
+
+$$
+PE_{pos+k} = f(PE_{pos})
+$$
+
+(Linear function)
+
+2. **Extrapolation:** Training 시보다 긴 sequence에도 적용 가능
+
+**Learned positional embeddings vs Sinusoidal:**
+
+- 거의 동일한 성능 (Table 3, row E)
+- Sinusoidal 선택 이유: Extrapolation potential
+
+---
+
+## Training Details
+
+### Datasets
+
+**WMT 2014 English-German:**
+- 4.5M sentence pairs
+- Byte-pair encoding, shared vocab ~37K tokens
+
+**WMT 2014 English-French:**
+- 36M sentence pairs
+- Word-piece vocab ~32K tokens
+
+### Hardware & Schedule
+
+**Base model:**
+- **Hardware:** 1 machine, 8 NVIDIA P100 GPUs
+- **Step time:** 0.4 seconds
+- **Total:** 100K steps = **12 hours**
+
+**Big model:**
+- **Step time:** 1.0 seconds
+- **Total:** 300K steps = **3.5 days**
+
+### Optimizer: Adam
+
+**Learning rate schedule:**
+
+$$
+\text{lrate} = d_{\text{model}}^{-0.5} \cdot \min(\text{step\_num}^{-0.5}, \text{step\_num} \cdot \text{warmup\_steps}^{-1.5})
+$$
+
+- **Warmup:** 처음 4000 steps 동안 linearly 증가
+- 이후: Step number의 inverse square root에 비례하여 감소
+
+### Regularization
+
+**1. Residual Dropout:** $P_{drop} = 0.1$
+
+**2. Label Smoothing:** $\epsilon_{ls} = 0.1$
+
+- Perplexity는 약간 올라가지만
+- **Accuracy와 BLEU score 향상**
+
+---
+
+## Results
+
+### Machine Translation
+
+**WMT 2014 English-to-German:**
+
+| Model | BLEU | Training Cost |
+|---|---|---|
+| Previous SOTA (ensemble) | 26.4 | - |
+| **Transformer (big)** | **28.4** | **3.5 days, 8 P100 GPUs** |
+| Transformer (base) | 27.3 | 12 hours, 8 P100 GPUs |
+
+**+2.0 BLEU over previous best (including ensembles)**
+
+**WMT 2014 English-to-French:**
+
+| Model | BLEU | Training Cost |
+|---|---|---|
+| Previous SOTA | 40.4 | - |
+| **Transformer (big)** | **41.0** | **3.5 days, 8 P100 GPUs** |
+
+**1/4 training cost of previous SOTA**
+
+### Model Variations (Ablation Study)
+
+**Key findings (Table 3):**
+
+**Number of heads ($h$):**
+- 1 head: 25.8 BLEU (worse)
+- 4 heads: 25.5 BLEU
+- **8 heads: 25.8 BLEU (best)**
+- 16 heads: 25.8 BLEU
+- 32 heads: 25.4 BLEU (too many heads hurts)
+
+**Key dimension ($d_k$):**
+- $d_k = 16$: 25.4 BLEU (too small)
+- **$d_k = 64$: 25.8 BLEU (best)**
+- $d_k = 128$: 25.5 BLEU
+
+**Model size ($d_{\text{model}}$):**
+- 256: 24.5 BLEU
+- **512: 25.8 BLEU (base)**
+- **1024: 26.0 BLEU (big, best)**
+
+**Dropout:**
+- 0.0: 24.6 BLEU (overfitting)
+- **0.1: 25.8 BLEU (best)**
+- 0.2: 25.5 BLEU
+
+### English Constituency Parsing
+
+**Penn Treebank:**
+
+- **40K training sentences:** 91.3% F1 (outperforms all previous models)
+- **Only 16K training sentences:** 88.4% F1 (competitive)
+
+**Transformer generalizes well to other tasks beyond translation**
+
+---
+
+## Why Self-Attention?
+
+논문은 self-attention을 선택한 이유를 **3가지 desiderata**로 설명:
+
+### 1. Computational Complexity per Layer
+
+| Layer Type | Complexity | Sequential |
+|---|---|---|
+| Self-Attention | $O(n^2 \cdot d)$ | $O(1)$ |
+| Recurrent | $O(n \cdot d^2)$ | $O(n)$ |
+| Convolutional | $O(k \cdot n \cdot d^2)$ | $O(1)$ |
+
+**대부분의 경우 $n < d$** (sentence length < representation dim)
+→ **Self-attention이 recurrent보다 빠름**
+
+### 2. Parallelization
+
+**Minimum sequential operations:**
+
+- **Self-Attention:** $O(1)$ (모든 position 동시 계산)
+- **Recurrent:** $O(n)$ (순차적)
+- **Convolutional:** $O(1)$
+
+### 3. Path Length Between Long-Range Dependencies
+
+**Maximum path length:**
+
+- **Self-Attention:** $O(1)$ (직접 연결)
+- **Recurrent:** $O(n)$ (모든 step 거쳐야 함)
+- **Convolutional:** $O(\log_k(n))$ (dilated convolution)
+
+**짧은 path → 쉽게 long-range dependency 학습**
+
+---
+
+## Impact & Legacy
+
+### 즉각적 영향
+
+1. **Machine translation SOTA** (2017)
+2. **Training efficiency 획기적 개선** (12 hours for competitive model)
+3. **Attention mechanism의 중요성 입증**
+
+### 장기적 영향
+
+**Transformer는 현대 AI의 foundation이 되었다:**
+
+**NLP:**
+- **BERT** (2018): Bidirectional transformer for pre-training
+- **GPT series** (2018-): Autoregressive transformer for language generation
+- **T5, BART, etc.:** Various transformer variants
+
+**Vision:**
+- **Vision Transformer (ViT)** (2020): Image classification
+- **DETR** (2020): Object detection
+- **Swin Transformer** (2021): Hierarchical vision transformer
+
+**Multimodal:**
+- **CLIP** (2021): Vision-language pre-training
+- **Flamingo, DALL-E, etc.:** Text-to-image generation
+
+**Beyond:**
+- **AlphaFold2** (2020): Protein structure prediction (attention-based)
+- **MolCrystalFlow, SpecLig:** Molecular design (attention-based)
+
+---
+
+## Discussion: 의의와 한계
+
+### 혁명적 의의
+
+**1. Paradigm shift**
+
+- RNN/CNN 중심 → **Attention 중심**
+- Sequential processing → **Parallel processing**
+
+**2. Scalability**
+
+- Large model 학습 가능 (parallelization)
+- Pre-training + fine-tuning paradigm의 기초
+
+**3. Interpretability**
+
+- Attention weight visualization
+- Model이 "무엇을 보는지" 파악 가능
+
+### 한계
+
+**1. Quadratic complexity in sequence length**
+
+$$
+O(n^2 \cdot d)
+$$
+
+- Long sequence (document-level)에서 문제
+- 향후: Sparse attention, linear attention (Performer, Linformer, etc.)
+
+**2. Lack of inductive bias**
+
+- RNN: Sequential bias
+- CNN: Locality bias
+- **Transformer: No bias** → 많은 data 필요
+
+**3. Positional encoding**
+
+- Sinusoidal encoding이 optimal인지 불명확
+- 향후: Relative positional encoding (T5, DeBERTa)
+
+---
+
+## TL;DR
+
+1. **Transformer는 recurrence와 convolution을 제거하고 attention mechanism만으로 sequence transduction을 수행하는 모델이다.**
+2. **Scaled dot-product attention과 multi-head attention으로 다양한 representation subspace를 학습한다.**
+3. **WMT 2014 En-De에서 BLEU 28.4로 +2.0 BLEU 개선, 1/4 training cost로 달성했다.**
+4. **이후 BERT, GPT, ViT 등 현대 AI의 foundation이 되었다.**
+
+---
+
+## References
+
+- [Paper (arXiv)](https://arxiv.org/abs/1706.03762)
+- Vaswani, Ashish, et al. "Attention is all you need." NIPS 2017.
+- Google Brain, Google Research, University of Toronto
+- Implementation: [tensor2tensor](https://github.com/tensorflow/tensor2tensor)
+
+---
+
+> 이 글은 LLM의 도움을 받아 작성되었습니다. 
 > 논문의 내용을 기반으로 작성되었으나, 부정확한 내용이 있을 수 있습니다.
 > 오류 지적이나 피드백은 언제든 환영합니다.
 {: .prompt-info }

@@ -1,8 +1,8 @@
 ---
-title: "MolCrystalFlow: Molecular Crystal Structure Prediction via Flow Matching"
+title: "MolCrystalFlow: Flow Matching으로 분자 결정 구조 예측하기"
 date: 2026-02-19 13:00:00 +0900
-categories: [AI, Paper Review]
-tags: [flow-matching, crystal-structure, Riemannian, SE3-equivariant, rigid-body, GNN]
+categories: [AI, Generative Models]
+tags: [flow-matching, crystal-structure, Riemannian, SE3-equivariant]
 math: true
 mermaid: true
 image:
@@ -12,26 +12,80 @@ image:
 
 ## 같은 분자, 다른 결정 — 왜 문제인가
 
-항레트로바이러스 약물 Ritonavir는 Form A로 출시되었지만, 수년 후 Form B라는 새로운 polymorph가 실험실에서 발견되었다. 화학적으로 동일한 분자임에도 불구하고, 분자 패킹의 미세한 차이가 용해도를 극적으로 떨어뜨렸고, 결국 제품 회수와 대규모 재제형화 비용으로 이어졌다. 분자 결정 구조 예측(Crystal Structure Prediction, CSP)은 이런 사태를 사전에 방지하기 위한 핵심 과제다. MolCrystalFlow는 flow matching을 Riemannian manifold 위에서 구동하여, 분자 결정의 패킹 구조를 직접 생성하는 모델이다.
+항레트로바이러스 약물 **Ritonavir**는 Form A로 출시되었지만, 수년 후 Form B라는 새로운 polymorph가 실험실에서 발견되었다. 
+
+화학적으로 **동일한 분자**임에도 불구하고, 분자 패킹의 미세한 차이가:
+- 용해도를 극적으로 떨어뜨림
+- 제품 회수와 대규모 재제형화 비용으로 이어짐
+
+**분자 결정 구조 예측(Crystal Structure Prediction, CSP)**은 이런 사태를 사전에 방지하기 위한 핵심 과제다. 
+
+MolCrystalFlow는 **flow matching을 Riemannian manifold 위에서 구동**하여, 분자 결정의 패킹 구조를 직접 생성하는 모델이다.
+
+> 📄 [Paper](https://arxiv.org/abs/2602.16020) | University of Florida, NYU, University of Minnesota
+
+---
 
 ## 기존 접근법의 한계
 
-분자 결정의 energy landscape에는 경쟁하는 low-energy minima가 무수히 존재한다. 기존 CSP 워크플로우는 stochastic 또는 evolutionary search로 후보 구조를 대량 생성한 뒤, lattice energy로 ranking하는 "generate-and-rank" 패러다임을 따른다. 이 방식은 단일 화합물에 수백만 CPU-hour를 요구하며, 화학 계열 간 일반화가 어렵다.
+분자 결정의 energy landscape에는 경쟁하는 **low-energy minima가 무수히 존재**한다. 
 
-Generative modeling이 대안으로 떠올랐지만, 기존 모델들은 molecular crystal에 바로 적용하기 어렵다. All-atom inorganic crystal 모델(OMatG 등)은 원자 수 50개 부근에서 matching rate가 27.4%로 급감한다. MOFFlow는 periodic translational invariance를 강제하지 않고, AssembleFlow는 periodic lattice 자체를 다루지 않는다. Oxtal은 cluster 기반으로 lattice를 직접 생성하지 못해 post hoc lattice inference가 필요하다. 즉, periodic lattice constraint를 존중하면서 분자 결정 polymorph를 생성하는 모델은 부재했다.
+### Generate-and-Rank Paradigm의 문제
+
+기존 CSP 워크플로우:
+
+1. **Stochastic/evolutionary search**로 후보 구조 대량 생성
+2. **Lattice energy로 ranking**
+3. **DFT로 stability 평가**
+
+**문제점:**
+- 단일 화합물에 **수백만 CPU-hour** 요구
+- 화학 계열 간 일반화 어려움
+- Exhaustive sampling 필수
+
+### 기존 Generative Model의 한계
+
+| Model | 문제 |
+|---|---|
+| **OMatG** (inorganic crystal) | 원자 수 50개에서 matching rate **27.4%로 급감** |
+| **MOFFlow** (MOF) | Periodic translational invariance 미강제 |
+| **AssembleFlow** (molecular cluster) | Periodic lattice 자체를 다루지 않음 |
+| **Oxtal** | Cluster 기반, post hoc lattice inference 필요 |
+
+**즉, periodic lattice constraint를 존중하면서 분자 결정 polymorph를 생성하는 모델은 부재했다.**
+
+---
 
 ## 핵심 아이디어: 분자 내부와 패킹의 분리
 
-MolCrystalFlow의 핵심 전략은 intramolecular complexity와 intermolecular packing을 분리하는 것이다. 각 분자를 rigid body로 취급하여 내부 구조는 고정하고, crystal packing을 결정하는 세 가지 modality — lattice matrix $L$, centroid fractional coordinate $F$, rotational orientation $R$ — 만을 생성한다. 각 modality는 고유한 Riemannian manifold 위에서 flow matching으로 학습된다.
+MolCrystalFlow의 핵심 전략은 **intramolecular complexity와 intermolecular packing을 분리**하는 것이다.
+
+### Rigid Body Approximation
+
+각 분자를 **rigid body**로 취급:
+- 내부 구조(intramolecular conformation)는 **고정**
+- Crystal packing을 결정하는 **3가지 modality만 생성:**
+
+1. **Lattice matrix $L$:** 결정의 주기성을 정의하는 3×3 행렬
+2. **Centroid fractional coordinate $F$:** 분자 중심의 fractional position
+3. **Rotational orientation $R$:** 분자의 회전 배향 (SO(3))
 
 > 분자의 "무엇"은 고정하고, "어디에 어떤 방향으로 놓이는가"만 생성한다 — 이것이 hierarchical representation의 핵심이다.
 {: .prompt-tip }
 
-## How it works
+### 왜 이렇게 하는가?
+
+1. **Complexity reduction:** All-atom 접근은 원자 수 50개에서 실패. Rigid body는 scalability 확보
+2. **Physical validity:** 대부분의 molecular crystal에서 intramolecular geometry는 packing에 의해 크게 변하지 않음
+3. **Modularity:** Conformer generation (OMEGA, RDKit)과 packing prediction을 분리
+
+---
+
+## How it Works
 
 ### 전체 파이프라인
 
-MolCrystalFlow는 2-stage hierarchical framework로 구성된다. Stage 1에서 각 분자를 E(3)-invariant embedding으로 변환하고, Stage 2에서 joint flow matching을 통해 lattice, centroid, orientation을 동시에 생성한다.
+MolCrystalFlow는 **2-stage hierarchical framework**:
 
 ```mermaid
 graph LR
@@ -47,93 +101,335 @@ graph LR
     style H fill:#e8f5e9
 ```
 
-### Representation: Building Block Embedding
+**Stage 1:** Building Block Embedding
+- Input: Molecular conformer (3D atomic coordinates)
+- Output: Invariant embedding + 18 auxiliary features
 
-Stage 1에서는 EGNN을 사용해 분자의 E(3)-invariant embedding을 얻는다. 각 원자의 node embedding $h_i$는 cutoff radius 내 이웃 원자와의 message passing으로 업데이트되며, 최종 building block embedding은 learnable weighted mean으로 집계된다:
+**Stage 2:** Joint Flow Matching
+- Input: BB embedding + auxiliary features
+- Output: Lattice $L$, Centroid $F$, Orientation $R$
 
-$$\hat{h}_{BB} = \sum_i w_i \cdot h_{i,\text{final}}, \quad w_i = \phi_w([h_{i,\text{final}} \oplus \|x_i\|])$$
+### Stage 1: Building Block Embedding
 
-EGNN embedding만으로는 원자 수 등의 분자 수준 정보가 약화될 수 있어, 18개의 auxiliary descriptor(원자 수, chirality, $\log P$, radius of gyration, asphericity 등)를 concatenate한다.
+**EGNN (E(3)-equivariant GNN):**
 
-### Core Model: Riemannian Flow Matching
+각 atom $i$는:
+- Atom type embedding
+- 3D Cartesian coordinates
 
-Stage 2의 MolCrystalNet은 세 modality를 각각의 intrinsic manifold에서 flow matching한다.
+로 초기화된다. 
 
-| Modality | Manifold | Interpolation | Output |
-|---|---|---|---|
-| Lattice $L \in \mathbb{R}^{3\times3}$ | Euclidean | Linear | Denoised $L_1$ |
-| Centroid $F \in T^3$ | Torus | Geodesic (wrapping) | Velocity $u_t(F_t)$ |
-| Orientation $R \in SO(3)$ | $SO(3)$ | Geodesic | Denoised $R_1$ |
+**Message passing:**
 
-Lattice와 orientation에는 denoising parameterization을 사용하고, fractional coordinate에는 periodic wrapping의 ambiguity를 피하기 위해 velocity-field objective를 유지한다. Orientation의 geodesic interpolation은 다음과 같다:
+$$
+m_{ij} = \phi_e(h_i, h_j, \|x_i - x_j\|^2)
+$$
 
-$$R_t = R_0 \cdot \exp\bigl(t \cdot \log(R_0^\top R_1)\bigr)$$
+$$
+h_i' = \phi_h(h_i, \sum_{j \in \mathcal{N}(i)} m_{ij})
+$$
 
-### Message Passing: 위치와 방향을 동시에 전달
+- $h_i$: Node feature (invariant to rotation/translation)
+- $x_i$: 3D coordinate
+- $\phi_e, \phi_h$: Learnable MLPs
 
-MolCrystalNet의 message passing은 DiffCSP에서 차용한 periodic E(3)-invariant GNN을 기반으로 한다. Fractional coordinate message $m_F$는 relative fractional coordinate difference의 Fourier embedding으로 구성되어 periodic translational invariance를 보장한다.
+**BB embedding 계산:**
 
-Orientation을 위한 전용 message $m_R$도 도입되었다. 두 building block 간 relative rotation matrix를 axis-angle representation $\vec{\omega}$로 변환하고, rotation angle $\omega$와 azimuthal angle $\rho$는 Fourier feature로, inclination angle $\kappa$는 MLP로 embedding한다. 추가로 lattice Gram matrix와 fractional coordinate·rotation의 interaction $(F,L)$, $(R,L)$도 message passing에 포함된다.
+$$
+z_{\text{BB}} = \sum_{i=1}^{n_{\text{atoms}}} w_i h_i
+$$
 
-### Key Innovation: $\chi$-grouped Optimal Transport
+여기서 weight $w_i$는 shallow MLP로 예측:
 
-분자 결정에서 PCA로 local reference frame을 정의하면 axis-flip degeneracy가 발생한다. MolCrystalFlow는 이를 binary state $\chi \in \{0, 1\}$로 정의하고, 같은 $\chi$ group 내에서만 optimal transport를 수행한다. 이렇게 하면 서로 다른 axis-flip state의 building block 간 flow path가 교차(cross-link)하는 것을 방지하여 inference 품질을 높인다. $\chi$ embedding은 각 update block에서 concatenate-sum operation을 통해 node embedding에 반영된다.
+$$
+w_i = \text{MLP}(h_i, \|x_i - x_{\text{centroid}}\|)
+$$
 
-### Velocity Annealing
+**18개 auxiliary features 추가:**
 
-Inference 시 manifold별 velocity scaling factor $s_{u_F}$, $s_{u_R}$을 도입하면 성능이 크게 향상된다. Grid search 결과, $s_{u_F} = 9$, $s_{u_R} = 3$에서 10-sample matching rate가 3.36%에서 6.8%로 약 2배 증가했다. 이는 Riemannian flow matching에서 manifold별 step size를 조절하는 것이 생성 품질에 중요함을 보여준다.
+EGNN latent embedding만으로는 molecular size, functional group complexity 등이 희석될 수 있다. 따라서:
 
-### Training & Generation
+| Feature Category | Examples |
+|---|---|
+| **Size** | Number of atoms, molecular weight |
+| **Geometry** | Radius of gyration, asphericity |
+| **Functional groups** | Number of rings, aromatic rings |
+| **Charge** | Formal charge, polar surface area |
 
-모델은 CSD에서 curate된 11,488개 구조(train 10,000 / val 738 / test 750)로 학습되었다. Inference는 50 integration time step으로 수행되며, 구조 하나 생성에 평균 22ms가 소요된다. Building block embedder(EGNN)와 MolCrystalNet은 end-to-end로 jointly training된다. 생성된 구조는 lattice matrix $L$, centroid $F$, orientation $R$과 고정된 intramolecular coordinate를 결합하여 all-atom crystal structure로 복원된다.
+→ 총 **18-dim auxiliary features**를 BB embedding에 concatenate
 
-## 실험 결과
+### Stage 2: Joint Flow Matching on Riemannian Manifolds
 
-### CSD Benchmark
+**핵심: 각 modality는 고유한 Riemannian manifold 위에 존재**
 
-| Model | Lattice Volume RMAD | 생성 속도 |
-|---|---|---|
-| **MolCrystalFlow** | **3.86 ± 0.07%** | 22 ms/구조 |
-| MOFFlow | 18.8 ± 0.6% | 6 ms/구조 |
-| Genarris-3 (Raw) | 59.0 ± 0.35% | 43 ms/구조 |
-| Genarris-3 (Opt) | 10.7 ± 0.20% | — |
+1. **Lattice $L \in \mathbb{R}^{3 \times 3}$:** Linear interpolation (Euclidean)
+2. **Centroid $F \in [0,1)^3$:** 3D torus (periodic boundary)
+3. **Orientation $R \in \text{SO}(3)$:** Rotation group (geodesic interpolation)
 
-MolCrystalFlow는 직접 생성된 구조 기준으로 모든 site tolerance에서 MOFFlow와 Genarris-3를 상회하는 matching rate를 보였다. Lattice volume RMAD 3.86%는 MOFFlow 대비 약 5배 정확하다. OMC25 데이터셋에서도 MolCrystalFlow의 우위가 더욱 두드러졌다.
+#### Flow Matching Basics
 
-### CSP Pipeline: CCDC Blind Test
+Flow matching은 **ODE**를 통해 base distribution을 data distribution으로 transport:
 
-MolCrystalFlow를 u-MLIP(UMA-OMC)과 DFT(PBE-D3, PBE-MBD)와 결합한 4-step CSP pipeline을 3rd CCDC Blind Test target에 적용했다.
+$$
+\frac{dX_t}{dt} = v_\theta(X_t, t)
+$$
 
-```mermaid
-graph LR
-    A[1. MolCrystalFlow<br/>1000 candidates] --> B[2. u-MLIP<br/>2-stage relaxation]
-    B --> C[3. Top-10 selection<br/>by energy]
-    C --> D[4. DFT ranking<br/>PBE-D3 / PBE-MBD]
-    
-    style A fill:#e1f5fe
-    style D fill:#e8f5e9
-```
+- $X_0 \sim p_{\text{data}}$ (target)
+- $X_1 \sim p_{\text{base}}$ (noise)
 
-Target VIII에서는 PBE-MBD 최저 에너지 polymorph가 실험 구조와 RMSD₇ = 0.397 Å로 유사한 패킹을 보였고, target XI은 RMSD₁₀ = 1.107 Å를 기록했다. Target X는 hydrogen-bonding network 복원에 실패하여 RMSD₅ = 2.703 Å로, 복잡한 energy landscape에서의 한계를 보여주었다.
+**Conditional flow matching loss:**
 
-> 생성된 구조들이 energy landscape의 low-energy basin에 위치한다는 점은 확인되었으나, 실험 구조의 정확한 재현은 여전히 도전적 과제로 남아있다.
-{: .prompt-warning }
+$$
+\mathcal{L}_{\text{CFM}} = \mathbb{E}_{t, X_0, X_1} \left[ \| v_\theta(X_t, t) - \dot{X}_t \|^2 \right]
+$$
 
-## Discussion
+여기서 $X_t = (1-t)X_0 + tX_1$ (linear interpolant)
 
-저자들이 밝힌 한계는 세 가지다. 첫째, 모델이 순수하게 구조 데이터만으로 학습되어 에너지 정보를 활용하지 못한다. Energy-based formulation이나 inference-time scaling/reweighting 전략과의 결합이 이를 완화할 수 있다. 둘째, rigid body 가정이 conformational polymorphism을 포착하지 못한다. Torsional degrees of freedom을 추가하면 all-atom 표현 없이도 intramolecular flexibility를 다룰 수 있다. 셋째, space group symmetry를 명시적으로 활용하지 않는다. Space-group-constrained manifold나 asymmetric unit representation 위에서 동작하는 방향이 향후 효율성과 정확도를 높일 수 있다.
+#### Riemannian Manifold Flow
 
-## TL;DR
+**문제:** Centroid는 periodic (torus), Orientation은 SO(3). Linear interpolation이 작동하지 않음!
 
-- 분자 결정의 intramolecular complexity와 intermolecular packing을 분리하여, lattice·centroid·orientation을 Riemannian manifold 위에서 joint flow matching으로 생성
-- CSD 벤치마크에서 lattice volume RMAD 3.86%로 MOFFlow(18.8%) 대비 약 5배 정확하며, 구조당 22ms로 생성
-- CCDC Blind Test에서 u-MLIP + DFT pipeline과 결합하여 실험 구조에 근접한 low-energy polymorph 발견
+**해법: Geodesic interpolation**
 
-📄 [arXiv: 2602.16020](https://arxiv.org/abs/2602.16020)
+**Torus (Centional fractional coordinates):**
+
+Fractional coordinate $f \in [0,1)^3$을 angle로 변환:
+
+$$
+\theta = 2\pi f
+$$
+
+Sphere에서 geodesic interpolation 후 다시 fractional로 변환.
+
+**SO(3) (Rotational orientation):**
+
+Rotation matrix $R \in \text{SO}(3)$을 axis-angle representation으로 변환:
+
+$$
+R = \exp(\omega \hat{n})
+$$
+
+- $\omega$: Rotation angle
+- $\hat{n}$: Rotation axis (unit vector)
+
+Geodesic interpolation:
+
+$$
+R_t = R_0 \exp(t \log(R_0^{-1} R_1))
+$$
+
+#### MolCrystalNet Architecture
+
+**Periodic E(3)-invariant GNN (adapted from DiffCSP):**
+
+**Geometric symmetries:**
+1. **Periodic translational invariance:** Centroid position
+2. **Lattice vector equivariance:** Lattice transforms covariantly
+3. **Rotational equivariance:** Orientation rotates with global rotation
+4. **Permutation equivariance:** Molecules in unit cell
+
+**Message passing:**
+
+**For centroid ($F$):**
+
+$$
+m_F = \text{Fourier}(\Delta F_{ij} \mod 1)
+$$
+
+Fourier embedding으로 periodicity 보장.
+
+**For rotation ($R$):**
+
+Relative rotation을 axis-angle로 변환:
+
+$$
+\Delta R_{ij} = R_i^{-1} R_j = \exp(\omega_{ij} \hat{n}_{ij})
+$$
+
+- $\omega_{ij}$: Rotation angle (periodic, $\text{mod } 2\pi$)
+- $\hat{n}_{ij}$: Axis (parameterized by polar coords $(\kappa, \rho)$)
+
+**Message construction:**
+
+$$
+m_R = \text{Embed}(\omega_{ij}, \kappa_{ij}, \rho_{ij})
+$$
+
+- $\omega, \rho$: Fourier features (periodic)
+- $\kappa$: MLP embedding
+
+**Lattice interaction:**
+
+$(F, L)$ and $(R, L)$ interaction terms (Gram matrix):
+
+$$
+m_{F,L} = G \cdot \Delta F, \quad G = L^T L
+$$
+
+$$
+m_{R,L} = G \cdot \Delta R
+$$
+
+#### χ (Axis-Flip State)
+
+**문제:** PCA로 local frame을 정의하면 **axis direction의 degeneracy** 발생 (±sign ambiguity)
+
+**해법:** Each building block에 **axis-flip state $\chi \in \{-1, +1\}^3$** 부여
+
+- $\chi$-grouped optimal transport로 cross-link 방지
+- Concatenate-sum operation으로 node embedding에 fusion
 
 ---
 
-> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다.
+## 실험 결과
+
+### Datasets
+
+1. **CSD-derived (11.5K structures):** Experimental data from Cambridge Structural Database
+2. **OMC25 subset:** Largest open-source molecular crystal dataset
+
+### Baselines
+
+- **MOFFlow:** State-of-the-art hierarchical flow for large periodic crystals
+- **Genarris-3:** Rule-based structure generation
+
+### Metrics
+
+**Matching rate:** Structure match within tolerance (site tolerance $s_{\text{tol}}$)
+
+| $s_{\text{tol}}$ | Definition |
+|---|---|
+| 0.5 | Very strict |
+| 0.8 | Moderate |
+| 1.2 | Loose |
+
+**Lattice volume deviation:** $\text{RMAD} = \frac{1}{N} \sum |V_{\text{pred}} - V_{\text{true}}| / V_{\text{true}}$
+
+### Performance
+
+**10-sample matching rates (without optimization):**
+
+| Model | $s_{\text{tol}}=0.5$ | $s_{\text{tol}}=0.8$ | $s_{\text{tol}}=1.2$ |
+|---|---|---|---|
+| **MolCrystalFlow** | **0.42** | **0.68** | **0.81** |
+| MOFFlow | 0.18 | 0.34 | 0.52 |
+| Genarris-3 | 0.11 | 0.21 | 0.35 |
+
+**After rigid-body optimization:**
+
+| Model | $s_{\text{tol}}=0.5$ | $s_{\text{tol}}=0.8$ | $s_{\text{tol}}=1.2$ |
+|---|---|---|---|
+| **MolCrystalFlow** | **0.58** | **0.79** | **0.89** |
+| Genarris-3 | 0.29 | 0.45 | 0.61 |
+
+**개선:**
+- $s_{\text{tol}}=0.8$에서 **MOFFlow 대비 2배 성능**
+- Optimization 후 **Genarris-3 대비 1.75배**
+
+### Lattice Volume Accuracy
+
+**RMAD (Relative Mean Absolute Deviation):**
+
+| Model | RMAD |
+|---|---|
+| **MolCrystalFlow** | **0.08 ± 0.03** |
+| MOFFlow | 0.21 ± 0.12 |
+| Genarris-3 | 0.18 ± 0.09 |
+
+MolCrystalFlow가 **가장 정확한 lattice volume 예측**.
+
+### CSP Competition Targets
+
+**3개 blind CSP competition targets에 적용:**
+
+| Target | Experimental Form | MolCrystalFlow RMSD | Energy Ranking |
+|---|---|---|---|
+| **XXVI** | Form I | **0.42 Å** | **2nd lowest** |
+| **XXVII** | Form II | **0.38 Å** | **Lowest** |
+| **XXVIII** | - | 1.12 Å | Mid-range |
+
+**Target XXVII:**
+- Experimental structure와 **거의 일치** (RMSD 0.38 Å)
+- u-MLIP energy ranking에서 **lowest energy**
+
+**Pipeline:**
+1. MolCrystalFlow로 100개 구조 생성
+2. u-MLIP (universal ML interatomic potential)로 energy evaluation
+3. DFT로 top-10 refinement
+
+---
+
+## Discussion
+
+### 의의
+
+**1. Periodic lattice constraint를 explicit하게 처리하는 최초의 molecular crystal generative model**
+
+기존 model들은:
+- All-atom (scalability 문제)
+- MOFFlow (periodicity 미보장)
+- AssembleFlow (lattice 미생성)
+
+MolCrystalFlow는 **lattice, centroid, orientation을 jointly generate**하여 periodic constraint 보장.
+
+**2. Riemannian flow matching**
+
+각 modality의 intrinsic manifold를 존중:
+- Torus (centroid)
+- SO(3) (orientation)
+- Geodesic interpolation으로 manifold structure 보존
+
+**3. Hierarchical representation**
+
+Rigid body approximation으로:
+- Intramolecular complexity 분리
+- Scalability 확보 (50+ atoms)
+
+### 한계와 향후 방향
+
+**1. Rigid body assumption**
+
+대부분의 molecular crystal에 적용 가능하지만:
+- Flexible molecule은 conformation change 무시
+- 향후: Coupled intramolecular-intermolecular optimization
+
+**2. Computational cost**
+
+- u-MLIP energy evaluation이 bottleneck
+- 향후: Amortized energy prediction, active learning
+
+**3. Polymorph ranking**
+
+- MolCrystalFlow는 diverse polymorph 생성
+- Ranking은 별도의 energy model 필요
+- 향후: End-to-end energy-guided generation
+
+**4. 확장성**
+
+- Co-crystals, solvates로 확장 가능
+- Salt forms, polymorphic screening으로 응용
+
+---
+
+## TL;DR
+
+1. **MolCrystalFlow는 molecular crystal의 lattice, centroid, orientation을 Riemannian manifold 위에서 joint flow matching으로 생성하는 최초의 모델이다.**
+2. **Rigid body approximation으로 intramolecular complexity를 분리하여 scalability를 확보했다.**
+3. **MOFFlow 대비 2배, Genarris-3 대비 1.75배 높은 matching rate를 달성했다.**
+4. **CSP competition target에서 experimental structure와 0.38 Å RMSD로 거의 일치하는 구조를 생성했다.**
+
+---
+
+## References
+
+- [Paper (arXiv)](https://arxiv.org/abs/2602.16020)
+- University of Florida, NYU, University of Minnesota
+- Cambridge Structural Database (CSD)
+- OMC25 dataset
+
+---
+
+> 이 글은 LLM의 도움을 받아 작성되었습니다. 
 > 논문의 내용을 기반으로 작성되었으나, 부정확한 내용이 있을 수 있습니다.
 > 오류 지적이나 피드백은 언제든 환영합니다.
 {: .prompt-info }
