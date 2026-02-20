@@ -7,7 +7,7 @@ tags: [OOD-detection, diffusion, protein-ligand, 3D-graph, PF-ODE]
 math: true
 mermaid: true
 image:
-  path: https://arxiv.org/html/2512.18454/extracted/6190730/images/figure_1.png
+  path: /assets/img/posts/ood-detection-molecular-complexes-diffusion/fig1.png
   alt: "PF-ODE trajectory analysis for OOD detection"
 ---
 
@@ -53,7 +53,7 @@ PF-ODE는 SDE의 deterministic counterpart다. 모든 샘플을 noise space와 d
 - **ID samples**: 학습 데이터가 많은 영역을 지나간다. Vector field가 잘 정의되어 있어서, 경로가 효율적이고 부드럽다.
 - **OOD samples**: 학습 데이터가 부족한 low-density 영역을 지나간다. Vector field가 불안정하고 모호해서, 경로가 불규칙하고 비효율적이다.
 
-![PF-ODE Trajectory](https://arxiv.org/html/2512.18454/extracted/6190730/images/figure_1.png)
+![PF-ODE Trajectory](/assets/img/posts/ood-detection-molecular-complexes-diffusion/fig1.png)
 _Figure 1: ID 샘플은 직선에 가까운 효율적인 경로를 따르고, OOD 샘플은 불규칙하고 긴 경로를 따른다. 출처: 원 논문_
 
 ### Complexity Bias 극복
@@ -490,7 +490,7 @@ class TrajectoryAwareLDRClassifier:
 
 각 test set의 OOD level을 bioinformatic similarity (TM-align + Tanimoto + ligand RMSD)로 검증했다.
 
-![Bioinformatic Similarity](https://arxiv.org/html/2512.18454/extracted/6190730/images/figure_2.png)
+![Bioinformatic Similarity](/assets/img/posts/ood-detection-molecular-complexes-diffusion/fig2.png)
 _Figure 2: OOD 데이터셋은 training data와 낮은 protein/ligand/complex similarity를 보인다. 출처: 원 논문_
 
 **결과**: Diffusion model의 log-likelihood 분포가 bioinformatic OOD level과 강하게 일치했다 (8/9 datasets).
@@ -522,7 +522,7 @@ $$
 
 즉, likelihood가 낮은 샘플은 높은 확률로 큰 에러를 낸다.
 
-![GEMS Error vs Likelihood](https://arxiv.org/html/2512.18454/extracted/6190730/images/figure_6.png)
+![GEMS Error vs Likelihood](/assets/img/posts/ood-detection-molecular-complexes-diffusion/fig6.png)
 _Figure 6: 낮은 log-likelihood를 가진 complex일수록 GEMS의 binding affinity prediction error가 크다. 출처: 원 논문_
 
 **결과**:
@@ -554,7 +554,7 @@ Trajectory feature를 추가하면 모든 dataset에서 AUROC가 향상된다. �
 
 19개 feature 중 어떤 게 가장 중요할까?
 
-![Feature Importance](https://arxiv.org/html/2512.18454/extracted/6190730/images/figure_7.png)
+![Feature Importance](/assets/img/posts/ood-detection-molecular-complexes-diffusion/fig7.png)
 _Figure 7: Log-likelihood가 가장 중요하지만, tortuosity, VF energy, Lipschitz 같은 geometric feature들도 유의미하다. 출처: 원 논문_
 
 **Top 5**:
