@@ -40,7 +40,7 @@ AlphaFold 3의 핵심 아이디어는 **diffusion 기반 생성 모델을 사용
 > 핵심은 "범용성을 위한 단순화"다. 단백질 특화 제약을 제거하고, diffusion을 통해 모든 생체분자의 기하학을 동등하게 다룬다.
 {: .prompt-tip }
 
-## How it works
+## How It Works
 
 ### 4.1 Overview
 
@@ -57,9 +57,6 @@ graph TD
     D --> G[Confidence Head]
     G --> H[pLDDT, PAE, PDE]
     
-    style A fill:#fff4e6
-    style F fill:#e8f5e9
-    style H fill:#e3f2fd
 ```
 
 AF2와 비교했을 때 가장 큰 변화는:
@@ -67,7 +64,7 @@ AF2와 비교했을 때 가장 큰 변화는:
 - **Structure module (IPA-based) → Diffusion module**: 아미노산 frame 대신 원자 좌표 직접 예측
 - **Deterministic prediction → Generative sampling**: 단일 예측이 아닌 분포로부터 샘플링
 
-<details>
+<details markdown="1">
 <summary>📝 Overall Architecture Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -190,7 +187,7 @@ Pairformer는 AF2의 evoformer를 대체하며, **MSA representation을 유지�
 4. **Single self-attention with pair bias**: single에 대한 attention (pair가 bias로 작용)
 5. **Single-to-pair transition**: 업데이트된 single 정보를 다시 pair로 전파
 
-<details>
+<details markdown="1">
 <summary>📝 Pairformer Block Implementation (클릭하여 펼치기)</summary>
 
 ```python
@@ -376,7 +373,7 @@ $$
 
 논문은 standard diffusion process를 따르지만, 중요한 점은 **rotation/translation invariance를 명시적으로 강제하지 않는다**는 것이다. 대신 random rotation/translation augmentation을 학습 시 적용하여 암묵적으로 학습한다.
 
-<details>
+<details markdown="1">
 <summary>📝 Diffusion Module Implementation (클릭하여 펼치기)</summary>
 
 ```python
@@ -639,7 +636,7 @@ $$
 
 **Confidence prediction**은 diffusion 학습과 별도로 진행된다. Diffusion 학습 중에는 single step만 학습하므로, full structure를 생성할 수 없다. 이를 해결하기 위해 **mini-rollout** 방식을 사용한다: 학습 중 일부 step에서 larger step size로 전체 구조를 생성하고, 이를 ground truth와 비교하여 confidence head를 학습한다.
 
-<details>
+<details markdown="1">
 <summary>📝 Training Loop Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -890,6 +887,18 @@ AlphaFold 3는 생체분자 구조 예측을 단일 프레임워크로 통합했
 > 저자들은 "structural modelling will continue to improve not only due to advances in deep learning but also because continuing methodological advances in experimental structure determination"이라고 강조하며, 실험과 계산의 선순환 발전을 기대한다.
 {: .prompt-info }
 
+## Limitations
+
+1. **Hallucination 문제**: Diffusion 기반 생성은 가끔 물리적으로 불가능한 구조(chirality 반전, steric clash)를 생성하며, confidence filtering으로도 완전히 제거되지 않는다.
+2. **Ligand 예측 정확도 편차**: Protein-ligand docking에서 pocket이 명확한 경우 우수하지만, allosteric site나 shallow binding groove에서는 정확도가 크게 떨어진다.
+3. **Covalent modification 미지원**: Post-translational modification이나 covalent inhibitor 같은 공유결합 상호작용을 명시적으로 모델링하지 못한다.
+4. **MSA 처리 간소화의 대가**: Evoformer에서 단일 Pairformer로의 간소화는 효율성을 높였지만, 깊은 co-evolutionary signal 추출 능력이 일부 감소했다.
+5. **Commercial 라이선스 제한**: AlphaFold 2와 달리 상업적 사용에 제한이 있어, 제약회사의 직접적인 drug discovery 활용이 제약된다.
+
+## Conclusion
+
+AlphaFold 3는 단백질 구조 예측을 넘어 범용 생체분자 상호작용 예측으로의 도약을 이뤄냈다. Diffusion module 도입으로 protein, nucleic acid, ligand, ion, modified residue를 하나의 framework에서 처리하며, PoseTBusters validity 71.7%로 physics-based docking 도구들을 능가했다. SE(3)-equivariance를 포기하고 diffusion의 표현력을 취한 것, MSA processing을 간소화하고 template 의존성을 제거한 것은 대담한 architectural decision이었다. 구조 생물학의 "만능 도구"로서의 가능성을 보여주었으나, hallucination과 ligand 정확도 편차는 실용적 활용을 위해 해결해야 할 과제로 남아 있다.
+
 ## TL;DR
 
 - AlphaFold 3는 diffusion 기반 아키텍처로 단백질, 핵산, 리간드, 이온 등 모든 생체분자 복합체의 구조를 단일 프레임워크에서 예측한다.
@@ -904,6 +913,7 @@ AlphaFold 3는 생체분자 구조 예측을 단일 프레임워크로 통합했
 | **Authors** | Josh Abramson et al. (Google DeepMind) |
 | **Venue** | Nature (2024) |
 | **Published** | 8 May 2024 |
+| **Link** | [doi:10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w) |
 | **Paper** | [Nature](https://www.nature.com/articles/s41586-024-07487-w) |
 | **Code** | AlphaFold Server (inference only, weights not released) |
 

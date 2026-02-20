@@ -51,7 +51,7 @@ Whitening된 데이터 **X**^CW_0는 **가능한 한 정상성(stationary)에 �
 
 충분조건: μ와 Σ를 충분히 정확하게 추정하고, Σ̂의 최소 고유값을 0에서 멀리 유지하면 성능이 개선된다. 이는 total variation distance의 상한을 타이트하게 만든다.
 
-## How it works
+## How It Works
 
 ![CW-Gen Framework](https://arxiv.org/html/2509.20928/x1.png)
 _Figure 1: CW-Gen 전체 파이프라인. JMCE가 조건부 평균과 공분산을 추정하고, whitening → diffusion/flow → inverse whitening 과정을 거쳐 샘플 생성. 출처: 원 논문 Figure 1_
@@ -81,10 +81,6 @@ graph TD
     D --> K
     K --> L[Generated Sample X̂]
     
-    style A fill:#e1f5fe
-    style B fill:#fff3e0
-    style G fill:#f3e5f5
-    style L fill:#e8f5e9
 ```
 
 ```python
@@ -511,6 +507,18 @@ _Figure 2: ETTh1 데이터셋에서 Diffusion-TS, NsDiff, FlowTS와 CW 버전 �
 - Adaptive window size for sliding-window covariance
 - Extension to irregular time series and multimodal forecasting
 
+## Limitations
+
+1. **충분조건이 항상 만족되지 않음**: Theorem 1의 조건(정확한 μ̂/Σ̂ 추정, 최소 고유값 > 0)이 만족되지 않으면 오히려 성능이 저하될 수 있다. Signal magnitude ‖μ‖²가 작은 데이터셋에서는 conditional whitening의 이점이 줄어든다.
+2. **Sliding-window covariance 근사**: 진짜 조건부 공분산 대신 sliding-window covariance를 사용하므로, long-range temporal correlation을 완전히 포착하지 못한다.
+3. **Two-stage training의 비최적성**: JMCE를 먼저 학습하고 freeze한 후 생성 모델을 학습하므로, end-to-end joint optimization 대비 suboptimal할 수 있다.
+4. **계산 비용 증가**: CW-Diff는 Σ̂^(-0.5) 계산을 위해 eigen-decomposition이 필요하여 O(d³T_f) 추가 비용이 발생한다. CW-Flow가 이를 완화하지만 여전히 vanilla 모델보다 느리다.
+5. **변수 차원 제한**: 변수 수 d가 클 때 d×d 공분산 행렬 추정이 불안정해질 수 있으며, 고차원 시계열에 대한 확장성이 검증되지 않았다.
+
+## Conclusion
+
+CW-Gen은 시계열 확률적 예측에서 diffusion/flow matching 모델의 terminal distribution을 조건부 통계량으로 parameterize하는 체계적인 방법을 제시했다. Theorem 1을 통해 conditional whitening이 언제 효과적인지에 대한 이론적 근거를 마련했고, JMCE라는 novel estimator로 조건부 평균과 공분산을 안정적으로 추정했다. 5개 데이터셋, 6개 baseline에서 80% 이상의 win rate는 이 접근법의 일반성을 보여준다. 특히 non-stationarity와 heteroscedasticity가 심한 시계열에서 가장 큰 개선을 보이며, informative prior를 활용한 생성 모델링의 가능성을 열었다.
+
 ## TL;DR
 
 **CW-Gen**은 diffusion/flow matching 모델에 **conditional whitening**을 도입해 시계열 확률적 예측 성능을 향상시키는 프레임워크다. 핵심은 JMCE로 조건부 평균과 공분산을 정확하게 추정하고, 데이터를 whitened space로 변환해 non-stationarity, heteroscedasticity, inter-variable correlation을 완화하는 것이다. 이론적으로 KL divergence 감소를 보장하는 충분조건을 제시하며, 5개 데이터셋에서 6개 모델에 적용해 80% 이상의 케이스에서 성능 향상을 달성했다. CW-Diff(SDE 기반)와 CW-Flow(ODE 기반) 두 가지 instantiation을 제공하며, 후자가 더 효율적이다.
@@ -523,6 +531,8 @@ _Figure 2: ETTh1 데이터셋에서 Diffusion-TS, NsDiff, FlowTS와 CW 버전 �
 | **Authors** | Yanfeng Yang et al. (The Institute of Statistical Mathematics & East China Normal University) |
 | **Venue** | arXiv preprint |
 | **Submitted** | 2025-09 |
+| **Published** | arXiv preprint, September 2025 |
+| **Link** | [arXiv:2509.20928](https://arxiv.org/abs/2509.20928) |
 | **Paper** | [arXiv:2509.20928](https://arxiv.org/abs/2509.20928) |
 | **Code** | [GitHub](https://github.com/Yanfeng-Yang-0316/Conditionally_whitened_generative_models) |
 

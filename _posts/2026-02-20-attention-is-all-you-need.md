@@ -55,20 +55,17 @@ _Figure 1: Transformer 모델 아키텍처. 왼쪽이 Encoder, 오른쪽이 Deco
 graph TD
     A[Input Sequence] --> B[Input Embedding]
     B --> C[+ Positional Encoding]
-    C --> D[Encoder Stack<br/>N=6 layers]
+    C --> D["Encoder Stack / N=6 layers"]
     D --> E[Encoder Output]
     
-    F[Output Sequence<br/>shifted right] --> G[Output Embedding]
+    F["Output Sequence / shifted right"] --> G[Output Embedding]
     G --> H[+ Positional Encoding]
-    H --> I[Decoder Stack<br/>N=6 layers]
+    H --> I["Decoder Stack / N=6 layers"]
     
     E --> I
     I --> J[Linear + Softmax]
     J --> K[Output Probabilities]
     
-    style D fill:#e1f5fe
-    style I fill:#fff3e0
-    style K fill:#e8f5e9
 ```
 
 **전체 파이프라인**:
@@ -526,6 +523,18 @@ Self-attention은 단순히 성능만 좋은 것이 아니라, **해석 가능�
 > 논문에서 언급한 "향후 연구 방향"은 실제로 Vision Transformer (ViT), Sparse Transformer, Non-autoregressive Transformer 등으로 이어졌다.
 {: .prompt-info }
 
+## Limitations
+
+1. **Quadratic complexity**: Self-attention의 O(n²) 시간/공간 복잡도로 인해 긴 시퀀스(수천 토큰 이상) 처리가 비효율적이다.
+2. **위치 정보의 한계**: Sinusoidal positional encoding은 학습된 것이 아니며, 상대적 위치 관계를 명시적으로 포착하지 못한다. 이후 연구(RoPE, ALiBi 등)에서 개선되었다.
+3. **Inductive bias 부재**: CNN의 local connectivity나 RNN의 sequential bias 같은 구조적 귀납 편향이 없어, 작은 데이터셋에서는 과적합 위험이 있다.
+4. **Autoregressive decoding의 비효율성**: Inference 시 토큰을 하나씩 생성해야 하므로, 병렬화의 이점이 decoding 단계에서는 사라진다.
+5. **Machine translation에 특화**: 원래 논문은 번역 task에 집중했으며, 다른 modality(이미지, 오디오 등)로의 확장은 후속 연구에서 이루어졌다.
+
+## Conclusion
+
+"Attention Is All You Need"는 deep learning 역사에서 가장 영향력 있는 논문 중 하나다. RNN/CNN 없이 attention mechanism만으로 sequence-to-sequence 학습이 가능함을 증명했으며, 이는 이후 BERT, GPT, Vision Transformer 등으로 이어지는 foundation model 혁명의 시발점이 되었다. Scaled dot-product attention, multi-head attention, positional encoding이라는 세 가지 핵심 component는 거의 변형 없이 현재까지 사용되고 있다. WMT 2014에서 BLEU 41.0으로 SOTA를 달성한 것을 넘어, 모든 AI 분야의 기본 아키텍처가 되었다는 점에서 그 기여는 측정하기 어려울 정도로 크다.
+
 ## TL;DR
 
 - **Transformer**: Recurrence와 convolution을 완전히 제거하고 **오직 attention mechanism**만으로 sequence transduction을 수행하는 새로운 아키텍처
@@ -541,6 +550,8 @@ Self-attention은 단순히 성능만 좋은 것이 아니라, **해석 가능�
 | **Venue** | NeurIPS 2017 |
 | **Submitted** | 2017-06-12 (arXiv v1) |
 | **Paper** | [arXiv:1706.03762](https://arxiv.org/abs/1706.03762) |
+| **Published** | NeurIPS 2017 |
+| **Link** | [arXiv:1706.03762](https://arxiv.org/abs/1706.03762) |
 | **Code** | [tensor2tensor](https://github.com/tensorflow/tensor2tensor) (TensorFlow), [fairseq](https://github.com/pytorch/fairseq) (PyTorch) |
 
 ---

@@ -58,31 +58,27 @@ AlphaFold의 전체 파이프라인은 크게 세 단계로 나뉜다: (1) MSA �
 
 ```mermaid
 graph TD
-    A[Amino acid sequence S] --> B[MSA construction<br/>HHblits + PSI-BLAST]
-    B --> C[Feature extraction<br/>Profile, Covariation, Potts]
-    C --> D[Deep ResNet<br/>220 residual blocks]
+    A[Amino acid sequence S] --> B["MSA construction / HHblits + PSI-BLAST"]
+    B --> C["Feature extraction / Profile, Covariation, Potts"]
+    C --> D["Deep ResNet / 220 residual blocks"]
     D --> E[Distogram P_d_ij|S, MSA]
-    D --> F[Torsion distributions<br/>P_φ_i,ψ_i|S, MSA]
+    D --> F["Torsion distributions / P_φ_i,ψ_i|S, MSA"]
     E --> G[Distance potential V_distance]
     F --> H[Torsion potential V_torsion]
-    G --> I[Combined potential<br/>V_total = V_dist + V_torsion + V_vdW]
+    G --> I["Combined potential / V_total = V_dist + V_torsion + V_vdW"]
     H --> I
-    I --> J[Gradient descent<br/>L-BFGS on φ,ψ]
+    I --> J["Gradient descent / L-BFGS on φ,ψ"]
     J --> K[Realized structure x = Gφ,ψ]
     K --> L[Repeat with noisy restarts]
     L --> M[Select lowest-potential structure]
     
-    style A fill:#e1f5fe
-    style D fill:#fff9c4
-    style I fill:#ffccbc
-    style M fill:#e8f5e9
 ```
 
 ### 4.1 Overall Pipeline
 
 전체 시스템의 흐름을 pseudocode로 나타내면 다음과 같다.
 
-<details>
+<details markdown="1">
 <summary>📝 Overall AlphaFold Pipeline Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -169,7 +165,7 @@ Distogram을 예측하는 neural network는 **220 residual blocks로 구성된 d
 
 각 residual block은 다음 구조를 갖는다:
 
-<details>
+<details markdown="1">
 <summary>📝 Residual Block Architecture (클릭하여 펼치기)</summary>
 
 ```python
@@ -335,7 +331,7 @@ $$
 
 Potential이 미분 가능하므로, backbone torsion angles $(\phi, \psi)$를 변수로 gradient descent를 적용한다.
 
-<details>
+<details markdown="1">
 <summary>📝 Gradient Descent Structure Realization (클릭하여 펼치기)</summary>
 
 ```python
@@ -574,6 +570,18 @@ Gradient descent는 local minima에 빠질 수 있다. Noisy restart로 어느 �
 
 저자들은 "we hope that the methods we have described can be developed further and applied to benefit all areas of protein science"라며 향후 발전 방향을 제시했다. 이는 2년 후 AlphaFold 2로 이어진다.
 
+## Limitations
+
+1. **MSA 의존성**: 유사 서열이 적은 단백질(orphan protein)에서는 MSA quality가 떨어져 정확도가 급격히 감소한다.
+2. **단일 도메인 제한**: Multi-domain protein의 domain 간 상대적 배치를 정확히 예측하지 못한다. 각 domain을 독립적으로 예측한 후 조합하는 방식의 한계가 있다.
+3. **Gradient descent 최적화의 local minima**: L-BFGS로 에너지 landscape를 탐색하므로, 초기값에 따라 local minimum에 빠질 수 있다. 여러 random seed로 반복 최적화가 필요하다.
+4. **Distogram 해상도 한계**: 64 bin으로 이산화된 거리 분포는 미세한 원자 간 거리 차이를 포착하기 어렵고, backbone torsion angle만 예측하므로 side-chain 배치가 부정확하다.
+5. **End-to-end가 아님**: Feature extraction → distance prediction → structure optimization이 분리되어 있어, 전체 파이프라인의 joint optimization이 불가능하다.
+
+## Conclusion
+
+AlphaFold 1은 단백질 구조 예측의 패러다임을 fragment assembly에서 distance distribution prediction으로 전환시킨 획기적인 연구다. Distogram이라는 풍부한 inter-residue distance distribution 표현과, 이를 differentiable한 potential로 변환하여 gradient descent로 구조를 최적화하는 접근법은 CASP13에서 1위를 차지했다. Deep ResNet 기반의 distance prediction과 torsion prediction의 조합은 이후 AlphaFold 2의 end-to-end 구조 예측으로 가는 핵심 발판이 되었다.
+
 ## TL;DR
 
 - **문제**: Fragment assembly는 느리고, contact prediction은 binary 정보만 제공하여 정확한 구조 예측이 어려움
@@ -588,6 +596,7 @@ Gradient descent는 local minima에 빠질 수 있다. Noisy restart로 어느 �
 | **Authors** | Andrew W. Senior et al. (DeepMind) |
 | **Venue** | Nature, Volume 577 (2020) |
 | **Published** | 2020-01-15 |
+| **Link** | [doi:10.1038/s41586-019-1923-7](https://doi.org/10.1038/s41586-019-1923-7) |
 | **Paper** | [Nature](https://www.nature.com/articles/s41586-019-1923-7) |
 | **Code** | [GitHub](https://github.com/deepmind/deepmind-research/tree/master/alphafold_casp13) |
 

@@ -87,10 +87,6 @@ graph TD
     I --> J[Gaussian KDE LDR Classifier]
     J --> K[OOD Score]
     
-    style A fill:#e1f5fe
-    style K fill:#e8f5e9
-    style F fill:#fff3e0
-    style I fill:#f3e5f5
 ```
 
 전체 파이프라인은 크게 4단계로 나뉜다:
@@ -632,6 +628,18 @@ Antibody-antigen, RNA-protein interaction, material structure 등.
 - Benchmark dataset의 generalization claim을 검증하는 도구
 - Diffusion model이 density estimator + OOD detector 역할을 동시에 수행
 
+## Limitations
+
+1. **Complexity bias의 완전한 해결 불가**: 18개 trajectory feature를 추가해도, 극단적으로 단순한 OOD 샘플에 대한 false negative가 완전히 제거되지 않는다.
+2. **PF-ODE integration 비용**: 각 샘플마다 전체 ODE trajectory를 적분해야 하므로, inference 시간이 단순 forward pass 대비 수십~수백 배 느리다. 대규모 스크리닝에는 비실용적일 수 있다.
+3. **Gaussian KDE의 확장성**: 19차원 feature space에서 Gaussian KDE는 차원의 저주에 취약하며, 더 많은 feature를 추가하면 성능이 저하될 수 있다.
+4. **ID 데이터 의존성**: Unsupervised이지만, KDE fitting을 위해 ID 데이터의 trajectory feature 분포가 필요하다. ID 분포 자체가 multimodal이면 단일 Gaussian KDE가 부적절할 수 있다.
+5. **단일 diffusion model 의존**: OOD score가 학습된 diffusion model의 quality에 직접 의존하므로, 모델 학습이 불충분하면 ID 샘플도 OOD로 오판할 수 있다.
+
+## Conclusion
+
+이 논문은 3D protein-ligand complex에 특화된 최초의 unsupervised OOD detection 프레임워크를 제시했다. PF-ODE trajectory의 기하학적 특성(path efficiency, tortuosity, Lipschitz stability 등)이 ID와 OOD 샘플을 구분하는 강력한 신호임을 보였다. 특히 log-likelihood만으로는 해결할 수 없는 complexity bias를 trajectory feature로 극복한 점이 핵심 기여다. Binding affinity prediction의 신뢰도를 사전에 평가할 수 있다는 실용적 가치가 크며, drug discovery 파이프라인에서 AI 모델의 안전한 적용을 위한 중요한 도구가 될 수 있다.
+
 ## TL;DR
 
 - **문제**: 3D protein-ligand complex에서 OOD detection은 어렵다. Likelihood-based 방법은 complexity bias에 취약.
@@ -647,6 +655,8 @@ Antibody-antigen, RNA-protein interaction, material structure 등.
 | **Venue** | arXiv preprint |
 | **Submitted** | 2024-12-24 |
 | **Paper** | [arXiv:2512.18454](https://arxiv.org/abs/2512.18454) |
+| **Published** | arXiv preprint, December 2025 |
+| **Link** | [arXiv:2512.18454](https://arxiv.org/abs/2512.18454) |
 | **Code** | 미공개 |
 
 ---

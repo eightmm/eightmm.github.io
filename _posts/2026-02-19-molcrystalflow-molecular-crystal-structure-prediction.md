@@ -11,6 +11,8 @@ image:
   alt: "MolCrystalFlow framework overview"
 ---
 
+## Hook
+
 신약을 개발할 때, 같은 분자라도 어떻게 쌓이느냐에 따라 약효가 완전히 달라진다. 이를 **polymorphism**(다형성)이라 부른다. 예를 들어 HIV 치료제 Ritonavir는 Form A로 출시되었다가, 몇 년 후 갑자기 Form B가 나타나면서 용해도가 급격히 떨어져 약효를 잃었다. 화학적으로는 동일한 분자이지만, 결정 구조가 달라지면서 제품 리콜과 막대한 재설계 비용이 발생했다. 이처럼 **분자 결정 구조 예측(molecular crystal structure prediction, CSP)**은 신약 개발의 핵심 과제다. 그런데 기존 방법들은 수백만 개의 구조를 무작위로 생성한 뒤 에너지를 계산해서 순위를 매기는 방식이라 엄청난 계산 비용이 든다. MolCrystalFlow는 생성 모델로 이 문제를 해결한다.
 
 ## Problem
@@ -63,7 +65,7 @@ Flow matching은 간단한 base distribution(예: Gaussian)에서 시작해 데�
 > MolCrystalFlow는 분자 결정 생성 문제를 **"분자 내부 복잡도"와 "분자 간 배치"로 분리**하고, 각 모달리티(위치, 회전, 격자)를 자연스러운 manifold 위에서 동시에 학습한다.
 {: .prompt-tip }
 
-## How it works
+## How It Works
 
 ### 4.1 Overview
 
@@ -75,10 +77,10 @@ MolCrystalFlow는 두 단계로 작동한다:
 
 ```mermaid
 graph TD
-    A[Molecular Graph] --> B[Conformer Generation<br/>RDKit/OMEGA]
-    B --> C[Building Block Embedding<br/>EGNN]
-    C --> D[Augment with Auxiliary Features<br/>18 molecular descriptors]
-    D --> E[Joint Flow Matching<br/>MolCrystalNet]
+    A[Molecular Graph] --> B["Conformer Generation / RDKit/OMEGA"]
+    B --> C["Building Block Embedding / EGNN"]
+    C --> D["Augment with Auxiliary Features / 18 molecular descriptors"]
+    D --> E["Joint Flow Matching / MolCrystalNet"]
     E --> F1[Lattice Matrix L]
     E --> F2[Fractional Coordinates F]
     E --> F3[Rotational Orientations R]
@@ -88,9 +90,6 @@ graph TD
     G --> H[Optimization with u-MLIP]
     H --> I[DFT Energy Ranking]
     
-    style A fill:#e1f5fe
-    style G fill:#e8f5e9
-    style I fill:#fff9c4
 ```
 
 ### 4.2 Representation
@@ -553,6 +552,18 @@ MolCrystalFlow는 분자 결정 구조 예측을 위한 첫 번째 **periodic E(
 > MolCrystalFlow는 분자 결정 생성 분야의 중요한 첫걸음이지만, 에너지 정확도, 유연성, space group 활용 면에서 개선 여지가 많다. 특히 **생성 속도와 물리적 타당성**을 동시에 만족하는 점에서 실용적 가치가 크다.
 {: .prompt-info }
 
+## Limitations
+
+1. **에너지 정보 미활용**: 구조 데이터만으로 학습하며 에너지를 직접 최적화하지 않아, 생성된 구조가 thermodynamically stable함을 보장하지 못한다.
+2. **Rigid-body 가정**: 분자 내부 형태(conformation)를 고정하므로, conformational polymorphism(같은 분자의 다른 내부 형태로 인한 다형성)을 포착할 수 없다.
+3. **Space group 제약 미사용**: 230개 crystallographic space group의 대칭 제약을 활용하지 않아, 탐색 공간이 불필요하게 넓고 물리적으로 불가능한 구조가 생성될 수 있다.
+4. **Strict tolerance에서의 한계**: 느슨한 기준에서는 우수하지만, 엄격한 구조 일치 기준(stol < 0.3)에서는 rule-based 방법(Genarris-3 optimized)에 뒤처진다.
+5. **단일 conformer 입력**: 하나의 분자 conformer만 입력으로 받으므로, 분자의 conformational flexibility에 대한 정보가 제한적이다.
+
+## Conclusion
+
+MolCrystalFlow는 분자 결정 구조 예측을 위한 최초의 periodic E(3)-invariant flow matching 모델이다. Rigid-body 가정으로 분자 내부/외부 복잡도를 분리하고, 격자·위치·회전 각각을 자연스러운 Riemannian manifold 위에서 동시에 생성한다. MOFFlow 대비 5배 이상의 구조 일치율과 3.86%의 lattice volume RMAD를 달성했으며, u-MLIP + DFT 파이프라인과 결합하여 CSP blind test에서 2/3 target의 다형체를 성공적으로 발견했다. Generate-and-rank 패러다임에서 학습 기반 생성으로의 전환을 이끄는 중요한 첫걸음이다.
+
 ## TL;DR
 
 - **문제**: 분자 결정 구조 예측은 거대한 검색 공간과 다형성 때문에 어렵다. 기존 방법은 수백만 구조를 무작위 생성 후 ranking.
@@ -568,6 +579,8 @@ MolCrystalFlow는 분자 결정 구조 예측을 위한 첫 번째 **periodic E(
 | **Authors** | Chuanming Zeng et al. (University of Florida, NYU, University of Minnesota) |
 | **Venue** | arXiv preprint |
 | **Submitted** | 2026-02-19 |
+| **Published** | arXiv preprint, February 2026 |
+| **Link** | [arXiv:2602.16020](https://arxiv.org/abs/2602.16020) |
 | **Paper** | [arXiv:2602.16020](https://arxiv.org/abs/2602.16020) |
 | **Code** | 미공개 |
 

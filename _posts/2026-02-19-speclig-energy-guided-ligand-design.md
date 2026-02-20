@@ -38,7 +38,7 @@ Block은 amino acid residue 또는 predefined molecular fragment를 의미한다
 
 이를 구현하기 위해 SpecLig는 hierarchical SE(3)-equivariant VAE와 energy-guided latent diffusion model을 결합한다. Atom-level encoder는 local chemistry와 bond order를 포착하고, block-level encoder는 global topology를 reduced cost로 표현한다. Latent diffusion 과정에서 chemical prior를 additive guidance로 주입하여, pocket-complementary fragment combination을 우선적으로 생성한다.
 
-## How it works
+## How It Works
 
 ### Overview
 
@@ -46,11 +46,11 @@ SpecLig는 크게 세 가지 구성요소로 나뉜다: (1) Hierarchical SE(3)-e
 
 ```mermaid
 graph TD
-    A[Protein-Ligand Complex<br/>Block Graph G] --> B[Atom-level Encoder ℰξ,1]
+    A["Protein-Ligand Complex / Block Graph G"] --> B[Atom-level Encoder ℰξ,1]
     B --> C[Block-level Encoder ℰξ,2]
     C --> D[Latent Representation Z]
     
-    D --> E[Energy-Guided<br/>Latent Diffusion]
+    D --> E["Energy-Guided / Latent Diffusion"]
     
     F[Block-Block Frequency Matrix F] --> G[Statistical Energy E]
     G --> E
@@ -60,12 +60,8 @@ graph TD
     H --> I[Block-level Decoder 𝒟ϕ,2]
     I --> J[Atom-level Decoder 𝒟ϕ,1]
     
-    J --> K[Generated Ligand<br/>Block Types + 3D Coords]
+    J --> K["Generated Ligand / Block Types + 3D Coords"]
     
-    style A fill:#e1f5fe
-    style K fill:#e8f5e9
-    style E fill:#fff3e0
-    style G fill:#fce4ec
 ```
 
 전체 generation 과정은 다음과 같이 표현된다:
@@ -393,6 +389,18 @@ SpecLig는 hierarchical equivariant modeling과 block-wise chemical prior 통합
 - Experimental validation을 통한 in silico-in vitro correlation 검증
 - 다른 ligand modality로의 확장
 
+## Limitations
+
+1. **Small molecule에서의 제한적 개선**: Discrete chemical space의 combinatorial complexity로 인해, small molecule에서의 specificity 개선폭이 peptide 대비 작다.
+2. **Statistical energy의 bias**: Frequency matrix가 PDB의 기존 데이터 편향을 반영하므로, 새로운 protein family나 novel scaffold에 대한 guidance가 부정확할 수 있다.
+3. **Experimental validation 부재**: 모든 평가가 computational benchmark(docking score, predicted ΔG)에 의존하며, prospective wet-lab validation이 아직 수행되지 않았다.
+4. **Block vocabulary의 제한**: Predefined fragment vocabulary가 chemical space를 완전히 커버하지 못하며, vocabulary에 없는 fragment는 생성할 수 없다.
+5. **Guidance weight 튜닝**: Energy guidance의 strength(temperature, weight)가 수동으로 설정되며, target에 따른 adaptive tuning 메커니즘이 없다.
+
+## Conclusion
+
+SpecLig는 structure-based drug design에서 오랫동안 무시되어 온 specificity 문제를 정면으로 다룬 모델이다. Evolutionary binding preference를 statistical energy로 변환하고, 이를 hierarchical SE(3)-equivariant VAE의 latent diffusion에 주입함으로써, high-affinity이면서 target-specific한 리간드 생성을 달성했다. Peptide design에서 Ratio_pair 75.43%, ΔG -1.92라는 결과는 기존 모델들이 도달하지 못한 수준이며, small molecule과 peptide를 unified framework로 처리할 수 있다는 점에서 범용성이 높다. Off-target binding이 drug failure의 주요 원인인 만큼, specificity-aware design의 중요성을 환기시킨 의미 있는 연구다.
+
 ## TL;DR
 
 - **Problem**: 기존 SBDD 모델은 affinity는 높이지만 off-target binding을 유발하는 promiscuous binder를 생성
@@ -407,6 +415,8 @@ SpecLig는 hierarchical equivariant modeling과 block-wise chemical prior 통합
 | **Authors** | Chunqiu Zhang et al. (Tsinghua University, Beijing National Research Center for Information Science and Technology) |
 | **Venue** | bioRxiv preprint |
 | **Submitted** | 2025-11-06 |
+| **Published** | bioRxiv preprint, November 2025 |
+| **Link** | [bioRxiv:2025.11.06.687093](https://www.biorxiv.org/content/10.1101/2025.11.06.687093v1) |
 | **Paper** | [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.11.06.687093v1) |
 | **Code** | [GitHub](https://github.com/CQ-zhang-2016/SpecLig) |
 

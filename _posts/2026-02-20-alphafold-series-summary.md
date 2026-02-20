@@ -11,7 +11,11 @@ image:
   alt: "AlphaFold 진화: 거리 예측에서 Diffusion 기반 범용 구조 예측까지"
 ---
 
-## AlphaFold가 단백질 구조 예측을 바꾼 방법
+## Hook
+
+AlphaFold 시리즈는 단백질 구조 예측의 패러다임을 세 번 바꿨다. Fragment assembly에서 distance prediction으로, MSA 기반 end-to-end 예측으로, 그리고 모든 생체분자를 아우르는 diffusion 기반 통합 모델로. 이 글은 그 진화의 궤적을 추적한다.
+
+### AlphaFold가 단백질 구조 예측을 바꾼 방법
 
 2018년, AlphaFold는 CASP13에서 등장해 단백질 구조 예측 커뮤니티를 놀라게 했다. 2020년 CASP14에서 AlphaFold 2는 experimental accuracy에 근접한 예측으로 "단백질 접힘 문제 해결"을 선언했다. 그리고 2024년, AlphaFold 3는 단백질을 넘어 nucleic acid, ligand, ion, modified residue까지 **모든 생체분자의 상호작용**을 하나의 통합 프레임워크로 예측하기 시작했다.
 
@@ -19,7 +23,9 @@ image:
 
 ---
 
-## Problem: Fragment Assembly의 한계
+## Problem
+
+### Fragment Assembly의 한계
 
 단백질 구조 예측의 전통적 접근법은 fragment assembly였다. PDB에서 추출한 통계적 potential을 사용해 simulated annealing으로 구조를 샘플링한다. 하지만 두 가지 근본적 한계가 있었다:
 
@@ -30,7 +36,9 @@ CASP13 이전까지 contact prediction이 발전했지만, 이를 structure pred
 
 ---
 
-## Key Idea: AlphaFold 1 — Distance Prediction as a Learned Potential
+## Key Idea
+
+### AlphaFold 1 — Distance Prediction as a Learned Potential
 
 AlphaFold 1의 핵심 아이디어는 간단하다: **neural network로 residue 간 거리 분포를 예측하고, 그것을 potential로 삼아 gradient descent로 구조를 최적화**한다.
 
@@ -44,7 +52,7 @@ $$
 
 여기에 torsion potential $V_{\text{torsion}}$과 Rosetta의 van der Waals term을 더해 L-BFGS로 최적화한다.
 
-<details>
+<details markdown="1">
 <summary>📝 AlphaFold 1 Architecture Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -84,7 +92,9 @@ CASP13에서 AlphaFold 1은 FM category에서 summed z-score 52.8로 2위(36.6)�
 
 ---
 
-## How It Works: 3세대 아키텍처 진화
+## How It Works
+
+### 3세대 아키텍처 진화
 
 ### AlphaFold 2: End-to-End Structure Prediction with Evoformer
 
@@ -100,7 +110,7 @@ $$
 \text{FAPE} = \frac{1}{N_{\text{frames}} N_{\text{atoms}}} \sum_{k,i} \text{clamp}(\|x_i - R_k (x_i^{\text{true}} - t_k^{\text{true}}) - t_k\|)
 $$
 
-<details>
+<details markdown="1">
 <summary>📝 AlphaFold 2 Architecture Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -162,7 +172,7 @@ $$
 
 Inference는 random noise에서 시작해 iterative denoising으로 structure를 생성한다. Diffusion의 multiscale nature 덕분에 — low noise level에서 local stereochemistry, high noise level에서 global fold — stereochemical violation loss 없이도 화학적으로 타당한 구조를 만든다.
 
-<details>
+<details markdown="1">
 <summary>📝 AlphaFold 3 Architecture Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -214,7 +224,24 @@ class AlphaFold3:
 
 ---
 
-## Results: CASP13, 14, 15를 가로지르는 성능 진화
+### AlphaFold 진화 비교
+
+![AlphaFold Evolution](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-024-07487-w/MediaObjects/41586_2024_7487_Fig1_HTML.png)
+_Figure: AlphaFold 3 아키텍처 개요. 출처: Abramson et al. Nature 2024_
+
+| 항목 | **AlphaFold 1** | **AlphaFold 2** | **AlphaFold 3** |
+|---|---|---|---|
+| **입력 형태** | Sequence, MSA, covariation features | Sequence, MSA, template | Sequence, MSA, template, ligand SMILES |
+| **핵심 아키텍처** | 220-block ResNet (distogram prediction) | 48-block Evoformer (MSA + pair) | 4-block MSA + 48-block Pairformer |
+| **MSA 처리** | Input feature로만 사용 | Evoformer에서 deep processing | Shallow processing (4 blocks) 후 버림 |
+| **구조 모듈** | Gradient descent on torsion angles | Structure module (IPA, residue gas) | Diffusion module (raw atom coordinates) |
+| **출력** | Distance distribution → torsion angles | 3D coordinates (backbone + side chain) | 3D coordinates (all heavy atoms) |
+| **Loss** | Distance potential + torsion + Rosetta | FAPE (frame-aligned point error) | Diffusion denoising + FAPE |
+| **대상 분자** | Protein only | Protein, protein–protein complex | Protein, nucleic acid, ligand, ion, modifications |
+
+## Results
+
+### CASP13, 14, 15를 가로지르는 성능 진화
 
 ### CASP13 (AlphaFold 1)
 - **FM category**: Summed z-score 52.8 (2위는 36.6)
@@ -239,34 +266,13 @@ class AlphaFold3:
 
 ---
 
-## Discussion: 진화의 방향성과 남은 과제
+## Discussion
+
+### 진화의 방향성과 남은 과제
 
 ---
 
-## AlphaFold 진화 비교
-
-![AlphaFold Evolution](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-024-07487-w/MediaObjects/41586_2024_7487_Fig1_HTML.png)
-_Figure: AlphaFold 3 아키텍처 개요. 출처: Abramson et al. Nature 2024_
-
-| 항목 | **AlphaFold 1** | **AlphaFold 2** | **AlphaFold 3** |
-|---|---|---|---|
-| **입력 형태** | Sequence, MSA, covariation features | Sequence, MSA, template | Sequence, MSA, template, ligand SMILES |
-| **핵심 아키텍처** | 220-block ResNet (distogram prediction) | 48-block Evoformer (MSA + pair) | 4-block MSA + 48-block Pairformer |
-| **MSA 처리** | Input feature로만 사용 | Evoformer에서 deep processing | Shallow processing (4 blocks) 후 버림 |
-| **구조 모듈** | Gradient descent on torsion angles | Structure module (IPA, residue gas) | Diffusion module (raw atom coordinates) |
-| **출력** | Distance distribution → torsion angles | 3D coordinates (backbone + side chain) | 3D coordinates (all heavy atoms) |
-| **Loss** | Distance potential + torsion + Rosetta | FAPE (frame-aligned point error) | Diffusion denoising + FAPE |
-| **CASP 성적** | CASP13 FM z-score 52.8 (1위) | CASP14 median r.m.s.d. 0.96 Å (압도적 1위) | CASP15 RNA competitive (no full assessment) |
-| **대상 분자** | Protein only | Protein, protein–protein complex | Protein, nucleic acid, ligand, ion, modifications |
-| **주요 한계** | Domain segmentation 필요, TBM 대비 낮은 정확도 | Protein만 가능, MSA depth 의존 | Chirality violation, hallucination, antibody 예측 어려움 |
-| **Inference 속도** | Slow (수천 번 gradient descent) | GPU minutes (e.g., 1.1 min for 384 residues) | GPU minutes (0.6–2.1 h depending on size) |
-
-> 각 세대는 이전 한계를 정면 돌파했다. AF1은 distance를 learned potential로 만들었고, AF2는 end-to-end로 통합했으며, AF3는 diffusion으로 모든 분자를 다룬다.
-{: .prompt-tip }
-
----
-
-## 아키텍처 진화: 3세대를 하나의 다이어그램으로
+### 아키텍처 진화: 3세대를 하나의 다이어그램으로
 
 ```mermaid
 graph TD
@@ -300,12 +306,6 @@ graph TD
     AF1 -.->|"End-to-End Learning"| AF2
     AF2 -.->|"Diffusion + Universal"| AF3
     
-    style A1 fill:#e1f5fe
-    style A2 fill:#e1f5fe
-    style A3 fill:#e1f5fe
-    style F1 fill:#e8f5e9
-    style G2 fill:#e8f5e9
-    style H3 fill:#e8f5e9
 ```
 
 ---
@@ -358,13 +358,25 @@ AlphaFold 3가 생체분자 상호작용 예측의 새 지평을 열었지만, �
 
 ---
 
+## Limitations
+
+1. **MSA 의존성의 지속**: AF3에서 간소화되었지만 여전히 MSA 기반이며, single-sequence prediction은 정확도가 크게 떨어진다.
+2. **Dynamic structure 미예측**: 세 버전 모두 static structure만 출력하며, conformational ensemble이나 allosteric motion을 포착하지 못한다.
+3. **데이터 편향의 누적**: PDB의 crystallizable protein 편향이 모든 세대에 걸쳐 반영되어, membrane protein이나 intrinsically disordered protein에서 약점을 보인다.
+4. **AF3의 hallucination**: Diffusion 기반 생성의 고질적 문제로, 물리적으로 불가능한 구조가 생성될 수 있다.
+5. **라이선스의 점진적 폐쇄**: AF2는 오픈소스였으나, AF3는 상업적 사용 제한으로 연구 커뮤니티의 접근성이 줄었다.
+
+## Conclusion
+
+AlphaFold 시리즈는 단백질 구조 예측의 세 번의 패러다임 전환을 이끌었다. AF1의 distogram + gradient descent, AF2의 Evoformer + Structure Module, AF3의 Pairformer + Diffusion으로 이어지는 진화는 각각 CASP13, 14, 15에서의 압도적 성과로 검증되었다. 핵심 전환점은 intermediate representation의 제거(AF1→AF2), equivariance의 포기와 diffusion 도입(AF2→AF3), MSA processing의 간소화(AF2→AF3)이다. 이 시리즈는 구조 생물학의 landscape를 근본적으로 변화시켰으며, 단백질을 넘어 모든 생체분자 상호작용 예측으로의 확장 가능성을 보여주었다.
+
 ## TL;DR
 
 AlphaFold 1은 distance를 learned potential로, AlphaFold 2는 end-to-end structure prediction으로, AlphaFold 3는 diffusion 기반 universal prediction으로 진화했다. 세 세대를 관통하는 핵심은 **inductive bias의 제거와 data-driven learning의 강화**다. Equivariance를 버리고, MSA processing을 줄이고, ligand까지 다루면서도 정확도는 계속 올라갔다. 이제 단백질 구조 예측은 "solved problem"이 아니라 "생체분자 상호작용 예측의 시작점"이다.
 
 ---
 
-## 시리즈 상세 리뷰
+### 시리즈 상세 리뷰
 
 각 AlphaFold 버전의 상세 분석은 아래 포스트를 참고:
 
@@ -382,6 +394,8 @@ AlphaFold 1은 distance를 learned potential로, AlphaFold 2는 end-to-end struc
 | **Authors** | Senior et al. (DeepMind) | Jumper et al. (DeepMind) | Abramson et al. (Google DeepMind) |
 | **Venue** | Nature (2020) | Nature (2021) | Nature (2024) |
 | **Paper** | [Nature](https://www.nature.com/articles/s41586-019-1923-7) | [Nature](https://www.nature.com/articles/s41586-021-03819-2) | [Nature](https://www.nature.com/articles/s41586-024-07487-w) |
+| **Published** | Nature 2020 | Nature 2021 | Nature 2024 |
+| **Link** | [doi:10.1038/s41586-019-1923-7](https://doi.org/10.1038/s41586-019-1923-7) | [doi:10.1038/s41586-021-03819-2](https://doi.org/10.1038/s41586-021-03819-2) | [doi:10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w) |
 | **Code** | [GitHub](https://github.com/deepmind/deepmind-research/tree/master/alphafold_casp13) | [GitHub](https://github.com/deepmind/alphafold) | 미공개 (AlphaFold Server만 제공) |
 
 ---

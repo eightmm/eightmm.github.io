@@ -47,7 +47,7 @@ FAPE는 예측된 원자 좌표를 **각 residue의 local frame에서** 평가�
 > AlphaFold 2는 물리 법칙을 명시적으로 코딩하지 않고도, 수소 결합이나 side chain packing 같은 상호작용을 데이터로부터 학습한다.
 {: .prompt-tip }
 
-## How it works
+## How It Works
 
 ### 4.1 Overview
 
@@ -55,29 +55,25 @@ AlphaFold 2는 크게 두 단계로 구성된다: **Evoformer trunk**와 **Struc
 
 ```mermaid
 graph TD
-    A[Primary Sequence + MSA + Templates] --> B[MSA Representation <br/> Nseq × Nres]
-    A --> C[Pair Representation <br/> Nres × Nres]
+    A[Primary Sequence + MSA + Templates] --> B["MSA Representation  /  Nseq × Nres"]
+    A --> C["Pair Representation  /  Nres × Nres"]
     B --> D[Evoformer Block ×48]
     C --> D
     D --> E[Updated MSA]
     D --> F[Updated Pair]
     E --> G[Structure Module ×8]
     F --> G
-    G --> H[Residue Gas <br/> Nres rigid bodies]
+    G --> H["Residue Gas  /  Nres rigid bodies"]
     H --> I[IPA + Backbone Update]
     I --> J[3D Coordinates]
     J --> K[Side-chain Angles]
     J --> L[Per-residue Confidence pLDDT]
     
-    style A fill:#e1f5fe
-    style J fill:#e8f5e9
-    style D fill:#fff3e0
-    style G fill:#fce4ec
 ```
 
 전체 아키텍처는 다음과 같다:
 
-<details>
+<details markdown="1">
 <summary>📝 Overall Architecture Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -130,7 +126,7 @@ Evoformer block은 AlphaFold 2의 핵심으로, MSA와 pair representation을 **
 ![Evoformer block](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig3.png)
 _Figure 3: Evoformer block과 Structure module의 세부 구조. 출처: 원 논문_
 
-<details>
+<details markdown="1">
 <summary>📝 Evoformer Block Implementation (클릭하여 펼치기)</summary>
 
 ```python
@@ -223,7 +219,7 @@ $$
 
 Structure module은 **residue gas** 표현을 사용한다. 각 residue는 독립적인 SE(3) transformation $(R_i, t_i)$로 표현되며, peptide bond constraint는 무시된다. 이는 전역 루프 클로저(loop closure) 문제를 피하면서 모든 residue를 병렬로 정제할 수 있게 한다.
 
-<details>
+<details markdown="1">
 <summary>📝 Invariant Point Attention (IPA) Implementation (클릭하여 펼치기)</summary>
 
 ```python
@@ -322,7 +318,7 @@ $$
 
 이는 각 residue의 local frame에서 원자들이 정확하도록 강제하며, side chain의 orientation과 chirality를 보존한다.
 
-<details>
+<details markdown="1">
 <summary>📝 Training Loop Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -447,6 +443,18 @@ _Figure 5: (a) MSA depth가 정확도에 미치는 영향. (b) Intertwined homot
 
 **계산 효율성**: AlphaFold 2는 V100 GPU에서 384 residue 단백질을 **약 1분**에 예측한다 (ensembling 없이). 2,500 residue 단백질도 약 2시간이면 충분하다. 이는 기존 template-based method보다 훨씬 빠르며, proteome-scale 예측을 현실화한다.
 
+## Limitations
+
+1. **MSA 의존성 지속**: 깊은 MSA가 확보되지 않는 단백질(예: de novo designed proteins, orphan sequences)에서는 정확도가 크게 떨어진다.
+2. **단백질만 예측**: Ligand, nucleic acid, cofactor 등 non-protein 분자와의 상호작용을 예측하지 못한다.
+3. **Static structure만 예측**: 단백질의 conformational ensemble이나 dynamics를 포착하지 못하며, 단일 구조만 출력한다.
+4. **pLDDT의 불완전한 신뢰도**: pLDDT가 높아도 실제로 틀린 경우가 있으며, 특히 intrinsically disordered region에서 과신하는 경향이 있다.
+5. **훈련 데이터 편향**: PDB의 crystallizable protein 편향이 모델에 반영되어, membrane protein이나 대형 complex에서 성능이 상대적으로 낮다.
+
+## Conclusion
+
+AlphaFold 2는 단백질 구조 예측 문제를 사실상 해결한 것으로 평가받는다. Evoformer의 MSA-pair representation 상호작용, Structure Module의 SE(3)-equivariant coordinate generation, 그리고 iterative recycling의 조합으로 CASP14에서 GDT > 90의 성과를 달성했다. End-to-end 학습으로 feature engineering의 필요성을 제거하고, FAPE loss로 물리적으로 의미 있는 구조를 직접 학습한 것이 핵심이다. 200M+ 구조의 AlphaFold Protein Structure Database 공개는 구조 생물학 연구의 landscape를 근본적으로 변화시켰다.
+
 ## TL;DR
 
 - AlphaFold 2는 단백질 서열만으로 **원자 수준 정확도(~1Å)**의 3D 구조를 예측하는 최초의 AI 시스템
@@ -464,6 +472,8 @@ _Figure 5: (a) MSA depth가 정확도에 미치는 영향. (b) Intertwined homot
 | **Authors** | John Jumper, Richard Evans, Alexander Pritzel et al. (DeepMind) |
 | **Venue** | Nature, Vol. 596, August 2021 |
 | **Submitted** | 2021-07-15 (published 2021-08-02) |
+| **Published** | Nature, Vol. 596, August 2021 |
+| **Link** | [doi:10.1038/s41586-021-03819-2](https://doi.org/10.1038/s41586-021-03819-2) |
 | **Paper** | [Nature](https://www.nature.com/articles/s41586-021-03819-2) |
 | **Code** | [GitHub - AlphaFold](https://github.com/deepmind/alphafold) |
 
