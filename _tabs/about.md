@@ -13,7 +13,7 @@ AI와 Computational Biology를 연구하고 있습니다.
 ### Research Interests
 
 - Structure-Based Drug Design (SBDD)
-- Protein-Ligand Binding Affinity Prediction
+- Protein-Ligand Interaction
 - Molecular Generation & Optimization
 - Graph Neural Networks / Generative Models
 
