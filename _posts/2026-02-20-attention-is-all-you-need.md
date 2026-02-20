@@ -1,5 +1,5 @@
 ---
-title: "Attention Is All You Need: Transformer의 시작"
+title: "Attention Is All You Need: The Beginning of Transformer"
 date: 2026-02-20 15:00:00 +0900
 categories: [AI, Paper Review]
 tags: [transformer, attention, self-attention, NLP, deep-learning, foundational]
