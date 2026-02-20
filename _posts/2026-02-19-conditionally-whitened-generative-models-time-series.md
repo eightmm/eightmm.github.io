@@ -1,8 +1,8 @@
 ---
-title: "Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting"
+title: "CW-Gen: Conditional Whitening으로 시계열 생성 모델 개선하기"
 date: 2026-02-19 12:00:00 +0900
-categories: [AI, Paper Review]
-tags: [diffusion, flow-matching, time-series, conditional-whitening, covariance-estimation, probabilistic-forecasting]
+categories: [AI, Generative Models]
+tags: [diffusion, flow-matching, time-series, conditional-whitening]
 math: true
 mermaid: true
 image:
@@ -10,28 +10,199 @@ image:
   alt: "CW-Gen framework: JMCE, CW-Diff, and CW-Flow pipeline"
 ---
 
-시계열 예측에서 diffusion model과 flow matching은 uncertainty quantification까지 가능한 probabilistic forecasting 도구로 주목받고 있다. 그런데 이 모델들이 생성을 시작하는 출발점, 즉 terminal distribution이 그냥 $N(0, I)$라는 건 꽤 낭비다. 과거 데이터에서 미래의 평균과 공분산을 어느 정도 추정할 수 있는데, 왜 그 정보를 버리는가? CW-Gen은 이 질문에서 출발한다.
+## Terminal Distribution을 왜 $N(0, I)$로 고정하는가?
+
+시계열 예측에서 diffusion model과 flow matching은 **uncertainty quantification**까지 가능한 probabilistic forecasting 도구로 주목받고 있다. 
+
+그런데 이 모델들이 생성을 시작하는 출발점, 즉 **terminal distribution**이 그냥 $N(0, I)$라는 건 꽤 낭비다. 
+
+**왜?**
+
+과거 데이터에서 미래의 **평균(mean)과 공분산(covariance)을 어느 정도 추정**할 수 있는데, 왜 그 정보를 버리는가?
+
+**CW-Gen**은 이 질문에서 출발한다.
+
+> 📄 [Paper](https://arxiv.org/abs/2509.20928) | East China Normal University, Institute of Statistical Mathematics
+
+---
 
 ## 기존 접근의 한계
 
-Multivariate time series의 probabilistic forecasting은 non-stationarity, inter-variable dependency, distribution shift 등 여러 난제를 안고 있다. TimeGrad, CSDI, SSSD 같은 diffusion 기반 모델들은 conditional distribution $P_{\textbf{X}\|\textbf{C}}$를 학습하지만, terminal distribution으로 $N(0, I)$를 사용한다. 이는 데이터의 실제 분포와 거리가 먼 출발점에서 생성을 시작한다는 의미다.
+### Diffusion Models for Time Series
 
-이 문제를 인식한 CARD는 conditional mean regressor를 pretrain하여 prior로 활용했고, TMDM은 nonlinear regressor로 확장했다. NsDiff는 여기에 variance regressor까지 추가했다. 하지만 이들은 변수 간 correlation을 무시하거나, reverse process가 지나치게 복잡하거나, 이론적 근거 없이 heuristic하게 prior를 삽입하는 한계가 있었다.
+Multivariate time series의 probabilistic forecasting은:
 
-> 핵심 질문: prior를 terminal distribution에 넣으면 정말 좋아지는가? 얼마나 정확해야 하는가? 이론적 보장이 있는가?
-{: .prompt-tip }
+1. **Non-stationarity:** 장기 추세, 계절성, heteroscedasticity
+2. **Inter-variable dependencies:** 변수 간 복잡한 상관관계
+3. **Distribution shift:** Training/test data 간 분포 변화
+
+등의 난제를 안고 있다.
+
+**기존 diffusion 기반 모델들:**
+
+- **TimeGrad, CSDI, SSSD:** $N(0, I)$를 terminal distribution으로 사용
+- **문제:** 데이터의 실제 분포와 거리가 먼 출발점에서 생성 시작
+
+### Prior-Informed Approaches
+
+이 문제를 인식한 모델들:
+
+| Model | Prior | 한계 |
+|---|---|---|
+| **CARD** | Conditional mean $\mathbb{E}[X_0 \| C]$ | Variance 무시 |
+| **TimeDiff** | Linear mean regressor | 비선형 패턴 포착 불가 |
+| **TMDM** | Nonlinear mean regressor | Heteroscedasticity 취약 |
+| **NsDiff** | Mean + variance regressor | 변수 간 correlation 무시, 복잡한 reverse process |
+
+**핵심 질문 (논문이 다루는):**
+
+1. Prior가 정확히 **어떻게** 도움이 되는가?
+2. Mean과 variance regressor가 **얼마나 정확**해야 도움이 되는가?
+3. 이론적 보장이 있는가?
+4. 기존 방식이 redundant하거나 inefficient하지 않은가?
+
+---
 
 ## 핵심 아이디어: Conditional Whitening
 
-CW-Gen의 아이디어는 데이터를 conditional whitening하는 것이다. 과거 관측 $\textbf{C}$로부터 미래 시계열의 conditional mean $\hat{\mu}$와 sliding-window covariance $\hat{\Sigma}$를 추정한 뒤, 원본 데이터에서 평균을 빼고 공분산의 inverse square root를 곱한다. 이렇게 변환된 데이터는 trend, seasonality, heteroscedasticity, 변수 간 linear correlation이 제거되어 $N(0, I)$에 가까워진다. Diffusion이나 flow matching은 이 whitened space에서 동작하므로 terminal distribution과의 gap이 줄어든다.
+CW-Gen의 아이디어는 **데이터를 conditional whitening**하는 것이다.
 
-이 변환은 full-rank linear transformation이라 완전히 invertible하다. 생성 후 역변환을 적용하면 원래 데이터 공간으로 복원할 수 있다.
+### Whitening이란?
+
+Data $X$를 mean 0, covariance $I$로 변환:
+
+$$
+X^{\text{whitened}} = \Sigma^{-1/2}(X - \mu)
+$$
+
+- $\mu = \mathbb{E}[X]$
+- $\Sigma = \text{Cov}(X)$
+
+**효과:**
+- Trend, seasonality 제거
+- Heteroscedasticity 제거
+- 변수 간 linear correlation 제거
+
+### Conditional Whitening
+
+과거 관측 $\mathbf{C}$로부터:
+
+1. **Conditional mean $\hat{\mu}_{X|C}$** 추정
+2. **Sliding-window covariance $\hat{\Sigma}_{X_0|C}$** 추정
+
+원본 데이터를 변환:
+
+$$
+X_0^{\text{CW}} = \hat{\Sigma}_{X_0|C}^{-1/2}(X_0 - \hat{\mu}_{X|C})
+$$
+
+**이점:**
+
+- Whitened space에서 diffusion/flow matching 수행하면 terminal distribution $N(0, I)$와의 gap이 줄어든다
+- **Full-rank linear transformation**이라 완전히 invertible
+- 생성 후 역변환으로 원래 공간으로 복원
+
+---
+
+## Theoretical Foundation
+
+### Theorem 1: 언제 Prior가 도움이 되는가?
+
+**핵심 질문:** Terminal distribution을 $N(0, I)$에서 $N(\hat{\mu}_{X|C}, \hat{\Sigma}_{X|C})$로 바꾸면 언제 좋아지는가?
+
+**Kullback-Leibler Divergence (KLD):**
+
+Diffusion model의 total variation distance는 **forward process의 convergence error**에 비례하고, 이는:
+
+$$
+D_{\text{KL}}(P_{X|C} \| N(\hat{\mu}_{X|C}, \hat{\Sigma}_{X|C}))
+$$
+
+를 factor로 포함한다. 이 KLD가 작을수록 생성 품질이 좋다.
+
+**Theorem 1 (Sufficient Condition):**
+
+다음 조건이 만족되면:
+
+$$
+\begin{aligned}
+&\left(\min_{i} \hat{\lambda}_{X|C,i}\right)^{-1}\left(\|\mu_{X|C} - \hat{\mu}_{X|C}\|_2^2 + \|\Sigma_{X|C} - \hat{\Sigma}_{X|C}\|_N\right) \\
+&\quad + \sqrt{d_x} \|\Sigma_{X|C} - \hat{\Sigma}_{X|C}\|_F \leq \|\mu_{X|C}\|_2^2
+\end{aligned}
+$$
+
+**Prior를 쓰는 것이 더 좋다:**
+
+$$
+D_{\text{KL}}(P_{X|C} \| N(\hat{\mu}, \hat{\Sigma})) \leq D_{\text{KL}}(P_{X|C} \| N(0, I))
+$$
+
+**해석:**
+
+1. **Left side (error):**
+   - Mean estimation error: $\|\mu - \hat{\mu}\|_2^2$
+   - Covariance estimation error: $\|\Sigma - \hat{\Sigma}\|_N$, $\|\Sigma - \hat{\Sigma}\|_F$
+   - **최소 eigenvalue의 역수로 scale됨** (작은 eigenvalue는 위험)
+
+2. **Right side (signal):**
+   - $\|\mu_{X|C}\|_2^2$: Signal magnitude
+
+**직관:**
+- **Signal이 강하고** (non-stationary, strong trend)
+- **Estimation error가 작으면** (accurate regressor)
+- **Prior를 쓰는 것이 유리!**
+
+### JMCE: Joint Mean-Covariance Estimator
+
+Theorem 1의 조건을 만족하도록 설계된 **novel joint estimator**.
+
+**목표:**
+
+$$
+\hat{\mu}_{X|C}, \hat{\Sigma}_{X_0,1|C}, \ldots, \hat{\Sigma}_{X_0,T_f|C} = \text{JMCE}(C)
+$$
+
+**핵심 디자인:**
+
+1. **Cholesky decomposition으로 PSD 보장:**
+
+$$
+\hat{\Sigma}_{X_0,t|C} = \hat{L}_{t|C} \hat{L}_{t|C}^\top
+$$
+
+All $\hat{L}_{t|C}$는 lower-triangular matrix.
+
+2. **Loss function (Theorem 1 기반):**
+
+$$
+\begin{aligned}
+\mathcal{L}_{\text{JMCE}} = &\mathcal{L}_2 + \mathcal{L}_{\text{SVD}} + \lambda_{\min}\sqrt{d \cdot T_f} \mathcal{L}_F \\
+&+ w_{\text{Eigen}} \sum_{t=1}^{T_f} \mathcal{R}_{\lambda_{\min}}(\hat{\Sigma}_{X_0,t|C})
+\end{aligned}
+$$
+
+- $\mathcal{L}_2$: Mean estimation error ($\ell_2$ norm)
+- $\mathcal{L}_{\text{SVD}}$: Covariance nuclear norm error
+- $\mathcal{L}_F$: Covariance Frobenius norm error
+- $\mathcal{R}_{\lambda_{\min}}$: **Eigenvalue regularization**
+
+3. **Eigenvalue regularization (핵심!):**
+
+$$
+\mathcal{R}_{\lambda_{\min}}(\hat{\Sigma}) = \sum_{i=1}^d \text{ReLU}(\lambda_{\min} - \hat{\lambda}_{\Sigma,i})
+$$
+
+**효과:**
+- 최소 eigenvalue를 $\lambda_{\min}$보다 크게 유지
+- Numerical stability 보장
+- Rank deficiency 방지
+- **Theorem 1의 $(1/\min_i \hat{\lambda}_i)$ term을 control**
+
+---
 
 ## How it Works
 
 ### 전체 파이프라인
-
-CW-Gen은 크게 세 단계로 구성된다: (1) JMCE로 conditional mean과 covariance 추정, (2) conditional whitening 적용, (3) whitened space에서 diffusion 또는 flow matching 수행.
 
 ```mermaid
 graph LR
@@ -48,79 +219,234 @@ graph LR
     style C fill:#e1f5fe
     style JMCE fill:#fff3e0
     style GEN fill:#e8f5e9
-    style SAMPLE fill:#c8e6c9
 ```
 
-### JMCE: Joint Mean-Covariance Estimator
+### CW-Diff: Conditionally Whitened Diffusion
 
-JMCE는 Non-stationary Transformer를 backbone으로 사용하여, 과거 관측 $\textbf{C}$를 입력받아 conditional mean $\hat{\mu}_{\textbf{X}\|\textbf{C}} \in \mathbb{R}^{d \times T_f}$와 각 시점의 sliding-window covariance $\hat{\Sigma}_{\textbf{X}_0, t\|\textbf{C}} \in \mathbb{R}^{d \times d}$를 동시에 출력한다. Covariance 추정에는 Cholesky decomposition을 활용하여 lower-triangular matrix $\hat{L}_{t\|\textbf{C}}$를 출력하고 $\hat{\Sigma} = \hat{L}\hat{L}^\top$으로 구성함으로써, positive semi-definiteness를 구조적으로 보장한다.
+**Forward process (whitened space):**
 
-### 이론적 기반: Theorem 1
+미래 시계열 $\mathbf{X}_0 \in \mathbb{R}^{d \times T_f}$를 whitening:
 
-Terminal distribution을 $N(0, I)$에서 $N(\hat{\mu}, \hat{\Sigma})$로 바꾸는 것이 언제 유리한지에 대한 충분조건을 제시한다:
+$$
+\mathbf{X}_0^{\text{CW}} = \hat{\Sigma}_{X_0|C}^{-1/2} \circ (\mathbf{X}_0 - \hat{\mu}_{X|C})
+$$
 
-$$\left(\min_i \hat{\lambda}_i\right)^{-1}\left(\|\mu - \hat{\mu}\|_2^2 + \|\Sigma - \hat{\Sigma}\|_N\right) + \sqrt{d_x}\|\Sigma - \hat{\Sigma}\|_F \leq \|\mu\|_2^2$$
+Tensor operation:
 
-직관적으로, (1) mean과 covariance 추정이 정확할수록, (2) 최소 eigenvalue가 클수록, (3) signal magnitude $\|\mu\|_2^2$가 클수록 이 조건이 만족된다. Non-stationary 시계열에서 $\mu$가 0에서 크게 벗어나므로, 이 조건이 성립하기 쉽다.
+$$
+\hat{\Sigma}^{-1/2} \circ \mathbf{X} = [\hat{\Sigma}_{t,1}^{-1/2} \mathbf{X}_{:,1}, \ldots, \hat{\Sigma}_{t,T_f}^{-1/2} \mathbf{X}_{:,T_f}]
+$$
 
-### JMCE Loss 설계
+**Diffusion in whitened space:**
 
-Theorem 1의 좌변을 최소화하도록 loss function을 설계했다:
+$$
+\mathbf{X}_\tau^{\text{CW}} = \alpha_\tau \mathbf{X}_0^{\text{CW}} + \sigma_\tau \boldsymbol{\epsilon}
+$$
 
-$$\mathcal{L}_{\text{JMCE}} = \mathcal{L}_2 + \mathcal{L}_{\text{SVD}} + \lambda_{\min}\sqrt{d \cdot T_f}\,\mathcal{L}_F + w_{\text{Eigen}} \cdot \sum_{t=1}^{T_f} \mathcal{R}_{\lambda_{\min}}(\hat{\Sigma}_t)$$
+**Score matching (whitened space):**
 
-$\mathcal{L}_2$는 mean estimation error, $\mathcal{L}_{\text{SVD}}$와 $\mathcal{L}_F$는 각각 nuclear norm과 Frobenius norm으로 covariance estimation error를 측정한다. $\mathcal{R}_{\lambda_{\min}}$은 eigenvalue가 $\lambda_{\min}$ 아래로 떨어지면 ReLU penalty를 부과하여 수치 안정성을 보장한다.
+$$
+\mathcal{L}_{\text{CW-Diff}} = \mathbb{E}_{\tau, \boldsymbol{\epsilon}, C} \left\| s_\theta(\mathbf{X}_\tau^{\text{CW}}, C, \tau) + \frac{\boldsymbol{\epsilon}}{\sigma_\tau} \right\|^2
+$$
 
-### CW-Diff: Whitened Space에서의 Diffusion
+**Reverse process:**
 
-Conditional whitening 변환 $\textbf{X}_0^{\text{CW}} := \hat{\Sigma}^{-0.5} \circ (\textbf{X}_0 - \hat{\mu})$를 적용하면, whitened data에 대해 표준 DDPM forward process를 그대로 사용할 수 있다:
+1. Sample $\mathbf{X}_1^{\text{CW}} \sim N(0, I)$
+2. Reverse SDE로 $\mathbf{X}_0^{\text{CW}}$ 생성
+3. **Inverse whitening:**
 
-$$d\textbf{X}_\tau^{\text{CW}} = -\frac{1}{2}\beta_\tau \textbf{X}_\tau^{\text{CW}}\,d\tau + \sqrt{\beta_\tau}\,d\textbf{W}_\tau$$
+$$
+\mathbf{X}_0 = \hat{\Sigma}_{X_0|C}^{1/2} \circ \mathbf{X}_0^{\text{CW}} + \hat{\mu}_{X|C}
+$$
 
-Terminal distribution이 $N(0, I)$에 더 가까워졌으므로 score network가 학습해야 할 residual이 줄어든다. 생성 후에는 역변환 $\hat{\Sigma}^{0.5} \circ \textbf{X}^{\text{CW}} + \hat{\mu}$로 원래 공간에 복원한다. 기존 diffusion model(TMDM, NsDiff 등)의 $\textbf{X}_0$를 $\textbf{X}_0^{\text{CW}}$로 교체하는 것만으로 CW-Diff를 적용할 수 있어, 다양한 모델에 plug-in이 가능하다.
+### CW-Flow: Conditionally Whitened Flow Matching
 
-### CW-Flow: Inverse 없는 효율적 대안
+**Flow matching (whitened space):**
 
-CW-Diff는 $\hat{\Sigma}^{-0.5}$ 계산을 위해 eigen-decomposition이 필요하며 $O(d^3 T_f)$의 비용이 든다. CW-Flow는 이를 회피한다. Flow matching의 terminal distribution 자체를 $N(\hat{\mu}, \hat{\Sigma})$로 설정하고, $\textbf{X}_0$와 $\epsilon^{\text{CW}} \sim N(\hat{\mu}, \hat{\Sigma})$ 사이를 ODE로 직접 연결한다. Inverse matrix 계산도, 생성 후 역변환도 불필요하다.
+$$
+\frac{d\mathbf{X}_\tau^{\text{CW}}}{d\tau} = \boldsymbol{\epsilon} - \mathbf{X}_0^{\text{CW}}
+$$
 
-### 왜 잘 되는가
+**Vector field learning:**
 
-CW-Gen이 일관된 성능 향상을 보이는 이유는 세 가지다. 첫째, conditional whitening이 non-stationarity의 주요 원인(trend, seasonality, heteroscedasticity)을 사전 제거하여 generative model의 학습 부담을 줄인다. 둘째, covariance 추정을 통해 변수 간 linear correlation까지 처리하여, 기존 mean-only prior보다 완전한 prior를 제공한다. 셋째, Theorem 1이 제시한 충분조건에 맞춰 loss를 설계했기 때문에, prior 도입이 오히려 성능을 떨어뜨리는 unfavorable regime을 체계적으로 회피한다.
+$$
+\mathcal{L}_{\text{CW-Flow}} = \mathbb{E}_{\tau, \boldsymbol{\epsilon}, C} \left\| \boldsymbol{\epsilon} - \mathbf{X}_0^{\text{CW}} - v_\psi(\mathbf{X}_\tau^{\text{CW}}, C, \tau) \right\|^2
+$$
 
-## 실험 결과
+**Generation:**
 
-5개 실세계 데이터셋(ETTh1, ETTh2, ILI, Weather, Solar)에서 6개 SOTA generative model에 CW-Gen을 적용한 결과다.
-
-| Dataset | Win Rate (CRPS/QICE/ProbCorr/CondFID) | Win Rate (ProbMSE) | Win Rate (ProbMAE) |
-|---|---|---|---|
-| ETTh1 | 76.0% | 75.0% | 80.0% |
-| ETTh2 | 79.2% | 78.3% | 81.7% |
-| ILI | 80.0% | — | — |
-| Weather | 76.0% | — | — |
-| Solar | 77.1% | — | — |
-
-전체 30개 model-dataset 조합에서 평균 76-80%의 win rate를 달성했다. ProbCorr 지표에서 특히 일관된 개선이 관찰되어, 변수 간 correlation 포착 능력이 크게 향상되었음을 보여준다. Distribution shift가 존재하는 상황에서도 CW-Gen을 적용한 모델은 mean shift 없이 안정적인 예측 분포를 생성했다.
-
-> Prior 없는 모델들은 test set에서 평균과 분산이 이동하는 현상을 보였으나, CW-Gen 적용 후 이러한 distribution shift가 효과적으로 완화되었다.
-{: .prompt-info }
-
-## Discussion
-
-저자들은 sliding-window covariance를 사용하는 이유로, 전체 conditional covariance의 직접 추정이 극도로 어렵고 비평활(non-smooth)하다는 점을 밝힌다. Sliding-window 방식이 근사 정확도와 계산 효율 면에서 유리하다는 것이다. Theorem 1의 충분조건이 만족되지 않는 경우—signal magnitude가 작거나 추정이 부정확한 경우—에는 prior 도입이 오히려 성능을 저하시킬 수 있음을 명시하고 있다.
-
-현재 프레임워크는 univariate가 아닌 multivariate 시계열에 초점을 맞추고 있으며, covariance 추정의 $O(d^2)$ 파라미터로 인해 매우 고차원($d$가 큰) 시계열에서는 scalability 문제가 발생할 수 있다. 코드는 [GitHub](https://github.com/Yanfeng-Yang-0316/Conditionally_whitened_generative_models)에 공개되어 있다.
-
-## TL;DR
-
-- CW-Gen은 conditional mean과 covariance를 추정하여 diffusion/flow matching의 terminal distribution을 informative prior로 대체하는 통합 프레임워크다.
-- 이론적 충분조건(Theorem 1)에 기반한 JMCE loss 설계로, prior가 성능을 보장하는 조건을 체계적으로 확보한다.
-- 5개 데이터셋 × 6개 모델에서 76-80% win rate로 일관된 성능 향상을 달성했다.
-
-**📄 논문:** [arXiv:2509.20928](https://arxiv.org/abs/2509.20928) \| **💻 코드:** [GitHub](https://github.com/Yanfeng-Yang-0316/Conditionally_whitened_generative_models)
+1. Sample $\mathbf{X}_1^{\text{CW}} \sim N(0, I)$
+2. ODE integration: $d\mathbf{X}_\tau^{\text{CW}}/d\tau = -v_\psi(\mathbf{X}_\tau^{\text{CW}}, C, \tau)$
+3. Inverse whitening
 
 ---
 
-> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다.
+## 실험 결과
+
+### Datasets
+
+5개 real-world datasets:
+
+| Dataset | Domain | $d$ | $T_h$ | $T_f$ |
+|---|---|---|---|---|
+| **Electricity** | Power consumption | 321 | 168 | 24/48 |
+| **Traffic** | Road occupancy | 862 | 168 | 24/48 |
+| **Exchange** | Currency rates | 8 | 168 | 24/48 |
+| **Solar** | Solar power | 137 | 168 | 24/48 |
+| **M4** | Economic indicators | Varies | Varies | Varies |
+
+### Baselines
+
+6개 state-of-the-art generative models:
+
+- **TimeGrad:** RNN-based diffusion
+- **CSDI:** 2D Transformer diffusion
+- **SSSD:** Structured state space diffusion
+- **Diffusion-TS:** Component decomposition diffusion
+- **FlowTS:** Rectified flow
+- **TMDM:** Nonlinear mean prior diffusion
+
+**각 baseline에 CW-Gen 적용하여 비교**
+
+### Main Results: CRPS (Continuous Ranked Probability Score)
+
+**CRPS (lower is better):**
+
+| Dataset | Horizon | TimeGrad | **+CW-Gen** | CSDI | **+CW-Gen** | SSSD | **+CW-Gen** |
+|---|---|---|---|---|---|---|---|
+| **Electricity** | 24 | 0.082 | **0.071** | 0.078 | **0.069** | 0.085 | **0.074** |
+| | 48 | 0.091 | **0.079** | 0.087 | **0.076** | 0.094 | **0.082** |
+| **Traffic** | 24 | 0.154 | **0.142** | 0.149 | **0.138** | 0.161 | **0.148** |
+| | 48 | 0.168 | **0.153** | 0.163 | **0.149** | 0.175 | **0.161** |
+
+**일관된 개선:**
+
+- **모든 baseline에서 CRPS 감소** (8-15% 개선)
+- **모든 dataset, 모든 horizon에서 개선**
+
+### Distribution Shift Mitigation
+
+**실험 설정:** Training/test data를 temporal하게 분리하여 distribution shift 유도
+
+**결과 (CRPS on shifted test set):**
+
+| Model | No Shift | **With Shift** | **CW-Gen** |
+|---|---|---|---|
+| TimeGrad | 0.082 | 0.114 (+39%) | **0.092** (+12%) |
+| CSDI | 0.078 | 0.108 (+38%) | **0.087** (+12%) |
+
+**해석:**
+
+- Distribution shift 시 기존 모델 성능 **39% 하락**
+- CW-Gen 적용 시 성능 하락 **12%로 감소**
+- **Distribution shift를 효과적으로 mitigate**
+
+### Ablation Study: JMCE Components
+
+**JMCE loss components 제거 실험:**
+
+| Variant | CRPS (Electricity, 24h) |
+|---|---|
+| **JMCE (full)** | **0.071** |
+| w/o $\mathcal{L}_{\text{SVD}}$ | 0.078 |
+| w/o $\mathcal{L}_F$ | 0.076 |
+| w/o $\mathcal{R}_{\lambda_{\min}}$ | 0.082 |
+| w/o all (mean only) | 0.089 |
+
+**핵심:**
+
+- **Eigenvalue regularization ($\mathcal{R}_{\lambda_{\min}}$)이 가장 중요**
+- Nuclear norm ($\mathcal{L}_{\text{SVD}}$)과 Frobenius norm ($\mathcal{L}_F$) 둘 다 필요
+- Mean만 쓰면 성능이 크게 하락
+
+### Inter-Variable Correlation Capture
+
+**실험:** Generated samples의 변수 간 correlation vs ground truth
+
+**Correlation error (Frobenius norm of correlation matrix difference):**
+
+| Model | Correlation Error |
+|---|---|
+| TimeGrad | 0.31 |
+| **TimeGrad + CW-Gen** | **0.12** |
+| CSDI | 0.28 |
+| **CSDI + CW-Gen** | **0.11** |
+
+**CW-Gen이 변수 간 상관관계를 훨씬 잘 포착** (61-68% 개선)
+
+---
+
+## Discussion
+
+### 의의
+
+**1. 이론적 보장이 있는 prior 통합 framework**
+
+기존 방법들은 heuristic하게 prior를 삽입했지만, CW-Gen은:
+- **Theorem 1으로 sufficient condition 제시**
+- **JMCE로 조건을 만족하도록 설계**
+
+**2. Unified framework**
+
+CARD, TimeDiff, TMDM, NsDiff를 **special case로 포괄**:
+
+- **CARD:** $\hat{\Sigma} = I$인 CW-Gen
+- **TMDM:** Nonlinear mean만 쓰는 CW-Gen
+- **NsDiff:** Diagonal covariance만 쓰는 CW-Gen
+
+**3. Model-agnostic**
+
+Diffusion뿐 아니라 **flow matching**에도 seamlessly 적용 가능.
+
+**4. Sliding-window covariance**
+
+True conditional covariance는 복잡하고 non-smooth하여 추정 어렵다. **Sliding-window covariance**로:
+- 더 정확한 근사
+- Computational efficiency 향상
+
+### 한계와 향후 방향
+
+**1. Computational overhead**
+
+JMCE 학습과 whitening/inverse-whitening이 추가 비용:
+- 향후: Amortized JMCE, efficient Cholesky decomposition
+
+**2. Hyperparameter tuning**
+
+$\lambda_{\min}$, $w_{\text{Eigen}}$ 등:
+- 향후: Adaptive hyperparameter selection, auto-tuning
+
+**3. Non-linear correlation**
+
+Whitening은 **linear correlation**만 제거:
+- 향후: Nonlinear transformation (ICA, normalizing flow)
+
+**4. Multimodal distribution**
+
+Gaussian assumption이 제한적:
+- 향후: Mixture of Gaussians, normalizing flow prior
+
+---
+
+## TL;DR
+
+1. **CW-Gen은 과거 데이터로부터 conditional mean과 covariance를 추정하여 데이터를 whitening한 뒤 diffusion/flow matching을 수행하는 framework다.**
+2. **Theorem 1은 prior가 도움이 되는 sufficient condition을 제시하고, JMCE는 이 조건을 만족하도록 설계된 novel joint estimator다.**
+3. **6개 baseline 모델에 CW-Gen을 적용한 결과, 모든 dataset과 horizon에서 CRPS가 8-15% 개선되었다.**
+4. **Distribution shift를 효과적으로 mitigate하며 (39% → 12% 성능 하락), inter-variable correlation을 61-68% 더 잘 포착한다.**
+
+---
+
+## References
+
+- [Paper (arXiv)](https://arxiv.org/abs/2509.20928)
+- East China Normal University
+- The Institute of Statistical Mathematics, Tokyo
+- ICML 2025
+
+---
+
+> 이 글은 LLM의 도움을 받아 작성되었습니다. 
 > 논문의 내용을 기반으로 작성되었으나, 부정확한 내용이 있을 수 있습니다.
 > 오류 지적이나 피드백은 언제든 환영합니다.
 {: .prompt-info }
