@@ -2,7 +2,7 @@
 title: "AlphaFold Series: From Distance Prediction to Diffusion-Based Universal Structure Prediction"
 date: 2026-02-20 14:00:00 +0900
 description: "A comprehensive comparison of AlphaFold 1, 2, and 3 — tracing the evolution from distance-based fold prediction to diffusion-based universal biomolecular structure prediction across CASP13, CASP14, and beyond."
-categories: [Bio, Protein Structure]
+categories: [Paper Review, Protein Structure]
 tags: [protein-structure, AlphaFold, series-summary, evolution, deep-learning, diffusion, structure-prediction]
 math: true
 mermaid: true

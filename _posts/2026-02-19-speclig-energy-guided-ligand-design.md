@@ -2,7 +2,7 @@
 title: "SpecLig: Energy-Guided Hierarchical Model for Target-Specific 3D Ligand Design"
 date: 2026-02-19 10:00:00 +0900
 description: "SpecLig tackles off-target binding in structure-based drug design by integrating hierarchical SE(3)-equivariant VAE with energy-guided latent diffusion using block-block contact statistics, achieving high affinity and specificity for both small molecules and peptides."
-categories: [AI, Drug Discovery]
+categories: [Paper Review, Drug Discovery]
 tags: [protein-ligand, drug-design, diffusion, equivariant, specificity, SBDD, VAE, energy-guidance]
 math: true
 mermaid: true

@@ -2,7 +2,7 @@
 title: "Attention Is All You Need"
 date: 2026-02-20 10:00:00 +0900
 description: "RNN과 CNN을 완전히 제거하고 attention mechanism만으로 sequence transduction을 수행하는 Transformer 아키텍처 소개. WMT 2014 영어-독일어 번역에서 28.4 BLEU를 달성하며 새로운 state-of-the-art를 수립."
-categories: [AI, Fundamentals]
+categories: [Paper Review, Fundamentals]
 tags: [transformer, attention, self-attention, NLP, deep-learning, foundational]
 math: true
 mermaid: true

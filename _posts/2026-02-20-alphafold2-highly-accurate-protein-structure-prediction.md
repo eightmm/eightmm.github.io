@@ -2,7 +2,7 @@
 title: "Highly Accurate Protein Structure Prediction with AlphaFold"
 date: 2026-02-20 12:00:00 +0900
 description: "AlphaFold 2는 단백질 서열만으로 원자 수준 정확도의 3D 구조를 예측하는 최초의 AI 시스템. Evoformer와 Structure Module을 결합하여 CASP14에서 실험 구조에 필적하는 정확도 달성."
-categories: [AI, Protein Structure]
+categories: [Paper Review, Protein Structure]
 tags: [protein-structure, AlphaFold, Evoformer, attention, end-to-end, CASP14, structure-prediction]
 math: true
 mermaid: true

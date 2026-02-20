@@ -2,7 +2,7 @@
 title: "Accurate Structure Prediction of Biomolecular Interactions with AlphaFold 3"
 date: 2026-02-20 13:00:00 +0900
 description: "AlphaFold 3는 diffusion 기반 아키텍처로 단백질, 핵산, 리간드, 이온 등 모든 생체분자의 복합체 구조를 단일 프레임워크에서 높은 정확도로 예측한다."
-categories: [AI, Protein Structure]
+categories: [Paper Review, Protein Structure]
 tags: [protein-structure, AlphaFold3, diffusion, biomolecular-interactions, drug-discovery, structure-prediction]
 math: true
 mermaid: true

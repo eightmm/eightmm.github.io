@@ -2,7 +2,7 @@
 title: "MolCrystalFlow: Molecular Crystal Structure Prediction via Flow Matching"
 date: 2026-02-19 12:00:00 +0900
 description: "분자 결정 구조 예측을 위한 Riemannian flow matching 기반 생성 모델. SE(3) 등변성을 보존하면서 격자 행렬, 분자 위치, 회전 방향을 동시에 학습"
-categories: [AI, Generative Models]
+categories: [Paper Review, Generative Models]
 tags: [flow-matching, crystal-structure, Riemannian, SE3-equivariant]
 math: true
 mermaid: true

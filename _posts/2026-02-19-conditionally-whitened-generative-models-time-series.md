@@ -2,7 +2,7 @@
 title: "Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting"
 date: 2026-02-19 13:00:00 +0900
 description: "CW-Gen은 조건부 평균과 공분산을 활용한 conditional whitening을 통해 시계열 diffusion/flow matching 모델의 성능을 향상시키는 프레임워크입니다."
-categories: [AI, Generative Models]
+categories: [Paper Review, Generative Models]
 tags: [diffusion, flow-matching, time-series, conditional-whitening]
 math: true
 mermaid: true

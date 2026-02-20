@@ -2,7 +2,7 @@
 title: "Out-of-Distribution Detection in Molecular Complexes via Diffusion Models for Irregular Graphs"
 date: 2026-02-19 11:00:00 +0900
 description: "Diffusion model로 3D protein-ligand complex의 OOD를 탐지하는 프레임워크. PF-ODE trajectory의 18가지 geometric feature로 complexity bias를 극복하고, 결합 친화도 예측 모델의 에러를 사전 탐지한다."
-categories: [AI, Drug Discovery]
+categories: [Paper Review, Drug Discovery]
 tags: [OOD-detection, diffusion, protein-ligand, 3D-graph, PF-ODE]
 math: true
 mermaid: true

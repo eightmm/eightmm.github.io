@@ -2,7 +2,7 @@
 title: "Improved Protein Structure Prediction Using Potentials from Deep Learning"
 date: 2026-02-20 11:00:00 +0900
 description: "AlphaFold 1이 CASP13에서 deep learning 기반 distogram 예측과 gradient descent로 단백질 구조 예측의 새로운 패러다임을 제시한 방법을 자세히 분석한다."
-categories: [AI, Protein Structure]
+categories: [Paper Review, Protein Structure]
 tags: [protein-structure, AlphaFold, distance-prediction, ResNet, CASP13, deep-learning]
 math: true
 mermaid: true
