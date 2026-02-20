@@ -148,18 +148,9 @@ $$\mathcal{L} = -\left[0.5 \times \left(1 - \min\left(\frac{\text{RMSE}}{\max(y)
 
 추가로 예측값이 유효 범위([0, 99.38])를 벗어나는 경우에 대한 range penalty를 적용한다.
 
-### Validation Results
+### Ensemble
 
-5-Fold Cross-Validation 결과:
-
-| Metric | Mean ± Std |
-|--------|------------|
-| RMSE | 15.23 ± 1.23 |
-| MAE | 11.88 ± 0.99 |
-| R² | 0.765 ± 0.032 |
-| Pearson Correlation | ~0.88 |
-
-최종 제출은 5개 fold 모델의 앙상블 평균으로 생성한다.
+최종 제출은 5-Fold CV로 학습된 5개 모델의 앙상블 평균으로 생성한다.
 
 ## Key Design Choices
 
