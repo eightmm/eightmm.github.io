@@ -143,19 +143,23 @@ Ablation study도 인상적이다. Head 수를 바꾸면 — 1개는 확실히 �
 
 English constituency parsing에서도 task-specific 튜닝 없이 거의 SOTA급 성능을 보여줬는데, 이는 Transformer의 **범용성**을 입증하는 결과였다.
 
-## 내 생각: 역사의 분기점
+## Discussion
 
-이 논문을 2026년에 리뷰하는 건 좀 특별한 경험이다. 9년이 지난 지금, Transformer는 NLP를 넘어 vision, protein structure prediction, drug discovery, robotics까지 — 말 그대로 AI의 모든 영역을 점령했다. 저자들이 논문 마지막에 "text 외의 modality에도 확장하겠다"고 썼는데, 그게 이렇게까지 될 줄은 본인들도 몰랐을 거다.
+저자들은 self-attention의 computational complexity가 $O(n^2)$이라는 점을 인지하고 있었다. 논문 Section 4에서 매우 긴 시퀀스를 다룰 때는 neighborhood size $r$로 제한하는 restricted self-attention을 향후 연구로 제안했다.
 
-개인적으로 가장 인상적인 건 아이디어의 **단순함**이다. Self-attention 자체는 이미 있던 개념이고, encoder-decoder도 기존 프레임워크고, positional encoding도 새로운 건 아니다. 하지만 "recurrence를 완전히 걷어내고 attention만 남기자"는 결단 — 이게 혁신이었다. 복잡한 새 모듈을 만든 게 아니라, 오히려 빼는 것으로 돌파구를 찾았다.
+Positional encoding에 대해서도 sinusoidal과 learned embedding 두 가지를 실험했는데, 성능 차이는 거의 없었다(Table 3 row E). 저자들은 sinusoidal 방식이 학습 시 접한 것보다 긴 시퀀스에 대한 extrapolation 가능성을 이유로 이를 선택했다고 밝혔다.
 
-한계를 굳이 짚자면, self-attention의 $O(n^2)$ 복잡도는 긴 시퀀스에서 병목이 된다. 이후 Longformer, BigBird, Flash Attention 같은 후속 연구가 이 문제를 다뤘고, 아직도 진행 중이다. 그리고 positional encoding은 여전히 활발히 연구되는 영역이다 — RoPE, ALiBi 등 더 나은 대안들이 계속 나오고 있다.
-
-> 어떤 논문이 "foundational"인지 판단하는 기준이 있다면, 그건 "이 논문이 없었으면 이후의 어떤 것들이 존재하지 않았을까"다. Transformer 없는 AI 연구를 상상하기가 이제는 불가능하다.
-{: .prompt-warning }
+논문의 conclusion에서 저자들은 세 가지 향후 방향을 명시했다: (1) text 외의 input/output modality(image, audio, video)로의 확장, (2) large input/output을 효율적으로 처리하기 위한 local, restricted attention mechanism 연구, (3) generation의 sequential 특성을 줄이는 연구.
 
 ## TL;DR
 
 - **문제:** RNN은 순차적이라 느리고, 장거리 의존성을 잘 못 잡는다.
 - **해법:** Self-attention만으로 encoder-decoder를 구성한 Transformer — 병렬화 가능, $O(1)$ path length.
-- **결과:** WMT 2014에서 SOTA 갱신, 학습 비용 대폭 절감. 이후 GPT, BERT, ViT 등 AI 전체의 기반이 됨.
+- **결과:** WMT 2014에서 SOTA 갱신, 학습 비용 대폭 절감.
+
+---
+
+> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다. 
+> 논문의 내용을 기반으로 작성되었으나, 부정확한 내용이 있을 수 있습니다.
+> 오류 지적이나 피드백은 언제든 환영합니다.
+{: .prompt-info }
