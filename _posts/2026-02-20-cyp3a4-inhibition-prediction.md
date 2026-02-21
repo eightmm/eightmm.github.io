@@ -59,7 +59,7 @@ image:
 
 **첫째, 분자를 두 가지 관점에서 본다.** 하나의 SMILES에서 molecular graph(원자 간 연결 구조)와 9종의 molecular fingerprint(전역적 화학 기술자)를 독립적으로 추출한다. 전자는 local substructure를 정밀하게 인코딩하고, 후자는 전역적 화학적 성질을 포착한다. 두 stream을 cross-modal attention으로 통합하면, 어느 한쪽만으로는 잡을 수 없는 상보적 정보를 활용할 수 있다.
 
-**둘째, LLM을 "Virtual Biochemist"로 활용한다.** Gemini 2.0 Flash와 Claude Sonnet을 반복적으로 사용하여 CYP3A4 inhibitor/substrate의 구조적 특징을 SMARTS 패턴으로 추출하고, 이를 molecular graph의 node feature로 직접 주입한다. 도메인 전문가 없이도 고품질의 효소 특화 feature를 생성하는 접근이다.
+**둘째, LLM을 "Virtual Biochemist"로 활용한다.** Gemini 2.5 Pro와 Claude Sonnet 4을 반복적으로 사용하여 CYP3A4 inhibitor/substrate의 구조적 특징을 SMARTS 패턴으로 추출하고, 이를 molecular graph의 node feature로 직접 주입한다. 도메인 전문가 없이도 고품질의 효소 특화 feature를 생성하는 접근이다.
 
 ## How it works
 
@@ -327,14 +327,14 @@ class MolecularFeatureExtractor(nn.Module):
 
 #### LLM-Based CYP3A4 Feature Engineering
 
-**Gemini 2.0 Flash**와 **Claude Sonnet**을 반복적으로 활용하여 CYP3A4 inhibitor/substrate의 구조적 특징을 SMARTS 패턴으로 자동 생성했다.
+**Gemini 2.5 Pro**와 **Claude Sonnet 4**을 반복적으로 활용하여 CYP3A4 inhibitor/substrate의 구조적 특징을 SMARTS 패턴으로 자동 생성했다.
 
 ```mermaid
 graph TD
-    A["Step 1: Gemini 2.0 Flash<br/>CYP3A4 substrate/inhibitor<br/>구조적 특징 탐색"] --> B["초기 SMARTS 패턴 후보군"]
-    B --> C["Step 2: Claude Sonnet<br/>화학적 유효성 검증<br/>중복/과도한 일반화 제거"]
+    A["Step 1: Gemini 2.5 Pro<br/>CYP3A4 substrate/inhibitor<br/>구조적 특징 탐색"] --> B["초기 SMARTS 패턴 후보군"]
+    B --> C["Step 2: Claude Sonnet 4<br/>화학적 유효성 검증<br/>중복/과도한 일반화 제거"]
     C --> D["정제된 패턴"]
-    D --> E["Step 3: Gemini 2.0 Flash<br/>Substructure variants 생성"]
+    D --> E["Step 3: Gemini 2.5 Pro<br/>Substructure variants 생성"]
     E --> F["최종 29종 SMARTS 패턴"]
 
     style A fill:#e1f5fe
