@@ -40,7 +40,7 @@ image:
 | **Input** | Canonical SMILES |
 | **Target** | Inhibition 값 (range: 0.0 ~ 99.38) |
 | **Train** | 1,681 samples |
-| **Test** | 101 samples |
+| **Test** | 100 samples |
 
 이 대회에서의 도전은 단순한 regression이 아니다.
 
@@ -98,7 +98,7 @@ graph TD
 ![5-Fold CV Training Curves](/assets/img/posts/cyp3a4-inhibition-prediction/cv_summary.png)
 _Figure 1: 5-Fold Cross-Validation 학습 곡선. 각 fold의 training/validation loss와 competition score 추이. 출처: eightmm/CYP3A4_
 
-<details>
+<details markdown="1">
 <summary>📝 Overall Architecture Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -171,7 +171,7 @@ $\sigma$는 sigmoid function이다. Edge의 중요도를 원자 쌍 + edge featu
 
 초기 embedding을 context로 유지하면서 각 레이어의 출력을 conditioning하는 구조다.
 
-<details>
+<details markdown="1">
 <summary>📝 GatedGCN-LSPE Layer 구현 (클릭하여 펼치기)</summary>
 
 ```python
@@ -212,7 +212,7 @@ class GatedGCNLSPELayer(nn.Module):
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>📝 AdaLN + ConditionalTransition 구현 (클릭하여 펼치기)</summary>
 
 ```python
@@ -253,7 +253,7 @@ class ConditionalTransitionBlock(nn.Module):
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>📝 GraphFeatureExtractor 전체 Forward (클릭하여 펼치기)</summary>
 
 ```python
@@ -290,7 +290,7 @@ class GraphFeatureExtractor(nn.Module):
 
 Attention 후 mean pooling + max pooling을 concatenate하여 fusion network(LayerNorm → MLP)로 통합한다.
 
-<details>
+<details markdown="1">
 <summary>📝 MolecularFeatureExtractor 구현 (클릭하여 펼치기)</summary>
 
 ```python
@@ -373,7 +373,7 @@ Normalized RMSE와 Pearson Correlation의 가중합을 직접 최적화한다. �
 | Dropout | 0.2 (GNN) / 0.15 (MLP) |
 | Validation | 5-Fold CV |
 
-<details>
+<details markdown="1">
 <summary>📝 Training Loop (클릭하여 펼치기)</summary>
 
 ```python
@@ -410,7 +410,7 @@ for fold in range(5):
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>📝 Inference (클릭하여 펼치기)</summary>
 
 ```python
@@ -457,7 +457,7 @@ Seed sensitivity가 존재하며, 여러 seed의 ensemble로 추가 성능 향�
 
 - **Small dataset**: 1,681 samples로는 deep GNN의 전체 용량을 활용하기 어렵다. External data(ChEMBL 등)의 실험 조건 차이가 없었다면 pre-training에 활용할 수 있었을 것이다.
 - **Seed sensitivity**: 단일 seed 결과의 variance가 크다. Multi-seed ensemble이 필수적이나, 대회 기간 내 시간 제약이 있었다.
-- **Public-Private gap**: Public에서 2위권이었으나 Private에서 4위로 하락한 것은, 101개 test sample의 분포 차이에 모델이 민감하게 반응했을 가능성을 시사한다.
+- **Public-Private gap**: Public에서 2위권이었으나 Private에서 4위로 하락한 것은, 100개 test sample의 분포 차이에 모델이 민감하게 반응했을 가능성을 시사한다.
 - **LLM feature의 해석**: LLM이 생성한 29종 SMARTS 패턴이 실제 어떤 화학적 메커니즘을 포착하는지에 대한 체계적인 ablation은 아직 부족하다.
 
 > **외부 데이터**: ChEMBL 등 공개 데이터베이스에 CYP3A4 관련 데이터가 존재하지만, 실험 조건(assay type, concentration, cell line)이 대회 데이터와 정확히 동일하지 않아 직접 사용하지 않았다.
