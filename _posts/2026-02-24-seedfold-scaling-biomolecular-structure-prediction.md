@@ -2,7 +2,7 @@
 title: "SeedFold: Scaling Biomolecular Structure Prediction"
 date: 2026-02-24 13:30:00 +0900
 description: "ByteDance의 SeedFold는 Pairformer의 width scaling, linear triangular attention, 대규모 distillation 데이터를 통해 AlphaFold3를 능가하는 biomolecular structure prediction 성능을 달성한다."
-categories: [AI, Protein Structure]
+categories: [Paper Review, Protein Structure]
 tags: [protein-folding, alphafold3, linear-attention, scaling, pairformer, triangular-attention, seedfold, distillation]
 math: true
 mermaid: true
