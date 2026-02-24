@@ -52,12 +52,12 @@ _Figure 2: SimpleFold 아키텍처. Atom Encoder → Grouping → Residue Trunk 
 ```mermaid
 graph TD
     A["🧬 AA Sequence s"] --> PLM["ESM2-3B<br/>(Frozen PLM)"]
-    PLM --> E["Sequence Embeddings<br/>e ∈ ℝ^(Nr × de)"]
+    PLM --> E["Sequence Embeddings<br/>e ∈ ℝ<sup>N<sub>r</sub> × d<sub>e</sub></sup>"]
 
-    N["🎲 Noisy Coords x_t<br/>+ Atomic Features"] --> AE["Atom Encoder<br/>(Local Attention)"]
-    AE --> AT["Atom Tokens<br/>a ∈ ℝ^(Na × da)"]
+    N["🎲 Noisy Coords x<sub>t</sub><br/>+ Atomic Features"] --> AE["Atom Encoder<br/>(Local Attention)"]
+    AE --> AT["Atom Tokens<br/>a ∈ ℝ<sup>N<sub>a</sub> × d<sub>a</sub></sup>"]
     AT --> G["Grouping<br/>(Avg Pool per Residue)"]
-    G --> RT["Residue Tokens<br/>r ∈ ℝ^(Nr × da)"]
+    G --> RT["Residue Tokens<br/>r ∈ ℝ<sup>N<sub>r</sub> × d<sub>a</sub></sup>"]
 
     RT --> CAT["Concat"]
     E --> CAT
@@ -69,7 +69,7 @@ graph TD
     UG --> SKIP["+ Skip Connection"]
     AT --> SKIP
     SKIP --> AD["Atom Decoder<br/>(Local Attention)"]
-    AD --> V["Predicted Velocity v̂_t"]
+    AD --> V["Predicted Velocity v̂<sub>t</sub>"]
 
     style A fill:#e1f5fe
     style V fill:#e8f5e9
