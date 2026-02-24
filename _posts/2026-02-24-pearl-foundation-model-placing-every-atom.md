@@ -108,7 +108,7 @@ EqT 블록은 **scalar feature**와 **vector feature**를 분리하여 처리한
 
 Vector 성분에 비선형성을 적용하기 위해 **gated nonlinearity**를 사용한다: scalar 성분이 gate 역할을 하여 vector 성분의 크기를 조절하되, 방향은 보존한다.
 
-<details>
+<details markdown="1">
 <summary>📝 Equivariant Transformer Block Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
