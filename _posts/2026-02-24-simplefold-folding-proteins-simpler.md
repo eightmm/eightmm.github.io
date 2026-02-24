@@ -76,8 +76,7 @@ graph TD
     style TRUNK fill:#fff3e0
 ```
 
-<details>
-<summary>📝 Overall Architecture Pseudocode (클릭하여 펼치기)</summary>
+#### 📝 Overall Architecture Pseudocode
 
 ```python
 class SimpleFold(nn.Module):
@@ -156,7 +155,6 @@ class SimpleFold(nn.Module):
         return v_t
 ```
 
-</details>
 
 ### Representation: Hierarchical "Fine → Coarse → Fine"
 
@@ -183,8 +181,7 @@ _Figure 4: (a) AlphaFold2의 Evoformer — pair representation과 triangle atten
 3. **SwiGLU FFN**: 표준 FFN 대신 SwiGLU 사용 (학습 안정성 + 성능)
 4. **RoPE**: Residue Trunk에서는 1D RoPE, Atom Encoder/Decoder에서는 **4D Axial RoPE** (3D 원자 좌표 + 1D residue index)
 
-<details>
-<summary>📝 Adaptive Layer Transformer Block (클릭하여 펼치기)</summary>
+#### 📝 Adaptive Layer Transformer Block
 
 ```python
 class AdaptiveTransformerBlock(nn.Module):
@@ -225,7 +222,6 @@ class AdaptiveTransformerBlock(nn.Module):
         return x
 ```
 
-</details>
 
 > SimpleFold는 AlphaFold2의 Evoformer에서 triangle attention과 pair representation이 핵심이었던 것과 달리, 이 모든 것을 표준 Transformer로 대체했다. Rotational symmetry는 equivariant architecture 대신 **SO(3) data augmentation**으로 처리한다.
 {: .prompt-info }
@@ -257,8 +253,7 @@ LDDT loss는 생성된 구조의 local atomic distance 정확도를 측정한다
 
 **Timestep resampling**: 일반적인 image generation에서는 $t=0.5$ 근처를 oversampling하지만, SimpleFold는 **$t=1$ (clean data) 근처를 oversampling**한다: $p(t) = 0.98 \cdot \text{LN}(0.8, 1.7) + 0.02 \cdot \mathcal{U}(0, 1)$. 이는 단백질 구조의 "secondary structure → backbone → side chain" 계층 때문이다.
 
-<details>
-<summary>📝 Training Loop Pseudocode (클릭하여 펼치기)</summary>
+#### 📝 Training Loop Pseudocode
 
 ```python
 # Training Loop
@@ -293,10 +288,8 @@ for batch in dataloader:
     optimizer.step()
 ```
 
-</details>
 
-<details>
-<summary>📝 Inference (Sampling) Pseudocode (클릭하여 펼치기)</summary>
+#### 📝 Inference (Sampling) Pseudocode
 
 ```python
 # Inference: Stochastic sampling via Langevin-style SDE — Eq. 2.5
@@ -332,7 +325,6 @@ def fold_protein(model, sequence, n_steps=200, tau=0.01):
     return x_t  # folded all-atom structure
 ```
 
-</details>
 
 **Training Data**: 총 ~9M 구조 (3B 모델 기준)
 
