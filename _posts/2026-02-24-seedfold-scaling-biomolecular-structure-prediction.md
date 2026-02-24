@@ -128,7 +128,7 @@ $$\text{GatedLinearTriAtt}(\mathbf{Z}_i) = \left(\phi(\mathbf{Q}_i) \phi(\mathbf
 
 $\psi = \text{sigmoid}$로 bias를 gating 메커니즘으로 사용. Right product trick은 적용 불가하지만, CUDA 최적화된 tiled 구현으로 메모리 효율을 확보.
 
-<details>
+<details markdown="1">
 <summary>📝 Linear Triangular Attention Pseudocode (클릭하여 펼치기)</summary>
 
 ```python
@@ -226,7 +226,7 @@ Mgnify 데이터셋이 핵심이다: 메타게노믹 데이터로서 AFDB와의 
 
 AlphaFold2의 IPA → AlphaFold3의 Transformer 전환에서 **inductive bias가 사라졌기 때문에**, 데이터 규모를 147배로 키워 이를 보상한다는 전략이다.
 
-<details>
+<details markdown="1">
 <summary>📝 Training Configuration (클릭하여 펼치기)</summary>
 
 ```python
