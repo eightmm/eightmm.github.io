@@ -1,6 +1,6 @@
 ---
 title: "Pearl: A Foundation Model for Placing Every Atom in the Right Location"
-date: 2026-02-24 14:00:00 +0900
+date: 2026-02-24 13:50:00 +0900
 description: "Genesis Molecular AI의 Pearl은 대규모 synthetic data, SO(3)-equivariant diffusion module, multi-chain templating을 통해 protein-ligand cofolding에서 AlphaFold 3를 14.5% 상대 개선으로 능가하는 SOTA를 달성한다."
 categories: [AI, Drug Discovery]
 tags: [protein-ligand, cofolding, drug-discovery, diffusion, equivariant, alphafold3, pearl, synthetic-data, structure-prediction]
