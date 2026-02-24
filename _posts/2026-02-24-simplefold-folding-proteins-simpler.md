@@ -2,7 +2,7 @@
 title: "SimpleFold: Folding Proteins is Simpler than You Think"
 date: 2026-02-24 12:00:00 +0900
 description: "Apple의 SimpleFold — MSA, pair representation, triangle attention 없이 표준 Transformer + Flow Matching만으로 protein folding을 달성한 모델."
-categories: [Paper Review]
+categories: [Paper Review, Protein Structure]
 tags: [protein-folding, flow-matching, transformer, simplefold, apple, generative-model, esm2]
 math: true
 mermaid: true
