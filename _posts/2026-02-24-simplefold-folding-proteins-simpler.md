@@ -2,7 +2,7 @@
 title: "SimpleFold: Folding Proteins is Simpler than You Think"
 date: 2026-02-24 12:00:00 +0900
 description: "Apple의 SimpleFold는 도메인 특화 모듈 없이 일반 Transformer + Flow Matching만으로 protein folding을 수행한다. 3B 파라미터까지 스케일하여 SOTA급 성능과 ensemble generation에서 강점을 보인다."
-categories: [AI, Protein Structure]
+categories: [Paper Review]
 tags: [protein-folding, flow-matching, transformer, simplefold, alphafold, esm, generative-model, scaling]
 math: true
 mermaid: true
