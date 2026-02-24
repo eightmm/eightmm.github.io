@@ -1,7 +1,7 @@
 ---
 title: "Pearl: A Foundation Model for Placing Every Atom in the Right Location"
 date: 2026-02-24 13:50:00 +0900
-description: "Genesis Molecular AI의 Pearl은 대규모 synthetic data, SO(3)-equivariant diffusion module, multi-chain templating을 통해 protein-ligand cofolding에서 AlphaFold 3를 14.5% 상대 개선으로 능가하는 SOTA를 달성한다."
+description: "Genesis Molecular AI의 Pearl은 대규모 synthetic data, $\text{SO}(3)$-equivariant diffusion module, multi-chain templating을 통해 protein-ligand cofolding에서 AlphaFold 3를 14.5% 상대 개선으로 능가하는 SOTA를 달성한다."
 categories: [Paper Review, Drug Discovery]
 tags: [protein-ligand, cofolding, drug-discovery, diffusion, equivariant, alphafold3, pearl, synthetic-data, structure-prediction]
 math: true
@@ -13,9 +13,9 @@ image:
 
 Protein-ligand cofolding — 단백질과 약물 후보 분자의 3D 결합 구조를 동시에 예측하는 문제 — 은 computational drug discovery의 핵심이다. AlphaFold 3가 이 분야의 패러다임을 연 이후, 수많은 후속 모델(Boltz-1, Chai-1, Protenix)이 등장했지만, **실제 약물 설계에 필요한 수준의 정확도와 물리적 타당성**에는 여전히 미치지 못한다.
 
-Genesis Molecular AI와 NVIDIA의 Pearl은 이 문제에 세 가지 축으로 접근한다: (1) **대규모 synthetic data** — PDB의 147배 규모가 아닌 physics-based 방법으로 생성한 다양한 합성 복합체, (2) **SO(3)-equivariant diffusion module** — 회전 대칭을 아키텍처 수준에서 강제, (3) **multi-chain templating** — 추론 시 기존 구조 정보를 활용한 controllable generation.
+Genesis Molecular AI와 NVIDIA의 Pearl은 이 문제에 세 가지 축으로 접근한다: (1) **대규모 synthetic data** — PDB의 147배 규모가 아닌 physics-based 방법으로 생성한 다양한 합성 복합체, (2) **$\text{SO}(3)$-equivariant diffusion module** — 회전 대칭을 아키텍처 수준에서 강제, (3) **multi-chain templating** — 추론 시 기존 구조 정보를 활용한 controllable generation.
 
-결과는 인상적이다: Runs N' Poses 벤치마크에서 **RMSD < 2Å & PB-valid 기준 85.2%** 성공률로 AlphaFold 3(74.4%)를 **14.5% 상대 개선**. 더 엄격한 RMSD < 1Å에서는 격차가 더 벌어진다.
+결과는 인상적이다: Runs N' Poses 벤치마크에서 **$\text{RMSD} < 2\text{Å}$ & PB-valid 기준 85.2%** 성공률로 AlphaFold 3(74.4%)를 **14.5% 상대 개선**. 더 엄격한 $\text{RMSD} < 1\text{Å}$에서는 격차가 더 벌어진다.
 
 ## Problem: Cofolding의 세 가지 벽
 
@@ -32,13 +32,13 @@ Genesis Molecular AI와 NVIDIA의 Pearl은 이 문제에 세 가지 축으로 �
 
 ## Key Idea: Data + Equivariance + Controllability
 
-Pearl의 핵심을 한 문장으로 요약하면: **synthetic data로 데이터 부족을 극복하고, SO(3)-equivariant diffusion으로 물리적 대칭을 강제하며, multi-chain template으로 inference-time controllability를 제공한다.**
+Pearl의 핵심을 한 문장으로 요약하면: **synthetic data로 데이터 부족을 극복하고, $\text{SO}(3)$-equivariant diffusion으로 물리적 대칭을 강제하며, multi-chain template으로 inference-time controllability를 제공한다.**
 
 기존 cofolding 모델과의 핵심 차이:
 
 | | AF3/Boltz/Chai | Pearl |
 |---|---|---|
-| Structure Module | 범용 Transformer (비등변) | **SO(3)-equivariant Transformer** |
+| Structure Module | 범용 Transformer (비등변) | **$\text{SO}(3)$-equivariant Transformer** |
 | 학습 데이터 | PDB + monomer distillation | PDB + monomer distillation + **synthetic PL complexes** |
 | Template | Protein-only | **Multi-chain (protein + ligand + cofactor)** |
 | Controllability | 제한적 | Unconditional + **Conditional cofolding + Guidance** |
@@ -47,7 +47,7 @@ Pearl의 핵심을 한 문장으로 요약하면: **synthetic data로 데이터 
 
 ### Overview
 
-Pearl의 전체 파이프라인은 크게 두 단계로 나뉜다: (1) 회전/병진 불변인 **Trunk**이 pairwise representation을 학습하고, (2) **SO(3)-equivariant Diffusion Module**이 이를 conditioning으로 받아 3D 좌표를 생성한다.
+Pearl의 전체 파이프라인은 크게 두 단계로 나뉜다: (1) 회전/병진 불변인 **Trunk**이 pairwise representation을 학습하고, (2) **$\text{SO}(3)$-equivariant Diffusion Module**이 이를 conditioning으로 받아 3D 좌표를 생성한다.
 
 ![Pearl Overview](/assets/img/posts/pearl-foundation-model-placing-every-atom/fig1_overview.png)
 _Figure 1: Pearl 개요. (a) SARS-CoV-2 예측 예시. (b) Unconditional cofolding 결과. (c) Pocket-conditional cofolding 결과. (d) Training/inference flow. 출처: 원 논문_
@@ -66,7 +66,7 @@ graph TD
         TRIMUL --> PAIR
     end
     
-    subgraph Diffusion["SO(3)-Equivariant Diffusion Module"]
+    subgraph Diffusion["$\text{SO}(3)$-Equivariant Diffusion Module"]
         EQT["Equivariant<br/>Transformer Blocks"]
         EQFF["Equivariant<br/>Feed-Forward"]
         EQT --> EQFF
@@ -94,9 +94,9 @@ graph TD
 
 Trunk의 계산 비용이 비싼 pairwise representation은 한 번만 계산되고, diffusion module의 여러 denoising step에서 **amortize**되어 재사용된다. 이는 AF3와 유사한 설계지만, diffusion module 자체가 equivariant하다는 점이 다르다.
 
-### Core Architecture: SO(3)-Equivariant Diffusion Module
+### Core Architecture: $\text{SO}(3)$-Equivariant Diffusion Module
 
-Pearl의 아키텍처적 핵심은 **SO(3)-equivariant diffusion module**이다. 기존 cofolding 모델(AF3, Boltz-1, Chai-1)의 structure module은 범용 Transformer인데, Pearl은 여기에 **equivariant transformer (EqT) 블록**을 사용한다.
+Pearl의 아키텍처적 핵심은 **$\text{SO}(3)$-equivariant diffusion module**이다. 기존 cofolding 모델(AF3, Boltz-1, Chai-1)의 structure module은 범용 Transformer인데, Pearl은 여기에 **equivariant transformer (EqT) 블록**을 사용한다.
 
 ![Equivariant Architecture](/assets/img/posts/pearl-foundation-model-placing-every-atom/fig2_equivariant_architecture.png)
 _Figure 2: Equivariant diffusion module의 핵심 컴포넌트. (좌) Equivariant self-attention — scalar/vector 입력을 분리하여 Q/K를 구성. (우) Equivariant feed-forward — vector에 대해 gated nonlinearity 적용. 출처: 원 논문_
@@ -114,7 +114,7 @@ Vector 성분에 비선형성을 적용하기 위해 **gated nonlinearity**를 �
 ```python
 class EquivariantTransformerBlock(nn.Module):
     """
-    SO(3)-equivariant transformer block for Pearl's diffusion module.
+    $\text{SO}(3)$-equivariant transformer block for Pearl's diffusion module.
     Processes scalar (invariant) and vector (equivariant) features separately.
     """
     
@@ -154,7 +154,7 @@ class EquivariantTransformerBlock(nn.Module):
         q_v, k_v = self.vector_qk(v).chunk(2, dim=-2)
         
         # Attention weights: scalar dot product + vector dot product + pair bias
-        # All three terms are SO(3)-invariant
+        # All three terms are $\text{SO}(3)$-invariant
         attn = (
             einsum(q_s, k_s, "b i d, b j d -> b i j")
             + einsum(q_v, k_v, "b i d c, b j d c -> b i j")  # vector dot prod
@@ -236,7 +236,7 @@ NVIDIA cuEquivariance 커널로 추가 가속: 학습 15% 속도 향상, 추론 
 ![Main Results](/assets/img/posts/pearl-foundation-model-placing-every-atom/fig3_main_results.png)
 _Figure 3: Public 벤치마크에서의 unconditional cofolding 결과. Runs N' Poses, PoseBusters, InternalXtals. Best@5 protocol. 출처: 원 논문_
 
-| Model | RnP (RMSD<2Å & PB-valid) | PoseBusters (RMSD<2Å & PB-valid) | RnP (RMSD<1Å & PB-valid) |
+| Model | RnP ($\text{RMSD} < 2\text{Å}$ & PB-valid) | PoseBusters ($\text{RMSD} < 2\text{Å}$ & PB-valid) | RnP ($\text{RMSD} < 1\text{Å}$ & PB-valid) |
 |---|---|---|---|
 | AlphaFold 3 | 74.4% | 60.4%* | 61.5% |
 | Boltz-1x | 74.3% | 74.2% | 56.5% |
@@ -254,7 +254,7 @@ Pearl의 두드러진 특징: **PB-valid 체크를 적용해도 성공률이 거
 ![Generalization](/assets/img/posts/pearl-foundation-model-placing-every-atom/fig4_generalization.png)
 _Figure 4: Training set과의 유사도에 따른 성능 분석. 낮은 유사도 구간에서도 Pearl이 일관되게 우수. 출처: 원 논문_
 
-Pearl은 **novel pocket** (유사도 < 0.2), **novel ligand** (빈도 = 0), **dissimilar chemotype** (Tanimoto < 0.2) 모든 축에서 다른 모델을 리드한다. 이는 Pearl이 memorization이 아닌 transferable rule을 학습했음을 시사한다.
+Pearl은 **novel pocket** ($\text{유사도} < 0.2$), **novel ligand** (빈도 = 0), **dissimilar chemotype** ($\text{Tanimoto} < 0.2$) 모든 축에서 다른 모델을 리드한다. 이는 Pearl이 memorization이 아닌 transferable rule을 학습했음을 시사한다.
 
 ### Conditional Cofolding
 
@@ -265,23 +265,23 @@ _Figure 5: Conditional cofolding 결과. Structural prior를 제공했을 때 �
 
 | Metric | Pearl | Boltz-1x | Boltz-2† |
 |---|---|---|---|
-| RMSD < 2Å & PB-valid | **73.9%** | 51.5% | 41.2% |
-| RMSD < 1Å & PB-valid | **39.8%** | 10.6% | 18.1% |
+| $\text{RMSD} < 2\text{Å}$ & PB-valid | **73.9%** | 51.5% | 41.2% |
+| $\text{RMSD} < 1\text{Å}$ & PB-valid | **39.8%** | 10.6% | 18.1% |
 
 (†Boltz-2는 2023-06-01까지의 데이터로 학습 — 직접 비교 주의)
 
-RMSD < 1Å에서 Pearl은 Boltz-1x 대비 **~4배** 성능 향상.
+$\text{RMSD} < 1\text{Å}$에서 Pearl은 Boltz-1x 대비 **~4배** 성능 향상.
 
-### 왜 RMSD < 1Å가 중요한가
+### 왜 $\text{RMSD} < 1\text{Å}$가 중요한가
 
 ![Case Studies](/assets/img/posts/pearl-foundation-model-placing-every-atom/fig8_case_studies.png)
 _Figure 8: Pearl의 성공과 실패 사례 분석. Green: training set 예시, Pink: Pearl, Blue: Boltz-2. 출처: 원 논문_
 
-논문은 RMSD < 2Å를 만족하는 포즈에도 **ring flip, 핵심 interaction 누락, 미세한 translation** 등의 오류가 있어 실제 drug discovery에서는 사용 불가능한 경우가 많음을 강조한다. 예를 들어:
+논문은 $\text{RMSD} < 2\text{Å}$를 만족하는 포즈에도 **ring flip, 핵심 interaction 누락, 미세한 translation** 등의 오류가 있어 실제 drug discovery에서는 사용 불가능한 경우가 많음을 강조한다. 예를 들어:
 - Pyrazole ring이 뒤집혀 Val116과의 핵심 상호작용을 놓치는 경우 (RMSD 1.99Å)
 - Phenol flip으로 Ser87/Met120 상호작용이 깨지는 경우 (RMSD 1.70Å)
 
-따라서 RMSD < 1Å + PB-valid가 medicinal chemistry에서 실제로 유용한 기준이며, 이 기준에서 Pearl의 우위가 가장 두드러진다.
+따라서 $\text{RMSD} < 1\text{Å}$ + PB-valid가 medicinal chemistry에서 실제로 유용한 기준이며, 이 기준에서 Pearl의 우위가 가장 두드러진다.
 
 ## Discussion
 
@@ -304,10 +304,10 @@ _Figure 8: Pearl의 성공과 실패 사례 분석. Green: training set 예시, 
 
 ## TL;DR
 
-- **Pearl은 protein-ligand cofolding SOTA**: Runs N' Poses에서 RMSD < 2Å & PB-valid 기준 **85.2%** (AlphaFold 3 대비 14.5% 상대 개선).
-- **세 가지 핵심 혁신**: (1) Physics-based synthetic data → 일반화 향상, (2) SO(3)-equivariant diffusion module → sample efficiency + 물리적 타당성, (3) Multi-chain templating → controllable inference.
+- **Pearl은 protein-ligand cofolding SOTA**: Runs N' Poses에서 $\text{RMSD} < 2\text{Å}$ & PB-valid 기준 **85.2%** (AlphaFold 3 대비 14.5% 상대 개선).
+- **세 가지 핵심 혁신**: (1) Physics-based synthetic data → 일반화 향상, (2) $\text{SO}(3)$-equivariant diffusion module → sample efficiency + 물리적 타당성, (3) Multi-chain templating → controllable inference.
 - **물리적 타당성**이 특히 뛰어남: PB-valid 체크 적용 시 성공률 하락이 0.4~0.7%에 불과.
-- RMSD < 1Å 같은 **엄격한 기준**에서 성능 격차가 더 벌어짐 — 실제 drug discovery에 가장 관련성 높은 지표.
+- $\text{RMSD} < 1\text{Å}$ 같은 **엄격한 기준**에서 성능 격차가 더 벌어짐 — 실제 drug discovery에 가장 관련성 높은 지표.
 
 ## Paper Info
 
