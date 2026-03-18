@@ -143,6 +143,17 @@
 
 PDF에서 뽑은 임시 page image를 사용할 수는 있지만, 가능하면 나중에 의미 있는 figure 단위로 정리한다.
 
+### 이미지 사용 원칙
+- **이미지 개수에 인위적 제한을 두지 않는다**
+- 설명에 꼭 필요하면 figure를 여러 개 가져와도 된다
+- 특히 다음은 적극적으로 가져온다:
+  - 전체 overview figure
+  - 핵심 method figure
+  - notation 이해에 필요한 보조 figure (예: A-B-C-D, torsion, geometry definition)
+  - results / ablation / failure case figure
+- “이미지 한두 장만” 같은 보수적 제한보다 **독자의 이해를 높이는 방향**을 우선한다
+- 다만 같은 정보를 중복해서 보여주는 이미지는 줄이고, 각 figure의 역할이 분명해야 한다
+
 ---
 
 ## 5. Front Matter 규칙

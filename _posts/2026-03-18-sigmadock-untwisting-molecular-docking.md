@@ -205,6 +205,9 @@ $$
 
 ### Why torsional models become entangled
 
+![Torsion and conformational manifold](/assets/img/posts/sigmadock-untwisting-molecular-docking/fig2_torsion_abcd.png)
+_Figure 2: torsional bond와 conformational manifold 설명 figure. (a) A-B-C-D dihedral의 정의, (b) bound pose와 aligned conformer의 예시, (c) rotatable bond를 따라 conformer ensemble이 어떻게 변하는지 보여준다. fragment-based parametrization이 왜 자연스러운지 이해하는 데 가장 중요한 보조 그림이다. 출처: 원 논문_
+
 SIGMA-Dock의 이론적 동기 중 가장 중요한 부분은 torsional model 비판이다. 논문은 torsion space에서의 독립적인 update가 Cartesian space로 가면 일반적으로 entangled된 induced measure를 만든다고 주장한다.
 
 직관적으로 보면 torsion model은 다음 공간에서 움직인다.
@@ -278,7 +281,7 @@ class FR3D:
 즉, FR3D는 단순한 heuristic optimization이 아니라, **fragment space가 여전히 올바른 generative support를 갖도록 정리하는 단계**다.
 
 ![FR3D and Triangulation](/assets/img/posts/sigmadock-untwisting-molecular-docking/fig3_fr3d.png)
-_Figure 2: FR3D 예시. rotatable bond 기준의 초기 fragmentation에서 시작해 stochastic merging으로 irreducible fragment set을 찾고, cross-fragment triangulation edge를 정의하는 과정을 보여준다. 출처: 원 논문_
+_Figure 3: FR3D 예시. rotatable bond 기준의 초기 fragmentation에서 시작해 stochastic merging으로 irreducible fragment set을 찾고, cross-fragment triangulation edge를 정의하는 과정을 보여준다. 출처: 원 논문_
 
 ### Soft geometric constraints and triangulation
 
@@ -464,7 +467,7 @@ $$
 ### Main benchmark: PoseBusters와 Astex
 
 ![SIGMA-Dock Results](/assets/img/posts/sigmadock-untwisting-molecular-docking/fig4_results.png)
-_Figure 3: PoseBusters와 Astex diverse set에서의 성능 비교. intended split에서 SIGMA-Dock이 strong PB-valid Top-1 성능을 보이며, sequence-similarity split에서도 비교적 안정적인 일반화를 보인다는 것이 핵심 메시지다. 출처: 원 논문_
+_Figure 4: PoseBusters와 Astex diverse set에서의 성능 비교. intended split에서 SIGMA-Dock이 strong PB-valid Top-1 성능을 보이며, sequence-similarity split에서도 비교적 안정적인 일반화를 보인다는 것이 핵심 메시지다. 출처: 원 논문_
 
 논문이 가장 강하게 내세우는 결과는 PoseBusters(v2)와 Astex diverse set이다.
 
