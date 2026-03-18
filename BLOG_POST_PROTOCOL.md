@@ -1,166 +1,150 @@
 # BLOG_POST_PROTOCOL.md
 
 이 문서는 `eightmm.github.io` 블로그의 **논문 리뷰 포스트 작성 프로토콜**이다.
-목표는 앞으로 사용자가 특정 논문을 지정했을 때, 이 문서를 기준으로 **현재 블로그와 동일한 스타일/밀도/구조**의 글을 일관되게 작성하는 것이다.
+앞으로 이 블로그의 논문 리뷰는 기본적으로 **깊은 해설형(long-form technical review)** 을 표준으로 삼는다.
 
-이 문서는 사람용 가이드이면서 동시에 에이전트가 직접 따라야 하는 실행 프로토콜이다.
+즉 목표는 단순 요약이 아니라:
 
----
+- 논문의 문제의식과 배경을 설명하고
+- 핵심 수식과 모델링 선택을 풀어주고
+- 아키텍처와 학습/추론을 구현 감각이 들 정도로 해설하고
+- 실험 결과와 한계를 비판적으로 평가하는 것
 
-## 0. 목표
+한 줄로 말하면:
 
-이 블로그의 논문 리뷰 글은 단순 요약이 아니다. 다음 4가지를 동시에 만족해야 한다.
-
-1. **논문의 핵심 아이디어를 빠르게 이해시킨다**
-2. **왜 중요한지 맥락을 설명한다**
-3. **아키텍처/알고리즘을 기술적으로 깊게 풀어준다**
-4. **실제 성능, 한계, 재현 가능성까지 평가한다**
-
-즉, 스타일은 다음에 가깝다.
-
-- 단순 번역 ❌
-- 홍보성 소개글 ❌
-- 수식/구조/실험을 읽고 풀어주는 **technical review** ✅
-- 그러나 논문을 처음 접한 사람도 따라올 수 있도록 **맥락과 직관** 포함 ✅
+> **논문을 안 읽은 사람도 이 글 하나로 핵심, 수식, 설계 이유, 한계까지 따라올 수 있는 수준의 깊은 리뷰**
 
 ---
 
-## 1. 이 블로그의 현재 스타일 요약
+## 0. 기본 원칙
 
-기존 포스트들을 기준으로 보면, 이 블로그의 paper review는 아래 특징을 가진다.
+이 블로그의 paper review는 앞으로 다음 5가지를 반드시 지향한다.
 
-### 톤
+1. **맥락**: 왜 이 문제가 중요한가
+2. **핵심 주장**: 저자들이 무엇을 바꿨는가
+3. **수학적 구조**: 어떤 공간/목적함수/확률모형 위에서 문제를 푸는가
+4. **구현 감각**: 실제로 어떤 모듈이 어떤 역할을 하는가
+5. **평가와 한계**: 결과가 얼마나 설득력 있는가, 어디까지 믿어야 하는가
 
-- 기본 언어는 **한국어**
-- 논문/기술 용어는 영어를 유지해도 됨
-- 문체는 설명적이되 너무 딱딱하지 않음
-- 첫머리에서 논문의 문제의식과 핵심 기여를 **강하게 요약**함
-- 저자 주장만 반복하지 않고, 중간중간 **해석/평가/비교**를 넣음
+금지:
+- 초록 번역체
+- 홍보문
+- 수식만 많은 설명 부재 글
+- “좋다/강하다”만 반복하는 얕은 감상문
 
-### 글의 밀도
-
-- 보통 **긴 편**이다
-- `How it works` 섹션이 가장 길고 핵심이다
-- 표, bullet, 수식, 그림, mermaid, 코드 블록을 적극 사용한다
-- 독자가 “그래서 내부가 어떻게 돌아가는데?”를 읽고 납득할 수 있어야 한다
-
-### 시각 자료 사용
-
-가능하면 다음을 포함한다.
-
-- 대표 그림 1장 이상
-- 필요 시 추가 figure 여러 장
-- 아키텍처/파이프라인 mermaid
-- pseudocode 또는 Python/PyTorch 스타일 코드
-
-### 글의 관점
-
-항상 다음 질문에 답해야 한다.
-
-- 이 논문은 **무슨 문제를 푸는가**
-- 기존 방법은 **왜 부족했는가**
-- 저자들은 **무엇을 바꿨는가**
-- 그 변화가 **왜 효과적인가**
-- 실험 결과는 **얼마나 설득력 있는가**
-- 실제로 **재현 가능한가 / 한계는 무엇인가**
+권장:
+- 직관 + 수식 + 구조 + 비판이 함께 있는 글
 
 ---
 
-## 2. 언제 이 프로토콜을 쓰는가
+## 1. 이제부터의 기본 스타일: “더 깊은 버전”
 
-다음 요청에 적용한다.
+이 블로그의 논문 리뷰는 앞으로 **읽기 쉬운 요약형**보다 **깊은 해설형**을 기본값으로 한다.
 
-- “이 논문 블로그 포스트 써줘”
-- “이 페이퍼 리뷰 정리해줘”
-- “블로그용으로 정리해줘”
-- “eightmm 스타일로 포스트 작성해줘”
-- “현재 블로그처럼 써줘”
+### 의미하는 바
 
-논문 리뷰가 아니라 프로젝트 회고, 튜토리얼, 일반 에세이라면 이 문서를 그대로 강제 적용하지 않는다. 다만 front matter 형식과 전반적 품질 기준은 참고할 수 있다.
+- `How It Works`는 충분히 길어야 한다
+- 핵심 수식은 가능하면 원 논문의 notation과 연결해서 소개한다
+- theorem / proposition / lemma가 중요한 논문이면 반드시 해설한다
+- 모델의 forward / backward process, objective, inference를 구분해서 설명한다
+- 아키텍처는 "모듈 이름 나열"이 아니라 **입력 → 표현 → 업데이트 → 출력** 흐름으로 설명한다
+- 결과는 숫자만 적지 말고 **왜 그 수치가 중요한지** 해석한다
+
+### 목표 글감
+
+독자가 글을 읽고 다음 중 최소 3개는 할 수 있어야 한다.
+
+- 논문 아이디어를 동료에게 설명
+- 핵심 수식을 화이트보드에 다시 적기
+- 모델 구현 흐름을 대략 재구성
+- baseline 대비 차이를 명확히 말하기
+- 논문의 한계를 구체적으로 지적
 
 ---
 
-## 3. 작성 전 반드시 수집할 정보
+## 2. 기본 길이/밀도 기준
 
-포스트를 쓰기 전에 아래 정보를 먼저 확보한다.
+### 길이
+- 기본 목표: **긴 글**
+- 논문 리뷰는 가능하면 short note가 아니라 **세미나 노트 수준**으로 작성
 
-### 필수 입력
+### 밀도 기준
+- `How It Works` 비중: **최소 40% 이상**, 가능하면 **45~55%**
+- 수식: 논문 특성상 중요하면 **최소 3개 이상**, 보통 **4~8개** 권장
+- 코드 블록: **최소 1개**, 가능하면 **2개 이상**
+- 표: **최소 1개 이상**
+- figure: **대표 figure 1개 이상**, 가능하면 results/ablation figure도 추가
 
-1. **논문 제목**
-2. **논문 링크** (arXiv / DOI / conference page / journal link)
-3. **출판 시점 / venue**
-4. **저자/소속**
-5. **핵심 figure**
-6. **핵심 실험 결과 표/그림**
+### 우선순위
+1. 설명의 정확성
+2. 설계 이유의 해설
+3. 구현 감각
+4. 읽기 흐름
+5. 장식적 표현
 
-### 가능하면 추가로 확보
+---
 
+## 3. 작성 전 수집해야 할 정보
+
+### 필수
+1. 논문 제목
+2. 논문 링크
+3. 저자 / 소속
+4. 출판 시점 / venue
+5. 핵심 figure
+6. 핵심 result table / figure
+
+### 강력 권장
+- appendix / supplementary
 - project page
-- code repository
-- supplementary / appendix
-- benchmark 세부 설정
-- baseline 비교 조건
-- limitation / failure case figure
+- code repo
+- ablation table
+- failure case figure
+- theorem / proposition / lemma
+- train-test split 설명
+- runtime / parameter count / data size
 
-### 작성 전에 확인할 것
-
-- 내가 실제로 논문 본문/초록/그림/표를 읽었는가
-- 주장하는 수치가 정확한가
-- 모델 이름, 데이터셋 이름, metric 표기가 정확한가
-- baseline 비교가 fair한지 논문이 단서를 달았는가
-
-불확실하면 단정하지 말고 아래처럼 쓴다.
-
-- “논문 기준으로는 …”
-- “저자들은 …라고 해석한다”
-- “직접 비교에는 주의가 필요하다”
+### 반드시 확인
+- 주요 수치 정확한가
+- notation을 잘못 옮기지 않았는가
+- baseline 비교 조건이 fair한가
+- metric 정의가 섞이지 않았는가
+- paper claim과 empirical evidence를 구분했는가
 
 ---
 
-## 4. 파일 생성 규칙
+## 4. 파일/이미지 규칙
 
 ### 위치
+- 포스트: `_posts/YYYY-MM-DD-slug.md`
+- 이미지: `assets/img/posts/<slug>/`
 
-- 포스트 파일: `_posts/YYYY-MM-DD-slug.md`
-- 이미지 폴더: `assets/img/posts/<slug>/`
+### slug
+- kebab-case
+- 너무 길면 핵심 표현만 남김
 
-### slug 규칙
-
-- 소문자 kebab-case
-- 가능한 한 논문 제목의 핵심 표현을 사용
-- 너무 길면 앞 핵심 구절만 사용
-
-예시:
-
-- `pearl-foundation-model-placing-every-atom`
-- `seedfold-scaling-biomolecular-structure-prediction`
-- `alphafold3-accurate-biomolecular-interactions`
-
-### 이미지 규칙
-
-이미지는 가능하면 다음 식으로 저장한다.
-
+### 이미지 파일명 권장
 - `fig1_overview.png`
-- `fig2_architecture.png`
+- `fig2_method.png`
 - `fig3_results.png`
 - `fig4_ablation.png`
 - `fig5_failure_cases.png`
 
-파일명만 보고도 용도를 알 수 있게 한다.
+PDF에서 뽑은 임시 page image를 사용할 수는 있지만, 가능하면 나중에 의미 있는 figure 단위로 정리한다.
 
 ---
 
 ## 5. Front Matter 규칙
 
-기본 템플릿은 아래를 따른다.
+기본 템플릿:
 
 ```yaml
 ---
 title: "논문 제목"
 date: YYYY-MM-DD HH:MM:SS +0900
-description: "논문의 핵심 기여와 결과를 1~2문장으로 압축한 SEO 설명"
-categories: [Paper Review, 세부카테고리]
-tags: [핵심-태그1, 핵심-태그2, 핵심-태그3]
+description: "핵심 기여 + 핵심 기술 요소 + 대표 결과를 압축한 설명"
+categories: [AI, 세부카테고리]
+tags: [tag1, tag2, tag3, tag4]
 math: true
 mermaid: true
 image:
@@ -169,63 +153,25 @@ image:
 ---
 ```
 
-### Front Matter 작성 원칙
+### 카테고리
+현재 저장소의 validator 기준을 따른다.
+- 메인 카테고리: `AI`, `Bio`, `Dev`, `General`
+- 논문 리뷰는 보통 `AI` 또는 `Bio`
+- 예: `[AI, Drug Discovery]`, `[AI, Protein Structure]`
 
-#### title
-- 논문 원제를 그대로 쓰는 것을 기본으로 한다
-- 부제가 있으면 유지 가능
+### description
+- 초록 복붙 금지
+- 120~180자 정도 권장
+- 누가 / 무엇을 / 어떻게 / 얼마나 잘했는지 포함
 
-#### date
-- 블로그 게시 시각 기준 `+0900`
-- 사용자가 별도 날짜를 지정하지 않으면 작성 시점 기준
-
-#### description
-- 반드시 직접 쓴다. 초록 첫 문장 복붙 금지.
-- 길이 목표: **120~180자 정도**
-- 포함해야 할 것:
-  - 누가 / 무엇을 제안했는지
-  - 핵심 기술 요소 1~2개
-  - 가장 중요한 결과 1개
-
-좋은 예:
-- "Genesis Molecular AI의 Pearl은 대규모 synthetic data, SO(3)-equivariant diffusion, multi-chain templating을 통해 protein-ligand cofolding에서 AlphaFold 3를 능가하는 SOTA를 달성한다."
-
-#### categories
-기본 메인 카테고리는 다음 중 선택한다.
-
-- `Paper Review`
-- `Projects`
-- `General`
-
-논문 리뷰라면 거의 항상:
-
-- `[Paper Review, Protein Structure]`
-- `[Paper Review, Drug Discovery]`
-- `[Paper Review, Generative Models]`
-- `[Paper Review, NLP]`
-- `[Paper Review, Vision]`
-
-현재 블로그 실사용 기준으로는 **Paper Review + 주제 하위 분류** 형태를 우선 사용한다.
-
-#### tags
-- 6~12개 권장
-- 검색성과 의미를 같이 본다
-- 너무 일반적인 태그만 넣지 말고, 논문 고유 키워드를 섞는다
-- 예: `alphafold3`, `diffusion`, `protein-ligand`, `equivariant`, `pairformer`
-
-#### math / mermaid
-- 수식이나 mermaid를 쓸 가능성이 높으므로 **기본적으로 true**
-- 정말 불필요할 때만 끈다
-
-#### image
-- 대표 figure가 있으면 반드시 지정
-- alt는 기술적으로 정확하고 짧게 쓴다
+### math / mermaid
+- 깊은 리뷰는 기본적으로 둘 다 `true`
 
 ---
 
-## 6. 권장 문서 구조
+## 6. 기본 문서 구조
 
-현재 블로그의 실제 패턴을 기준으로, paper review는 아래 구조를 기본으로 한다.
+앞으로는 아래 구조를 기본 템플릿으로 사용한다.
 
 ```md
 ## Hook
@@ -240,192 +186,207 @@ image:
 ## Paper Info
 ```
 
-다만 실제 기존 글에서는 다음 변형도 허용된다.
-
-- `## Problem: ...`
-- `## Key Idea: ...`
-- `## How it works`
-- `## Discussion`만 있고 `Limitations`, `Conclusion`이 축약될 수 있음
-
-### 현재부터의 권장 표준
-
-앞으로는 가능하면 아래 순서를 유지한다.
-
-1. `Hook`
-2. `Problem`
-3. `Key Idea`
-4. `How It Works`
-5. `Results`
-6. `Discussion`
-7. `Limitations`
-8. `Conclusion`
-9. `TL;DR`
-10. `Paper Info`
-
-즉, **기존 스타일은 유지하되 앞으로는 AF3 포스트에 가까운 정규 구조를 기본값으로 삼는다.**
+### 원칙
+- `Hook`은 짧고 강하게
+- `Problem`은 구조적으로
+- `Key Idea`는 압축적으로
+- `How It Works`는 길고 깊게
+- `Results`는 해석 중심
+- `Discussion`은 논문의 의미와 비교 중심
+- `Limitations`는 독립 섹션으로 분리
 
 ---
 
-## 7. 섹션별 작성 규칙
+## 7. 섹션별 상세 규칙
 
-### 7.1 Hook
+## 7.1 Hook
 
 역할:
-- 독자가 왜 이 논문을 읽어야 하는지 2~4문단 내에 납득시킨다.
-- 해당 분야의 최근 흐름과 이 논문의 위치를 잡아준다.
+- 이 논문이 왜 중요한지 2~4문단 안에 납득시킨다.
+- 문제 배경과 최근 흐름 속 위치를 잡아준다.
 
 포함 요소:
-- 최근 흐름 1개
-- 기존 방법의 한계 1개
-- 이 논문의 핵심 주장 1개
-- 이 글에서 무엇을 다룰지 1개
+- 분야의 현재 상태
+- 기존 방법의 핵심 한계
+- 논문의 핵심 주장
+- 이 글에서 무엇을 설명할지
 
-피해야 할 것:
-- 초록 번역
-- 너무 긴 역사 설명
-- 뜬구름 잡는 찬사
+---
 
-### 7.2 Problem
+## 7.2 Problem
 
 역할:
-- 이 논문이 정확히 어떤 문제를 푸는지 정의한다.
-- 기존 방법이 어디서 막히는지 구조적으로 설명한다.
+- 이 논문이 푸는 문제를 정확히 정리한다.
+- 기존 방법이 실패하는 이유를 **구조적으로** 설명한다.
 
 작성법:
-- 가능하면 2~4개의 병목으로 나눠 설명
-- 단순히 “성능이 낮다”가 아니라 왜 낮은지 설명
-  - 데이터 부족
-  - 계산 복잡도
-  - representation bottleneck
-  - inductive bias 부족
-  - physical validity 문제
+- 2~4개의 병목으로 나눠라
+- 단순 성능 부족이 아니라 원인을 써라
+  - representation 문제
+  - complexity 문제
+  - inductive bias 문제
+  - objective mismatch
+  - train-test leakage
+  - physical validity
 
-좋은 패턴:
-- “문제는 세 가지다: …”
-- “기존 접근은 A에는 강하지만 B를 못 다룬다”
+---
 
-### 7.3 Key Idea
+## 7.3 Key Idea
 
 역할:
-- 저자의 핵심 기여를 **압축적으로** 정리한다.
+- 논문의 핵심 기여를 가장 압축적으로 정리한다.
 
-작성법:
-- 한 문장 요약 1개
+포함 권장:
+- 한 문장 요약
 - 핵심 기여 bullet 3~4개
-- 필요하면 기존 모델 대비 차이 표 1개
+- baseline 대비 차이 표 1개
 
-여기서는 디테일에 너무 깊게 들어가지 말고, 독자가 큰 그림을 먼저 잡게 한다.
+주의:
+- 여기서는 큰 그림 위주
+- 너무 많은 세부 구현은 `How It Works`로 넘긴다
 
-### 7.4 How It Works
+---
+
+## 7.4 How It Works
 
 가장 중요하다.
 
-이 섹션은 전체 글에서 **최소 35~40% 이상** 비중을 차지하도록 한다.
+이 섹션은 앞으로 **깊은 리뷰의 중심**이다.
 
-반드시 포함할 것:
-- 전체 파이프라인 설명
-- 핵심 representation 설명
-- 핵심 모듈 설명
-- 필요 시 training recipe / data recipe
-- 필요 시 inference mode / sampling / guidance 설명
-- pseudocode 또는 Python/PyTorch 스타일 코드 1개 이상
-- mermaid diagram 1개 이상 권장
+### 반드시 포함할 것
+- 전체 파이프라인
+- 문제의 수학적 공간/표현
+- 핵심 모듈
+- training objective
+- inference / sampling / decoding / ranking
+- 최소 1개 이상의 코드 블록
+- 가능하면 mermaid 1개 이상
+- 중요한 수식 3개 이상
 
-구성 예시:
+### 권장 소구성
 
 ```md
 ### Overview
-### Representation
+### Representation / Problem Formulation
+### Core Mathematical Setup
 ### Core Architecture
-### Key Innovation
-### Training / Inference
+### Training Objective
+### Inference / Sampling
+### Why this works
 ```
 
-원칙:
-- 단순 기능 나열이 아니라 **왜 이렇게 설계했는지**를 같이 설명
-- 수식은 필요한 만큼만 넣되, 수식 뒤에 반드시 자연어 설명을 붙인다
-- 코드 블록은 “실제 구현 느낌”이 나도록 작성하되, 논문 개념 전달용임을 명확히 한다
+### 수식 규칙
+수식은 넣는 것 자체가 목적이 아니다. 다음 3단계를 지켜라.
 
-### 7.5 Results
+1. **수식 제시**
+2. **각 항이 무엇인지 설명**
+3. **왜 이 수식이 논문의 핵심인지 해설**
 
-역할:
-- 논문이 실제로 얼마나 잘 되는지 보여준다.
+즉, 수식 뒤에는 반드시 자연어 해설이 따라야 한다.
 
-반드시 포함할 것:
-- main benchmark table 또는 핵심 수치
-- baseline 대비 얼마나 나아졌는지 해석
-- 중요 ablation 또는 generalization 결과
-- 필요한 경우 failure case
+### theorem / lemma / proposition 처리 규칙
+논문에서 theorem/lemma가 핵심이면 반드시:
+- 원문을 짧게 요약하고
+- 직관을 설명하고
+- 글 전체 논리에서 왜 중요한지 말한다
 
-작성 원칙:
-- 숫자만 나열하지 말고 의미를 해석한다
-- best@k, filtered setting, confidence reranking 등 비교 조건이 다르면 명시한다
-- 실험이 강한지/애매한지 평가를 덧붙인다
+특히 다음 질문에 답해야 한다.
+- 이 정리가 무엇을 보장하는가?
+- 실제 모델 설계와 어떤 연결이 있는가?
+- 단순 기술적 사실인가, 핵심 정당화인가?
 
-### 7.6 Discussion
+### 코드 블록 규칙
+- conceptual pseudocode 또는 Python/PyTorch 스타일 모두 가능
+- 독자가 구현 흐름을 느낄 수 있을 만큼 구체적이어야 한다
+- 논문에 없는 세부는 추정임을 드러내야 한다
 
-역할:
-- 저자 주장과 실제 의미 사이를 해석한다.
-- 기존 글에서 이 섹션은 꽤 중요하다.
+### 깊이 기준
+좋은 `How It Works`는 아래를 만족한다.
+- 표면 설명이 아니라 설계 이유가 나온다
+- notation과 구현 감각이 연결된다
+- baseline과의 차이가 자연스럽게 드러난다
 
-포함하면 좋은 것:
-- 왜 이 접근이 먹혔는지에 대한 해석
-- 비슷한 다른 논문과의 관계
-- 어떤 상황에서 특히 유리한지
-- 실제 현업/연구 의미
-- 재현 가능성 평가
+---
 
-자주 쓰는 소주제:
-- 저자가 밝힌 한계
-- 재현성
-- 관련 논문 비교
-- 실무적 의미
-
-### 7.7 Limitations
+## 7.5 Results
 
 역할:
-- 논문의 한계를 분리해 명시한다.
+- 이 모델이 실제로 얼마나 잘 되는지 보여준다.
 
-가능하면 다음을 다룬다.
-- OOD/generalization 한계
-- 데이터 의존성
-- 계산 비용
-- 비공개 코드/비공개 데이터
-- 평가 설정의 편향 가능성
-- 실제 배포/현업 적용 시 제약
+포함 권장:
+- main benchmark
+- ablation
+- generalization / OOD 결과
+- runtime / efficiency
+- failure case 또는 subset analysis
 
-기존 글에서는 Discussion 안에 흡수된 경우도 많지만, 앞으로는 가능하면 별도 섹션으로 분리한다.
+### 작성 원칙
+- 숫자 나열 금지
+- 반드시 해석을 붙인다
+- 조건 차이가 있으면 명시한다
+  - best@k
+  - PB-valid 포함/미포함
+  - leakage 차이
+  - train split 차이
 
-### 7.8 Conclusion
+---
+
+## 7.6 Discussion
 
 역할:
-- 독자가 이 논문을 한 문단으로 기억하게 만든다.
+- 논문의 의미를 해석하고 관련 방법들과 연결한다.
+
+포함 권장:
+- 왜 이 접근이 먹혔는가
+- 다른 최근 논문과 어떤 축에서 다른가
+- 실제 연구/실무 의미
+- representation 선택의 장단점
+- 저자 주장 중 어디까지 강하게 받아들여야 하는가
+
+이 섹션에서는 **내 해석**이 들어가도 된다. 다만 사실과 의견을 섞지 말고 구분한다.
+
+---
+
+## 7.7 Limitations
+
+역할:
+- 한계를 분명히 적는다.
+
+가능하면 아래를 체크:
+- evaluation setting이 제한적인가
+- data leakage 가능성이 있는가
+- runtime/compute 부담이 큰가
+- cofactor / multimodal / induced fit 등 어려운 설정을 빠뜨렸는가
+- baseline 비교가 완전 공정한가
+- open-source / reproducibility 상태는 어떤가
+
+---
+
+## 7.8 Conclusion
+
+역할:
+- 논문을 한 문단으로 기억하게 만든다.
 
 구성:
-- 이 논문이 바꾼 것 1개
-- 가장 중요한 기술 포인트 1개
-- 가장 중요한 caveat 1개
+- 가장 중요한 기여
+- 가장 중요한 기술 포인트
+- 가장 중요한 caveat
 
 짧고 선명하게 쓴다.
 
-### 7.9 TL;DR
+---
 
-역할:
-- 바쁜 사람이 이것만 읽어도 핵심을 가져가게 한다.
+## 7.9 TL;DR
 
-형식:
-- bullet 3~5개
-- 가장 중요한 수치 1개 이상 포함 권장
+- bullet 3~6개
+- 가장 중요한 수치 1개 이상 포함
+- 이 글 전체의 압축판이어야 함
 
-스타일:
-- 강하고 압축적이어야 한다
-- 마케팅 문구 말고 정보 밀도 위주
+---
 
-### 7.10 Paper Info
+## 7.10 Paper Info
 
-반드시 마지막에 표로 정리한다.
-
-기본 템플릿:
+최소 필드:
 
 ```md
 ## Paper Info
@@ -436,156 +397,46 @@ image:
 | **Authors** | ... |
 | **Affiliations** | ... |
 | **Venue** | ... |
-| **Paper** | [arXiv](...) |
-| **Project** | ... |
+| **Published** | ... |
+| **Link** | ... |
+| **Paper** | ... |
 | **Code** | ... |
 ```
-
-필드가 없으면 생략 가능하지만, 최소한 아래는 넣는다.
-- Title
-- Authors
-- Venue/Published
-- Paper link
 
 ---
 
 ## 8. 문체 규칙
 
 ### 해야 할 것
-
-- 첫 문단에서 논문 핵심을 바로 말한다
-- 영어 용어를 억지 번역하지 않는다
-- 비교급/정량 표현을 적극 사용한다
-  - “단순 개선”보다 “14.5% 상대 개선”
-- 해석을 곁들인다
-  - “이건 memorization보다 generalization을 시사한다”
-- 필요한 곳에서 강조를 사용한다
-  - `**핵심 주장**`
+- 한국어 중심, 용어는 필요시 영어 유지
+- 직관과 해석을 같이 제공
+- 강조는 정량과 구조에 사용
+- 비교는 구체적으로
+- 단정이 어려우면 caveat 명시
 
 ### 피해야 할 것
+- 추상적 칭찬 반복
+- 초록 재서술
+- 수식 던지기만 하고 해설 없음
+- 구현과 무관한 장식적 비유 과다
 
-- “혁신적이다”, “놀랍다”만 반복
-- 초록 복붙
-- 무근거 추측
-- 논문에 없는 수치 창작
-- 너무 많은 수식만 던지고 설명 없음
-
-### 문장 스타일 예시
-
-좋음:
-- “핵심은 width를 키운 것이 아니라, **어디의 width를 키웠느냐**다.”
-- “이 결과는 단순한 벤치마크 이득보다, **OOD 일반화가 실제로 개선되었을 가능성**을 시사한다.”
-- “중요한 점은 PB-valid를 붙여도 성능이 거의 떨어지지 않는다는 것이다.”
-
-피함:
-- “이 논문은 매우 훌륭한 논문이다.”
-- “아무튼 성능이 좋다.”
+좋은 문장 예:
+- “핵심은 torsion을 안 쓴 것이 아니라, torsion의 기하학적 복잡도를 fragment pose로 다시 썼다는 데 있다.”
+- “이 theorem은 단순 형식적 보장이 아니라, 왜 fragment space가 학습하기 쉬운지를 정당화하는 축이다.”
 
 ---
 
-## 9. 표 / 그림 / 코드 사용 규칙
+## 9. 작성 절차
 
-### 표
+### Step 1. 논문 읽기
+- 초록만 말고 method / results / appendix까지 본다
+- 핵심 claim 1문장, 핵심 기여 3개, 핵심 식 3개를 먼저 뽑는다
 
-다음 상황에서는 표를 적극 사용한다.
-- baseline 비교
-- 모델 구성 비교
-- ablation 요약
-- 데이터셋 구성
-- training stages
-
-표는 단순 나열보다 **비교가 보이게** 만든다.
-
-### 그림
-
-각 그림 아래에는 다음을 쓴다.
-- 그림이 무엇인지
-- 왜 중요한지
-- 출처가 원 논문임을 명시
-
-예시:
-- `_Figure 3: Public benchmark에서의 main result. Best@5 기준으로 Pearl이 AF3를 일관되게 상회한다. 출처: 원 논문_`
-
-### Mermaid
-
-mermaid는 설명용으로만 사용한다.
-- 전체 파이프라인
-- 데이터 흐름
-- 모듈 관계
-- 학습/추론 흐름
-
-주의:
-- Chirpy 렌더링 문제를 피하려면 `<br>` 대신 `\n` 또는 단순 라벨 사용
-- 너무 복잡한 그래프 금지
-- inline style은 최소화
-
-### 코드 블록
-
-최소 1개 이상 권장, 특히 paper review에서는 거의 항상 포함한다.
-
-종류:
-- pseudocode
-- Python/PyTorch 스타일 reference implementation
-- training config 예시
-
-원칙:
-- 실제 개념을 전달할 정도로 충분히 구체적일 것
-- 그러나 논문에 없는 구현 세부를 과하게 단정하지 말 것
-- 코드 앞뒤로 “이 블록이 무엇을 보여주는지” 설명할 것
-
----
-
-## 10. 인용 / 링크 규칙
-
-### 내부 링크
-
-가능하면 기존 블로그 글과 연결한다.
-
-예:
-- 같은 시리즈 글
-- 비슷한 주제를 다룬 이전 리뷰
-- 비교 대상이 되는 논문 리뷰
-
-패턴:
-- `[AlphaFold 3](/posts/alphafold3-accurate-biomolecular-interactions/)`
-
-### 외부 링크
-
-주로 다음만 사용한다.
-- 논문 링크
-- project page
-- code repo
-- 공식 benchmark / dataset page
-
-과도한 외부 링크 남발 금지.
-
----
-
-## 11. 논문 리뷰 작성 절차 (실행 프로토콜)
-
-사용자가 논문 리뷰 포스트를 요청하면 아래 순서로 수행한다.
-
-### Step 1. 논문 파악
-- 제목, 링크, 저자, venue 확인
-- 초록만 보지 말고 figure / method / results / appendix까지 훑기
-- 핵심 주장 1문장, 핵심 기여 3개를 먼저 메모
-
-### Step 2. 기존 블로그 맥락 확인
-- 비슷한 주제의 기존 포스트가 있는지 확인
-- series link를 걸 수 있는지 확인
-- 카테고리/태그를 기존 체계에 맞춤
-
-### Step 3. 자료 준비
-- 대표 figure 선정
-- results / ablation / failure case figure 수집
-- 이미지 저장 경로 정리
-
-### Step 4. 개요 먼저 작성
-다음 뼈대를 먼저 만든다.
+### Step 2. 구조 잡기
 - Hook
 - Problem
 - Key Idea
-- How It Works (세부 소제목 포함)
+- How It Works 세부 소제목
 - Results
 - Discussion
 - Limitations
@@ -593,58 +444,52 @@ mermaid는 설명용으로만 사용한다.
 - TL;DR
 - Paper Info
 
-### Step 5. 본문 작성
+### Step 3. 수학적 중심축 정리
+다음 중 무엇이 핵심인지 먼저 정한다.
+- state space
+- objective
+- theorem
+- inductive bias
+- inference algorithm
+- ranking / confidence
+
+### Step 4. 본문 작성
 우선순위:
-1. Hook
-2. Problem
-3. Key Idea
-4. How It Works
-5. Results
-6. 나머지 정리
+1. Hook / Problem / Key Idea
+2. How It Works 확장
+3. Results 해설
+4. Discussion / Limitations
 
-### Step 6. 기술 검증
-최소한 아래를 다시 체크한다.
-- 논문 수치 오기 없는가
-- baseline 이름 정확한가
-- 이미지 경로 맞는가
-- front matter 누락 없는가
-- 내부 링크 깨지지 않는가
-- 수식 문법/mermaid 문법 문제 없는가
-
-### Step 7. 블로그 스타일 polish
-- 첫 3문단의 밀도 높이기
-- TL;DR sharpen
-- Discussion에 해석 한 줄 더 넣기
-- 제목/description 재점검
+### Step 5. polish
+- 첫 3문단 sharpen
+- 수식 뒤 해설 보강
+- TL;DR 강화
+- 내부 링크 추가
 
 ---
 
-## 12. 품질 기준 체크리스트
-
-작성 후 아래 기준을 만족해야 한다.
+## 10. 품질 체크리스트
 
 ### 최소 기준
 - [ ] front matter 완비
-- [ ] 대표 이미지 있음
-- [ ] `How It Works`가 글의 핵심 비중 차지
+- [ ] `How It Works`가 글의 중심
+- [ ] 수식 3개 이상 또는 그에 준하는 수학적 설명
+- [ ] 코드 블록 1개 이상
 - [ ] 결과 표/수치 포함
-- [ ] `TL;DR` 존재
+- [ ] `Limitations` 존재
 - [ ] `Paper Info` 존재
-- [ ] 마지막 면책/피드백 안내 블록 존재
+- [ ] 마지막 고정 블록 존재
 
-### 좋은 글 기준
-- [ ] 독자가 왜 중요한지 첫 부분에서 이해 가능
-- [ ] 핵심 기여가 3개 이내로 압축됨
-- [ ] 코드/수식/그림이 설명과 연결됨
-- [ ] 결과 해석이 수치 나열에 그치지 않음
-- [ ] 한계/재현성 평가가 있음
-- [ ] 기존 포스트와 내부 링크 연결됨
+### 깊은 리뷰 기준
+- [ ] 핵심 theorem/lemma/설계 이유가 설명됨
+- [ ] notation과 직관이 연결됨
+- [ ] 결과 해석이 비판적임
+- [ ] baseline 대비 차이가 명확함
+- [ ] 구현 감각이 생김
 
 ---
 
-## 13. 포스트 마지막 고정 블록
-
-논문 리뷰 포스트 끝에는 아래 블록을 기본으로 넣는다.
+## 11. 마지막 고정 블록
 
 ```md
 ---
@@ -655,20 +500,16 @@ mermaid는 설명용으로만 사용한다.
 {: .prompt-info }
 ```
 
-문구는 큰 틀을 유지하되 조금 다듬어도 된다.
-
 ---
 
-## 14. 새 포스트용 템플릿
-
-아래 템플릿을 복사해 시작한다.
+## 12. 새 포스트 템플릿
 
 ```md
 ---
 title: "<PAPER TITLE>"
 date: YYYY-MM-DD HH:MM:SS +0900
-description: "<SEO DESCRIPTION>"
-categories: [Paper Review, <SUBCATEGORY>]
+description: "<핵심 기여 + 핵심 기술 + 대표 결과>"
+categories: [AI, <SUBCATEGORY>]
 tags: [<tag1>, <tag2>, <tag3>, <tag4>]
 math: true
 mermaid: true
@@ -679,83 +520,46 @@ image:
 
 ## Hook
 
-<왜 이 논문이 중요한지, 어떤 흐름 위에 있는지 설명>
-
 ## Problem
 
-<기존 접근의 한계와 해결하려는 문제 정의>
-
 ## Key Idea
-
-<핵심 기여 1문장 요약 + bullet 3~4개>
 
 ## How It Works
 
 ### Overview
 
-![Overview](/assets/img/posts/<slug>/fig1_overview.png)
-_Figure 1: <설명>. 출처: 원 논문_
+### Representation / Problem Formulation
 
-```mermaid
-graph TD
-    A[Input] --> B[Core Module]
-    B --> C[Output]
-```
-
-### Representation
-
-<입력 표현/토큰/특징 설명>
+### Core Mathematical Setup
 
 ### Core Architecture
 
-<핵심 모듈 설명>
+### Training Objective
 
-```python
-class CoreModule(nn.Module):
-    def __init__(self):
-        super().__init__()
-
-    def forward(self, x):
-        return x
-```
-
-### Training / Inference
-
-<학습 전략, sampling, guidance, distillation 등>
+### Inference / Sampling
 
 ## Results
 
-<메인 테이블 + 해석>
-
 ## Discussion
-
-<왜 먹히는지 / 다른 방법과 비교 / 재현성>
 
 ## Limitations
 
-<한계 정리>
-
 ## Conclusion
 
-<짧은 결론>
-
 ## TL;DR
-
-- <핵심 1>
-- <핵심 2>
-- <핵심 3>
 
 ## Paper Info
 
 | 항목 | 내용 |
 |---|---|
-| **Title** | <title> |
-| **Authors** | <authors> |
-| **Affiliations** | <affiliations> |
-| **Venue** | <venue> |
-| **Paper** | [link](<url>) |
-| **Project** | <project> |
-| **Code** | <code> |
+| **Title** | ... |
+| **Authors** | ... |
+| **Affiliations** | ... |
+| **Venue** | ... |
+| **Published** | ... |
+| **Link** | ... |
+| **Paper** | ... |
+| **Code** | ... |
 
 ---
 
@@ -767,17 +571,6 @@ class CoreModule(nn.Module):
 
 ---
 
-## 15. 실제 작성 시 추가 메모
+## 13. 최종 요약
 
-- 기존 블로그 스타일상 `Discussion`은 중요하다. 단순 결론 전에 반드시 해석을 넣는다.
-- 가능하면 **숫자 비교를 해석하는 한 문장**을 붙인다.
-- 기존 시리즈가 있으면 내부 링크를 적극 건다.
-- 이미지가 충분하면 더 좋지만, 이미지가 없더라도 글 자체의 설명 밀도를 우선한다.
-- 논문에 코드가 없으면 재현 난이도와 비공개 요소를 분명히 써준다.
-- 논문이 주장하는 바와 실제 evidence 강도 사이에 차이가 있으면 완곡하지만 분명하게 지적한다.
-
----
-
-## 16. 최종 원칙 한 줄 요약
-
-**이 블로그의 paper review는 “읽는 사람이 논문을 안 읽어도 핵심을 이해하고, 읽고 나면 구현과 한계까지 감이 오는 수준의 technical long-form review”를 목표로 한다.**
+앞으로 이 블로그의 논문 리뷰는 **짧은 요약형이 아니라, 수식/구조/구현 감각/한계 해설이 포함된 깊은 long-form technical review**를 기본으로 한다.
