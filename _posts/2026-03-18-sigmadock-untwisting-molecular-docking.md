@@ -7,7 +7,7 @@ tags: [protein-ligand, docking, diffusion, se3, rigid-body, fragment-based, pose
 math: true
 mermaid: true
 image:
-  path: /assets/img/posts/sigmadock-untwisting-molecular-docking/page-01.png
+  path: /assets/img/posts/sigmadock-untwisting-molecular-docking/fig1_overview.png
   alt: "SIGMA-Dock overview showing fragment-based SE(3) diffusion for molecular docking"
 ---
 
@@ -112,8 +112,8 @@ SIGMA-Dock의 아이디어를 가장 압축적으로 적으면 다음과 같다.
 
 ### Overview
 
-![SIGMA-Dock Overview](/assets/img/posts/sigmadock-untwisting-molecular-docking/page-01.png)
-_Figure 1: SIGMA-Dock 논문 첫 페이지. 문제 정의와 fragment-based SE(3) diffusion의 핵심 아이디어가 요약돼 있다. 출처: 원 논문_
+![SIGMA-Dock Overview](/assets/img/posts/sigmadock-untwisting-molecular-docking/fig1_overview.png)
+_Figure 1: SIGMA-Dock 개요. ligand를 rigid-body fragment로 분해하고, 각 fragment pose에 대해 $SE(3)^m$ diffusion을 수행하는 전체 아이디어를 보여준다. 출처: 원 논문_
 
 전체 파이프라인을 개념적으로 그리면 아래와 같다.
 
@@ -254,6 +254,9 @@ class FR3D:
 논문에서 더 흥미로운 부분은, merge 과정에서 **dummy atom**을 유지/제거하는 세심한 처리다. fragment 사이 bond length와 angle 정보를 보존하기 위해 dummy atom을 두되, 이미 merge되면서 과잉제약(over-constrained)이 된 dummy는 제거해야 한다. 그렇지 않으면 원래 자유로워야 할 dihedral을 암묵적으로 고정해, conformational manifold와 bound manifold의 overlap이 깨질 수 있다.
 
 즉, FR3D는 단순한 heuristic optimization이 아니라, **fragment space가 여전히 올바른 generative support를 갖도록 정리하는 단계**다.
+
+![FR3D and Triangulation](/assets/img/posts/sigmadock-untwisting-molecular-docking/fig3_fr3d.png)
+_Figure 2: FR3D 예시. rotatable bond 기준의 초기 fragmentation에서 시작해 stochastic merging으로 irreducible fragment set을 찾고, cross-fragment triangulation edge를 정의하는 과정을 보여준다. 출처: 원 논문_
 
 ### Soft geometric constraints and triangulation
 
@@ -422,8 +425,8 @@ $$
 
 ### Main benchmark: PoseBusters와 Astex
 
-![SIGMA-Dock Results](/assets/img/posts/sigmadock-untwisting-molecular-docking/page-04.png)
-_Figure 2: 논문 후반부 결과 페이지 일부. PoseBusters/Astex 성능, AF3 관련 코멘트, restricted re-docking caveat가 함께 제시된다. 출처: 원 논문_
+![SIGMA-Dock Results](/assets/img/posts/sigmadock-untwisting-molecular-docking/fig4_results.png)
+_Figure 3: PoseBusters와 Astex diverse set에서의 성능 비교. intended split에서 SIGMA-Dock이 strong PB-valid Top-1 성능을 보이며, sequence-similarity split에서도 비교적 안정적인 일반화를 보인다는 것이 핵심 메시지다. 출처: 원 논문_
 
 논문이 가장 강하게 내세우는 결과는 PoseBusters(v2)와 Astex diverse set이다.
 
