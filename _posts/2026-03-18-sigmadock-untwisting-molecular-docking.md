@@ -130,14 +130,30 @@ graph TD
     I --> J["Top-ranked docked pose"]
 ```
 
-입력은:
+입력은 두 가지다.
 
-- ligand의 2D graph $G_{ligand}^{2D} = \{v, b\}$
-- protein의 3D graph $G_{protein} = \{y, v_y, b_y\}$
+- ligand의 **2D graph**
+- protein pocket의 **3D graph**
 
-출력은 ligand의 bound pose $x \in \mathbb{R}^{|G_{ligand}| \times 3}$이다.
+논문 표기를 쓰면 각각 대략 아래처럼 쓸 수 있다.
 
-하지만 직접 $x$를 diffusion하지 않는다. 논문은 ligand를 rigid fragment $\{G_{F_i}\}_{i=1}^m$로 나누고, 각 fragment의 local coordinate $\tilde{x}_{F_i}$를 원점 중심으로 정의한다. 이후 각 fragment의 global pose는:
+$$
+G_{ligand}^{2D} = \{v, b\}, \qquad G_{protein} = \{y, v_y, b_y\}
+$$
+
+출력은 ligand의 bound pose, 즉 원자 좌표 행렬이다.
+
+$$
+x \in \mathbb{R}^{|G_{ligand}| \times 3}
+$$
+
+하지만 SIGMA-Dock은 이 좌표 $x$를 직접 diffusion하지 않는다. 먼저 ligand를 rigid fragment 집합으로 나누고, 각 fragment의 local coordinate template를 정의한다. 이를 논문 표기로 쓰면 fragment 집합은 다음과 같다.
+
+$$
+\{G_{F_i}\}_{i=1}^m
+$$
+
+이후 각 fragment의 global pose는 다음 rigid-body transform으로 표현된다.
 
 $$
 x_{F_i} = (p_{F_i}, R_{F_i}) \cdot \tilde{x}_{F_i}
@@ -173,13 +189,19 @@ $$
 - 큰 structural variation은 주로 **dihedral / torsion**에서 나온다
 - 따라서 rotatable bond를 끊으면, 각 fragment 내부는 거의 rigid body로 볼 수 있다
 
-이 전제를 바탕으로, ligand의 pose는 fragment local geometry $\tilde{x}_{F_i}$와 fragment-wise rigid motion $(p_{F_i}, R_{F_i})$의 합성으로 나타난다. 이때 좌표 복원 mapping을 논문은:
+이 전제를 바탕으로, ligand pose는 fragment local geometry와 fragment-wise rigid motion의 합성으로 나타난다. 좌표 복원 mapping은 다음처럼 쓸 수 있다.
 
 $$
 \phi : SE(3)^m \to \mathbb{R}^{|G_{ligand}| \times 3}
 $$
 
-로 둔다. 결국 모델이 샘플링하는 것은 $x$ 자체가 아니라, **$\phi^{-1}(x)$에 해당하는 fragment pose configuration**이다.
+블로그 문맥에서 직관적으로 말하면 이렇다.
+
+- 최종 목표는 ligand의 원자 좌표를 복원하는 것
+- 하지만 모델이 직접 생성하는 것은 원자 좌표 전체가 아니라
+- **fragment pose configuration**이다
+
+즉, 모델은 $x$를 바로 샘플링하는 대신, $x$를 만들 수 있는 rigid-body arrangement를 먼저 샘플링한다.
 
 ### Why torsional models become entangled
 
@@ -325,12 +347,22 @@ $$
 \right]
 $$
 
-여기서 중요한 포인트는:
+여기서 중요한 포인트는 다음 네 가지다.
 
 - score는 translation gradient와 rotation gradient를 동시에 포함한다
 - gradient는 Euclidean gradient가 아니라 **Riemannian gradient**다
-- 생성 후에는 $\hat{z} \sim p_\theta(z|G_{dock})$를 샘플링하고
-- 최종 좌표는 $\hat{x} = \phi(\hat{z})$로 복원한다
+- 생성 단계에서는 먼저 learned reverse process로 fragment pose를 샘플링한다
+- 마지막에 그 fragment pose를 좌표 공간으로 복원한다
+
+이를 수식으로 쓰면 아래 두 줄로 정리된다.
+
+$$
+\hat{z} \sim p_\theta(z \mid G_{dock})
+$$
+
+$$
+\hat{x} = \phi(\hat{z})
+$$
 
 이걸 구현 느낌으로 쓰면 다음과 비슷하다.
 
@@ -389,13 +421,18 @@ $$
 
 이후 reverse SDE를 여러 step 적분해 $\hat{z}$를 얻고, 이를 좌표로 복원한다. 논문 부록 기준으로 20–30 step 정도에서 diminishing returns가 보였다고 한다.
 
-SIGMA-Dock의 재미있는 부분은 별도의 learned confidence model을 두지 않는다는 점이다. 대신 각 sample $i$에 대해:
+SIGMA-Dock의 재미있는 부분은 별도의 learned confidence model을 두지 않는다는 점이다. 대신 각 sample에 대해 두 가지 값을 조합한다.
 
-- Vinardo binding energy $b_i$
-- PoseBusters validity 기반 score $p_i \in [0,1]$
+- Vinardo binding energy
+- PoseBusters validity 기반 score
 
-를 조합해
+논문 표기로 쓰면 이 둘은 보통 아래처럼 적을 수 있다.
 
+$$
+b_i, \qquad p_i \in [0,1]
+$$
+
+이 둘을 조합해
 $$
 s_i = -b_i p_i^{\beta}, \qquad \beta = 4
 $$
