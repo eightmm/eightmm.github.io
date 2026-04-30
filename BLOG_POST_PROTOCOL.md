@@ -384,6 +384,74 @@ Before committing:
 - confirm links, names, and metrics
 - skim the post once for flow and once for rendering risk
 
+### 10.1 Publish-Time Safety
+
+- Never publish a post with a future `date` unless intentional scheduling is explicitly desired.
+- Compare the post timestamp against local deployment time, not just the paper date.
+- If publishing immediately, prefer a conservative earlier timestamp on the same day.
+- If there is any doubt, choose a timestamp safely in the past.
+
+### 10.2 Rendering Preflight Checklist
+
+Before pushing, quickly scan for rendering risks:
+
+- Is Mermaid truly necessary?
+- Is there any wide Markdown table that should become bullets?
+- Is any inline math too complex and better moved into display math?
+- Is there any block likely to overflow on mobile?
+- Are heading, list, code block, and equation spacings visually clean?
+- Is any comparison being forced into a table when bullets would be safer?
+
+Rules of thumb:
+
+- If rendering stability and prettiness conflict, choose rendering stability.
+- If a comparison fits in bullets, do not force a table.
+
+### 10.3 Image Policy
+
+- A representative image should be included whenever a meaningful one is available.
+- Prefer a local image under `assets/img/posts/<slug>/` rather than a hotlinked external asset.
+- If the project page has a useful overview figure, consider storing a local copy when practical.
+- Every image should have meaningful alt text.
+- Prefer figures that explain the method or summarize the result, not decorative filler.
+
+### 10.4 Link Policy
+
+Every paper post should include, at minimum when available:
+
+- paper URL
+- project page URL
+- code repository URL
+
+Recommended:
+
+- include the main paper link in `Paper Info`
+- include the project page in `Paper Info`
+- if useful, include one contextual link near the first relevant mention in the body
+- verify that links resolve correctly before pushing
+
+### 10.5 Claim Hygiene
+
+- Do not copy the abstract’s strongest claims verbatim unless clearly attributed.
+- Words like `SOTA`, `state-of-the-art`, `significant`, `strong`, or `substantially better` should be backed by numbers and comparison conditions.
+- Separate what the paper claims from what the evidence actually shows.
+- If a result holds only in a narrow setting, say that directly.
+- Avoid overstating practical impact when the paper only establishes benchmark gains.
+
+### 10.6 Post-Deploy Verification
+
+After pushing:
+
+- check GitHub Pages or deployment workflow status
+- confirm the post is actually visible
+- open the deployed page and inspect:
+  - representative image
+  - equations
+  - code blocks
+  - bullets and spacing
+  - mobile overflow risk
+- if the page is hidden unexpectedly, check publish date first
+
 ---
 
 ## 11. Final Reminder
