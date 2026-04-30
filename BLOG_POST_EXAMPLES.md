@@ -171,3 +171,32 @@ If uncertain, choose the safer path:
 - real image over no image
 - simpler structure over clever formatting
 - narrower claim over overstated claim
+
+---
+
+## 9. Example Commands
+
+Create a new scaffold:
+
+```bash
+python3 scripts/new_blog_post.py \
+  --title "Paper Title" \
+  --slug paper-title \
+  --description "Short summary" \
+  --category AI \
+  --subcategory "Generative Models" \
+  --tags tag1,tag2,tag3 \
+  --paper-url https://arxiv.org/abs/0000.00000
+```
+
+Run common checks:
+
+```bash
+scripts/check_blog_post.sh _posts/YYYY-MM-DD-paper-title.md
+```
+
+Run rendered validation against live site:
+
+```bash
+python3 scripts/validate_blog_rendered.py --url https://eightmm.github.io --posts paper-title
+```

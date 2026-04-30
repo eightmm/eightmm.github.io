@@ -368,3 +368,11 @@ If the user asks again to turn a paper into a blog post, keep using these defaul
 This protocol is meant to be the stable default path.
 
 For concrete examples, see `BLOG_POST_EXAMPLES.md`.
+
+Useful scripts:
+
+- `python3 scripts/new_blog_post.py ...` to create a scaffold
+- `python3 scripts/validate_blog_post.py <post.md>` for structural validation
+- `python3 scripts/post_preflight.py <post.md>` for protocol-aligned preflight checks
+- `scripts/check_blog_post.sh <post.md>` to run the common checks together
+- `python3 scripts/validate_blog_rendered.py --url https://eightmm.github.io --posts <slug>` for rendered-page validation

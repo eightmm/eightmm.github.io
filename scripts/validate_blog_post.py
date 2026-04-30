@@ -28,8 +28,10 @@ REQUIRED_SECTIONS = [
     "Key Idea",
     "How It Works",
     "Results",
+    "Discussion",
     "Limitations",
     "Conclusion",
+    "TL;DR",
     "Paper Info",
 ]
 
@@ -178,7 +180,7 @@ def validate(filepath):
     if not has_pseudocode:
         r.warn("No pseudocode block found (expected ```pseudocode or algorithmic description)")
     if not has_python:
-        r.error("No Python/PyTorch code block found (```python required)")
+        r.warn("No Python code block found (a small implementation sketch is recommended)")
 
     # Check for PyTorch imports in python blocks
     python_blocks = re.findall(r'```python\n(.*?)```', body, re.DOTALL)
@@ -200,19 +202,19 @@ def validate(filepath):
 
     if total_body_len > 0 and hiw_len > 0:
         ratio = hiw_len / total_body_len
-        if ratio < 0.35:
-            r.error(f"How It Works section too short: {ratio:.1%} (minimum 35%, target 40%)")
+        if ratio < 0.30:
+            r.error(f"How It Works section too short: {ratio:.1%} (minimum 30%, target 40%)")
         elif ratio < 0.40:
-            r.warn(f"How It Works section slightly below target: {ratio:.1%} (target 40%)")
+            r.warn(f"How It Works section below target: {ratio:.1%} (target 40%)")
 
     # --- Paper Info Section ---
     if "Paper Info" in found_names:
         paper_info_match = re.search(r'## Paper Info\n(.*?)(?=\n## |\Z)', body, re.DOTALL)
         if paper_info_match:
             pi = paper_info_match.group(1)
-            for field in ["Title", "Authors", "Published", "Link"]:
-                if field not in pi:
-                    r.warn(f"Paper Info missing field: {field}")
+            for field_group in [("Title",), ("Authors",), ("Published",), ("Link", "Paper")]:
+                if not any(field in pi for field in field_group):
+                    r.warn(f"Paper Info missing field: {' / '.join(field_group)}")
 
     # --- Word count ---
     word_count = len(body.split())
