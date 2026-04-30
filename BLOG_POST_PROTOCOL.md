@@ -1,247 +1,97 @@
 # BLOG_POST_PROTOCOL.md
 
-This document defines the standard protocol for long-form paper review posts on `eightmm.github.io`.
+A readable operating protocol for writing paper-review posts on `eightmm.github.io`.
 
-The goal is not a shallow summary. The default target is a **deep explanatory technical review** that helps a reader understand:
+This document is meant to be **easy to follow during real work**, not just correct in theory.
 
-- why the paper matters,
-- what problem it solves,
-- what the key modeling choices are,
-- how the method actually works,
-- what the results mean,
-- and where the limitations are.
-
-In one sentence:
-
-> A reader who has not read the paper should still be able to follow the core idea, the main equations, the implementation logic, and the real limitations from this post alone.
+If asked to write a paper post, default to this protocol unless the user asks for something different.
 
 ---
 
-## 0. Core Principles
+## 1. Quick Defaults
 
-Every paper review should aim for these five things:
+### Always
 
-1. **Context**: why this problem matters now
-2. **Claim**: what the authors actually changed
-3. **Mathematical structure**: what space, objective, or probabilistic view the paper uses
-4. **Implementation intuition**: what each module does and how the pieces interact
-5. **Evaluation and limits**: how convincing the evidence is, and where caution is needed
+- Write **internal protocol / planning in English**.
+- Write the **final blog post in Korean** by default.
+- Prefer a **deep explanatory review**, not a short summary.
+- Include at least **one representative image** when available.
+- Prefer **rendering stability over fancy formatting**.
 
-Avoid:
+### Default
+
+- Long-form technical review
+- Clear section structure
+- 1 to 3 useful figures
+- 3 to 8 important equations if the paper is math-heavy
+- Bullets over fragile tables when possible
+- `mermaid: false` unless clearly needed
+
+### Avoid
 
 - abstract paraphrase
-- promo tone
-- equation dumping without explanation
-- shallow praise like “strong”, “good”, “impressive” without analysis
-
-Prefer:
-
-- intuition + equations + structure + criticism in the same post
+- hype tone
+- fragile Markdown tables
+- dense inline math
+- future-dated posts
+- empty front matter image when a good figure exists
 
 ---
 
-## 1. Output Language Policy
+## 2. What Good Looks Like
 
-- **Internal protocol and prompting should be written in English.**
-- **The final blog post should normally be written in Korean**, unless explicitly requested otherwise.
-- Technical notation, code, and paper titles can remain in English when that improves clarity.
+A good post should let a reader do at least three of these:
 
-Why:
+- explain the paper to someone else
+- restate the main equations
+- reconstruct the rough implementation flow
+- say what changed versus prior methods
+- point out the paper’s actual limitations
 
-- English internal instructions tend to produce more stable structure and cleaner technical reasoning.
-- Korean final output keeps the actual blog aligned with the intended readership and voice.
+The target is:
 
----
-
-## 2. Standard Post Style
-
-The default style is **deep, seminar-note-like, long-form technical review**.
-
-This means:
-
-- `How It Works` should be substantial
-- key equations should be connected to the paper’s notation whenever possible
-- important propositions, theorems, or lemmas should be explained, not just mentioned
-- forward process, objective, and inference should be separated clearly when relevant
-- architecture should be described as a flow:
-  - input
-  - representation
-  - update
-  - output
-- result sections should interpret why the numbers matter, not just restate them
-
-A good post should allow the reader to do at least three of these:
-
-- explain the paper to a colleague
-- rewrite the main equations on a whiteboard
-- roughly reconstruct the implementation flow
-- state the difference from strong baselines
-- point out the paper’s limitations concretely
+> a strong technical colleague walking the reader through the paper, with judgment, structure, and enough detail to be useful.
 
 ---
 
-## 3. Length and Density Guidelines
+## 3. Workflow
 
-### Length
+Follow the work in this order.
 
-- Default target: **long post**
-- Prefer seminar-note level depth over a short review note
+### Step 1: Before Writing
 
-### Density
+Collect the minimum required information:
 
-- `How It Works`: ideally **40 to 55 percent** of the post
-- Equations: usually **3 to 8 important equations** when the paper is math-heavy
-- Code blocks: **at least 1**, ideally **2 or more** when useful
-- Figures: **at least 1 representative figure**, preferably more if they genuinely help
+- paper title
+- paper URL
+- authors
+- affiliations
+- venue or publication status
+- publication date
+- one key overview figure
+- one key result figure or table
 
-### Priority order
+Collect these too when useful:
 
-1. correctness
-2. explanation of design choices
-3. implementation intuition
-4. reading flow
-5. decorative style
-
----
-
-## 4. Rendering Safety Rules
-
-This is important. Prefer formats that survive Jekyll / Markdown / KaTeX / theme rendering reliably.
-
-### Math
-
-- Use inline math only for **short and safe expressions**.
-- Move anything complex into display math blocks.
-- Avoid overly dense inline expressions with:
-  - many subscripts or superscripts
-  - `\hat`, `\tilde`, `\mathcal`, `\nabla`, `\otimes`
-  - conditional probability notation inside long prose
-- If one paragraph contains too many equations, split it.
-
-### Tables
-
-- Use Markdown tables only when the structure truly matters.
-- If a table is simple, prefer bullet lists instead.
-- If rendering risk is high, rewrite comparison tables as nested bullets.
-
-### Mermaid
-
-- Do **not** enable Mermaid by default.
-- Use Mermaid only when it clearly adds value and the diagram is simple.
-- If a concept can be explained cleanly with bullets plus one image, prefer that.
-
-### Images
-
-- Prefer local images under `assets/img/posts/<slug>/`
-- Always add a front matter image when possible
-- Include meaningful alt text
-- If an external figure is used as inspiration, download and store a local copy when licensing and practical constraints allow
-
-### Safe structure
-
-- Keep enough blank lines between headings, lists, code blocks, and equations
-- Avoid mixing long bullet lists and complex display math without spacing
-- Avoid very wide tables if the theme may overflow on mobile
-
----
-
-## 5. What to Collect Before Writing
-
-Required:
-
-1. paper title
-2. paper link
-3. authors and affiliations
-4. publication date and venue
-5. one key overview figure
-6. one key result figure or table
-
-Strongly recommended:
-
-- appendix or supplementary material
+- appendix or supplementary
 - project page
-- code repository
-- ablation table
-- failure case figure
+- code repo
+- ablations
+- failure cases
 - theorem / proposition / lemma
-- train-test split details
-- runtime, parameter count, and dataset size
+- runtime, parameter count, dataset size
 
-Always verify:
+Verify before drafting:
 
 - important numbers are correct
 - notation is copied correctly
-- baseline comparison is fair
 - metric definitions are not mixed up
-- paper claims are distinguished from evidence
+- claims are separated from evidence
+- comparisons are fair
 
----
+### Step 2: While Drafting
 
-## 6. File and Asset Rules
-
-### Locations
-
-- Post: `_posts/YYYY-MM-DD-slug.md`
-- Images: `assets/img/posts/<slug>/`
-
-### Slug
-
-- use kebab-case
-- shorten when necessary
-- keep the most meaningful terms
-
-### Recommended image names
-
-- `fig1_overview.png`
-- `fig2_method.png`
-- `fig3_results.png`
-- `fig4_ablation.png`
-- `fig5_failure_cases.png`
-
-### Figure policy
-
-- Do not impose an artificial hard limit on figure count
-- Use multiple figures when they materially improve understanding
-- Prefer figures with clear roles:
-  - overall overview
-  - method figure
-  - notation-supporting figure
-  - results / ablations / failure cases
-- Avoid redundant figures that repeat the same information
-
----
-
-## 7. Front Matter Rules
-
-Base template:
-
-```yaml
----
-title: "Paper title"
-date: YYYY-MM-DD HH:MM:SS +0900
-description: "Compressed summary of contribution, mechanism, and key result"
-categories: [AI, Subcategory]
-tags: [tag1, tag2, tag3, tag4]
-math: true
-mermaid: false
-image:
-  path: /assets/img/posts/<slug>/fig1_overview.png
-  alt: "Representative figure description"
----
-```
-
-Notes:
-
-- Do not paste the abstract into `description`
-- `description` should normally be concise and informative
-- Enable `mermaid: true` only when necessary
-- Prefer a real representative image instead of leaving `image` empty
-
----
-
-## 8. Standard Document Structure
-
-Use this structure by default:
+Default structure:
 
 ```md
 ## Hook
@@ -256,110 +106,215 @@ Use this structure by default:
 ## Paper Info
 ```
 
-Guidelines:
+Writing goals by section:
 
-- `Hook`: short, sharp, motivating
-- `Problem`: explain the structural bottlenecks
-- `Key Idea`: compressed statement of the paper’s contribution
-- `How It Works`: the main body, detailed and careful
+- `Hook`: why the paper matters
+- `Problem`: 2 to 4 real bottlenecks
+- `Key Idea`: the compressed contribution
+- `How It Works`: the actual core, with equations and implementation logic
 - `Results`: interpretation, not number dumping
-- `Discussion`: meaning, positioning, comparison
-- `Limitations`: separate section, explicitly critical
+- `Discussion`: what it means and where it fits
+- `Limitations`: concrete reasons to be cautious
+- `TL;DR`: fast scan summary
+- `Paper Info`: links and metadata
+
+### Step 3: Before Push
+
+Run a quick preflight:
+
+- publish `date` is not in the future
+- front matter is complete
+- representative image exists
+- math blocks are separated cleanly
+- no unnecessary Mermaid
+- no fragile wide tables unless truly needed
+- links resolve
+- post reads cleanly once for content and once for rendering risk
+
+### Step 4: After Deploy
+
+Check:
+
+- GitHub Pages or deploy workflow succeeded
+- the post is actually visible
+- image loads
+- equations render
+- code blocks look fine
+- spacing is clean
+- mobile overflow is not obvious
+
+If the post is missing, **check the publish date first**.
 
 ---
 
-## 9. Recommended Writing Pattern by Section
+## 4. Safe Formatting Rules
 
-### Hook
+### Math
 
-Explain:
+Use inline math only for short, safe expressions.
 
-- current state of the field
-- limitation of existing methods
-- the paper’s central claim
-- what this post will unpack
+Move math into display blocks when it has:
 
-### Problem
+- many subscripts or superscripts
+- `\hat`, `\tilde`, `\mathcal`, `\nabla`, `\otimes`
+- long conditional notation
+- enough complexity to break reading flow
 
-Break the problem into **2 to 4 bottlenecks**.
-Focus on structural causes, for example:
+If a paragraph gets equation-heavy, split it.
 
-- representation bottleneck
-- complexity bottleneck
-- inductive bias mismatch
-- objective mismatch
-- train-test leakage
-- physical validity constraints
+### Tables
 
-### Key Idea
+Use Markdown tables only when the structure really matters.
 
-State the paper’s contribution in the most compressed useful form.
-If possible, include a direct before-versus-after comparison with prior paradigms.
+Prefer bullets when:
 
-### How It Works
+- the comparison is short
+- the table would be wide
+- the theme may render it poorly
+- the same information fits naturally as nested bullets
 
-This is the core section.
-Describe:
+Rule:
 
-- representation
-- objective
-- architecture
-- optimization or training recipe
-- inference or sampling procedure
-- why the design should work
+> If a comparison fits in bullets, do not force a table.
 
-When useful, include:
+### Mermaid
 
-- one overview image
-- one pseudocode block
-- one minimal implementation sketch
+Do not enable Mermaid by default.
 
-### Results
+Use Mermaid only when:
 
-Do not just list numbers.
-Explain:
+- it adds real explanatory value
+- the diagram is simple
+- the same idea cannot be explained more robustly with bullets plus an image
 
-- what is actually improved
-- whether the comparison is meaningful
-- why a specific metric matters
-- whether the result changes the practical picture
+Rule:
 
-### Discussion
+> If rendering stability and prettiness conflict, choose rendering stability.
 
-Say what the paper means.
-Possible angles:
+### Images
 
-- how it reframes the problem
-- what assumptions it breaks
-- how it compares philosophically to neighboring methods
-- where it may matter in practice
+Prefer local files under:
 
-### Limitations
+- `assets/img/posts/<slug>/`
 
-Be concrete.
-Possible categories:
+Use images with clear roles:
 
-- weak empirical scope
-- dependence on a specific dataset or benchmark
-- expensive training recipe
-- unclear generalization
-- theory not fully closed
-- ecosystem or tooling gap
+- overview figure
+- method figure
+- results figure
+- ablation or failure case figure
 
-### Conclusion
+Every image should have meaningful alt text.
 
-Summarize the paper’s real contribution in a few strong paragraphs.
-Avoid hype.
+Prefer a local copy over a hotlinked external asset when practical.
 
-### TL;DR
+---
 
-Use concise bullet points.
-These should be easy to scan and preserve the core message.
+## 5. Front Matter Defaults
 
-### Paper Info
+Use this as the safe default:
+
+```yaml
+---
+title: "Paper title"
+date: YYYY-MM-DD HH:MM:SS +0900
+description: "Compressed summary of contribution, mechanism, and main result"
+categories: [AI, Subcategory]
+tags: [tag1, tag2, tag3, tag4]
+math: true
+mermaid: false
+image:
+  path: /assets/img/posts/<slug>/fig1_overview.png
+  alt: "Representative figure description"
+---
+```
+
+### Front matter rules
+
+- `description` should be concise and informative
+- do not paste the abstract
+- use `mermaid: true` only when necessary
+- include `image` whenever a meaningful representative figure exists
+- use a conservative publish time if posting immediately
+
+---
+
+## 6. Content Quality Rules
+
+### Claim hygiene
+
+Do not write stronger than the evidence.
+
+If using words like these:
+
+- SOTA
+- state-of-the-art
+- significant
+- strong
+- substantially better
+
+then back them with:
+
+- numbers
+- comparison conditions
+- scope limitations when relevant
+
+Separate:
+
+- what the paper claims
+- what the evidence actually supports
+
+If a result holds only in a narrow setup, say so directly.
+
+### Depth standard
+
+Default to a deep explanatory review, not a summary note.
+
+In practice this means:
+
+- `How It Works` should usually be the largest section
+- key equations should be explained, not merely copied
+- architecture should be described as a flow:
+  - input
+  - representation
+  - update
+  - output
+- results should include interpretation
+- limitations should be explicit
+
+---
+
+## 7. File Rules
+
+### Post location
+
+- `_posts/YYYY-MM-DD-slug.md`
+
+### Image location
+
+- `assets/img/posts/<slug>/`
+
+### Slug rules
+
+- use kebab-case
+- keep only the most meaningful terms
+- shorten when necessary
+
+### Recommended figure names
+
+- `fig1_overview.png`
+- `fig2_method.png`
+- `fig3_results.png`
+- `fig4_ablation.png`
+- `fig5_failure_cases.png`
+
+---
+
+## 8. Paper Info Rules
 
 Prefer bullets over tables when rendering stability is a concern.
-Include:
+
+Include when available:
 
 - title
 - authors
@@ -368,97 +323,48 @@ Include:
 - publication date
 - paper URL
 - project URL
-- code URL if relevant
+- code URL
 
 ---
 
-## 10. Post-Write Checklist
+## 9. Quick Checklists
 
-Before committing:
+### Drafting checklist
 
-- confirm the publish `date` is not in the future relative to deployment time
-- make sure front matter includes a representative image when available
-- check that math blocks are separated cleanly
-- replace fragile tables with bullets if unnecessary
-- disable Mermaid unless it clearly helps
-- confirm links, names, and metrics
-- skim the post once for flow and once for rendering risk
+- Did I explain why this paper matters?
+- Did I identify real bottlenecks, not just say prior work was weaker?
+- Did I explain how the method works in implementation terms?
+- Did I interpret the results?
+- Did I state real limitations?
 
-### 10.1 Publish-Time Safety
+### Rendering checklist
 
-- Never publish a post with a future `date` unless intentional scheduling is explicitly desired.
-- Compare the post timestamp against local deployment time, not just the paper date.
-- If publishing immediately, prefer a conservative earlier timestamp on the same day.
-- If there is any doubt, choose a timestamp safely in the past.
+- Is Mermaid really needed?
+- Is any table too wide?
+- Is any inline math too dense?
+- Is the front matter image present?
+- Are spacing and blocks visually clean?
 
-### 10.2 Rendering Preflight Checklist
+### Deployment checklist
 
-Before pushing, quickly scan for rendering risks:
-
-- Is Mermaid truly necessary?
-- Is there any wide Markdown table that should become bullets?
-- Is any inline math too complex and better moved into display math?
-- Is there any block likely to overflow on mobile?
-- Are heading, list, code block, and equation spacings visually clean?
-- Is any comparison being forced into a table when bullets would be safer?
-
-Rules of thumb:
-
-- If rendering stability and prettiness conflict, choose rendering stability.
-- If a comparison fits in bullets, do not force a table.
-
-### 10.3 Image Policy
-
-- A representative image should be included whenever a meaningful one is available.
-- Prefer a local image under `assets/img/posts/<slug>/` rather than a hotlinked external asset.
-- If the project page has a useful overview figure, consider storing a local copy when practical.
-- Every image should have meaningful alt text.
-- Prefer figures that explain the method or summarize the result, not decorative filler.
-
-### 10.4 Link Policy
-
-Every paper post should include, at minimum when available:
-
-- paper URL
-- project page URL
-- code repository URL
-
-Recommended:
-
-- include the main paper link in `Paper Info`
-- include the project page in `Paper Info`
-- if useful, include one contextual link near the first relevant mention in the body
-- verify that links resolve correctly before pushing
-
-### 10.5 Claim Hygiene
-
-- Do not copy the abstract’s strongest claims verbatim unless clearly attributed.
-- Words like `SOTA`, `state-of-the-art`, `significant`, `strong`, or `substantially better` should be backed by numbers and comparison conditions.
-- Separate what the paper claims from what the evidence actually shows.
-- If a result holds only in a narrow setting, say that directly.
-- Avoid overstating practical impact when the paper only establishes benchmark gains.
-
-### 10.6 Post-Deploy Verification
-
-After pushing:
-
-- check GitHub Pages or deployment workflow status
-- confirm the post is actually visible
-- open the deployed page and inspect:
-  - representative image
-  - equations
-  - code blocks
-  - bullets and spacing
-  - mobile overflow risk
-- if the page is hidden unexpectedly, check publish date first
+- Is the post date safe?
+- Did deploy succeed?
+- Is the page visible?
+- Do image, math, and code blocks render correctly?
 
 ---
 
-## 11. Final Reminder
+## 10. If Asked Repeatedly, Keep Following This
 
-The blog should feel like a strong technical colleague walking the reader through the paper, not like a translated abstract or a hype post.
+If the user asks again to turn a paper into a blog post, keep using these defaults unless told otherwise:
 
-Depth matters.
-Clarity matters.
-Judgment matters.
-Rendering stability also matters.
+- internal instructions in English
+- final post in Korean
+- deep review structure
+- rendering-safe formatting
+- representative image included
+- post-deploy verification
+
+This protocol is meant to be the stable default path.
+
+For concrete examples, see `BLOG_POST_EXAMPLES.md`.
