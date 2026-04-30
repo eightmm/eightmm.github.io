@@ -1,6 +1,6 @@
 ---
 title: "Generative Modeling via Drifting: one-step 생성은 inference가 아니라 training에서 만들어진다"
-date: 2026-04-30 11:58:00 +0900
+date: 2026-04-30 11:40:00 +0900
 description: "Drifting Models는 diffusion/flow의 iterative inference를 training-time pushforward evolution으로 옮긴다. anti-symmetric drifting field와 drift regression objective로 one-step generation을 학습하고, ImageNet 256x256에서 1-NFE FID 1.54(latent), 1.61(pixel)을 기록한다."
 categories: [AI, Generative Models]
 tags: [generative-modeling, diffusion, flow-matching, one-step-generation, drifting-model, pushforward, imagenet, fid]
