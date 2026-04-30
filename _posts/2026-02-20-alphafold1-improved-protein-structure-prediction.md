@@ -1,608 +1,351 @@
 ---
-title: "Improved Protein Structure Prediction Using Potentials from Deep Learning"
+title: "AlphaFold 1: contact prediction을 structure generation으로 바꾼 첫 번째 계산 그래프"
 date: 2026-02-20 11:00:00 +0900
-description: "AlphaFold 1이 CASP13에서 deep learning 기반 distogram 예측과 gradient descent로 단백질 구조 예측의 새로운 패러다임을 제시한 방법을 자세히 분석한다."
-categories: [Paper Review, Protein Structure]
-tags: [protein-structure, AlphaFold, distance-prediction, ResNet, CASP13, deep-learning]
+description: "AlphaFold 1은 binary contact를 넘어서 residue pair distance distribution을 예측하는 distogram과, 이를 단백질별 differentiable potential로 바꿔 gradient descent로 최적화하는 구조 생성 파이프라인을 제시했다. 핵심은 folding을 hand-crafted fragment sampling이 아니라 learned geometric potential optimization으로 재구성한 데 있다."
+categories: [AI, Protein Structure]
+tags: [protein-structure, alphafold1, distance-prediction, distogram, casp13, deep-learning]
 math: true
-mermaid: true
+mermaid: false
 image:
   path: /assets/img/posts/alphafold1-improved-protein-structure-prediction/fig2.png
-  alt: "AlphaFold 1의 folding 과정 (CASP13 target T0986s2)"
+  alt: "AlphaFold 1 folding process and predicted structure refinement"
 ---
-
-> 이 글은 AlphaFold 시리즈의 첫 번째 글이다. 시리즈 구성: AlphaFold 1 (이 글), AlphaFold 2, AlphaFold 3, 시리즈 정리.
-{: .prompt-info }
 
 ## Hook
 
-단백질 구조 예측은 생물학의 grand challenge였다. 50년간 수많은 이론적 시도가 있었지만, 실험 구조만큼 정확한 예측은 드물었다. 2018년 CASP13에서, DeepMind의 AlphaFold는 free modelling (FM) category에서 2위와 압도적 격차(52.8 vs 36.6 summed z-score)로 우승하며 단백질 구조 예측의 판도를 바꿨다. 
+AlphaFold 1을 지금 다시 보면, 사람들은 종종 이 모델을 “AF2 이전의 미완성 전단계” 정도로 기억한다. 그런데 그건 좀 아깝다. AF1은 단백질 구조 예측을 정말 중요한 방식으로 한 번 꺾어 놓은 논문이다. 그 전까지 free modeling의 기본 문법은 fragment assembly, hand-crafted statistical potential, 그리고 무거운 stochastic sampling 쪽에 더 가까웠다. AF1은 여기에 이렇게 묻는다.
 
-Fragment assembly와 simulated annealing이 지배하던 분야에서, AlphaFold는 deep learning으로 학습한 단백질별 potential을 gradient descent로 최적화하는 완전히 새로운 접근을 제시했다. 이전에는 불가능했던 새로운 fold들을 높은 정확도로 예측하는 시대가 열렸다.
+> **굳이 fragment를 붙였다 떼었다 하며 구조를 찾지 말고, 네트워크가 단백질별 geometric potential을 직접 학습하게 하면 안 되나?**
+
+이 질문은 생각보다 크다. 왜냐하면 구조 예측 문제를 “가능한 구조를 많이 샘플링해서 좋은 걸 고르는 문제”에서, **학습된 pairwise geometry를 연속 최적화로 실현하는 문제**로 바꾸기 때문이다.
+
+AF2가 모든 스포트라이트를 가져간 건 당연하지만, AF1 없이는 AF2의 leap도 설명하기 어렵다. distogram, residue-pair representation, deep residual prediction, learned potential, gradient-based structure realization 같은 요소들은 전부 AF1에서 이미 강하게 등장한다. 이 글에서는 AF1이 기존 fragment assembly와 뭐가 달랐는지, 220-block ResNet이 정확히 어떤 역할을 했는지, 그리고 왜 이 모델이 “contact prediction 시스템”이 아니라 **structure generation 계산 그래프의 첫 버전**으로 읽혀야 하는지 정리해보겠다.
 
 ## Problem
 
-기존의 free modelling 접근법들은 크게 두 가지 한계를 가지고 있었다.
+AlphaFold 1이 겨냥한 문제는 단순히 “contact를 더 정확히 맞히자”가 아니다. 더 정확히는 다음과 같다.
 
-### 1. Fragment Assembly의 비효율성
+> **MSA와 covariation으로 얻은 geometry signal을 실제 3D 구조로 효율적으로 실현하려면, 어떤 prediction target과 optimization pipeline이 필요한가?**
 
-가장 성공적인 FM 방법들(Rosetta, QUARK 등)은 fragment assembly에 의존했다. 이 방법은 PDB 구조들에서 추출한 통계적 potential을 사용하여, simulated annealing 같은 stochastic sampling으로 구조를 만들어낸다. 문제는 구조 가설을 반복적으로 수정하며 낮은 potential 구조를 찾기 위해 수천 번의 move가 필요하고, 이를 여러 번 반복해야 low-potential 구조들을 충분히 탐색할 수 있다는 점이다. 
+이 질문은 세 가지 병목으로 나뉜다.
 
-계산 비용이 크고, 전역 최적해를 찾는다는 보장도 없다.
+### 병목 1: fragment assembly는 너무 비싸고 너무 우회적이다
 
-### 2. Contact Prediction의 제한적 정보
+AF1 이전 free modeling의 강자는 Rosetta 같은 fragment assembly 계열이었다. 이 방법은 대략 이렇게 작동한다.
 
-최근 몇 년간 evolutionary covariation을 사용한 contact prediction이 구조 예측 정확도를 개선했다. MSA에서 두 residue 위치의 상관관계 변화를 분석해 contact (Cβ atoms가 8 Å 이내) 여부를 예측하고, 이를 statistical potential에 반영하여 folding 과정을 guide한다.
+- 짧은 fragment 라이브러리를 준비하고
+- 구조를 stochastic move로 계속 바꾸고
+- hand-crafted potential이 낮아지는 방향으로 샘플링한다
 
-하지만 contact prediction은 binary 정보다. "8 Å 이내인가, 아닌가"만 알 수 있다. 4 Å과 7.9 Å은 모두 contact지만, 구조적 의미는 완전히 다르다. 더 정확한 구조를 만들려면 더 세밀한 정보가 필요하다.
+문제는 obvious하다.
+
+- 계산량이 크다
+- sampling quality가 결과를 많이 좌우한다
+- long-range interaction을 만족하는 구조를 찾는 게 어렵다
+- 좋은 geometry signal이 있어도 최적화가 그걸 잘 실현해준다는 보장이 약하다
+
+즉 핵심 병목은 “좋은 구조가 없는 것”만이 아니라, **좋은 구조로 가는 검색 과정이 비효율적**이라는 점이다.
+
+### 병목 2: binary contact는 구조적 정보가 너무 거칠다
+
+contact prediction은 구조 예측을 크게 밀어 올렸지만, 본질적으로 coarse하다.
+
+- 4 Å와 7.9 Å가 둘 다 contact다.
+- 8.1 Å는 non-contact다.
+- 하지만 구조적 의미는 이 셋이 연속적이지 binary하지도 않다.
+
+즉 protein folding에 필요한 건 단순 yes/no edge가 아니라, **거리의 분포적 정보와 불확실성 자체**다. 이걸 더 풍부하게 예측해야 downstream structure realization이 좋아질 수 있다.
+
+### 병목 3: geometry prediction과 structure realization이 분리되어 있다
+
+많은 기존 접근은 contact나 distance-like constraint를 예측한 뒤, 그다음 별도 energy function이나 heuristic solver가 구조를 만든다. 이건 사실 두 문제다.
+
+1. geometry를 잘 예측하는 문제
+2. 그 geometry를 만족하는 3D structure를 찾는 문제
+
+AF1의 핵심은 이 둘을 느슨하게 연결하지 않고, **예측된 분포를 곧바로 단백질별 differentiable potential로 바꿔 구조를 최적화**한다는 데 있다.
 
 ## Key Idea
 
-AlphaFold는 두 가지 핵심 아이디어로 이 문제를 해결한다.
+AlphaFold 1의 핵심은 세 가지다.
 
-### Idea 1: Distogram — Distance Distribution Prediction
+1. **binary contact 대신 distogram을 예측한다.**
+2. **예측 분포를 protein-specific differentiable potential로 바꾼다.**
+3. **fragment assembly 대신 gradient descent로 torsion space를 최적화한다.**
 
-Binary contact 대신, **모든 residue pair의 거리 분포(distance distribution)**를 예측한다. 2-22 Å 범위를 64개 bin으로 나눠, 각 bin에 대한 확률 분포를 출력하는 것이 distogram이다. 
+핵심 흐름을 한 줄로 쓰면 이렇다.
 
-이는 contact prediction보다 훨씬 풍부한 정보를 제공한다. 4 Å과 7 Å을 구분할 수 있고, 예측의 불확실성(분포의 넓이)도 모델링한다. 또한 많은 거리를 동시에 예측하면서, network가 covariation, local structure, nearby residue의 identity 정보를 전파하고 통합할 수 있다.
+> **MSA와 covariation을 입력으로 residue-pair distance distribution을 학습하고, 그 분포를 직접 structure optimization objective로 사용한다.**
 
-### Idea 2: Gradient Descent Structure Realization
+이건 단순히 target을 바꾼 게 아니다. prediction과 realization 사이 연결 방식 전체가 달라진다.
 
-Distogram 예측으로부터 단백질별 potential $V_{\text{total}}(\phi, \psi)$를 구성하고, 이를 **gradient descent로 직접 최적화**한다. Fragment assembly나 stochastic sampling 없이, 미분 가능한 potential을 backbone torsion angles $(\phi, \psi)$에 대해 greedy하게 최소화한다.
+- 입력: sequence + MSA + covariation features
+- 중간 출력: residue pair distance distribution
+- 구조 생성: learned potential 위에서 torsion angle optimization
 
-초기화만 여러 번 바꿔가며 gradient descent를 반복하면, 수백 번의 iteration만으로 낮은 potential의 정확한 구조에 수렴한다. 계산 효율성과 구조 품질을 동시에 달성하는 우아한 해법이다.
+AF1은 여전히 fully end-to-end model은 아니지만, 구조 예측 파이프라인의 중심을 **hand-crafted search**에서 **learned geometry + differentiable optimization**으로 옮긴 첫 번째 강한 사례다.
 
 ## How It Works
 
-AlphaFold의 전체 파이프라인은 크게 세 단계로 나뉜다: (1) MSA 구성 및 feature 추출, (2) Distogram 예측, (3) Structure realization.
+### Overview
 
-```mermaid
-graph TD
-    A[Amino acid sequence S] --> B["MSA construction / HHblits + PSI-BLAST"]
-    B --> C["Feature extraction / Profile, Covariation, Potts"]
-    C --> D["Deep ResNet / 220 residual blocks"]
-    D --> E[Distogram P_d_ij|S, MSA]
-    D --> F["Torsion distributions / P_φ_i,ψ_i|S, MSA"]
-    E --> G[Distance potential V_distance]
-    F --> H[Torsion potential V_torsion]
-    G --> I["Combined potential / V_total = V_dist + V_torsion + V_vdW"]
-    H --> I
-    I --> J["Gradient descent / L-BFGS on φ,ψ"]
-    J --> K[Realized structure x = Gφ,ψ]
-    K --> L[Repeat with noisy restarts]
-    L --> M[Select lowest-potential structure]
-    
-```
+![AlphaFold 1 overview](/assets/img/posts/alphafold1-improved-protein-structure-prediction/fig2.png)
+_Figure 1: AlphaFold 1 folding process and refinement behavior. Source: original paper._
 
-### 4.1 Overall Pipeline
+AF1 파이프라인은 크게 네 단계다.
 
-전체 시스템의 흐름을 pseudocode로 나타내면 다음과 같다.
+- MSA와 covariation feature를 만든다.
+- deep 2D residual network가 distogram과 torsion distribution을 예측한다.
+- distogram을 differentiable potential로 바꾼다.
+- backbone torsion angle 공간에서 L-BFGS 기반 최적화를 반복해 구조를 실현한다.
 
-<details markdown="1">
-<summary>📝 Overall AlphaFold Pipeline Pseudocode (클릭하여 펼치기)</summary>
+아주 압축한 pseudocode는 아래 정도다.
 
 ```python
-class AlphaFold:
-    def __init__(self):
-        self.distogram_net = DistogramNetwork()  # 220 residual blocks
-        self.torsion_net = TorsionNetwork()      # Same network, different head
-    
-    def predict_structure(self, sequence: str) -> Structure:
-        # Step 1: MSA construction
-        msa = build_msa(sequence)  # HHblits + PSI-BLAST
-        
-        # Step 2: Feature extraction
-        features = extract_features(sequence, msa)
-        # - Profile: PSI-BLAST (21), HHblits (22), non-gapped (21)
-        # - Covariation: Potts model parameters (484), Frobenius norm (1)
-        # - Gap/deletion features
-        
-        # Step 3: Distogram and torsion prediction
-        distogram = self.distogram_net(features)  # L×L×64 bins (2-22 Å)
-        torsion_dist = self.torsion_net(features)  # L×1296 bins (φ,ψ)
-        
-        # Step 4: Construct protein-specific potential
-        V_distance = self.build_distance_potential(distogram)
-        V_torsion = self.build_torsion_potential(torsion_dist)
-        V_total = V_distance + V_torsion + V_vdW  # Rosetta score2_smooth
-        
-        # Step 5: Structure realization by gradient descent
-        structures = []
-        for _ in range(num_restarts):
-            # Initialize from predicted torsion distributions
-            phi, psi = sample_from(torsion_dist)
-            
-            # Gradient descent (L-BFGS)
-            phi, psi = optimize(V_total, phi, psi, method='L-BFGS')
-            
-            # Convert torsions to 3D coordinates
-            structure = geometry_builder(phi, psi)
-            structures.append((V_total(phi, psi), structure))
-        
-        # Step 6: Noisy restarts from low-potential pool
-        pool = sorted(structures)[:20]  # Keep 20 lowest-potential
-        for _ in range(num_noisy_restarts):
-            potential, structure = random.choice(pool)
-            phi, psi = structure.torsions + noise(30°)  # Add 30° noise
-            phi, psi = optimize(V_total, phi, psi, method='L-BFGS')
-            structure = geometry_builder(phi, psi)
-            structures.append((V_total(phi, psi), structure))
-        
-        # Return lowest-potential structure
-        return min(structures, key=lambda x: x[0])[1]
+# conceptual pseudocode
+msa = build_msa(sequence)
+features = extract_pair_and_sequence_features(sequence, msa)
+distogram, torsion_dist = predict_geometry(features)
+potential = build_structure_potential(distogram, torsion_dist)
+for restart in range(num_restarts):
+    phi, psi = initialize_torsions(torsion_dist)
+    phi, psi = optimize_with_lbfgs(potential, phi, psi)
+return best_structure_over_restarts()
 ```
 
-</details>
+여기서 중요한 건 AF1이 structure를 네트워크가 바로 내놓지 않는다는 점이다. 대신 네트워크는 **구조를 향해 미분 가능한 지형(landscape)** 을 만들고, 최적화기가 그 지형 위를 내려간다.
 
-### 4.2 MSA Construction and Feature Representation
+### Input representation: MSA를 feature bank로 쓴다
 
-입력은 amino acid sequence $S$다. 먼저 Uniclust30 database에서 HHblits로 유사 서열을 검색하여 MSA를 구성한다 (3 iterations, E-value = $10^{-3}$). 추가로 PSI-BLAST로 nr dataset을 검색한다.
+AF1의 입력은 단순 서열 one-hot이 아니다. 이 모델은 MSA와 covariation을 아주 적극적으로 feature화한다.
 
-MSA로부터 다음 feature들을 추출한다:
+대표적으로 들어가는 신호는 다음과 같다.
 
-**1차원 features (residue 당):**
-- One-hot amino acid type (21)
-- Profile features: PSI-BLAST profile (21), HHblits profile (22), non-gapped profile (21), HMM profile (30)
-- Potts model bias (22)
-- Deletion probability (1)
-- Residue index (5 bits + scalar)
+- amino acid identity / sequence profile
+- HHblits / PSI-BLAST 기반 profile
+- deletion / gap 관련 정보
+- Potts model 계수 같은 covariation signal
+- residue pair 수준의 통계적 coupling
 
-**2차원 features (residue pair 당):**
-- Potts model parameters (484): MSA로부터 regularized pseudolikelihood로 학습한 covariation 정보
-- Frobenius norm of Potts parameters (1)
-- Gap matrix (1)
+즉 AF1은 Transformer-style raw sequence model이라기보다, **당시 구조예측 커뮤니티가 중요하게 보던 진화/통계 feature를 고밀도로 집어넣은 supervised geometric predictor**다.
 
-총 ~650개의 feature가 각 64×64 crop에 입력된다. MSA 깊이(Neff, effective number of sequences)가 클수록 covariation signal이 강해져 distogram 정확도가 올라간다.
+이 표현의 포인트는 분명하다.
 
-> MSA subsampling (절반만 사용)과 coordinate noise 추가를 data augmentation으로 사용하여, shallow MSA에서도 robust하게 예측하고 overfitting을 방지한다.
-{: .prompt-tip }
+- local sequence identity만으로는 부족하다
+- MSA는 contact와 fold에 관한 long-range signal을 담고 있다
+- pairwise coupling을 network가 직접 이용할 수 있어야 한다
 
-### 4.3 Distance Prediction Neural Network
+### Distogram network: AF1의 핵심 아키텍처
 
-Distogram을 예측하는 neural network는 **220 residual blocks로 구성된 deep 2D convolutional network**다. 이전 contact prediction 연구들은 1D embedding 후 2D network를 사용했지만, AlphaFold는 처음부터 끝까지 2D로 처리한다.
+![AlphaFold 1 architecture](/assets/img/posts/alphafold1-improved-protein-structure-prediction/fig3.png)
+_Figure 2: AlphaFold 1 network and distogram prediction setup. Source: original paper._
 
-#### Architecture Details
+AF1의 중심은 residue-pair grid를 입력으로 받는 **매우 깊은 2D residual convolutional network**다. 핵심은 “서열을 임베딩해서 1D로 처리한 뒤 pair를 붙이는” 식이 아니라, **처음부터 구조 문제를 2D pair map 문제로 본다**는 점이다.
 
-각 residual block은 다음 구조를 갖는다:
+논문에서 중요한 특징은 다음과 같다.
 
-<details markdown="1">
-<summary>📝 Residual Block Architecture (클릭하여 펼치기)</summary>
+- 입력은 residue × residue pair map
+- 깊은 residual stack 사용
+- dilation을 활용해 receptive field를 넓힘
+- 출력은 각 residue pair에 대한 distance bin 분포
+
+즉 구조적으로 보면 AF1의 본체는 “pairwise image segmentation network”에 가깝다. 단백질 전체를 그래프나 3D object로 직접 다루기보다, **모든 residue pair를 채널이 많은 2D tensor 위에서 계산**한다.
+
+개념적 스케치는 이렇다.
 
 ```python
-class ResidualBlock(nn.Module):
-    """AlphaFold distogram prediction residual block
-    
-    220 blocks total:
-    - 7 groups × 4 blocks with 256 channels
-    - 48 groups × 4 blocks with 128 channels
-    Cycling through dilations: 1, 2, 4, 8
-    """
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class DistogramResNet(nn.Module):
+    def __init__(self, in_ch: int, hidden: int = 128, bins: int = 64):
+        super().__init__()
+        self.input_proj = nn.Conv2d(in_ch, hidden, kernel_size=1)
+        self.blocks = nn.ModuleList([
+            ResidualPairBlock(hidden, dilation=d)
+            for d in [1, 2, 4, 8] * 12
+        ])
+        self.out = nn.Conv2d(hidden, bins, kernel_size=1)
+
+    def forward(self, x):
+        x = self.input_proj(x)
+        for block in self.blocks:
+            x = block(x)
+        logits = self.out(x)
+        return logits.softmax(dim=1)
+
+class ResidualPairBlock(nn.Module):
     def __init__(self, channels: int, dilation: int):
         super().__init__()
-        self.bn1 = nn.BatchNorm2d(channels)
-        self.projection1 = nn.Conv2d(channels, channels, kernel_size=1)
-        
-        self.bn2 = nn.BatchNorm2d(channels)
-        self.dilated_conv = nn.Conv2d(
-            channels, channels, 
-            kernel_size=3, 
-            dilation=dilation,  # 1, 2, 4, or 8
-            padding=dilation     # Keep spatial dimensions
-        )
-        
-        self.bn3 = nn.BatchNorm2d(channels)
-        self.projection2 = nn.Conv2d(channels, channels, kernel_size=1)
-    
-    def forward(self, x: Tensor) -> Tensor:
-        # x: (batch, channels, 64, 64)
-        residual = x
-        
-        x = self.bn1(x)
-        x = F.elu(x)
-        x = self.projection1(x)
-        
-        x = self.bn2(x)
-        x = F.elu(x)
-        x = self.dilated_conv(x)
-        
-        x = self.bn3(x)
-        x = F.elu(x)
-        x = self.projection2(x)
-        
-        return x + residual  # Skip connection
+        self.conv1 = nn.Conv2d(channels, channels, 1)
+        self.conv2 = nn.Conv2d(channels, channels, 3, padding=dilation, dilation=dilation)
+        self.conv3 = nn.Conv2d(channels, channels, 1)
 
-
-class DistogramNetwork(nn.Module):
-    """Full distogram prediction network"""
-    def __init__(self):
-        super().__init__()
-        
-        # Input projection
-        self.input_proj = nn.Conv2d(num_features, 256, kernel_size=1)
-        
-        # 7 groups × 4 blocks with 256 channels
-        self.blocks_256 = nn.ModuleList([
-            ResidualBlock(256, dilation=(i % 4) * 2 + 1)  # 1,2,4,8 cycle
-            for i in range(7 * 4)
-        ])
-        
-        # 48 groups × 4 blocks with 128 channels
-        self.downsample = nn.Conv2d(256, 128, kernel_size=1)
-        self.blocks_128 = nn.ModuleList([
-            ResidualBlock(128, dilation=(i % 4) * 2 + 1)
-            for i in range(48 * 4)
-        ])
-        
-        # Output head: distance distribution (64 bins)
-        self.output = nn.Conv2d(128, 64, kernel_size=1)
-        # Position-specific bias: indexed by residue offset (capped at 32)
-        self.position_bias = nn.Parameter(torch.randn(32, 64))
-    
-    def forward(self, features: Tensor) -> Tensor:
-        # features: (batch, num_features, 64, 64)
-        x = self.input_proj(features)
-        
-        # 256-channel blocks
-        for block in self.blocks_256:
-            x = block(x)
-        
-        # Downsample to 128 channels
-        x = self.downsample(x)
-        
-        # 128-channel blocks
-        for block in self.blocks_128:
-            x = block(x)
-        
-        # Output: distance distribution
-        logits = self.output(x)  # (batch, 64, 64, 64) - last 64 is bins
-        
-        # Add position-specific bias
-        for i in range(64):
-            for j in range(64):
-                offset = min(abs(i - j), 31)
-                logits[:, :, i, j] += self.position_bias[offset, :]
-        
-        # Softmax over bins
-        distogram = F.softmax(logits, dim=1)  # (batch, 64_bins, 64, 64)
-        return distogram
+    def forward(self, x):
+        h = F.elu(self.conv1(x))
+        h = F.elu(self.conv2(h))
+        h = self.conv3(h)
+        return x + h
 ```
 
-</details>
+실제 AF1은 훨씬 더 큰 스택과 세부 설계를 쓰지만, 중요한 건 계산 그래프의 철학이다. **구조 문제를 residue-pair interaction field 위에서 푼다**는 관점이 이미 여기서 매우 선명하다.
 
-**핵심 설계:**
-- **Dilated convolutions**: dilation을 1, 2, 4, 8로 순환하며 정보를 빠르게 전파. 64×64 crop에서 멀리 떨어진 residue pair 간에도 정보 교환 가능.
-- **Deep architecture**: 220개 residual blocks가 복잡한 covariation 패턴과 local structure 제약을 학습.
-- **2D throughout**: 1D embedding 없이 처음부터 2D feature map으로 처리하여 spatial correlation을 최대한 활용.
+### Distogram이 왜 중요했나
 
-출력은 $L \times L \times 64$ 크기의 distogram으로, 각 residue pair $(i,j)$에 대해 64개 거리 bin (2-22 Å)의 확률 분포 $P(d_{ij} | S, \text{MSA}(S))$를 나타낸다.
-
-### 4.4 Cropped Distograms and Ensembling
-
-메모리 제약과 overfitting 방지를 위해, network는 항상 **64×64 crop**에서 학습하고 테스트한다. 하나의 단백질로부터 수천 개의 다른 crop을 생성할 수 있어 강력한 data augmentation 효과를 낸다.
-
-전체 $L \times L$ distogram을 예측하려면:
-1. 여러 offset으로 64×64 crop을 tile하여 전체 거리 행렬을 커버
-2. 각 crop의 예측을 평균 (crop 중앙부에 높은 가중치)
-3. 독립적으로 학습한 4개 모델의 예측을 ensemble
-
-이렇게 구성한 distogram은 높은 정확도와 불확실성 모델링을 보인다 (Fig. 3). 예측 분포의 표준편차가 낮을수록 실제 거리와의 오차가 작다.
-
-### 4.5 Potential Construction
-
-Distogram과 torsion distribution으로부터 미분 가능한 potential을 구성한다.
-
-#### Distance Potential
-
-각 거리 분포를 cubic spline으로 보간하여 smooth function을 만들고, negative log probability를 합산한다:
+AF1의 distogram은 residue pair $(i, j)$마다 하나의 숫자를 내는 게 아니라, 거리 bin 전체에 대한 확률분포를 낸다.
 
 $$
-V_{\text{distance}}(\phi, \psi) = \sum_{i < j} -\log P(d_{ij}(\phi, \psi) | S, \text{MSA}(S))
+P(d_{ij} \mid S, \mathrm{MSA}(S))
 $$
 
-여기서 $d_{ij}(\phi, \psi) = \|x_i(\phi, \psi) - x_j(\phi, \psi)\|$는 torsion angles로부터 계산한 Cβ 좌표 간 거리다.
+이 분포형 출력은 세 가지 이점이 있다.
 
-**Reference distribution correction**: 단순히 negative log probability를 쓰면 prior가 과대표현된다. 서열과 무관하게 단백질 길이만으로 학습한 reference distribution $P(d_{ij}|\text{length})$를 빼서 보정한다:
+1. binary contact보다 훨씬 풍부하다.
+2. uncertainty를 함께 표현할 수 있다.
+3. downstream potential로 바꿀 때 더 부드럽고 미분 가능한 구조를 만들기 쉽다.
 
-$$
-V_{\text{distance}} = \sum_{i < j} \left[ -\log P(d_{ij} | S, \text{MSA}) + \log P(d_{ij} | \text{length}) \right]
-$$
+결국 AF1은 contact map을 맞히는 모델이 아니라, **protein-specific geometric landscape를 예측하는 모델**이다.
 
-이는 log-likelihood ratio 형태로, sequence-specific information만 남긴다.
+### Potential construction: 예측을 에너지 지형으로 바꾼다
 
-#### Torsion Potential
+AF1의 진짜 아이디어는 여기서 완성된다. distogram은 최종 출력이 아니라, 구조 최적화를 위한 potential로 변환된다.
 
-Network의 별도 output head는 각 residue의 $(\phi_i, \psi_i)$ marginal distribution을 1296개 bin (10° 간격)으로 예측한다. 이를 unimodal von Mises distribution으로 fitting하여:
-
-$$
-V_{\text{torsion}}(\phi, \psi) = \sum_i -\log P(\phi_i, \psi_i | S, \text{MSA}(S))
-$$
-
-#### Combined Potential
-
-최종 potential은 세 항의 합이다:
+개념적으로는 residue pair distance가 특정 값일수록 확률이 높다면, 그 구조는 더 좋은 구조여야 한다. 따라서 negative log probability를 potential처럼 사용할 수 있다.
 
 $$
-V_{\text{total}}(\phi, \psi) = V_{\text{distance}} + V_{\text{torsion}} + V_{\text{vdW}}
+V_{dist}(\phi, \psi) = \sum_{i,j} -\log P\big(d_{ij}(\phi, \psi)\big)
 $$
 
-여기서 $V_{\text{vdW}}$는 Rosetta의 score2_smooth van der Waals term으로 steric clash를 방지한다. Cross-validation 결과 세 항에 equal weighting을 적용하는 것이 가장 좋았다.
-
-### 4.6 Structure Realization by Gradient Descent
-
-Potential이 미분 가능하므로, backbone torsion angles $(\phi, \psi)$를 변수로 gradient descent를 적용한다.
-
-<details markdown="1">
-<summary>📝 Gradient Descent Structure Realization (클릭하여 펼치기)</summary>
-
-```python
-def realize_structure(distogram, torsion_dist, sequence):
-    """Realize protein structure by gradient descent
-    
-    Args:
-        distogram: L×L×64 distance distribution predictions
-        torsion_dist: L×1296 torsion angle distribution predictions
-        sequence: amino acid sequence (length L)
-    
-    Returns:
-        Best structure (lowest potential)
-    """
-    L = len(sequence)
-    
-    # Build differentiable potentials
-    V_distance = build_distance_potential(distogram, sequence)
-    V_torsion = build_torsion_potential(torsion_dist)
-    V_vdW = lambda phi, psi: rosetta_score2_smooth(phi, psi)
-    
-    def V_total(phi, psi):
-        return V_distance(phi, psi) + V_torsion(phi, psi) + V_vdW(phi, psi)
-    
-    # Pool of low-potential structures
-    pool = []
-    
-    # Phase 1: Initial sampling from predicted torsion distributions
-    for restart in range(500):
-        # Sample initial torsions from von Mises fitted distributions
-        phi_init = sample_von_mises(torsion_dist[:, :18])  # φ
-        psi_init = sample_von_mises(torsion_dist[:, 18:])  # ψ
-        
-        # Gradient descent with L-BFGS
-        phi, psi = lbfgs_optimize(
-            V_total, 
-            x0=(phi_init, psi_init),
-            max_iter=1200,
-            tolerance=1e-5
-        )
-        
-        # Build 3D structure from optimized torsions
-        structure = geometry_builder(phi, psi, sequence)
-        potential = V_total(phi, psi)
-        
-        pool.append((potential, structure))
-        pool = sorted(pool)[:20]  # Keep 20 lowest
-    
-    # Phase 2: Noisy restarts from pool
-    for restart in range(4500):
-        if random.random() < 0.9:
-            # 90%: noisy restart from pool
-            _, structure = random.choice(pool)
-            phi_init, psi_init = structure.torsions
-            # Add 30° noise
-            phi_init += np.random.normal(0, 30°, size=L)
-            psi_init += np.random.normal(0, 30°, size=L)
-        else:
-            # 10%: fresh sample from torsion distributions
-            phi_init = sample_von_mises(torsion_dist[:, :18])
-            psi_init = sample_von_mises(torsion_dist[:, 18:])
-        
-        # Gradient descent
-        phi, psi = lbfgs_optimize(
-            V_total, 
-            x0=(phi_init, psi_init),
-            max_iter=1200
-        )
-        
-        structure = geometry_builder(phi, psi, sequence)
-        potential = V_total(phi, psi)
-        
-        pool.append((potential, structure))
-        pool = sorted(pool)[:20]
-    
-    # Return lowest-potential structure
-    best_potential, best_structure = pool[0]
-    return best_structure
-
-
-def lbfgs_optimize(V, x0, max_iter=1200, tolerance=1e-5):
-    """L-BFGS optimization of torsion angles
-    
-    Each step:
-    1. Compute V(φ, ψ) and gradients ∇_φ V, ∇_ψ V
-    2. Update φ, ψ with L-BFGS step
-    3. Check convergence
-    """
-    phi, psi = x0
-    
-    for step in range(max_iter):
-        # Compute potential and gradients
-        potential = V(phi, psi)
-        grad_phi = gradient(V, phi, wrt='phi')
-        grad_psi = gradient(V, psi, wrt='psi')
-        
-        # L-BFGS update (maintains history of gradients)
-        phi, psi = lbfgs_step(phi, psi, grad_phi, grad_psi)
-        
-        # Check convergence
-        if np.linalg.norm([grad_phi, grad_psi]) < tolerance:
-            break
-    
-    return phi, psi
-
-
-def geometry_builder(phi, psi, sequence):
-    """Build 3D coordinates from torsion angles
-    
-    Uses ideal bond lengths and angles:
-    - N-Cα: 1.46 Å
-    - Cα-C: 1.52 Å
-    - C-N: 1.33 Å
-    - Bond angles: N-Cα-C = 110°, Cα-C-N = 117°
-    """
-    coords = []
-    # Initialize first residue at origin
-    coords.append(np.array([0, 0, 0]))  # N
-    
-    for i, aa in enumerate(sequence):
-        # Build backbone atoms using φ, ψ
-        N = coords[-1]
-        Ca = N + rotation(phi[i]) @ np.array([1.46, 0, 0])
-        C = Ca + rotation(psi[i]) @ np.array([1.52, 0, 0])
-        
-        # Cβ (or Cα for glycine)
-        if aa == 'G':
-            Cb = Ca
-        else:
-            Cb = Ca + np.array([0, 1.52, 0])  # Simplified
-        
-        coords.extend([Ca, C, Cb])
-    
-    return Structure(coords, sequence)
-```
-
-</details>
-
-**Gradient Descent 과정 (Fig. 2c 참조):**
-1. **Initialization**: Predicted torsion distribution에서 $(\phi, \psi)$ sampling
-2. **Optimization**: L-BFGS로 $V_{\text{total}}$를 1200 steps 최적화
-3. **Pooling**: 낮은 potential의 구조 20개를 pool에 유지
-4. **Noisy restarts**: Pool에서 선택한 구조에 30° noise를 추가해 재최적화 (90%), 또는 fresh sampling (10%)
-5. **Convergence**: 수백 번 반복 후 lowest-potential 구조 선택
-
-각 gradient descent step은 greedy하게 potential을 낮추지만, 전역적인 conformational change를 일으켜 잘 packing된 구조로 수렴한다. Noisy restart 덕분에 fresh sampling보다 높은 TM score를 달성한다 (평균 0.641 vs 0.636).
-
-> Gradient descent는 simulated annealing보다 훨씬 빠르다. 수백 번의 restart로 수렴하는 반면, fragment assembly는 수천-수만 번의 move가 필요하다.
-{: .prompt-tip }
-
-### 4.7 Training and Auxiliary Losses
-
-Network는 cross-entropy loss로 학습한다:
+여기서 $d_{ij}(\phi, \psi)$ 는 torsion angle이 결정하는 실제 residue pair distance다. 여기에 torsion prior와 van der Waals 같은 보조 항을 더해 전체 목적함수를 만든다.
 
 $$
-\mathcal{L}_{\text{distance}} = -\sum_{i,j} \log P(d_{ij}^{\text{true}} | S, \text{MSA}(S))
+V_{total}(\phi, \psi) = V_{dist} + V_{torsion} + V_{vdW}
 $$
 
-여기서 $d_{ij}^{\text{true}}$는 PDB 구조의 실제 Cβ 거리가 속한 bin이다.
+이 단계가 AF1의 architectural identity를 결정한다. network가 structure를 직접 출력하진 않지만, **structure가 따라야 할 objective function 자체를 prediction으로 만든다**는 점에서 굉장히 현대적이다.
 
-추가로 auxiliary losses를 사용하여 one-dimensional representation을 개선한다:
-- **Secondary structure prediction**: 8-class DSSP labels (weight 0.005)
-- **Accessible surface area**: Relative ASA prediction (weight 0.001)
+### Structure realization: fragment assembly 대신 gradient descent
 
-이 auxiliary heads는 2D activation을 mean/max pooling하여 1D로 변환 후 예측한다. Secondary structure Q3 accuracy 84%로 state-of-the-art 수준이다.
+AF1은 backbone torsion angle $(\phi, \psi)$ 를 최적화 변수로 두고, L-BFGS 같은 gradient-based optimizer로 potential을 최소화한다. 즉 structure generation은 다음처럼 읽을 수 있다.
 
-**Training setup:**
-- Batch size: 4 crops × 8 GPUs = 32
-- Optimizer: Synchronized SGD with 0.85 dropout
-- Learning rate: 0.06, decayed by 50% at 150k, 200k, 250k, 350k steps
-- Training time: 5 days for 600k steps
+- 초기 torsion angle을 샘플링한다.
+- 예측된 potential 위에서 연속 최적화를 한다.
+- 여러 restart를 돌려 낮은 potential basin을 찾는다.
+- 가장 좋은 구조를 고른다.
 
-### 4.8 Full Chains Without Domain Segmentation
+여기서 중요한 건 AF1이 sampling을 완전히 없애진 않았다는 점이다. multi-start optimization이 여전히 필요하다. 하지만 sampling의 역할이 바뀐다.
 
-긴 단백질은 전통적으로 domains로 분할하여 독립적으로 folding했다. 하지만 domain segmentation 자체가 어렵고 error-prone하다.
+- 예전: 구조를 만드는 주된 엔진이 stochastic search
+- AF1: 구조는 learned potential이 만들고, sampling은 local minimum 탐색 보조 수단
 
-AlphaFold는 **전체 chain을 한 번에 folding**한다. Sliding window 방식으로 여러 크기(64, 128, 256 residues)의 subsequence MSA를 계산하고, 각각의 distogram을 평균하여 full-chain distogram을 만든다. MSA 깊이로 가중 평균하면, alignment가 많은 region에서 더 정확한 예측을 얻는다.
+이건 큰 차이다.
 
-이 방식은 domain boundary를 모르는 상황에서도 전체 구조를 예측할 수 있게 한다.
+### Torsion head와 local geometry
+
+AF1은 distogram만 예측하는 게 아니라 torsion 관련 분포도 함께 다룬다. 이건 global fold만 맞는 구조를 피하고, local backbone geometry를 더 안정적으로 잡는 데 도움이 된다. 다시 말해 AF1은 처음부터 “장거리 pair geometry”와 “국소 backbone prior”를 함께 쓰는 혼합 설계다.
+
+이 역시 이후 AF2의 구조 모듈로 가는 징검다리처럼 읽힌다. 완전히 end-to-end는 아니지만, **구조적 prior와 geometry signal을 하나의 계산 흐름으로 묶으려는 방향**은 이미 뚜렷하다.
+
+### 왜 이 설계가 먹혔나
+
+AF1의 설계를 한 문장으로 요약하면 이렇다.
+
+> **deep pairwise geometry predictor가 만든 분포를 단백질별 에너지 지형으로 바꾸고, 그 지형 위에서 연속 최적화를 수행한다.**
+
+더 풀면,
+
+- MSA/covariation은 pairwise geometric evidence를 준다.
+- deep 2D ResNet은 그 evidence를 distogram으로 정리한다.
+- distogram은 differentiable potential로 바뀐다.
+- optimizer는 그 potential을 만족하는 structure를 torsion space에서 찾는다.
+
+이 구조 덕분에 AF1은 단순 contact classifier에서 벗어나, **예측과 구조 생성이 직접 연결된 pipeline**이 된다.
 
 ## Results
 
-AlphaFold는 CASP13에서 압도적 성능을 보였다.
+![AlphaFold 1 results](/assets/img/posts/alphafold1-improved-protein-structure-prediction/fig4.png)
+_Figure 3: AlphaFold 1 benchmark behavior and CASP13-level performance. Source: original paper._
 
-### Free Modelling Performance
+### 1. CASP13에서 질적으로 다른 점프를 보였다
 
-| Metric | AlphaFold | 2nd Place (Group 322) |
-|--------|-----------|----------------------|
-| **FM summed z-score** | **52.8** | 36.6 |
-| **FM+FM/TBM z-score** | **68.3** | 48.2 |
-| FM domains with TM > 0.6 | **22** | 10 |
+AF1은 CASP13 free modeling에서 매우 강한 결과를 냈다. 중요한 건 absolute score 하나보다, **deep learning 기반 geometry prediction이 fragment assembly 중심 질서를 실제로 흔들었다**는 점이다.
 
-AlphaFold는 FM category에서 2위보다 **44% 높은 점수**를 기록했다. 특히 0.6-0.7 TM score 범위에서 다른 모든 시스템을 압도하며, 이전에는 불가능했던 정확도의 새로운 fold 예측들을 생산했다 (Fig. 1a).
+### 2. distogram은 contact보다 훨씬 유용했다
 
-![AlphaFold CASP13 performance](/assets/img/posts/alphafold1-improved-protein-structure-prediction/fig1.png)
-_Figure 1: (a) FM domains predicted at given TM-score threshold. AlphaFold가 0.6-0.7 범위에서 압도적. (b) 새로운 6개 fold에 대한 TM score 비교. (c) Long-range contact prediction precision — AlphaFold distogram이 최고 정확도._
+결과적으로 AF1은 binary contact를 넘어 분포형 distance target이 얼마나 강한 supervision인지 보여줬다. 이후 구조 예측 모델들이 pairwise distance / geometry를 훨씬 더 본격적으로 다루게 된 건 우연이 아니다.
 
-### Contact Prediction Accuracy
+### 3. 하지만 최종 structure generation은 아직 optimizer 의존적이었다
 
-Distogram을 8 Å threshold로 binary contact prediction으로 변환하면, long-range contact prediction에서도 state-of-the-art를 달성한다 (Fig. 1c). Top L, L/2, L/5 contacts에서 모두 highest precision을 기록했다.
+AF1은 분명 강력했지만, structure realization이 여전히 별도 optimization 단계에 많이 기대고 있었다. 이건 장점이자 한계였다.
 
-이는 distogram이 풍부한 정보를 담고 있어, 단순히 thresholding해도 기존 contact prediction 전용 방법들을 능가함을 보여준다.
+- 장점: 예측된 geometry를 꽤 잘 실현했다
+- 한계: pipeline이 완전히 end-to-end는 아니었다
 
-### Distogram Accuracy and Structure Quality
-
-Distogram lDDT (DLDDT12)와 realized structure의 TM score 간 강한 상관관계가 있다 (Pearson r = 0.92, Fig. 4a). 즉, distogram 자체가 정확하면 최종 구조도 정확하다.
-
-![Distogram accuracy vs TM score](/assets/img/posts/alphafold1-improved-protein-structure-prediction/fig4.png)
-_Figure 4: (a) TM score vs distogram lDDT — 높은 상관관계. (b) Potential의 각 component를 제거했을 때 TM score 변화 — distance potential이 가장 중요._
-
-Distance potential을 완전히 제거하면 TM score가 0.266으로 떨어진다 (Fig. 4b). Torsion potential, reference correction, van der Waals term은 각각 소폭 기여하지만, distance potential이 압도적으로 중요하다.
-
-### Template-Based Modelling
-
-AlphaFold는 FM 방법임에도 TBM category에서도 강력한 성능을 보였다. Assessors' formula로 **TBM top-one에서 4위, best-of-five에서 1위**를 차지했다. Template 없이도 homology modeling 수준의 정확도에 도달할 수 있음을 시사한다.
+바로 이 지점이 AF2가 다음에 해결하려는 병목이 된다.
 
 ## Discussion
 
-AlphaFold는 protein structure prediction에서 새로운 패러다임을 제시했지만, 논문은 몇 가지 한계와 향후 방향을 밝히고 있다.
+내가 보기에 AF1의 가장 중요한 유산은 “deep learning이 structure prediction을 잘했다”가 아니다. 더 중요한 건, **구조 예측 파이프라인의 중심 물음을 바꿨다**는 점이다.
 
-### MSA Depth Dependency
+예전엔 보통 이렇게 생각했다.
 
-Distogram 정확도는 MSA의 effective number of sequences (Neff)에 크게 의존한다. Shallow MSA (Neff가 낮은 경우)에서는 covariation signal이 약해 예측 정확도가 떨어진다. MSA subsampling augmentation으로 어느 정도 완화했지만, orphan proteins이나 최근에 발견된 서열은 여전히 어렵다.
+- 좋은 statistical potential을 설계하고
+- 충분히 많이 샘플링하면
+- 구조가 나온다
 
-### FM vs TBM Gap
+AF1은 반대로 말한다.
 
-FM 성능이 크게 향상되었지만, TBM에 비하면 여전히 gap이 있다. 논문은 "FM targets still lag behind TBM targets and cannot yet be relied on for detailed understanding of hard structures"라고 밝혔다. Side-chain configuration이나 binding site의 세밀한 구조까지 신뢰하기는 어렵다.
+- potential 자체를 단백질별로 학습하게 하자
+- geometry signal을 더 풍부한 분포 형태로 예측하자
+- optimizer는 그 학습된 지형을 따라가게 하자
 
-### Gradient Descent Local Minima
+이 관점 전환은 매우 중요했다. 왜냐하면 AF2의 end-to-end 구조 예측도 결국 이 질문 위에서 자라났기 때문이다. AF2는 AF1의 learned potential + optimization 구도를 더 안쪽으로 밀어 넣어, 아예 모델이 representation 안에서 structure를 만들게 한다.
 
-Gradient descent는 local minima에 빠질 수 있다. Noisy restart로 어느 정도 해결하지만, 매우 복잡한 topology를 가진 단백질에서는 global optimum을 찾지 못할 가능성이 있다. 논문은 "no guarantee of finding global optimum"을 인정한다.
-
-### Biological Applications
-
-논문은 AlphaFold 예측이 biological insights를 제공할 수 있는 수준에 도달하기 시작했다고 주장한다. Contact predictions만으로도 mutation targeting에 유용하고, 예측 구조가 protein-protein interface prediction, binding pocket identification, molecular replacement in crystallography에서 개선을 보였다 (Extended Data Figs. 6-8 참조).
-
-저자들은 "we hope that the methods we have described can be developed further and applied to benefit all areas of protein science"라며 향후 발전 방향을 제시했다. 이는 2년 후 AlphaFold 2로 이어진다.
+즉 AF1은 구식 AlphaFold가 아니라, **contact prediction 시대와 end-to-end structure generation 시대 사이를 잇는 결정적 브리지**다.
 
 ## Limitations
 
-1. **MSA 의존성**: 유사 서열이 적은 단백질(orphan protein)에서는 MSA quality가 떨어져 정확도가 급격히 감소한다.
-2. **단일 도메인 제한**: Multi-domain protein의 domain 간 상대적 배치를 정확히 예측하지 못한다. 각 domain을 독립적으로 예측한 후 조합하는 방식의 한계가 있다.
-3. **Gradient descent 최적화의 local minima**: L-BFGS로 에너지 landscape를 탐색하므로, 초기값에 따라 local minimum에 빠질 수 있다. 여러 random seed로 반복 최적화가 필요하다.
-4. **Distogram 해상도 한계**: 64 bin으로 이산화된 거리 분포는 미세한 원자 간 거리 차이를 포착하기 어렵고, backbone torsion angle만 예측하므로 side-chain 배치가 부정확하다.
-5. **End-to-end가 아님**: Feature extraction → distance prediction → structure optimization이 분리되어 있어, 전체 파이프라인의 joint optimization이 불가능하다.
+### 1. structure realization이 여전히 외부 최적화에 의존한다
+
+AF1의 가장 큰 한계는 여전히 명확하다. 네트워크는 structure를 직접 생성하지 않고, optimizer가 많이 책임진다. 그래서 pipeline이 길고, restart와 local minima 문제도 남는다.
+
+### 2. 단백질 전용 설계다
+
+표현과 목적함수 모두 단백질 backbone torsion 기반이다. ligand, nucleic acid, heterogeneous complex 같은 문제로 자연스럽게 확장되긴 어렵다.
+
+### 3. global consistency는 아직 완전히 내부화되지 않았다
+
+distogram이 풍부해도, 그걸 3D structure로 일관되게 실현하는 건 여전히 쉽지 않다. AF2가 triangle update, IPA, recycling 같은 구조를 도입한 이유가 바로 여기 있다.
 
 ## Conclusion
 
-AlphaFold 1은 단백질 구조 예측의 패러다임을 fragment assembly에서 distance distribution prediction으로 전환시킨 획기적인 연구다. Distogram이라는 풍부한 inter-residue distance distribution 표현과, 이를 differentiable한 potential로 변환하여 gradient descent로 구조를 최적화하는 접근법은 CASP13에서 1위를 차지했다. Deep ResNet 기반의 distance prediction과 torsion prediction의 조합은 이후 AlphaFold 2의 end-to-end 구조 예측으로 가는 핵심 발판이 되었다.
+AlphaFold 1은 AF2의 거대한 그림자에 가려져 있지만, 실제로는 구조 예측 계산 그래프를 처음으로 크게 비튼 논문이다. binary contact를 residue-pair distance distribution으로 바꾸고, 그 분포를 단백질별 differentiable potential로 변환한 뒤, fragment assembly 대신 gradient descent로 구조를 최적화한다. 이 조합은 folding을 hand-crafted search problem에서 **learned geometry optimization problem**으로 바꿔 놓는다.
+
+내 기준에서 AF1의 진짜 의미는 성능 그 자체보다, 구조 예측 문제의 내부 표현을 바꾼 데 있다. 이후 AF2는 이 흐름을 더 밀어붙여 representation과 좌표 생성을 end-to-end로 묶고, AF3는 그걸 다시 biomolecular complex 전반으로 확장한다. 그런 의미에서 AF1은 “전 단계 모델”이 아니라, **AlphaFold 시리즈 전체의 첫 번째 아키텍처적 전환점**이다.
 
 ## TL;DR
 
-- **문제**: Fragment assembly는 느리고, contact prediction은 binary 정보만 제공하여 정확한 구조 예측이 어려움
-- **해법**: Deep ResNet (220 blocks)으로 inter-residue distance distribution (distogram)을 예측하고, 이로부터 단백질별 potential을 구성하여 gradient descent로 구조 최적화
-- **결과**: CASP13 FM category에서 압도적 1위 (52.8 vs 36.6 z-score), 이전에 불가능했던 새로운 fold들을 높은 정확도로 예측
+- AlphaFold 1은 binary contact 대신 **distogram**을 예측했다.
+- 핵심 network는 residue-pair grid 위에서 작동하는 **깊은 2D residual convolutional architecture**다.
+- 예측된 distance distribution은 **protein-specific differentiable potential**로 바뀐다.
+- structure generation은 fragment assembly 대신 **torsion angle space에서의 gradient descent optimization**으로 수행된다.
+- 즉 AF1의 핵심은 contact prediction 자체보다, **learned geometry를 직접 optimization landscape로 바꾼 것**이다.
+- 다만 structure realization이 여전히 외부 optimizer에 크게 의존해, 완전한 end-to-end 구조 생성은 아니었다.
+- 바로 그 한계가 AF2의 Evoformer + Structure Module 설계로 이어진다.
 
 ## Paper Info
 
-| 항목 | 내용 |
-|------|------|
-| **Title** | Improved protein structure prediction using potentials from deep learning |
-| **Authors** | Andrew W. Senior et al. (DeepMind) |
-| **Venue** | Nature, Volume 577 (2020) |
-| **Published** | 2020-01-15 |
-| **Link** | [doi:10.1038/s41586-019-1923-7](https://doi.org/10.1038/s41586-019-1923-7) |
-| **Paper** | [Nature](https://www.nature.com/articles/s41586-019-1923-7) |
-| **Code** | [GitHub](https://github.com/deepmind/deepmind-research/tree/master/alphafold_casp13) |
+- **Title:** Improved Protein Structure Prediction Using Potentials from Deep Learning
+- **Authors:** Senior et al.
+- **Affiliations:** DeepMind and collaborators
+- **Venue:** Nature
+- **Published:** 2020-01-15
+- **Paper:** https://www.nature.com/articles/s41586-019-1923-7
 
 ---
 
-> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다. 
+> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다.
 > 논문의 내용을 기반으로 작성되었으나, 부정확한 내용이 있을 수 있습니다.
 > 오류 지적이나 피드백은 언제든 환영합니다.
 {: .prompt-info }

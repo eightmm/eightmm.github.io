@@ -156,6 +156,15 @@ _Figure 2: Pairformer and diffusion-centered training setup. Source: original pa
 
 처음 보면 pairformer는 evoformer에서 MSA를 줄인 경량판처럼 보일 수 있다. 하지만 개념적으로는 조금 다르다. 이건 단순한 pruning이 아니라 **문제에 맞는 정보 우선순위의 재배치**다.
 
+아키텍처 수준에서 보면 AF3 trunk는 대략 이렇게 읽을 수 있다.
+
+- 입력 임베딩 단계에서 MSA, template, ligand/reference features를 합친다.
+- 얕은 MSA 처리 후 중심 상태는 pair/single representation으로 넘어간다.
+- 48개 수준의 pairformer block이 relation learning을 반복한다.
+- structure 생성은 더 이상 trunk 안의 residue-frame refinement가 아니라 diffusion module에서 담당한다.
+
+즉 AF3는 trunk와 generator의 역할을 더 선명하게 분리한다.
+
 AF2에서는 진화 정보가 구조 예측의 핵심 동력 중 하나였다. 그러나 AF3가 겨냥하는 복합체 세계에서는 MSA가 항상 주연이 될 수 없다. 따라서 trunk는 더 보편적인 pair geometry 학습 쪽으로 무게를 옮긴다.
 
 개념적으로 pairformer block은 이런 흐름으로 이해할 수 있다.
@@ -189,9 +198,35 @@ class PairformerBlock(nn.Module):
 
 물론 실제 구현은 훨씬 복잡하지만, 구조적으로 보면 AF3는 **pair relation을 중심축으로 두고 single representation을 보조적으로 순환시키는 모델**이라고 보는 편이 맞다.
 
-### 왜 diffusion인가
+### Diffusion module: structure head가 아니라 generative coordinate engine
 
 AF3에서 가장 눈에 띄는 변화는 diffusion module이다. 그런데 “요즘 다 diffusion 하니까” 수준으로 읽으면 핵심을 놓친다.
+
+아키텍처 관점에서 diffusion module은 AF2의 structure module 자리를 단순 대체한 게 아니다. 오히려 역할이 더 커졌다.
+
+- AF2 structure module은 residue frame refinement 모듈이다.
+- AF3 diffusion module은 atom coordinate distribution 전체를 생성하는 조건부 generator다.
+
+개념적으로 보면 내부 계산은 다음 흐름에 가깝다.
+
+1. noisy atom coordinates를 받는다.
+2. atom-level encoder가 local chemical context를 읽는다.
+3. token-level transformer가 pair/single context와 결합한다.
+4. atom decoder가 denoised coordinate update를 낸다.
+5. 여러 timestep에 걸쳐 반복한다.
+
+간단한 sketch는 아래처럼 쓸 수 있다.
+
+```python
+class DiffusionStructureGenerator(nn.Module):
+    def forward(self, x_t, t, pair_repr, single_repr, atom_features):
+        atom_state = atom_encoder(x_t, atom_features)
+        token_state = fuse_token_context(atom_state, pair_repr, single_repr, t)
+        delta = atom_decoder(token_state, atom_state)
+        return denoise_update(x_t, delta, t)
+```
+
+즉 diffusion module은 AF2식 마지막 structure head보다 훨씬 더 **독립적인 generative subsystem**에 가깝다.
 
 여기서 diffusion이 필요한 이유는 단지 generative trend 때문이 아니다. 더 중요한 이유는 다음 셋이다.
 

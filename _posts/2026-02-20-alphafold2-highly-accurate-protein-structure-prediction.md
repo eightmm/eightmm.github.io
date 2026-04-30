@@ -138,6 +138,17 @@ _Figure 2: Evoformer block and Structure Module details. Source: original paper.
 
 Evoformer는 AF2의 가장 중요한 발명 중 하나다. 이름만 보면 Transformer 계열처럼 보이지만, 실제 역할은 더 특수하다. 이건 sequence attention 블록이 아니라 **MSA와 pair representation 사이 정보 흐름을 조직하는 구조 추론 엔진**이다.
 
+아키텍처 수준에서 보면 한 Evoformer block은 대략 다음 계산 흐름을 가진다.
+
+1. MSA row attention with pair bias
+2. MSA column attention
+3. MSA transition
+4. outer product mean으로 MSA 정보를 pair로 주입
+5. triangle multiplicative / triangle attention으로 pair 정제
+6. pair transition
+
+즉 단순한 self-attention stack이 아니라, **MSA stack과 pair stack이 교차 결합된 이중 아키텍처**다.
+
 대표적인 구성 요소는 아래와 같다.
 
 - MSA row attention with pair bias
@@ -189,7 +200,31 @@ AF2는 단순히 MSA에서 pair를 한 번 만들고 끝내지 않는다.
 
 Evoformer가 구조적 hypothesis를 만들었다면, Structure Module은 그걸 실제 3D 좌표로 바꾸는 단계다. 여기서 핵심은 **Invariant Point Attention (IPA)** 이다.
 
+아키텍처 관점에서 Structure Module은 보통 이렇게 읽는 편이 좋다.
+
+- 입력: single representation + pair representation
+- 내부 상태: residue별 rigid frame (rotation + translation)
+- 핵심 연산: scalar attention + point attention 결합
+- 출력: 업데이트된 residue frame, 그리고 최종 atom coordinates
+
 AF2는 각 residue를 rigid frame으로 다룬다. residue마다 local frame을 갖고, attention이 scalar feature뿐 아니라 **3D point** 수준에서도 작동한다. 중요한 건 이 attention이 global rotation / translation에 대해 invariant하게 설계된다는 점이다.
+
+더 단순화한 IPA sketch는 아래처럼 볼 수 있다.
+
+```python
+class InvariantPointAttention(nn.Module):
+    def forward(self, single_repr, pair_repr, frames):
+        q_scalar, k_scalar, v_scalar = project_scalar(single_repr)
+        q_pts = project_query_points(single_repr, frames)
+        k_pts = project_key_points(single_repr, frames)
+        v_pts = project_value_points(single_repr, frames)
+        logits = scalar_attention_logits(q_scalar, k_scalar, pair_repr)
+        logits = logits + point_distance_bias(q_pts, k_pts)
+        attended = attend(logits, v_scalar, v_pts)
+        return update_single_and_frames(attended, frames)
+```
+
+물론 실제 구현은 multi-head, local/global frame conversion, pair bias scaling 등으로 더 복잡하지만, 구조적으로는 **attention inside coordinate frame update**라는 게 중요하다.
 
 직관적으로 보면 IPA는 이렇게 작동한다.
 
