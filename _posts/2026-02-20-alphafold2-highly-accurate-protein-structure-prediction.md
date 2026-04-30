@@ -1,485 +1,336 @@
 ---
-title: "Highly Accurate Protein Structure Prediction with AlphaFold"
+title: "AlphaFold 2: protein folding problem을 푼 건 distance가 아니라 representation이었다"
 date: 2026-02-20 12:00:00 +0900
-description: "AlphaFold 2는 단백질 서열만으로 원자 수준 정확도의 3D 구조를 예측하는 최초의 AI 시스템. Evoformer와 Structure Module을 결합하여 CASP14에서 실험 구조에 필적하는 정확도 달성."
-categories: [Paper Review, Protein Structure]
-tags: [protein-structure, AlphaFold, Evoformer, attention, end-to-end, CASP14, structure-prediction]
+description: "AlphaFold 2는 distogram 기반 파이프라인을 넘어 MSA와 pair representation을 함께 진화시키는 Evoformer, 그리고 Invariant Point Attention 기반 structure module로 end-to-end 단백질 구조 예측을 실현했다. CASP14에서 실험 구조에 근접한 정확도를 보인 핵심은 더 많은 규칙이 아니라 더 나은 표현과 좌표 생성 방식이었다."
+categories: [AI, Protein Structure]
+tags: [protein-structure, alphafold2, evoformer, invariant-point-attention, casp14, structure-prediction]
 math: true
-mermaid: true
+mermaid: false
 image:
   path: /assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig1.png
-  alt: "AlphaFold 2 architecture and predictions"
+  alt: "AlphaFold 2 architecture and prediction examples"
 ---
-
-> 이 글은 AlphaFold 시리즈의 두 번째 글입니다. 시리즈: AlphaFold 1, **AlphaFold 2 (이 글)**, AlphaFold 3, AlphaFold Summary.
-{: .prompt-info }
 
 ## Hook
 
-단백질 구조를 실험으로 규명하는 데는 수개월에서 수년이 걸린다. 100,000개의 단백질 구조가 PDB에 등록되어 있지만, 이는 수십억 개의 알려진 단백질 서열의 극히 일부에 불과하다. 50년 이상 풀리지 않은 **protein folding problem**—아미노산 서열만으로 단백질의 3D 구조를 예측하는 문제—이 2020년, AlphaFold 2의 등장으로 돌파구를 맞았다.
+AlphaFold 2 이전에도 단백질 구조 예측은 이미 많이 좋아지고 있었다. contact prediction은 점점 정확해졌고, distogram 같은 더 풍부한 geometric supervision도 등장했다. 그래서 겉으로 보면 AF2는 “그 흐름의 정점”처럼 보일 수 있다. 하지만 실제로 논문을 뜯어보면 느낌이 좀 다르다. AF2는 단순히 더 깊은 네트워크나 더 많은 데이터로 정확도를 밀어 올린 모델이 아니라, **구조 예측 문제를 neural representation 안에서 다시 조직한 모델**에 더 가깝다.
 
-AlphaFold 2는 CASP14에서 실험 구조와 경쟁할 수 있는 수준의 정확도를 보여주며, **처음으로 원자 수준(atomic accuracy)의 단백질 구조 예측**을 가능하게 한 시스템이다. 탄소 원자의 폭이 1.4Å인데, AlphaFold 2의 median backbone accuracy는 0.96Å r.m.s.d.95에 달한다.
+기존 접근의 전형적인 흐름은 대체로 이랬다. 먼저 pairwise distance나 contact를 예측하고, 그다음 별도의 구조 최적화 단계에서 3D 좌표를 복원한다. 이 두 단계는 서로 연결되어 있지만 완전히 같은 문제는 아니다. 중간 representation이 좋아도 최종 structure realization이 흔들릴 수 있고, 반대로 후처리를 아무리 잘해도 upstream signal이 약하면 한계가 있다.
+
+**AlphaFold 2**는 이 분리를 크게 줄인다. MSA에서 얻은 진화정보와 residue pair 관계를 Evoformer 안에서 반복적으로 같이 업데이트하고, 마지막엔 Invariant Point Attention을 통해 residue frame 위에서 직접 3D 구조를 만들어간다. 이 구조는 “distance를 예측한 뒤 구조를 끼워 맞춘다”기보다, **서열과 진화정보가 구조로 접히는 계산 자체를 모델 안에 넣었다**는 쪽에 더 가깝다.
+
+내가 보기엔 AF2의 진짜 혁신은 CASP14 숫자만이 아니다. 더 중요한 건, 단백질 구조 예측의 핵심 병목이 물리 시뮬레이션 부족이나 contact accuracy 부족만이 아니라 **representation과 coordinate generation 사이의 단절**이었다는 걸 보여준 점이다. 이 글에서는 AF2가 정확히 무엇을 바꿨는지, 왜 Evoformer와 IPA가 그렇게 중요했는지, 그리고 AF3로 가는 길이 사실 어디서부터 시작됐는지 정리해보겠다.
 
 ## Problem
 
-단백질 구조 예측은 크게 두 가지 접근법으로 발전해왔다. **물리 기반 접근법(physical interaction programme)**은 분자 간 상호작용을 시뮬레이션하여 구조를 예측하지만, 중간 크기 단백질조차 계산적으로 다루기 어렵고 충분히 정확한 물리 모델을 만들기 힘들다는 한계가 있었다. **진화 기반 접근법(evolutionary programme)**은 다중 서열 정렬(MSA)과 진화적 상관관계를 활용하지만, homologous structure가 없거나 MSA depth가 얕을 때 정확도가 크게 떨어졌다.
+AlphaFold 2가 푼 문제는 단순히 “contact prediction을 더 잘하자”가 아니다. 더 정확히는 다음 질문이다.
 
-기존 방법들은 대부분 **distance matrix를 중간 예측 단계로** 사용했다. 즉, MSA로부터 pairwise distance를 예측한 뒤, heuristic system으로 3D 좌표를 재구성하는 2단계 과정이었다. 이 접근법은 정보 손실과 최적화 어려움을 초래했다.
+> **서열과 진화정보로부터 단백질의 3D 구조를 end-to-end로 예측하려면, 어떤 representation과 update rule이 필요한가?**
 
-또한 **homologue가 없는 경우** 정확도가 급격히 떨어지는 문제가 있었다. Template-based modeling은 유사한 구조가 PDB에 있을 때만 잘 작동하며, 새로운 fold에 대해서는 무력했다.
+이 질문은 크게 네 가지 병목으로 나뉜다.
+
+### 병목 1: contact나 distance만으로는 구조 문제가 끝나지 않는다
+
+AlphaFold 1 세대의 큰 진전은 binary contact 대신 distogram 같은 richer geometric target을 예측했다는 점이었다. 하지만 여전히 구조 파이프라인은 두 단계였다.
+
+- pairwise geometric signal을 예측하고
+- 그걸 바탕으로 별도 최적화나 relaxation으로 3D 구조를 만든다
+
+이 과정에는 자연스러운 정보 손실이 있다. pairwise constraints가 충분히 좋아 보여도, 실제 3D embedding은 여전히 어렵다. 특히 장거리 상호작용, 삼체 관계, global consistency는 단순 거리 행렬만으로는 깔끔하게 해결되지 않는다.
+
+### 병목 2: MSA 정보와 pair geometry가 따로 놀기 쉽다
+
+진화정보는 구조 예측에 강력하지만, 많은 기존 접근은 MSA에서 feature를 뽑은 뒤 그걸 정적인 입력처럼 사용했다. 문제는 구조 예측에서 중요한 신호가 MSA 내부에만 있지 않다는 점이다.
+
+- 어떤 residue pair가 함께 변하는가
+- 그 pair가 다른 residue들과 어떤 삼각 관계를 이루는가
+- sequence-level signal이 pair geometry와 어떻게 연결되는가
+
+즉, 좋은 구조 예측기는 **MSA representation과 pair representation이 서로 영향을 주고받으며 함께 성숙**해야 한다.
+
+### 병목 3: 3D reasoning이 network 안에서 invariant해야 한다
+
+단백질 구조는 좌표로 표현되지만, 실제 중요한 것은 절대 좌표계가 아니다. 분자를 통째로 회전하거나 평행이동해도 같은 구조여야 한다. 따라서 structure module은 SE(3) transformation에 대해 자연스럽게 작동해야 한다.
+
+기존 구조 예측 파이프라인은 이런 부분을 후처리나 별도 energy minimization에 많이 의존했다. AF2는 이걸 모델 내부 attention 메커니즘으로 끌어들인다.
+
+### 병목 4: local stereochemistry와 global fold를 함께 맞춰야 한다
+
+좋은 구조 예측은 두 가지를 동시에 해야 한다.
+
+- 전역적으로 맞는 fold topology
+- 국소적으로 말이 되는 backbone / side-chain geometry
+
+이 둘을 따로 풀면 엇갈리기 쉽다. global fold는 맞는데 local orientation이 깨지거나, local geometry는 괜찮은데 전체 topology가 틀릴 수 있다. AF2의 핵심은 이 두 수준을 **하나의 반복적 structure refinement 과정**으로 묶는 데 있다.
 
 ## Key Idea
 
-AlphaFold 2의 핵심은 **진화적, 물리적, 기하학적 제약을 neural network architecture에 직접 통합**하는 것이다. 세 가지 혁신이 돌파구를 제공했다:
+AlphaFold 2의 핵심은 세 가지로 압축된다.
 
-**1. Evoformer: MSA와 pair representation의 공동 임베딩**
+1. **MSA와 pair representation을 Evoformer 안에서 함께 진화시킨다.**
+2. **Invariant Point Attention을 이용해 residue frame 위에서 직접 3D 구조를 갱신한다.**
+3. **intermediate geometry prediction과 final structure realization의 단절을 크게 줄인다.**
 
-기존 방법들이 MSA에서 feature를 추출한 뒤 고정된 입력으로 사용한 반면, AlphaFold 2는 MSA representation과 pair representation을 **매 layer에서 상호 교환**하며 진화시킨다. Triangle multiplicative update와 triangle self-attention을 통해 pairwise 관계에서 삼각 부등식(triangle inequality) 같은 기하학적 제약을 암묵적으로 학습한다.
+AF1과 비교하면 차이는 이렇게 요약할 수 있다.
 
-**2. End-to-end 3D 좌표 예측**
+- AF1
+  - distogram prediction이 중심
+  - 구조 복원은 별도 최적화 문제에 가깝다
+  - pairwise geometry는 강하지만 end-to-end성은 제한적이다
+- AF2
+  - MSA/pair 공동 업데이트
+  - 3D structure module이 모델 안에 들어온다
+  - structure refinement가 end-to-end로 연결된다
 
-Distance matrix를 예측하는 대신, AlphaFold 2는 **각 residue의 rotation과 translation을 직접 예측**한다. 이를 "residue gas"라 부르며, 각 residue는 독립적인 rigid body로 표현된다. 이는 peptide bond constraint를 임시로 위반하며 전역 최적화 문제를 병렬화 가능한 local refinement로 바꾼다.
-
-**3. Frame Aligned Point Error (FAPE) loss**
-
-FAPE는 예측된 원자 좌표를 **각 residue의 local frame에서** 평가한다. 전역 정렬(global alignment) 대신 수많은 local alignment에서 오차를 측정함으로써, side chain의 orientation과 chirality를 정확하게 학습할 수 있다.
-
-> AlphaFold 2는 물리 법칙을 명시적으로 코딩하지 않고도, 수소 결합이나 side chain packing 같은 상호작용을 데이터로부터 학습한다.
-{: .prompt-tip }
+내가 보기에 AF2를 특별하게 만든 건 “정확한 distance를 예측했다”보다, **구조를 직접 만드는 representation learning stack**을 설계했다는 점이다.
 
 ## How It Works
 
-### 4.1 Overview
+### Overview
 
-AlphaFold 2는 크게 두 단계로 구성된다: **Evoformer trunk**와 **Structure Module**.
+![AlphaFold 2 overview](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig1.png)
+_Figure 1: AlphaFold 2 architecture and prediction examples. Source: original paper._
 
-```mermaid
-graph TD
-    A[Primary Sequence + MSA + Templates] --> B["MSA Representation  /  Nseq × Nres"]
-    A --> C["Pair Representation  /  Nres × Nres"]
-    B --> D[Evoformer Block ×48]
-    C --> D
-    D --> E[Updated MSA]
-    D --> F[Updated Pair]
-    E --> G[Structure Module ×8]
-    F --> G
-    G --> H["Residue Gas  /  Nres rigid bodies"]
-    H --> I[IPA + Backbone Update]
-    I --> J[3D Coordinates]
-    J --> K[Side-chain Angles]
-    J --> L[Per-residue Confidence pLDDT]
-    
-```
+전체 흐름은 크게 두 단계다.
 
-전체 아키텍처는 다음과 같다:
+- **Evoformer trunk**가 MSA representation과 pair representation을 반복적으로 갱신한다.
+- **Structure module**이 query sequence에 대한 single representation과 pair geometry를 바탕으로 3D 좌표를 만든다.
 
-<details markdown="1">
-<summary>📝 Overall Architecture Pseudocode (클릭하여 펼치기)</summary>
+아주 단순화하면 이런 형태다.
 
 ```python
-class AlphaFold2(nn.Module):
-    """AlphaFold 2 end-to-end architecture"""
-    def __init__(self, c_m=256, c_z=128, n_evo_blocks=48, n_struct_blocks=8):
-        super().__init__()
-        self.evoformer = EvoformerStack(c_m, c_z, n_blocks=n_evo_blocks)
-        self.structure_module = StructureModule(c_s=c_m, c_z=c_z, n_blocks=n_struct_blocks)
-        self.side_chain_net = SideChainNet(c_s=c_m)
-        self.plddt_head = PerResidueLDDTHead(c_s=c_m)
-        
-    def forward(self, sequence, msa, templates):
-        # Step 1: Initialize representations
-        msa_repr = self.init_msa_repr(sequence, msa)  # (Nseq, Nres, c_m)
-        pair_repr = self.init_pair_repr(sequence, templates)  # (Nres, Nres, c_z)
-        
-        # Step 2: Evoformer trunk (48 blocks)
-        for recycle in range(3):  # Recycling iterations
-            msa_repr, pair_repr = self.evoformer(msa_repr, pair_repr)
-        
-        # Step 3: Structure module (8 blocks)
-        single_repr = msa_repr[0]  # First row: query sequence
-        frames = self.structure_module(single_repr, pair_repr)
-        # frames: (Nres,) of SE(3) transformations (R, t)
-        
-        # Step 4: Side chains and confidence
-        chi_angles = self.side_chain_net(single_repr, frames)
-        plddt = self.plddt_head(single_repr)
-        
-        # Step 5: Convert to 3D coordinates
-        coords = frames_to_atom_coords(frames, chi_angles)
-        return coords, plddt
+# conceptual pseudocode
+msa_repr = embed_msa(sequence, msa)
+pair_repr = embed_pair(sequence, templates)
+for _ in range(num_evoformer_blocks):
+    msa_repr, pair_repr = evoformer_block(msa_repr, pair_repr)
+single_repr = msa_repr[0]
+frames = structure_module(single_repr, pair_repr)
+coords = build_atom_coordinates(frames)
+confidence = predict_plddt(single_repr)
+return coords, confidence
 ```
 
-</details>
+여기서 중요한 건 마지막 `coords`가 아니라, 그 앞에서 **MSA와 pair가 어떻게 서로를 계속 수정하느냐**다. AF2는 단백질 구조를 “한 번 계산한 feature를 좌표로 decode”하는 문제가 아니라, **representation 자체가 구조적 일관성을 띠도록 만드는 문제**로 본다.
 
-### 4.2 Representation
+### Representation: MSA와 pair를 동시에 키운다
 
-**MSA representation** ($N_{seq} \times N_{res} \times c_m$): 각 행(row)은 homologous sequence, 각 열(column)은 query sequence의 residue position을 나타낸다. 초기값은 raw MSA를 one-hot encoding한 후 linear projection으로 임베딩한다.
+AF2의 기본 표현은 세 가지다.
 
-**Pair representation** ($N_{res} \times N_{res} \times c_z$): residue $i$와 $j$ 사이의 관계를 인코딩한다. 초기값은 relative position encoding과 template structure에서 추출한 pairwise distance/angle feature로 구성된다.
+- **MSA representation**: homologous sequence들의 정렬 정보
+- **pair representation**: residue i와 j 사이 관계
+- **single representation**: query sequence residue별 상태
 
-**Single representation** ($N_{res} \times c_s$): MSA representation의 첫 번째 row로, query sequence 자체를 나타낸다. Structure module의 입력으로 사용된다.
+여기서 single은 사실상 MSA에서 query row를 뽑아 쓰는 쪽에 가깝고, 핵심 주연은 MSA와 pair다.
 
-### 4.3 Core Architecture: Evoformer
+왜 이 이중 표현이 중요하냐면,
 
-Evoformer block은 AlphaFold 2의 핵심으로, MSA와 pair representation을 **상호 업데이트**하며 구조적 가설을 점진적으로 정제한다.
+- MSA는 coevolution signal을 준다.
+- pair는 구조적 관계를 누적한다.
+- 둘이 서로 독립이면 정보가 금방 막힌다.
 
-![Evoformer block](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig3.png)
-_Figure 3: Evoformer block과 Structure module의 세부 구조. 출처: 원 논문_
+AF2는 이 둘을 매 layer에서 이어준다. 구조적으로 보면 “sequence-derived evidence”와 “geometry hypothesis”가 네트워크 내부에서 계속 대화하는 셈이다.
 
-<details markdown="1">
-<summary>📝 Evoformer Block Implementation (클릭하여 펼치기)</summary>
+### Evoformer: AF2의 진짜 엔진
+
+![Evoformer and structure module](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig3.png)
+_Figure 2: Evoformer block and Structure Module details. Source: original paper._
+
+Evoformer는 AF2의 가장 중요한 발명 중 하나다. 이름만 보면 Transformer 계열처럼 보이지만, 실제 역할은 더 특수하다. 이건 sequence attention 블록이 아니라 **MSA와 pair representation 사이 정보 흐름을 조직하는 구조 추론 엔진**이다.
+
+대표적인 구성 요소는 아래와 같다.
+
+- MSA row attention with pair bias
+- MSA column attention
+- outer product mean
+- triangle multiplicative update
+- triangle attention
+- pair transition / MSA transition
+
+특히 중요한 건 pair 쪽 업데이트다.
+
+#### Triangle update의 의미
+
+단백질 구조는 residue 간 관계가 독립적이지 않다. 예를 들어 residue i가 k와 가깝고, k가 j와 가깝다면, i와 j의 관계도 아무렇게나 정해질 수 없다. AF2의 triangle multiplicative update와 triangle attention은 이런 **삼체 일관성**을 pair representation 안에 주입한다.
+
+개념적 스케치는 이 정도다.
 
 ```python
-class EvoformerBlock(nn.Module):
-    """Single Evoformer block with MSA and pair updates"""
-    def __init__(self, c_m=256, c_z=128, n_heads=8):
-        super().__init__()
-        # MSA stack
-        self.msa_row_attention = MSARowAttentionWithPairBias(c_m, c_z, n_heads)
-        self.msa_column_attention = MSAColumnAttention(c_m, n_heads)
-        self.msa_transition = Transition(c_m)
-        
-        # Communication: MSA → Pair
-        self.outer_product_mean = OuterProductMean(c_m, c_z)
-        
-        # Pair stack
-        self.triangle_multiplication_outgoing = TriangleMultiplication(c_z, 'outgoing')
-        self.triangle_multiplication_incoming = TriangleMultiplication(c_z, 'incoming')
-        self.triangle_attention_starting = TriangleAttention(c_z, 'starting')
-        self.triangle_attention_ending = TriangleAttention(c_z, 'ending')
-        self.pair_transition = Transition(c_z)
-        
-    def forward(self, msa, pair):
-        # MSA row-wise attention with pair bias
-        # Pair representation influences MSA through attention bias
-        msa = msa + self.msa_row_attention(msa, pair_bias=pair)
-        msa = msa + self.msa_column_attention(msa)
-        msa = msa + self.msa_transition(msa)
-        
-        # Outer product: MSA → Pair
-        pair = pair + self.outer_product_mean(msa)
-        
-        # Triangle updates for geometric consistency
-        pair = pair + self.triangle_multiplication_outgoing(pair)
-        pair = pair + self.triangle_multiplication_incoming(pair)
-        pair = pair + self.triangle_attention_starting(pair)
-        pair = pair + self.triangle_attention_ending(pair)
-        pair = pair + self.pair_transition(pair)
-        
-        return msa, pair
+import torch
+import torch.nn as nn
 
-
-class TriangleMultiplication(nn.Module):
-    """Triangle multiplicative update for pair representation"""
-    def __init__(self, c_z=128, mode='outgoing'):
+class EvoformerPairUpdate(nn.Module):
+    def __init__(self, pair_dim: int):
         super().__init__()
-        self.mode = mode
-        self.layer_norm = nn.LayerNorm(c_z)
-        self.linear_a = nn.Linear(c_z, c_z)
-        self.linear_b = nn.Linear(c_z, c_z)
-        self.linear_g = nn.Linear(c_z, c_z)
-        self.linear_out = nn.Linear(c_z, c_z)
-        
-    def forward(self, z):
-        # z: (Nres, Nres, c_z) pair representation
-        # Update edge (i,j) using edges (i,k) and (k,j) for all k
-        z = self.layer_norm(z)
-        
-        a = self.linear_a(z).sigmoid()  # (Nres, Nres, c_z)
-        b = self.linear_b(z).sigmoid()  # (Nres, Nres, c_z)
-        g = self.linear_g(z).sigmoid()  # gate
-        
-        if self.mode == 'outgoing':
-            # z_ij update uses z_ik, z_kj
-            ab = torch.einsum('ikc,kjc->ijc', a, b)
-        else:  # incoming
-            # z_ij update uses z_ki, z_kj
-            ab = torch.einsum('kic,kjc->ijc', a, b)
-        
-        return self.linear_out(g * ab)
+        self.linear_a = nn.Linear(pair_dim, pair_dim)
+        self.linear_b = nn.Linear(pair_dim, pair_dim)
+
+    def forward(self, pair_repr):
+        a = self.linear_a(pair_repr)
+        b = self.linear_b(pair_repr)
+        triangle_signal = torch.einsum('ikc,kjc->ijc', a, b)
+        return pair_repr + triangle_signal
 ```
 
-</details>
+실제 구현은 gating, normalization, orientation 분리 등 훨씬 더 정교하지만, 핵심 아이디어는 단순하다. **edge (i, j)를 직접만 보지 말고, 중간 node k를 경유한 relational consistency를 학습하자**는 것이다.
 
-**Triangle multiplicative update**는 세 residue $i, j, k$ 사이의 관계를 고려한다. Edge $(i,j)$를 업데이트할 때, 모든 중간 node $k$에 대해 $(i,k)$와 $(k,j)$ edge의 정보를 곱셈으로 결합한다. 이는 거리의 삼각 부등식 $d_{ij} \leq d_{ik} + d_{kj}$를 암묵적으로 강제한다.
+#### MSA와 pair의 왕복
 
-**Triangle self-attention**은 axial attention에 "missing edge" 정보를 bias로 추가한다. 예를 들어, $(i,j)$에 대한 attention을 계산할 때, $(i,k)$와 $(k,j)$의 정보를 logit bias로 제공한다.
+AF2는 단순히 MSA에서 pair를 한 번 만들고 끝내지 않는다.
 
-**MSA row attention with pair bias**: MSA의 각 sequence(row)에 대해 self-attention을 수행하되, pair representation으로부터 추가 logit bias를 받는다. 이는 pair → MSA 정보 흐름을 만든다.
+- MSA는 pair bias를 받아 attention한다.
+- MSA 정보는 outer product를 통해 pair를 갱신한다.
+- pair는 triangle updates로 구조적 일관성을 얻는다.
+- 다시 그 pair가 MSA 처리에 영향을 준다.
 
-**Outer product mean**: MSA representation을 pair representation으로 변환한다. 각 position $(i, j)$에 대해 MSA의 모든 sequence에서 $(i, j)$ 위치의 activation을 outer product한 뒤 평균을 낸다.
+이 왕복이 48개 블록 수준으로 반복되면서, 초기엔 noisy하던 진화/기하 정보가 점점 구조적으로 응축된다. 이게 AF2가 단순 distogram predictor와 다른 지점이다.
 
-$$
-z_{ij} \gets z_{ij} + \frac{1}{N_{seq}} \sum_s m_{si} \otimes m_{sj}
-$$
+### Structure Module: 3D reasoning을 모델 내부로 넣는다
 
-여기서 $m_{si}$는 MSA representation의 $s$번째 sequence, $i$번째 residue의 activation이다.
+Evoformer가 구조적 hypothesis를 만들었다면, Structure Module은 그걸 실제 3D 좌표로 바꾸는 단계다. 여기서 핵심은 **Invariant Point Attention (IPA)** 이다.
 
-### 4.4 Key Innovation: Structure Module
+AF2는 각 residue를 rigid frame으로 다룬다. residue마다 local frame을 갖고, attention이 scalar feature뿐 아니라 **3D point** 수준에서도 작동한다. 중요한 건 이 attention이 global rotation / translation에 대해 invariant하게 설계된다는 점이다.
 
-Structure module은 **residue gas** 표현을 사용한다. 각 residue는 독립적인 SE(3) transformation $(R_i, t_i)$로 표현되며, peptide bond constraint는 무시된다. 이는 전역 루프 클로저(loop closure) 문제를 피하면서 모든 residue를 병렬로 정제할 수 있게 한다.
+직관적으로 보면 IPA는 이렇게 작동한다.
 
-<details markdown="1">
-<summary>📝 Invariant Point Attention (IPA) Implementation (클릭하여 펼치기)</summary>
+- 각 residue가 local frame에서 query/key/value point를 만든다.
+- 이를 global frame으로 보낸다.
+- point 간 거리와 orientation 정보를 이용해 attention을 계산한다.
+- 다시 local frame 기준으로 residue state와 frame을 업데이트한다.
 
-```python
-class InvariantPointAttention(nn.Module):
-    """IPA: geometry-aware attention in 3D space"""
-    def __init__(self, c_s=384, c_z=128, n_heads=12, n_query_points=4, n_value_points=8):
-        super().__init__()
-        self.n_heads = n_heads
-        self.n_query_points = n_query_points
-        self.n_value_points = n_value_points
-        
-        # Standard attention projections
-        self.linear_q = nn.Linear(c_s, n_heads * 16)
-        self.linear_k = nn.Linear(c_s, n_heads * 16)
-        self.linear_v = nn.Linear(c_s, n_heads * 16)
-        
-        # 3D point projections (in local frame)
-        self.linear_q_points = nn.Linear(c_s, n_heads * n_query_points * 3)
-        self.linear_k_points = nn.Linear(c_s, n_heads * n_query_points * 3)
-        self.linear_v_points = nn.Linear(c_s, n_heads * n_value_points * 3)
-        
-        # Pair bias
-        self.linear_b = nn.Linear(c_z, n_heads)
-        
-        self.head_weights = nn.Parameter(torch.zeros(n_heads))
-        
-    def forward(self, s, z, frames):
-        # s: (Nres, c_s) single representation
-        # z: (Nres, Nres, c_z) pair representation  
-        # frames: (Nres,) list of (R, t) in SE(3)
-        
-        Nres = s.shape[0]
-        
-        # Standard attention
-        q = self.linear_q(s).view(Nres, self.n_heads, 16)
-        k = self.linear_k(s).view(Nres, self.n_heads, 16)
-        v = self.linear_v(s).view(Nres, self.n_heads, 16)
-        
-        # 3D query/key points in local frames
-        q_pts = self.linear_q_points(s).view(Nres, self.n_heads, self.n_query_points, 3)
-        k_pts = self.linear_k_points(s).view(Nres, self.n_heads, self.n_query_points, 3)
-        v_pts = self.linear_v_points(s).view(Nres, self.n_heads, self.n_value_points, 3)
-        
-        # Transform points to global frame
-        q_pts_global = [frames[i].R @ q_pts[i] + frames[i].t for i in range(Nres)]
-        k_pts_global = [frames[i].R @ k_pts[i] + frames[i].t for i in range(Nres)]
-        
-        # Compute attention logits
-        attn_logits = torch.einsum('ihc,jhc->hij', q, k) / (16 ** 0.5)
-        
-        # Add 3D point contribution: squared distances
-        for h in range(self.n_heads):
-            for i in range(Nres):
-                for j in range(Nres):
-                    # Squared distance between query points i and key points j
-                    dist_sq = torch.sum((q_pts_global[i][h] - k_pts_global[j][h])**2)
-                    attn_logits[h, i, j] -= self.head_weights[h] * dist_sq
-        
-        # Add pair bias
-        pair_bias = self.linear_b(z).permute(2, 0, 1)  # (n_heads, Nres, Nres)
-        attn_logits = attn_logits + pair_bias
-        
-        # Softmax attention
-        attn = F.softmax(attn_logits, dim=-1)  # (n_heads, Nres, Nres)
-        
-        # Apply attention to values (both scalar and 3D points)
-        out_scalar = torch.einsum('hij,jhc->ihc', attn, v)
-        
-        # Aggregate value points, then transform back to local frames
-        out_points = []
-        for i in range(Nres):
-            pts_i = torch.zeros(self.n_heads, self.n_value_points, 3)
-            for j in range(Nres):
-                v_pts_j_global = frames[j].R @ v_pts[j] + frames[j].t
-                pts_i += attn[:, i, j].unsqueeze(-1).unsqueeze(-1) * v_pts_j_global
-            # Transform back to local frame of residue i
-            pts_i_local = frames[i].R.T @ (pts_i - frames[i].t)
-            out_points.append(pts_i_local)
-        
-        return out_scalar, out_points
-```
+이 과정을 통해 structure module은 단순 feature refinement가 아니라, **geometry-aware message passing**을 수행한다.
 
-</details>
+구조적으로는 residue frame이 반복적으로 갱신되며 backbone과 side-chain을 더 일관된 방향으로 접어 간다.
 
-**Invariant Point Attention (IPA)**은 3D 공간에서 geometry-aware attention을 수행한다. 각 residue는 query/key/value를 scalar와 **3D points**로 생성한다. 이 점들은 local frame에서 정의되며, global frame으로 변환되어 attention 계산에 사용된다. 점 간의 **squared distance**가 attention logit에 기여하여, 공간적으로 가까운 residue에 높은 attention weight를 준다.
+### FAPE: 왜 이 loss가 중요했나
 
-IPA의 핵심은 **SE(3) invariance**다. 전체 구조를 회전/평행이동해도 IPA의 출력은 변하지 않는다. 이는 global frame을 통해 거리를 계산한 뒤, 다시 local frame으로 변환하는 방식으로 달성된다.
+AF2의 loss에서 중요한 축 중 하나는 **Frame Aligned Point Error (FAPE)** 다. 이 loss는 예측 좌표를 각 residue의 local frame 기준으로 비교한다.
 
-### 4.5 Training & Inference
-
-**Frame Aligned Point Error (FAPE)**는 AlphaFold 2의 주요 loss function이다. 각 residue $k$의 frame $(R_k, t_k)$에 대해 예측 원자 위치와 실제 원자 위치를 정렬한 뒤, 모든 원자의 거리 오차를 계산한다:
+개념적으로는 이런 감각이다.
 
 $$
-\text{FAPE} = \frac{1}{N_{\text{frames}} \cdot N_{\text{atoms}}} \sum_{k} \sum_{i} \text{clamp}(\|R_k(x_i^{\text{pred}} - t_k) - R_k(x_i^{\text{true}} - t_k)\|)
+\mathrm{FAPE} = \frac{1}{NK} \sum_{k,i} \left\| T_k^{-1}(x_i) - {T_k^{\ast}}^{-1}(x_i^{\ast}) \right\|
 $$
 
-이는 각 residue의 local frame에서 원자들이 정확하도록 강제하며, side chain의 orientation과 chirality를 보존한다.
+여기서 $T_k$는 residue k의 frame이다. 중요한 건 global alignment가 아니라 **local frame 기준 오차**를 본다는 점이다. 이 덕분에 residue orientation, side-chain 배치, chirality 같은 구조적 요소를 더 직접적으로 학습할 수 있다.
 
-<details markdown="1">
-<summary>📝 Training Loop Pseudocode (클릭하여 펼치기)</summary>
+즉 FAPE는 단순 오차 함수가 아니라, AF2가 structure module을 제대로 학습하게 만드는 표현 선택의 일부다.
 
-```python
-# Training Loop
-for epoch in range(num_epochs):
-    for batch in dataloader:
-        sequence, msa, templates, true_coords, true_frames = batch
-        
-        # Forward pass with recycling
-        for recycle in range(3):
-            if recycle > 0:
-                # Feed previous prediction back as input
-                msa, pair = prev_msa, prev_pair
-            
-            pred_coords, pred_frames, plddt = model(sequence, msa, templates)
-            
-            # Intermediate loss at each recycle
-            fape_loss = compute_fape(pred_coords, true_coords, pred_frames, true_frames)
-            distogram_loss = compute_distogram_loss(pair, true_coords)
-            masked_msa_loss = compute_masked_msa_loss(msa, true_msa)
-            
-            loss = fape_loss + 0.3 * distogram_loss + 0.1 * masked_msa_loss
-            
-            prev_msa, prev_pair = msa.detach(), pair.detach()
-        
-        # Backprop
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+### Recycling: 한 번 계산하고 끝내지 않는다
 
+AF2는 한 번 예측한 구조와 representation을 다시 입력처럼 써서 refine하는 **recycling**도 핵심이다. 이건 아주 직관적인 아이디어지만 효과가 크다.
 
-def compute_fape(pred_coords, true_coords, pred_frames, true_frames):
-    """Frame Aligned Point Error"""
-    # pred_coords, true_coords: (Nres, 3) for backbone atoms
-    # pred_frames, true_frames: (Nres,) of (R, t)
-    
-    total_error = 0.0
-    for k in range(len(pred_frames)):
-        R_k, t_k = true_frames[k]
-        
-        # Align predicted and true coordinates to frame k
-        pred_aligned = R_k @ (pred_coords - t_k)
-        true_aligned = R_k @ (true_coords - t_k)
-        
-        # Clamped L1 distance
-        dist = torch.norm(pred_aligned - true_aligned, dim=-1)
-        clamped = torch.clamp(dist, max=10.0)
-        total_error += clamped.sum()
-    
-    return total_error / (len(pred_frames) * len(pred_coords))
-```
+- 첫 패스에서 거친 구조 가설을 만든다.
+- 그 구조와 pair state를 다시 참고한다.
+- 다음 패스에서 더 정교한 consistency를 맞춘다.
 
-</details>
+이건 iterative refinement를 모델 외부 optimizer가 아니라 **모델 자체의 recurrent use**로 흡수한 셈이다. AF2가 구조 예측을 “한 번 forward하고 끝”이 아니라, learned iterative inference에 가깝게 만든 포인트다.
 
-**Recycling**은 전체 네트워크를 여러 번 반복 실행하여 예측을 정제한다. 이전 iteration의 MSA와 pair representation을 다음 iteration의 입력으로 사용한다. CASP14에서는 3회 recycling을 사용했다.
+### 왜 이 설계가 먹혔나
 
-**Self-distillation**: AlphaFold 2는 PDB 데이터로 학습한 모델로 Uniclust30의 35만 개 서열에 대한 구조를 예측하고, 이를 추가 학습 데이터로 사용하는 noisy student self-distillation을 수행했다. 이는 unlabeled sequence 데이터를 활용하여 정확도를 크게 향상시켰다.
+AF2의 설계를 한 문장으로 요약하면 이렇다.
 
-**Masked MSA loss**: BERT와 유사하게, MSA의 일부 residue를 마스킹하고 복원하는 보조 loss를 사용한다. 이는 네트워크가 진화적 상관관계를 학습하도록 유도한다.
+> **진화정보, pair geometry, 3D reasoning을 분리된 단계로 두지 않고 하나의 representation stack 안에서 통합했다.**
 
-### 4.6 Iterative Refinement
+더 풀면,
 
-AlphaFold 2는 구조를 점진적으로 개선한다. 각 Evoformer block 뒤에 중간 structure module을 배치하여, 네트워크가 어느 시점에 올바른 구조를 찾는지 관찰할 수 있다.
+- Evoformer는 sequence-level evidence와 pair geometry를 공동 업데이트한다.
+- Triangle updates는 pair relation에 3D consistency를 주입한다.
+- IPA는 structure reasoning을 좌표계 불변한 방식으로 수행한다.
+- FAPE와 recycling은 refinement를 학습 가능한 형태로 만든다.
 
-![Ablation and trajectory](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig4.png)
-_Figure 4: (a) Ablation study — 각 구성 요소의 기여도. (b) Structure trajectory — 48 Evoformer block과 4회 recycling 동안 GDT 변화. 출처: 원 논문_
-
-일부 단백질(T1024)은 초기 몇 block에서 이미 최종 구조를 찾는 반면, 어려운 단백질(T1064, SARS-CoV-2 ORF8)은 수십 개 layer를 거치며 secondary structure element를 재배열한다.
-
-### 4.7 Confidence Estimation
-
-AlphaFold 2는 두 가지 confidence score를 출력한다:
-
-- **pLDDT** (predicted lDDT-Cα): 각 residue의 예측 정확도. 0-100 사이 값으로, 실제 lDDT-Cα와 높은 상관관계를 보인다 (Pearson's r=0.76).
-- **pTM** (predicted TM-score): 전체 chain의 global accuracy. pairwise error prediction으로부터 계산된다.
-
-이 confidence score들은 예측 구조의 신뢰성을 판단하는 데 매우 유용하다.
+그래서 AF2는 단순히 더 좋은 contact predictor가 아니라, **단백질 구조 예측을 end-to-end geometric learning 문제로 재정의한 모델**이 된다.
 
 ## Results
 
-AlphaFold 2는 CASP14에서 압도적인 성능을 보였다. Median backbone accuracy는 **0.96Å r.m.s.d.95** (95% CI = 0.85-1.16Å)로, 차순위 방법의 2.8Å r.m.s.d.95를 크게 앞섰다. All-atom accuracy는 **1.5Å r.m.s.d.95**로, 탄소 원자의 폭(1.4Å)과 비슷한 수준이다.
+![AlphaFold 2 results](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig4.png)
+_Figure 3: AlphaFold 2 benchmark performance and CASP14-level accuracy. Source: original paper._
 
-![CASP14 performance](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig1.png)
-_Figure 1: AlphaFold 2의 CASP14 성능. (a) 상위 15개 팀과의 비교. (b-d) 예측 구조 예시 — T1049(단일 도메인), T1056(아연 결합 부위), T1044(2,180 residue 단일 체인). 출처: 원 논문_
+AF2의 결과는 이제 너무 유명해서 오히려 쉽게 뭉개어 말하게 된다. 하지만 핵심은 “좋았다”가 아니라 **어디서 얼마나 질적으로 선을 넘었는가**다.
 
-| Metric | AlphaFold 2 | 2nd Best | Improvement |
-|---|---|---|---|
-| Backbone r.m.s.d.95 | 0.96 Å | 2.8 Å | **2.9×** |
-| All-atom r.m.s.d.95 | 1.5 Å | 3.5 Å | **2.3×** |
-| Median GDT (CASP14) | ~92 | ~75 | +17 points |
+### 1. CASP14에서 사실상 게임의 규칙을 바꿨다
 
-**Table 1:** CASP14 결과 요약. AlphaFold 2는 모든 지표에서 2위를 압도적으로 앞선다.
+AF2는 CASP14에서 기존 참가자들을 크게 앞서는 정확도를 보였다. 이건 incremental improvement가 아니라, community가 오랫동안 benchmark ceiling처럼 보던 구간을 한 번에 넘어선 사건에 가까웠다.
 
-CASP 이후 공개된 PDB 구조에서도 높은 정확도를 유지했다. Template coverage가 30% 미만인 어려운 단백질에서도 median lDDT-Cα는 **70 이상**을 기록했다.
+특히 중요한 건 많은 target에서 예측 구조가 실험 구조에 매우 가깝고, 실무적으로도 바로 쓸 수 있을 정도의 품질을 보였다는 점이다.
 
-![Recent PDB accuracy](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig2.png)
-_Figure 2: 최근 PDB 구조에 대한 정확도. (a) Backbone r.m.s.d. 분포. (b) Backbone vs side-chain accuracy 상관관계. (c) pLDDT vs lDDT-Cα 선형 관계. (d) pTM vs TM-score 상관관계. 출처: 원 논문_
+### 2. 단순 fold classification을 넘어 atomic accuracy에 근접했다
 
-**Side-chain accuracy**: Backbone이 정확할 때(lDDT-Cα > 90), **80% 이상의 rotamer가 정확**하게 예측되었다 (torsion angle 40° 이내). 이는 AlphaFold 2가 backbone뿐 아니라 side chain packing도 매우 잘 예측함을 보여준다.
+과거엔 “대략 맞는 topology”만 나와도 성공으로 여겨지는 경우가 많았다. AF2는 여기서 한 단계 더 나간다. backbone 수준만이 아니라, 많은 경우 residue placement와 overall packing이 실제로 usable한 수준까지 올라온다.
 
-**Intertwined homomers**: AlphaFold 2는 입력 stoichiometry 없이도 intertwined homotrimer (PDB 6SK0) 같은 복잡한 구조를 정확히 예측했다.
+이게 중요했던 이유는 구조 예측이 더 이상 speculative modeling이 아니라, **생물학적 가설 생성과 구조 기반 해석의 실질적 입력**이 되기 시작했기 때문이다.
 
-> AlphaFold 2는 수소 결합 점수 함수나 명시적 물리 법칙 없이도, 데이터로부터 수소 결합과 side chain packing을 효과적으로 학습한다.
-{: .prompt-tip }
+### 3. end-to-end 구조 생성이 실제로 먹혔다
+
+AF2의 성과는 single component가 아니라 시스템 설계 전체가 맞물렸을 때 나온 결과다. 단순히 더 나은 MSA 활용이나 더 나은 pair update 하나만으로는 이 정도 점프가 어렵다. 결과적으로 이 논문은 representation, geometry, refinement를 통합하는 방식이 구조 예측에서 얼마나 강력한지 보여줬다.
 
 ## Discussion
 
-AlphaFold 2는 **bioinformatics와 physics 접근법의 통합**을 보여준다. 물리적·기하학적 inductive bias를 neural network에 내장하되, handcrafted feature는 최소화하여 PDB 데이터로부터 효율적으로 학습한다.
+내가 보기엔 AF2의 진짜 의의는 “protein folding problem solved” 같은 상징적 문장보다도, **어떤 종류의 inductive bias가 구조 예측에 가장 잘 먹히는가**를 보여줬다는 데 있다.
 
-**한계점**:
-1. **MSA depth 의존성**: MSA depth가 30 미만일 때 정확도가 급격히 떨어진다. Shallow MSA를 가진 orphan protein이나 신규 단백질 family에서는 성능이 제한된다.
-2. **Cross-chain contacts**: Hetero-complex에서 대부분의 contact가 다른 chain과 이루어진 경우(bridging domain 등) 정확도가 낮다. Homotypic contact가 많은 homodimer/trimer는 잘 예측하지만, heteromer는 아직 어렵다.
-3. **Missing cofactors/ligands**: 구조가 haem group이나 특정 이온에 의존하는 경우, AlphaFold 2는 이를 명시적으로 고려하지 않으므로 일부 오차가 발생할 수 있다. 다만, 논문에서는 haem 없이도 올바른 구조를 예측한 사례를 보고했다.
+과거 접근은 대개 두 축 중 하나에 더 기대는 편이었다.
 
-![MSA depth and cross-chain contacts](/assets/img/posts/alphafold2-highly-accurate-protein-structure-prediction/fig5.png)
-_Figure 5: (a) MSA depth가 정확도에 미치는 영향. (b) Intertwined homotrimer (PDB 6SK0) 예측 성공 사례. 출처: 원 논문_
+- 물리 기반 sampling을 많이 하거나
+- coevolution signal을 중간 예측 타깃으로 바꾸어 쓰거나
 
-**저자들이 밝힌 향후 방향**:
-- **Hetero-complex 예측**: AlphaFold의 아이디어를 확장하여 multi-chain complex 예측 시스템 개발
-- **Proteome-scale prediction**: GPU 분 단위의 빠른 예측 속도를 활용한 전체 proteome 구조 예측 (companion paper에서 human proteome 예측 수행)
-- **Molecular replacement와 cryo-EM map 해석**: 실험 커뮤니티에서 이미 AlphaFold를 활용 중
+AF2는 그 둘을 representation inside에 녹였다. 명시적 molecular dynamics를 돌리진 않지만, geometry-aware attention과 local frame refinement를 통해 구조적 제약을 학습한다. hand-crafted contact pipeline을 유지하지 않지만, pair representation 안에서 관계를 반복적으로 정제한다.
 
-**계산 효율성**: AlphaFold 2는 V100 GPU에서 384 residue 단백질을 **약 1분**에 예측한다 (ensembling 없이). 2,500 residue 단백질도 약 2시간이면 충분하다. 이는 기존 template-based method보다 훨씬 빠르며, proteome-scale 예측을 현실화한다.
+이건 이후 구조 생물학 모델들에도 큰 영향을 줬다. 실제로 AF3까지 이어지는 흐름도 AF2가 만든 이 교훈 위에 서 있다.
+
+- rich pair representation이 중요하다
+- 3D reasoning은 model 내부에 있어야 한다
+- coordinate generation은 별도 후처리가 아니라 학습 대상이어야 한다
+
+AF3가 diffusion으로 갔더라도, **구조 예측을 geometric generative problem으로 보는 관점 자체는 AF2에서 이미 강하게 시작**된 셈이다.
 
 ## Limitations
 
-1. **MSA 의존성 지속**: 깊은 MSA가 확보되지 않는 단백질(예: de novo designed proteins, orphan sequences)에서는 정확도가 크게 떨어진다.
-2. **단백질만 예측**: Ligand, nucleic acid, cofactor 등 non-protein 분자와의 상호작용을 예측하지 못한다.
-3. **Static structure만 예측**: 단백질의 conformational ensemble이나 dynamics를 포착하지 못하며, 단일 구조만 출력한다.
-4. **pLDDT의 불완전한 신뢰도**: pLDDT가 높아도 실제로 틀린 경우가 있으며, 특히 intrinsically disordered region에서 과신하는 경향이 있다.
-5. **훈련 데이터 편향**: PDB의 crystallizable protein 편향이 모델에 반영되어, membrane protein이나 대형 complex에서 성능이 상대적으로 낮다.
+AF2가 아무리 강해도 한계는 분명하다.
+
+### 1. 본질적으로 단백질 중심 모델이다
+
+AF2는 단백질 folding에 최적화된 설계다. residue frame, torsion angle, MSA 활용 방식 모두 protein-centric하다. 그래서 리간드, 핵산, 이온까지 자연스럽게 통합하는 데는 구조적 한계가 있었다. AF3가 등장한 이유도 여기 있다.
+
+### 2. static structure accuracy와 full biophysics는 다르다
+
+AF2가 정적 구조를 잘 맞힌다고 해서 folding kinetics, conformational ensemble, allostery, disorder, binding thermodynamics를 다 해결하는 건 아니다. 구조 예측은 매우 큰 진전이지만, 단백질 동역학 전체와 동일시하면 안 된다.
+
+### 3. MSA 의존성은 여전히 중요하다
+
+AF2는 shallow MSA나 difficult target에서도 인상적이었지만, 전반적으로 진화정보를 강하게 활용하는 모델이다. 따라서 homolog scarcity가 심한 경우나 sequence space coverage가 낮은 영역에서는 여전히 어려움이 남는다.
+
+### 4. confidence와 correctness는 다를 수 있다
+
+pLDDT와 관련 confidence score는 매우 유용하지만, 특히 flexible region이나 multi-state system에서는 confidence가 biological correctness를 완전히 대변하진 않는다.
 
 ## Conclusion
 
-AlphaFold 2는 단백질 구조 예측 문제를 사실상 해결한 것으로 평가받는다. Evoformer의 MSA-pair representation 상호작용, Structure Module의 SE(3)-equivariant coordinate generation, 그리고 iterative recycling의 조합으로 CASP14에서 GDT > 90의 성과를 달성했다. End-to-end 학습으로 feature engineering의 필요성을 제거하고, FAPE loss로 물리적으로 의미 있는 구조를 직접 학습한 것이 핵심이다. 200M+ 구조의 AlphaFold Protein Structure Database 공개는 구조 생물학 연구의 landscape를 근본적으로 변화시켰다.
+AlphaFold 2는 단백질 구조 예측을 더 잘한 모델이라기보다, **구조 예측 문제의 계산 그래프 자체를 다시 설계한 모델**이다. MSA와 pair representation을 Evoformer 안에서 함께 진화시키고, Invariant Point Attention으로 residue frame 위에서 직접 구조를 만들며, FAPE와 recycling으로 learned refinement를 수행한다. 이 조합 덕분에 AF2는 “distance를 예측한 뒤 구조를 맞춘다”는 패턴을 넘어서, **representation이 스스로 구조를 접어 나가게 만드는 모델**이 되었다.
+
+내 기준에서 AF2의 가장 큰 의미는 CASP14 점수보다도, 구조 생물학에서 neural network가 어디까지 직접 geometric reasoning을 해도 되는지 보여준 데 있다. 그리고 그 교훈은 AF3에서도 이어진다. AF3가 더 범용적이고 diffusion 기반이긴 해도, **구조를 end-to-end geometric generation으로 다루는 길**은 사실 AF2가 결정적으로 연 셈이다.
 
 ## TL;DR
 
-- AlphaFold 2는 단백질 서열만으로 **원자 수준 정확도(~1Å)**의 3D 구조를 예측하는 최초의 AI 시스템
-- **Evoformer**: MSA와 pair representation을 공동으로 진화시키며, triangle update로 기하학적 제약 학습
-- **Structure Module**: Residue gas 표현과 Invariant Point Attention(IPA)으로 3D 좌표를 직접 예측
-- **FAPE loss**: Local frame에서 원자 위치를 평가하여 side chain orientation과 chirality 보존
-- CASP14에서 median 0.96Å r.m.s.d.95 달성, 2위 대비 **3배 정확**
-- MSA depth < 30에서 성능 저하, hetero-complex 예측은 향후 과제
+- AlphaFold 2의 핵심은 더 좋은 distogram이 아니라 **MSA와 pair representation을 함께 진화시키는 Evoformer**다.
+- Structure Module은 **Invariant Point Attention**으로 residue frame 위에서 직접 3D 구조를 갱신한다.
+- 이 설계는 intermediate geometry prediction과 final coordinate generation 사이의 단절을 크게 줄였다.
+- Triangle updates는 pair relation에 삼체 일관성을 주입하고, FAPE는 local frame 기준으로 구조 오차를 학습하게 만든다.
+- Recycling까지 포함해 AF2는 구조 예측을 learned iterative refinement 문제로 바꿨다.
+- 결과적으로 AF2는 CASP14에서 실험 구조에 근접한 정확도를 보이며, 단백질 구조 예측의 기준점을 바꿨다.
+- 다만 AF2는 여전히 protein-centric 구조를 갖고 있어, heterogeneous biomolecular interaction 문제로 가려면 AF3 같은 재설계가 필요했다.
 
 ## Paper Info
 
-| 항목 | 내용 |
-|---|---|
-| **Title** | Highly accurate protein structure prediction with AlphaFold |
-| **Authors** | John Jumper, Richard Evans, Alexander Pritzel et al. (DeepMind) |
-| **Venue** | Nature, Vol. 596, August 2021 |
-| **Submitted** | 2021-07-15 (published 2021-08-02) |
-| **Published** | Nature, Vol. 596, August 2021 |
-| **Link** | [doi:10.1038/s41586-021-03819-2](https://doi.org/10.1038/s41586-021-03819-2) |
-| **Paper** | [Nature](https://www.nature.com/articles/s41586-021-03819-2) |
-| **Code** | [GitHub - AlphaFold](https://github.com/deepmind/alphafold) |
+- **Title:** Highly Accurate Protein Structure Prediction with AlphaFold
+- **Authors:** Jumper et al.
+- **Affiliations:** DeepMind and collaborators
+- **Venue:** Nature
+- **Published:** 2021-07-15
+- **Paper:** https://www.nature.com/articles/s41586-021-03819-2
 
 ---
 
-> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다. 
+> 이 글은 LLM(Large Language Model)의 도움을 받아 작성되었습니다.
 > 논문의 내용을 기반으로 작성되었으나, 부정확한 내용이 있을 수 있습니다.
 > 오류 지적이나 피드백은 언제든 환영합니다.
 {: .prompt-info }
