@@ -45,14 +45,32 @@ $$
 \text{Put one important equation here.}
 $$
 
-### Architecture or Algorithm
+### Core Architecture
 
-모듈 흐름을 입력 → 표현 → 업데이트 → 출력 순서로 설명한다.
+여기서는 block 이름만 나열하지 말고 아래 순서로 설명한다.
+
+- 입력은 무엇인가
+- 이 블록은 무엇을 계산하는가
+- 출력은 무엇인가
+- 왜 이 블록이 필요한가
+- 이전 baseline과 무엇이 다른가
 
 ```python
-# minimal implementation sketch
+# minimal architecture sketch
 import torch
 import torch.nn as nn
+```
+
+### Training / Inference Pipeline
+
+실제 실행 순서를 적는다.
+
+- 어떤 표현이 먼저 만들어지는가
+- trunk / encoder / decoder / generator는 어떤 순서로 도는가
+- iterative step이 있으면 어디서 반복되는가
+
+```python
+# minimal pipeline sketch
 ```
 
 ### Why this works

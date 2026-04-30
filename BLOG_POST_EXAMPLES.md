@@ -119,7 +119,36 @@ Why this format is preferred:
 
 ---
 
-## 6. Safe Prompting Pattern
+## 6. Architecture Coverage Example
+
+### Too thin
+
+```md
+The model uses a transformer backbone and a diffusion head.
+```
+
+### Better
+
+```md
+The model has three major stages.
+
+- An encoder turns raw inputs into token and pair representations.
+- A trunk repeatedly updates those representations with pair-aware attention.
+- A diffusion generator takes noisy coordinates and denoises them using the trunk context.
+
+The key architectural change over the baseline is that structure generation is no longer a small prediction head. It becomes a full conditional coordinate generator.
+```
+
+Why the better version works:
+
+- names the stages
+- gives execution order
+- says what each stage consumes and produces
+- explains what changed relative to prior work
+
+---
+
+## 7. Safe Prompting Pattern
 
 A stable internal instruction pattern is:
 
@@ -127,12 +156,13 @@ A stable internal instruction pattern is:
 - produce the final post in Korean
 - prefer explanatory depth over summary
 - include one representative local image
+- explain architecture and pipeline explicitly
 - avoid Mermaid unless clearly needed
 - verify deploy visibility after push
 
 ---
 
-## 7. Common Failure Modes
+## 8. Common Failure Modes
 
 ### Failure: post is not visible
 
@@ -151,6 +181,16 @@ Usually check:
 3. Mermaid overuse
 4. missing spacing between blocks
 
+### Failure: architecture section feels weak
+
+Usually the issue is one of:
+
+1. block names listed without explanation
+2. pipeline order omitted
+3. no input/output view of the trunk or generator
+4. no pseudocode or implementation sketch
+5. no comparison against the previous baseline architecture
+
 ### Failure: post feels shallow
 
 Usually the issue is one of:
@@ -162,7 +202,7 @@ Usually the issue is one of:
 
 ---
 
-## 8. Recommended Default Move
+## 9. Recommended Default Move
 
 If uncertain, choose the safer path:
 
@@ -171,10 +211,11 @@ If uncertain, choose the safer path:
 - real image over no image
 - simpler structure over clever formatting
 - narrower claim over overstated claim
+- explicit architecture flow over vague model-name shorthand
 
 ---
 
-## 9. Example Commands
+## 10. Example Commands
 
 Create a new scaffold:
 

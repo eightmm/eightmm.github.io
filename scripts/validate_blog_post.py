@@ -35,6 +35,18 @@ REQUIRED_SECTIONS = [
     "Paper Info",
 ]
 
+ARCHITECTURE_HINTS = [
+    "architecture",
+    "core architecture",
+    "structure module",
+    "evoformer",
+    "pairformer",
+    "diffusion module",
+    "representation",
+    "pipeline",
+    "training / inference",
+]
+
 VALID_CATEGORIES = {
     "AI": ["Generative Models", "Protein Structure", "Drug Discovery", "NLP", "Vision",
            "Reinforcement Learning", "Theory", "General"],
@@ -187,6 +199,16 @@ def validate(filepath):
     has_torch = any('torch' in block or 'nn.Module' in block for block in python_blocks)
     if not has_torch and python_blocks:
         r.warn("Python code blocks don't contain PyTorch code (torch/nn.Module)")
+
+    # --- Architecture coverage hints ---
+    how_it_works_match = re.search(r'## How It Works\n(.*?)(?=\n## |\Z)', body, re.DOTALL)
+    if how_it_works_match:
+        hiw_text = how_it_works_match.group(1).lower()
+        found_hints = [h for h in ARCHITECTURE_HINTS if h in hiw_text]
+        if len(found_hints) < 2:
+            r.warn("How It Works may be too weak on architecture/pipeline explanation")
+        if not re.search(r'### .*architecture|### .*pipeline|### .*representation', how_it_works_match.group(1), re.IGNORECASE):
+            r.warn("Consider adding explicit architecture / pipeline / representation subsections")
 
     # --- Content Ratio (How It Works >= 40%) ---
     section_positions = [(m.start(), m.group(1).strip())
