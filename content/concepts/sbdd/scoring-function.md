@@ -1,0 +1,31 @@
+---
+title: Scoring Function
+tags:
+  - docking
+  - scoring
+  - modeling
+---
+
+# Scoring Function
+
+A scoring function assigns a value to a candidate structure, pose, or interaction. In docking, it often ranks protein-ligand poses or estimates binding-related quality.
+
+## Uses
+
+- Rank candidate poses from [[research/structure-based-ai/protein-ligand-docking|protein-ligand docking]].
+- Filter physically implausible structures.
+- Compare model outputs under a shared objective.
+
+## Failure Modes
+
+- Good score with bad geometry.
+- Dataset bias that rewards shortcuts.
+- Poor calibration outside the training distribution.
+- Confusion between pose quality and binding affinity.
+
+## Related
+
+- [[research/structure-based-ai/index|Structure-based AI]]
+- [[papers/sbdd/posebusters|PoseBusters]]
+- [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+- [[research/llm-wiki|LLM Wiki]]
