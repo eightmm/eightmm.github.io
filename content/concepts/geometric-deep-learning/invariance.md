@@ -16,6 +16,13 @@ Invariance means a model output stays unchanged when an allowed transformation i
 - Invariant features can summarize geometry without depending on an arbitrary coordinate frame.
 - Choosing invariant outputs requires knowing the task target and its physical meaning.
 
+## Checks
+
+- Is the target truly invariant under rotation, translation, permutation, or reflection?
+- Are invariant features discarding information needed for an equivariant output?
+- Does pooling respect graph membership and atom or residue identity?
+- Is invariance produced by architecture, augmentation, or preprocessing?
+
 ## Related
 
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]

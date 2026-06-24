@@ -21,6 +21,8 @@ An equivariant graph neural network preserves known geometric transformations in
 - Which quantities are invariant and which are equivariant?
 - Are edge features local, global, or both?
 - Does the model preserve the symmetries needed by [[concepts/generative-models/flow-matching|flow matching]] or docking?
+- Are node and edge updates using relative geometry rather than absolute coordinates?
+- Does the readout match the target: scalar score, vector field, coordinates, or pose?
 
 ## Related
 

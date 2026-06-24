@@ -10,14 +10,24 @@ tags:
 
 Multilayer perceptrons map fixed-size inputs through stacked dense layers and nonlinearities. They are simple baselines, projection heads, and feed-forward blocks inside larger architectures.
 
-## Uses
+## Key Ideas
 
-- Tabular or fixed-vector property prediction.
-- Prediction heads for [[concepts/architectures/gnn|GNNs]] and [[concepts/architectures/transformer|Transformers]].
-- Small modules in [[concepts/learning/index|learning methods]] such as representation projection.
+- Each layer applies a learned affine transform followed by a nonlinearity.
+- MLPs assume a fixed-size vector input and do not directly encode order, locality, or graph structure.
+- They are strong baselines when features already contain the relevant structure.
+- Larger architectures use MLPs as feed-forward blocks, projection heads, readouts, and small adapters.
+- Normalization, residual connections, dropout, and activation choice often matter more than the label "MLP" suggests.
+
+## Practical Checks
+
+- Check what features enter the MLP and whether they leak target information.
+- Compare against simple linear or shallow baselines before attributing gains to architecture depth.
+- Watch input scaling, missing values, and categorical encoding for tabular settings.
+- For representation learning, check whether the MLP head is used only during training or also at evaluation.
 
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/gnn|Graph neural networks]]
+- [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/learning/index|Learning methods]]

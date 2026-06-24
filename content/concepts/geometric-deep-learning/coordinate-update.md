@@ -16,6 +16,13 @@ A coordinate update is a model step that changes point positions while preservin
 - Updates should be designed so translated or rotated inputs produce translated or rotated outputs.
 - Separating scalar features from coordinate movement helps audit equivariance assumptions.
 
+## Checks
+
+- Are coordinate deltas built from relative vectors or arbitrary absolute positions?
+- Does the update preserve translation and rotation behavior?
+- Are scalar features allowed to influence movement without breaking symmetry?
+- Is the update stable under repeated refinement or sampling steps?
+
 ## Related
 
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]

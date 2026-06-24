@@ -15,6 +15,13 @@ A molecule is a collection of atoms and bonds represented as a graph, 3D conform
 - Molecular models must separate topology, coordinates, stereochemistry, and assay context.
 - Geometry-aware methods often treat molecules as graphs with coordinate-dependent features.
 
+## Checks
+
+- Which representation is used: SMILES, graph, fingerprint, conformer, or coordinates?
+- Are stereochemistry, charges, and aromaticity normalized consistently?
+- Does the task require a single molecule, molecule pair, or molecule-protein context?
+- Are generated molecules checked for validity, novelty, diversity, and usefulness?
+
 ## Related
 
 - [[entities/ligand|Ligand]]

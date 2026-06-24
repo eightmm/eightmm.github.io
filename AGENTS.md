@@ -10,6 +10,13 @@ This repository is a Quartz v5 public research blog and LLM Wiki for `https://ei
 - Do not change `package.json`, lockfiles, `.github/workflows`, `quartz.config.yaml`, or dependencies unless the user explicitly asks.
 - Run `npx quartz build` after content changes.
 
+## Commit and Push Policy
+
+- After making repository changes, verify them, commit with a Conventional Commit message, and push to `origin/v5`.
+- Do not leave completed content changes unpushed unless the user explicitly asks not to push.
+- Do not commit or push if verification fails, if the change touches high-risk files without explicit approval, or if unrelated user changes would be swept into the commit.
+- Stage only task-relevant files.
+
 ## Public Content Policy
 
 Public pages must not include:

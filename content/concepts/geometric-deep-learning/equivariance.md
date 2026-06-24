@@ -16,6 +16,13 @@ Equivariance means a model output transforms predictably when the input is trans
 - Equivariance reduces the burden of learning symmetries from data alone.
 - Many geometric neural networks combine equivariant internal features with invariant task outputs.
 
+## Checks
+
+- What transformation group is being considered?
+- Which model outputs should transform, and which should remain invariant?
+- Is equivariance exact by construction or encouraged by data augmentation?
+- Does preprocessing introduce a frame that changes the symmetry assumption?
+
 ## Related
 
 - [[concepts/geometric-deep-learning/invariance|Invariance]]

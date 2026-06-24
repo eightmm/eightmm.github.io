@@ -16,12 +16,12 @@ Server operation notes cover general troubleshooting patterns for Linux servers,
 - Explain symptoms, diagnosis, and prevention without exposing private topology.
 - Do not publish live security settings, user lists, credentials, ports, or hostnames.
 
-## Candidate Notes
+## Notes
 
-- GPU driver and CUDA mismatch debugging.
-- Storage mount and permission troubleshooting.
-- Account and group management patterns.
-- Monitoring and alerting for shared research machines.
+- [[infra/server-ops/gpu-driver-cuda|GPU driver and CUDA debugging]]
+- [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
+- [[infra/server-ops/account-management|Account and group management]]
+- [[infra/server-ops/monitoring|Monitoring shared machines]]
 
 ## Related
 

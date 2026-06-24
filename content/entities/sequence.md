@@ -15,6 +15,13 @@ A sequence is an ordered string of tokens such as amino acids, nucleotides, or m
 - Sequence models can learn patterns without explicit 3D coordinates.
 - Sequence-derived features are often combined with [[entities/structure|structure]] or assay labels.
 
+## Checks
+
+- What is the tokenization: residues, atoms, SMILES tokens, k-mers, or learned units?
+- Are sequence length limits, padding, and truncation affecting the task?
+- Does the split avoid homolog or near-duplicate leakage?
+- Is the model expected to recover structure, function, or only local sequence statistics?
+
 ## Related
 
 - [[entities/protein|Protein]]

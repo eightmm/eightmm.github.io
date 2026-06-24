@@ -16,6 +16,13 @@ An assay is an experimental measurement that links a biological or chemical setu
 - Similar molecules can have labels from incompatible protocols or target contexts.
 - Dataset construction should preserve assay identity when possible.
 
+## Checks
+
+- What target, readout, organism, and protocol produced the label?
+- Are labels from different assay types mixed as if they were comparable?
+- Is the task predicting assay response, binding, toxicity, or a proxy endpoint?
+- Does the train/test split leak through repeated molecules or shared assay batches?
+
 ## Related
 
 - [[entities/molecule|Molecule]]

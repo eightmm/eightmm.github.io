@@ -10,14 +10,24 @@ tags:
 
 Mamba is a selective state-space architecture for sequence modeling. In this wiki, it is mainly a seed topic for efficient long-context models and protein modeling experiments.
 
-## Uses
+## Key Ideas
 
-- Long sequence modeling.
-- Efficient alternatives or complements to [[concepts/architectures/transformer|Transformers]].
-- Research directions such as [[research/protein-modeling/mambafold|MambaFold]].
+- Mamba belongs to the [[concepts/architectures/state-space-model|state-space model]] family but makes the state update input-dependent.
+- Selective updates let the model decide what to keep, forget, or emphasize as it scans a sequence.
+- The architecture is often studied as an efficient alternative or complement to [[concepts/architectures/transformer|Transformers]] for long contexts.
+- It is especially relevant when sequences are long and full attention cost is a practical bottleneck.
+- In protein modeling notes, treat Mamba-style modules as sequence mixers unless the paper adds explicit structure or geometry.
+
+## Practical Checks
+
+- Check whether the model is purely sequence-based or combined with attention, convolution, graphs, or structural features.
+- Track whether outputs are token-level states, pooled representations, or generative logits.
+- Look for how bidirectional context is handled when the task is not causal generation.
+- For protein papers, separate architectural claims from dataset, split, and evaluation choices.
 
 ## Related
 
 - [[concepts/architectures/state-space-model|State-space models]]
+- [[concepts/architectures/transformer|Transformer]]
 - [[research/protein-modeling/index|Protein modeling]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

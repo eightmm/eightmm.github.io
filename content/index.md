@@ -8,8 +8,6 @@ Personal research blog and public knowledge base for molecular AI, protein model
 
 The top-level map is organized by how I think about the field: entities, architectures, geometry, learning methods, agents, and workflows. Specific methods such as SSL, JEPA, contrastive learning, or LLM wiki maintenance live under those broader buckets.
 
-Public pages must be cleaned first. Do not publish server IPs, account names, SSH ports, private paths, credentials, collaborator details, internal task names, or unpublished experiment results.
-
 ## Entities
 
 - [[entities/protein|Protein]]

@@ -15,6 +15,13 @@ Proteins are biological macromolecules represented as sequences, structures, sur
 - Structure view for folding, docking, and [[concepts/geometric-deep-learning/equivariant-gnn|equivariant]] models.
 - Functional view for binding sites, domains, and interactions.
 
+## Checks
+
+- Is the task sequence-only, structure-only, or sequence-structure combined?
+- Are homologs, protein families, and near-duplicate chains separated across splits?
+- Are domains, missing residues, mutations, and cofactors represented explicitly?
+- Does the model predict structure, function, interaction, or a downstream assay label?
+
 ## Related
 
 - [[research/protein-modeling/index|Protein modeling]]

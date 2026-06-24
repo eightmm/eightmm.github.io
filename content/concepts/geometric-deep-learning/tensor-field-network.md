@@ -16,6 +16,13 @@ A tensor field network is an equivariant neural architecture that represents fea
 - The architecture connects neural message passing with [[concepts/geometric-deep-learning/spherical-harmonics|spherical harmonics]] and representation theory.
 - It helps frame why equivariant models need structured feature channels instead of only scalar embeddings.
 
+## Checks
+
+- Which tensor orders are used, and are they justified by the task?
+- Are message passing operations equivariant at every layer?
+- Is the added expressivity worth the compute and implementation complexity?
+- Are final outputs converted to invariant or equivariant quantities correctly?
+
 ## Related
 
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]

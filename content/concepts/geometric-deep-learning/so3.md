@@ -16,6 +16,13 @@ SO(3) is the group of 3D rotations around the origin.
 - Spherical features and tensor features are often organized by how they transform under SO(3).
 - SO(3) is a building block for [[concepts/geometric-deep-learning/se3|SE(3)]] methods that also handle translation.
 
+## Checks
+
+- Is the task centered so rotations are the main transformation?
+- Are local frames, directions, and angular features represented consistently?
+- Does the model require spherical harmonics or a simpler vector representation?
+- Are scalar outputs invariant after rotation-dependent features are processed?
+
 ## Related
 
 - [[concepts/geometric-deep-learning/se3|SE(3)]]

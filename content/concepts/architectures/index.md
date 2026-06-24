@@ -7,7 +7,7 @@ tags:
 
 # Architectures
 
-Architecture notes describe model families used across molecular AI, protein modeling, agents, and infrastructure tooling.
+Architecture notes describe model families used across molecular AI, protein modeling, agents, and implementation reading. Use these pages as quick checks for what a paper is mixing, what inductive bias it assumes, and where evaluation can go wrong.
 
 ## Basic Blocks
 
@@ -28,6 +28,13 @@ Architecture notes describe model families used across molecular AI, protein mod
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
 - [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
+
+## Reading Checklist
+
+- What is the input object: vector, sequence, grid, graph, structure, or mixed modality?
+- What mixes information: dense layers, convolution, recurrence, state update, message passing, or attention?
+- What inductive bias is assumed: locality, order, permutation invariance, equivariance, sparsity, or routing?
+- What fails first in practice: memory, length, graph size, data leakage, calibration, or decoding constraints?
 
 ## Related
 
