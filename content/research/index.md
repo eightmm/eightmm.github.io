@@ -12,6 +12,7 @@ Research notes track public questions, concepts, paper connections, and project 
 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/protein-modeling/index|Protein modeling]]
+- [[research/genome-sequence-modeling/index|Genome sequence modeling]]
 - [[research/generative-models/index|Generative models]]
 
 ## Cross-Cutting Methods

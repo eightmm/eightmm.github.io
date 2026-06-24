@@ -12,7 +12,9 @@ The top-level map is organized by how I think about the field: entities, archite
 
 - [[entities/protein|Protein]]
 - [[entities/ligand|Ligand]]
+- [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+- [[entities/genome|Genome]]
 
 ## Architectures
 

@@ -31,7 +31,7 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 
 Keep the top-level site organized by broad axes:
 
-- `entities/`: Protein, ligand, protein-ligand complex, and other modeled objects.
+- `entities/`: Protein, ligand, molecule, protein-ligand complex, sequence, structure, assay, dataset, genome, and other directly modeled objects.
 - `concepts/architectures/`: GNN, Transformer, state-space models, and model families.
 - `concepts/geometric-deep-learning/`: Equivariance, geometry, coordinates, symmetry.
 - `concepts/learning/`: SSL, JEPA, contrastive learning, and learning objectives.
@@ -40,6 +40,8 @@ Keep the top-level site organized by broad axes:
 - `papers/`: Curated paper notes, not raw daily logs.
 - `inbox/`: Sanitized daily paper briefs and uncurated candidates.
 - `projects/`, `infra/`, `logs/`, `posts/`: Public project notes, infra notes, cleaned logs, and narrative posts.
+
+Bio scope should stay focused on structure-based AI, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
 
 ## Paper Brief Workflow
 
