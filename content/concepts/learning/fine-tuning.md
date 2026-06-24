@@ -1,0 +1,29 @@
+---
+title: Fine-Tuning
+tags:
+  - fine-tuning
+  - transfer-learning
+  - machine-learning
+---
+
+# Fine-Tuning
+
+Fine-tuning adapts a pretrained model to a target task by continuing training on task data, either updating all weights or a small subset (parameter-efficient fine-tuning).
+
+## Why It Matters
+
+- The standard way to specialize a general pretrained model.
+- Parameter-efficient variants cut compute and storage per task.
+- Sensitive to learning rate, data size, and catastrophic forgetting.
+
+## Checks
+
+- Full fine-tuning vs. adapter/low-rank methods for the data budget?
+- Is the model overfitting a small target set?
+- Did adaptation degrade general capabilities learned in pretraining?
+
+## Related
+
+- [[concepts/learning/transfer-learning|Transfer learning]]
+- [[concepts/learning/preference-optimization|Preference optimization]]
+- [[concepts/learning/supervised-learning|Supervised learning]]

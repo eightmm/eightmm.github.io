@@ -10,16 +10,22 @@ Concept notes define reusable terms used across research notes, paper summaries,
 
 ## Entities
 
+- [[entities/index|Entities]]
 - [[entities/protein|Protein]]
 - [[entities/ligand|Ligand]]
+- [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 
 ## Architectures
 
 - [[concepts/architectures/index|Architectures]]
+- [[concepts/architectures/mlp|MLP]]
+- [[concepts/architectures/cnn|CNN]]
+- [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
+- [[concepts/architectures/mamba|Mamba]]
 
 ## Structure-Based AI
 
@@ -27,7 +33,11 @@ Concept notes define reusable terms used across research notes, paper summaries,
 
 ## Generative Models
 
+- [[concepts/generative-models/index|Generative models]]
+- [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
+- [[concepts/generative-models/molecular-generation|Molecular generation]]
+- [[concepts/generative-models/protein-design|Protein design]]
 
 ## Geometric Deep Learning
 
@@ -38,8 +48,16 @@ Concept notes define reusable terms used across research notes, paper summaries,
 
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+- [[concepts/learning/masked-modeling|Masked modeling]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
+
+## Evaluation
+
+- [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/evaluation/scaffold-split|Scaffold split]]
+- [[concepts/evaluation/calibration|Calibration]]
 
 ## Research Links
 

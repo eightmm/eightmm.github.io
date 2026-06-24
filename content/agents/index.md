@@ -12,9 +12,19 @@ Agent notes collect public explanations of AI agents, coding assistants, researc
 
 This section should stay practical: what the agent is useful for, where it fails, how to verify its work, and how it fits into research or infrastructure work.
 
-## Topics
+## Core Concepts
+
+- [[agents/tool-use|Tool use]]
+- [[agents/planning|Planning]]
+- [[agents/agent-memory|Agent memory]]
+- [[agents/verification-loop|Verification loop]]
+- [[agents/prompt-injection|Prompt injection]]
+
+## Workflows
 
 - [[agents/coding-agents|Coding agents]]
+- [[agents/paper-brief-workflow|Paper brief workflow]]
+- [[agents/multi-agent-review|Multi-agent review]]
 
 ## Writing Rules
 
@@ -27,5 +37,6 @@ This section should stay practical: what the agent is useful for, where it fails
 
 - [[research/llm-wiki|LLM Wiki]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[inbox/index|Inbox]]
 - [[projects/index|Projects]]
 - [[logs/index|Public logs]]

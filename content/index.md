@@ -18,9 +18,11 @@ Public pages must be cleaned first. Do not publish server IPs, account names, SS
 
 ## Architectures
 
+- [[concepts/architectures/index|Architecture index]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
+- [[concepts/architectures/mamba|Mamba]]
 
 ## Geometric Modeling
 
@@ -33,18 +35,22 @@ Public pages must be cleaned first. Do not publish server IPs, account names, SS
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
+- [[concepts/generative-models/index|Generative models]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 
 ## Agents
 
 - [[agents/index|Agents]]
 - [[agents/coding-agents|Coding agents]]
+- [[agents/paper-brief-workflow|Paper brief workflow]]
 
 ## Workflows
 
+- [[inbox/index|Inbox]]
 - [[research/index|Research areas]]
 - [[papers/index|Papers]]
 - [[projects/index|Projects]]
+- [[concepts/evaluation/index|Evaluation]]
 - [[infra/index|Infra]]
 - [[logs/index|Public logs]]
 - [[posts/index|Posts]]

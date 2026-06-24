@@ -8,6 +8,8 @@ tags:
 
 Paper notes summarize public work and link claims back into reusable concepts.
 
+Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected papers should become curated notes here.
+
 ## Structure-Based AI
 
 - [[papers/sbdd/posebusters|PoseBusters]]

@@ -1,0 +1,24 @@
+---
+title: Spherical Harmonics
+tags:
+  - geometric-deep-learning
+  - geometry
+  - spherical-harmonics
+---
+
+# Spherical Harmonics
+
+Spherical harmonics are basis functions on the sphere used to represent angular structure.
+
+## Why It Matters
+
+- They encode directional information in rotation-aware neural networks.
+- They provide a practical bridge between 3D geometry and [[concepts/geometric-deep-learning/irreducible-representation|irreducible representations]].
+- In molecular models, they can describe relative directions between atoms or residues.
+
+## Related
+
+- [[concepts/geometric-deep-learning/so3|SO(3)]]
+- [[concepts/geometric-deep-learning/tensor-field-network|Tensor field network]]
+- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- [[entities/structure|Structure]]

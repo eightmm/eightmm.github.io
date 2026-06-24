@@ -14,6 +14,7 @@ An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesi
 
 - Keep reusable concepts in [[concepts/index|Concepts]].
 - Keep paper-specific claims in [[papers/index|Papers]].
+- Keep uncurated daily candidates in [[inbox/index|Inbox]] until reviewed.
 - Keep active research context in [[research/index|Research]].
 - Keep agent notes in [[agents/index|Agents]] when they describe workflows, tools, and human-AI collaboration.
 - Keep operational notes in [[infra/index|Infra]] without exposing private systems.
@@ -34,3 +35,4 @@ An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesi
 - [[research/generative-models/index|Generative models]]
 - [[research/self-supervised-learning/index|Self-supervised learning]]
 - [[agents/coding-agents|Coding agents]]
+- [[agents/paper-brief-workflow|Paper brief workflow]]
