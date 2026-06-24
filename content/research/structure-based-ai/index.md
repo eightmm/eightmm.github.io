@@ -12,6 +12,9 @@ Structure-based AI covers protein-ligand docking, binding pose modeling, scoring
 
 ## Topics
 
+- [[entities/protein|Protein]]
+- [[entities/ligand|Ligand]]
+- [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[papers/sbdd/posebusters|PoseBusters]]

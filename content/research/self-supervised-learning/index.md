@@ -5,13 +5,15 @@ tags:
   - self-supervised-learning
 ---
 
-# Self-Supervised Learning
+# Self-Supervised Learning Research
 
 Self-supervised learning notes cover representation learning without direct task labels. For this site, the focus is protein, molecule, graph, and sequence representations.
 
 ## Topics
 
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+- [[concepts/learning/jepa|JEPA]]
+- [[concepts/learning/contrastive-learning|Contrastive learning]]
 
 ## Questions
 

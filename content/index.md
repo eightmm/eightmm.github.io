@@ -4,51 +4,47 @@ title: Jaemin's Research Notes
 
 # Jaemin's Research Notes
 
-Personal research blog and public LLM wiki for structure-based AI, generative models, self-supervised learning, protein modeling, AI agents, and research infrastructure.
+Personal research blog and public knowledge base for molecular AI, protein modeling, geometric deep learning, agents, and research infrastructure.
 
-This site is written as linked notes: research areas, paper summaries, reusable concepts, project records, and infrastructure playbooks.
+The top-level map is organized by how I think about the field: entities, architectures, geometry, learning methods, agents, and workflows. Specific methods such as SSL, JEPA, contrastive learning, or LLM wiki maintenance live under those broader buckets.
 
-Private working notes are useful, but public pages must be cleaned first. Do not publish server IPs, account names, SSH ports, private paths, credentials, collaborator details, internal task names, or unpublished experiment results.
+Public pages must be cleaned first. Do not publish server IPs, account names, SSH ports, private paths, credentials, collaborator details, internal task names, or unpublished experiment results.
 
-## Research
+## Entities
 
-- [[research/structure-based-ai/index|Structure-based AI]]
-- [[research/protein-modeling/index|Protein modeling]]
-- [[research/generative-models/index|Generative models]]
-- [[research/self-supervised-learning/index|Self-supervised learning]]
-- [[research/llm-wiki|LLM Wiki]]
+- [[entities/protein|Protein]]
+- [[entities/ligand|Ligand]]
+- [[entities/protein-ligand-complex|Protein-ligand complex]]
 
-## Papers
+## Architectures
 
-- [[papers/index|Paper index]]
-- [[papers/sbdd/posebusters|PoseBusters]]
+- [[concepts/architectures/gnn|Graph neural networks]]
+- [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/state-space-model|State-space models]]
 
-## Concepts
+## Geometric Modeling
 
-- [[concepts/sbdd/scoring-function|Scoring function]]
-- [[concepts/generative-models/flow-matching|Flow matching]]
+- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+
+## Learning Methods
+
+- [[concepts/learning/index|Learning methods]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
-
-## Projects
-
-- [[projects/index|Project index]]
+- [[concepts/learning/jepa|JEPA]]
+- [[concepts/learning/contrastive-learning|Contrastive learning]]
+- [[concepts/generative-models/flow-matching|Flow matching]]
 
 ## Agents
 
-- [[agents/index|Agent index]]
+- [[agents/index|Agents]]
 - [[agents/coding-agents|Coding agents]]
 
-## Infra
+## Workflows
 
-- [[infra/index|Infra index]]
-- [[infra/hpc/slurm|Slurm]]
-- [[infra/server-ops/index|Server operations]]
-
-## Logs
-
+- [[research/index|Research areas]]
+- [[papers/index|Papers]]
+- [[projects/index|Projects]]
+- [[infra/index|Infra]]
 - [[logs/index|Public logs]]
-
-## Posts
-
-- [[posts/index|Post index]]
+- [[posts/index|Posts]]

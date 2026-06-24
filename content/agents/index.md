@@ -26,5 +26,6 @@ This section should stay practical: what the agent is useful for, where it fails
 ## Related
 
 - [[research/llm-wiki|LLM Wiki]]
+- [[concepts/architectures/transformer|Transformer]]
 - [[projects/index|Projects]]
 - [[logs/index|Public logs]]

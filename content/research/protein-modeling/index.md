@@ -11,6 +11,7 @@ Protein modeling notes cover folding, structure prediction, protein representati
 
 ## Topics
 
+- [[entities/protein|Protein]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 
 ## Adjacent Areas
