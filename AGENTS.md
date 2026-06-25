@@ -110,6 +110,8 @@ Model-selection notes should treat hyperparameter tuning, checkpoint choice, thr
 
 Training-diagnostic notes should connect curves to decisions. When adding learning-curve or validation-curve content, state the x-axis, metric, split, checkpoint rule, schedule/resume events, seed or fold variation, and what decision the curve supports. Do not use a curve alone as proof of generalization without leakage and split checks.
 
+Probabilistic-prediction notes should distinguish logits, scores, probabilities, uncertainty estimates, and hard decisions. When adding decision-rule content, state the action space, cost or utility, threshold or argmax rule, validation selection procedure, calibration requirement, and metric used to evaluate the resulting action.
+
 Retrieval task notes should distinguish corpus search, similarity search, and reranking. State the candidate corpus, representation, scoring function, top-k or listwise output, relevance definition, metric, duplicate policy, and whether the stage optimizes recall, precision, enrichment, or downstream answer quality.
 
 Optimization and training notes should connect loss, gradient estimate, optimizer state, learning-rate schedule, effective batch size, gradient accumulation, clipping, checkpoint state, and stability signals. State whether counts refer to micro-steps, optimizer steps, consumed samples, or epochs.

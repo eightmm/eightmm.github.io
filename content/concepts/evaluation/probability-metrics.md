@@ -8,7 +8,7 @@ tags:
 
 # Probability Metrics
 
-Probability metrics evaluate predicted probabilities, not only hard decisions or rankings. They matter when a model's confidence drives triage, filtering, decision thresholds, uncertainty estimates, or downstream planning.
+Probability metrics evaluate [[concepts/machine-learning/probabilistic-prediction|predicted probabilities]], not only hard decisions or rankings. They matter when a model's confidence drives triage, filtering, decision thresholds, uncertainty estimates, or downstream planning.
 
 For predictions $p_\theta(y\mid x)$ on test examples $(x_i,y_i)$, negative log-likelihood is:
 
@@ -84,6 +84,8 @@ A model can have good accuracy but poor NLL if it is overconfident on errors. It
 ## Related
 
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
+- [[concepts/machine-learning/decision-rule|Decision rule]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]

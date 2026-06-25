@@ -23,6 +23,8 @@ $$
 
 ## 문제 유형
 
+- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]: label 하나가 아니라 가능한 출력의 분포를 예측합니다.
+- [[concepts/machine-learning/decision-rule|Decision rule]]: probability, score, uncertainty를 실제 action으로 바꿉니다.
 - [[concepts/machine-learning/classification|Classification]]: discrete label을 예측합니다.
 - [[concepts/machine-learning/regression|Regression]]: continuous value를 예측합니다.
 - [[concepts/machine-learning/ranking|Ranking]]: 후보들을 순서화합니다.
@@ -109,6 +111,8 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
+- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
+- [[concepts/machine-learning/decision-rule|Decision rule]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/machine-learning/generalization|Generalization]]
 - [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]

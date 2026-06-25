@@ -35,6 +35,8 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 - [[concepts/math/statistical-estimator|Statistical estimator]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
+- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
+- [[concepts/machine-learning/decision-rule|Decision rule]]
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/ranking|Ranking]]

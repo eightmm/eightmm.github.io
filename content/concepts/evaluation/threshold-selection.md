@@ -8,7 +8,7 @@ tags:
 
 # Threshold Selection
 
-Threshold selection converts a continuous score or probability into a discrete decision. It is separate from model training and must not be tuned on the test set.
+Threshold selection converts a continuous score or probability into a discrete [[concepts/machine-learning/decision-rule|decision]]. It is separate from model training and must not be tuned on the test set.
 
 For a score $s(x)$ and threshold $\tau$:
 
@@ -52,6 +52,8 @@ $U$ is a utility function or metric that encodes the cost of each decision outco
 ## Related
 
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
+- [[concepts/machine-learning/decision-rule|Decision rule]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]

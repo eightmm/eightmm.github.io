@@ -7,7 +7,7 @@ tags:
 
 # Classification
 
-Classification predicts a discrete class label. The model usually outputs a probability distribution over classes, then a decision rule converts that distribution into a class.
+Classification predicts a discrete class label. The model usually outputs a [[concepts/machine-learning/probabilistic-prediction|probability distribution]] over classes, then a [[concepts/machine-learning/decision-rule|decision rule]] converts that distribution into a class.
 
 For $K$ classes, logits $z\in\mathbb{R}^{K}$ become probabilities through softmax:
 
@@ -74,6 +74,8 @@ This is different from softmax classification, where probabilities compete acros
 ## Related
 
 - [[concepts/machine-learning/loss-function|Loss function]]
+- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
+- [[concepts/machine-learning/decision-rule|Decision rule]]
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
