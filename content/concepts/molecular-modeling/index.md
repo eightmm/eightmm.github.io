@@ -12,6 +12,7 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 ## Core Concepts
 
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
+- [[concepts/molecular-modeling/molecular-identity|Molecular identity]]
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
@@ -27,6 +28,7 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 ## Data Checks
 
 - Standardize molecules before deduplication and splitting.
+- Define molecular identity before deduplication, label aggregation, and split assignment.
 - Decide whether to preserve or flatten stereochemistry.
 - Record tautomer, salt, charge, protonation, and conformer protocols.
 - Use scaffold or cluster splits instead of random splits for ligand-side generalization.

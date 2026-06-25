@@ -14,6 +14,7 @@ In this wiki, SBDD concepts are reusable notes under [[research/structure-based-
 ## Core Concepts
 
 - [[concepts/sbdd/pose-generation|Pose generation]]
+- [[concepts/sbdd/pose-rmsd|Pose RMSD]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
@@ -44,6 +45,7 @@ where $P$ is a protein or pocket and $L$ is a ligand.
 - Is pose generation evaluated separately from scoring?
 - Are receptor and ligand inputs prepared consistently?
 - Are pose quality and binding affinity evaluated separately?
+- Is pose RMSD symmetry-corrected and separated from interaction or affinity claims?
 - Does the benchmark split test scaffold, protein-family, temporal, or structure-level generalization?
 - Is the protein-ligand split policy aligned with the claim?
 - Could training data or template databases leak a close protein, ligand, or bound complex into evaluation?
@@ -54,6 +56,7 @@ where $P$ is a protein or pocket and $L$ is a ligand.
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
+- [[concepts/sbdd/pose-rmsd|Pose RMSD]]
 - [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]

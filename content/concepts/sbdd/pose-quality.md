@@ -8,7 +8,7 @@ tags:
 
 # Pose Quality
 
-Pose quality measures whether a predicted ligand pose is geometrically and chemically plausible in a protein binding site. It should be evaluated separately from binding affinity.
+Pose quality measures whether a predicted ligand pose is geometrically and chemically plausible in a protein binding site. It should be evaluated separately from binding affinity and interpreted alongside [[concepts/sbdd/pose-rmsd|Pose RMSD]].
 
 A common native-pose comparison is ligand RMSD:
 
@@ -50,6 +50,7 @@ It does not by itself prove binding affinity, selectivity, or screening utility.
 
 - [[papers/sbdd/posebusters|PoseBusters]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
+- [[concepts/sbdd/pose-rmsd|Pose RMSD]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]

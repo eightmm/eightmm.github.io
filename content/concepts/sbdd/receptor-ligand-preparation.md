@@ -30,6 +30,7 @@ where $\phi_{\mathrm{prep}}$ includes cleaning, standardization, protonation, co
 
 ## Ligand Preparation
 
+- Define [[concepts/molecular-modeling/molecular-identity|molecular identity]] before deduplication and split assignment.
 - Standardize salt, charge, aromaticity, tautomer, and stereochemistry policy.
 - Enumerate or choose protonation and tautomer states when relevant.
 - Generate conformers if the workflow requires 3D inputs.
@@ -48,6 +49,8 @@ where $\phi_{\mathrm{prep}}$ includes cleaning, standardization, protonation, co
 
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/protein-modeling/binding-site|Binding site]]
+- [[concepts/molecular-modeling/molecular-identity|Molecular identity]]
+- [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]

@@ -8,7 +8,7 @@ tags:
 
 # Molecular Standardization
 
-Molecular standardization converts raw molecular records into a consistent representation before deduplication, splitting, featurization, or modeling.
+Molecular standardization converts raw molecular records into a consistent representation before deduplication, splitting, featurization, or modeling. It is the implementation side of a [[concepts/molecular-modeling/molecular-identity|Molecular identity]] policy.
 
 A practical pipeline is:
 
@@ -34,6 +34,7 @@ The same chemical entity can appear as salts, counterions, different tautomers, 
 - Canonicalize tautomers or keep state-specific forms.
 - Assign [[concepts/molecular-modeling/protonation-state|protonation state]] with a documented protocol.
 - Hash standardized molecules before deduplication and split construction.
+- Keep the standardized identity key with downstream labels and features.
 
 ## Ordering
 
@@ -53,6 +54,7 @@ Splitting on raw records can place equivalent standardized molecules on both sid
 
 - Is standardization done before deduplication?
 - Is the standardized form used as the split key?
+- Is the identity policy strong enough for the task but not over-collapsing meaningful states?
 - Are failures in parsing or sanitization logged instead of silently dropped?
 - Are tautomer, charge, salt, and stereo choices recorded?
 - Could over-standardization collapse biologically meaningful differences?
@@ -61,6 +63,7 @@ Splitting on raw records can place equivalent standardized molecules on both sid
 ## Related
 
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
+- [[concepts/molecular-modeling/molecular-identity|Molecular identity]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/tautomer|Tautomer]]
 - [[concepts/molecular-modeling/protonation-state|Protonation state]]

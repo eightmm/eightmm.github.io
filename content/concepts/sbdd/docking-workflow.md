@@ -48,6 +48,7 @@ The first arrow is [[concepts/sbdd/pose-generation|pose generation]]. The second
 
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
+- [[concepts/sbdd/pose-rmsd|Pose RMSD]]
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/protein-modeling/binding-site|Binding site]]
