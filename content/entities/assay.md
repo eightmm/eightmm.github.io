@@ -25,6 +25,8 @@ An assay is an experimental measurement that links a biological or chemical setu
 
 ## Related
 
+- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
+- [[concepts/evaluation/negative-set|Negative set]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein|Protein]]
 - [[entities/dataset|Dataset]]

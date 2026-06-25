@@ -26,6 +26,9 @@ A dataset is a curated collection of examples, labels, metadata, and splits used
 
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
+- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
+- [[concepts/evaluation/activity-cliff|Activity cliff]]
+- [[concepts/evaluation/applicability-domain|Applicability domain]]
 - [[entities/assay|Assay]]
 - [[entities/molecule|Molecule]]
 - [[entities/sequence|Sequence]]

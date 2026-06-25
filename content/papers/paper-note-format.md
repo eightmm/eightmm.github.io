@@ -38,6 +38,7 @@ $$
 - Are claims separated from personal interpretation?
 - Are metrics tied to a split and evaluation protocol?
 - Are baselines and ablations strong enough to support the claim?
+- For chem-bio papers, are assay harmonization, negative sets, activity cliffs, and applicability domain addressed?
 - Are figures or tables summarized rather than copied?
 - Are uncertain details marked as unresolved?
 
@@ -50,4 +51,5 @@ $$
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
+- [[concepts/evaluation/applicability-domain|Applicability domain]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]

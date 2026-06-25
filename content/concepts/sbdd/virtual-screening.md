@@ -34,11 +34,14 @@ $$
 - Are decoys realistic, or do they make the task artificially easy?
 - Is ranking driven by pose quality, affinity, ligand bias, or dataset artifacts?
 - Are top-ranked molecules inspected for validity and novelty?
+- Are [[concepts/evaluation/negative-set|negative sets]] and [[concepts/evaluation/applicability-domain|applicability domain]] reported?
 
 ## Related
 
 - [[entities/pocket|Pocket]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
+- [[concepts/evaluation/negative-set|Negative set]]
+- [[concepts/evaluation/applicability-domain|Applicability domain]]
 - [[concepts/evaluation/metric|Metric]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
