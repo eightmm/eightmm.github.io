@@ -18,6 +18,8 @@ $$
 
 Stacking these affine transforms and nonlinearities gives the full MLP.
 
+In this expression, $W_\ell h_\ell + b_\ell$ is a [[concepts/architectures/linear-layer|linear layer]] and $\sigma$ is an [[concepts/architectures/activation-function|activation function]].
+
 ## Key Ideas
 
 - Each layer applies a learned affine transform followed by a nonlinearity.
@@ -36,6 +38,8 @@ Stacking these affine transforms and nonlinearities gives the full MLP.
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/linear-layer|Linear layer]]
+- [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/learning/index|Learning methods]]

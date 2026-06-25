@@ -20,6 +20,12 @@ $$
 ## Core Notes
 
 - [[concepts/architectures/index|Architecture index]]
+- [[concepts/architectures/linear-layer|Linear layer]]
+- [[concepts/architectures/activation-function|Activation function]]
+- [[concepts/architectures/normalization|Normalization]]
+- [[concepts/architectures/residual-connection|Residual connection]]
+- [[concepts/architectures/embedding|Embedding]]
+- [[concepts/architectures/softmax|Softmax]]
 - [[concepts/architectures/mlp|MLP]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/rnn|RNN]]

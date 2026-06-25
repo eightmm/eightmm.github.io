@@ -49,7 +49,7 @@ X_{\mathrm{out}}
 = X' + \operatorname{FFN}(\operatorname{LN}(X'))
 $$
 
-Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number of heads, and $\sigma$ is the feed-forward nonlinearity. Decoder-only Transformers use a causal $M$; encoder-style models usually use bidirectional attention with only padding masks.
+Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number of heads, and $\sigma$ is the feed-forward nonlinearity. Decoder-only Transformers use a causal $M$; encoder-style models usually use bidirectional attention with only padding masks. The block combines [[concepts/architectures/embedding|embeddings]], [[concepts/architectures/linear-layer|linear layers]], [[concepts/architectures/softmax|softmax]], [[concepts/architectures/normalization|normalization]], and [[concepts/architectures/residual-connection|residual connections]].
 
 ## Key Ideas
 

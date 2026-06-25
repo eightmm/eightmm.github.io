@@ -19,6 +19,13 @@ The same training objective can behave very differently depending on whether $\m
 
 ## Basic Blocks
 
+- [[concepts/architectures/linear-layer|Linear layer]]
+- [[concepts/architectures/activation-function|Activation function]]
+- [[concepts/architectures/normalization|Normalization]]
+- [[concepts/architectures/residual-connection|Residual connection]]
+- [[concepts/architectures/embedding|Embedding]]
+- [[concepts/architectures/softmax|Softmax]]
+- [[concepts/architectures/dropout|Dropout]]
 - [[concepts/architectures/mlp|MLP]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]

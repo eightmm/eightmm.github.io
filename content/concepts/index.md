@@ -19,6 +19,9 @@ Concept notes define reusable terms used across research notes, paper summaries,
 ## Architectures
 
 - [[concepts/architectures/index|Architectures]]
+- [[concepts/architectures/linear-layer|Linear layer]]
+- [[concepts/architectures/normalization|Normalization]]
+- [[concepts/architectures/residual-connection|Residual connection]]
 - [[concepts/architectures/mlp|MLP]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/rnn|RNN]]
