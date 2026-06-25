@@ -19,6 +19,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 - Learning: 어떤 supervision이나 objective로 표현을 학습하는지
 - Generation: 데이터를 만들거나 변환하는 방식
 - Evaluation: 모델이 실제로 일반화했는지 확인하는 방식
+- Geometry and scientific AI: graph, coordinate, protein, molecule 같은 구조적 입력을 다루는 방식
 
 ## Machine Learning
 
@@ -28,6 +29,10 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 - [[concepts/machine-learning/index|Machine learning]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
+- [[concepts/machine-learning/classification|Classification]]
+- [[concepts/machine-learning/regression|Regression]]
+- [[concepts/machine-learning/loss-function|Loss function]]
+- [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/linear-model|Linear model]]
 - [[concepts/machine-learning/tree-based-model|Tree-based model]]
 - [[concepts/machine-learning/kernel-method|Kernel method]]
@@ -38,9 +43,12 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 아키텍처 노트는 입력의 형태와 inductive bias를 기준으로 봅니다. 이미지, sequence, graph, structure, set처럼 데이터가 달라지면 좋은 기본 구조도 달라집니다.
 
 - [[ai/architectures|아키텍처 지도]]
+- [[concepts/architectures/tokenization|Tokenization]]
+- [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
@@ -67,6 +75,17 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/rectified-flow|Rectified flow]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
+
+## Geometry and Scientific AI
+
+AI를 Bio-AI와 연결할 때는 구조적 입력을 어떻게 표현하는지가 중요합니다. 단백질, 분자, pocket, complex는 단순 text token이 아니라 graph와 coordinate를 함께 갖습니다.
+
+- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
+- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+- [[concepts/protein-modeling/index|Protein modeling concepts]]
+- [[concepts/sbdd/index|Structure-based drug discovery]]
+- [[bio-ai/index|Bio-AI]]
 
 ## Evaluation
 

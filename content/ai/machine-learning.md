@@ -47,7 +47,7 @@ $$
 - [[concepts/machine-learning/training-loop|Training loop]]: forward, loss, backward, update를 어떻게 반복할 것인가
 - [[concepts/machine-learning/optimization|Optimization]]: parameter를 어떻게 업데이트할 것인가
 - [[concepts/machine-learning/regularization|Regularization]]: overfitting을 어떻게 줄일 것인가
-- Validation: model selection을 어떤 split에서 할 것인가
+- [[concepts/evaluation/train-validation-test-split|Validation split]]: model selection을 어떤 split에서 할 것인가
 
 일반화 관점에서는 train loss와 test loss를 구분해야 합니다.
 
@@ -78,5 +78,7 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 
 - [[ai/learning-methods|Learning methods]]
 - [[ai/evaluation|Evaluation]]
+- [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]

@@ -40,6 +40,13 @@ $$
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 
+## 분야별 평가 연결
+
+- Molecule: [[concepts/evaluation/scaffold-split|Scaffold split]], [[concepts/sbdd/virtual-screening|Virtual screening]]
+- Protein: [[concepts/evaluation/protein-family-split|Protein family split]], [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
+- Structure: [[concepts/sbdd/pose-quality|Pose quality]], [[papers/sbdd/posebusters|PoseBusters]]
+- Agent: [[agents/agent-evaluation|Agent evaluation]], [[agents/verification-loop|Verification loop]]
+
 ## 읽을 때 볼 질문
 
 - train/test split이 실제 generalization을 요구하는가?

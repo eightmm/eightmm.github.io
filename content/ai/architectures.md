@@ -79,6 +79,15 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph transformer]]
 
+## Geometry-Aware Models
+
+3D coordinate, molecular structure, protein complex처럼 회전과 이동에 대한 대칭성이 중요한 입력을 다룹니다.
+
+- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
+- [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
+- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+
 ## Sparse and Routed Models
 
 모든 parameter를 항상 쓰지 않고 routing이나 sparsity를 활용합니다.
@@ -97,3 +106,4 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 - [[ai/learning-methods|Learning methods]]
 - [[ai/generative-models|Generative models]]
 - [[bio-ai/index|Bio-AI]]
+- [[concepts/protein-modeling/index|Protein modeling concepts]]
