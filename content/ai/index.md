@@ -165,6 +165,7 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 모델은 학습되고, 저장되고, 실행되고, 평가되는 시스템입니다. 같은 architecture라도 training run 관리, inference path, latency/throughput 목표, reproducibility 기준에 따라 실제 가치는 달라집니다.
 
 - [[concepts/systems/index|AI systems]]
+- [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[concepts/systems/training-run|Training run]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]

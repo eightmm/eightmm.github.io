@@ -30,10 +30,17 @@ scancel <job-id>
 
 - Capture code commit, environment, seed, and dataset version.
 - Prefer small smoke tests before large jobs.
+- Keep resource requests explicit and public-safe: CPU count, GPU count, memory class, and wall time can be described generically.
+- Use job arrays for independent shards instead of one oversized job when the workload is naturally parallel.
+- Design long jobs to checkpoint and resume before wall-time limits or preemption.
 - Link public experiment methodology into [[agents/workflows/llm-wiki|LLM Wiki]] pages when it becomes reusable.
 
 ## Related
 
+- [[concepts/systems/resource-scheduling|Resource scheduling]]
+- [[infra/hpc/resource-request|Resource request]]
+- [[infra/hpc/job-array|Job array]]
+- [[infra/hpc/preemption-resume|Preemption and resume]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[research/protein-modeling/mambafold|MambaFold]]
