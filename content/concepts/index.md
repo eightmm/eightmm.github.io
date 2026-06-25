@@ -183,6 +183,23 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/dimensionality-reduction|Dimensionality reduction]]
 
+## Learning Methods
+
+- [[concepts/learning/index|Learning methods]]
+- [[concepts/learning/supervised-learning|Supervised learning]]
+- [[concepts/learning/pretraining|Pretraining]]
+- [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+- [[concepts/learning/masked-modeling|Masked modeling]]
+- [[concepts/learning/contrastive-learning|Contrastive learning]]
+- [[concepts/learning/jepa|JEPA]]
+- [[concepts/learning/transfer-learning|Transfer learning]]
+- [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/instruction-tuning|Instruction tuning]]
+- [[concepts/learning/domain-adaptation|Domain adaptation]]
+- [[concepts/learning/curriculum-learning|Curriculum learning]]
+- [[concepts/learning/reinforcement-learning|Reinforcement learning]]
+- [[concepts/learning/preference-optimization|Preference optimization]]
+
 ## Structure-Based AI
 
 - [[concepts/sbdd/index|Structure-based drug discovery]]

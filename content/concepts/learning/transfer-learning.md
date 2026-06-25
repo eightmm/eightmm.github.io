@@ -34,6 +34,8 @@ The benefit depends on how much useful structure transfers from source to target
 
 ## Related
 
+- [[concepts/learning/pretraining|Pretraining]]
+- [[concepts/learning/domain-adaptation|Domain adaptation]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/supervised-learning|Supervised learning]]

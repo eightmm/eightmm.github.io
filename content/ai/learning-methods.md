@@ -46,12 +46,16 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/learning/supervised-learning|Supervised learning]]
+- [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/masked-modeling|Masked modeling]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/instruction-tuning|Instruction tuning]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
+- [[concepts/learning/domain-adaptation|Domain adaptation]]
+- [[concepts/learning/curriculum-learning|Curriculum learning]]
 - [[concepts/learning/reinforcement-learning|Reinforcement learning]]
 - [[concepts/learning/policy-gradient|Policy gradient]]
 - [[concepts/learning/reward-modeling|Reward modeling]]
@@ -62,7 +66,9 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 ## 읽을 때 볼 질문
 
 - label이 충분한가, 아니면 pretraining signal이 필요한가?
+- source domain과 target domain이 얼마나 다른가?
 - representation을 instance-level, token-level, structure-level 중 어디에 맞출 것인가?
+- adaptation이 pretraining 지식을 보존하는가, 아니면 target set에 과적합되는가?
 - downstream task와 pretraining task 사이에 mismatch가 있는가?
 - objective가 downstream evaluation과 같은 정보를 요구하는가?
 - reward나 preference signal이 실제 목표와 proxy mismatch를 일으키지 않는가?

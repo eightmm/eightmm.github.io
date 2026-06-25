@@ -35,7 +35,10 @@ $$
 
 ## Related
 
+- [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
+- [[concepts/learning/instruction-tuning|Instruction tuning]]
+- [[concepts/learning/domain-adaptation|Domain adaptation]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 - [[concepts/learning/supervised-learning|Supervised learning]]
 - [[concepts/learning/imitation-learning|Imitation learning]]

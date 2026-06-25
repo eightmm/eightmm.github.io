@@ -134,10 +134,15 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 
 - [[ai/learning-methods|Learning methods gateway]]
 - [[concepts/learning/index|Learning methods]]
+- [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/masked-modeling|Masked modeling]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
+- [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/instruction-tuning|Instruction tuning]]
+- [[concepts/learning/domain-adaptation|Domain adaptation]]
+- [[concepts/learning/curriculum-learning|Curriculum learning]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 
 ## Generative Models

@@ -22,8 +22,12 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 ## Supervision and Transfer
 
 - [[concepts/learning/supervised-learning|Supervised learning]]
+- [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/instruction-tuning|Instruction tuning]]
+- [[concepts/learning/domain-adaptation|Domain adaptation]]
+- [[concepts/learning/curriculum-learning|Curriculum learning]]
 - [[concepts/learning/imitation-learning|Imitation learning]]
 - [[concepts/learning/active-learning|Active learning]]
 
