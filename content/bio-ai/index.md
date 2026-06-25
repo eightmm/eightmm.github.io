@@ -21,6 +21,7 @@ $$
 ## 다루는 객체
 
 - [[entities/entity-relation-map|Entity relation map]]
+- [[entities/target|Target]]
 - [[entities/protein|Protein]]
 - [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
@@ -33,6 +34,7 @@ $$
 ## Molecule and Ligand Modeling
 
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
+- [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
@@ -40,6 +42,8 @@ $$
 - [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]
 - [[concepts/molecular-modeling/substructure-search|Substructure search]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
+- [[concepts/molecular-modeling/tautomer|Tautomer]]
+- [[concepts/molecular-modeling/protonation-state|Protonation state]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 
 ## Structure-Based AI
@@ -55,6 +59,7 @@ $$
 - [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
+- [[concepts/sbdd/template-leakage|Template leakage]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 
 ## Protein and Sequence Modeling
@@ -67,6 +72,7 @@ $$
 - [[concepts/protein-modeling/pocket-representation|Pocket representation]]
 - [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
+- [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

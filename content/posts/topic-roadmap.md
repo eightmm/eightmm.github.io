@@ -27,10 +27,14 @@ tags:
 ## Bio-AI
 
 - [[bio-ai/index|Bio-AI]]를 구조기반/단백질/분자/유전체 입력으로 나눠 보는 이유
+- [[entities/target|Target]], [[entities/assay|assay]], [[entities/dataset|dataset]]을 label이 생기는 context로 정리하기
+- [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]], [[concepts/molecular-modeling/tautomer|tautomer]], [[concepts/molecular-modeling/protonation-state|protonation state]]가 split과 docking을 바꾸는 이유
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]이 docking 결과를 좌우하는 이유
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]을 contact, pose, affinity, ranking으로 분해하는 법
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]에서 pose generation, scoring, filtering을 분리해야 하는 이유
+- [[concepts/sbdd/template-leakage|Template leakage]]가 structure-based benchmark에서 왜 위험한가
 - [[concepts/protein-modeling/pocket-representation|Pocket representation]]을 ligand-defined pocket과 deployable pocket으로 나눠 보는 법
+- [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]을 protein-side split의 기본으로 쓰는 법
 - [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]에서 scaffold split, label semantics, activity cliff를 같이 봐야 하는 이유
 - [[concepts/sbdd/pose-quality|Pose quality]]와 [[concepts/sbdd/binding-affinity|Binding affinity]]를 혼동하면 생기는 문제
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]가 구조 기반 AI에서 중요한 이유

@@ -11,6 +11,7 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 
 ## Core Concepts
 
+- [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
@@ -18,6 +19,8 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 - [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]
 - [[concepts/molecular-modeling/substructure-search|Substructure search]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
+- [[concepts/molecular-modeling/tautomer|Tautomer]]
+- [[concepts/molecular-modeling/protonation-state|Protonation state]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 
 ## Data Checks

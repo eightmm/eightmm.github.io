@@ -81,6 +81,8 @@ When adding agent notes, update the nearest subfolder index and `content/agents/
 
 Bio scope should stay focused on structure-based AI, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
 
+Chem-bio notes should preserve data semantics: standardize molecules before deduplication and splitting, state tautomer/protonation/stereo choices, keep target and assay context explicit, prefer scaffold or protein-family splits over random splits, and flag template leakage risks in structure-based benchmarks. Do not invent assay metadata, target details, activity values, or benchmark metrics.
+
 Infra and HPC notes should be general research-engineering knowledge, not a map of any private cluster. For new HPC notes, prefer generic concepts such as resource scheduling, resource requests, job arrays, checkpointing, preemption/resume, GPU memory, storage IO, environment management, and reproducible run records. Update `content/infra/index.md`, the relevant `content/infra/hpc/` or `content/infra/server-ops/` index, and `content/concepts/systems/index.md` when the concept belongs to AI systems.
 
 Do not expand `research/` just to fill the site. Prefer `ai/`, `math/`, `concepts/`, `entities/`, `papers/`, `agents/`, and `infra/` until the user provides a concrete research direction.

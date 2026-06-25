@@ -54,6 +54,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[entities/index|Entities]]
 - [[entities/entity-relation-map|Entity relation map]]
+- [[entities/target|Target]]
 - [[entities/protein|Protein]]
 - [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
@@ -215,10 +216,12 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
+- [[concepts/sbdd/template-leakage|Template leakage]]
 
 ## Molecular Modeling
 
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
+- [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
@@ -226,6 +229,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]
 - [[concepts/molecular-modeling/substructure-search|Substructure search]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
+- [[concepts/molecular-modeling/tautomer|Tautomer]]
+- [[concepts/molecular-modeling/protonation-state|Protonation state]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 
 ## Protein Modeling
@@ -237,6 +242,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/protein-modeling/pocket-representation|Pocket representation]]
 - [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
+- [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 

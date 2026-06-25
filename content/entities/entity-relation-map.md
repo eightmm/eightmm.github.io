@@ -30,6 +30,7 @@ $$
 
 - [[entities/molecule|Molecule]] is the general chemical object.
 - [[entities/ligand|Ligand]] is a molecule considered as a binding partner.
+- [[entities/target|Target]] is the biological object a task is centered on.
 - [[entities/protein|Protein]] is the biological target or modeled macromolecule.
 - [[entities/pocket|Pocket]] is a local region of a protein.
 - [[entities/protein-ligand-complex|Protein-ligand complex]] combines ligand pose and protein context.
@@ -65,6 +66,7 @@ The split unit should match the generalization claim:
 ## Related
 
 - [[bio-ai/index|Bio-AI]]
+- [[entities/target|Target]]
 - [[concepts/data/index|Data]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

@@ -21,6 +21,7 @@ In this wiki, SBDD concepts are reusable notes under [[research/structure-based-
 - [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
+- [[concepts/sbdd/template-leakage|Template leakage]]
 - [[entities/pocket|Pocket]]
 
 ## Task Map
@@ -39,6 +40,7 @@ where $P$ is a protein or pocket and $L$ is a ligand.
 - Are receptor and ligand inputs prepared consistently?
 - Are pose quality and binding affinity evaluated separately?
 - Does the benchmark split test scaffold, protein-family, temporal, or structure-level generalization?
+- Could training data or template databases leak a close protein, ligand, or bound complex into evaluation?
 - Are invalid generated structures filtered before ranking claims?
 
 ## Related

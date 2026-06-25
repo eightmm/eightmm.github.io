@@ -17,6 +17,7 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 - [[concepts/protein-modeling/pocket-representation|Pocket representation]]
 - [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
+- [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 
