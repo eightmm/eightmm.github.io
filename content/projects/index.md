@@ -17,12 +17,17 @@ Project pages should describe public goals, interfaces, design decisions, and re
 - LLM Wiki and knowledge-base tooling.
 - Agent-assisted research and coding workflows.
 
-## Suggested Pages
+## Project Notes
 
-- AutoDock-GPU virtual screening pipeline.
-- Slurm GPU TUI.
-- MambaFold development notes.
-- LLM Wiki blog setup.
+- [[projects/llm-wiki-blog|LLM Wiki blog]]
+- [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
+- [[projects/hpc-research-workflows|HPC research workflows]]
+
+## Future Candidates
+
+- Structure-based screening pipeline.
+- Protein-modeling experiment template.
+- Slurm/GPU monitoring utility.
 - Agent workflow notes for research engineering.
 
 ## Related

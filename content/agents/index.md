@@ -25,6 +25,7 @@ This section should stay practical: what the agent is useful for, where it fails
 - [[agents/coding-agents|Coding agents]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
 - [[agents/multi-agent-review|Multi-agent review]]
+- [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 
 ## Writing Rules
 

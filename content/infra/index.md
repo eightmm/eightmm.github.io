@@ -16,6 +16,7 @@ tags:
 
 - [[infra/gpu|GPU]]
 - [[infra/hpc/slurm|Slurm]]
+- [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 
 ## Training and Serving
@@ -31,4 +32,5 @@ tags:
 
 - [[agents/llm-wiki|LLM Wiki]]
 - [[projects/index|Project index]]
+- [[projects/hpc-research-workflows|HPC research workflows]]
 - [[concepts/evaluation/index|Evaluation]]

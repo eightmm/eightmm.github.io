@@ -35,5 +35,7 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 
 - [[agents/coding-agents|Coding agents]]
 - [[agents/llm-wiki|LLM Wiki]]
+- [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
+- [[papers/paper-note-format|Paper note format]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]

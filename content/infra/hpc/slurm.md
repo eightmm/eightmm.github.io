@@ -34,6 +34,7 @@ scancel <job-id>
 
 ## Related
 
+- [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[projects/index|Project index]]
