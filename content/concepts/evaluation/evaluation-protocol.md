@@ -26,6 +26,7 @@ where $\mathcal{D}$ is the dataset, $s$ is the split rule, $f_\theta$ is the tra
 - Split rule: random, temporal, scaffold, protein-family, source-based, or other grouped split; record it as a [[concepts/data/dataset-split-contract|dataset split contract]].
 - Training rule: objective, model selection, early stopping, and hyperparameter search space.
 - Metric rule: primary metric, secondary diagnostics, confidence intervals, and aggregation.
+- Failure rule: how invalid, unsupported, uncertain, or system-failed outputs are counted.
 - Claim boundary: what population, task, and deployment setting the result supports.
 
 ## Model Selection vs Final Test
@@ -63,6 +64,7 @@ The protocol should match the claim:
 - Is the split unit aligned with the generalization claim?
 - Are preprocessing steps fit only on train data?
 - Is the primary metric named before looking at results?
+- Are failure modes named before error analysis?
 - Are uncertainty, calibration, and error analysis included when decisions depend on confidence?
 - Are limitations stated as part of the result?
 
@@ -71,6 +73,8 @@ The protocol should match the claim:
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]

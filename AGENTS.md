@@ -96,6 +96,8 @@ Chem-bio notes should preserve data semantics: standardize molecules before dedu
 
 Data notes should define example unit, split unit, preprocessing contract, label semantics, and dataset-card style limitations before adding model claims. Do not treat a row identifier as the split unit unless the note explains why that matches the generalization claim.
 
+Evaluation notes should separate primary metrics from diagnostics and should name failure modes explicitly. When adding task or evaluation notes, connect output space, metric selection, failure mode taxonomy, split rule, uncertainty, and leakage risk before making model-quality claims.
+
 Infra and HPC notes should be general research-engineering knowledge, not a map of any private cluster. For new HPC notes, prefer generic concepts such as resource scheduling, resource requests, job arrays, checkpointing, preemption/resume, GPU memory, storage IO, environment management, and reproducible run records. Update `content/infra/index.md`, the relevant `content/infra/hpc/` or `content/infra/server-ops/` index, and `content/concepts/systems/index.md` when the concept belongs to AI systems.
 
 Experiment and run notes should connect question, hypothesis, design, run, artifact, analysis, and claim. For new experiment workflow notes, update `content/concepts/systems/experiment-lifecycle.md`, `content/concepts/systems/run-artifact.md`, `content/concepts/research-methodology/index.md`, and the nearest public gateway when relevant. Public notes should describe artifact fields and decisions, not private paths, raw internal logs, hostnames, unpublished metrics, or internal task names.

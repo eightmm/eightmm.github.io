@@ -56,6 +56,8 @@ For example, a generated molecule string can be scored by token loss, validity, 
 
 The output space should be interpreted together with [[concepts/modalities/modality-task-map|Modality-task map]], because the same raw modality can produce a class, scalar, ranking, sequence, mask, graph, coordinates, or action depending on the task.
 
+Changing the output space usually changes [[concepts/evaluation/metric-selection|Metric selection]] and the relevant [[concepts/evaluation/failure-mode-taxonomy|failure modes]].
+
 ## Checks
 
 - What exactly is one target output?
@@ -74,4 +76,6 @@ The output space should be interpreted together with [[concepts/modalities/modal
 - [[concepts/tasks/sequence-generation|Sequence generation]]
 - [[concepts/tasks/retrieval|Retrieval]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]

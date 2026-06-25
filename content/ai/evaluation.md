@@ -35,6 +35,8 @@ $$
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
@@ -75,6 +77,8 @@ $$
 - train/test split이 실제 generalization을 요구하는가?
 - evaluation protocol이 metric, split, model selection, final test를 분리하는가?
 - metric이 task objective와 맞는가?
+- primary metric과 diagnostic metric이 분리되어 있는가?
+- failure mode가 wrong output, invalid output, miscalibration, OOD, system failure처럼 분해되어 있는가?
 - 결과 차이가 confidence interval이나 seed variance보다 충분히 큰가?
 - confidence, probability quality, calibration이 필요한 application인가?
 - uncertainty, robustness, interpretability 중 어떤 진단이 필요한가?
@@ -85,3 +89,4 @@ $$
 - [[ai/learning-methods|Learning methods]]
 - [[bio-ai/index|Bio-AI]]
 - [[papers/index|Papers]]
+- [[concepts/modalities/modality-task-map|Modality-task map]]

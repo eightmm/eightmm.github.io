@@ -8,7 +8,7 @@ tags:
 
 # Error Analysis
 
-Error analysis studies where and why a model fails. It turns a single aggregate metric into actionable failure categories.
+Error analysis studies where and why a model fails. It turns a single aggregate metric into actionable failure categories using [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]].
 
 For a dataset partitioned into groups $G_1,\ldots,G_K$, group risk is:
 
@@ -41,6 +41,8 @@ Aggregate performance can hide large group-specific failures.
 ## Related
 
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/evaluation/activity-cliff|Activity cliff]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/robustness|Robustness]]

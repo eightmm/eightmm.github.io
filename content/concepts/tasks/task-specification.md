@@ -26,9 +26,9 @@ where $\mathcal{X}$ is the input space, $\mathcal{Y}$ is the [[concepts/tasks/ta
 - Output: class, scalar, rank, retrieved set, sequence, mask, box, graph, coordinate object, answer, or action.
 - Validity: syntax, geometry, schema, label space, constraints, or safety boundary.
 - Loss: what is optimized during training.
-- Metric: what is reported during evaluation.
+- Metric: what is reported during evaluation, selected with [[concepts/evaluation/metric-selection|Metric selection]].
 - Split: what generalization claim the result supports.
-- Failure mode: invalid output, wrong output, unsupported output, missing evidence, or low-confidence output.
+- Failure mode: invalid output, wrong output, unsupported output, missing evidence, or low-confidence output, using [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]].
 
 ## Why It Matters
 
@@ -54,4 +54,6 @@ The task should also be checked against [[concepts/modalities/modality-task-map|
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/modalities/index|Modalities]]

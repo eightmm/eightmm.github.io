@@ -368,7 +368,10 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Evaluation
 
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]

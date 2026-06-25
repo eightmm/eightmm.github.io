@@ -49,6 +49,8 @@ $$
 
 where $\mathcal{X}_{\mathrm{raw}}$ is the raw input space, $\phi$ is preprocessing or representation, $\mathcal{Y}$ is the output space, $v$ is the validity rule, $\mathcal{L}$ is the training loss, $\mathcal{M}$ is the metric set, and $s$ is the split rule.
 
+The metric set $\mathcal{M}$ should be chosen with [[concepts/evaluation/metric-selection|Metric selection]], and failure cases should be named with [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]].
+
 ## Evaluation Implications
 
 The same modality can support very different metrics:
@@ -69,6 +71,7 @@ For example, an image can produce a class, box, mask, caption, embedding, or ret
 - What outputs are invalid and how are they handled?
 - Does the loss match the output space?
 - Does the metric match the user-facing behavior?
+- What failure modes are expected and counted?
 - Does the split rule prevent modality-specific leakage?
 - Does the architecture match the structure of the representation rather than the name of the task?
 
@@ -83,4 +86,6 @@ For example, an image can produce a class, box, mask, caption, embedding, or ret
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/architectures/architecture-selection|Architecture selection]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/evaluation/leakage|Leakage]]

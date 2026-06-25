@@ -38,6 +38,7 @@ $$
 ## Checks
 
 - Does the metric match the scientific or product decision?
+- Has the metric been selected using [[concepts/evaluation/metric-selection|Metric selection]] rather than habit?
 - Is higher or lower better, and is the scale interpretable?
 - Does class imbalance require AUROC, AUPRC, balanced accuracy, or calibration?
 - Are hard-decision, ranking, probability, and calibration metrics being mixed?
@@ -47,6 +48,7 @@ $$
 ## Related
 
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
