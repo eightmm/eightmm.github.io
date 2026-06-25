@@ -12,10 +12,22 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 
 ## 큰 축
 
+- Machine Learning: 예측 문제, feature, loss, regularization, validation을 다루는 기본 층
 - Architecture: 모델이 정보를 흘려보내는 구조
 - Learning: 어떤 supervision이나 objective로 표현을 학습하는지
 - Generation: 데이터를 만들거나 변환하는 방식
 - Evaluation: 모델이 실제로 일반화했는지 확인하는 방식
+
+## Machine Learning
+
+Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기 전에도 problem type, feature, loss, optimization, regularization, validation을 구분해야 합니다.
+
+- [[ai/machine-learning|Machine learning gateway]]
+- [[concepts/machine-learning/index|Machine learning]]
+- [[concepts/machine-learning/linear-model|Linear model]]
+- [[concepts/machine-learning/tree-based-model|Tree-based model]]
+- [[concepts/machine-learning/kernel-method|Kernel method]]
+- [[concepts/machine-learning/regularization|Regularization]]
 
 ## Architectures
 

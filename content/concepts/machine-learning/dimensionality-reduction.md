@@ -1,0 +1,34 @@
+---
+title: Dimensionality Reduction
+tags:
+  - machine-learning
+---
+
+# Dimensionality Reduction
+
+Dimensionality reduction maps high-dimensional data into a smaller representation while trying to preserve useful structure.
+
+## Uses
+
+- Visualization.
+- Noise reduction.
+- Feature compression.
+- Representation analysis.
+
+## Common Methods
+
+- PCA preserves directions of high variance.
+- t-SNE and UMAP are often used for visualization.
+- Autoencoders learn nonlinear compressed representations.
+
+## Watch For
+
+- A 2D visualization is not proof of separability.
+- Neighborhood structure can be distorted.
+- Fitting reduction before splitting data can leak information.
+
+## Related
+
+- [[concepts/machine-learning/clustering|Clustering]]
+- [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/learning/self-supervised-learning|Self-supervised learning]]

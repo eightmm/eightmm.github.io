@@ -27,6 +27,16 @@ Concept notes define reusable terms used across research notes, paper summaries,
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[concepts/architectures/mamba|Mamba]]
 
+## Machine Learning
+
+- [[concepts/machine-learning/index|Machine learning]]
+- [[concepts/machine-learning/linear-model|Linear model]]
+- [[concepts/machine-learning/tree-based-model|Tree-based model]]
+- [[concepts/machine-learning/kernel-method|Kernel method]]
+- [[concepts/machine-learning/ensemble-method|Ensemble method]]
+- [[concepts/machine-learning/regularization|Regularization]]
+- [[concepts/machine-learning/optimization|Optimization]]
+
 ## Structure-Based AI
 
 - [[concepts/sbdd/scoring-function|Scoring function]]
