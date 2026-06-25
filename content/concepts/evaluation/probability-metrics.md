@@ -25,6 +25,8 @@ This is the same mathematical form as a [[concepts/machine-learning/negative-log
 
 ## Brier Score
 
+See [[concepts/evaluation/brier-score|Brier score]] for the standalone note.
+
 For binary labels $y_i\in\{0,1\}$ and predicted probability $p_i=p_\theta(y=1\mid x_i)$:
 
 $$
@@ -50,6 +52,8 @@ where $p_{ik}$ is the predicted probability for class $k$ and $y_{ik}$ is the on
 
 ## Proper Scoring Rule
 
+See [[concepts/evaluation/proper-scoring-rule|Proper scoring rule]] for the standalone note.
+
 A proper scoring rule rewards honest probabilities: the expected score is optimized when the predicted distribution equals the true conditional distribution.
 
 For a scoring rule $S(p,y)$, propriety means:
@@ -68,6 +72,7 @@ for a loss-style score where lower is better. NLL and Brier score are common pro
 
 - Loss: used to update parameters during training.
 - Probability metric: computed on validation or test data to evaluate probabilistic predictions.
+- [[concepts/evaluation/proper-scoring-rule|Proper scoring rule]]: rewards honest probability estimates.
 - [[concepts/evaluation/calibration|Calibration]]: asks whether predicted confidence matches empirical frequency.
 - [[concepts/evaluation/threshold-selection|Threshold selection]]: converts probabilities into decisions.
 - [[concepts/evaluation/selective-prediction|Selective prediction]]: evaluates accept/abstain behavior as confidence thresholds change.
@@ -87,6 +92,8 @@ A model can have good accuracy but poor NLL if it is overconfident on errors. It
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
 - [[concepts/machine-learning/decision-rule|Decision rule]]
+- [[concepts/evaluation/proper-scoring-rule|Proper scoring rule]]
+- [[concepts/evaluation/brier-score|Brier score]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]

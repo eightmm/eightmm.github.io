@@ -54,6 +54,7 @@ Uncertainty should be evaluated against a decision:
 
 - Abstention: are uncertain examples more likely to be wrong?
 - Selective prediction: does risk decrease as the system accepts fewer examples?
+- Conformal prediction: do prediction sets or intervals achieve the target coverage?
 - Active learning: do queried examples improve the model efficiently?
 - OOD detection: does uncertainty increase under shift?
 - Risk ranking: do high-risk predictions receive larger uncertainty?
@@ -72,6 +73,7 @@ Uncertainty should be evaluated against a decision:
 
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/calibration|Calibration]]
+- [[concepts/evaluation/conformal-prediction|Conformal prediction]]
 - [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]

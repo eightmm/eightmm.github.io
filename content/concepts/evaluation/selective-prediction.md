@@ -92,6 +92,7 @@ This is why selective prediction should be evaluated with the deployment decisio
 - Molecular or protein screens that escalate uncertain predictions to expensive validation.
 - Agent systems that ask for confirmation before high-impact actions.
 - OOD-sensitive systems that reject examples outside the [[concepts/evaluation/applicability-domain|applicability domain]].
+- Prediction-set systems where [[concepts/evaluation/conformal-prediction|Conformal prediction]] returns multiple candidates instead of one.
 
 ## Checks
 
@@ -105,6 +106,7 @@ This is why selective prediction should be evaluated with the deployment decisio
 ## Related
 
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
+- [[concepts/evaluation/conformal-prediction|Conformal prediction]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
 - [[concepts/evaluation/probability-metrics|Probability metrics]]
