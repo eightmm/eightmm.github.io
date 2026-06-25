@@ -26,16 +26,21 @@ Inbox triage decides whether a raw candidate becomes a paper note, concept note,
 - Clean work record: [[logs/index|Public logs]]
 - Korean narrative: [[posts/index|Posts]]
 
+If the destination is unclear, keep the item in [[inbox/curation-queue|Curation queue]] with a concrete next action rather than creating a weak page.
+
 ## Checks
 
 - Do not promote raw agent output without verification.
 - Do not create a new page when an existing page only needs a short update.
 - Mark unresolved metadata as `to verify`.
+- Pass [[inbox/publishing-gate|Publishing gate]] before public promotion.
 - Delete or keep private anything that cannot be safely generalized.
 
 ## Related
 
 - [[inbox/index|Inbox]]
+- [[inbox/curation-queue|Curation queue]]
+- [[inbox/publishing-gate|Publishing gate]]
 - [[papers/reading-status|Reading status]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

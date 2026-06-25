@@ -31,10 +31,12 @@ Sanitization converts private working notes into public notes. The goal is to ke
 - Would a collaborator be comfortable seeing the context public?
 - Does the note avoid security-sensitive configuration?
 - Are uncertain claims marked as unresolved?
+- Has the note passed [[inbox/publishing-gate|Publishing gate]] before promotion?
 
 ## Related
 
 - [[logs/public-log-format|Public log format]]
+- [[inbox/publishing-gate|Publishing gate]]
 - [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[infra/index|Infra]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|Blog and wiki workflow]]

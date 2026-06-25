@@ -49,6 +49,7 @@ tags:
 - [[infra/gpu-memory|GPU memory]] 문제를 parameters, activations, optimizer state, KV cache로 나눠 보는 법
 - [[concepts/systems/checkpoint-state|Checkpoint state]]와 [[concepts/systems/failure-recovery|failure recovery]]를 긴 training run의 기본 설계로 보는 법
 - [[concepts/systems/batch-online-inference|Batch and online inference]]를 throughput/latency 관점에서 나눠 보는 법
+- [[logs/public-incident-note|Public incident note]]로 운영 실패를 공개 가능한 lesson으로 바꾸는 법
 - [[infra/reproducible-run-record|Reproducible run record]]를 왜 연구 로그와 연결해야 하는가
 
 ## Agents
@@ -56,6 +57,7 @@ tags:
 - [[agents/core/agent-architecture|Agent architecture]]를 model, state, tools, memory, verifier로 나눠 보는 법
 - [[agents/core/task-decomposition|Task decomposition]]과 [[agents/workflows/agent-handoff|agent handoff]]로 긴 작업을 끊어 넘기는 법
 - [[agents/workflows/agent-runbook|Agent runbook]]으로 반복되는 논문/블로그/wiki 작업을 표준화하는 법
+- [[inbox/curation-queue|Curation queue]]와 [[inbox/publishing-gate|publishing gate]]로 agent output을 공개 note로 승격하는 법
 - [[agents/tools/tool-contract|Tool contract]]가 agent 안정성에 중요한 이유
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]로 논문 후보를 모으고 검증하는 흐름
 - [[agents/verification/verification-loop|Verification loop]]가 agent output보다 중요한 이유

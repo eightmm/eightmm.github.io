@@ -44,4 +44,5 @@ Project pages should describe public goals, interfaces, design decisions, and re
 - [[infra/hpc/slurm|Slurm]]
 - [[logs/index|Public logs]]
 - [[logs/public-log-format|Public log format]]
+- [[inbox/publishing-gate|Publishing gate]]
 - [[agents/index|Agents]]

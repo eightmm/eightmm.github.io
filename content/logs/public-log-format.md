@@ -18,6 +18,8 @@ A public log is a cleaned record of work that is safe to publish. It should pres
 - General lesson: what can be reused later.
 - Links: related project, infra, concept, or paper notes.
 
+For operational failures, use [[logs/public-incident-note|Public incident note]].
+
 ## Minimal Template
 
 ```markdown
@@ -58,6 +60,7 @@ Generic, public context only.
 ## Related
 
 - [[logs/index|Public logs]]
+- [[logs/public-incident-note|Public incident note]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
 - [[infra/reproducible-run-record|Reproducible run record]]
 - [[projects/project-milestone-format|Project milestone format]]
