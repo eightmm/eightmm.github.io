@@ -8,6 +8,10 @@ tags:
 
 Entity notes define the objects that appear across molecular AI and protein modeling.
 
+## Map
+
+- [[entities/entity-relation-map|Entity relation map]]
+
 ## Biological and Chemical Objects
 
 - [[entities/protein|Protein]]
@@ -26,7 +30,9 @@ Entity notes define the objects that appear across molecular AI and protein mode
 
 ## Related
 
+- [[bio-ai/index|Bio-AI]]
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/protein-modeling/index|Protein modeling]]
+- [[concepts/data/index|Data]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/evaluation/index|Evaluation]]

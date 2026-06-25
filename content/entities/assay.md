@@ -15,6 +15,7 @@ An assay is an experimental measurement that links a biological or chemical setu
 - Assay conditions define what a molecular activity label actually means.
 - Similar molecules can have labels from incompatible protocols or target contexts.
 - Dataset construction should preserve assay identity when possible.
+- The same molecule-target pair can have conflicting labels across protocols or sources.
 
 ## Checks
 
@@ -22,9 +23,11 @@ An assay is an experimental measurement that links a biological or chemical setu
 - Are labels from different assay types mixed as if they were comparable?
 - Is the task predicting assay response, binding, toxicity, or a proxy endpoint?
 - Does the train/test split leak through repeated molecules or shared assay batches?
+- Are censored or thresholded values handled as such, instead of point labels?
 
 ## Related
 
+- [[entities/entity-relation-map|Entity relation map]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[concepts/evaluation/negative-set|Negative set]]
 - [[entities/molecule|Molecule]]

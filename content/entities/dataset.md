@@ -21,9 +21,12 @@ A dataset is a curated collection of examples, labels, metadata, and splits used
 - Are duplicate molecules, protein families, or near-identical structures separated?
 - Does the split match the intended generalization setting?
 - Are missing labels, censored measurements, and assay metadata handled explicitly?
+- Is the split key the same entity that defines the intended generalization claim?
+- Is label provenance kept with each row?
 
 ## Related
 
+- [[entities/entity-relation-map|Entity relation map]]
 - [[concepts/data/index|Data]]
 - [[concepts/data/data-curation|Data curation]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]

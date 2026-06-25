@@ -53,6 +53,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Entity Concepts
 
 - [[entities/index|Entities]]
+- [[entities/entity-relation-map|Entity relation map]]
 - [[entities/protein|Protein]]
 - [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
