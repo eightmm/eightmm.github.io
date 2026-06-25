@@ -10,6 +10,8 @@ tags:
 
 An evidence table maps each paper claim to the experiment, metric, baseline, and limitation that support it. It prevents a paper note from becoming a list of ungrounded impressions.
 
+For your own experiments, use the same habit through a [[concepts/research-methodology/claim-evidence-record|Claim evidence record]].
+
 The core relation is:
 
 $$
@@ -64,6 +66,7 @@ This is not a scientific score; it is a checklist for whether the paper gives en
 ## Related
 
 - [[papers/claim-extraction|Claim extraction]]
+- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[papers/paper-note-format|Paper note format]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/limitation-taxonomy|Limitation taxonomy]]

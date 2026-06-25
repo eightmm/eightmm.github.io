@@ -29,6 +29,7 @@ where each element should be versioned or marked `to verify`.
 - Checkpoint: model weights plus optimizer and scheduler state when resume matters.
 - Environment: package versions, accelerator/runtime assumptions, and container or lockfile.
 - Notes: hypothesis, expected outcome, observed result, interpretation, and next decision.
+- Claim support: which public claim, if any, the artifact can support.
 
 ## Minimal Public Bundle
 
@@ -51,6 +52,7 @@ Public blog notes should usually publish the shape of the artifact bundle, not p
 - Can the run resume from checkpoint state if interruption matters?
 - Are failed runs recorded without exposing private infrastructure?
 - Are artifacts tied to a code version, config, data version, and seed policy?
+- Is the artifact linked to a [[concepts/research-methodology/claim-evidence-record|claim evidence record]] when used in a public claim?
 - Is every missing artifact marked `to verify`, `not released`, or `not applicable`?
 
 ## Related
@@ -60,6 +62,7 @@ Public blog notes should usually publish the shape of the artifact bundle, not p
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
+- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[papers/artifact-availability|Artifact availability]]
 - [[infra/reproducible-run-record|Reproducible run record]]
 - [[logs/public-log-format|Public log format]]

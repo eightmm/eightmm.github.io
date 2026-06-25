@@ -42,7 +42,7 @@ $$
 (\text{question}, \text{hypothesis}, \text{design}, \text{run record}, \text{artifacts}, \text{analysis})
 $$
 
-The claim should become weaker when any upstream piece is missing. A result without split details is weaker than a result with a recorded [[concepts/data/dataset-split-contract|Dataset split contract]]. A metric without predictions is weaker than a metric with saved [[concepts/systems/run-artifact|Run artifacts]].
+The claim should become weaker when any upstream piece is missing. A result without split details is weaker than a result with a recorded [[concepts/data/dataset-split-contract|Dataset split contract]]. A metric without predictions is weaker than a metric with saved [[concepts/systems/run-artifact|Run artifacts]]. A public result should be summarized through a [[concepts/research-methodology/claim-evidence-record|Claim evidence record]] before being promoted into a stronger statement.
 
 ## Checks
 
@@ -61,6 +61,7 @@ The claim should become weaker when any upstream piece is missing. A result with
 - [[concepts/research-methodology/experiment-design|Experiment design]]
 - [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]]
 - [[concepts/research-methodology/threat-to-validity|Threat to validity]]
+- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[concepts/systems/training-run|Training run]]
 - [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]

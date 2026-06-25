@@ -39,6 +39,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
+- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
 
 ## Checks

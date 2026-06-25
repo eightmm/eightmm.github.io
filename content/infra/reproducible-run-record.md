@@ -20,6 +20,7 @@ A reproducible run record captures enough public metadata to understand what was
 - Environment: high-level software stack.
 - Output: artifact type, not private path.
 - Outcome: completed, failed, interrupted, or superseded.
+- Claim support: public claim or `not used for a claim`.
 - Reconciliation: final scheduler/artifact/log state when the run used shared compute.
 
 ## Reproducibility Equation
@@ -53,4 +54,5 @@ If any component changes, the run identity changes.
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
+- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[agents/verification/verification-loop|Verification loop]]

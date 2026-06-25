@@ -10,6 +10,8 @@ tags:
 
 Result interpretation compares what happened with what was predicted before the run. A result is not just a number; it is evidence for or against a hypothesis under a stated protocol.
 
+When a result is used publicly, summarize the supported statement with a [[concepts/research-methodology/claim-evidence-record|Claim evidence record]].
+
 The basic comparison is:
 
 $$
@@ -37,6 +39,7 @@ $$
 ## Related
 
 - [[papers/claim-extraction|Claim extraction]]
+- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[concepts/research-methodology/negative-result|Negative result]]
 - [[concepts/research-methodology/experiment-ledger|Experiment ledger]]
 - [[concepts/research-methodology/research-log|Research log]]

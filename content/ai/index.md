@@ -227,6 +227,7 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
+- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[infra/index|Infra]]
 
 ## Geometry and Scientific AI
