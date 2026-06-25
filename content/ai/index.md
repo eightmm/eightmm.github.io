@@ -35,12 +35,12 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 
 아키텍처 노트는 입력의 형태와 inductive bias를 기준으로 봅니다. 이미지, sequence, graph, structure, set처럼 데이터가 달라지면 좋은 기본 구조도 달라집니다.
 
-- [[ai/architectures|Architecture gateway]]
-- [[concepts/architectures/index|Architectures]]
+- [[ai/architectures|아키텍처 지도]]
+- [[concepts/architectures/cnn|CNN]]
+- [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/state-space-model|State-space models]]
-- [[concepts/architectures/mamba|Mamba]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
 
 ## Learning Methods

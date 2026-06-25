@@ -24,9 +24,13 @@ Concept notes define reusable terms used across research notes, paper summaries,
 - [[concepts/architectures/residual-connection|Residual connection]]
 - [[concepts/architectures/mlp|MLP]]
 - [[concepts/architectures/cnn|CNN]]
+- [[concepts/architectures/residual-network|Residual network]]
+- [[concepts/architectures/u-net|U-Net]]
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/gnn|Graph neural networks]]
+- [[concepts/architectures/deep-sets|Deep Sets]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/vision-transformer|Vision Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[concepts/architectures/mamba|Mamba]]
 

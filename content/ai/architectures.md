@@ -19,24 +19,63 @@ $$
 
 예를 들어 CNN은 locality와 translation equivariance를 강하게 가정하고, GNN은 graph connectivity와 permutation invariance/equivariance를 가정합니다.
 
-## 핵심 노트
+## 기본 구성요소
 
-- [[concepts/architectures/index|Architecture index]]
+딥러닝 아키텍처를 읽을 때 먼저 봐야 하는 building block입니다.
+
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/architectures/activation-function|Activation function]]
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/residual-connection|Residual connection]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/softmax|Softmax]]
+- [[concepts/architectures/dropout|Dropout]]
+
+## Dense and Feed-Forward
+
+고정 길이 vector나 이미 만들어진 feature를 처리하는 가장 기본적인 계열입니다.
+
 - [[concepts/architectures/mlp|MLP]]
+
+## Grid, Image, and Voxel Models
+
+locality와 weight sharing이 중요한 입력에 적합합니다. 이미지뿐 아니라 contact map, voxelized structure, spatial grid에도 연결됩니다.
+
 - [[concepts/architectures/cnn|CNN]]
+- [[concepts/architectures/residual-network|Residual network]]
+- [[concepts/architectures/u-net|U-Net]]
+- [[concepts/architectures/vision-transformer|Vision Transformer]]
+
+## Sequence Models
+
+token, residue, text, time series처럼 순서가 있는 입력을 다룹니다.
+
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/transformer|Transformer]]
-- [[concepts/architectures/attention|Attention]]
-- [[concepts/architectures/gnn|Graph neural networks]]
-- [[concepts/architectures/graph-transformer|Graph transformer]]
 - [[concepts/architectures/state-space-model|State-space model]]
 - [[concepts/architectures/mamba|Mamba]]
+
+Mamba는 별도 대분류가 아니라 [[concepts/architectures/state-space-model|state-space model]] 계열의 selective SSM으로 봅니다.
+
+## Attention and Encoder-Decoder Patterns
+
+sequence, graph, multimodal input을 섞는 공통 패턴입니다.
+
+- [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/encoder-decoder|Encoder-decoder]]
+
+## Set and Graph Models
+
+순서가 없거나 관계 구조가 중요한 객체를 다룹니다.
+
+- [[concepts/architectures/deep-sets|Deep Sets]]
+- [[concepts/architectures/gnn|Graph neural networks]]
+- [[concepts/architectures/graph-transformer|Graph transformer]]
+
+## Sparse and Routed Models
+
+모든 parameter를 항상 쓰지 않고 routing이나 sparsity를 활용합니다.
+
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
 
 ## 읽을 때 볼 질문

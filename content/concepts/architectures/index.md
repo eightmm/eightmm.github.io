@@ -26,20 +26,33 @@ The same training objective can behave very differently depending on whether $\m
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/softmax|Softmax]]
 - [[concepts/architectures/dropout|Dropout]]
-- [[concepts/architectures/mlp|MLP]]
-- [[concepts/architectures/attention|Attention]]
-- [[concepts/architectures/encoder-decoder|Encoder-decoder]]
 
-## Spatial and Sequential Models
+## Dense and Feed-Forward Models
+
+- [[concepts/architectures/mlp|MLP]]
+
+## Grid, Image, and Voxel Models
 
 - [[concepts/architectures/cnn|CNN]]
+- [[concepts/architectures/residual-network|Residual network]]
+- [[concepts/architectures/u-net|U-Net]]
+- [[concepts/architectures/vision-transformer|Vision Transformer]]
+
+## Sequence Models
+
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
-- [[concepts/architectures/mamba|Mamba]]
+- [[concepts/architectures/mamba|Mamba]] as a selective state-space model
 
-## Graph and Sparse Models
+## Attention and Encoder-Decoder Patterns
 
+- [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/encoder-decoder|Encoder-decoder]]
+
+## Set, Graph, and Sparse Models
+
+- [[concepts/architectures/deep-sets|Deep Sets]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
 - [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
