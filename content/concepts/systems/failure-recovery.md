@@ -50,12 +50,15 @@ Do not include private paths, hostnames, account names, credentials, or unpublis
 - Does the retry policy avoid hiding systematic errors?
 - Can failures be summarized publicly without leaking internal infrastructure?
 - Is terminal job state reconciled before retrying or claiming recovery?
+- Is the recovery plan tied to a backup, checkpoint, or last-known-good artifact?
 
 ## Related
 
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/systems/observability|Observability]]
+- [[infra/server-ops/incident-response|Incident response]]
+- [[infra/server-ops/backup-restore|Backup and restore]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]

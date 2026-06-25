@@ -96,6 +96,7 @@ tags:
 - [[concepts/systems/batch-online-inference|Batch and online inference]]를 throughput/latency 관점에서 나눠 보는 법
 - [[concepts/systems/model-card|Model card]]와 [[concepts/systems/inference-contract|inference contract]]로 모델 artifact를 공개 가능한 사용 경계까지 설명하는 법
 - [[logs/public-incident-note|Public incident note]]로 운영 실패를 공개 가능한 lesson으로 바꾸는 법
+- [[infra/server-ops/incident-response|Incident response]], [[infra/server-ops/backup-restore|backup and restore]], [[infra/server-ops/access-boundary|access boundary]]를 서버 운영 글의 기본 runbook으로 쓰는 법
 - [[infra/reproducible-run-record|Reproducible run record]]를 왜 연구 로그와 연결해야 하는가
 
 ## Agents

@@ -46,12 +46,14 @@ $$
 - Are failures classified rather than only recorded?
 - Is public logging sanitized before it enters notes or dashboards?
 - Can job state, logs, and artifacts be reconciled into one final outcome?
+- Does each alert imply an owner and an action?
 
 ## Related
 
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/training-run|Training run]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
+- [[infra/server-ops/incident-response|Incident response]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

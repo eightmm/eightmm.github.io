@@ -10,6 +10,16 @@ tags:
 
 Shared research machines mix local disks, network filesystems, and scratch space, each with different speed, persistence, and permission rules. Many "file not found" or "permission denied" failures are really an unmounted share or a group-ownership gap, not a code bug.
 
+A storage choice can be summarized by:
+
+$$
+\text{storage class}
+=
+(\text{latency}, \text{throughput}, \text{capacity}, \text{persistence}, \text{sharing})
+$$
+
+Training code should not treat these classes as interchangeable.
+
 ## Practical Checks
 
 - Confirm the expected path is actually mounted before debugging the program.
@@ -17,9 +27,13 @@ Shared research machines mix local disks, network filesystems, and scratch space
 - Use group ownership and the setgid bit so shared directories stay writable by the team.
 - Watch quota and free space — silent write failures often trace to a full volume.
 - Use placeholders such as `/path/to/project` in public notes; never publish real topology.
+- Record whether an artifact is durable, scratch, recomputable, or backed up.
+- Test restore for irreplaceable metadata instead of assuming a copy is usable.
 
 ## Related
 
 - [[infra/server-ops/index|Server operations]]
+- [[infra/server-ops/backup-restore|Backup and restore]]
+- [[infra/server-ops/access-boundary|Access boundary]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/index|Infra]]
