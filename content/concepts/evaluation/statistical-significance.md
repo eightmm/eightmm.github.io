@@ -10,6 +10,8 @@ tags:
 
 Statistical significance asks whether an observed difference is larger than what could plausibly arise from evaluation noise under a null hypothesis.
 
+The mathematical testing procedure is summarized in [[concepts/math/hypothesis-testing|hypothesis testing]]. This note focuses on how that idea should be interpreted in model evaluation.
+
 For two models $A$ and $B$, the important quantity is often the metric difference:
 
 $$
@@ -54,6 +56,7 @@ $$
 ## Related
 
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/math/hypothesis-testing|Hypothesis testing]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]

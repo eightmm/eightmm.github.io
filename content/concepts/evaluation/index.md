@@ -40,6 +40,8 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/math/statistical-estimator|Statistical estimator]]
+- [[concepts/math/central-limit-theorem|Central limit theorem]]
+- [[concepts/math/hypothesis-testing|Hypothesis testing]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]

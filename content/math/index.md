@@ -34,13 +34,16 @@ $$
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/math/random-variable|Random variable]]
 - [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/normal-distribution|Normal distribution]]
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/math/covariance-correlation|Covariance and correlation]]
+- [[concepts/math/central-limit-theorem|Central limit theorem]]
 - [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/math/bayes-rule|Bayes rule]]
 - [[concepts/math/statistical-estimator|Statistical estimator]]
+- [[concepts/math/hypothesis-testing|Hypothesis testing]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 
 ## Where It Connects
@@ -58,10 +61,10 @@ $$
 3. Use [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], and [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for gradients, curvature, and optimization.
 4. Use [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], and [[concepts/machine-learning/gradient-descent|gradient descent]] to connect formulas to training.
 5. Use [[concepts/math/random-variable|Random variable]], [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/expectation|Expectation]], and [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] for likelihood, loss, sampling, and estimates.
-6. Use [[concepts/math/covariance-correlation|Covariance and correlation]], [[concepts/math/statistical-estimator|Statistical estimator]], and [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]] when interpreting experiments.
+6. Use [[concepts/math/covariance-correlation|Covariance and correlation]], [[concepts/math/normal-distribution|Normal distribution]], [[concepts/math/central-limit-theorem|Central limit theorem]], [[concepts/math/statistical-estimator|Statistical estimator]], [[concepts/math/hypothesis-testing|Hypothesis testing]], and [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]] when interpreting experiments.
 7. Use [[concepts/math/maximum-likelihood|Maximum likelihood]] and [[concepts/math/entropy-kl|Entropy and KL divergence]] for generative models and representation learning.
 8. Use [[concepts/math/geometry|Geometry]] and [[concepts/math/symmetry-group|Symmetry group]] for graph, structure, molecule, and protein notes.
-9. Use [[concepts/evaluation/confidence-interval|Confidence interval]] when interpreting reported results.
+9. Use [[concepts/evaluation/confidence-interval|Confidence interval]] and [[concepts/evaluation/statistical-significance|Statistical significance]] when interpreting reported results.
 
 ## Related
 

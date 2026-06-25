@@ -29,13 +29,16 @@ $$
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/math/random-variable|Random variable]]
 - [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/normal-distribution|Normal distribution]]
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/math/covariance-correlation|Covariance and correlation]]
+- [[concepts/math/central-limit-theorem|Central limit theorem]]
 - [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/math/bayes-rule|Bayes rule]]
 - [[concepts/math/statistical-estimator|Statistical estimator]]
+- [[concepts/math/hypothesis-testing|Hypothesis testing]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 
 ## Checks

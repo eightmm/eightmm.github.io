@@ -84,6 +84,7 @@ Evaluation asks whether performance under a held-out or deployment distribution 
 ## Related
 
 - [[concepts/math/random-variable|Random variable]]
+- [[concepts/math/normal-distribution|Normal distribution]]
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/covariance-correlation|Covariance and correlation]]
