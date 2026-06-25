@@ -21,6 +21,7 @@ where $P$ is a protein or pocket, $L$ is a ligand, and $X$ is a candidate pose o
 ## Uses
 
 - Rank candidate poses from [[research/structure-based-ai/protein-ligand-docking|protein-ligand docking]].
+- Estimate or proxy [[concepts/sbdd/binding-affinity|binding affinity]].
 - Filter physically implausible structures.
 - Compare model outputs under a shared objective.
 
@@ -33,6 +34,10 @@ where $P$ is a protein or pocket, $L$ is a ligand, and $X$ is a candidate pose o
 
 ## Related
 
+- [[concepts/sbdd/index|Structure-based drug discovery]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/binding-affinity|Binding affinity]]
+- [[concepts/sbdd/virtual-screening|Virtual screening]]
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

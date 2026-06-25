@@ -24,6 +24,7 @@ Proteins are biological macromolecules represented as sequences, structures, sur
 
 ## Related
 
+- [[entities/pocket|Pocket]]
 - [[research/protein-modeling/index|Protein modeling]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[research/protein-modeling/mambafold|MambaFold]]

@@ -16,7 +16,7 @@ $$
 X^\* = \arg\min_X S(P, L, X)
 $$
 
-Here $P$ is the protein or pocket, $L$ is the ligand, $X$ is the ligand pose/conformation in the binding site, and $S$ is a scoring function. In learned methods, $S$ may be replaced or complemented by a generative model.
+Here $P$ is the protein or [[entities/pocket|pocket]], $L$ is the ligand, $X$ is the ligand pose/conformation in the binding site, and $S$ is a scoring function. In learned methods, $S$ may be replaced or complemented by a generative model.
 
 ## What Docking Produces
 
@@ -28,6 +28,7 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 - Ranking problem: use a [[concepts/sbdd/scoring-function|scoring function]] to order candidate poses.
 - Generative problem: directly sample plausible complex structures with learned geometry.
 - Evaluation problem: distinguish native-like poses from invalid or overfit predictions.
+- Screening problem: rank a ligand library for [[concepts/sbdd/virtual-screening|virtual screening]].
 
 ## Working Questions
 
@@ -56,13 +57,18 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 ## Practical Checks
 
 - Validate ligand identity, stereochemistry, bond lengths, clashes, and pocket overlap.
-- Report pose quality separately from affinity or enrichment metrics.
+- Report [[concepts/sbdd/pose-quality|pose quality]] separately from [[concepts/sbdd/binding-affinity|binding affinity]] or enrichment metrics.
 - Compare against classical docking baselines when possible.
 - Track whether evaluation uses crystal structures, predicted structures, apo structures, or sequence-only input.
 - Use [[papers/sbdd/posebusters|PoseBusters]]-style plausibility checks before claiming state-of-the-art structure generation.
 
 ## Related
 
+- [[entities/pocket|Pocket]]
+- [[concepts/sbdd/index|Structure-based drug discovery]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/binding-affinity|Binding affinity]]
+- [[concepts/sbdd/virtual-screening|Virtual screening]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]

@@ -21,6 +21,7 @@ $$
 ## 다루는 객체
 
 - [[entities/protein|Protein]]
+- [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
@@ -31,7 +32,11 @@ $$
 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/binding-affinity|Binding affinity]]
+- [[concepts/sbdd/virtual-screening|Virtual screening]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 
 ## Protein and Sequence Modeling

@@ -25,6 +25,8 @@ A ligand is a small molecule or molecular fragment considered as a binding partn
 
 ## Related
 
+- [[entities/pocket|Pocket]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
+- [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[papers/sbdd/posebusters|PoseBusters]]

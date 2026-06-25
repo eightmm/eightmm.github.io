@@ -12,6 +12,7 @@ Concept notes define reusable terms used across research notes, paper summaries,
 
 - [[entities/index|Entities]]
 - [[entities/protein|Protein]]
+- [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
@@ -58,7 +59,11 @@ Concept notes define reusable terms used across research notes, paper summaries,
 
 ## Structure-Based AI
 
+- [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/binding-affinity|Binding affinity]]
+- [[concepts/sbdd/virtual-screening|Virtual screening]]
 
 ## Generative Models
 

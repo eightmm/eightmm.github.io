@@ -39,10 +39,15 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 ## Topics
 
 - [[entities/protein|Protein]]
+- [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/binding-affinity|Binding affinity]]
+- [[concepts/sbdd/virtual-screening|Virtual screening]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 
 ## Evaluation Anchors

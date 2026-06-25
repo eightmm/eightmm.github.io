@@ -11,6 +11,7 @@ Entity notes define the objects that appear across molecular AI and protein mode
 ## Biological and Chemical Objects
 
 - [[entities/protein|Protein]]
+- [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]

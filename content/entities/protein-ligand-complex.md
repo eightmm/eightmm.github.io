@@ -26,5 +26,8 @@ A protein-ligand complex combines a protein binding site, ligand conformation, a
 ## Related
 
 - [[entities/protein|Protein]]
+- [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]

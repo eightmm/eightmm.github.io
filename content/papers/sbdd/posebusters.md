@@ -64,6 +64,7 @@ For this site, PoseBusters is the first evaluation anchor for [[research/structu
 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
