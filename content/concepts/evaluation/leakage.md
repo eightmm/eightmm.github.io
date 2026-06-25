@@ -31,6 +31,8 @@ The subscript means exact row overlap is not enough; near-duplicates, shared gro
 
 ## Related
 
+- [[concepts/data/data-schema|Data schema]]
+- [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]

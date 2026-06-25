@@ -22,10 +22,14 @@ Training and evaluation are only meaningful when this empirical distribution is 
 ## Topics
 
 - [[entities/dataset|Dataset]]
+- [[concepts/data/data-distribution|Data distribution]]
+- [[concepts/data/data-schema|Data schema]]
 - [[concepts/data/data-curation|Data curation]]
 - [[concepts/data/data-versioning|Data versioning]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
+- [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/data/label-noise|Label noise]]
+- [[concepts/data/dataset-shift|Dataset shift]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/benchmark|Benchmark]]
@@ -34,9 +38,13 @@ Training and evaluation are only meaningful when this empirical distribution is 
 ## Checks
 
 - What is one example?
+- What distribution should the dataset represent?
+- What schema defines the fields, units, identifiers, and relationships?
 - What produces the target label?
+- What exactly does the label mean?
 - What metadata explains batch, source, protocol, time, species, target, or structure context?
 - What examples are missing because of collection bias?
+- What shift exists between train, validation, test, and deployment?
 - Does the split match the intended generalization claim?
 - Can another person reconstruct the dataset version and filtering policy?
 - Are labels noisy, censored, inconsistent, or protocol-dependent?

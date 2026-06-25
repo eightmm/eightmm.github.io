@@ -30,6 +30,8 @@ The shift must be named; otherwise OOD becomes a vague label.
 
 ## Related
 
+- [[concepts/data/dataset-shift|Dataset shift]]
+- [[concepts/data/data-distribution|Data distribution]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/evaluation/calibration|Calibration]]
