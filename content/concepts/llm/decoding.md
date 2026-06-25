@@ -58,4 +58,5 @@ where $z_x$ is the token logit and $T$ is temperature.
 - [[concepts/tasks/sequence-generation|Sequence generation]]
 - [[concepts/llm/structured-output|Structured output]]
 - [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
+- [[concepts/generative-models/sampling|Sampling]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]

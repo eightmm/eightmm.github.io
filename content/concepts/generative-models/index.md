@@ -17,6 +17,13 @@ $$
 
 Different families choose different training signals: likelihood, reconstruction, adversarial discrimination, denoising, score estimation, or velocity matching.
 
+## Common Concepts
+
+- [[concepts/generative-models/latent-variable-model|Latent variable model]]
+- [[concepts/generative-models/conditional-generation|Conditional generation]]
+- [[concepts/generative-models/sampling|Sampling]]
+- [[concepts/generative-models/guidance|Guidance]]
+
 ## Core Families
 
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
@@ -38,6 +45,7 @@ Different families choose different training signals: likelihood, reconstruction
 
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
+- [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein|Protein]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]

@@ -265,6 +265,10 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Generative Models
 
 - [[concepts/generative-models/index|Generative models]]
+- [[concepts/generative-models/latent-variable-model|Latent variable model]]
+- [[concepts/generative-models/conditional-generation|Conditional generation]]
+- [[concepts/generative-models/sampling|Sampling]]
+- [[concepts/generative-models/guidance|Guidance]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/score-based-model|Score-based model]]

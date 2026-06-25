@@ -25,6 +25,7 @@ tags:
 - Text, [[concepts/modalities/image|image]], [[concepts/modalities/video|video]], [[concepts/modalities/sequence|sequence]], [[concepts/modalities/3d-structure|3D structure]]를 modality 관점에서 비교하기
 - [[concepts/modalities/modality-alignment|Modality alignment]]와 [[concepts/modalities/missing-modality|missing modality]]가 multimodal model 평가에서 왜 중요한가
 - [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/state-space-model|State-space model]], [[concepts/architectures/gnn|GNN]]을 입력 구조 관점에서 비교하기
+- [[concepts/generative-models/latent-variable-model|Latent variable model]], [[concepts/generative-models/conditional-generation|conditional generation]], [[concepts/generative-models/sampling|sampling]], [[concepts/generative-models/guidance|guidance]]를 생성모델 공통 언어로 정리하기
 - [[concepts/learning/pretraining|Pretraining]], [[concepts/learning/fine-tuning|fine-tuning]], [[concepts/learning/instruction-tuning|instruction tuning]], [[concepts/learning/domain-adaptation|domain adaptation]]을 학습 pipeline 관점에서 나누기
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]], [[concepts/learning/contrastive-learning|Contrastive learning]], [[concepts/learning/jepa|JEPA]]를 representation 관점에서 정리하기
 - [[concepts/llm/token-budget|Token budget]], [[concepts/llm/context-packing|context packing]], [[concepts/llm/tool-calling|tool calling]], [[concepts/llm/prompt-injection-boundary|prompt injection boundary]]를 LLM Wiki 운영 관점에서 묶어 설명하기

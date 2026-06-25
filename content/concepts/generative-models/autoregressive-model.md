@@ -35,5 +35,7 @@ Training usually maximizes the likelihood of the observed sequence, or equivalen
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/generative-models/sampling|Sampling]]
+- [[concepts/generative-models/conditional-generation|Conditional generation]]
 - [[concepts/generative-models/vae|VAE]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]

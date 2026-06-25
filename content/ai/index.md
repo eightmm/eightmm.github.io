@@ -165,6 +165,10 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 
 - [[ai/generative-models|Generative models gateway]]
 - [[concepts/generative-models/index|Generative models]]
+- [[concepts/generative-models/latent-variable-model|Latent variable model]]
+- [[concepts/generative-models/conditional-generation|Conditional generation]]
+- [[concepts/generative-models/sampling|Sampling]]
+- [[concepts/generative-models/guidance|Guidance]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/rectified-flow|Rectified flow]]

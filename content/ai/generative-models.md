@@ -31,6 +31,10 @@ Bio-AI에서는 $c$가 protein sequence, binding pocket, target property, text i
 ## 핵심 노트
 
 - [[concepts/generative-models/index|Generative models]]
+- [[concepts/generative-models/latent-variable-model|Latent variable model]]
+- [[concepts/generative-models/conditional-generation|Conditional generation]]
+- [[concepts/generative-models/sampling|Sampling]]
+- [[concepts/generative-models/guidance|Guidance]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/score-based-model|Score-based model]]
@@ -51,5 +55,6 @@ Bio-AI에서는 $c$가 protein sequence, binding pocket, target property, text i
 
 - 모델이 likelihood, score, velocity, denoising target 중 무엇을 학습하는가?
 - conditioning 정보는 text, sequence, graph, structure 중 어디에서 오는가?
+- sampling 과정에서 guidance, filtering, rejection이 sample distribution을 바꾸는가?
 - validity, diversity, novelty, controllability를 어떻게 평가하는가?
 - sample quality와 task utility를 분리해서 평가했는가?
