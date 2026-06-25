@@ -32,6 +32,9 @@ Every agent-assisted change should end with a concrete check: build, unit test, 
 ## Related
 
 - [[agents/index|Agents]]
+- [[agents/agent-loop|Agent loop]]
+- [[agents/context-engineering|Context engineering]]
+- [[agents/agent-evaluation|Agent evaluation]]
 - [[agents/llm-wiki|LLM Wiki]]
 - [[projects/index|Projects]]
 - [[infra/index|Infra]]

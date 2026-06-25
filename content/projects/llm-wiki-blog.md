@@ -33,6 +33,7 @@ Research notes, paper summaries, agent outputs, and server-operation lessons eas
 ## Related
 
 - [[agents/llm-wiki|LLM Wiki]]
+- [[agents/context-engineering|Context engineering]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 - [[concepts/index|Concepts]]

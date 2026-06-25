@@ -32,6 +32,8 @@ An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesi
 ## Related
 
 - [[projects/llm-wiki-blog|LLM Wiki blog]]
+- [[agents/context-engineering|Context engineering]]
+- [[agents/agent-loop|Agent loop]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[infra/hpc/slurm|Slurm]]

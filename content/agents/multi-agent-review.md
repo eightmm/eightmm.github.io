@@ -20,6 +20,8 @@ Multi-agent review uses more than one agent — often different models or roles 
 
 ## Related
 
+- [[agents/human-in-the-loop|Human in the loop]]
+- [[agents/agent-evaluation|Agent evaluation]]
 - [[agents/verification-loop|Verification loop]]
 - [[agents/planning|Planning]]
 - [[agents/coding-agents|Coding agents]]

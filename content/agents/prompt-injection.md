@@ -20,6 +20,7 @@ Prompt injection is when untrusted content — a web page, file, tool result, or
 
 ## Related
 
+- [[agents/context-engineering|Context engineering]]
 - [[agents/tool-use|Tool use]]
 - [[agents/verification-loop|Verification loop]]
 - [[agents/index|Agents]]

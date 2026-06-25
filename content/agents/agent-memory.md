@@ -20,6 +20,7 @@ Agent memory is how an agent carries information beyond a single context window 
 
 ## Related
 
+- [[agents/context-engineering|Context engineering]]
 - [[agents/planning|Planning]]
 - [[agents/tool-use|Tool use]]
 - [[agents/index|Agents]]

@@ -14,10 +14,14 @@ This section should stay practical: what the agent is useful for, where it fails
 
 ## Core Concepts
 
+- [[agents/agent-loop|Agent loop]]
+- [[agents/context-engineering|Context engineering]]
 - [[agents/tool-use|Tool use]]
 - [[agents/planning|Planning]]
 - [[agents/agent-memory|Agent memory]]
 - [[agents/verification-loop|Verification loop]]
+- [[agents/agent-evaluation|Agent evaluation]]
+- [[agents/human-in-the-loop|Human in the loop]]
 - [[agents/prompt-injection|Prompt injection]]
 
 ## Workflows
