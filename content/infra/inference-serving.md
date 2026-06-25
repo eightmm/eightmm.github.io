@@ -21,6 +21,7 @@ Inference serving turns a trained model into a low-latency, high-throughput serv
 ## Related
 
 - [[infra/gpu|GPU]]
+- [[infra/gpu-memory|GPU memory]]
 - [[infra/distributed-training|Distributed training]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[infra/index|Infra]]

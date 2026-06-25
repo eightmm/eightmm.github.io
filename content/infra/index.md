@@ -15,14 +15,18 @@ tags:
 ## Compute
 
 - [[infra/gpu|GPU]]
+- [[infra/gpu-memory|GPU memory]]
 - [[infra/hpc/slurm|Slurm]]
+- [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 
 ## Training and Serving
 
+- [[infra/data-loading-io|Data loading and IO]]
 - [[infra/distributed-training|Distributed training]]
 - [[infra/inference-serving|Inference serving]]
+- [[infra/reproducible-run-record|Reproducible run record]]
 
 ## Server Operations
 

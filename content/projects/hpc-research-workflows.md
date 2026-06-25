@@ -32,7 +32,9 @@ Research runs often fail because the workflow around the model is weak: unclear 
 ## Related
 
 - [[infra/hpc/slurm|Slurm]]
+- [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
+- [[infra/reproducible-run-record|Reproducible run record]]
 - [[infra/distributed-training|Distributed training]]
 - [[agents/verification-loop|Verification loop]]

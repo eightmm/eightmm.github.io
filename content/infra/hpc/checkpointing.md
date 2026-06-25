@@ -21,5 +21,7 @@ Checkpointing periodically saves training state so a job can resume after preemp
 ## Related
 
 - [[infra/hpc/slurm|Slurm]]
+- [[infra/hpc/job-lifecycle|HPC job lifecycle]]
+- [[infra/reproducible-run-record|Reproducible run record]]
 - [[infra/distributed-training|Distributed training]]
 - [[infra/index|Infra]]

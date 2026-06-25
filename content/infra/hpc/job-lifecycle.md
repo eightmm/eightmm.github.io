@@ -37,7 +37,10 @@ An HPC job lifecycle describes how a workload moves from a local command to a sc
 ## Related
 
 - [[infra/hpc/slurm|Slurm]]
+- [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/checkpointing|Checkpointing]]
+- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/data-loading-io|Data loading and IO]]
 - [[infra/gpu|GPU]]
 - [[infra/distributed-training|Distributed training]]
 - [[projects/hpc-research-workflows|HPC research workflows]]
