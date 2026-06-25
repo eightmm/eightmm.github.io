@@ -28,6 +28,7 @@ The same training objective can behave very differently depending on whether $\m
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/residual-connection|Residual connection]]
+- [[concepts/architectures/residual-network|Residual network]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/positional-encoding|Positional encoding]]
@@ -86,8 +87,10 @@ The same training objective can behave very differently depending on whether $\m
 - What [[concepts/architectures/inductive-bias|inductive bias]] is being assumed?
 - Where is [[concepts/architectures/parameter-sharing|parameter sharing]] used, and what symmetry does it encode?
 - What mixes information: dense layers, convolution, recurrence, state update, message passing, or attention?
+- Which blocks mix channels, tokens, spatial neighborhoods, graph neighborhoods, or coordinates?
 - What inductive bias is assumed: locality, order, permutation invariance, equivariance, sparsity, or routing?
 - What is the dominant [[concepts/architectures/computational-complexity|computational complexity]] term?
+- How do activations, residual paths, normalization, and initialization affect gradient flow?
 - What fails first in practice: memory, length, graph size, data leakage, calibration, or decoding constraints?
 
 ## Related

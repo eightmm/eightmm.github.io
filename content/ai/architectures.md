@@ -37,6 +37,7 @@ $$
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/residual-connection|Residual connection]]
+- [[concepts/architectures/residual-network|Residual network]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/positional-encoding|Positional encoding]]
@@ -125,6 +126,8 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 
 - 입력이 sequence, graph, set, grid, structure 중 무엇인가?
 - 모델이 locality, order, permutation invariance, equivariance 중 무엇을 가정하는가?
+- Linear layer는 channel을 섞는가, attention/convolution/message passing은 token이나 neighborhood를 섞는가?
+- Activation, normalization, residual path가 gradient flow를 안정화하는가?
 - long-context scaling, sparse routing, geometric bias가 필요한가?
 - architecture의 inductive bias가 task의 symmetry와 맞는가?
 
