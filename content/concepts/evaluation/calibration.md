@@ -37,6 +37,7 @@ $$
 
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
+- [[concepts/evaluation/reliability-diagram|Reliability diagram]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/leakage|Leakage]]

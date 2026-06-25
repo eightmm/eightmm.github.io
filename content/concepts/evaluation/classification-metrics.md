@@ -114,6 +114,8 @@ where $p_i$ is the predicted probability for the positive class.
 
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/confusion-matrix|Confusion matrix]]
+- [[concepts/evaluation/threshold-selection|Threshold selection]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]

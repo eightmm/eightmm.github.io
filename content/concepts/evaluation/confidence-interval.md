@@ -56,6 +56,7 @@ The interval is estimated from the empirical quantiles of bootstrap metric value
 ## Related
 
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]
