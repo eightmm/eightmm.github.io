@@ -44,10 +44,12 @@ where invalid outputs are excluded or rejected.
 - Are invalid outputs rejected, repaired, or retried?
 - Does validation check semantics, not only syntax?
 - Is untrusted model output isolated before it affects tools or files?
+- Are evidence fields required when the output contains factual claims?
 
 ## Related
 
 - [[concepts/tasks/structured-prediction|Structured prediction]]
+- [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/decoding|Decoding]]
 - [[concepts/llm/tool-calling|Tool calling]]
 - [[agents/tools/tool-contract|Tool contract]]

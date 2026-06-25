@@ -22,6 +22,7 @@ LLM concepts describe language models, context, retrieval, and workflow patterns
 - [[concepts/llm/tool-calling|Tool calling]]
 - [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]
 - [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
+- [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 
@@ -32,6 +33,7 @@ LLM concepts describe language models, context, retrieval, and workflow patterns
 - How is token budget allocated?
 - What decoding and output constraints are used?
 - Are retrieved documents trusted as data, not instructions?
+- Are generated claims grounded in evidence or marked `to verify`?
 - Is the output verified outside the model?
 
 ## Related

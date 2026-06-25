@@ -27,6 +27,7 @@ An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesi
 - One page per topic.
 - Clear boundaries between facts, assumptions, and open questions.
 - Wikilinks for adjacent concepts, papers, and projects.
+- Evidence-grounded claims: supported statements link to sources, concepts, logs, or paper notes; uncertain statements are marked `to verify`.
 - No private endpoints, account names, credentials, unpublished metrics, or internal project identifiers.
 - Korean posts should provide readable entry points; English wiki notes should hold reusable definitions and checks.
 
@@ -36,6 +37,7 @@ An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesi
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[posts/topic-roadmap|Topic roadmap]]
 - [[concepts/llm/index|LLM concepts]]
+- [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[agents/core/context-engineering|Context engineering]]

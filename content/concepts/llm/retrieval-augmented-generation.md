@@ -22,6 +22,16 @@ $$
 
 where $q$ is a query, $\mathcal{D}$ is the document collection, and $D_q$ is the retrieved subset.
 
+RAG has two separable quality gates:
+
+$$
+\text{retrieval quality}
+\ne
+\text{answer faithfulness}
+$$
+
+Good retrieval can still produce an unsupported answer if generation ignores or distorts evidence.
+
 ## Checks
 
 - Are retrieved documents relevant, current, and source-attributed?
@@ -29,9 +39,11 @@ where $q$ is a query, $\mathcal{D}$ is the document collection, and $D_q$ is the
 - Are untrusted retrieved documents protected against prompt injection?
 - Does the answer cite or link the evidence it used?
 - Is the corpus public, private, or mixed?
+- Are unsupported generated claims marked or removed?
 
 ## Related
 
+- [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[concepts/llm/context-packing|Context packing]]
 - [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]

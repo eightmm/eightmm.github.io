@@ -34,6 +34,7 @@ $$
 - Tool calls can ground answers in external state if tool results are checked.
 - Missing evidence should produce uncertainty, abstention, or a narrower answer.
 - In public notes, grounding means linking claims to concepts, papers, logs, or reproducible artifacts.
+- A grounded answer can still be incomplete; grounding is about support, not exhaustiveness.
 
 ## Practical Checks
 
@@ -42,9 +43,11 @@ $$
 - Does the answer distinguish sourced facts from inference?
 - Are retrieved documents trusted as instructions or only as data?
 - Is there a verification loop for high-risk outputs?
+- Are unsupported claims removed, narrowed, or marked `to verify`?
 
 ## Related
 
+- [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[agents/verification/verification-loop|Verification loop]]

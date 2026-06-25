@@ -17,6 +17,19 @@ $$
 
 Context is not memory by itself. It is the temporary working set for one model invocation.
 
+The context should be allocated by role:
+
+$$
+C =
+C_{\mathrm{instructions}}
++ C_{\mathrm{state}}
++ C_{\mathrm{evidence}}
++ C_{\mathrm{tools}}
++ C_{\mathrm{output}}
+$$
+
+When context is tight, prioritize current evidence over stale summaries.
+
 ## Checks
 
 - What must be in context for the next decision?
@@ -24,11 +37,13 @@ Context is not memory by itself. It is the temporary working set for one model i
 - Are stale summaries overridden by fresh evidence?
 - Are untrusted documents separated from instructions?
 - Is important evidence being truncated?
+- Is output budget reserved before loading more evidence?
 
 ## Related
 
 - [[concepts/llm/token-budget|Token budget]]
 - [[concepts/llm/context-packing|Context packing]]
+- [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[agents/core/context-engineering|Context engineering]]
 - [[agents/core/agent-memory|Agent memory]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
