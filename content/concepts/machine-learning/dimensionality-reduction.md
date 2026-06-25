@@ -8,6 +8,15 @@ tags:
 
 Dimensionality reduction maps high-dimensional data into a smaller representation while trying to preserve useful structure.
 
+For PCA, the projection matrix $W$ is chosen to preserve maximum variance:
+
+$$
+\max_{W^\top W = I}
+\operatorname{Tr}(W^\top X^\top X W)
+$$
+
+Here $X$ is the centered data matrix and $W$ contains the projection directions.
+
 ## Uses
 
 - Visualization.

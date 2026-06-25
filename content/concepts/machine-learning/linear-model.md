@@ -8,11 +8,27 @@ tags:
 
 A linear model predicts from a weighted sum of input features. It is simple, interpretable, and often a strong baseline.
 
+The basic form is:
+
+$$
+\hat{y} = w^\top x + b
+$$
+
+where $x$ is a feature vector, $w$ is a weight vector, and $b$ is a bias term.
+
 ## Common Forms
 
 - Linear regression predicts a continuous value.
 - Logistic regression predicts class probabilities.
 - Linear classifiers separate classes with a hyperplane.
+
+For binary logistic regression:
+
+$$
+p(y=1\mid x)
+= \sigma(w^\top x + b)
+= \frac{1}{1+\exp(-(w^\top x+b))}
+$$
 
 ## Why It Matters
 

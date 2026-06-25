@@ -8,6 +8,17 @@ tags:
 
 Machine learning studies algorithms that improve predictions or decisions from data. In this wiki, it is the base layer under architectures, learning objectives, generative models, and evaluation.
 
+The standard supervised learning setup is empirical risk minimization:
+
+$$
+\hat{\theta}
+= \arg\min_\theta
+\frac{1}{n}\sum_{i=1}^{n}
+\mathcal{L}(f_\theta(x_i), y_i)
+$$
+
+Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i,y_i)\}_{i=1}^n$ is the training set.
+
 ## Core Pieces
 
 - Data: examples, labels, features, splits, and sampling process.

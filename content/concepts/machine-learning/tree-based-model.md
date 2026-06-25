@@ -8,6 +8,16 @@ tags:
 
 A tree-based model splits the feature space into regions and assigns predictions inside each region. Decision trees, random forests, and gradient-boosted trees belong to this family.
 
+At a split, the model chooses a feature and threshold that reduce impurity or loss:
+
+$$
+(j^\*, t^\*)
+= \arg\max_{j,t}
+\Delta I(j,t)
+$$
+
+Here $j$ is a feature index, $t$ is a threshold, and $\Delta I$ is the impurity reduction or loss improvement from the split.
+
 ## Strengths
 
 - Handles nonlinear feature interactions.

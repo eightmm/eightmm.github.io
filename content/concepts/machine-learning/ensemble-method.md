@@ -8,6 +8,15 @@ tags:
 
 An ensemble method combines multiple models to improve robustness or predictive performance.
 
+The generic form is a weighted combination of base models:
+
+$$
+f_{\mathrm{ens}}(x)
+= \sum_{m=1}^{M} w_m f_m(x)
+$$
+
+where $f_m$ is a base model and $w_m$ is its weight.
+
 ## Common Patterns
 
 - Bagging trains models on resampled data and averages their predictions.

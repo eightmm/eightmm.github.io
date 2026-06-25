@@ -8,6 +8,17 @@ tags:
 
 Regularization constrains a model or training process to reduce overfitting and improve generalization.
 
+A common regularized objective is:
+
+$$
+\min_\theta
+\frac{1}{n}\sum_{i=1}^{n}
+\mathcal{L}(f_\theta(x_i), y_i)
++ \lambda \Omega(\theta)
+$$
+
+Here $\Omega(\theta)$ is a penalty term and $\lambda$ controls its strength.
+
 ## Common Forms
 
 - L1 or L2 penalties on parameters.

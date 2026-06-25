@@ -9,6 +9,24 @@ tags:
 
 평가는 모델 목록을 실제 지식으로 바꾸는 기준입니다. AI note를 쓸 때는 어떤 benchmark에서 좋았는지보다, 어떤 split과 metric이 무엇을 검증하는지 먼저 봅니다.
 
+일반화 성능은 보지 못한 데이터 분포에서의 기대 손실로 보는 것이 기본입니다.
+
+$$
+R(f)
+= \mathbb{E}_{(x,y)\sim p_{\mathrm{test}}}
+\left[\mathcal{L}(f(x), y)\right]
+$$
+
+실험에서는 이를 finite test set 평균으로 추정합니다.
+
+$$
+\hat{R}(f)
+= \frac{1}{m}\sum_{j=1}^{m}
+\mathcal{L}(f(x_j), y_j)
+$$
+
+중요한 점은 $p_{\mathrm{test}}$가 실제로 알고 싶은 deployment distribution을 닮아야 한다는 것입니다.
+
 ## Core Notes
 
 - [[concepts/evaluation/index|Evaluation]]

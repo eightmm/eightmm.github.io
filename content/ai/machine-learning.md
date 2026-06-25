@@ -9,6 +9,16 @@ tags:
 
 Machine learning은 AI를 이해하기 위한 기본 문법입니다. 복잡한 deep learning model도 결국 data, feature, objective, optimization, evaluation의 조합으로 봐야 합니다.
 
+가장 기본적인 관점은 데이터셋 $\mathcal{D}$에서 모델 $f_\theta$를 학습해, 보지 못한 입력에서도 손실이 작아지게 만드는 것입니다.
+
+$$
+\hat{\theta}
+= \arg\min_\theta \frac{1}{n}\sum_{i=1}^n
+\mathcal{L}(f_\theta(x_i), y_i)
+$$
+
+여기서 $x_i$는 입력, $y_i$는 label 또는 target, $\mathcal{L}$은 loss function, $\theta$는 model parameter입니다.
+
 ## Problem Types
 
 - Classification: discrete label을 예측합니다.
@@ -33,6 +43,16 @@ Machine learning은 AI를 이해하기 위한 기본 문법입니다. 복잡한 
 - [[concepts/machine-learning/optimization|Optimization]]: parameter를 어떻게 업데이트할 것인가
 - [[concepts/machine-learning/regularization|Regularization]]: overfitting을 어떻게 줄일 것인가
 - Validation: model selection을 어떤 split에서 할 것인가
+
+일반화 관점에서는 train loss와 test loss를 구분해야 합니다.
+
+$$
+\mathrm{gap}
+= \mathcal{L}_{\mathrm{test}}(f_\theta)
+- \mathcal{L}_{\mathrm{train}}(f_\theta)
+$$
+
+gap이 크면 모델이 training data의 우연한 패턴에 맞춰졌을 가능성을 의심합니다.
 
 ## Representation and Features
 

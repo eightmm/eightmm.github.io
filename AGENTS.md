@@ -70,3 +70,11 @@ Codex should act as wiki maintainer and draft editor. Human review decides what 
 - Use Quartz wikilinks, for example `[[entities/protein|Protein]]`.
 - Keep notes short, linked, and explicit about uncertainty.
 - Avoid marketing copy and broad claims without evidence.
+
+## Mathematical Writing
+
+- If an equation, objective, probability factorization, distance, update rule, or metric would make a concept easier to understand, include it.
+- Prefer short displayed equations with `$$...$$` and define every symbol nearby.
+- Do not add equations only for decoration. Use them to clarify assumptions, training signals, evaluation metrics, or model structure.
+- For AI/ML notes, formulas should be included whenever the topic naturally has one: loss functions, empirical risk, likelihood, Bayes rule, attention, graph message passing, diffusion/flow objectives, calibration, and evaluation metrics.
+- Keep formulas public and generic. Do not include private dataset names, unpublished results, or internal experiment details.

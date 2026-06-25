@@ -8,6 +8,15 @@ tags:
 
 Optimization is the process of updating model parameters to improve an objective. In machine learning, the optimized objective is usually a proxy for the real task.
 
+Gradient descent updates parameters in the direction that locally reduces the objective:
+
+$$
+\theta_{t+1}
+= \theta_t - \eta \nabla_\theta \mathcal{L}(\theta_t)
+$$
+
+Here $\eta$ is the learning rate.
+
 ## Core Ideas
 
 - Loss defines the training signal.
