@@ -53,7 +53,7 @@ z=f_\theta(x),
 \hat{y}=g_\phi(z)
 $$
 
-Common evaluation modes are linear probing, full fine-tuning, retrieval, clustering quality, and task-specific metrics.
+Common evaluation modes are [[concepts/learning/linear-probing|linear probing]], [[concepts/learning/fine-tuning-protocol|full fine-tuning]], retrieval, clustering quality, and task-specific metrics. These belong to [[concepts/learning/representation-evaluation|representation evaluation]], not to the pretraining objective itself.
 
 ## Checks
 
@@ -62,6 +62,7 @@ Common evaluation modes are linear probing, full fine-tuning, retrieval, cluster
 - Does the representation transfer beyond the pretraining distribution?
 - Does the objective avoid [[concepts/learning/representation-collapse|representation collapse]]?
 - Are augmentation and masking choices valid for the domain?
+- Are linear probe, fine-tuning, and retrieval protocols kept separate?
 
 ## Related
 
@@ -72,6 +73,9 @@ Common evaluation modes are linear probing, full fine-tuning, retrieval, cluster
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/augmentation-policy|Augmentation policy]]
 - [[concepts/learning/representation-collapse|Representation collapse]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
+- [[concepts/learning/linear-probing|Linear probing]]
+- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 - [[research/protein-modeling/index|Protein modeling]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

@@ -42,7 +42,7 @@ where $y$ is task-relevant information and $\epsilon$ is nuisance variation.
 - What information should the representation preserve or discard?
 - Is the representation instance-level, token-level, graph-level, or structure-level?
 - Does it transfer to downstream tasks under a realistic split?
-- Are embeddings evaluated with linear probes, fine-tuning, retrieval, or task metrics?
+- Are embeddings evaluated with [[concepts/learning/linear-probing|linear probes]], [[concepts/learning/fine-tuning-protocol|fine-tuning]], retrieval, or task metrics?
 - Does the representation avoid [[concepts/learning/representation-collapse|collapse]]?
 
 ## Related
@@ -50,6 +50,9 @@ where $y$ is task-relevant information and $\epsilon$ is nuisance variation.
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/augmentation-policy|Augmentation policy]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
+- [[concepts/learning/linear-probing|Linear probing]]
+- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 - [[concepts/learning/representation-collapse|Representation collapse]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]

@@ -32,11 +32,14 @@ $$
 - Full fine-tuning vs. adapter/low-rank methods for the data budget?
 - Is the model overfitting a small target set?
 - Did adaptation degrade general capabilities learned in pretraining?
+- Is the adaptation protocol recorded with trainable scope, validation rule, search budget, and final test boundary?
 
 ## Related
 
 - [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
+- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
+- [[concepts/learning/linear-probing|Linear probing]]
 - [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/instruction-tuning|Instruction tuning]]
 - [[concepts/learning/domain-adaptation|Domain adaptation]]

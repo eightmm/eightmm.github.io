@@ -57,7 +57,7 @@ $$
 - What target signal did pretraining optimize?
 - Does the pretraining objective match downstream evaluation?
 - Could downstream test examples or close homologs/duplicates appear in pretraining?
-- Is adaptation done by probing, full fine-tuning, or parameter-efficient fine-tuning?
+- Is adaptation done by [[concepts/learning/linear-probing|probing]], [[concepts/learning/fine-tuning-protocol|full fine-tuning]], or parameter-efficient fine-tuning?
 
 ## Related
 
@@ -66,4 +66,7 @@ $$
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
+- [[concepts/learning/linear-probing|Linear probing]]
+- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 - [[concepts/data/data-distribution|Data distribution]]

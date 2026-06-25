@@ -26,6 +26,9 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 - [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
+- [[concepts/learning/linear-probing|Linear probing]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
 - [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/instruction-tuning|Instruction tuning]]
 - [[concepts/learning/domain-adaptation|Domain adaptation]]
@@ -39,6 +42,7 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 - [[concepts/learning/masked-modeling|Masked modeling]]
 - [[concepts/learning/augmentation-policy|Augmentation policy]]
 - [[concepts/learning/representation-collapse|Representation collapse]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 

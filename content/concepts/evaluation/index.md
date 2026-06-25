@@ -63,6 +63,9 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/evaluation/robustness|Robustness]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
 - [[concepts/evaluation/interpretability|Interpretability]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
+- [[concepts/learning/linear-probing|Linear probing]]
+- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 
 ## Related
 

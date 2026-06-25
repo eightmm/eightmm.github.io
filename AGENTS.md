@@ -116,6 +116,8 @@ Training-diagnostic notes should connect curves to decisions. When adding learni
 
 Probabilistic-prediction notes should distinguish logits, scores, probabilities, uncertainty estimates, and hard decisions. When adding decision-rule content, state the action space, cost or utility, threshold or argmax rule, validation selection procedure, calibration requirement, and metric used to evaluate the resulting action.
 
+Representation-evaluation notes should state the representation unit, pooling/readout rule, frozen vs trainable parameters, downstream evaluator capacity, split unit, validation selection rule, and final test boundary. Do not compare linear probing, kNN/retrieval, and full fine-tuning as if they tested the same claim without stating the adaptation budget.
+
 Retrieval task notes should distinguish corpus search, similarity search, and reranking. State the candidate corpus, representation, scoring function, top-k or listwise output, relevance definition, metric, duplicate policy, and whether the stage optimizes recall, precision, enrichment, or downstream answer quality.
 
 Optimization and training notes should connect loss, gradient estimate, optimizer state, learning-rate schedule, effective batch size, gradient accumulation, clipping, checkpoint state, and stability signals. State whether counts refer to micro-steps, optimizer steps, consumed samples, or epochs.

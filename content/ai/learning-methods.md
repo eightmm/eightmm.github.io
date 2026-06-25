@@ -52,9 +52,12 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 - [[concepts/learning/masked-modeling|Masked modeling]]
 - [[concepts/learning/augmentation-policy|Augmentation policy]]
 - [[concepts/learning/representation-collapse|Representation collapse]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
+- [[concepts/learning/linear-probing|Linear probing]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 - [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/instruction-tuning|Instruction tuning]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
@@ -74,6 +77,7 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 - representation을 instance-level, token-level, structure-level 중 어디에 맞출 것인가?
 - adaptation이 pretraining 지식을 보존하는가, 아니면 target set에 과적합되는가?
 - downstream task와 pretraining task 사이에 mismatch가 있는가?
+- representation 평가는 frozen probe, fine-tuning, retrieval 중 무엇으로 했는가?
 - objective가 downstream evaluation과 같은 정보를 요구하는가?
 - reward나 preference signal이 실제 목표와 proxy mismatch를 일으키지 않는가?
 

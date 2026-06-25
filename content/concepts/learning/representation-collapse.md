@@ -47,7 +47,7 @@ where $c$ is a constant vector.
 
 - What is the batch-wise variance of embeddings?
 - Do nearest neighbors contain meaningful semantic or structural similarity?
-- Does a linear probe perform above a simple baseline?
+- Does a [[concepts/learning/linear-probing|linear probe]] perform above a simple baseline?
 - Does collapse appear only for a specific augmentation policy, masking ratio, or target encoder update?
 
 ## Related
@@ -56,4 +56,5 @@ where $c$ is a constant vector.
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/augmentation-policy|Augmentation policy]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
 - [[concepts/machine-learning/representation-learning|Representation learning]]

@@ -31,11 +31,14 @@ The benefit depends on how much useful structure transfers from source to target
 - How close are the source and target distributions?
 - Does the pretrained feature space cover the target's relevant variation?
 - Are gains real, or an artifact of overlapping train/test data?
+- Is transfer measured with a frozen probe, full fine-tuning, retrieval, or a task-specific evaluator?
 
 ## Related
 
 - [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/domain-adaptation|Domain adaptation]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/linear-probing|Linear probing]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/supervised-learning|Supervised learning]]

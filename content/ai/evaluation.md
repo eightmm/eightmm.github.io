@@ -59,6 +59,9 @@ $$
 - [[concepts/evaluation/interpretability|Interpretability]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
+- [[concepts/learning/linear-probing|Linear probing]]
+- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 
 ## 분야별 평가 연결
 
@@ -71,6 +74,7 @@ $$
 - Structure: [[concepts/sbdd/pose-quality|Pose quality]], [[papers/sbdd/posebusters|PoseBusters]]
 - Agent: [[agents/verification/agent-evaluation|Agent evaluation]], [[agents/verification/verification-loop|Verification loop]]
 - Ranking: [[concepts/evaluation/ranking-metrics|Ranking metrics]], [[concepts/tasks/retrieval|Retrieval]]
+- Representation learning: [[concepts/learning/representation-evaluation|Representation evaluation]], [[concepts/learning/linear-probing|Linear probing]], [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 
 ## 읽을 때 볼 질문
 
