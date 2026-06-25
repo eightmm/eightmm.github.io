@@ -53,6 +53,7 @@ High entropy means the predictive distribution is diffuse, but it does not by it
 Uncertainty should be evaluated against a decision:
 
 - Abstention: are uncertain examples more likely to be wrong?
+- Selective prediction: does risk decrease as the system accepts fewer examples?
 - Active learning: do queried examples improve the model efficiently?
 - OOD detection: does uncertainty increase under shift?
 - Risk ranking: do high-risk predictions receive larger uncertainty?
@@ -61,6 +62,7 @@ Uncertainty should be evaluated against a decision:
 ## Checks
 
 - Is uncertainty used for ranking, abstention, active learning, or decision-making?
+- Are coverage and selective risk reported if the system may abstain?
 - Is uncertainty calibrated on held-out data?
 - Does uncertainty increase under out-of-distribution inputs?
 - Are epistemic and aleatoric uncertainty conflated?
@@ -70,6 +72,7 @@ Uncertainty should be evaluated against a decision:
 
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/calibration|Calibration]]
+- [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
 - [[concepts/math/bayes-rule|Bayes rule]]

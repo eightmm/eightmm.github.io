@@ -54,6 +54,7 @@ $$
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
+- [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/evaluation/robustness|Robustness]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
 - [[concepts/evaluation/interpretability|Interpretability]]
@@ -85,7 +86,7 @@ $$
 - failure mode가 wrong output, invalid output, miscalibration, OOD, system failure처럼 분해되어 있는가?
 - 결과 차이가 confidence interval이나 seed variance보다 충분히 큰가?
 - confidence, probability quality, calibration이 필요한 application인가?
-- uncertainty, robustness, interpretability 중 어떤 진단이 필요한가?
+- uncertainty, abstention, robustness, interpretability 중 어떤 진단이 필요한가?
 - 실패를 data, model, optimization, evaluation 중 어디 문제로 분해할 수 있는가?
 
 ## Related

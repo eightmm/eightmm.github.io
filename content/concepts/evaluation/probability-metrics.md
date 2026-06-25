@@ -70,6 +70,7 @@ for a loss-style score where lower is better. NLL and Brier score are common pro
 - Probability metric: computed on validation or test data to evaluate probabilistic predictions.
 - [[concepts/evaluation/calibration|Calibration]]: asks whether predicted confidence matches empirical frequency.
 - [[concepts/evaluation/threshold-selection|Threshold selection]]: converts probabilities into decisions.
+- [[concepts/evaluation/selective-prediction|Selective prediction]]: evaluates accept/abstain behavior as confidence thresholds change.
 
 A model can have good accuracy but poor NLL if it is overconfident on errors. It can also have a strong ranking metric but unreliable probabilities.
 
@@ -90,5 +91,6 @@ A model can have good accuracy but poor NLL if it is overconfident on errors. It
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
+- [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]

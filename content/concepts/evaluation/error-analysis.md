@@ -29,6 +29,7 @@ Aggregate performance can hide large group-specific failures.
 - Modality, sequence length, resolution, graph size, or structure quality.
 - Molecular scaffold, protein family, pocket type, assay type, or activity cliff.
 - Confidence level, uncertainty bucket, or calibration bin.
+- Accepted vs abstained examples in [[concepts/evaluation/selective-prediction|selective prediction]] workflows.
 
 ## Checks
 
@@ -45,5 +46,6 @@ Aggregate performance can hide large group-specific failures.
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/evaluation/activity-cliff|Activity cliff]]
 - [[concepts/evaluation/calibration|Calibration]]
+- [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/evaluation/robustness|Robustness]]
 - [[papers/paper-review-workflow|Paper review workflow]]

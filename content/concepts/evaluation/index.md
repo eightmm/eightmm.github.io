@@ -60,6 +60,7 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
+- [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/evaluation/robustness|Robustness]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
 - [[concepts/evaluation/interpretability|Interpretability]]

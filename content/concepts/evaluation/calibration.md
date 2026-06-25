@@ -34,6 +34,7 @@ Calibration complements [[concepts/evaluation/probability-metrics|probability me
 - Calibrate on held-out data (temperature scaling, isotonic) — never on the test set.
 - Re-check calibration under distribution shift; it degrades faster than accuracy.
 - For ranking tasks, separate calibration from discrimination (AUC).
+- For abstention or human review, evaluate [[concepts/evaluation/selective-prediction|selective prediction]] instead of reporting confidence alone.
 
 ## Temperature Scaling
 
@@ -63,6 +64,7 @@ where $T>0$ is fit on validation data. Larger $T$ softens overconfident probabil
 - [[concepts/evaluation/probability-metrics|Probability metrics]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
+- [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/index|Evaluation]]
