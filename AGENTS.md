@@ -29,19 +29,53 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 
 ## Taxonomy
 
-Keep the top-level site organized by broad axes:
+Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
-- `entities/`: Protein, ligand, molecule, protein-ligand complex, sequence, structure, assay, dataset, genome, and other directly modeled objects.
-- `concepts/architectures/`: GNN, Transformer, state-space models, and model families.
-- `concepts/geometric-deep-learning/`: Equivariance, geometry, coordinates, symmetry.
-- `concepts/learning/`: SSL, JEPA, contrastive learning, and learning objectives.
-- `agents/`: Agent workflows, coding agents, paper-ingestion agents, and verification habits.
-- `research/`: Research domains and synthesis notes.
+- `ai/`: Korean gateway pages for broad AI foundations.
+- `bio-ai/`: Korean gateway pages for structure-based and sequence-level bio AI.
+- `math/`: Korean gateway pages for mathematical foundations.
+- `infra/`: Public infrastructure and HPC notes.
+- `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
 - `papers/`: Curated paper notes, not raw daily logs.
+- `agents/`: Agent and workflow notes, grouped as below.
+- `projects/`: Public project notes and implementation narratives.
+- `posts/`: Korean narrative blog posts.
+
+Keep supporting wiki areas available for links, but do not expose every support folder as a main public area unless the user asks:
+
+- `entities/`: Protein, ligand, molecule, protein-ligand complex, sequence, structure, assay, dataset, genome, and other modeled objects. Treat this as a vocabulary layer, not a research category by itself.
+- `concepts/architectures/`: CNN, RNN, Transformer, GNN, state-space models, MoE, and other model families.
+- `concepts/geometric-deep-learning/`: Equivariance, invariance, geometry, coordinates, and symmetry.
+- `concepts/learning/`: Supervised learning, SSL, JEPA, contrastive learning, RL, preference optimization, and learning objectives.
+- `concepts/math/`: Linear algebra, calculus, probability, information theory, geometry, and statistics.
+- `concepts/generative-models/`: Diffusion, flow matching, normalizing flows, autoregressive generation, and related objectives.
+- `concepts/evaluation/`: Metrics, ablations, uncertainty, calibration, confidence intervals, and significance.
 - `inbox/`: Sanitized daily paper briefs and uncurated candidates.
-- `projects/`, `infra/`, `logs/`, `posts/`: Public project notes, infra notes, cleaned logs, and narrative posts.
+- `logs/`: Clean public logs and sanitization records.
+
+Organize `agents/` with stable subfolders:
+
+- `agents/core/`: Agent architecture, loop, state, memory, planning, and context engineering.
+- `agents/tools/`: Tool use and tool contracts.
+- `agents/workflows/`: Coding agents, paper-brief workflows, orchestration, multi-agent review, and LLM Wiki operations.
+- `agents/verification/`: Verification loop, reflection, evaluation, human-in-the-loop, and prompt-injection notes.
 
 Bio scope should stay focused on structure-based AI, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
+
+Do not expand `research/` just to fill the site. Prefer `ai/`, `math/`, `concepts/`, `entities/`, `papers/`, `agents/`, and `infra/` until the user provides a concrete research direction.
+
+When adding a new content area, update all relevant entry points together: the folder `index.md`, `content/index.md`, `content/posts/topic-roadmap.md` when it changes the writing plan, and `quartz.ts` only if the area should appear in the Explorer.
+
+## Blog and Wiki Split
+
+The site should satisfy both a public blog and an LLM Wiki:
+
+- Korean `posts/` and top-level gateway pages explain why a topic matters, how to read it, and where to go next.
+- English wiki notes under `concepts/`, `entities/`, `papers/`, `agents/`, `infra/`, and `projects/` hold reusable definitions, formulas, checklists, and references.
+- Do not duplicate full explanations across many pages. Put canonical definitions in wiki notes and link them from posts.
+- Use `[[...]]` wikilinks for internal links. Prefer path-qualified links such as `[[concepts/architectures/transformer|Transformer]]`.
+- Keep pages useful even as stubs: include purpose, key equations or checks if applicable, related links, and `to verify` for missing facts.
+- Prefer broad durable structure over many narrow empty pages.
 
 ## Paper Brief Workflow
 
