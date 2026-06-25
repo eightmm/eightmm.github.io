@@ -24,6 +24,8 @@ $$
 = \lVert \hat{y}-y\rVert_2^2
 $$
 
+See [[concepts/machine-learning/mean-squared-error|Mean squared error]] for the full regression loss and likelihood interpretation.
+
 Cross-entropy is common for categorical prediction:
 
 $$
@@ -32,6 +34,16 @@ $$
 $$
 
 Here $p_k$ is the predicted probability for class $k$, and $y_k$ is the target distribution or one-hot label.
+
+See [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]] and [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]] for the probabilistic view.
+
+## Common Loss Families
+
+- [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]] for categorical labels and next-token prediction.
+- [[concepts/machine-learning/mean-squared-error|Mean squared error]] for regression and reconstruction.
+- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]] for explicit probabilistic models.
+- Pairwise or listwise losses for [[concepts/machine-learning/ranking|Ranking]].
+- Contrastive losses for [[concepts/learning/contrastive-learning|Contrastive learning]].
 
 ## Checks
 

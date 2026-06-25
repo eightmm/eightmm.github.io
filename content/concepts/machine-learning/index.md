@@ -49,6 +49,9 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
 - [[concepts/machine-learning/loss-function|Loss function]]
+- [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
+- [[concepts/machine-learning/mean-squared-error|Mean squared error]]
+- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/regularization|Regularization]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]

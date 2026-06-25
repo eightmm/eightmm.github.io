@@ -9,7 +9,7 @@ tags:
 
 Regression predicts a continuous target. It is common for activity values, binding affinity, energies, coordinates, expression levels, and other scalar or vector quantities.
 
-A standard squared-error objective is:
+A standard [[concepts/machine-learning/mean-squared-error|squared-error objective]] is:
 
 $$
 \mathcal{L}_{\mathrm{MSE}}
@@ -34,7 +34,7 @@ $$
 
 then the model predicts both mean and uncertainty.
 
-The negative log likelihood is:
+The [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]] is:
 
 $$
 \mathcal{L}_{\mathrm{NLL}}
@@ -71,6 +71,8 @@ Regression is not only "predict a number." The unit and transformation define th
 ## Related
 
 - [[concepts/machine-learning/loss-function|Loss function]]
+- [[concepts/machine-learning/mean-squared-error|Mean squared error]]
+- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]

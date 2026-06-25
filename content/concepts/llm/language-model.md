@@ -18,7 +18,7 @@ p_\theta(x_{1:T})
 p_\theta(x_t\mid x_{<t})
 $$
 
-The training objective is usually next-token negative log-likelihood:
+The training objective is usually next-token [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]]:
 
 $$
 \mathcal{L}_{\mathrm{NLL}}
@@ -45,6 +45,7 @@ $$
 ## Related
 
 - [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
+- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
 - [[concepts/llm/context-window|Context window]]
 - [[concepts/llm/decoding|Decoding]]
 - [[concepts/llm/prompting|Prompting]]

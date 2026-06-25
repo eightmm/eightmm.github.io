@@ -49,6 +49,7 @@ $$
 - Objective: 무엇을 줄이거나 키울 것인가
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]: observed data에서 평균 손실을 줄이는 기본 원리
 - [[concepts/machine-learning/loss-function|Loss function]]: prediction error를 어떻게 수치화할 것인가
+- [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]], [[concepts/machine-learning/mean-squared-error|mean squared error]], [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]]: task와 probability assumption에 따라 loss가 어떻게 달라지는가
 - [[concepts/machine-learning/training-loop|Training loop]]: forward, loss, backward, update를 어떻게 반복할 것인가
 - [[concepts/machine-learning/optimization|Optimization]]: parameter를 어떻게 업데이트할 것인가
 - [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]: mini-batch로 full gradient를 어떻게 추정할 것인가

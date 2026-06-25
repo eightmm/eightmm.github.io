@@ -18,7 +18,7 @@ $$
 \log p_\theta(x_i)
 $$
 
-Equivalently, it minimizes negative log-likelihood:
+Equivalently, it minimizes [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]]:
 
 $$
 \mathcal{L}_{\mathrm{NLL}}
@@ -44,6 +44,7 @@ $$
 
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
+- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
 - [[concepts/generative-models/index|Generative models]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]

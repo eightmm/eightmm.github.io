@@ -18,7 +18,7 @@ p_\theta(x)
 p_\theta(x_t \mid x_{<t})
 $$
 
-Training usually maximizes the likelihood of the observed sequence, or equivalently minimizes negative log-likelihood.
+Training usually maximizes the likelihood of the observed sequence, or equivalently minimizes [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]].
 
 ## Why It Matters
 
@@ -35,6 +35,7 @@ Training usually maximizes the likelihood of the observed sequence, or equivalen
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
 - [[concepts/generative-models/sampling|Sampling]]
 - [[concepts/generative-models/conditional-generation|Conditional generation]]
 - [[concepts/generative-models/vae|VAE]]

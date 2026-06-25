@@ -24,7 +24,7 @@ $$
 = \arg\max_k p_\theta(y=k\mid x)
 $$
 
-The standard supervised loss is cross-entropy:
+The standard supervised loss is [[concepts/machine-learning/cross-entropy-loss|cross-entropy]]:
 
 $$
 \mathcal{L}_{\mathrm{CE}}
@@ -74,6 +74,7 @@ This is different from softmax classification, where probabilities compete acros
 ## Related
 
 - [[concepts/machine-learning/loss-function|Loss function]]
+- [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
