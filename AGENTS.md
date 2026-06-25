@@ -72,6 +72,13 @@ Organize `agents/` with stable subfolders:
 
 Agent content should stay grouped under `agents/`; do not scatter agent notes into `ai/` except for short links from the AI gateway. Agent pages should explain model-state-tool-memory-verifier structure, workflow runbooks, tool contracts, and verification habits with public, generic examples.
 
+When adding agent notes, update the nearest subfolder index and `content/agents/index.md` together. Use these layers:
+
+- Core: environment, action space, loop, state, memory, planning, context, and task decomposition.
+- Tools: tool use, tool contracts, result handling, side effects, and typed outputs.
+- Workflows: coding agents, paper briefs, LLM Wiki maintenance, orchestration, handoff, and runbooks.
+- Verification: acceptance criteria, verification loops, evaluation, reflection, human review, and prompt-injection boundaries.
+
 Bio scope should stay focused on structure-based AI, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
 
 Do not expand `research/` just to fill the site. Prefer `ai/`, `math/`, `concepts/`, `entities/`, `papers/`, `agents/`, and `infra/` until the user provides a concrete research direction.

@@ -57,6 +57,8 @@ tags:
 ## Agents
 
 - [[agents/core/agent-architecture|Agent architecture]]를 model, state, tools, memory, verifier로 나눠 보는 법
+- [[agents/core/agent-environment|Agent environment]], [[agents/core/action-space|action space]], [[agents/tools/tool-result-handling|tool result handling]]을 agent loop의 기본 단어로 정리하기
+- [[agents/verification/acceptance-criteria|Acceptance criteria]]로 agent가 "끝났다"고 말하기 전에 무엇을 증명해야 하는지 정리하기
 - [[agents/core/task-decomposition|Task decomposition]]과 [[agents/workflows/agent-handoff|agent handoff]]로 긴 작업을 끊어 넘기는 법
 - [[agents/workflows/agent-runbook|Agent runbook]]으로 반복되는 논문/블로그/wiki 작업을 표준화하는 법
 - [[inbox/curation-queue|Curation queue]]와 [[inbox/publishing-gate|publishing gate]]로 agent output을 공개 note로 승격하는 법

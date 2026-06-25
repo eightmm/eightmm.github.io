@@ -21,6 +21,7 @@ A verification loop closes the gap between "the agent said it's done" and "the a
 ## Related
 
 - [[agents/core/agent-loop|Agent loop]]
+- [[agents/verification/acceptance-criteria|Acceptance criteria]]
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[agents/core/planning|Planning]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]

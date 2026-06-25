@@ -13,6 +13,8 @@ Core agent notes describe the basic loop, state, memory, planning, and context d
 
 - [[agents/core/agent-architecture|Agent architecture]]
 - [[agents/core/agent-loop|Agent loop]]
+- [[agents/core/agent-environment|Agent environment]]
+- [[agents/core/action-space|Action space]]
 - [[agents/core/agent-state|Agent state]]
 - [[agents/core/context-engineering|Context engineering]]
 - [[agents/core/planning|Planning]]
@@ -25,4 +27,5 @@ Core agent notes describe the basic loop, state, memory, planning, and context d
 - [[agents/index|Agents]]
 - [[agents/tools/index|Agent tools]]
 - [[agents/verification/index|Agent verification]]
+- [[agents/verification/acceptance-criteria|Acceptance criteria]]
 - [[concepts/llm/index|LLM concepts]]
