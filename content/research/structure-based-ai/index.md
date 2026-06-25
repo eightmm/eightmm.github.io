@@ -44,6 +44,7 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
+- [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
@@ -53,6 +54,7 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 ## Evaluation Anchors
 
 - [[papers/sbdd/posebusters|PoseBusters]] for pose plausibility checks.
+- [[concepts/sbdd/pose-generation|Pose generation]] for separating search/sampling from scoring.
 - [[concepts/evaluation/leakage|Leakage]] for data and benchmark audit.
 - [[concepts/evaluation/scaffold-split|Scaffold split]] for ligand-side generalization.
 - [[concepts/evaluation/protein-family-split|Protein family split]] for protein-side generalization.

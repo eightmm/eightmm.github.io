@@ -25,6 +25,7 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 ## Modeling Views
 
 - Search problem: explore ligand translations, rotations, conformers, and sometimes side-chain flexibility.
+- Pose generation problem: sample or optimize candidate geometries conditioned on protein and ligand context.
 - Ranking problem: use a [[concepts/sbdd/scoring-function|scoring function]] to order candidate poses.
 - Generative problem: directly sample plausible complex structures with learned geometry.
 - Evaluation problem: distinguish native-like poses from invalid or overfit predictions.
@@ -41,7 +42,7 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 ## Pipeline Sketch
 
 1. Prepare receptor and ligand structures.
-2. Generate candidate poses.
+2. Generate candidate poses with an explicit [[concepts/sbdd/pose-generation|pose generation]] policy.
 3. Filter implausible poses using geometry and chemistry checks.
 4. Rank candidates with a [[concepts/sbdd/scoring-function|scoring function]].
 5. Record uncertainty and failure modes.
@@ -66,6 +67,7 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 
 - [[entities/pocket|Pocket]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
+- [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]

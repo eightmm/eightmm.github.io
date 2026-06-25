@@ -39,6 +39,7 @@ tags:
 - [[entities/target|Target]], [[entities/assay|assay]], [[entities/dataset|dataset]]을 label이 생기는 context로 정리하기
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]], [[concepts/molecular-modeling/tautomer|tautomer]], [[concepts/molecular-modeling/protonation-state|protonation state]]가 split과 docking을 바꾸는 이유
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]이 docking 결과를 좌우하는 이유
+- [[concepts/sbdd/pose-generation|Pose generation]], [[concepts/sbdd/pose-quality|pose quality]], [[concepts/sbdd/scoring-function|scoring function]]을 분리해서 읽는 법
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]을 contact, pose, affinity, ranking으로 분해하는 법
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]에서 pose generation, scoring, filtering을 분리해야 하는 이유
 - [[concepts/sbdd/template-leakage|Template leakage]]가 structure-based benchmark에서 왜 위험한가

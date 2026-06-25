@@ -35,10 +35,13 @@ $$
 - Is ranking driven by pose quality, affinity, ligand bias, or dataset artifacts?
 - Are top-ranked molecules inspected for validity and novelty?
 - Are [[concepts/evaluation/negative-set|negative sets]] and [[concepts/evaluation/applicability-domain|applicability domain]] reported?
+- Is pose generation failure separated from scoring failure?
+- Is early enrichment reported instead of only global classification metrics?
 
 ## Related
 
 - [[entities/pocket|Pocket]]
+- [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/evaluation/negative-set|Negative set]]

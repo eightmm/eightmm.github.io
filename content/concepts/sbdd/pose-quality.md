@@ -34,10 +34,22 @@ $$
 - Are bond lengths, stereochemistry, ring planarity, and clashes checked?
 - Are protein-ligand contacts plausible?
 - Are pose quality, ranking, and affinity metrics reported separately?
+- Are invalid generated poses excluded before using scores for downstream ranking claims?
+
+## Metric Boundary
+
+Pose quality asks whether a candidate geometry is plausible:
+
+$$
+q = Q(P,L,\hat{X})
+$$
+
+It does not by itself prove binding affinity, selectivity, or screening utility. A native-like pose can still bind weakly, and a strong binder can be missed if the receptor or ligand state is wrong.
 
 ## Related
 
 - [[papers/sbdd/posebusters|PoseBusters]]
+- [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]

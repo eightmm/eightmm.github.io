@@ -52,6 +52,7 @@ $$
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
+- [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/scoring-function|Scoring function]]

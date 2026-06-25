@@ -24,6 +24,8 @@ $$
 
 where $P$ is a protein or pocket, $L$ is a ligand, $\hat{X}_k$ are candidate poses, and $s_k$ are scores.
 
+The first arrow is [[concepts/sbdd/pose-generation|pose generation]]. The second arrow is scoring or filtering. Keeping those steps separate makes failures diagnosable.
+
 ## Key Ideas
 
 - Pose generation and scoring are different tasks.
@@ -37,6 +39,7 @@ where $P$ is a protein or pocket, $L$ is a ligand, $\hat{X}_k$ are candidate pos
 
 - What protein structure and binding site definition are used?
 - How are ligand states, conformers, charges, and stereochemistry prepared?
+- How many poses are generated and how is diversity handled?
 - Is the workflow evaluating pose prediction, enrichment, affinity, or prioritization?
 - Are invalid poses filtered before ranking metrics are reported?
 - Are baselines and split protocols appropriate for the generalization claim?
@@ -44,6 +47,7 @@ where $P$ is a protein or pocket, $L$ is a ligand, $\hat{X}_k$ are candidate pos
 ## Related
 
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/protein-modeling/binding-site|Binding site]]
