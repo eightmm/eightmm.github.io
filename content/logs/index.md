@@ -18,7 +18,9 @@ Logs are cleaned work records. They should capture what was learned, not private
 
 ## Formats
 
+- [[logs/public-log-taxonomy|Public log taxonomy]]
 - [[logs/public-log-format|Public log format]]
+- [[logs/log-promotion-rule|Log promotion rule]]
 - [[logs/public-incident-note|Public incident note]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
 
@@ -34,4 +36,5 @@ Logs are cleaned work records. They should capture what was learned, not private
 - [[infra/index|Infra]]
 - [[research/index|Research]]
 - [[inbox/inbox-triage|Inbox triage]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[concepts/systems/failure-recovery|Failure recovery]]

@@ -102,6 +102,7 @@ tags:
 - [[logs/public-incident-note|Public incident note]]로 운영 실패를 공개 가능한 lesson으로 바꾸는 법
 - [[infra/server-ops/incident-response|Incident response]], [[infra/server-ops/backup-restore|backup and restore]], [[infra/server-ops/access-boundary|access boundary]]를 서버 운영 글의 기본 runbook으로 쓰는 법
 - [[infra/reproducible-run-record|Reproducible run record]]를 왜 연구 로그와 연결해야 하는가
+- [[logs/public-log-taxonomy|Public log taxonomy]]와 [[logs/log-promotion-rule|log promotion rule]]로 작업 로그를 concept/project/post로 승격하는 법
 
 ## Agents
 

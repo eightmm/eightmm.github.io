@@ -28,6 +28,7 @@ $$
 - Fix: public-safe resolution.
 - Prevention: monitoring, checklist, test, or runbook update.
 - Links: related infra, systems, project, or research notes.
+- Promotion: whether the incident should remain a log or update an infra runbook.
 
 ## Public-Safe Examples
 
@@ -44,10 +45,13 @@ Avoid exact hostnames, usernames, private paths, queue names, ports, internal ti
 - Does the prevention step connect to a checklist or runbook?
 - Is the issue already fixed or clearly marked as unresolved?
 - Would publishing the note reveal security posture or private work?
+- Should the prevention step update [[infra/server-ops/incident-response|Incident response for shared research machines]]?
 
 ## Related
 
 - [[logs/public-log-format|Public log format]]
+- [[logs/public-log-taxonomy|Public log taxonomy]]
+- [[logs/log-promotion-rule|Log promotion rule]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[concepts/systems/observability|Observability]]

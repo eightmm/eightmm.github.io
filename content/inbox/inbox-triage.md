@@ -30,6 +30,8 @@ Inbox triage decides whether a raw candidate becomes a paper note, concept note,
 
 If the destination is unclear, keep the item in [[inbox/curation-queue|Curation queue]] with a concrete next action rather than creating a weak page.
 
+For cleaned work records, use [[logs/public-log-taxonomy|Public log taxonomy]] and [[logs/log-promotion-rule|Log promotion rule]] before deciding that the item should remain under `logs/`.
+
 ## Checks
 
 - Do not promote raw agent output without verification.
@@ -49,3 +51,5 @@ If the destination is unclear, keep the item in [[inbox/curation-queue|Curation 
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
+- [[logs/public-log-taxonomy|Public log taxonomy]]
+- [[logs/log-promotion-rule|Log promotion rule]]

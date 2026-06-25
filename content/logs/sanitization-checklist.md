@@ -32,10 +32,13 @@ Sanitization converts private working notes into public notes. The goal is to ke
 - Does the note avoid security-sensitive configuration?
 - Are uncertain claims marked as unresolved?
 - Has the note passed [[inbox/publishing-gate|Publishing gate]] before promotion?
+- Has the note's destination been checked with [[logs/log-promotion-rule|Log promotion rule]]?
 
 ## Related
 
 - [[logs/public-log-format|Public log format]]
+- [[logs/public-log-taxonomy|Public log taxonomy]]
+- [[logs/log-promotion-rule|Log promotion rule]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[infra/index|Infra]]

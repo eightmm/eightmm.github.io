@@ -33,6 +33,7 @@ $$
 - Project: public artifact, design, verification, status, and next work.
 - Infra: public operational lesson or systems pattern.
 - Log: cleaned work record, incident note, or experiment summary.
+- Log promotion: use [[logs/public-log-taxonomy|Public log taxonomy]] and [[logs/log-promotion-rule|Log promotion rule]] before leaving a cleaned record as a standalone log.
 - Post: Korean narrative that gives context, reading order, and interpretation.
 
 ## Promotion Criteria
@@ -77,6 +78,7 @@ An agent should:
 - Does a Korean post provide context and reading order?
 - Are private details removed before public promotion?
 - Is there an explicit next action for items left in the inbox?
+- If the candidate is a log, is its taxonomy and promotion destination explicit?
 
 ## Related
 
@@ -89,3 +91,5 @@ An agent should:
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
 - [[projects/llm-wiki-blog|LLM Wiki blog]]
+- [[logs/public-log-taxonomy|Public log taxonomy]]
+- [[logs/log-promotion-rule|Log promotion rule]]
