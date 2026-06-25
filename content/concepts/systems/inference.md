@@ -33,6 +33,7 @@ Inference cost depends on input length, output length, batch size, model size, p
 
 ## Checks
 
+- Is there an [[concepts/systems/inference-contract|inference contract]] for accepted inputs, outputs, and errors?
 - Is the workload latency-bound or throughput-bound?
 - Is preprocessing identical to evaluation?
 - Are outputs constrained to valid task objects?
@@ -41,6 +42,8 @@ Inference cost depends on input length, output length, batch size, model size, p
 
 ## Related
 
+- [[concepts/systems/inference-contract|Inference contract]]
+- [[concepts/systems/model-card|Model card]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]

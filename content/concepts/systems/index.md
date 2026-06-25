@@ -28,6 +28,8 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/inference|Inference]]
+- [[concepts/systems/inference-contract|Inference contract]]
+- [[concepts/systems/model-card|Model card]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
@@ -53,6 +55,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - Can terminal runs be reconciled from logs, scheduler state, and artifacts?
 - Are training metrics, validation metrics, and serving metrics separated?
 - Does the deployment path preserve the same preprocessing and constraints as evaluation?
+- Is there a model card and inference contract for public-facing artifacts?
 
 ## Related
 

@@ -104,6 +104,8 @@ Infra and HPC notes should be general research-engineering knowledge, not a map 
 
 Experiment and run notes should connect question, hypothesis, design, run, artifact, analysis, and claim. For new experiment workflow notes, update `content/concepts/systems/experiment-lifecycle.md`, `content/concepts/systems/run-artifact.md`, `content/concepts/research-methodology/index.md`, and the nearest public gateway when relevant. Public notes should describe artifact fields and decisions, not private paths, raw internal logs, hostnames, unpublished metrics, or internal task names.
 
+Model and inference artifact notes should include a model card or inference contract when applicable. State task, input schema, preprocessing, output schema, validity rule, error format, evaluation boundary, intended use, out-of-scope use, and logging/privacy boundary.
+
 Do not expand `research/` just to fill the site. Prefer `ai/`, `math/`, `concepts/`, `entities/`, `papers/`, `agents/`, and `infra/` until the user provides a concrete research direction.
 
 Project notes should be public engineering narratives, not private task trackers. Use `content/projects/project-note-format.md` for durable project pages: problem, artifact, public boundary, design, verification, status, next work, and related links. Keep milestone updates in `content/projects/project-milestone-format.md`. Do not publish private repo paths, internal task names, unpublished metrics, collaborator context, or infrastructure details.

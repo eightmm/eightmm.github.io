@@ -38,6 +38,7 @@ where $I$ is input, $O$ is output, and $S_{\mathrm{pre}}, S_{\mathrm{post}}$ des
 ## Related
 
 - [[agents/tools/tool-use|Tool use]]
+- [[concepts/systems/inference-contract|Inference contract]]
 - [[agents/verification/prompt-injection|Prompt injection]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[agents/verification/human-in-the-loop|Human in the loop]]

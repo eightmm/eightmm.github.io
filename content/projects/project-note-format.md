@@ -46,6 +46,8 @@ State the problem in a way that does not depend on private context.
 
 Describe what exists or what is being built: a pipeline, note system, runbook, agent workflow, or tool.
 
+For model or inference artifacts, link the public [[concepts/systems/model-card|Model card]] and [[concepts/systems/inference-contract|Inference contract]] when applicable.
+
 ### Public Boundary
 
 State what the note intentionally omits:
@@ -133,6 +135,7 @@ A project note is ready for public linking when:
 
 - The problem is understandable without private context.
 - The artifact has a clear interface or workflow.
+- Model or inference artifacts have a clear model card or inference contract when applicable.
 - Verification is stated separately from aspiration.
 - Risks and missing evidence are explicit.
 - Related concept, paper, infra, or agent notes are linked.
@@ -142,6 +145,8 @@ A project note is ready for public linking when:
 - [[projects/index|Projects]]
 - [[projects/project-milestone-format|Project milestone format]]
 - [[concepts/research-methodology/decision-record|Decision record]]
+- [[concepts/systems/model-card|Model card]]
+- [[concepts/systems/inference-contract|Inference contract]]
 - [[infra/reproducible-run-record|Reproducible run record]]
 - [[agents/verification/acceptance-criteria|Acceptance criteria]]
 - [[inbox/publishing-gate|Publishing gate]]

@@ -32,6 +32,7 @@ $$
 ## Checks
 
 - What is the public contract of the endpoint or workflow?
+- Does the endpoint follow a documented [[concepts/systems/inference-contract|inference contract]]?
 - Are model version and preprocessing version tied together?
 - Are tail latency and error rate measured?
 - Can the service reject unsupported inputs clearly?
@@ -39,6 +40,8 @@ $$
 
 ## Related
 
+- [[concepts/systems/inference-contract|Inference contract]]
+- [[concepts/systems/model-card|Model card]]
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]

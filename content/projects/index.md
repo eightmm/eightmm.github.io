@@ -33,6 +33,8 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 
 - [[projects/project-note-format|Project note format]]
 - [[projects/project-milestone-format|Project milestone format]]
+- [[concepts/systems/model-card|Model card]]
+- [[concepts/systems/inference-contract|Inference contract]]
 - [[concepts/research-methodology/decision-record|Decision record]]
 - [[concepts/research-methodology/experiment-ledger|Experiment ledger]]
 

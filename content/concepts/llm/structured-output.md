@@ -48,6 +48,7 @@ where invalid outputs are excluded or rejected.
 
 ## Related
 
+- [[concepts/systems/inference-contract|Inference contract]]
 - [[concepts/tasks/structured-prediction|Structured prediction]]
 - [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/decoding|Decoding]]

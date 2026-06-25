@@ -40,6 +40,8 @@ $$
 - Result shape: concise output returned to the model.
 - Error shape: explicit failure rather than silent fallback.
 
+Tool-calling workflows should be compatible with the surrounding [[concepts/systems/inference-contract|Inference contract]], especially when model output triggers side effects.
+
 ## Failure Modes
 
 - Invalid arguments.
@@ -61,6 +63,7 @@ $$
 
 - [[agents/tools/tool-use|Tool use]]
 - [[agents/tools/tool-contract|Tool contract]]
+- [[concepts/systems/inference-contract|Inference contract]]
 - [[concepts/llm/structured-output|Structured output]]
 - [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]
 - [[agents/verification/verification-loop|Verification loop]]

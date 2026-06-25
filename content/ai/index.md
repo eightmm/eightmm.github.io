@@ -191,6 +191,8 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/inference|Inference]]
+- [[concepts/systems/inference-contract|Inference contract]]
+- [[concepts/systems/model-card|Model card]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]

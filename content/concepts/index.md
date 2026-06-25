@@ -311,6 +311,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/inference|Inference]]
+- [[concepts/systems/inference-contract|Inference contract]]
+- [[concepts/systems/model-card|Model card]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
