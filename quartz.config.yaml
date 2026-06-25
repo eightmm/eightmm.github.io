@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Jaemin;s Research Notes
+  pageTitle: Jaemin's Research Notes
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: eightmm.github.io/quartz
+  baseUrl: eightmm.github.io
   ignorePatterns:
     - private
     - templates
