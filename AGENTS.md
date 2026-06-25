@@ -94,6 +94,8 @@ Bio scope should stay focused on structure-based AI, protein modeling, ligand/mo
 
 Chem-bio notes should preserve data semantics: standardize molecules before deduplication and splitting, state tautomer/protonation/stereo choices, keep target and assay context explicit, prefer scaffold or protein-family splits over random splits, and flag template leakage risks in structure-based benchmarks. Do not invent assay metadata, target details, activity values, or benchmark metrics.
 
+For protein-ligand or SBDD benchmark notes, state the example unit and split unit on both sides: ligand scaffold/similarity group, protein sequence or structure family, complex pair, assay/source, and temporal split when relevant. Do not make broad generalization claims from a split that only tests interpolation.
+
 Data notes should define example unit, split unit, preprocessing contract, label semantics, and dataset-card style limitations before adding model claims. Do not treat a row identifier as the split unit unless the note explains why that matches the generalization claim.
 
 Evaluation notes should separate primary metrics from diagnostics and should name failure modes explicitly. When adding task or evaluation notes, connect output space, metric selection, failure mode taxonomy, split rule, uncertainty, and leakage risk before making model-quality claims.

@@ -28,6 +28,7 @@ Structure-based models can look strong when the test target, binding mode, or li
 
 - Are train/test proteins separated by family or sequence identity?
 - Are ligands separated by scaffold or similarity?
+- Is the combined [[concepts/sbdd/protein-ligand-split|protein-ligand split]] strict enough for the benchmark claim?
 - Was any bound ligand, close analog, or protein-ligand complex used as a template?
 - Are template databases and cutoffs documented?
 - Are pose quality, affinity, and enrichment claims evaluated under the same leakage policy?
@@ -37,5 +38,6 @@ Structure-based models can look strong when the test target, binding mode, or li
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
+- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/pose-quality|Pose quality]]

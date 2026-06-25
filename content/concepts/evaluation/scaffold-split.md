@@ -40,7 +40,7 @@ p_{\mathrm{train}}(m)
 \text{through scaffold grouping}
 $$
 
-The result still depends on assay quality, target context, class balance, scaffold group size, and whether molecules were standardized consistently.
+The result still depends on assay quality, target context, class balance, scaffold group size, and whether molecules were standardized consistently. For target-conditioned molecular tasks, scaffold split should be interpreted together with [[concepts/sbdd/protein-ligand-split|Protein-ligand split]] so ligand-side novelty is not confused with target-side generalization.
 
 ## Related
 
@@ -48,4 +48,5 @@ The result still depends on assay quality, target context, class balance, scaffo
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[concepts/evaluation/index|Evaluation]]

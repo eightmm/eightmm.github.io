@@ -61,6 +61,7 @@ tags:
 - [[concepts/sbdd/pose-generation|Pose generation]], [[concepts/sbdd/pose-quality|pose quality]], [[concepts/sbdd/scoring-function|scoring function]]을 분리해서 읽는 법
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]을 contact, pose, affinity, ranking으로 분해하는 법
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]에서 pose generation, scoring, filtering을 분리해야 하는 이유
+- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]으로 scaffold, protein-family, complex, assay, temporal split을 같이 보는 법
 - [[concepts/sbdd/template-leakage|Template leakage]]가 structure-based benchmark에서 왜 위험한가
 - [[concepts/protein-modeling/pocket-representation|Pocket representation]]을 ligand-defined pocket과 deployable pocket으로 나눠 보는 법
 - [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]을 protein-side split의 기본으로 쓰는 법

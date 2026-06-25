@@ -76,6 +76,7 @@ $$
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[concepts/evaluation/leakage|Leakage]]
 

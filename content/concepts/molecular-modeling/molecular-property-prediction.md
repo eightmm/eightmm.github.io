@@ -53,6 +53,7 @@ $$
 - What does the target label mean and how was it measured?
 - Is the task classification, regression, ranking, or uncertainty estimation?
 - Are scaffold, time, target, or assay splits needed?
+- If the label is target-conditioned, is the [[concepts/sbdd/protein-ligand-split|protein-ligand split]] explicit?
 - Are stereochemistry, salts, tautomers, and protonation handled consistently?
 - Does performance hold outside the training applicability domain?
 
@@ -64,4 +65,5 @@ $$
 - [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
+- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[concepts/evaluation/activity-cliff|Activity cliff]]

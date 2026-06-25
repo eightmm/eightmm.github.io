@@ -246,6 +246,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
+- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[concepts/sbdd/template-leakage|Template leakage]]
 
 ## Molecular Modeling
@@ -397,6 +398,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/evaluation/activity-cliff|Activity cliff]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]

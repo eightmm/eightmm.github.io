@@ -38,12 +38,13 @@ $$
 s(p_i)=s(p_j)
 $$
 
-It does not automatically prove generalization to new folds, new assays, new ligands, or new experimental sources. Those require separate split rules or external test sets.
+It does not automatically prove generalization to new folds, new assays, new ligands, or new experimental sources. Those require separate split rules or external test sets. For protein-ligand tasks, it should be interpreted together with [[concepts/sbdd/protein-ligand-split|Protein-ligand split]] so target novelty is not confused with ligand-side interpolation.
 
 ## Related
 
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
+- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/index|Evaluation]]
