@@ -19,16 +19,22 @@ $$
 ## Core Notes
 
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
+- [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/math/calculus|Calculus]]
 - [[concepts/math/matrix-calculus|Matrix calculus]]
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/math/symmetry-group|Symmetry group]]
+- [[concepts/math/random-variable|Random variable]]
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
+- [[concepts/math/covariance-correlation|Covariance and correlation]]
 - [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/math/bayes-rule|Bayes rule]]
+- [[concepts/math/statistical-estimator|Statistical estimator]]
+- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 
 ## Checks
 

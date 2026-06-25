@@ -43,6 +43,7 @@ $$
 
 ## Checks
 
+- What random variable does the distribution describe?
 - Is the distribution over inputs, labels, latents, outputs, or noise?
 - Is the model estimating $p(x)$, $p(y\mid x)$, $p(x,y)$, or a score?
 - Is the variable discrete, continuous, structured, or mixed?
@@ -50,7 +51,9 @@ $$
 
 ## Related
 
+- [[concepts/math/random-variable|Random variable]]
 - [[concepts/math/expectation|Expectation]]
+- [[concepts/math/covariance-correlation|Covariance and correlation]]
 - [[concepts/math/bayes-rule|Bayes rule]]
 - [[concepts/machine-learning/density-estimation|Density estimation]]
 - [[concepts/generative-models/index|Generative models]]

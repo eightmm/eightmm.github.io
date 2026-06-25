@@ -30,6 +30,8 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 ## Model Families
 
 - [[concepts/data/index|Data]]
+- [[concepts/math/random-variable|Random variable]]
+- [[concepts/math/statistical-estimator|Statistical estimator]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/machine-learning/classification|Classification]]
@@ -48,6 +50,7 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/regularization|Regularization]]
+- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]

@@ -43,6 +43,11 @@ $$
 C_{ij} = \sum_k A_{ik}B_{kj}
 $$
 
+Spectral structure:
+
+- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]] describes special directions of square matrices.
+- [[concepts/math/singular-value-decomposition|Singular value decomposition]] describes directions and scales for any matrix.
+
 ## Why It Matters
 
 - [[concepts/architectures/linear-layer|Linear layers]] are affine maps.
@@ -62,4 +67,6 @@ $$
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
+- [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/machine-learning/dimensionality-reduction|Dimensionality reduction]]

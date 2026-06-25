@@ -28,6 +28,8 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
+- [[concepts/math/statistical-estimator|Statistical estimator]]
+- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]

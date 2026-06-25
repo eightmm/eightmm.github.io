@@ -27,6 +27,7 @@ Here $X$ is the centered data matrix and $W$ contains the projection directions.
 ## Common Methods
 
 - PCA preserves directions of high variance.
+- SVD gives a practical decomposition for low-rank structure.
 - t-SNE and UMAP are often used for visualization.
 - Autoencoders learn nonlinear compressed representations.
 
@@ -38,6 +39,9 @@ Here $X$ is the centered data matrix and $W$ contains the projection directions.
 
 ## Related
 
+- [[concepts/math/covariance-correlation|Covariance and correlation]]
+- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
+- [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/machine-learning/clustering|Clustering]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
