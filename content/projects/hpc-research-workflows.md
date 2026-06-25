@@ -10,9 +10,17 @@ tags:
 
 This project collects public, generalized patterns for running research workloads on shared GPU and HPC systems. It focuses on reproducibility, debugging, and safe operations rather than private cluster details.
 
+## Artifact
+
+The artifact is a reusable workflow for designing, submitting, monitoring, and closing research compute runs.
+
 ## Problem
 
 Research runs often fail because the workflow around the model is weak: unclear resource requests, missing checkpoints, untracked environments, and poor failure logs.
+
+## Public Boundary
+
+Keep the note generic. Do not include real server names, IPs, account names, SSH ports, private mount paths, queue names that reveal infrastructure, user lists, or private job IDs.
 
 ## Workflow
 
@@ -38,3 +46,4 @@ Research runs often fail because the workflow around the model is weak: unclear 
 - [[infra/reproducible-run-record|Reproducible run record]]
 - [[infra/distributed-training|Distributed training]]
 - [[agents/verification/verification-loop|Verification loop]]
+- [[projects/project-note-format|Project note format]]

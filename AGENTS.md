@@ -38,7 +38,7 @@ Keep the public entry points aligned with `content/index.md` and the Quartz Expl
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
 - `papers/`: Curated paper notes, not raw daily logs.
 - `agents/`: Agent and workflow notes, grouped as below.
-- `projects/`: Public project notes and implementation narratives.
+- `projects/`: Public project notes, artifacts, workflows, and implementation narratives.
 - `posts/`: Korean narrative blog posts.
 
 Public top-level navigation should stay small and stable. Do not add a new Explorer root for a concept family just because many notes exist. Prefer linking support folders from the nearest gateway page.
@@ -97,6 +97,8 @@ Data notes should define example unit, split unit, preprocessing contract, label
 Infra and HPC notes should be general research-engineering knowledge, not a map of any private cluster. For new HPC notes, prefer generic concepts such as resource scheduling, resource requests, job arrays, checkpointing, preemption/resume, GPU memory, storage IO, environment management, and reproducible run records. Update `content/infra/index.md`, the relevant `content/infra/hpc/` or `content/infra/server-ops/` index, and `content/concepts/systems/index.md` when the concept belongs to AI systems.
 
 Do not expand `research/` just to fill the site. Prefer `ai/`, `math/`, `concepts/`, `entities/`, `papers/`, `agents/`, and `infra/` until the user provides a concrete research direction.
+
+Project notes should be public engineering narratives, not private task trackers. Use `content/projects/project-note-format.md` for durable project pages: problem, artifact, public boundary, design, verification, status, next work, and related links. Keep milestone updates in `content/projects/project-milestone-format.md`. Do not publish private repo paths, internal task names, unpublished metrics, collaborator context, or infrastructure details.
 
 When adding a new content area, update all relevant entry points together: the folder `index.md`, `content/index.md`, `content/posts/topic-roadmap.md` when it changes the writing plan, and `quartz.ts` only if the area should appear in the Explorer.
 

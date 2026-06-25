@@ -8,6 +8,12 @@ tags:
 
 Project pages should describe public goals, interfaces, design decisions, and reproducible artifacts. Keep internal task names, private datasets, credentials, and unpublished results out of public notes.
 
+## Role
+
+Use this area for artifacts and workflows that are being built, operated, or iterated. A project page should connect a problem to an artifact, design decision, verification method, current status, and next public improvement.
+
+If the page is only a reusable definition, put it under [[concepts/index|Concepts]]. If it is centered on one paper, put it under [[papers/index|Papers]]. If it is an operational lesson without a project artifact, put it under [[infra/index|Infra]] or [[logs/index|Logs]].
+
 ## Buckets
 
 - Research systems and pipelines.
@@ -25,6 +31,7 @@ Project pages should describe public goals, interfaces, design decisions, and re
 
 ## Formats
 
+- [[projects/project-note-format|Project note format]]
 - [[projects/project-milestone-format|Project milestone format]]
 - [[concepts/research-methodology/decision-record|Decision record]]
 - [[concepts/research-methodology/experiment-ledger|Experiment ledger]]

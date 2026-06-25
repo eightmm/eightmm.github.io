@@ -10,9 +10,17 @@ tags:
 
 The paper brief agent pipeline is a public-facing design for turning daily paper discovery into curated wiki notes. Raw candidates are not treated as finished knowledge.
 
+## Artifact
+
+The artifact is a curation workflow: paper candidates enter the inbox, selected items become paper notes, and reusable ideas are extracted into concept notes.
+
 ## Problem
 
 Daily paper lists are useful but noisy. The durable output should be a small set of verified notes, concept updates, and synthesis posts.
+
+## Public Boundary
+
+The workflow may mention public paper metadata and public interpretation. It must not include private project priorities, collaborator requests, internal task names, or unpublished reproduction results.
 
 ## Pipeline
 
@@ -40,4 +48,5 @@ Daily paper lists are useful but noisy. The durable output should be a small set
 - [[papers/paper-note-format|Paper note format]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/reading-status|Reading status]]
+- [[projects/project-note-format|Project note format]]
 - [[projects/llm-wiki-blog|LLM Wiki blog]]
