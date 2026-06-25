@@ -35,6 +35,7 @@ $$
 
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]

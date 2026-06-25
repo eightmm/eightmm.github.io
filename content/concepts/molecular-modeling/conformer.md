@@ -32,10 +32,26 @@ $$
 - Is the model trained on crystal structures but evaluated on generated conformers?
 - Are metrics stable across conformer ensembles?
 - Does the task need ligand-only conformers or protein-bound poses?
+- Is the conformer generation protocol part of the featurization contract?
+
+## Conformer vs Pose
+
+A ligand-only conformer is not the same as a bound pose:
+
+$$
+X_{\mathrm{conf}}
+\ne
+X_{\mathrm{pose}}(P)
+$$
+
+The pose depends on the protein or pocket context $P$. A model trained on bound poses but evaluated on ligand-only conformers is under a representation shift.
 
 ## Related
 
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
+- [[concepts/molecular-modeling/protonation-state|Protonation state]]
+- [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
 - [[entities/ligand|Ligand]]

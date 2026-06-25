@@ -12,6 +12,7 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 ## Core Concepts
 
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
@@ -30,6 +31,7 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 - Record tautomer, salt, charge, protonation, and conformer protocols.
 - Use scaffold or cluster splits instead of random splits for ligand-side generalization.
 - Cache features with featurizer version and input hash.
+- Use one molecular featurization contract across train, evaluation, and inference.
 
 ## Related
 

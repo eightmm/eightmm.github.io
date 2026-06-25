@@ -33,9 +33,12 @@ for binary fingerprints $a$ and $b$.
 - Is the fingerprint version pinned and reproducible?
 - Does a simple fingerprint baseline already solve the benchmark?
 - Are scaffold or cluster splits based on standardized molecules?
+- Is the fingerprint computed after standardization and before split leakage checks?
+- Is the same fingerprint contract used for train and inference?
 
 ## Related
 
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]

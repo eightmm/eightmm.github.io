@@ -35,11 +35,25 @@ $$
 - Are bond order, aromaticity, chirality, formal charge, and ring membership encoded?
 - Does graph batching isolate molecules correctly?
 - Does the graph lose conformer or stereochemical information needed by the task?
+- Are graph features generated from the standardized molecule definition?
+
+## Batching Boundary
+
+For graph mini-batches, node tensors from many molecules are concatenated. A molecule-level readout must respect the batch index:
+
+$$
+h_G^{(b)}
+=
+\operatorname{pool}\{h_i: \operatorname{batch}(i)=b\}
+$$
+
+Pooling across all nodes without the batch boundary leaks information between examples.
 
 ## Related
 
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-construction|Graph construction]]
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 - [[entities/molecule|Molecule]]

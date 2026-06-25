@@ -29,10 +29,13 @@ For 2D property models, ignoring protonation may be acceptable for some endpoint
 - Are charged states preserved through featurization?
 - Are generated or standardized molecules re-protonated before 3D use?
 - Is the note public-safe and free of private target preparation details?
+- Is protonation assigned before conformer generation and docking?
+- Does the featurizer encode formal charge and hydrogens as required by the task?
 
 ## Related
 
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/tautomer|Tautomer]]
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]

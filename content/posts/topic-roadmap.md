@@ -38,6 +38,7 @@ tags:
 - [[bio-ai/index|Bio-AI]]를 구조기반/단백질/분자/유전체 입력으로 나눠 보는 이유
 - [[entities/target|Target]], [[entities/assay|assay]], [[entities/dataset|dataset]]을 label이 생기는 context로 정리하기
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]], [[concepts/molecular-modeling/tautomer|tautomer]], [[concepts/molecular-modeling/protonation-state|protonation state]]가 split과 docking을 바꾸는 이유
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]가 train/evaluation/inference mismatch를 막는 이유
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]이 docking 결과를 좌우하는 이유
 - [[concepts/sbdd/pose-generation|Pose generation]], [[concepts/sbdd/pose-quality|pose quality]], [[concepts/sbdd/scoring-function|scoring function]]을 분리해서 읽는 법
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]을 contact, pose, affinity, ranking으로 분해하는 법

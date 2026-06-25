@@ -32,10 +32,12 @@ Tautomer handling changes deduplication, scaffold construction, conformer genera
 - Could the target distinguish tautomers biologically?
 - Are 3D conformers generated after tautomer/protonation decisions?
 - Are labels tied to a molecule definition that matches the model input?
+- Does the featurizer cache key change when the tautomer policy changes?
 
 ## Related
 
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/protonation-state|Protonation state]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]

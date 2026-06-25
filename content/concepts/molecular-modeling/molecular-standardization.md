@@ -35,6 +35,20 @@ The same chemical entity can appear as salts, counterions, different tautomers, 
 - Assign [[concepts/molecular-modeling/protonation-state|protonation state]] with a documented protocol.
 - Hash standardized molecules before deduplication and split construction.
 
+## Ordering
+
+Standardization should happen before deduplication and split assignment:
+
+$$
+m
+\xrightarrow{S}
+\tilde{m}
+\xrightarrow{H}
+\text{split key}
+$$
+
+Splitting on raw records can place equivalent standardized molecules on both sides of the split, creating leakage even when row IDs are disjoint.
+
 ## Checks
 
 - Is standardization done before deduplication?
@@ -42,9 +56,11 @@ The same chemical entity can appear as salts, counterions, different tautomers, 
 - Are failures in parsing or sanitization logged instead of silently dropped?
 - Are tautomer, charge, salt, and stereo choices recorded?
 - Could over-standardization collapse biologically meaningful differences?
+- Does the downstream featurizer consume the standardized form rather than the raw record?
 
 ## Related
 
+- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/tautomer|Tautomer]]
 - [[concepts/molecular-modeling/protonation-state|Protonation state]]
