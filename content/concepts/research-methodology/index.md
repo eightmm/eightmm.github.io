@@ -27,6 +27,7 @@ $$
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
 - [[concepts/research-methodology/experiment-design|Experiment design]]
 - [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]]
+- [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - [[concepts/research-methodology/threat-to-validity|Threat to validity]]
 - [[concepts/research-methodology/research-log|Research log]]
@@ -44,6 +45,7 @@ $$
 - Is only one variable changed?
 - What threat to validity could weaken the conclusion?
 - Is the result recorded whether it succeeds, fails, or surprises?
+- Is the run connected to artifacts, metrics, and a reproducible record?
 - Are negative and inconclusive results preserved as reusable lessons?
 - Are paper claims synthesized into research questions rather than copied summaries?
 - Is the public note separated from private implementation details and unpublished results?
@@ -54,5 +56,6 @@ $$
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
+- [[concepts/systems/run-artifact|Run artifact]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[infra/reproducible-run-record|Reproducible run record]]

@@ -21,6 +21,8 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 ## Topics
 
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
+- [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/systems/distributed-training|Distributed training]]
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
@@ -44,6 +46,8 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - Is the workload shaped for the scheduler: resource request, job size, queue time, and preemption risk?
 - Is the environment and storage path part of the run record?
 - Is the goal model quality, time-to-train, cost, latency, throughput, or reliability?
+- Is the experiment lifecycle recorded from question to claim?
+- Are run artifacts sufficient for later inspection or metric checking?
 - Can the run be reproduced from a commit, config, seed, dataset version, and environment?
 - Can the workflow recover from preemption, partial output, or service failure?
 - Can terminal runs be reconciled from logs, scheduler state, and artifacts?
@@ -56,4 +60,5 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[infra/index|Infra]]
 - [[papers/systems/index|Systems papers]]
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/research-methodology/index|Research methodology]]
 - [[agents/verification/verification-loop|Verification loop]]

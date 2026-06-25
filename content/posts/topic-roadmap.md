@@ -30,6 +30,8 @@ tags:
 - [[concepts/data/dataset-split-contract|Dataset split contract]]로 train/validation/test split rule, grouping key, leakage audit을 재현 가능하게 남기는 법
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]로 모델링 전에 dataset card와 evaluation protocol을 먼저 쓰는 법
 - [[concepts/data/data-distribution|Data distribution]], [[concepts/data/data-schema|data schema]], [[concepts/data/label-semantics|label semantics]], [[concepts/data/dataset-shift|dataset shift]]를 모델보다 먼저 확인하는 이유
+- [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]로 question, hypothesis, design, run, artifact, analysis, claim을 하나의 흐름으로 묶는 법
+- [[concepts/systems/run-artifact|Run artifact]]로 config, log, metric, prediction, checkpoint, environment를 공개 가능한 수준으로 기록하는 법
 - [[concepts/modalities/modality-representation|Modality representation]]으로 raw signal, preprocessing, model input, information loss를 분리해서 보는 법
 - [[concepts/architectures/inductive-bias|Inductive bias]], [[concepts/architectures/parameter-sharing|parameter sharing]], [[concepts/architectures/computational-complexity|computational complexity]]를 architecture 선택 기준으로 쓰는 법
 - [[concepts/architectures/linear-layer|Linear layer]], [[concepts/architectures/activation-function|activation function]], [[concepts/architectures/feed-forward-network|feed-forward network]], [[concepts/architectures/normalization|normalization]], [[concepts/architectures/residual-connection|residual connection]]을 Transformer/GNN/SSM을 읽기 전 공통 블록으로 정리하기

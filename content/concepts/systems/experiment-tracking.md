@@ -19,6 +19,7 @@ $$
 ## What To Track
 
 - Run identifier.
+- Experiment lifecycle stage and decision question.
 - Code commit and diff state.
 - Dataset and benchmark version.
 - Configuration and hyperparameters.
@@ -36,6 +37,8 @@ $$
 
 ## Related
 
+- [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
+- [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/systems/training-run|Training run]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[infra/reproducible-run-record|Reproducible run record]]

@@ -30,11 +30,14 @@ $$
 - Is the dataset version recoverable?
 - Are preprocessing and split construction deterministic?
 - Are seeds, hardware assumptions, and nondeterministic kernels documented?
+- Are run artifacts enough to recompute or inspect the reported metric?
 - Are metrics computed by the same script and aggregation rule?
 - Are public claims separated from private experiments and unpublished results?
 
 ## Related
 
+- [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
+- [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/evaluation/baseline|Baseline]]

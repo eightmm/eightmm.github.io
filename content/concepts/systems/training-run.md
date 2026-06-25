@@ -27,11 +27,12 @@ but the actual run also includes optimizer state, scheduler state, random seeds,
 - Model config and training config.
 - Seed and deterministic settings.
 - Optimizer, scheduler, and mixed-precision settings.
-- Checkpoint and metric log locations.
+- Checkpoint, metric log, prediction, and artifact policy.
 
 ## Checks
 
 - Can the run resume after interruption?
+- Are public [[concepts/systems/run-artifact|run artifacts]] sufficient for later inspection?
 - Are validation metrics separated from training loss?
 - Is the best checkpoint selected only from validation data?
 - Are failed runs recorded with enough context to learn from them?
@@ -39,6 +40,8 @@ but the actual run also includes optimizer state, scheduler state, random seeds,
 
 ## Related
 
+- [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
+- [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
