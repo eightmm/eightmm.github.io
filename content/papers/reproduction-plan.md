@@ -44,6 +44,7 @@ $R$ is a candidate reproduction, $c$ is the target claim, and $\lambda$ controls
 ## Related
 
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
+- [[papers/artifact-availability|Artifact availability]]
 - [[papers/benchmark-card|Benchmark card]]
 - [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]]
 - [[concepts/systems/reproducibility|Reproducibility]]

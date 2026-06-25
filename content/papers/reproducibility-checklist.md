@@ -53,6 +53,7 @@ If any element is missing, mark it as `to verify` rather than guessing.
 ## Related
 
 - [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/artifact-availability|Artifact availability]]
 - [[papers/evidence-table|Evidence table]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/systems/training-run|Training run]]

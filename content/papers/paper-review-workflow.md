@@ -19,13 +19,14 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 6. Create a [[papers/benchmark-card|Benchmark card]] for the benchmark when the evaluation protocol matters.
 7. Map component claims with [[papers/ablation-map|Ablation map]] when the paper argues why a method works.
 8. Record limits with [[papers/limitation-taxonomy|Limitation taxonomy]].
-9. Check reproducibility using [[papers/reproducibility-checklist|Reproducibility checklist]].
-10. Write a [[papers/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
-11. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
-12. Extract reusable concepts into [[concepts/index|Concepts]].
-13. Link research relevance into [[research/index|Research]].
-14. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
-15. Promote mature themes into Korean [[posts/index|Posts]].
+9. Record public artifacts using [[papers/artifact-availability|Artifact availability]].
+10. Check reproducibility using [[papers/reproducibility-checklist|Reproducibility checklist]].
+11. Write a [[papers/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
+12. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
+13. Extract reusable concepts into [[concepts/index|Concepts]].
+14. Link research relevance into [[research/index|Research]].
+15. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
+16. Promote mature themes into Korean [[posts/index|Posts]].
 
 ## Evidence Levels
 
@@ -37,6 +38,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - Ablation map complete: component claims are tied to isolated experiments.
 - Baseline checked: comparisons and ablations support the claimed contribution.
 - Limits recorded: failure modes, assumptions, and missing comparisons are explicit.
+- Artifact availability checked: public code, data, splits, configs, weights, logs, predictions, and environment are marked present or missing.
 - Reproducibility checked: code, data, config, compute, and evaluation details are marked present or missing.
 - Synthesis ready: the paper can support a public blog post or research map.
 
@@ -61,6 +63,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/benchmark-card|Benchmark card]]
 - [[papers/ablation-map|Ablation map]]
 - [[papers/limitation-taxonomy|Limitation taxonomy]]
+- [[papers/artifact-availability|Artifact availability]]
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
 - [[papers/reproduction-plan|Reproduction plan]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]

@@ -69,6 +69,7 @@ tags:
 - [[papers/claim-extraction|Claim extraction]], [[papers/evidence-table|evidence table]], [[papers/limitation-taxonomy|limitation taxonomy]]로 논문 주장을 좁히는 법
 - [[papers/benchmark-card|Benchmark card]]와 [[papers/ablation-map|ablation map]]으로 benchmark와 component claim을 분리해서 읽는 법
 - [[papers/reproduction-plan|Reproduction plan]]과 [[concepts/research-methodology/minimum-viable-experiment|minimum viable experiment]]로 논문을 실제 실험으로 줄이는 법
+- [[papers/artifact-availability|Artifact availability]]로 code, data, split, config, weight, log, prediction, environment 공개 여부를 먼저 확인하는 법
 - [[papers/reproducibility-checklist|Reproducibility checklist]]로 논문 구현 가능성을 빠르게 판별하는 법
 - [[concepts/research-methodology/threat-to-validity|Threat to validity]]를 이용해 paper claim을 좁히는 법
 - [[concepts/research-methodology/literature-synthesis|Literature synthesis]]로 여러 논문을 하나의 연구 질문으로 묶는 법

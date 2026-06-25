@@ -22,6 +22,7 @@ A paper note should preserve what the paper claims, what the method changes, how
 - Baselines: what the method is compared against.
 - Ablations: which components explain the result.
 - Limits: assumptions, failure modes, missing comparisons, or leakage risks, using [[papers/limitation-taxonomy|Limitation taxonomy]] when useful.
+- Artifacts: public code, data, splits, configs, weights, logs, predictions, and environment using [[papers/artifact-availability|Artifact availability]].
 - Reproducibility: public code, data, config, and run details following [[papers/reproducibility-checklist|Reproducibility checklist]].
 - Reproduction plan: smallest follow-up experiment, if the paper is worth checking directly.
 - Connections: links to concepts, research maps, and projects.
@@ -57,6 +58,7 @@ $$
 - [[papers/benchmark-card|Benchmark card]]
 - [[papers/ablation-map|Ablation map]]
 - [[papers/limitation-taxonomy|Limitation taxonomy]]
+- [[papers/artifact-availability|Artifact availability]]
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
 - [[papers/reproduction-plan|Reproduction plan]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]

@@ -52,6 +52,7 @@ If metadata is missing, write `to verify` rather than inventing it.
 - What existing concept page would this update?
 - What claim would be extracted first?
 - What benchmark, split, metric, or baseline does the paper rely on?
+- What public artifacts are available: code, data, splits, configs, weights, logs, or predictions?
 - Is there a likely leakage, data, reproducibility, or evaluation risk?
 - Is it better as a brief inbox item than a full paper note?
 
@@ -61,6 +62,7 @@ If metadata is missing, write `to verify` rather than inventing it.
 - [[papers/reading-status|Reading status]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/evidence-table|Evidence table]]
+- [[papers/artifact-availability|Artifact availability]]
 - [[inbox/inbox-triage|Inbox triage]]
 - [[inbox/curation-queue|Curation queue]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]

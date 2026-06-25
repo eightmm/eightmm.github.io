@@ -125,16 +125,17 @@ For a daily paper brief:
 4. Create only minimal stubs when needed.
 5. Use `status: inbox`, `status: stub`, or `status: reading`; do not present candidates as final reviews.
 6. Prefer concept growth over paper log accumulation.
-7. Run `npx quartz build`.
-8. Report changed files, verification result, and open review points.
+7. Record public artifact availability before a reproduction plan: code, data, splits, configs, weights, logs, predictions, and environment.
+8. Run `npx quartz build`.
+9. Report changed files, verification result, and open review points.
 
 Daily briefs should flow:
 
 `daily brief -> content/inbox -> selected papers/concepts/research updates -> weekly/monthly posts`
 
-Codex should act as wiki maintainer and draft editor. Human review decides what becomes a curated public note and when to push.
+Codex should act as wiki maintainer and draft editor. Human review decides what becomes a curated public note. Repository changes still follow the Commit and Push Policy after verification.
 
-Paper notes should not stop at summary. When a paper is important, extract claims, evidence, benchmark cards, ablation maps, limitations, reproducibility status, and a reproduction plan. Convert useful follow-up work into `concepts/research-methodology/` notes such as minimum viable experiments and threats to validity.
+Paper notes should not stop at summary. When a paper is important, extract claims, evidence, benchmark cards, ablation maps, limitations, public artifact availability, reproducibility status, and a reproduction plan. Convert useful follow-up work into `concepts/research-methodology/` notes such as minimum viable experiments and threats to validity.
 
 ## Writing Style
 

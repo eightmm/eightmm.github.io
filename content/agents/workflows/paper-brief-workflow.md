@@ -22,15 +22,17 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 2. Unclear items stay in [[inbox/curation-queue|Curation queue]].
 3. Interesting items pass [[papers/paper-triage|Paper triage]].
 4. Selected items become [[papers/index|Paper]] stubs with [[papers/reading-status|reading status]].
-5. Reusable ideas update [[concepts/index|Concepts]].
-6. Research relevance is linked into [[research/index|Research]].
-7. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
-8. Weekly or monthly synthesis becomes [[posts/index|Posts]].
+5. Public materials are recorded with [[papers/artifact-availability|Artifact availability]].
+6. Reusable ideas update [[concepts/index|Concepts]].
+7. Research relevance is linked into [[research/index|Research]].
+8. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
+9. Weekly or monthly synthesis becomes [[posts/index|Posts]].
 
 ## Rules
 
 - Do not invent DOI, arXiv IDs, metrics, datasets, or claims.
 - Mark missing details as `to verify`.
+- Mark missing code, data, split, config, weight, log, prediction, and environment artifacts as `to verify` instead of assuming they exist.
 - Prefer concept growth over paper log accumulation.
 - Keep raw or uncertain entries out of polished posts.
 
@@ -46,6 +48,7 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/evidence-table|Evidence table]]
+- [[papers/artifact-availability|Artifact availability]]
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]
