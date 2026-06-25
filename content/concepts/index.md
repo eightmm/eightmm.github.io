@@ -35,9 +35,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/index|Machine learning]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
 - Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/geometry|Geometry]] -> [[concepts/math/symmetry-group|Symmetry group]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
-- Data path: [[entities/dataset|Dataset]] -> [[concepts/data/data-curation|Data curation]] -> [[concepts/data/annotation-labeling|Annotation and labeling]] -> [[concepts/data/benchmark|Benchmark]]
-- Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
-- Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]]
+- Data path: [[entities/dataset|Dataset]] -> [[concepts/data/data-curation|Data curation]] -> [[concepts/data/data-versioning|Data versioning]] -> [[concepts/data/annotation-labeling|Annotation and labeling]] -> [[concepts/data/label-noise|Label noise]] -> [[concepts/data/benchmark|Benchmark]]
+- Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/tabular|Tabular]] -> [[concepts/modalities/graph|Graph]] -> [[concepts/modalities/3d-structure|3D structure]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
+- Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]] -> [[concepts/tasks/structured-prediction|Structured prediction]]
 - Deep learning architecture: [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
 - Systems path: [[concepts/systems/training-run|Training run]] -> [[concepts/systems/inference|Inference]] -> [[concepts/systems/model-serving|Model serving]] -> [[concepts/systems/reproducibility|Reproducibility]]
 - Research method path: [[concepts/research-methodology/research-question|Research question]] -> [[concepts/research-methodology/hypothesis|Hypothesis]] -> [[concepts/research-methodology/experiment-design|Experiment design]] -> [[concepts/research-methodology/result-interpretation|Result interpretation]]
@@ -77,7 +77,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/data/index|Data]]
 - [[entities/dataset|Dataset]]
 - [[concepts/data/data-curation|Data curation]]
+- [[concepts/data/data-versioning|Data versioning]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
+- [[concepts/data/label-noise|Label noise]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/benchmark|Benchmark]]
@@ -90,6 +92,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
 - [[concepts/modalities/audio|Audio]]
+- [[concepts/modalities/tabular|Tabular]]
+- [[concepts/modalities/graph|Graph]]
+- [[concepts/modalities/3d-structure|3D structure]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 
 ## Tasks
@@ -104,6 +109,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/tasks/captioning|Captioning]]
 - [[concepts/tasks/question-answering|Question answering]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
+- [[concepts/tasks/structured-prediction|Structured prediction]]
+- [[concepts/tasks/time-series-forecasting|Time-series forecasting]]
+- [[concepts/tasks/anomaly-detection|Anomaly detection]]
 
 ## Architectures
 

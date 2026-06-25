@@ -23,6 +23,9 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
 - [[concepts/modalities/audio|Audio]]
+- [[concepts/modalities/tabular|Tabular]]
+- [[concepts/modalities/graph|Graph]]
+- [[concepts/modalities/3d-structure|3D structure]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 
 ## Common Tasks
@@ -33,6 +36,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/tasks/captioning|Captioning]]
 - [[concepts/tasks/question-answering|Question answering]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
+- [[concepts/tasks/structured-prediction|Structured prediction]]
 
 ## Why It Matters
 
@@ -55,5 +59,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/architectures/tokenization|Tokenization]]
+- [[concepts/architectures/graph-construction|Graph construction]]
+- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/protein-modeling/index|Protein modeling concepts]]

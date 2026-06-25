@@ -23,7 +23,9 @@ Training and evaluation are only meaningful when this empirical distribution is 
 
 - [[entities/dataset|Dataset]]
 - [[concepts/data/data-curation|Data curation]]
+- [[concepts/data/data-versioning|Data versioning]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
+- [[concepts/data/label-noise|Label noise]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/benchmark|Benchmark]]
@@ -37,6 +39,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - What examples are missing because of collection bias?
 - Does the split match the intended generalization claim?
 - Can another person reconstruct the dataset version and filtering policy?
+- Are labels noisy, censored, inconsistent, or protocol-dependent?
 
 ## Related
 
@@ -45,3 +48,4 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/systems/reproducibility|Reproducibility]]

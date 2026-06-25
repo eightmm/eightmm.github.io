@@ -28,11 +28,15 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 - [[concepts/tasks/captioning|Captioning]]
 - [[concepts/tasks/question-answering|Question answering]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
+- [[concepts/tasks/structured-prediction|Structured prediction]]
+- [[concepts/tasks/time-series-forecasting|Time-series forecasting]]
+- [[concepts/tasks/anomaly-detection|Anomaly detection]]
 
 ## Checks
 
 - What is the output space?
 - Is the model predicting, ranking, retrieving, generating, localizing, or segmenting?
+- Is the output independent, sequential, structured, ranked, spatial, or temporal?
 - Does the metric match the user-facing behavior?
 - Does the data split prevent leakage for this task?
 - Are outputs constrained to valid objects, syntax, molecules, structures, or actions?
@@ -44,3 +48,4 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/ranking-metrics|Ranking metrics]]

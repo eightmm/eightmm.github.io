@@ -75,6 +75,8 @@ $$
 
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/math/symmetry-group|Symmetry group]]
+- [[concepts/modalities/graph|Graph]]
+- [[concepts/modalities/3d-structure|3D structure]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

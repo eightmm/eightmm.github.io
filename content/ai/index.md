@@ -31,6 +31,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기 전에도 problem type, feature, loss, optimization, regularization, validation을 구분해야 합니다.
 
 - [[concepts/math/index|Math foundations]]
+- [[math/index|Math gateway]]
 - [[concepts/math/linear-algebra|Linear algebra]]
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
@@ -56,7 +57,9 @@ AI 모델은 데이터 정의 위에서만 의미가 있습니다. 어떤 exampl
 - [[concepts/data/index|Data]]
 - [[entities/dataset|Dataset]]
 - [[concepts/data/data-curation|Data curation]]
+- [[concepts/data/data-versioning|Data versioning]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
+- [[concepts/data/label-noise|Label noise]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/benchmark|Benchmark]]
@@ -71,6 +74,9 @@ AI 모델은 데이터 정의 위에서만 의미가 있습니다. 어떤 exampl
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
 - [[concepts/modalities/audio|Audio]]
+- [[concepts/modalities/tabular|Tabular]]
+- [[concepts/modalities/graph|Graph]]
+- [[concepts/modalities/3d-structure|3D structure]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[entities/index|Entities]]
 
@@ -88,6 +94,9 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 - [[concepts/tasks/captioning|Captioning]]
 - [[concepts/tasks/question-answering|Question answering]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
+- [[concepts/tasks/structured-prediction|Structured prediction]]
+- [[concepts/tasks/time-series-forecasting|Time-series forecasting]]
+- [[concepts/tasks/anomaly-detection|Anomaly detection]]
 
 ## Architectures
 
