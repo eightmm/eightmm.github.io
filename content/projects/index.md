@@ -26,6 +26,8 @@ Project pages should describe public goals, interfaces, design decisions, and re
 ## Formats
 
 - [[projects/project-milestone-format|Project milestone format]]
+- [[concepts/research-methodology/decision-record|Decision record]]
+- [[concepts/research-methodology/experiment-ledger|Experiment ledger]]
 
 ## Future Candidates
 
@@ -37,6 +39,7 @@ Project pages should describe public goals, interfaces, design decisions, and re
 ## Related
 
 - [[research/index|Research]]
+- [[concepts/research-methodology/index|Research methodology]]
 - [[papers/index|Papers]]
 - [[infra/hpc/slurm|Slurm]]
 - [[logs/index|Public logs]]

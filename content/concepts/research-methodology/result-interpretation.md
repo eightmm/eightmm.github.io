@@ -37,6 +37,8 @@ $$
 ## Related
 
 - [[papers/claim-extraction|Claim extraction]]
+- [[concepts/research-methodology/negative-result|Negative result]]
+- [[concepts/research-methodology/experiment-ledger|Experiment ledger]]
 - [[concepts/research-methodology/research-log|Research log]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]

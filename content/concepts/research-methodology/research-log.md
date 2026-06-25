@@ -49,6 +49,8 @@ What should change next?
 ## Related
 
 - [[logs/public-log-format|Public log format]]
+- [[concepts/research-methodology/experiment-ledger|Experiment ledger]]
+- [[concepts/research-methodology/negative-result|Negative result]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[projects/project-milestone-format|Project milestone format]]

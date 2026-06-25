@@ -39,6 +39,7 @@ tags:
 - 논문 하나를 [[papers/paper-note-format|paper note]]에서 [[concepts/index|concept note]]로 분해하는 법
 - [[papers/claim-extraction|Claim extraction]], [[papers/evidence-table|evidence table]], [[papers/limitation-taxonomy|limitation taxonomy]]로 논문 주장을 좁히는 법
 - [[papers/reproducibility-checklist|Reproducibility checklist]]로 논문 구현 가능성을 빠르게 판별하는 법
+- [[concepts/research-methodology/literature-synthesis|Literature synthesis]]로 여러 논문을 하나의 연구 질문으로 묶는 법
 - [[papers/sbdd/posebusters|PoseBusters]]를 pose plausibility 체크리스트로 읽는 법
 - [[papers/reading-status|Reading status]]를 써서 raw candidate와 verified note를 구분하는 법
 
@@ -65,6 +66,7 @@ tags:
 - Protein representation 입문
 - Flow matching과 diffusion의 차이
 - GNN과 equivariant GNN 비교
+- Negative result를 [[concepts/research-methodology/negative-result|public research lesson]]으로 정리하는 방식
 - Slurm job lifecycle 공개 버전
 - Coding agent를 연구 블로그 운영에 쓰는 방식
 

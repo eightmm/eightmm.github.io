@@ -21,7 +21,8 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 8. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
 9. Extract reusable concepts into [[concepts/index|Concepts]].
 10. Link research relevance into [[research/index|Research]].
-11. Promote mature themes into Korean [[posts/index|Posts]].
+11. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
+12. Promote mature themes into Korean [[posts/index|Posts]].
 
 ## Evidence Levels
 
@@ -54,6 +55,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[concepts/research-methodology/research-question|Research question]]
+- [[concepts/research-methodology/literature-synthesis|Literature synthesis]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
