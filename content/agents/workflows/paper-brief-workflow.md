@@ -23,10 +23,12 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 3. Interesting items pass [[papers/paper-triage|Paper triage]].
 4. Selected items become [[papers/index|Paper]] stubs with [[papers/reading-status|reading status]].
 5. Public materials are recorded with [[papers/artifact-availability|Artifact availability]].
-6. Reusable ideas update [[concepts/index|Concepts]].
-7. Research relevance is linked into [[research/index|Research]].
-8. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
-9. Weekly or monthly synthesis becomes [[posts/index|Posts]].
+6. Implementation candidates pass [[papers/implementation-readiness|Implementation readiness]].
+7. Reruns or diagnostics get a [[papers/reproduction-plan|Reproduction plan]] and [[papers/reproduction-result|Reproduction result]].
+8. Reusable ideas update [[concepts/index|Concepts]].
+9. Research relevance is linked into [[research/index|Research]].
+10. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
+11. Weekly or monthly synthesis becomes [[posts/index|Posts]].
 
 ## Rules
 
@@ -50,6 +52,9 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 - [[papers/evidence-table|Evidence table]]
 - [[papers/artifact-availability|Artifact availability]]
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
+- [[papers/implementation-readiness|Implementation readiness]]
+- [[papers/reproduction-plan|Reproduction plan]]
+- [[papers/reproduction-result|Reproduction result]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]
 - [[inbox/curation-queue|Curation queue]]

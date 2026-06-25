@@ -51,6 +51,7 @@ where $p$ is the paper. Missing artifacts should be marked `not found` or `to ve
 - Weights without config may be unusable or incomparable.
 - Predictions can allow metric checking even when training is too expensive.
 - Missing artifacts narrow the strength of a paper claim.
+- Artifact availability is evidence for [[papers/implementation-readiness|Implementation readiness]], not proof that a reproduction is worth running.
 
 ## Checks
 
@@ -60,10 +61,12 @@ where $p$ is the paper. Missing artifacts should be marked `not found` or `to ve
 - Are model weights tied to the exact architecture and config?
 - Are benchmark submissions or predictions available for independent metric checks?
 - Is compute cost estimated from public information rather than private assumptions?
+- Which missing artifact would block a minimum viable reproduction?
 
 ## Related
 
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
+- [[papers/implementation-readiness|Implementation readiness]]
 - [[papers/reproduction-plan|Reproduction plan]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/evidence-table|Evidence table]]

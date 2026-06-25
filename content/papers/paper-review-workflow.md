@@ -21,12 +21,14 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 8. Record limits with [[papers/limitation-taxonomy|Limitation taxonomy]].
 9. Record public artifacts using [[papers/artifact-availability|Artifact availability]].
 10. Check reproducibility using [[papers/reproducibility-checklist|Reproducibility checklist]].
-11. Write a [[papers/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
-12. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
-13. Extract reusable concepts into [[concepts/index|Concepts]].
-14. Link research relevance into [[research/index|Research]].
-15. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
-16. Promote mature themes into Korean [[posts/index|Posts]].
+11. Decide [[papers/implementation-readiness|Implementation readiness]] before spending compute.
+12. Write a [[papers/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
+13. Record any rerun, reimplementation, or diagnostic as [[papers/reproduction-result|Reproduction result]].
+14. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
+15. Extract reusable concepts into [[concepts/index|Concepts]].
+16. Link research relevance into [[research/index|Research]].
+17. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
+18. Promote mature themes into Korean [[posts/index|Posts]].
 
 ## Evidence Levels
 
@@ -40,6 +42,8 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - Limits recorded: failure modes, assumptions, and missing comparisons are explicit.
 - Artifact availability checked: public code, data, splits, configs, weights, logs, predictions, and environment are marked present or missing.
 - Reproducibility checked: code, data, config, compute, and evaluation details are marked present or missing.
+- Implementation readiness checked: the target claim, minimum viable experiment, compute estimate, and failure interpretation are explicit.
+- Reproduction result recorded: the rerun or diagnostic outcome is tied to artifacts, metrics, limitations, and next decision.
 - Synthesis ready: the paper can support a public blog post or research map.
 
 ## Checks
@@ -65,7 +69,9 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/limitation-taxonomy|Limitation taxonomy]]
 - [[papers/artifact-availability|Artifact availability]]
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
+- [[papers/implementation-readiness|Implementation readiness]]
 - [[papers/reproduction-plan|Reproduction plan]]
+- [[papers/reproduction-result|Reproduction result]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[concepts/research-methodology/research-question|Research question]]
 - [[concepts/research-methodology/literature-synthesis|Literature synthesis]]

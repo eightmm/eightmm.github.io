@@ -32,6 +32,7 @@ $$
 - Useful: the note teaches a reusable concept, records a public decision, or supports a reader path.
 - Scoped: the note fits the site's AI, Bio-AI, Infra, Agents, Papers, Projects, or Research map.
 - Destination: the note's strongest role matches its target area using [[agents/workflows/content-promotion-workflow|Content promotion workflow]].
+- Paper workflow: reproduction-oriented notes pass [[papers/implementation-readiness|Implementation readiness]] before becoming a plan or result.
 
 ## Before Publishing
 
@@ -56,3 +57,4 @@ $$
 - [[inbox/inbox-triage|Inbox triage]]
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
+- [[papers/implementation-readiness|Implementation readiness]]

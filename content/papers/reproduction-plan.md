@@ -10,6 +10,8 @@ tags:
 
 A reproduction plan turns a paper into the smallest public-safe implementation or rerun that could check the main claim.
 
+Create this only after checking [[papers/implementation-readiness|Implementation readiness]]. If the run happens, record the outcome as [[papers/reproduction-result|Reproduction result]].
+
 The plan should minimize scope:
 
 $$
@@ -40,10 +42,13 @@ $R$ is a candidate reproduction, $c$ is the target claim, and $\lambda$ controls
 - Can the run be done on public data?
 - Is the expected compute realistic?
 - What result would falsify the paper note's interpretation?
+- What result should be recorded as `inconclusive` rather than success or failure?
 
 ## Related
 
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
+- [[papers/implementation-readiness|Implementation readiness]]
+- [[papers/reproduction-result|Reproduction result]]
 - [[papers/artifact-availability|Artifact availability]]
 - [[papers/benchmark-card|Benchmark card]]
 - [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]]

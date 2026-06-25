@@ -37,6 +37,8 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 - [[concepts/systems/inference-contract|Inference contract]]
 - [[concepts/research-methodology/decision-record|Decision record]]
 - [[concepts/research-methodology/experiment-ledger|Experiment ledger]]
+- [[papers/implementation-readiness|Implementation readiness]]
+- [[papers/reproduction-result|Reproduction result]]
 
 ## Future Candidates
 

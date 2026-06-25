@@ -49,11 +49,13 @@ If any element is missing, mark it as `to verify` rather than guessing.
 - Are random seeds and run variance reported?
 - Is compute cost part of the claim?
 - Are missing details severe enough to weaken the paper's conclusions?
+- Is the paper [[papers/implementation-readiness|implementation-ready]] for one scoped claim?
 
 ## Related
 
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/artifact-availability|Artifact availability]]
+- [[papers/implementation-readiness|Implementation readiness]]
 - [[papers/evidence-table|Evidence table]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/systems/training-run|Training run]]

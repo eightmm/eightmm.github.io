@@ -155,6 +155,8 @@ Codex should act as wiki maintainer and draft editor. Human review decides what 
 
 Paper notes should not stop at summary. When a paper is important, extract claims, evidence, benchmark cards, ablation maps, limitations, public artifact availability, reproducibility status, and a reproduction plan. Convert useful follow-up work into `concepts/research-methodology/` notes such as minimum viable experiments and threats to validity.
 
+Before starting a paper reproduction, add or update implementation readiness: target one claim, list public artifacts, define the minimum viable experiment, estimate public compute class, and state what success, contradiction, and inconclusive outcomes mean. After any rerun or diagnostic, record a reproduction result with public-safe artifacts, metrics, limitations, and next decision.
+
 ## Writing Style
 
 - Durable repo text is English.

@@ -23,7 +23,9 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 - [[papers/limitation-taxonomy|Limitation taxonomy]]
 - [[papers/artifact-availability|Artifact availability]]
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
+- [[papers/implementation-readiness|Implementation readiness]]
 - [[papers/reproduction-plan|Reproduction plan]]
+- [[papers/reproduction-result|Reproduction result]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 
 ## Structure-Based AI
@@ -45,6 +47,8 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/evidence-table|Evidence table]]
 - [[papers/artifact-availability|Artifact availability]]
+- [[papers/implementation-readiness|Implementation readiness]]
+- [[papers/reproduction-result|Reproduction result]]
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
