@@ -28,10 +28,13 @@ An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesi
 - Clear boundaries between facts, assumptions, and open questions.
 - Wikilinks for adjacent concepts, papers, and projects.
 - No private endpoints, account names, credentials, unpublished metrics, or internal project identifiers.
+- Korean posts should provide readable entry points; English wiki notes should hold reusable definitions and checks.
 
 ## Related
 
 - [[projects/llm-wiki-blog|LLM Wiki blog]]
+- [[posts/blog-writing-guide|Blog writing guide]]
+- [[posts/topic-roadmap|Topic roadmap]]
 - [[concepts/llm/index|LLM concepts]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]

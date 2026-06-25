@@ -17,6 +17,7 @@ Research notes, paper summaries, agent outputs, and server-operation lessons eas
 ## Design
 
 - Use [[posts/index|Posts]] for Korean narrative writing.
+- Use [[posts/blog-writing-guide|Blog writing guide]] and [[posts/topic-roadmap|Topic roadmap]] to keep posts connected to wiki notes.
 - Use [[concepts/index|Concepts]] for reusable English notes.
 - Use [[papers/index|Papers]] for public paper-specific claims.
 - Use [[research/index|Research]] for domain maps.
