@@ -16,6 +16,8 @@ A paper note should preserve what the paper claims, what the method changes, how
 - Question: what problem the paper tries to solve.
 - Method: core model, objective, data, and evaluation protocol.
 - Results: what is claimed, with metric and benchmark context.
+- Baselines: what the method is compared against.
+- Ablations: which components explain the result.
 - Limits: assumptions, failure modes, missing comparisons, or leakage risks.
 - Connections: links to concepts, research maps, and projects.
 
@@ -35,6 +37,7 @@ $$
 - Are metadata and links verified?
 - Are claims separated from personal interpretation?
 - Are metrics tied to a split and evaluation protocol?
+- Are baselines and ablations strong enough to support the claim?
 - Are figures or tables summarized rather than copied?
 - Are uncertain details marked as unresolved?
 
@@ -45,4 +48,6 @@ $$
 - [[papers/reading-status|Reading status]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/baseline|Baseline]]
+- [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]

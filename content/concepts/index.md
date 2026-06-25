@@ -75,6 +75,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
+- [[concepts/machine-learning/ranking|Ranking]]
+- [[concepts/machine-learning/density-estimation|Density estimation]]
+- [[concepts/machine-learning/representation-learning|Representation learning]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/linear-model|Linear model]]
@@ -137,6 +140,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/baseline|Baseline]]
+- [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

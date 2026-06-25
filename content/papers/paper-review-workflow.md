@@ -23,6 +23,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - Metadata verified: title, authors, venue or preprint source, and link are checked.
 - Method understood: objective, architecture, data, and evaluation are identified.
 - Claims checked: results are tied to metric, split, and benchmark.
+- Baseline checked: comparisons and ablations support the claimed contribution.
 - Limits recorded: failure modes, assumptions, and missing comparisons are explicit.
 - Synthesis ready: the paper can support a public blog post or research map.
 
@@ -30,6 +31,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 - Are formulas rewritten with symbol definitions rather than copied blindly?
 - Are metrics connected to [[concepts/evaluation/metric|Metric]] and split protocol?
+- Are [[concepts/evaluation/baseline|baselines]] and [[concepts/evaluation/ablation-study|ablation studies]] sufficient?
 - Are domain risks such as leakage, scaffold split, protein family split, or invalid geometry noted?
 - Are uncertain claims marked as unresolved?
 

@@ -25,10 +25,10 @@ $$
 
 - [[concepts/machine-learning/classification|Classification]]: discrete label을 예측합니다.
 - [[concepts/machine-learning/regression|Regression]]: continuous value를 예측합니다.
-- Ranking: 후보들을 순서화합니다.
-- Clustering: label 없이 비슷한 sample을 묶습니다.
-- Density estimation: data distribution 자체를 모델링합니다.
-- Representation learning: downstream task에 쓸 embedding을 학습합니다.
+- [[concepts/machine-learning/ranking|Ranking]]: 후보들을 순서화합니다.
+- [[concepts/machine-learning/clustering|Clustering]]: label 없이 비슷한 sample을 묶습니다.
+- [[concepts/machine-learning/density-estimation|Density estimation]]: data distribution 자체를 모델링합니다.
+- [[concepts/machine-learning/representation-learning|Representation learning]]: downstream task에 쓸 embedding을 학습합니다.
 
 ## 모델 계열
 
@@ -71,7 +71,8 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 
 - train/test split이 deployment 상황을 반영하는가?
 - metric이 실제 목표와 맞는가?
-- baseline과 비교했을 때 개선이 의미 있는가?
+- [[concepts/evaluation/baseline|baseline]]과 비교했을 때 개선이 의미 있는가?
+- [[concepts/evaluation/ablation-study|ablation study]]가 설계 선택을 지지하는가?
 - overfitting, leakage, distribution shift를 확인했는가?
 
 ## Related
@@ -79,6 +80,8 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[ai/learning-methods|Learning methods]]
 - [[ai/evaluation|Evaluation]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/baseline|Baseline]]
+- [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
