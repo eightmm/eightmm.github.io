@@ -30,8 +30,11 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/inference-contract|Inference contract]]
 - [[concepts/systems/model-card|Model card]]
+- [[concepts/systems/model-versioning|Model versioning]]
+- [[concepts/systems/data-validation|Data validation]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
+- [[concepts/systems/deployment-strategy|Deployment strategy]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[concepts/systems/storage-io|Storage and IO]]
@@ -57,6 +60,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - Are training metrics, validation metrics, and serving metrics separated?
 - Does the deployment path preserve the same preprocessing and constraints as evaluation?
 - Is there a model card and inference contract for public-facing artifacts?
+- Can an output be traced to one model version, validation boundary, and rollout decision?
 
 ## Related
 

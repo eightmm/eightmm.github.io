@@ -51,6 +51,7 @@ where $\mathcal{Y}_{\mathrm{valid}}(x)$ is the valid response set for request $x
 
 - Can another workflow construct a valid request without private context?
 - Are preprocessing and postprocessing tied to the model version?
+- Are input validation rules stated before model execution?
 - Are unsupported inputs rejected explicitly?
 - Are invalid outputs counted as failures rather than silently filtered?
 - Are confidence, uncertainty, and abstention policies defined when needed?
@@ -60,6 +61,8 @@ where $\mathcal{Y}_{\mathrm{valid}}(x)$ is the valid response set for request $x
 ## Related
 
 - [[concepts/systems/model-card|Model card]]
+- [[concepts/systems/model-versioning|Model versioning]]
+- [[concepts/systems/data-validation|Data validation]]
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]

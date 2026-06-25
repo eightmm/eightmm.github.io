@@ -35,6 +35,7 @@ $$
 - Training metrics explain learning behavior; system metrics explain resource behavior.
 - Logs should identify stages and failures without leaking credentials or private paths.
 - Metrics need units, sampling intervals, and labels that can be interpreted later.
+- Data-validation failures and deployment events should be measured alongside service metrics.
 - Artifacts such as configs, checkpoints, plots, and run summaries are part of observability.
 - Alerts should point to actionable thresholds rather than create constant noise.
 
@@ -43,6 +44,7 @@ $$
 - What evidence proves the bottleneck: GPU, CPU, memory, storage, network, scheduler, or code?
 - Are logs structured enough to compare runs?
 - Are metrics aligned by timestamp with training steps or job events?
+- Are model version, validation status, and rollout stage included in the evidence?
 - Are failures classified rather than only recorded?
 - Is public logging sanitized before it enters notes or dashboards?
 - Can job state, logs, and artifacts be reconciled into one final outcome?
@@ -51,6 +53,8 @@ $$
 ## Related
 
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
+- [[concepts/systems/data-validation|Data validation]]
+- [[concepts/systems/deployment-strategy|Deployment strategy]]
 - [[concepts/systems/training-run|Training run]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
 - [[infra/server-ops/incident-response|Incident response]]
