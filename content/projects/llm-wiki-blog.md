@@ -37,15 +37,27 @@ The public site should contain generalized knowledge, reusable writing formats, 
 
 Active. The main work is to keep gateway pages readable while moving reusable definitions, formulas, workflows, and review criteria into English wiki notes.
 
+Lifecycle status: `active`.
+
+## Artifact Release
+
+- Site: released as a public Quartz site.
+- Source notes: released when public-safe and verified.
+- Private raw notes or agent drafts: not released.
+- Build output: generated artifact, not edited manually.
+
 ## Checks
 
 - Does every page have a clear role: post, concept, paper, project, infra, agent, or research map?
 - Are links bidirectional enough that readers can move from a post into the wiki?
 - Are uncertain claims kept out of polished pages until verified?
 - Are private paths, accounts, endpoints, and unpublished results absent?
+- Are project lifecycle and artifact-release boundaries explicit?
 
 ## Related
 
+- [[projects/project-lifecycle|Project lifecycle]]
+- [[projects/project-artifact-release|Project artifact release]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]

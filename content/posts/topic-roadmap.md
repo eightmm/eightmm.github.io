@@ -120,6 +120,7 @@ tags:
 ## Projects
 
 - [[projects/project-note-format|Project note format]]으로 공개 가능한 작업물을 problem, artifact, boundary, design, verification, status로 정리하는 법
+- [[projects/project-lifecycle|Project lifecycle]]과 [[projects/project-artifact-release|project artifact release]]로 작업물을 공개할 단계와 공개하지 않을 artifact를 구분하는 법
 - [[projects/llm-wiki-blog|LLM Wiki blog]]를 한글 post와 영어 wiki note가 연결되는 공개 지식베이스로 운영하는 법
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]으로 wiki cluster를 한글 post로 바꾸는 법
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]으로 daily paper candidate를 inbox, paper note, concept update, synthesis post로 승격하는 법

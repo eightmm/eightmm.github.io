@@ -118,6 +118,8 @@ Do not expand `research/` just to fill the site. Prefer `ai/`, `math/`, `concept
 
 Project notes should be public engineering narratives, not private task trackers. Use `content/projects/project-note-format.md` for durable project pages: problem, artifact, public boundary, design, verification, status, next work, and related links. Keep milestone updates in `content/projects/project-milestone-format.md`. Do not publish private repo paths, internal task names, unpublished metrics, collaborator context, or infrastructure details.
 
+Project pages should state lifecycle stage and artifact-release status when relevant. Use `released`, `not released`, `to verify`, `not applicable`, or `replaced by summary` for artifacts, and never imply that a private artifact is public.
+
 When adding a new content area, update all relevant entry points together: the folder `index.md`, `content/index.md`, `content/posts/topic-roadmap.md` when it changes the writing plan, and `quartz.ts` only if the area should appear in the Explorer.
 
 ## Blog and Wiki Split

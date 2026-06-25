@@ -21,6 +21,8 @@ Use a project note when the page is about something being built or operated:
 
 Use a concept note instead when the page is mainly a reusable definition. Use a paper note when the page is mainly about one paper.
 
+Use [[projects/project-lifecycle|Project lifecycle]] to decide whether the page is an idea, draft, artifact, verified project, maintained project, or archive.
+
 ## Minimal Model
 
 $$
@@ -47,6 +49,8 @@ State the problem in a way that does not depend on private context.
 Describe what exists or what is being built: a pipeline, note system, runbook, agent workflow, or tool.
 
 For model or inference artifacts, link the public [[concepts/systems/model-card|Model card]] and [[concepts/systems/inference-contract|Inference contract]] when applicable.
+
+For released or withheld artifacts, use [[projects/project-artifact-release|Project artifact release]].
 
 ### Public Boundary
 
@@ -139,11 +143,14 @@ A project note is ready for public linking when:
 - Verification is stated separately from aspiration.
 - Risks and missing evidence are explicit.
 - Related concept, paper, infra, or agent notes are linked.
+- Artifact release status is explicit: `released`, `not released`, `to verify`, `not applicable`, or `replaced by summary`.
 
 ## Related
 
 - [[projects/index|Projects]]
+- [[projects/project-lifecycle|Project lifecycle]]
 - [[projects/project-milestone-format|Project milestone format]]
+- [[projects/project-artifact-release|Project artifact release]]
 - [[concepts/research-methodology/decision-record|Decision record]]
 - [[concepts/systems/model-card|Model card]]
 - [[concepts/systems/inference-contract|Inference contract]]

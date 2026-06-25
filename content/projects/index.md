@@ -31,8 +31,10 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 
 ## Formats
 
+- [[projects/project-lifecycle|Project lifecycle]]
 - [[projects/project-note-format|Project note format]]
 - [[projects/project-milestone-format|Project milestone format]]
+- [[projects/project-artifact-release|Project artifact release]]
 - [[concepts/systems/model-card|Model card]]
 - [[concepts/systems/inference-contract|Inference contract]]
 - [[concepts/research-methodology/decision-record|Decision record]]
@@ -50,6 +52,7 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 ## Related
 
 - [[research/index|Research]]
+- [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/research-methodology/index|Research methodology]]
 - [[papers/index|Papers]]
 - [[infra/hpc/slurm|Slurm]]
