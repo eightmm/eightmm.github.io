@@ -29,16 +29,30 @@ $$
 \right)^2
 $$
 
+Predictions can target different levels:
+
+- contact map or distance map
+- backbone coordinates
+- all-atom coordinates
+- confidence or error estimates
+- complex or multimer structure
+- pocket or binding-site geometry
+
+The target choice changes evaluation. A good contact map does not imply all-atom pose quality, and a good backbone does not imply ligand-ready side-chain placement.
+
 ## Checks
 
 - Is the target backbone, all-atom structure, contact map, distance map, or confidence score?
 - Does training or evaluation use templates that may leak test structures?
 - Are missing residues, alternate conformations, chain breaks, and ligands handled?
+- Is structure cleaning and residue indexing consistent between train and evaluation?
 - Is downstream use docking, design, function prediction, or representation transfer?
 
 ## Related
 
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
+- [[concepts/protein-modeling/protein-structure-cleaning|Protein structure cleaning]]
+- [[concepts/protein-modeling/residue-indexing|Residue indexing]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 - [[research/protein-modeling/mambafold|MambaFold]]

@@ -34,6 +34,7 @@ where $m_i$ is an attention mask that excludes padding and special tokens.
 - Residue graph or contact map for structural relationships.
 - 3D coordinates for geometry-aware modeling.
 - Pocket representation for structure-based interaction tasks.
+- Sequence-structure fused representation using aligned embeddings and coordinates.
 
 ## Checks
 
@@ -41,9 +42,12 @@ where $m_i$ is an attention mask that excludes padding and special tokens.
 - Are padding, truncation, chain breaks, and non-standard residues handled?
 - Is the representation invariant, equivariant, or frame-dependent?
 - Is sequence-structure alignment verified before fusing embeddings with coordinates?
+- Is residue indexing preserved after structure cleaning and feature caching?
 
 ## Related
 
+- [[concepts/protein-modeling/residue-indexing|Residue indexing]]
+- [[concepts/protein-modeling/protein-structure-cleaning|Protein structure cleaning]]
 - [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
