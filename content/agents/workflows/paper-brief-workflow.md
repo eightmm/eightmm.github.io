@@ -41,5 +41,7 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 - [[papers/paper-note-format|Paper note format]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/claim-extraction|Claim extraction]]
+- [[papers/evidence-table|Evidence table]]
+- [[papers/reproducibility-checklist|Reproducibility checklist]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]

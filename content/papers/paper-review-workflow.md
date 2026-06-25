@@ -15,18 +15,23 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 2. Verify metadata and source links.
 3. Write the paper-specific note using [[papers/paper-note-format|Paper note format]].
 4. Extract claims using [[papers/claim-extraction|Claim extraction]].
-5. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
-6. Extract reusable concepts into [[concepts/index|Concepts]].
-7. Link research relevance into [[research/index|Research]].
-8. Promote mature themes into Korean [[posts/index|Posts]].
+5. Map claims to evidence using [[papers/evidence-table|Evidence table]].
+6. Record limits with [[papers/limitation-taxonomy|Limitation taxonomy]].
+7. Check reproducibility using [[papers/reproducibility-checklist|Reproducibility checklist]].
+8. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
+9. Extract reusable concepts into [[concepts/index|Concepts]].
+10. Link research relevance into [[research/index|Research]].
+11. Promote mature themes into Korean [[posts/index|Posts]].
 
 ## Evidence Levels
 
 - Metadata verified: title, authors, venue or preprint source, and link are checked.
 - Method understood: objective, architecture, data, and evaluation are identified.
 - Claims checked: results are tied to metric, split, benchmark, and uncertainty.
+- Evidence table complete: main claims have supporting experiments and limits.
 - Baseline checked: comparisons and ablations support the claimed contribution.
 - Limits recorded: failure modes, assumptions, and missing comparisons are explicit.
+- Reproducibility checked: code, data, config, compute, and evaluation details are marked present or missing.
 - Synthesis ready: the paper can support a public blog post or research map.
 
 ## Checks
@@ -44,6 +49,9 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/index|Papers]]
 - [[papers/reading-status|Reading status]]
 - [[papers/claim-extraction|Claim extraction]]
+- [[papers/evidence-table|Evidence table]]
+- [[papers/limitation-taxonomy|Limitation taxonomy]]
+- [[papers/reproducibility-checklist|Reproducibility checklist]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[concepts/research-methodology/research-question|Research question]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]

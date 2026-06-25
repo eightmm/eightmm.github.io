@@ -35,7 +35,8 @@ $$
 2. List the main claims in one sentence each.
 3. Attach each claim to a metric, benchmark, split, baseline, and uncertainty estimate when available.
 4. Mark claims that depend on ablations, assumptions, or unverified interpretations.
-5. Move reusable definitions into [[concepts/index|Concepts]].
+5. Map the claim into [[papers/evidence-table|Evidence table]].
+6. Move reusable definitions into [[concepts/index|Concepts]].
 
 ## Checks
 
@@ -50,6 +51,8 @@ $$
 
 - [[papers/paper-note-format|Paper note format]]
 - [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/evidence-table|Evidence table]]
+- [[papers/limitation-taxonomy|Limitation taxonomy]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
 - [[concepts/evaluation/baseline|Baseline]]

@@ -37,6 +37,8 @@ tags:
 ## Papers
 
 - 논문 하나를 [[papers/paper-note-format|paper note]]에서 [[concepts/index|concept note]]로 분해하는 법
+- [[papers/claim-extraction|Claim extraction]], [[papers/evidence-table|evidence table]], [[papers/limitation-taxonomy|limitation taxonomy]]로 논문 주장을 좁히는 법
+- [[papers/reproducibility-checklist|Reproducibility checklist]]로 논문 구현 가능성을 빠르게 판별하는 법
 - [[papers/sbdd/posebusters|PoseBusters]]를 pose plausibility 체크리스트로 읽는 법
 - [[papers/reading-status|Reading status]]를 써서 raw candidate와 verified note를 구분하는 법
 

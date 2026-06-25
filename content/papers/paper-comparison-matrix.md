@@ -24,7 +24,9 @@ A paper comparison matrix compares several papers along the same axes. It is use
 | Metric | What number supports the claim? |
 | Baseline | What comparison makes the result meaningful? |
 | Ablation | What explains the gain? |
+| Evidence | Which claim is supported by which experiment? |
 | Limit | What remains uncertain or weak? |
+| Reproducibility | What public artifacts or details are available? |
 | Wiki links | Which reusable concepts should be updated? |
 
 ## When To Use
@@ -45,6 +47,8 @@ A paper comparison matrix compares several papers along the same axes. It is use
 ## Related
 
 - [[papers/claim-extraction|Claim extraction]]
+- [[papers/evidence-table|Evidence table]]
+- [[papers/reproducibility-checklist|Reproducibility checklist]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/data/benchmark|Benchmark]]

@@ -17,9 +17,11 @@ A paper note should preserve what the paper claims, what the method changes, how
 - Method: core model, objective, data, and evaluation protocol.
 - Results: what is claimed, with metric and benchmark context.
 - Claims: extracted statements following [[papers/claim-extraction|Claim extraction]].
+- Evidence: claim-to-result mapping using [[papers/evidence-table|Evidence table]].
 - Baselines: what the method is compared against.
 - Ablations: which components explain the result.
-- Limits: assumptions, failure modes, missing comparisons, or leakage risks.
+- Limits: assumptions, failure modes, missing comparisons, or leakage risks, using [[papers/limitation-taxonomy|Limitation taxonomy]] when useful.
+- Reproducibility: public code, data, config, and run details following [[papers/reproducibility-checklist|Reproducibility checklist]].
 - Connections: links to concepts, research maps, and projects.
 
 ## Formula Slot
@@ -49,6 +51,9 @@ $$
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/reading-status|Reading status]]
 - [[papers/claim-extraction|Claim extraction]]
+- [[papers/evidence-table|Evidence table]]
+- [[papers/limitation-taxonomy|Limitation taxonomy]]
+- [[papers/reproducibility-checklist|Reproducibility checklist]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[concepts/evaluation/metric|Metric]]
