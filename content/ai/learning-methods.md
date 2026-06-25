@@ -54,6 +54,7 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/instruction-tuning|Instruction tuning]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/domain-adaptation|Domain adaptation]]

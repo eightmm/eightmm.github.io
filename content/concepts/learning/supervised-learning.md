@@ -39,5 +39,6 @@ The main assumption is that labels $y_i$ are meaningful for the target task and 
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/imitation-learning|Imitation learning]]
 - [[concepts/learning/active-learning|Active learning]]

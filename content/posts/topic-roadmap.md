@@ -36,6 +36,7 @@ tags:
 - [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]], [[concepts/geometric-deep-learning/distance-geometry|distance geometry]], [[concepts/geometric-deep-learning/invariant-feature|invariant feature]], [[concepts/geometric-deep-learning/equivariant-feature|equivariant feature]]를 3D 모델의 기본 언어로 정리하기
 - [[concepts/generative-models/latent-variable-model|Latent variable model]], [[concepts/generative-models/conditional-generation|conditional generation]], [[concepts/generative-models/sampling|sampling]], [[concepts/generative-models/guidance|guidance]]를 생성모델 공통 언어로 정리하기
 - [[concepts/learning/pretraining|Pretraining]], [[concepts/learning/fine-tuning|fine-tuning]], [[concepts/learning/instruction-tuning|instruction tuning]], [[concepts/learning/domain-adaptation|domain adaptation]]을 학습 pipeline 관점에서 나누기
+- [[concepts/learning/knowledge-distillation|Knowledge distillation]]을 teacher-student, soft target, temperature, compression 관점에서 설명하기
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]], [[concepts/learning/contrastive-learning|Contrastive learning]], [[concepts/learning/jepa|JEPA]]를 representation 관점에서 정리하기
 - [[concepts/llm/token-budget|Token budget]], [[concepts/llm/context-packing|context packing]], [[concepts/llm/tool-calling|tool calling]], [[concepts/llm/prompt-injection-boundary|prompt injection boundary]]를 LLM Wiki 운영 관점에서 묶어 설명하기
 - [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]으로 RAG와 hallucination control을 구분하는 법

@@ -37,6 +37,7 @@ $$
 
 - [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
+- [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/instruction-tuning|Instruction tuning]]
 - [[concepts/learning/domain-adaptation|Domain adaptation]]
 - [[concepts/learning/preference-optimization|Preference optimization]]

@@ -217,6 +217,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/instruction-tuning|Instruction tuning]]
 - [[concepts/learning/domain-adaptation|Domain adaptation]]
 - [[concepts/learning/curriculum-learning|Curriculum learning]]
@@ -351,6 +352,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 

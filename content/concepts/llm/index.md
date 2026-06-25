@@ -25,6 +25,7 @@ LLM concepts describe language models, context, retrieval, and workflow patterns
 - [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
+- [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 
 ## Checks
 
