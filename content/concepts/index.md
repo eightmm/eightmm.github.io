@@ -60,6 +60,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[entities/ligand|Ligand]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+- [[entities/assay|Assay]]
+- [[entities/bioactivity-label|Bioactivity label]]
+- [[entities/dataset|Dataset]]
 
 ## Math Foundations
 

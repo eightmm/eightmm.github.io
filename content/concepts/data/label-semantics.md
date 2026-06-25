@@ -75,3 +75,4 @@ This matters in retrieval, virtual screening, activity prediction, preference da
 - [[concepts/evaluation/negative-set|Negative set]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[entities/assay|Assay]]
+- [[entities/bioactivity-label|Bioactivity label]]

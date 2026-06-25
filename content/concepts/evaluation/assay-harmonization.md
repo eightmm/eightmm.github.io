@@ -33,6 +33,7 @@ where $M$ is a molecule, $T$ is a target, $A$ is an assay protocol, and $c$ cont
 ## Related
 
 - [[entities/assay|Assay]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[entities/dataset|Dataset]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/evaluation/leakage|Leakage]]

@@ -1,0 +1,58 @@
+---
+title: Bioactivity Label
+tags:
+  - entities
+  - bio-ai
+  - labels
+---
+
+# Bioactivity Label
+
+A bioactivity label is a measured or curated value that describes how a molecule, ligand, protein, target, assay, or context behaves in a biological or chemical setup.
+
+It is not just a number. A label should be read as:
+
+$$
+y
+=
+\operatorname{measure}(m, t, a, c)
+$$
+
+where $m$ is a molecule or ligand, $t$ is a target, $a$ is an assay protocol, and $c$ is measurement context such as endpoint, organism, construct, dose, time, unit, and preprocessing.
+
+## Common Forms
+
+- Continuous: $K_d$, $K_i$, $\mathrm{IC}_{50}$, $\mathrm{EC}_{50}$, percent inhibition, activity score, affinity proxy.
+- Transformed: $pK_d$, $pK_i$, $pIC_{50}$, log concentration, standardized score.
+- Binary: active/inactive after a threshold.
+- Censored: values reported as greater-than or less-than limits.
+- Weak or missing: untested, inferred, aggregated, or source-dependent labels.
+
+## Why It Matters
+
+- The same molecule-target pair can have different labels under different assay contexts.
+- A binary active label may hide endpoint type, threshold, unit, and censoring.
+- Regression, classification, ranking, and virtual screening can use the same raw records differently.
+- Negative examples may mean measured inactive, not selected, or simply unobserved.
+
+## Checks
+
+- What endpoint does the label represent?
+- What unit, transformation, threshold, and censoring policy are used?
+- Is the label molecule-only, target-conditioned, assay-conditioned, or complex-conditioned?
+- Are replicate measurements aggregated, kept separate, or filtered?
+- Are conflicting labels resolved globally or kept assay-specific?
+- Does the split prevent molecule, target, assay, or source leakage?
+
+## Related
+
+- [[entities/assay|Assay]]
+- [[entities/molecule|Molecule]]
+- [[entities/ligand|Ligand]]
+- [[entities/target|Target]]
+- [[entities/dataset|Dataset]]
+- [[concepts/data/label-semantics|Label semantics]]
+- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
+- [[concepts/evaluation/negative-set|Negative set]]
+- [[concepts/sbdd/binding-affinity|Binding affinity]]
+- [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]

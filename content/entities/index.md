@@ -27,6 +27,7 @@ Entity notes define the objects that appear across molecular AI and protein mode
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]
 - [[entities/assay|Assay]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[entities/dataset|Dataset]]
 
 ## Related

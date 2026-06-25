@@ -29,6 +29,7 @@ $$
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[entities/genome|Genome]]
 
 ## Molecule and Ligand Modeling
@@ -70,6 +71,7 @@ $$
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/data/label-semantics|Label semantics]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

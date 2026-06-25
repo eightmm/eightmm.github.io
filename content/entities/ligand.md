@@ -15,7 +15,7 @@ A ligand is a small molecule or molecular fragment considered as a binding partn
 - Graph view for atoms, bonds, and molecular topology.
 - Conformer view for 3D geometry and pose generation.
 - Interaction view for [[research/structure-based-ai/protein-ligand-docking|protein-ligand docking]].
-- Dataset view for scaffold splits, activity labels, and assay provenance.
+- Dataset view for scaffold splits, [[entities/bioactivity-label|bioactivity labels]], and assay provenance.
 
 ## Checks
 
@@ -31,6 +31,7 @@ A ligand is a small molecule or molecular fragment considered as a binding partn
 - [[entities/molecule|Molecule]]
 - [[entities/pocket|Pocket]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 - [[concepts/sbdd/scoring-function|Scoring function]]

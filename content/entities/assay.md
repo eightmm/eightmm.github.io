@@ -28,6 +28,7 @@ An assay is an experimental measurement that links a biological or chemical setu
 ## Related
 
 - [[entities/entity-relation-map|Entity relation map]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[concepts/evaluation/negative-set|Negative set]]
 - [[entities/molecule|Molecule]]

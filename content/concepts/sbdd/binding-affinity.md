@@ -39,5 +39,6 @@ Higher $pK_d$ means stronger binding when the units are consistent.
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/evaluation/metric|Metric]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[entities/assay|Assay]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]

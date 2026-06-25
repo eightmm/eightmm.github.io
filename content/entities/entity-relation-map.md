@@ -23,7 +23,7 @@ The central relation for supervised chem-bio ML is:
 $$
 (\text{molecule}, \text{target}, \text{assay context})
 \rightarrow
-\text{label}
+\text{bioactivity label}
 $$
 
 ## Object Hierarchy
@@ -35,6 +35,7 @@ $$
 - [[entities/pocket|Pocket]] is a local region of a protein.
 - [[entities/protein-ligand-complex|Protein-ligand complex]] combines ligand pose and protein context.
 - [[entities/assay|Assay]] defines how a label was measured.
+- [[entities/bioactivity-label|Bioactivity label]] records the measured or curated response.
 - [[entities/dataset|Dataset]] collects examples, labels, metadata, and splits.
 
 ## Representation Choices
@@ -58,6 +59,7 @@ The split unit should match the generalization claim:
 
 - What is one example?
 - What is the target label?
+- Is the label assay-conditioned, target-conditioned, censored, transformed, or thresholded?
 - Which entities are inputs and which are metadata?
 - Which entity defines the split group?
 - Could the same molecule, homologous protein, related complex, or shared assay leak across splits?
@@ -67,6 +69,7 @@ The split unit should match the generalization claim:
 
 - [[bio-ai/index|Bio-AI]]
 - [[entities/target|Target]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/data/index|Data]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

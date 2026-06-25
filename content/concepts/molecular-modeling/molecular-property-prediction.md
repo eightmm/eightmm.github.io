@@ -61,6 +61,7 @@ $$
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/activity-cliff|Activity cliff]]

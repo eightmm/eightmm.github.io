@@ -31,6 +31,7 @@ A dataset is a curated collection of examples, labels, metadata, and splits used
 - [[concepts/data/data-curation|Data curation]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
+- [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
