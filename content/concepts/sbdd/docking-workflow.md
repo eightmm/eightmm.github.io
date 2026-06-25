@@ -29,6 +29,7 @@ where $P$ is a protein or pocket, $L$ is a ligand, $\hat{X}_k$ are candidate pos
 - Pose generation and scoring are different tasks.
 - A good score is not enough if the generated pose is physically implausible.
 - Docking boxes, protonation, conformer generation, and protein preparation can dominate results.
+- Receptor and ligand preparation should be treated as part of the method, not as invisible preprocessing.
 - Learned scoring functions should be evaluated separately from search and filtering heuristics.
 - Public notes should describe generic workflow decisions, not private targets or unpublished results.
 
@@ -43,6 +44,8 @@ where $P$ is a protein or pocket, $L$ is a ligand, $\hat{X}_k$ are candidate pos
 ## Related
 
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
+- [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/protein-modeling/binding-site|Binding site]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/scoring-function|Scoring function]]

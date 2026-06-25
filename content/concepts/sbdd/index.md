@@ -15,6 +15,8 @@ In this wiki, SBDD concepts are reusable notes under [[research/structure-based-
 
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
+- [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
+- [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
@@ -34,6 +36,7 @@ where $P$ is a protein or pocket and $L$ is a ligand.
 ## Checks
 
 - Is the task pose prediction, affinity prediction, enrichment, or molecule generation?
+- Are receptor and ligand inputs prepared consistently?
 - Are pose quality and binding affinity evaluated separately?
 - Does the benchmark split test scaffold, protein-family, temporal, or structure-level generalization?
 - Are invalid generated structures filtered before ranking claims?

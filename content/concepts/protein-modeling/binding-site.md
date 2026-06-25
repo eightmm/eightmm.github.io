@@ -38,6 +38,7 @@ where $r_i$ is a residue, $x_i$ is a representative residue coordinate, $l_j$ is
 ## Related
 
 - [[entities/pocket|Pocket]]
+- [[concepts/protein-modeling/pocket-representation|Pocket representation]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/pose-quality|Pose quality]]

@@ -14,6 +14,7 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
 - [[concepts/protein-modeling/protein-domain|Protein domain]]
 - [[concepts/protein-modeling/binding-site|Binding site]]
+- [[concepts/protein-modeling/pocket-representation|Pocket representation]]
 - [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
@@ -22,6 +23,7 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 ## Checks
 
 - Is the model sequence-only, structure-only, or sequence-structure fused?
+- Is the pocket representation ligand-defined, predicted, or deployable?
 - Are homologs and near-duplicate proteins separated across splits?
 - Are missing residues, insertion codes, non-standard residues, and chain IDs handled explicitly?
 - Does the evaluation measure geometry, function, interaction, or downstream task transfer?

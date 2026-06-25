@@ -15,6 +15,7 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
 - [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]]
+- [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]
 - [[concepts/molecular-modeling/substructure-search|Substructure search]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]

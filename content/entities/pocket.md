@@ -37,5 +37,6 @@ where $r$ is a cutoff radius.
 - [[entities/protein|Protein]]
 - [[entities/ligand|Ligand]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+- [[concepts/protein-modeling/pocket-representation|Pocket representation]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]

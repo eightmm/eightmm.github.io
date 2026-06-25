@@ -51,6 +51,7 @@ $$
 ## Related
 
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+- [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
