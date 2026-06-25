@@ -10,17 +10,46 @@ tags:
 
 Transformers use attention to model relationships across tokens. They are common in language models, protein sequence models, molecular sequence models, and agent systems.
 
-A Transformer block is often summarized as:
+A pre-norm Transformer block with multi-head self-attention is:
 
 $$
-h' = h + \operatorname{Attention}(\operatorname{LN}(h))
+\tilde{X} = \operatorname{LN}(X)
 $$
 
 $$
-h_{\mathrm{out}} = h' + \operatorname{MLP}(\operatorname{LN}(h'))
+Q_h = \tilde{X}W_Q^{(h)},\qquad
+K_h = \tilde{X}W_K^{(h)},\qquad
+V_h = \tilde{X}W_V^{(h)}
 $$
 
-Residual connections, normalization, attention, and feed-forward mixing are all part of the pattern.
+$$
+\operatorname{head}_h
+= \operatorname{softmax}
+\left(
+\frac{Q_hK_h^\top}{\sqrt{d_k}} + M
+\right)V_h
+$$
+
+$$
+\operatorname{MHA}(\tilde{X})
+= \operatorname{Concat}(\operatorname{head}_1,\ldots,\operatorname{head}_H)W_O
+$$
+
+$$
+X' = X + \operatorname{MHA}(\tilde{X})
+$$
+
+$$
+\operatorname{FFN}(Z)
+= \sigma(ZW_1+b_1)W_2+b_2
+$$
+
+$$
+X_{\mathrm{out}}
+= X' + \operatorname{FFN}(\operatorname{LN}(X'))
+$$
+
+Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number of heads, and $\sigma$ is the feed-forward nonlinearity. Decoder-only Transformers use a causal $M$; encoder-style models usually use bidirectional attention with only padding masks.
 
 ## Key Ideas
 

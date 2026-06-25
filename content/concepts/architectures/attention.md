@@ -19,6 +19,40 @@ $$
 
 Here $Q$ contains queries, $K$ contains keys, $V$ contains values, and $d_k$ is the key dimension. The softmax term defines which elements are mixed.
 
+For an input sequence $X\in\mathbb{R}^{T\times d_{\mathrm{model}}}$, self-attention first projects tokens into queries, keys, and values:
+
+$$
+Q = XW_Q,\qquad K = XW_K,\qquad V = XW_V
+$$
+
+The attention logits and weights are:
+
+$$
+A = \frac{QK^\top}{\sqrt{d_k}} + M
+$$
+
+$$
+P = \operatorname{softmax}(A)
+$$
+
+$$
+Y = PV
+$$
+
+Here $M$ is an optional mask. In causal attention, future positions receive $-\infty$ before softmax so each token only attends to previous tokens.
+
+Multi-head attention repeats this with separate projections:
+
+$$
+\operatorname{head}_h
+= \operatorname{Attention}(XW_Q^{(h)}, XW_K^{(h)}, XW_V^{(h)})
+$$
+
+$$
+\operatorname{MHA}(X)
+= \operatorname{Concat}(\operatorname{head}_1,\ldots,\operatorname{head}_H)W_O
+$$
+
 ## Key Ideas
 
 - Queries ask what information is needed; keys decide what can be matched; values carry the mixed information.
