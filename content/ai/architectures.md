@@ -34,6 +34,7 @@ $$
 
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/architectures/activation-function|Activation function]]
+- [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/residual-connection|Residual connection]]
 - [[concepts/architectures/tokenization|Tokenization]]

@@ -7,7 +7,7 @@ tags:
 
 # Linear Layer
 
-A linear layer maps each input vector to an output vector with an affine transform. It is the basic learnable block inside MLPs, attention projections, feed-forward networks, classifiers, and adapters.
+A linear layer maps each input vector to an output vector with an affine transform. It is the basic learnable block inside MLPs, attention projections, [[concepts/architectures/feed-forward-network|feed-forward networks]], classifiers, and adapters.
 
 $$
 y = xW + b
@@ -33,4 +33,5 @@ For a batch or sequence, $x\in\mathbb{R}^{T\times d_{\mathrm{in}}}$, $W\in\mathb
 
 - [[concepts/architectures/mlp|MLP]]
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/normalization|Normalization]]

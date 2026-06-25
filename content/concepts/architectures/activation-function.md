@@ -34,6 +34,14 @@ $$
 
 where $\Phi$ is the standard normal CDF. GELU is common in Transformer feed-forward blocks.
 
+SiLU, also called swish, is:
+
+$$
+\operatorname{SiLU}(x) = x\,\sigma(x)
+$$
+
+where $\sigma(x)=1/(1+\exp(-x))$ is the sigmoid function. SiLU and gated variants are common in modern [[concepts/architectures/feed-forward-network|feed-forward networks]].
+
 ## Checks
 
 - Check whether the activation is ReLU, GELU, SiLU, tanh, sigmoid, or gated.
@@ -44,5 +52,6 @@ where $\Phi$ is the standard normal CDF. GELU is common in Transformer feed-forw
 ## Related
 
 - [[concepts/architectures/mlp|MLP]]
+- [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/machine-learning/optimization|Optimization]]

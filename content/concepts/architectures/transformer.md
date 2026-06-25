@@ -49,12 +49,12 @@ X_{\mathrm{out}}
 = X' + \operatorname{FFN}(\operatorname{LN}(X'))
 $$
 
-Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number of heads, and $\sigma$ is the feed-forward nonlinearity. Decoder-only Transformers use a causal $M$; encoder-style models usually use bidirectional attention with only padding masks. The block combines [[concepts/architectures/tokenization|tokenization]], [[concepts/architectures/embedding|embeddings]], [[concepts/architectures/linear-layer|linear layers]], [[concepts/architectures/softmax|softmax]], [[concepts/architectures/normalization|normalization]], and [[concepts/architectures/residual-connection|residual connections]].
+Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number of heads, and $\sigma$ is the feed-forward nonlinearity. Decoder-only Transformers use a causal $M$; encoder-style models usually use bidirectional attention with only padding masks. The block combines [[concepts/architectures/tokenization|tokenization]], [[concepts/architectures/embedding|embeddings]], [[concepts/architectures/linear-layer|linear layers]], [[concepts/architectures/softmax|softmax]], [[concepts/architectures/normalization|normalization]], [[concepts/architectures/residual-connection|residual connections]], and a token-wise [[concepts/architectures/feed-forward-network|feed-forward network]].
 
 ## Key Ideas
 
 - Self-attention lets each token mix information from other tokens according to learned relevance.
-- Feed-forward blocks, normalization, residual connections, and positional encodings are part of the core pattern.
+- [[concepts/architectures/feed-forward-network|Feed-forward networks]], normalization, residual connections, and positional encodings are part of the core pattern.
 - [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]], [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]], and [[concepts/architectures/encoder-decoder|encoder-decoder]] variants serve different training and inference workflows.
 - Causal masking supports autoregressive generation; bidirectional attention supports representation learning.
 - Transformers can process text, protein sequences, molecular strings, retrieved context, and multimodal tokens when inputs are tokenized.
@@ -69,6 +69,7 @@ Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number
 ## Related
 
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
 - [[entities/protein|Protein]]

@@ -23,6 +23,8 @@ $$
 y = x' + \operatorname{FFN}(\operatorname{LN}(x'))
 $$
 
+Here $\operatorname{MHA}$ is multi-head attention, $\operatorname{LN}$ is layer normalization, and $\operatorname{FFN}$ is a token-wise [[concepts/architectures/feed-forward-network|feed-forward network]].
+
 ## Why It Matters
 
 - Gradients can flow through the identity path.
@@ -39,5 +41,6 @@ $$
 ## Related
 
 - [[concepts/architectures/normalization|Normalization]]
+- [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/mlp|MLP]]

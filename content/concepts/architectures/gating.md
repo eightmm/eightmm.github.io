@@ -25,7 +25,7 @@ where $g$ controls how much of $f(x)$ passes through.
 
 - LSTM and GRU update gates in [[concepts/architectures/rnn|RNNs]].
 - Selective updates in [[concepts/architectures/mamba|Mamba]] and other state-space models.
-- Gated linear units in feed-forward blocks.
+- Gated linear units in [[concepts/architectures/feed-forward-network|feed-forward networks]].
 - Routing weights in [[concepts/architectures/mixture-of-experts|Mixture of experts]].
 
 ## Checks
@@ -38,5 +38,6 @@ where $g$ controls how much of $f(x)$ passes through.
 ## Related
 
 - [[concepts/architectures/rnn|RNN]]
+- [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/state-space-model|State-space model]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
