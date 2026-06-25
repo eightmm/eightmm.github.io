@@ -40,8 +40,10 @@ where $t$ indexes time windows and $f$ indexes frequency bins.
 
 ## Related
 
+- [[concepts/modalities/sequence|Sequence]]
 - [[concepts/modalities/text|Text]]
 - [[concepts/modalities/video|Video]]
+- [[concepts/modalities/modality-alignment|Modality alignment]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/machine-learning/representation-learning|Representation learning]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]

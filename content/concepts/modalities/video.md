@@ -35,7 +35,9 @@ where $T$ is the number of frames. Video modeling adds temporal structure on top
 ## Related
 
 - [[concepts/modalities/image|Image]]
+- [[concepts/modalities/sequence|Sequence]]
 - [[concepts/modalities/audio|Audio]]
+- [[concepts/modalities/modality-alignment|Modality alignment]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]

@@ -36,7 +36,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/index|Machine learning]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
 - Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/calculus|Calculus]] -> [[concepts/math/matrix-calculus|Matrix calculus]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - Data path: [[entities/dataset|Dataset]] -> [[concepts/data/data-curation|Data curation]] -> [[concepts/data/data-versioning|Data versioning]] -> [[concepts/data/annotation-labeling|Annotation and labeling]] -> [[concepts/data/label-noise|Label noise]] -> [[concepts/data/benchmark|Benchmark]]
-- Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/tabular|Tabular]] -> [[concepts/modalities/graph|Graph]] -> [[concepts/modalities/3d-structure|3D structure]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
+- Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/sequence|Sequence]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/tabular|Tabular]] -> [[concepts/modalities/graph|Graph]] -> [[concepts/modalities/3d-structure|3D structure]] -> [[concepts/modalities/modality-alignment|Modality alignment]] -> [[concepts/modalities/missing-modality|Missing modality]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]] -> [[concepts/tasks/structured-prediction|Structured prediction]]
 - Deep learning architecture: [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
 - Systems path: [[concepts/systems/training-run|Training run]] -> [[concepts/systems/inference|Inference]] -> [[concepts/systems/model-serving|Model serving]] -> [[concepts/systems/reproducibility|Reproducibility]]
@@ -64,16 +64,22 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/math/index|Math foundations]]
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
+- [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/math/calculus|Calculus]]
 - [[concepts/math/matrix-calculus|Matrix calculus]]
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/math/symmetry-group|Symmetry group]]
+- [[concepts/math/random-variable|Random variable]]
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
+- [[concepts/math/covariance-correlation|Covariance and correlation]]
 - [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/math/bayes-rule|Bayes rule]]
+- [[concepts/math/statistical-estimator|Statistical estimator]]
+- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 
 ## Data
 
@@ -92,12 +98,15 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/modalities/text|Text]]
+- [[concepts/modalities/sequence|Sequence]]
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
 - [[concepts/modalities/audio|Audio]]
 - [[concepts/modalities/tabular|Tabular]]
 - [[concepts/modalities/graph|Graph]]
 - [[concepts/modalities/3d-structure|3D structure]]
+- [[concepts/modalities/modality-alignment|Modality alignment]]
+- [[concepts/modalities/missing-modality|Missing modality]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 
 ## Tasks

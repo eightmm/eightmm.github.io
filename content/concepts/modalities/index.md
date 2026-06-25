@@ -20,12 +20,15 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 ## Core Modalities
 
 - [[concepts/modalities/text|Text]]
+- [[concepts/modalities/sequence|Sequence]]
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
 - [[concepts/modalities/audio|Audio]]
 - [[concepts/modalities/tabular|Tabular]]
 - [[concepts/modalities/graph|Graph]]
 - [[concepts/modalities/3d-structure|3D structure]]
+- [[concepts/modalities/modality-alignment|Modality alignment]]
+- [[concepts/modalities/missing-modality|Missing modality]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 
 ## Common Tasks
@@ -51,6 +54,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - What is the tensor, token, graph, or coordinate representation after preprocessing?
 - Which information is lost before the model sees the input?
 - Does the model need alignment between modalities?
+- Can the model handle missing, delayed, or corrupted modalities?
 - Are splits designed to prevent near-duplicate or cross-modal leakage?
 
 ## Related
@@ -60,6 +64,8 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/graph-construction|Graph construction]]
+- [[concepts/modalities/modality-alignment|Modality alignment]]
+- [[concepts/modalities/missing-modality|Missing modality]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/protein-modeling/index|Protein modeling concepts]]

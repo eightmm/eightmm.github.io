@@ -46,6 +46,7 @@ where $\operatorname{sim}$ is a similarity function and $\tau$ is a temperature.
 - Video-audio-text alignment for temporal understanding.
 - Molecule-protein or ligand-pocket modeling for structure-based AI.
 - Text-tool-state fusion in agent systems.
+- Missing-modality robustness when one signal is unavailable at deployment.
 
 ## Checks
 
@@ -58,6 +59,8 @@ where $\operatorname{sim}$ is a similarity function and $\tau$ is a temperature.
 ## Related
 
 - [[concepts/modalities/index|Modalities]]
+- [[concepts/modalities/modality-alignment|Modality alignment]]
+- [[concepts/modalities/missing-modality|Missing modality]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/cross-attention|Cross-attention]]
