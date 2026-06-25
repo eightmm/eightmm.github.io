@@ -17,6 +17,7 @@ tags:
 - [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/expectation|expectation]], [[concepts/math/maximum-likelihood|maximum likelihood]], [[concepts/math/entropy-kl|entropy/KL]]를 생성모델과 평가의 공통 언어로 쓰는 법
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], [[concepts/machine-learning/gradient-descent|gradient descent]]를 training loop의 기본 수식으로 설명하기
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]], [[concepts/machine-learning/mean-squared-error|mean squared error]], [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]]를 task와 probability model의 연결로 설명하기
+- [[concepts/evaluation/probability-metrics|Probability metrics]]로 NLL, Brier score, calibration, threshold metric을 구분하는 법
 - [[concepts/machine-learning/adam|Adam]]과 [[concepts/machine-learning/adamw|AdamW]]를 bias correction, adaptive step, decoupled weight decay 관점에서 설명하기
 - [[concepts/machine-learning/weight-decay|Weight decay]]와 [[concepts/machine-learning/gradient-clipping|gradient clipping]]을 optimizer 설정이 아니라 training stability와 generalization 관점에서 보기
 - [[concepts/math/statistical-estimator|Statistical estimator]]와 [[concepts/math/bias-variance-tradeoff|bias-variance tradeoff]]를 실험 해석의 기본 언어로 쓰는 법

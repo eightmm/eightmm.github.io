@@ -31,6 +31,7 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/evaluation/probability-metrics|Probability metrics]]
 - [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]

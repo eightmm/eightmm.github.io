@@ -38,6 +38,7 @@ $$
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/evaluation/probability-metrics|Probability metrics]]
 - [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
@@ -75,7 +76,7 @@ $$
 - evaluation protocol이 metric, split, model selection, final test를 분리하는가?
 - metric이 task objective와 맞는가?
 - 결과 차이가 confidence interval이나 seed variance보다 충분히 큰가?
-- confidence나 calibration이 필요한 application인가?
+- confidence, probability quality, calibration이 필요한 application인가?
 - uncertainty, robustness, interpretability 중 어떤 진단이 필요한가?
 - 실패를 data, model, optimization, evaluation 중 어디 문제로 분해할 수 있는가?
 

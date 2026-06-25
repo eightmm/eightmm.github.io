@@ -82,7 +82,7 @@ It is useful when positive and negative classes are imbalanced.
 
 ## Probability Metrics
 
-When predicted probabilities matter, use probability-aware metrics such as negative log-likelihood or Brier score:
+When predicted probabilities matter, use [[concepts/evaluation/probability-metrics|probability-aware metrics]] such as negative log-likelihood or Brier score:
 
 $$
 \operatorname{NLL}
@@ -116,6 +116,7 @@ where $p_i$ is the predicted probability for the positive class.
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
+- [[concepts/evaluation/probability-metrics|Probability metrics]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]

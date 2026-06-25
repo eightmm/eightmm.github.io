@@ -25,6 +25,8 @@ $$
 \left|\operatorname{acc}(B_b)-\operatorname{conf}(B_b)\right|
 $$
 
+Calibration complements [[concepts/evaluation/probability-metrics|probability metrics]] such as NLL and Brier score. NLL and Brier score summarize probability quality as scalar metrics; calibration diagnostics show where confidence and empirical frequency disagree.
+
 ## Practical Checks
 
 - Plot a reliability diagram; bin predictions and compare to empirical accuracy.
@@ -58,6 +60,7 @@ where $T>0$ is fit on validation data. Larger $T$ softens overconfident probabil
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
+- [[concepts/evaluation/probability-metrics|Probability metrics]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]

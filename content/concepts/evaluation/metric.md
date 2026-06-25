@@ -40,6 +40,7 @@ $$
 - Does the metric match the scientific or product decision?
 - Is higher or lower better, and is the scale interpretable?
 - Does class imbalance require AUROC, AUPRC, balanced accuracy, or calibration?
+- Are hard-decision, ranking, probability, and calibration metrics being mixed?
 - Are confidence intervals or multiple seeds needed?
 - Is the metric valid under the chosen split?
 
@@ -49,6 +50,7 @@ $$
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
+- [[concepts/evaluation/probability-metrics|Probability metrics]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]

@@ -361,6 +361,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/evaluation/probability-metrics|Probability metrics]]
 - [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
