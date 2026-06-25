@@ -28,8 +28,11 @@ $$
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/residual-connection|Residual connection]]
 - [[concepts/architectures/embedding|Embedding]]
+- [[concepts/architectures/positional-encoding|Positional encoding]]
 - [[concepts/architectures/softmax|Softmax]]
 - [[concepts/architectures/dropout|Dropout]]
+- [[concepts/architectures/gating|Gating]]
+- [[concepts/architectures/pooling-readout|Pooling and readout]]
 
 ## Dense and Feed-Forward
 
@@ -52,6 +55,8 @@ token, residue, text, time series처럼 순서가 있는 입력을 다룹니다.
 
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
+- [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
 - [[concepts/architectures/state-space-model|State-space model]]
 - [[concepts/architectures/mamba|Mamba]]
 

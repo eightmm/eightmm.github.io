@@ -55,7 +55,7 @@ Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number
 
 - Self-attention lets each token mix information from other tokens according to learned relevance.
 - Feed-forward blocks, normalization, residual connections, and positional encodings are part of the core pattern.
-- Encoder-only, decoder-only, and encoder-decoder variants serve different training and inference workflows.
+- [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]], [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]], and [[concepts/architectures/encoder-decoder|encoder-decoder]] variants serve different training and inference workflows.
 - Causal masking supports autoregressive generation; bidirectional attention supports representation learning.
 - Transformers can process text, protein sequences, molecular strings, retrieved context, and multimodal tokens when inputs are tokenized.
 

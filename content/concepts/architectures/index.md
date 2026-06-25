@@ -24,8 +24,11 @@ The same training objective can behave very differently depending on whether $\m
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/residual-connection|Residual connection]]
 - [[concepts/architectures/embedding|Embedding]]
+- [[concepts/architectures/positional-encoding|Positional encoding]]
 - [[concepts/architectures/softmax|Softmax]]
 - [[concepts/architectures/dropout|Dropout]]
+- [[concepts/architectures/gating|Gating]]
+- [[concepts/architectures/pooling-readout|Pooling and readout]]
 
 ## Dense and Feed-Forward Models
 
@@ -42,6 +45,8 @@ The same training objective can behave very differently depending on whether $\m
 
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
+- [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[concepts/architectures/mamba|Mamba]] as a selective state-space model
 

@@ -43,6 +43,7 @@ Here $h_i$ is a node state, $e_{ij}$ is an edge feature, and $\mathcal{N}(i)$ is
 ## Related
 
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+- [[concepts/architectures/pooling-readout|Pooling and readout]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[entities/ligand|Ligand]]

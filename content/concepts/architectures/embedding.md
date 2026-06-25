@@ -35,5 +35,6 @@ where $p_t$ is a positional or structural encoding.
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/positional-encoding|Positional encoding]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[entities/sequence|Sequence]]
