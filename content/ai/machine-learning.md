@@ -54,6 +54,7 @@ $$
 - [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]: mini-batch로 full gradient를 어떻게 추정할 것인가
 - [[concepts/machine-learning/backpropagation|Backpropagation]]: loss에서 parameter gradient를 어떻게 계산할 것인가
 - [[concepts/machine-learning/optimizer|Optimizer]]: gradient를 실제 update로 어떻게 바꿀 것인가
+- [[concepts/machine-learning/adam|Adam]]과 [[concepts/machine-learning/adamw|AdamW]]: adaptive moment와 decoupled weight decay를 어떻게 해석할 것인가
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]: update 크기를 시간에 따라 어떻게 조절할 것인가
 - [[concepts/machine-learning/weight-decay|Weight decay]]: parameter 크기를 어떻게 제한할 것인가
 - [[concepts/machine-learning/gradient-clipping|Gradient clipping]]: 불안정한 gradient를 어떻게 제한할 것인가

@@ -41,6 +41,7 @@ $$
 - Are train, validation, and test splits separated before preprocessing?
 - Are gradients zeroed or accumulated intentionally?
 - Are model modes set correctly for dropout and normalization?
+- Are optimizer state, scheduler state, and mixed-precision state saved when resuming matters?
 - Are checkpoint, seed, and metric logging sufficient to reproduce the run?
 
 ## Related
@@ -50,6 +51,8 @@ $$
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
+- [[concepts/machine-learning/adam|Adam]]
+- [[concepts/machine-learning/adamw|AdamW]]
 - [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/optimization|Optimization]]

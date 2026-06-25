@@ -57,6 +57,8 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
+- [[concepts/machine-learning/adam|Adam]]
+- [[concepts/machine-learning/adamw|AdamW]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
 - [[concepts/machine-learning/weight-decay|Weight decay]]
 - [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
