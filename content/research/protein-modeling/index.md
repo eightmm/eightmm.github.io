@@ -29,10 +29,12 @@ where $s$ is a protein sequence, $c$ is optional context, and $\hat{X}$ is a pre
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 - [[research/protein-modeling/mambafold|MambaFold]]
+- [[papers/meet-equivariant-peptide|MEET]] — memory-efficient equivariant transformer for scalable peptide design
 
 ## Adjacent Areas
 
 - [[research/structure-based-ai/index|Structure-based AI]]
+- [[research/protein-modeling/mambafold|MambaFold]]
 - [[ai/generative-models|Generative models]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

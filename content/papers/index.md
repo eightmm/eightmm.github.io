@@ -32,6 +32,9 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 
 - [[papers/sbdd/index|Structure-based AI papers]]
 - [[papers/sbdd/posebusters|PoseBusters]]
+- [[papers/molexar|Molexar]]
+- [[papers/meet-equivariant-peptide|MEET]]
+- [[papers/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
 
 ## Paper Buckets
 

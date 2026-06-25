@@ -18,6 +18,13 @@ q_i
 (\text{source}, \text{destination}, \text{status}, \text{blocker}, \text{next action})
 $$
 
+## Current Queue (2026-06-26)
+
+| # | Paper | Destination | Status | Blocker | Next Action |
+|---|-------|-------------|--------|---------|-------------|
+| 1 | The Structural Origin of Attention Sink | papers/ (TBD) | inbox | pure-AI, low domain fit | Verify venue status; check if super-neuron analysis connects to [[concepts/architectures/attention|Attention]] or [[concepts/architectures/transformer|Transformer]] notes |
+| 2 | RelayCaching | papers/ (TBD) | inbox | pure-AI, low current fit | Verify speedup claims; skip unless multi-agent LLM systems become an active track |
+
 ## Queue Fields
 
 - Source: where the item came from, marked `to verify` if uncertain.
@@ -55,6 +62,7 @@ $$
 
 - [[inbox/index|Inbox]]
 - [[inbox/inbox-triage|Inbox triage]]
+- [[inbox/daily-paper-brief-2026-06-26|Daily Paper Brief - 2026-06-26]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]

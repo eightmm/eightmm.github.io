@@ -20,6 +20,7 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 - [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]]
 - [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]
 - [[concepts/molecular-modeling/substructure-search|Substructure search]]
+- [[concepts/molecular-modeling/fragment-selfies|Fragment-SELFIES]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
 - [[concepts/molecular-modeling/tautomer|Tautomer]]
 - [[concepts/molecular-modeling/protonation-state|Protonation state]]

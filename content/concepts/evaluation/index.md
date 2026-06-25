@@ -63,6 +63,7 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
+- [[concepts/evaluation/boltzmann-ceiling|Boltzmann ceiling analysis]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/conformal-prediction|Conformal prediction]]
 - [[concepts/evaluation/selective-prediction|Selective prediction]]
