@@ -57,6 +57,7 @@ For a public wiki note, a minimal dataset card should include:
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
+- [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/data/benchmark|Benchmark]]

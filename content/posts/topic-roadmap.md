@@ -27,6 +27,7 @@ tags:
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]와 [[concepts/evaluation/threshold-selection|threshold selection]]으로 classification 결과를 decision 관점에서 읽는 법
 - [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]], [[concepts/evaluation/confidence-interval|confidence interval]], [[concepts/evaluation/reliability-diagram|reliability diagram]]으로 reported metric을 신뢰도 관점에서 해석하기
 - [[concepts/data/example-unit|Example unit]], [[concepts/data/split-unit|split unit]], [[concepts/data/preprocessing-contract|preprocessing contract]]를 data leakage 방지의 기본 단어로 쓰는 법
+- [[concepts/data/dataset-split-contract|Dataset split contract]]로 train/validation/test split rule, grouping key, leakage audit을 재현 가능하게 남기는 법
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]로 모델링 전에 dataset card와 evaluation protocol을 먼저 쓰는 법
 - [[concepts/data/data-distribution|Data distribution]], [[concepts/data/data-schema|data schema]], [[concepts/data/label-semantics|label semantics]], [[concepts/data/dataset-shift|dataset shift]]를 모델보다 먼저 확인하는 이유
 - [[concepts/modalities/modality-representation|Modality representation]]으로 raw signal, preprocessing, model input, information loss를 분리해서 보는 법

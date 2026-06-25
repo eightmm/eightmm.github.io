@@ -23,7 +23,7 @@ where $\mathcal{D}$ is the dataset, $s$ is the split rule, $f_\theta$ is the tra
 ## Required Parts
 
 - Data definition: example unit, label semantics, source, filtering, and preprocessing.
-- Split rule: random, temporal, scaffold, protein-family, source-based, or other grouped split.
+- Split rule: random, temporal, scaffold, protein-family, source-based, or other grouped split; record it as a [[concepts/data/dataset-split-contract|dataset split contract]].
 - Training rule: objective, model selection, early stopping, and hyperparameter search space.
 - Metric rule: primary metric, secondary diagnostics, confidence intervals, and aggregation.
 - Claim boundary: what population, task, and deployment setting the result supports.
@@ -76,4 +76,5 @@ The protocol should match the claim:
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
+- [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/data/label-semantics|Label semantics]]

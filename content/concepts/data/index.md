@@ -26,6 +26,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - [[concepts/data/dataset-card|Dataset card]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
+- [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/data/data-distribution|Data distribution]]
 - [[concepts/data/data-schema|Data schema]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
@@ -61,7 +62,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 2. Write the [[concepts/data/data-schema|data schema]] and [[concepts/data/label-semantics|label semantics]].
 3. Specify the [[concepts/data/preprocessing-contract|preprocessing contract]].
 4. Record [[concepts/data/metadata-provenance|metadata and provenance]].
-5. Choose the [[concepts/data/sampling-strategy|sampling strategy]] and leakage checks.
+5. Choose the [[concepts/data/sampling-strategy|sampling strategy]] and [[concepts/data/dataset-split-contract|dataset split contract]].
 6. Summarize the result in a [[concepts/data/dataset-card|dataset card]].
 7. Attach an [[concepts/evaluation/evaluation-protocol|evaluation protocol]].
 

@@ -28,6 +28,7 @@ where $\mathcal{R}$ is the source record set, $P_\phi$ is the preprocessing cont
 
 - Define the [[concepts/data/example-unit|example unit]].
 - Define the [[concepts/data/split-unit|split unit]].
+- Write the [[concepts/data/dataset-split-contract|dataset split contract]].
 - Write the [[concepts/data/data-schema|data schema]].
 - State [[concepts/data/label-semantics|label semantics]] and missing-label policy.
 - Record source, license, collection process, and [[concepts/data/metadata-provenance|metadata provenance]].
@@ -55,6 +56,7 @@ For a public blog, describe dataset construction as a general method unless the 
 - [[concepts/data/dataset-card|Dataset card]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
+- [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/evaluation/leakage|Leakage]]

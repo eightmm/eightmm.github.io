@@ -39,6 +39,7 @@ where $H$ is a content hash or another stable identifier.
 
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/data-curation|Data curation]]
+- [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/systems/training-run|Training run]]
 - [[logs/public-log-format|Public log format]]

@@ -55,6 +55,7 @@ The split rule should state whether it holds out new proteins, new ligands, new 
 
 ## Related
 
+- [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]

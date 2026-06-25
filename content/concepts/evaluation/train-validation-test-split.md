@@ -81,5 +81,6 @@ $$
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/data/split-unit|Split unit]]
+- [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
