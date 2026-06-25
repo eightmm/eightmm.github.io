@@ -18,6 +18,8 @@ This section should stay practical: what the agent is useful for, where it fails
 - [[agents/agent-loop|Agent loop]]
 - [[agents/agent-state|Agent state]]
 - [[agents/context-engineering|Context engineering]]
+- [[concepts/llm/prompting|Prompting]]
+- [[concepts/llm/structured-output|Structured output]]
 - [[agents/tool-use|Tool use]]
 - [[agents/tool-contract|Tool contract]]
 - [[agents/planning|Planning]]
@@ -53,6 +55,7 @@ This section should stay practical: what the agent is useful for, where it fails
 ## Related
 
 - [[agents/llm-wiki|LLM Wiki]]
+- [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[inbox/index|Inbox]]
 - [[projects/index|Projects]]

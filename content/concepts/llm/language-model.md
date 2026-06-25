@@ -46,5 +46,8 @@ $$
 
 - [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
 - [[concepts/llm/context-window|Context window]]
+- [[concepts/llm/decoding|Decoding]]
+- [[concepts/llm/prompting|Prompting]]
 - [[concepts/llm/in-context-learning|In-context learning]]
+- [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
 - [[agents/tool-use|Tool use]]
