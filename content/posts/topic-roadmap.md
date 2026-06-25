@@ -47,6 +47,8 @@ tags:
 ## Agents
 
 - [[agents/core/agent-architecture|Agent architecture]]를 model, state, tools, memory, verifier로 나눠 보는 법
+- [[agents/core/task-decomposition|Task decomposition]]과 [[agents/workflows/agent-handoff|agent handoff]]로 긴 작업을 끊어 넘기는 법
+- [[agents/workflows/agent-runbook|Agent runbook]]으로 반복되는 논문/블로그/wiki 작업을 표준화하는 법
 - [[agents/tools/tool-contract|Tool contract]]가 agent 안정성에 중요한 이유
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]로 논문 후보를 모으고 검증하는 흐름
 - [[agents/verification/verification-loop|Verification loop]]가 agent output보다 중요한 이유

@@ -30,7 +30,9 @@ This section should stay practical: what the agent is useful for, where it fails
 - [[agents/tools/tool-use|Tool use]]
 - [[agents/tools/tool-contract|Tool contract]]
 - [[agents/core/planning|Planning]]
+- [[agents/core/task-decomposition|Task decomposition]]
 - [[agents/core/agent-memory|Agent memory]]
+- [[agents/core/memory-boundary|Memory boundary]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[agents/verification/reflection-and-critique|Reflection and critique]]
 - [[agents/verification/agent-evaluation|Agent evaluation]]
@@ -42,6 +44,8 @@ This section should stay practical: what the agent is useful for, where it fails
 - [[agents/workflows/coding-agents|Coding agents]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[agents/workflows/agent-orchestration|Agent orchestration]]
+- [[agents/workflows/agent-handoff|Agent handoff]]
+- [[agents/workflows/agent-runbook|Agent runbook]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 

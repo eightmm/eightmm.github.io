@@ -36,6 +36,8 @@ where nodes $V$ are steps or roles, and edges $E$ pass artifacts, evidence, or d
 
 ## Related
 
+- [[agents/workflows/agent-handoff|Agent handoff]]
+- [[agents/workflows/agent-runbook|Agent runbook]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]
 - [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]

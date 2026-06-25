@@ -21,6 +21,7 @@ Planning is the step where an agent decomposes a goal into ordered, verifiable s
 ## Related
 
 - [[agents/core/agent-loop|Agent loop]]
+- [[agents/core/task-decomposition|Task decomposition]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[agents/tools/tool-use|Tool use]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]

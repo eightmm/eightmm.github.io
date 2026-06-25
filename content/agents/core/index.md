@@ -16,7 +16,9 @@ Core agent notes describe the basic loop, state, memory, planning, and context d
 - [[agents/core/agent-state|Agent state]]
 - [[agents/core/context-engineering|Context engineering]]
 - [[agents/core/planning|Planning]]
+- [[agents/core/task-decomposition|Task decomposition]]
 - [[agents/core/agent-memory|Agent memory]]
+- [[agents/core/memory-boundary|Memory boundary]]
 
 ## Related
 
