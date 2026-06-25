@@ -18,6 +18,7 @@ Workflow notes describe practical agent use cases: coding, paper review, orchest
 - [[agents/workflows/agent-runbook|Agent runbook]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 
 ## Related
 

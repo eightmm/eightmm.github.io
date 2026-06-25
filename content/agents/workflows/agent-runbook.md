@@ -34,6 +34,7 @@ where $\mathcal{I}$ is input contract, $\mathcal{S}$ is ordered steps, $\mathcal
 
 - Daily paper brief ingestion.
 - Blog/wiki note curation.
+- Content promotion from raw input to wiki note, post, project note, or public log.
 - Coding agent patch admission.
 - Multi-agent review.
 - HPC failure summary.
@@ -51,6 +52,7 @@ where $\mathcal{I}$ is input contract, $\mathcal{S}$ is ordered steps, $\mathcal
 
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[agents/workflows/agent-handoff|Agent handoff]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]

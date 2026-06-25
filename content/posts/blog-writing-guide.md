@@ -71,6 +71,22 @@ tags:
 - Infra: 공개 가능한 운영 지식
 - Agent: LLM/agent workflow와 검증 방식
 
+## 승격 기준
+
+Wiki note가 충분히 쌓였을 때만 post로 승격합니다. 자세한 흐름은 [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]과 [[agents/workflows/content-promotion-workflow|Content promotion workflow]]를 따릅니다.
+
+$$
+\text{post-ready}
+=
+\text{reader question}
+\land
+\text{linked notes}
+\land
+\text{public-safe}
+\land
+\text{next path}
+$$
+
 ## Checks
 
 - 한글 글이 독립적으로 읽히는가?
@@ -83,6 +99,8 @@ tags:
 
 - [[posts/index|Posts]]
 - [[posts/topic-roadmap|Topic roadmap]]
+- [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

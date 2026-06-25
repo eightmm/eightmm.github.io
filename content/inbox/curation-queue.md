@@ -22,6 +22,7 @@ $$
 
 - Source: where the item came from, marked `to verify` if uncertain.
 - Destination: paper, concept, project, research, log, or post.
+- Promotion workflow: target destination and reason, following [[agents/workflows/content-promotion-workflow|Content promotion workflow]].
 - Status: `inbox`, `stub`, `reading`, `draft`, `ready`, or `drop`.
 - Blocker: missing metadata, weak relevance, private detail, missing verification, or duplicate.
 - Next action: the smallest useful action.
@@ -56,6 +57,7 @@ $$
 - [[inbox/inbox-triage|Inbox triage]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[papers/reading-status|Reading status]]
 - [[papers/paper-triage|Paper triage]]
 - [[papers/artifact-availability|Artifact availability]]

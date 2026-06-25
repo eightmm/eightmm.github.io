@@ -17,6 +17,7 @@ Inbox triage decides whether a raw candidate becomes a paper note, concept note,
 - Does it need human review before publication?
 - What is the smallest useful destination page?
 - If it is a paper candidate, does it pass [[papers/paper-triage|Paper triage]]?
+- Which destination has the strongest fit according to [[agents/workflows/content-promotion-workflow|Content promotion workflow]]?
 
 ## Destination Rules
 
@@ -46,4 +47,5 @@ If the destination is unclear, keep the item in [[inbox/curation-queue|Curation 
 - [[papers/reading-status|Reading status]]
 - [[papers/paper-triage|Paper triage]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

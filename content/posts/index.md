@@ -12,11 +12,13 @@ tags:
 
 - [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]
 - [[posts/2026-06-25-structure-based-ai-map|구조 기반 AI를 어떻게 정리할 것인가]]
+- [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 
 ## 작성 시스템
 
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
 - [[posts/topic-roadmap|글감 로드맵]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 
 ## 글감
 

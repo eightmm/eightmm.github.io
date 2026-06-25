@@ -30,11 +30,14 @@ An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesi
 - Evidence-grounded claims: supported statements link to sources, concepts, logs, or paper notes; uncertain statements are marked `to verify`.
 - No private endpoints, account names, credentials, unpublished metrics, or internal project identifiers.
 - Korean posts should provide readable entry points; English wiki notes should hold reusable definitions and checks.
+- Use [[agents/workflows/content-promotion-workflow|Content promotion workflow]] to decide whether raw material becomes an inbox item, concept note, paper note, project note, infra note, public log, or Korean post.
 
 ## Related
 
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[projects/llm-wiki-blog|LLM Wiki blog]]
 - [[posts/blog-writing-guide|Blog writing guide]]
+- [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
 - [[posts/topic-roadmap|Topic roadmap]]
 - [[concepts/llm/index|LLM concepts]]
 - [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]

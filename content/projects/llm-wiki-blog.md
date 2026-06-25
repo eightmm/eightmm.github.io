@@ -26,6 +26,7 @@ The public site should contain generalized knowledge, reusable writing formats, 
 
 - Use [[posts/index|Posts]] for Korean narrative writing.
 - Use [[posts/blog-writing-guide|Blog writing guide]] and [[posts/topic-roadmap|Topic roadmap]] to keep posts connected to wiki notes.
+- Use [[agents/workflows/content-promotion-workflow|Content promotion workflow]] and [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]] to decide when a wiki cluster becomes a Korean post.
 - Use [[concepts/index|Concepts]] for reusable English notes.
 - Use [[papers/index|Papers]] for public paper-specific claims.
 - Use [[research/index|Research]] for domain maps.
@@ -50,6 +51,8 @@ Active. The main work is to keep gateway pages readable while moving reusable de
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[agents/core/context-engineering|Context engineering]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
+- [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
 - [[inbox/inbox-triage|Inbox triage]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
 - [[projects/project-note-format|Project note format]]

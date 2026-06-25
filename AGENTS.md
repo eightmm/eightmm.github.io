@@ -110,6 +110,8 @@ The site should satisfy both a public blog and an LLM Wiki:
 
 - Korean `posts/` and top-level gateway pages explain why a topic matters, how to read it, and where to go next.
 - English wiki notes under `concepts/`, `entities/`, `papers/`, `agents/`, `infra/`, and `projects/` hold reusable definitions, formulas, checklists, and references.
+- Use `content/agents/workflows/content-promotion-workflow.md` to decide whether raw material becomes an inbox item, concept note, paper note, project note, infra note, public log, or Korean post.
+- Write a Korean post when a cluster of wiki notes needs a reader-facing map, not when a single definition can remain a wiki note.
 - Do not duplicate full explanations across many pages. Put canonical definitions in wiki notes and link them from posts.
 - Use `[[...]]` wikilinks for internal links. Prefer path-qualified links such as `[[concepts/architectures/transformer|Transformer]]`.
 - Keep pages useful even as stubs: include purpose, key equations or checks if applicable, related links, and `to verify` for missing facts.
