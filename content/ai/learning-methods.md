@@ -49,6 +49,8 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 - [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/masked-modeling|Masked modeling]]
+- [[concepts/learning/augmentation-policy|Augmentation policy]]
+- [[concepts/learning/representation-collapse|Representation collapse]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]

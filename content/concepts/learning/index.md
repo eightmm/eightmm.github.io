@@ -35,6 +35,8 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/masked-modeling|Masked modeling]]
+- [[concepts/learning/augmentation-policy|Augmentation policy]]
+- [[concepts/learning/representation-collapse|Representation collapse]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 

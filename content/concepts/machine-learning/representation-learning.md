@@ -25,17 +25,32 @@ $$
 
 The representation can be learned with supervised labels, self-supervised signals, contrastive objectives, masked modeling, or generative pretraining.
 
+The useful representation is not necessarily the one that preserves everything. It should preserve information needed for downstream tasks and discard nuisance variation:
+
+$$
+z=f_\theta(x),
+\qquad
+I(z;y)\ \text{large},
+\qquad
+I(z;\epsilon)\ \text{small}
+$$
+
+where $y$ is task-relevant information and $\epsilon$ is nuisance variation.
+
 ## Checks
 
 - What information should the representation preserve or discard?
 - Is the representation instance-level, token-level, graph-level, or structure-level?
 - Does it transfer to downstream tasks under a realistic split?
 - Are embeddings evaluated with linear probes, fine-tuning, retrieval, or task metrics?
+- Does the representation avoid [[concepts/learning/representation-collapse|collapse]]?
 
 ## Related
 
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
+- [[concepts/learning/augmentation-policy|Augmentation policy]]
+- [[concepts/learning/representation-collapse|Representation collapse]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
 - [[concepts/architectures/embedding|Embedding]]
