@@ -100,6 +100,8 @@ Data notes should define example unit, split unit, preprocessing contract, label
 
 Evaluation notes should separate primary metrics from diagnostics and should name failure modes explicitly. When adding task or evaluation notes, connect output space, metric selection, failure mode taxonomy, split rule, uncertainty, and leakage risk before making model-quality claims.
 
+Retrieval task notes should distinguish corpus search, similarity search, and reranking. State the candidate corpus, representation, scoring function, top-k or listwise output, relevance definition, metric, duplicate policy, and whether the stage optimizes recall, precision, enrichment, or downstream answer quality.
+
 Optimization and training notes should connect loss, gradient estimate, optimizer state, learning-rate schedule, effective batch size, gradient accumulation, clipping, checkpoint state, and stability signals. State whether counts refer to micro-steps, optimizer steps, consumed samples, or epochs.
 
 Infra and HPC notes should be general research-engineering knowledge, not a map of any private cluster. For new HPC notes, prefer generic concepts such as resource scheduling, resource requests, job arrays, checkpointing, preemption/resume, GPU memory, storage IO, environment management, and reproducible run records. Update `content/infra/index.md`, the relevant `content/infra/hpc/` or `content/infra/server-ops/` index, and `content/concepts/systems/index.md` when the concept belongs to AI systems.

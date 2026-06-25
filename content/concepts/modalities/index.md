@@ -38,6 +38,8 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/tasks/retrieval|Retrieval]]
+- [[concepts/tasks/similarity-search|Similarity search]]
+- [[concepts/tasks/reranking|Reranking]]
 - [[concepts/tasks/object-detection|Object detection]]
 - [[concepts/tasks/segmentation|Segmentation]]
 - [[concepts/tasks/captioning|Captioning]]

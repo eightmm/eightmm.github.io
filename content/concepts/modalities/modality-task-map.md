@@ -28,14 +28,14 @@ where $x_{\mathrm{raw}}$ is the raw modality, $\phi$ is the representation map, 
 
 | Modality | Common representation | Common tasks | Output space | Typical risks |
 | --- | --- | --- | --- | --- |
-| Text | tokens, chunks, embeddings | retrieval, QA, generation, classification | sequence, answer, class, ranked list | context leakage, prompt injection, hallucination |
+| Text | tokens, chunks, embeddings | retrieval, similarity search, reranking, QA, generation, classification | sequence, answer, class, ranked list | context leakage, prompt injection, hallucination |
 | Image | pixels, patches, feature maps, regions | classification, detection, segmentation, captioning | class, box, mask, sequence | near-duplicate leakage, augmentation mismatch |
 | Video | frames, clips, tubelets, temporal tokens | event detection, captioning, retrieval, forecasting | class, segment, sequence, ranked list | temporal leakage, frame sampling bias |
 | Audio | waveform, spectrogram, acoustic tokens | speech recognition, event detection, generation | sequence, class, timestamped event | sampling-rate mismatch, transcript leakage |
-| Tabular | columns, normalized features, embeddings | classification, regression, ranking | class, scalar, ranked list | identifier leakage, train-test distribution shift |
+| Tabular | columns, normalized features, embeddings | classification, regression, ranking, reranking | class, scalar, ranked list | identifier leakage, train-test distribution shift |
 | Graph | nodes, edges, features | graph classification, node prediction, link prediction | class, label, edge, graph | split leakage through shared nodes or edges |
-| Sequence | tokens, residues, k-mers, events | classification, generation, tagging, forecasting | class, sequence, span, scalar | homolog leakage, future information leakage |
-| 3D structure | coordinates, distances, frames, surfaces, geometric graphs | pose prediction, structure prediction, scoring, segmentation | coordinates, scalar, class, graph | coordinate-frame leakage, template leakage |
+| Sequence | tokens, residues, k-mers, events | classification, generation, tagging, similarity search, forecasting | class, sequence, span, scalar, ranked list | homolog leakage, future information leakage |
+| 3D structure | coordinates, distances, frames, surfaces, geometric graphs | pose prediction, structure prediction, scoring, similarity search, segmentation | coordinates, scalar, class, graph, ranked list | coordinate-frame leakage, template leakage |
 
 ## Task Construction
 
@@ -82,6 +82,8 @@ For example, an image can produce a class, box, mask, caption, embedding, or ret
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/tasks/task-output-space|Task output space]]
+- [[concepts/tasks/similarity-search|Similarity search]]
+- [[concepts/tasks/reranking|Reranking]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/architectures/architecture-selection|Architecture selection]]

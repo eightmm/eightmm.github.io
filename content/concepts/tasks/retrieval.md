@@ -24,12 +24,15 @@ $$
 
 The task specification should state the corpus, relevance definition, and whether retrieval is final output or only a recall stage for a reranker or generator.
 
+When retrieval is defined mostly by a representation and distance function, treat it as [[concepts/tasks/similarity-search|Similarity search]]. When a second model reorders the retrieved set, treat it as [[concepts/tasks/reranking|Reranking]].
+
 ## Common Designs
 
 - Sparse lexical retrieval with term matching.
 - Dense retrieval using learned embeddings.
 - Hybrid retrieval combining sparse and dense scores.
 - Two-stage systems: retrieval first, reranking second.
+- Similarity search over embeddings, fingerprints, sequence features, or structure features.
 
 ## Metrics
 
@@ -52,6 +55,8 @@ The task specification should state the corpus, relevance definition, and whethe
 - [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
+- [[concepts/tasks/similarity-search|Similarity search]]
+- [[concepts/tasks/reranking|Reranking]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/machine-learning/ranking|Ranking]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
