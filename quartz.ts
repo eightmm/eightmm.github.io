@@ -5,22 +5,27 @@ ExternalPlugin.Explorer({
   filterFn: (node) => {
     const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
     if (node.slugSegment === "tags") return false
-    const firstSegment = node.slugSegments?.[0]
+    const segments = node.slug.split("/")
+    const firstSegment = segments[0]
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)
   },
   sortFn: (a, b) => {
     const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
     const agentGroups = ["core", "tools", "workflows", "verification"]
-    const aIndex = explorerRoots.indexOf(a.slugSegments?.[0] ?? "")
-    const bIndex = explorerRoots.indexOf(b.slugSegments?.[0] ?? "")
+    const aSegments = a.slug.split("/")
+    const bSegments = b.slug.split("/")
+    if (aSegments.at(-1) === "index") aSegments.pop()
+    if (bSegments.at(-1) === "index") bSegments.pop()
+    const aIndex = explorerRoots.indexOf(aSegments[0] ?? "")
+    const bIndex = explorerRoots.indexOf(bSegments[0] ?? "")
 
-    if (a.slugSegments?.length === 1 && b.slugSegments?.length === 1 && aIndex !== bIndex) {
+    if (aSegments.length === 1 && bSegments.length === 1 && aIndex !== bIndex) {
       return aIndex - bIndex
     }
 
-    if (a.slugSegments?.[0] === "agents" && b.slugSegments?.[0] === "agents") {
-      const aGroupIndex = agentGroups.indexOf(a.slugSegments?.[1] ?? "")
-      const bGroupIndex = agentGroups.indexOf(b.slugSegments?.[1] ?? "")
+    if (aSegments[0] === "agents" && bSegments[0] === "agents") {
+      const aGroupIndex = agentGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = agentGroups.indexOf(bSegments[1] ?? "")
       if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
         return aGroupIndex - bGroupIndex
       }
