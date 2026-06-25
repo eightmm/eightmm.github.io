@@ -16,13 +16,16 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 3. Write the paper-specific note using [[papers/paper-note-format|Paper note format]].
 4. Extract claims using [[papers/claim-extraction|Claim extraction]].
 5. Map claims to evidence using [[papers/evidence-table|Evidence table]].
-6. Record limits with [[papers/limitation-taxonomy|Limitation taxonomy]].
-7. Check reproducibility using [[papers/reproducibility-checklist|Reproducibility checklist]].
-8. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
-9. Extract reusable concepts into [[concepts/index|Concepts]].
-10. Link research relevance into [[research/index|Research]].
-11. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
-12. Promote mature themes into Korean [[posts/index|Posts]].
+6. Create a [[papers/benchmark-card|Benchmark card]] for the benchmark when the evaluation protocol matters.
+7. Map component claims with [[papers/ablation-map|Ablation map]] when the paper argues why a method works.
+8. Record limits with [[papers/limitation-taxonomy|Limitation taxonomy]].
+9. Check reproducibility using [[papers/reproducibility-checklist|Reproducibility checklist]].
+10. Write a [[papers/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
+11. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
+12. Extract reusable concepts into [[concepts/index|Concepts]].
+13. Link research relevance into [[research/index|Research]].
+14. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
+15. Promote mature themes into Korean [[posts/index|Posts]].
 
 ## Evidence Levels
 
@@ -30,6 +33,8 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - Method understood: objective, architecture, data, and evaluation are identified.
 - Claims checked: results are tied to metric, split, benchmark, and uncertainty.
 - Evidence table complete: main claims have supporting experiments and limits.
+- Benchmark card complete: benchmark scope, split, metric, and leakage risks are explicit.
+- Ablation map complete: component claims are tied to isolated experiments.
 - Baseline checked: comparisons and ablations support the claimed contribution.
 - Limits recorded: failure modes, assumptions, and missing comparisons are explicit.
 - Reproducibility checked: code, data, config, compute, and evaluation details are marked present or missing.
@@ -51,8 +56,11 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/reading-status|Reading status]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/evidence-table|Evidence table]]
+- [[papers/benchmark-card|Benchmark card]]
+- [[papers/ablation-map|Ablation map]]
 - [[papers/limitation-taxonomy|Limitation taxonomy]]
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
+- [[papers/reproduction-plan|Reproduction plan]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[concepts/research-methodology/research-question|Research question]]
 - [[concepts/research-methodology/literature-synthesis|Literature synthesis]]

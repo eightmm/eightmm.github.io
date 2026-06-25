@@ -26,7 +26,9 @@ $$
 - [[concepts/research-methodology/research-question|Research question]]
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
 - [[concepts/research-methodology/experiment-design|Experiment design]]
+- [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]
+- [[concepts/research-methodology/threat-to-validity|Threat to validity]]
 - [[concepts/research-methodology/research-log|Research log]]
 - [[concepts/research-methodology/experiment-ledger|Experiment ledger]]
 - [[concepts/research-methodology/negative-result|Negative result]]
@@ -38,7 +40,9 @@ $$
 - What observation would change the conclusion?
 - Is the hypothesis falsifiable?
 - Is there a baseline or ablation?
+- Is the first experiment the smallest one that can change the decision?
 - Is only one variable changed?
+- What threat to validity could weaken the conclusion?
 - Is the result recorded whether it succeeds, fails, or surprises?
 - Are negative and inconclusive results preserved as reusable lessons?
 - Are paper claims synthesized into research questions rather than copied summaries?

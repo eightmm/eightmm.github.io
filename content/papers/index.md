@@ -17,8 +17,11 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 - [[papers/reading-status|Reading status]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/evidence-table|Evidence table]]
+- [[papers/benchmark-card|Benchmark card]]
+- [[papers/ablation-map|Ablation map]]
 - [[papers/limitation-taxonomy|Limitation taxonomy]]
 - [[papers/reproducibility-checklist|Reproducibility checklist]]
+- [[papers/reproduction-plan|Reproduction plan]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 
 ## Structure-Based AI
@@ -36,6 +39,7 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 ## Cross-Cutting Concepts
 
 - [[concepts/data/benchmark|Benchmark]]
+- [[papers/benchmark-card|Benchmark card]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/evidence-table|Evidence table]]
 - [[concepts/modalities/index|Modalities]]

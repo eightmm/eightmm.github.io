@@ -121,6 +121,8 @@ Daily briefs should flow:
 
 Codex should act as wiki maintainer and draft editor. Human review decides what becomes a curated public note and when to push.
 
+Paper notes should not stop at summary. When a paper is important, extract claims, evidence, benchmark cards, ablation maps, limitations, reproducibility status, and a reproduction plan. Convert useful follow-up work into `concepts/research-methodology/` notes such as minimum viable experiments and threats to validity.
+
 ## Writing Style
 
 - Durable repo text is English.
