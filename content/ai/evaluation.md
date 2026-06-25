@@ -38,6 +38,10 @@ $$
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/calibration|Calibration]]
+- [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
+- [[concepts/evaluation/robustness|Robustness]]
+- [[concepts/evaluation/error-analysis|Error analysis]]
+- [[concepts/evaluation/interpretability|Interpretability]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 
@@ -55,6 +59,7 @@ $$
 - train/test split이 실제 generalization을 요구하는가?
 - metric이 task objective와 맞는가?
 - confidence나 calibration이 필요한 application인가?
+- uncertainty, robustness, interpretability 중 어떤 진단이 필요한가?
 - 실패를 data, model, optimization, evaluation 중 어디 문제로 분해할 수 있는가?
 
 ## Related

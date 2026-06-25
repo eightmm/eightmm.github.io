@@ -33,4 +33,6 @@ The shift must be named; otherwise OOD becomes a vague label.
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/evaluation/calibration|Calibration]]
+- [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
+- [[concepts/evaluation/robustness|Robustness]]
 - [[concepts/evaluation/index|Evaluation]]

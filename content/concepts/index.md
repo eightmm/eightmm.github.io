@@ -244,6 +244,10 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/calibration|Calibration]]
+- [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
+- [[concepts/evaluation/robustness|Robustness]]
+- [[concepts/evaluation/error-analysis|Error analysis]]
+- [[concepts/evaluation/interpretability|Interpretability]]
 
 ## Research Links
 
