@@ -14,7 +14,9 @@ In this wiki, SBDD concepts are reusable notes under [[research/structure-based-
 ## Core Concepts
 
 - [[concepts/sbdd/scoring-function|Scoring function]]
+- [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
 - [[entities/pocket|Pocket]]
@@ -42,3 +44,4 @@ where $P$ is a protein or pocket and $L$ is a ligand.
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
+- [[concepts/protein-modeling/binding-site|Binding site]]

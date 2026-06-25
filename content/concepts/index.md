@@ -43,9 +43,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Research method path: [[concepts/research-methodology/research-question|Research question]] -> [[concepts/research-methodology/hypothesis|Hypothesis]] -> [[concepts/research-methodology/experiment-design|Experiment design]] -> [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - Agent path: [[agents/agent-architecture|Agent architecture]] -> [[agents/context-engineering|Context engineering]] -> [[agents/tool-contract|Tool contract]] -> [[agents/verification-loop|Verification loop]]
 - Graph and geometry: [[concepts/math/geometry|Geometry]] -> [[concepts/math/symmetry-group|Symmetry group]] -> [[concepts/architectures/graph-construction|Graph construction]] -> [[concepts/architectures/gnn|Graph neural networks]] -> [[concepts/geometric-deep-learning/equivariance|Equivariance]] -> [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
-- Structure-based AI: [[entities/pocket|Pocket]] -> [[concepts/sbdd/pose-quality|Pose quality]] -> [[concepts/sbdd/binding-affinity|Binding affinity]] -> [[concepts/sbdd/virtual-screening|Virtual screening]]
-- Molecular modeling: [[concepts/molecular-modeling/smiles|SMILES]] -> [[concepts/molecular-modeling/molecular-graph|Molecular graph]] -> [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]] -> [[concepts/molecular-modeling/conformer|Conformer]]
-- Protein modeling: [[entities/sequence|Sequence]] -> [[concepts/protein-modeling/protein-representation|Protein representation]] -> [[concepts/protein-modeling/contact-map|Contact map]] -> [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
+- Structure-based AI: [[entities/pocket|Pocket]] -> [[concepts/protein-modeling/binding-site|Binding site]] -> [[concepts/sbdd/docking-workflow|Docking workflow]] -> [[concepts/sbdd/pose-quality|Pose quality]] -> [[concepts/sbdd/binding-affinity|Binding affinity]] -> [[concepts/sbdd/virtual-screening|Virtual screening]]
+- Molecular modeling: [[concepts/molecular-modeling/smiles|SMILES]] -> [[concepts/molecular-modeling/molecular-graph|Molecular graph]] -> [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]] -> [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]] -> [[concepts/molecular-modeling/conformer|Conformer]]
+- Protein modeling: [[entities/sequence|Sequence]] -> [[concepts/protein-modeling/protein-domain|Protein domain]] -> [[concepts/protein-modeling/protein-representation|Protein representation]] -> [[concepts/protein-modeling/contact-map|Contact map]] -> [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - Genome-level sequence: [[entities/genome|Genome]] -> [[concepts/genome-modeling/genomic-region|Genomic region]] -> [[concepts/genome-modeling/k-mer|K-mer]] -> [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
 - Paper reading: [[papers/paper-note-format|Paper note format]] -> [[papers/claim-extraction|Claim extraction]] -> [[concepts/evaluation/confidence-interval|Confidence interval]] -> [[papers/reading-status|Reading status]]
 - LLM Wiki: [[concepts/llm/language-model|Language model]] -> [[concepts/llm/context-window|Context window]] -> [[concepts/llm/embedding-retrieval|Embedding retrieval]] -> [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
@@ -173,8 +173,10 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Structure-Based AI
 
 - [[concepts/sbdd/index|Structure-based drug discovery]]
+- [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
 
@@ -184,6 +186,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
+- [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]]
+- [[concepts/molecular-modeling/substructure-search|Substructure search]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 
@@ -191,6 +195,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/protein-modeling/index|Protein modeling concepts]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
+- [[concepts/protein-modeling/protein-domain|Protein domain]]
+- [[concepts/protein-modeling/binding-site|Binding site]]
 - [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
 - [[concepts/protein-modeling/contact-map|Contact map]]

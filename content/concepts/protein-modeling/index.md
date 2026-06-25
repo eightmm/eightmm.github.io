@@ -12,6 +12,8 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 ## Core Concepts
 
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
+- [[concepts/protein-modeling/protein-domain|Protein domain]]
+- [[concepts/protein-modeling/binding-site|Binding site]]
 - [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
@@ -31,3 +33,4 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+- [[concepts/evaluation/protein-family-split|Protein family split]]
