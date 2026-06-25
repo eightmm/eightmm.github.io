@@ -40,6 +40,8 @@ $$
 
 If a required check is skipped, unavailable, or too narrow for the goal, the agent should report the gap instead of claiming completion.
 
+For broad goals, the final step should be a [[agents/verification/completion-audit|Completion audit]] backed by an [[agents/verification/evidence-ledger|Evidence ledger]].
+
 ## Public Wiki Use
 
 For a public research blog or LLM Wiki, the operating contract should include:
@@ -57,6 +59,7 @@ For a public research blog or LLM Wiki, the operating contract should include:
 - Are private boundaries explicit?
 - Does the verification set match the blast radius?
 - Is the final report tied to evidence rather than model confidence?
+- Is completion audited against the original objective rather than a narrowed subtask?
 
 ## Related
 
@@ -65,5 +68,7 @@ For a public research blog or LLM Wiki, the operating contract should include:
 - [[agents/core/planning|Planning]]
 - [[agents/verification/acceptance-criteria|Acceptance criteria]]
 - [[agents/verification/verification-loop|Verification loop]]
+- [[agents/verification/evidence-ledger|Evidence ledger]]
+- [[agents/verification/completion-audit|Completion audit]]
 - [[agents/workflows/agent-runbook|Agent runbook]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]

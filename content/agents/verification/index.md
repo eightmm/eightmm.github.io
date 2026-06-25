@@ -13,6 +13,8 @@ Verification notes describe how agent outputs are checked, reviewed, constrained
 
 - [[agents/verification/verification-loop|Verification loop]]
 - [[agents/verification/acceptance-criteria|Acceptance criteria]]
+- [[agents/verification/evidence-ledger|Evidence ledger]]
+- [[agents/verification/completion-audit|Completion audit]]
 - [[agents/verification/reflection-and-critique|Reflection and critique]]
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[agents/verification/human-in-the-loop|Human in the loop]]
@@ -23,5 +25,6 @@ Verification notes describe how agent outputs are checked, reviewed, constrained
 - [[agents/index|Agents]]
 - [[agents/tools/tool-contract|Tool contract]]
 - [[agents/tools/tool-result-handling|Tool result handling]]
+- [[agents/core/agent-operating-contract|Agent operating contract]]
 - [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

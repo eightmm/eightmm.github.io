@@ -28,6 +28,7 @@ $$
 - Specific: the condition is narrow enough to check.
 - Complete: the set covers correctness, safety, and publication constraints.
 - Current: evidence comes from the current environment, not memory of earlier work.
+- Evidence-linked: every criterion points to an [[agents/verification/evidence-ledger|Evidence ledger]] entry or equivalent check.
 - Public-safe: criteria include privacy and sanitization when artifacts are published.
 
 ## Examples
@@ -45,10 +46,13 @@ $$
 - Is skipped verification reported explicitly?
 - Are generated files excluded from manual edits?
 - Does the final answer distinguish changed, verified, and not verified items?
+- Does the acceptance set cover commit, push, and public-safety requirements when they apply?
 
 ## Related
 
 - [[agents/verification/verification-loop|Verification loop]]
+- [[agents/verification/evidence-ledger|Evidence ledger]]
+- [[agents/verification/completion-audit|Completion audit]]
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[agents/workflows/agent-runbook|Agent runbook]]

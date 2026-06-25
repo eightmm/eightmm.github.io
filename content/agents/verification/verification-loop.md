@@ -20,6 +20,8 @@ $$
 
 If the evidence is missing, too narrow, stale, or indirect, the claim is not verified.
 
+The loop should append evidence to an [[agents/verification/evidence-ledger|Evidence ledger]] before the agent summarizes success.
+
 ## Verification Ladder
 
 - Syntax or format check.
@@ -37,12 +39,15 @@ If the evidence is missing, too narrow, stale, or indirect, the claim is not ver
 - Capture the command and output so the result is reproducible.
 - Match the check to the claim. A build passing does not prove content accuracy.
 - Treat a green check as evidence only for the behavior it actually covers.
+- Run a [[agents/verification/completion-audit|Completion audit]] before claiming a broad objective is done.
 
 ## Related
 
 - [[agents/core/agent-operating-contract|Agent operating contract]]
 - [[agents/core/agent-loop|Agent loop]]
 - [[agents/verification/acceptance-criteria|Acceptance criteria]]
+- [[agents/verification/evidence-ledger|Evidence ledger]]
+- [[agents/verification/completion-audit|Completion audit]]
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[agents/core/planning|Planning]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]

@@ -83,6 +83,8 @@ Organize `agents/` with stable subfolders:
 
 Agent content should stay grouped under `agents/`; do not scatter agent notes into `ai/` except for short links from the AI gateway. Agent pages should explain model-state-tool-memory-verifier structure, workflow runbooks, tool contracts, and verification habits with public, generic examples.
 
+Agent verification notes should separate acceptance criteria, evidence ledger, verification loop, and completion audit. Do not claim a broad task is complete from a narrow check; state what each check proves and what remains not verified.
+
 When adding agent notes, update the nearest subfolder index and `content/agents/index.md` together. Use these layers:
 
 - Core: environment, action space, loop, state, memory, planning, context, and task decomposition.

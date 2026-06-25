@@ -39,6 +39,8 @@ This section should stay practical: what the agent is useful for, where it fails
 - [[agents/core/memory-boundary|Memory boundary]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[agents/verification/acceptance-criteria|Acceptance criteria]]
+- [[agents/verification/evidence-ledger|Evidence ledger]]
+- [[agents/verification/completion-audit|Completion audit]]
 - [[agents/verification/reflection-and-critique|Reflection and critique]]
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[agents/verification/human-in-the-loop|Human in the loop]]
