@@ -35,8 +35,10 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
 - [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/data/label-noise|Label noise]]
+- [[concepts/data/class-imbalance|Class imbalance]]
 - [[concepts/data/dataset-shift|Dataset shift]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
+- [[concepts/data/sampling-bias|Sampling bias]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
@@ -51,6 +53,8 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - What exactly does the label mean?
 - What metadata explains batch, source, protocol, time, species, target, or structure context?
 - What examples are missing because of collection bias?
+- Is the class or label distribution imbalanced?
+- Does sampling bias make validation easier than deployment?
 - What shift exists between train, validation, test, and deployment?
 - Does the split match the intended generalization claim?
 - Can another person reconstruct the dataset version and filtering policy?

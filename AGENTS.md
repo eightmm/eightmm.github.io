@@ -102,6 +102,8 @@ For protein-ligand or SBDD benchmark notes, state the example unit and split uni
 
 Data notes should define example unit, split unit, preprocessing contract, label semantics, and dataset-card style limitations before adding model claims. Do not treat a row identifier as the split unit unless the note explains why that matches the generalization claim.
 
+Sampling and imbalance notes should state the target population, observed sampling distribution, class or label prevalence in each split, missing-label policy, batch sampling rule, and whether evaluation uses the natural or rebalanced distribution. Do not compare metrics across different prevalence or sampling policies without saying so.
+
 Evaluation notes should separate primary metrics from diagnostics and should name failure modes explicitly. When adding task or evaluation notes, connect output space, metric selection, failure mode taxonomy, split rule, uncertainty, and leakage risk before making model-quality claims.
 
 Generalization notes should separate training fit, validation selection, final test evidence, and deployment or OOD claims. Do not use train performance as evidence of generalization. A generalization claim should state example unit, split unit, training distribution, target evaluation distribution, model-selection rule, metric, uncertainty, leakage checks, and dataset-shift risks.

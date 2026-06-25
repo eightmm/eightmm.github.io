@@ -68,6 +68,7 @@ This is different from softmax classification, where probabilities compete acros
 
 - Are labels mutually exclusive, multi-label, ordinal, or hierarchical?
 - Is class imbalance severe enough to require weighting or threshold tuning?
+- Does train/validation/test prevalence match the deployment decision?
 - Are probabilities calibrated, or only rankings/classes needed?
 - Does the split prevent near-duplicate examples from crossing train and test?
 
@@ -77,6 +78,7 @@ This is different from softmax classification, where probabilities compete acros
 - [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
 - [[concepts/machine-learning/decision-rule|Decision rule]]
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
+- [[concepts/data/class-imbalance|Class imbalance]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]

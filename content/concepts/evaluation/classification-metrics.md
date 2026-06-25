@@ -8,7 +8,7 @@ tags:
 
 # Classification Metrics
 
-Classification metrics evaluate discrete label predictions. The right metric depends on class balance, error cost, thresholding, and whether probabilities or only class decisions matter.
+Classification metrics evaluate discrete label predictions. The right metric depends on [[concepts/data/class-imbalance|class balance]], error cost, thresholding, and whether probabilities or only class decisions matter.
 
 For binary classification, define:
 
@@ -113,6 +113,7 @@ where $p_i$ is the predicted probability for the positive class.
 ## Related
 
 - [[concepts/machine-learning/classification|Classification]]
+- [[concepts/data/class-imbalance|Class imbalance]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]

@@ -77,6 +77,7 @@ Diagnostics should not silently become selection criteria unless the protocol sa
 
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/machine-learning/decision-rule|Decision rule]]
+- [[concepts/data/class-imbalance|Class imbalance]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/tasks/task-specification|Task specification]]
