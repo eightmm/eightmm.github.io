@@ -146,7 +146,7 @@ plugins:
     enabled: true
     options:
       title: Contents
-      folderClickBehavior: collapse
+      folderClickBehavior: link
       folderDefaultState: collapsed
       useSavedState: false
     layout:
