@@ -19,6 +19,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]
+- [[concepts/systems/index|AI systems]]
 - [[concepts/llm/index|LLM concepts]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
@@ -34,6 +35,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]]
 - Deep learning architecture: [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
+- Systems path: [[concepts/systems/training-run|Training run]] -> [[concepts/systems/inference|Inference]] -> [[concepts/systems/model-serving|Model serving]] -> [[concepts/systems/reproducibility|Reproducibility]]
 - Graph and geometry: [[concepts/architectures/graph-construction|Graph construction]] -> [[concepts/architectures/gnn|Graph neural networks]] -> [[concepts/geometric-deep-learning/equivariance|Equivariance]] -> [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - Structure-based AI: [[entities/pocket|Pocket]] -> [[concepts/sbdd/pose-quality|Pose quality]] -> [[concepts/sbdd/binding-affinity|Binding affinity]] -> [[concepts/sbdd/virtual-screening|Virtual screening]]
 - Molecular modeling: [[concepts/molecular-modeling/smiles|SMILES]] -> [[concepts/molecular-modeling/molecular-graph|Molecular graph]] -> [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]] -> [[concepts/molecular-modeling/conformer|Conformer]]
@@ -176,6 +178,17 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/generative-models/gan|GAN]]
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]
+
+## AI Systems
+
+- [[concepts/systems/index|AI systems]]
+- [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/inference|Inference]]
+- [[concepts/systems/model-serving|Model serving]]
+- [[concepts/systems/latency-throughput|Latency and throughput]]
+- [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
+- [[concepts/systems/experiment-tracking|Experiment tracking]]
+- [[concepts/systems/reproducibility|Reproducibility]]
 
 ## LLM Concepts
 

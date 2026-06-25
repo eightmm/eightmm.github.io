@@ -21,6 +21,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 - Architecture: 모델이 정보를 흘려보내는 구조
 - Learning: 어떤 supervision이나 objective로 표현을 학습하는지
 - Generation: 데이터를 만들거나 변환하는 방식
+- Systems: training run, inference, serving, reproducibility처럼 모델을 실제로 돌리는 방식
 - Evaluation: 모델이 실제로 일반화했는지 확인하는 방식
 - Geometry and scientific AI: graph, coordinate, protein, molecule 같은 구조적 입력을 다루는 방식
 
@@ -118,6 +119,20 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/rectified-flow|Rectified flow]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
+
+## Systems and Operations
+
+모델은 학습되고, 저장되고, 실행되고, 평가되는 시스템입니다. 같은 architecture라도 training run 관리, inference path, latency/throughput 목표, reproducibility 기준에 따라 실제 가치는 달라집니다.
+
+- [[concepts/systems/index|AI systems]]
+- [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/inference|Inference]]
+- [[concepts/systems/model-serving|Model serving]]
+- [[concepts/systems/latency-throughput|Latency and throughput]]
+- [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
+- [[concepts/systems/experiment-tracking|Experiment tracking]]
+- [[concepts/systems/reproducibility|Reproducibility]]
+- [[infra/index|Infra]]
 
 ## Geometry and Scientific AI
 

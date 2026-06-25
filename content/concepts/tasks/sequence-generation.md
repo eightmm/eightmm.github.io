@@ -39,6 +39,7 @@ $$
 
 ## Related
 
+- [[concepts/systems/inference|Inference]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
 - [[concepts/tasks/captioning|Captioning]]

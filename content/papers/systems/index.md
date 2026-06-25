@@ -20,6 +20,13 @@ Systems paper notes cover infrastructure, training efficiency, inference serving
 
 ## Concepts
 
+- [[concepts/systems/index|AI systems]]
+- [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/inference|Inference]]
+- [[concepts/systems/model-serving|Model serving]]
+- [[concepts/systems/latency-throughput|Latency and throughput]]
+- [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
+- [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
