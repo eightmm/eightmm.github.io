@@ -12,21 +12,17 @@ Research notes track public questions, concepts, paper connections, and project 
 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/protein-modeling/index|Protein modeling]]
-- [[research/genome-sequence-modeling/index|Genome sequence modeling]]
-- [[research/generative-models/index|Generative models]]
 
 ## Cross-Cutting Methods
 
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/architectures/index|Architectures]]
-
-## Knowledge Base
-
-- [[research/llm-wiki|LLM Wiki]]
+- [[ai/generative-models|Generative models]]
 
 ## Related
 
+- [[bio-ai/index|Bio-AI]]
 - [[entities/index|Entities]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]

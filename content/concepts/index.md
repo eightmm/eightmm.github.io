@@ -73,4 +73,4 @@ Concept notes define reusable terms used across research notes, paper summaries,
 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/protein-modeling/index|Protein modeling]]
-- [[research/generative-models/index|Generative models]]
+- [[ai/generative-models|Generative models]]

@@ -1,5 +1,8 @@
 ---
 title: Generative Models
+aliases:
+  - research/generative-models
+  - research/generative-models/index
 tags:
   - ai
   - generative-models
@@ -40,7 +43,7 @@ Bio-AI에서는 $c$가 protein sequence, binding pocket, target property, text i
 
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]
-- [[research/generative-models/index|Generative models research]]
+- [[ai/generative-models|Generative models]]
 
 ## Questions
 

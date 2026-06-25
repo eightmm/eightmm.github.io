@@ -35,7 +35,7 @@ This section should stay practical: what the agent is useful for, where it fails
 
 ## Related
 
-- [[research/llm-wiki|LLM Wiki]]
+- [[agents/llm-wiki|LLM Wiki]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[inbox/index|Inbox]]
 - [[projects/index|Projects]]

@@ -34,6 +34,6 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 ## Related
 
 - [[agents/coding-agents|Coding agents]]
-- [[research/llm-wiki|LLM Wiki]]
+- [[agents/llm-wiki|LLM Wiki]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]

@@ -6,7 +6,7 @@ tags:
 
 # Bio-AI
 
-Bio-AI notes focus on structure-based modeling, proteins, molecules, and genome-level sequence modeling. The scope is intentionally narrower than all of computational biology.
+Bio-AI notes focus on structure-based modeling, proteins, molecules, ligands, and protein-ligand interaction. The scope is intentionally narrower than all of computational biology.
 
 The recurring pattern is to model biological or chemical objects with AI functions:
 
@@ -22,7 +22,6 @@ Here $x_{\mathrm{bio}}$ may be a sequence, molecule, structure, or complex, and 
 - [[entities/ligand|Ligand]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
-- [[entities/genome|Genome]]
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]
 
@@ -37,7 +36,7 @@ Here $x_{\mathrm{bio}}$ may be a sequence, molecule, structure, or complex, and 
 
 - [[research/protein-modeling/index|Protein modeling]]
 - [[research/protein-modeling/mambafold|MambaFold]]
-- [[research/genome-sequence-modeling/index|Genome sequence modeling]]
+- [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 
 ## Geometry and Evaluation
 

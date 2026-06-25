@@ -25,5 +25,5 @@ where $s$ is a protein sequence, $c$ is optional context, and $\hat{X}$ is a pre
 ## Adjacent Areas
 
 - [[research/structure-based-ai/index|Structure-based AI]]
-- [[research/generative-models/index|Generative models]]
-- [[research/self-supervised-learning/index|Self-supervised learning]]
+- [[ai/generative-models|Generative models]]
+- [[concepts/learning/self-supervised-learning|Self-supervised learning]]

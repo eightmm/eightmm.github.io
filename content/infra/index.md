@@ -27,6 +27,6 @@ Do not publish private hosts, account names, SSH ports, internal paths, credenti
 
 ## Related
 
-- [[research/llm-wiki|LLM Wiki]]
+- [[agents/llm-wiki|LLM Wiki]]
 - [[projects/index|Project index]]
 - [[concepts/evaluation/index|Evaluation]]

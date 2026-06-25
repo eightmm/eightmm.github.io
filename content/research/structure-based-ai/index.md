@@ -55,7 +55,7 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 ## Adjacent Areas
 
 - [[research/protein-modeling/index|Protein modeling]]
-- [[research/generative-models/index|Generative models]]
+- [[ai/generative-models|Generative models]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]

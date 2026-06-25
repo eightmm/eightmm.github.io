@@ -1,5 +1,7 @@
 ---
 title: LLM Wiki
+aliases:
+  - research/llm-wiki
 tags:
   - llm
   - knowledge-base
@@ -32,7 +34,7 @@ An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesi
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[infra/hpc/slurm|Slurm]]
-- [[research/generative-models/index|Generative models]]
-- [[research/self-supervised-learning/index|Self-supervised learning]]
+- [[ai/generative-models|Generative models]]
+- [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[agents/coding-agents|Coding agents]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]

@@ -27,6 +27,5 @@ Entity notes define the objects that appear across molecular AI and protein mode
 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/protein-modeling/index|Protein modeling]]
-- [[research/genome-sequence-modeling/index|Genome sequence modeling]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/evaluation/index|Evaluation]]

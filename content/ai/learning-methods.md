@@ -1,5 +1,8 @@
 ---
 title: Learning Methods
+aliases:
+  - research/self-supervised-learning
+  - research/self-supervised-learning/index
 tags:
   - ai
   - learning
@@ -46,4 +49,4 @@ $$
 
 - [[ai/architectures|Architectures]]
 - [[ai/evaluation|Evaluation]]
-- [[research/self-supervised-learning/index|Self-supervised learning research]]
+- [[ai/learning-methods|Learning methods]]

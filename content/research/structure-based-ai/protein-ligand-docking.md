@@ -69,4 +69,4 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[concepts/evaluation/leakage|Leakage]]
-- [[research/llm-wiki|LLM Wiki]]
+- [[agents/llm-wiki|LLM Wiki]]

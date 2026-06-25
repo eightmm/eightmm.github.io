@@ -27,6 +27,5 @@ A genome is the complete genetic sequence of an organism or sample. In this wiki
 
 - [[entities/sequence|Sequence]]
 - [[entities/dataset|Dataset]]
-- [[research/genome-sequence-modeling/index|Genome sequence modeling]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

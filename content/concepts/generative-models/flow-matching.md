@@ -36,7 +36,7 @@ Here $v_\theta$ is the learned velocity field and $u_t$ is the target velocity a
 
 ## Related
 
-- [[research/generative-models/index|Generative models]]
+- [[ai/generative-models|Generative models]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/scoring-function|Scoring function]]

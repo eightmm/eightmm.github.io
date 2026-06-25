@@ -25,14 +25,14 @@ Here $s_{1:L}$ is a residue sequence, $h_{1:L}$ are sequence states, and $\hat{X
 - Sequence representation for residues, domains, and evolutionary context.
 - Structural constraints for backbone geometry.
 - Interfaces with [[concepts/geometric-deep-learning/equivariant-gnn|equivariant GNN]] layers or geometry-aware decoders.
-- Connections to [[research/self-supervised-learning/index|self-supervised learning]] for protein representations.
+- Connections to [[concepts/learning/self-supervised-learning|self-supervised learning]] for protein representations.
 - Evaluation against folding, docking, and downstream protein-ligand tasks.
 
 ## Open Notes
 
 - Separate architecture notes from benchmark results.
 - Keep unpublished experiments out of public pages.
-- Link stable concepts into [[research/llm-wiki|LLM Wiki]] pages as they mature.
+- Link stable concepts into [[agents/llm-wiki|LLM Wiki]] pages as they mature.
 
 ## Related
 

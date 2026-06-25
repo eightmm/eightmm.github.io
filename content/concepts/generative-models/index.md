@@ -39,4 +39,4 @@ Different families choose different training signals: likelihood, reconstruction
 - [[entities/molecule|Molecule]]
 - [[entities/protein|Protein]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
-- [[research/generative-models/index|Generative models research]]
+- [[ai/generative-models|Generative models]]

@@ -32,6 +32,6 @@ Every agent-assisted change should end with a concrete check: build, unit test, 
 ## Related
 
 - [[agents/index|Agents]]
-- [[research/llm-wiki|LLM Wiki]]
+- [[agents/llm-wiki|LLM Wiki]]
 - [[projects/index|Projects]]
 - [[infra/index|Infra]]
