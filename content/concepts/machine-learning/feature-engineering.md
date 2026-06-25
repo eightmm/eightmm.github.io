@@ -44,6 +44,7 @@ $$
 ## Related
 
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
+- [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
 - [[concepts/machine-learning/linear-model|Linear model]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/evaluation/leakage|Leakage]]

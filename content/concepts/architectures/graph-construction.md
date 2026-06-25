@@ -27,7 +27,7 @@ $$
 
 ## Common Choices
 
-- Chemical bond graph for molecules.
+- [[concepts/molecular-modeling/molecular-graph|Chemical bond graph]] for molecules.
 - Contact map for proteins.
 - Radius graph over 3D coordinates.
 - k-nearest neighbor graph over coordinates or learned embeddings.
@@ -43,5 +43,6 @@ $$
 ## Related
 
 - [[concepts/architectures/gnn|Graph neural networks]]
+- [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

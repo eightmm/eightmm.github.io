@@ -23,6 +23,7 @@ Structure-based AI paper notes cover docking, pose generation, scoring, virtual 
 
 ## Concepts
 
+- [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]

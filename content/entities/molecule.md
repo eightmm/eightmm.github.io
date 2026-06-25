@@ -25,6 +25,12 @@ A molecule is a collection of atoms and bonds represented as a graph, 3D conform
 ## Related
 
 - [[entities/ligand|Ligand]]
+- [[concepts/molecular-modeling/index|Molecular modeling concepts]]
+- [[concepts/molecular-modeling/smiles|SMILES]]
+- [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
+- [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
+- [[concepts/molecular-modeling/conformer|Conformer]]
+- [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 - [[entities/assay|Assay]]
 - [[entities/dataset|Dataset]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

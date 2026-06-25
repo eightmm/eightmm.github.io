@@ -28,6 +28,15 @@ $$
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]
 
+## Molecule and Ligand Modeling
+
+- [[concepts/molecular-modeling/index|Molecular modeling concepts]]
+- [[concepts/molecular-modeling/smiles|SMILES]]
+- [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
+- [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
+- [[concepts/molecular-modeling/conformer|Conformer]]
+- [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
+
 ## Structure-Based AI
 
 - [[research/structure-based-ai/index|Structure-based AI]]
