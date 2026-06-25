@@ -45,6 +45,10 @@ $$
 
 ## Related
 
+- [[concepts/machine-learning/backpropagation|Backpropagation]]
+- [[concepts/machine-learning/gradient-descent|Gradient descent]]
+- [[concepts/machine-learning/optimizer|Optimizer]]
+- [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/regularization|Regularization]]

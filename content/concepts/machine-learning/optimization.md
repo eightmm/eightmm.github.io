@@ -32,6 +32,11 @@ Here $\eta$ is the learning rate.
 
 ## Related
 
+- [[concepts/machine-learning/gradient-descent|Gradient descent]]
+- [[concepts/machine-learning/backpropagation|Backpropagation]]
+- [[concepts/machine-learning/optimizer|Optimizer]]
+- [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
+- [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/machine-learning/regularization|Regularization]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
 - [[concepts/evaluation/index|Evaluation]]

@@ -20,6 +20,8 @@ Distributed training splits a model or its data across multiple devices to fit l
 
 ## Related
 
+- [[concepts/machine-learning/batch-size|Batch size]]
+- [[concepts/machine-learning/optimizer|Optimizer]]
 - [[infra/gpu|GPU]]
 - [[infra/gpu-memory|GPU memory]]
 - [[infra/hpc/checkpointing|Checkpointing]]
