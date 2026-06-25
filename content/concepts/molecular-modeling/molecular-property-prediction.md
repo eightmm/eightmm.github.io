@@ -59,6 +59,7 @@ $$
 
 ## Related
 
+- [[concepts/tasks/property-prediction|Property prediction]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
 - [[concepts/molecular-modeling/conformer|Conformer]]

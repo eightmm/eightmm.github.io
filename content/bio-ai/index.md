@@ -35,6 +35,7 @@ $$
 
 ## Molecule and Ligand Modeling
 
+- [[concepts/tasks/property-prediction|Property prediction]]
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
@@ -51,6 +52,7 @@ $$
 
 ## Structure-Based AI
 
+- [[concepts/tasks/interaction-prediction|Interaction prediction]]
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]

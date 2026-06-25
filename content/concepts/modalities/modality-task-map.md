@@ -35,7 +35,9 @@ where $x_{\mathrm{raw}}$ is the raw modality, $\phi$ is the representation map, 
 | Tabular | columns, normalized features, embeddings | classification, regression, ranking, reranking | class, scalar, ranked list | identifier leakage, train-test distribution shift |
 | Graph | nodes, edges, features | graph classification, node prediction, link prediction | class, label, edge, graph | split leakage through shared nodes or edges |
 | Sequence | tokens, residues, k-mers, events | classification, generation, tagging, similarity search, forecasting | class, sequence, span, scalar, ranked list | homolog leakage, future information leakage |
+| Molecule | SMILES, graph, fingerprint, conformer | [[concepts/tasks/property-prediction|property prediction]], similarity search, generation | scalar, class, ranked list, sequence, graph | scaffold leakage, standardization mismatch |
 | 3D structure | coordinates, distances, frames, surfaces, geometric graphs | pose prediction, structure prediction, scoring, similarity search, segmentation | coordinates, scalar, class, graph, ranked list | coordinate-frame leakage, template leakage |
+| Protein-ligand complex | pocket graph, ligand pose, pair features, interaction graph | [[concepts/tasks/interaction-prediction|interaction prediction]], affinity prediction, pose ranking | scalar, class, contact map, ranked list | protein-family, scaffold, assay, and pose leakage |
 
 ## Task Construction
 
@@ -82,6 +84,8 @@ For example, an image can produce a class, box, mask, caption, embedding, or ret
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/tasks/task-output-space|Task output space]]
+- [[concepts/tasks/property-prediction|Property prediction]]
+- [[concepts/tasks/interaction-prediction|Interaction prediction]]
 - [[concepts/tasks/similarity-search|Similarity search]]
 - [[concepts/tasks/reranking|Reranking]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]

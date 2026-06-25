@@ -139,6 +139,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/ranking|Ranking]]
+- [[concepts/tasks/property-prediction|Property prediction]]
+- [[concepts/tasks/interaction-prediction|Interaction prediction]]
 - [[concepts/tasks/retrieval|Retrieval]]
 - [[concepts/tasks/similarity-search|Similarity search]]
 - [[concepts/tasks/reranking|Reranking]]

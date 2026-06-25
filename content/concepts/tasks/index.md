@@ -25,6 +25,8 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/ranking|Ranking]]
+- [[concepts/tasks/property-prediction|Property prediction]]
+- [[concepts/tasks/interaction-prediction|Interaction prediction]]
 - [[concepts/tasks/retrieval|Retrieval]]
 - [[concepts/tasks/similarity-search|Similarity search]]
 - [[concepts/tasks/reranking|Reranking]]
@@ -47,6 +49,7 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 - What [[concepts/data/split-unit|split unit]] tests the intended generalization?
 - Is the model predicting, ranking, retrieving, generating, localizing, or segmenting?
 - Is retrieval a final output, a similarity-search stage, or a reranking pipeline?
+- Is the task entity-level, pairwise, context-conditioned, or structured?
 - Is the output independent, sequential, structured, ranked, spatial, or temporal?
 - Does the metric match the user-facing behavior?
 - Does the data split prevent leakage for this task?

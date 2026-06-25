@@ -136,6 +136,8 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/ranking|Ranking]]
+- [[concepts/tasks/property-prediction|Property prediction]]
+- [[concepts/tasks/interaction-prediction|Interaction prediction]]
 - [[concepts/tasks/retrieval|Retrieval]]
 - [[concepts/tasks/object-detection|Object detection]]
 - [[concepts/tasks/segmentation|Segmentation]]

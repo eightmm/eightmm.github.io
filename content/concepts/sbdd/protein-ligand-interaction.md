@@ -56,6 +56,7 @@ for protein atom or residue coordinate $x_i^{(P)}$ and ligand atom coordinate $x
 
 ## Related
 
+- [[concepts/tasks/interaction-prediction|Interaction prediction]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[concepts/protein-modeling/binding-site|Binding site]]
 - [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
