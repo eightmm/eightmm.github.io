@@ -9,6 +9,8 @@ tags:
 
 모델 아키텍처는 데이터가 어떤 구조를 갖는지에 대한 가정입니다. 같은 objective를 쓰더라도 sequence, graph, image, 3D structure를 어떻게 표현하느냐에 따라 적합한 architecture가 달라집니다.
 
+이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/architectures/*` 문서는 영어 canonical wiki note로 유지합니다.
+
 형식적으로는 architecture가 가능한 함수 공간 $\mathcal{F}$를 정합니다.
 
 $$
@@ -17,7 +19,7 @@ $$
 
 예를 들어 CNN은 locality와 translation equivariance를 강하게 가정하고, GNN은 graph connectivity와 permutation invariance/equivariance를 가정합니다.
 
-## Core Notes
+## 핵심 노트
 
 - [[concepts/architectures/index|Architecture index]]
 - [[concepts/architectures/linear-layer|Linear layer]]
@@ -37,7 +39,7 @@ $$
 - [[concepts/architectures/mamba|Mamba]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
 
-## Questions
+## 읽을 때 볼 질문
 
 - 입력이 sequence, graph, set, grid, structure 중 무엇인가?
 - 모델이 locality, order, permutation invariance, equivariance 중 무엇을 가정하는가?

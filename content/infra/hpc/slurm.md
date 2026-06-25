@@ -13,7 +13,7 @@ Slurm is a workload manager used to submit, schedule, monitor, and cancel jobs o
 ## Public Checklist
 
 - Use generic examples instead of private cluster names.
-- Avoid account names, hostnames, SSH ports, internal paths, and private partitions.
+- Avoid account names, hostnames, SSH connection details, internal paths, and private partitions.
 - Record resource assumptions without exposing project-specific allocations.
 - Keep unpublished metrics and experiment results out of public notes.
 

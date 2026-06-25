@@ -6,17 +6,19 @@ tags:
 
 # Bio-AI
 
-Bio-AI notes focus on structure-based modeling, proteins, molecules, ligands, and protein-ligand interaction. The scope is intentionally narrower than all of computational biology.
+Bio-AI 영역을 구조 기반 모델링, 단백질, 분자, 리간드, protein-ligand interaction 중심으로 정리하는 입구입니다. 전체 computational biology를 다루기보다, 실제로 다룰 가능성이 높은 구조 기반 AI와 단백질/분자 모델링에 범위를 좁힙니다.
 
-The recurring pattern is to model biological or chemical objects with AI functions:
+이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/*`, `entities/*`, `research/*` 문서는 영어 canonical wiki note로 유지합니다.
+
+반복해서 등장하는 기본 형태는 생물학적/화학적 객체와 context를 모델 입력으로 두는 것입니다.
 
 $$
 \hat{y} = f_\theta(x_{\mathrm{bio}}, x_{\mathrm{context}})
 $$
 
-Here $x_{\mathrm{bio}}$ may be a sequence, molecule, structure, or complex, and $x_{\mathrm{context}}$ may be a pocket, target condition, or assay context.
+여기서 $x_{\mathrm{bio}}$는 sequence, molecule, structure, complex일 수 있고, $x_{\mathrm{context}}$는 pocket, target condition, assay context일 수 있습니다.
 
-## Objects
+## 다루는 객체
 
 - [[entities/protein|Protein]]
 - [[entities/ligand|Ligand]]
@@ -46,7 +48,7 @@ Here $x_{\mathrm{bio}}$ may be a sequence, molecule, structure, or complex, and 
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/leakage|Leakage]]
 
-## Related
+## 관련 입구
 
 - [[ai/index|AI]]
 - [[papers/index|Papers]]
