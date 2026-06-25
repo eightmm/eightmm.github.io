@@ -19,10 +19,13 @@ $$
 ## Core Notes
 
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/calculus|Calculus]]
+- [[concepts/math/matrix-calculus|Matrix calculus]]
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
+- [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/math/bayes-rule|Bayes rule]]
@@ -30,6 +33,7 @@ $$
 ## Checks
 
 - What object is the formula about: scalar, vector, matrix, graph, distribution, or function?
+- Is a derivative with respect to inputs, parameters, coordinates, or time?
 - Is the quantity optimized, estimated, sampled, normalized, or measured?
 - Is a probability statement conditional or marginal?
 - Is a loss a negative log-likelihood, distance, ranking loss, or surrogate?
