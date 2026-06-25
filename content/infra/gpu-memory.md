@@ -39,12 +39,14 @@ where $L$ is number of layers, $H$ is number of attention heads, $T$ is context 
 - Is mixed precision enabled and numerically appropriate?
 - Would gradient checkpointing, smaller batch size, sharded optimizer, or shorter context solve the bottleneck?
 - Are measurements taken from the same process and device that owns the allocation?
+- Is memory the primary bottleneck, or only a symptom of a broader [[infra/gpu-bottleneck-taxonomy|GPU bottleneck taxonomy]]?
 
 ## Related
 
 - [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[infra/gpu|GPU]]
+- [[infra/gpu-bottleneck-taxonomy|GPU bottleneck taxonomy]]
 - [[infra/distributed-training|Distributed training]]
 - [[infra/inference-serving|Inference serving]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]

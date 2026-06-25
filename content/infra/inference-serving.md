@@ -10,6 +10,14 @@ tags:
 
 Inference serving turns a trained model into a low-latency, high-throughput service. For LLMs the dominant costs are KV-cache memory and the prefill/decode split; batching and quantization are the main levers.
 
+Serving should start from a capacity plan:
+
+$$
+(\text{request shape}, \text{concurrency}, \text{latency target}, \text{memory budget})
+\rightarrow
+\text{batching and deployment policy}
+$$
+
 ## Practical Checks
 
 - Distinguish latency-bound (single request) from throughput-bound (batched) goals.
@@ -17,11 +25,13 @@ Inference serving turns a trained model into a low-latency, high-throughput serv
 - Size the KV cache against context length and concurrency.
 - Apply quantization (int8/fp8) only after measuring accuracy impact.
 - Measure p50/p95/p99 latency, not just averages.
+- Use [[infra/inference-capacity-planning|Inference capacity planning]] before choosing hardware or batching policy.
 
 ## Related
 
 - [[infra/gpu|GPU]]
 - [[infra/gpu-memory|GPU memory]]
+- [[infra/inference-capacity-planning|Inference capacity planning]]
 - [[infra/distributed-training|Distributed training]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[infra/index|Infra]]

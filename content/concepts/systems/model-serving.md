@@ -47,5 +47,6 @@ $$
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[infra/inference-serving|Inference serving]]
+- [[infra/inference-capacity-planning|Inference capacity planning]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
 - [[agents/tools/tool-use|Tool use]]

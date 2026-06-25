@@ -42,6 +42,7 @@ under a fixed quality and memory budget.
 - Is the model too small to fill the GPU?
 - Are there frequent CPU-GPU transfers or synchronization calls?
 - Is the metric throughput, latency, cost, or time-to-train?
+- Which bottleneck class best explains the utilization pattern?
 
 ## Public Notes
 
@@ -51,6 +52,7 @@ under a fixed quality and memory budget.
 ## Related
 
 - [[infra/gpu|GPU]]
+- [[infra/gpu-bottleneck-taxonomy|GPU bottleneck taxonomy]]
 - [[infra/gpu-memory|GPU memory]]
 - [[infra/data-loading-io|Data loading and IO]]
 - [[infra/distributed-training|Distributed training]]

@@ -15,6 +15,7 @@ tags:
 ## Compute
 
 - [[infra/gpu|GPU]]
+- [[infra/gpu-bottleneck-taxonomy|GPU bottleneck taxonomy]]
 - [[infra/gpu-utilization|GPU utilization]]
 - [[infra/gpu-memory|GPU memory]]
 - [[infra/hpc/index|HPC]]
@@ -41,6 +42,7 @@ tags:
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
+- [[infra/inference-capacity-planning|Inference capacity planning]]
 - [[infra/data-loading-io|Data loading and IO]]
 - [[infra/distributed-training|Distributed training]]
 - [[infra/environment-modules-containers|Environment modules and containers]]

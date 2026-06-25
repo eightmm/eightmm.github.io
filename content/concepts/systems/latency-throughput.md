@@ -44,4 +44,5 @@ $$
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[infra/inference-serving|Inference serving]]
+- [[infra/inference-capacity-planning|Inference capacity planning]]
 - [[infra/gpu-memory|GPU memory]]
