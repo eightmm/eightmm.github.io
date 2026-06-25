@@ -12,12 +12,30 @@ Agent notes collect public explanations of AI agents, coding assistants, researc
 
 This section should stay practical: what the agent is useful for, where it fails, how to verify its work, and how it fits into research or infrastructure work.
 
+The local taxonomy is:
+
+$$
+\text{agent note}
+\rightarrow
+\{\text{core},\ \text{tools},\ \text{workflows},\ \text{verification}\}
+$$
+
+Use the category that explains the durable idea, not the product name that happened to expose it.
+
 ## Sections
 
 - [[agents/core/index|Agent Core]]
 - [[agents/tools/index|Agent Tools]]
 - [[agents/workflows/index|Agent Workflows]]
 - [[agents/verification/index|Agent Verification]]
+
+## Routing Guide
+
+- Put model-state-memory-planning ideas in [[agents/core/index|Agent Core]].
+- Put tool schemas, side effects, permissions, and output handling in [[agents/tools/index|Agent Tools]].
+- Put repeatable use cases such as coding, paper briefs, and wiki maintenance in [[agents/workflows/index|Agent Workflows]].
+- Put acceptance criteria, evidence, audits, review, and safety checks in [[agents/verification/index|Agent Verification]].
+- Put Korean reader-facing narratives in [[posts/index|Posts]] only after the underlying wiki notes are stable.
 
 ## Core Concepts
 
@@ -54,6 +72,8 @@ This section should stay practical: what the agent is useful for, where it fails
 - [[agents/workflows/agent-handoff|Agent handoff]]
 - [[agents/workflows/agent-runbook|Agent runbook]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 
 ## Learning and Feedback
