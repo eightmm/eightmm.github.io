@@ -29,6 +29,7 @@ $$
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]
 - [[entities/genome|Genome]]
 
@@ -71,6 +72,7 @@ $$
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/data/label-semantics|Label semantics]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]

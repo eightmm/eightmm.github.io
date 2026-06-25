@@ -9,6 +9,8 @@ tags:
 
 A dataset is a curated collection of examples, labels, metadata, and splits used to train or evaluate models.
 
+For chem-bio datasets, one row should usually preserve the [[entities/target-assay-label|Target-assay-label contract]] instead of collapsing the row into only `molecule -> label`.
+
 ## Why It Matters
 
 - Splits, duplicate handling, and label provenance shape what a benchmark measures.
@@ -23,10 +25,12 @@ A dataset is a curated collection of examples, labels, metadata, and splits used
 - Are missing labels, censored measurements, and assay metadata handled explicitly?
 - Is the split key the same entity that defines the intended generalization claim?
 - Is label provenance kept with each row?
+- Does each row keep target, assay, unit, threshold, censoring, and source context when relevant?
 
 ## Related
 
 - [[entities/entity-relation-map|Entity relation map]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[concepts/data/index|Data]]
 - [[concepts/data/data-curation|Data curation]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]

@@ -27,10 +27,13 @@ $$
 
 Higher $pK_d$ means stronger binding when the units are consistent.
 
+Affinity values should be interpreted with the [[entities/target-assay-label|Target-assay-label contract]] because endpoint, assay, unit, target construct, and censoring change what the label means.
+
 ## Checks
 
 - Is the target $K_d$, $K_i$, $\mathrm{IC}_{50}$, enrichment, or a binary activity label?
 - Are units, assay conditions, and censoring handled explicitly?
+- Is the target-assay-label contract preserved from raw measurement to benchmark label?
 - Is the model predicting affinity, pose quality, or both?
 - Are ligand scaffolds and protein families separated across splits?
 
@@ -41,4 +44,5 @@ Higher $pK_d$ means stronger binding when the units are consistent.
 - [[concepts/evaluation/metric|Metric]]
 - [[entities/bioactivity-label|Bioactivity label]]
 - [[entities/assay|Assay]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]

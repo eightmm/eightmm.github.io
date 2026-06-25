@@ -10,6 +10,14 @@ tags:
 
 An assay is an experimental measurement that links a biological or chemical setup to an observed label.
 
+In supervised chem-bio ML, an assay is part of the [[entities/target-assay-label|Target-assay-label contract]]:
+
+$$
+\text{assay}
+\rightarrow
+(\text{endpoint}, \text{unit}, \text{threshold}, \text{censoring}, \text{context})
+$$
+
 ## Why It Matters
 
 - Assay conditions define what a molecular activity label actually means.
@@ -24,10 +32,12 @@ An assay is an experimental measurement that links a biological or chemical setu
 - Is the task predicting assay response, binding, toxicity, or a proxy endpoint?
 - Does the train/test split leak through repeated molecules or shared assay batches?
 - Are censored or thresholded values handled as such, instead of point labels?
+- Is the assay used as metadata, split group, task context, or prediction target?
 
 ## Related
 
 - [[entities/entity-relation-map|Entity relation map]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[concepts/evaluation/negative-set|Negative set]]

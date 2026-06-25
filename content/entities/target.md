@@ -17,6 +17,8 @@ $$
 
 where $x_{\mathrm{molecule}}$ is a molecule or ligand representation, $x_{\mathrm{target}}$ is target context, and $c$ is assay or experimental context.
 
+When labels are measured, the target should be interpreted through the [[entities/target-assay-label|Target-assay-label contract]] rather than as a standalone identifier.
+
 ## Target Context
 
 - Protein sequence.
@@ -32,6 +34,7 @@ where $x_{\mathrm{molecule}}$ is a molecule or ligand representation, $x_{\mathr
 - Are target identifiers public and reproducible?
 - Are isoform, mutation, and construct differences treated explicitly?
 - Are target-level splits separated from molecule-level splits?
+- Is the target tied to an assay context, label unit, and split rule?
 - Is private collaborator or project context removed?
 
 ## Related
@@ -39,5 +42,6 @@ where $x_{\mathrm{molecule}}$ is a molecule or ligand representation, $x_{\mathr
 - [[entities/protein|Protein]]
 - [[entities/pocket|Pocket]]
 - [[entities/assay|Assay]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

@@ -25,6 +25,7 @@ $$
 - Example unit: what one example represents.
 - Schema: fields, identifiers, units, and relationships.
 - Labels: target meaning, annotation process, uncertainty, and missing values.
+- Entity contract: molecule, target, assay, label, unit, threshold, censoring, and source when relevant.
 - Preprocessing: filtering, normalization, tokenization, featurization, and version.
 - Splits: split unit, policy, sizes, and leakage checks.
 - Evaluation: supported tasks and metrics.
@@ -47,6 +48,7 @@ For a public wiki note, a minimal dataset card should include:
 - Public source and citation status.
 - Example unit and split unit.
 - Label semantics and missing-label policy.
+- Target-assay-label contract for chem-bio datasets when relevant.
 - Preprocessing contract summary.
 - Split policy and leakage checks.
 - Supported tasks and metrics.
@@ -59,6 +61,7 @@ For a public wiki note, a minimal dataset card should include:
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[papers/benchmark-card|Benchmark card]]

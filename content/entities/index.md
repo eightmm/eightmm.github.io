@@ -11,6 +11,7 @@ Entity notes define the objects that appear across molecular AI and protein mode
 ## Map
 
 - [[entities/entity-relation-map|Entity relation map]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 
 ## Biological and Chemical Objects
 
@@ -29,6 +30,7 @@ Entity notes define the objects that appear across molecular AI and protein mode
 - [[entities/assay|Assay]]
 - [[entities/bioactivity-label|Bioactivity label]]
 - [[entities/dataset|Dataset]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 
 ## Related
 

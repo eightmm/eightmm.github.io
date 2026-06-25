@@ -20,6 +20,8 @@ $$
 
 where $m$ is a molecule or ligand, $t$ is a target, $a$ is an assay protocol, and $c$ is measurement context such as endpoint, organism, construct, dose, time, unit, and preprocessing.
 
+This is the label side of the [[entities/target-assay-label|Target-assay-label contract]].
+
 ## Common Forms
 
 - Continuous: $K_d$, $K_i$, $\mathrm{IC}_{50}$, $\mathrm{EC}_{50}$, percent inhibition, activity score, affinity proxy.
@@ -43,10 +45,12 @@ where $m$ is a molecule or ligand, $t$ is a target, $a$ is an assay protocol, an
 - Are replicate measurements aggregated, kept separate, or filtered?
 - Are conflicting labels resolved globally or kept assay-specific?
 - Does the split prevent molecule, target, assay, or source leakage?
+- Is the label valid for the intended task, or only for the original assay context?
 
 ## Related
 
 - [[entities/assay|Assay]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/molecule|Molecule]]
 - [[entities/ligand|Ligand]]
 - [[entities/target|Target]]

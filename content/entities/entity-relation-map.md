@@ -21,10 +21,12 @@ $$
 The central relation for supervised chem-bio ML is:
 
 $$
-(\text{molecule}, \text{target}, \text{assay context})
+(\text{molecule}, \text{target}, \text{assay})
 \rightarrow
 \text{bioactivity label}
 $$
+
+This is the [[entities/target-assay-label|Target-assay-label contract]].
 
 ## Object Hierarchy
 
@@ -37,6 +39,7 @@ $$
 - [[entities/assay|Assay]] defines how a label was measured.
 - [[entities/bioactivity-label|Bioactivity label]] records the measured or curated response.
 - [[entities/dataset|Dataset]] collects examples, labels, metadata, and splits.
+- [[entities/target-assay-label|Target-assay-label contract]] connects the measured object, measurement protocol, label semantics, and split rule.
 
 ## Representation Choices
 
@@ -59,6 +62,7 @@ The split unit should match the generalization claim:
 
 - What is one example?
 - What is the target label?
+- What target, assay, and context produced the label?
 - Is the label assay-conditioned, target-conditioned, censored, transformed, or thresholded?
 - Which entities are inputs and which are metadata?
 - Which entity defines the split group?
@@ -69,6 +73,7 @@ The split unit should match the generalization claim:
 
 - [[bio-ai/index|Bio-AI]]
 - [[entities/target|Target]]
+- [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]
 - [[concepts/data/index|Data]]
 - [[concepts/evaluation/leakage|Leakage]]
