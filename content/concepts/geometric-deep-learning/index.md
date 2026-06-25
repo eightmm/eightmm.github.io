@@ -31,9 +31,17 @@ Here $\rho(g)$ describes how the output representation should transform.
 
 - [[concepts/geometric-deep-learning/invariance|Invariance]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
+- [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
 - [[concepts/geometric-deep-learning/so3|SO(3)]]
 - [[concepts/geometric-deep-learning/se3|SE(3)]]
 - [[concepts/geometric-deep-learning/e3|E(3)]]
+
+## Coordinates and Distances
+
+- [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
+- [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
+- [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
 
 ## Representations
 
@@ -45,7 +53,6 @@ Here $\rho(g)$ describes how the output representation should transform.
 
 - [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
-- [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
 
 ## Related
 

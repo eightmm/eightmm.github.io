@@ -63,6 +63,15 @@ Architecture pages should be organized by selection logic, not by popularity:
 - Geometry as math belongs under `concepts/math/`; geometric deep learning belongs under `concepts/geometric-deep-learning/`; gateway pages may explain the relationship in Korean.
 - When adding architecture notes, update `content/ai/architectures.md`, `content/concepts/architectures/index.md`, and `content/concepts/index.md` together.
 
+Geometric notes should keep the math/model boundary explicit:
+
+- Put pure distance, angle, vector, matrix, and group definitions under `concepts/math/`.
+- Put modeling choices under `concepts/geometric-deep-learning/`: coordinate frames, distance geometry as a representation, invariant scalar features, equivariant vector/tensor features, coordinate updates, and geometric architectures.
+- Always state the transformation group when relevant: translation, rotation, reflection, permutation, `SO(3)`, `SE(3)`, or `E(3)`.
+- Distinguish invariant targets/features from equivariant targets/features. Scalars such as energy, affinity, class probability, and ranking are usually invariant; coordinates, directions, fields, forces, velocities, and coordinate updates are usually equivariant.
+- When a formula clarifies the note, include the complete transform rule such as `x' = Rx + t`, `d_ij = ||x_i - x_j||_2`, or `phi(g.x) = rho(g) phi(x)`, then define the symbols.
+- For structure-based AI, mention coordinate-frame leakage risks when preprocessing depends on deployment-unavailable context such as a known ligand pose.
+
 Organize `agents/` with stable subfolders:
 
 - `agents/core/`: Agent architecture, loop, state, memory, planning, and context engineering.

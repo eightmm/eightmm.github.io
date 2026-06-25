@@ -106,8 +106,12 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
+- [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
+- [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
 - [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
+- [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 
 ## Sparse and Routed Models

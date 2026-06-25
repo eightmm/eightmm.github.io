@@ -25,6 +25,7 @@ tags:
 - Text, [[concepts/modalities/image|image]], [[concepts/modalities/video|video]], [[concepts/modalities/sequence|sequence]], [[concepts/modalities/3d-structure|3D structure]]를 modality 관점에서 비교하기
 - [[concepts/modalities/modality-alignment|Modality alignment]]와 [[concepts/modalities/missing-modality|missing modality]]가 multimodal model 평가에서 왜 중요한가
 - [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/state-space-model|State-space model]], [[concepts/architectures/gnn|GNN]]을 입력 구조 관점에서 비교하기
+- [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]], [[concepts/geometric-deep-learning/distance-geometry|distance geometry]], [[concepts/geometric-deep-learning/invariant-feature|invariant feature]], [[concepts/geometric-deep-learning/equivariant-feature|equivariant feature]]를 3D 모델의 기본 언어로 정리하기
 - [[concepts/generative-models/latent-variable-model|Latent variable model]], [[concepts/generative-models/conditional-generation|conditional generation]], [[concepts/generative-models/sampling|sampling]], [[concepts/generative-models/guidance|guidance]]를 생성모델 공통 언어로 정리하기
 - [[concepts/learning/pretraining|Pretraining]], [[concepts/learning/fine-tuning|fine-tuning]], [[concepts/learning/instruction-tuning|instruction tuning]], [[concepts/learning/domain-adaptation|domain adaptation]]을 학습 pipeline 관점에서 나누기
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]], [[concepts/learning/contrastive-learning|Contrastive learning]], [[concepts/learning/jepa|JEPA]]를 representation 관점에서 정리하기
@@ -43,7 +44,7 @@ tags:
 - [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]을 protein-side split의 기본으로 쓰는 법
 - [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]에서 scaffold split, label semantics, activity cliff를 같이 봐야 하는 이유
 - [[concepts/sbdd/pose-quality|Pose quality]]와 [[concepts/sbdd/binding-affinity|Binding affinity]]를 혼동하면 생기는 문제
-- [[concepts/geometric-deep-learning/equivariance|Equivariance]]가 구조 기반 AI에서 중요한 이유
+- [[concepts/geometric-deep-learning/equivariance|Equivariance]]와 [[concepts/geometric-deep-learning/coordinate-frame|coordinate frame]]이 구조 기반 AI에서 중요한 이유
 - [[concepts/genome-modeling/index|Genome modeling]]은 왜 이 블로그에서 넓은 omics가 아니라 sequence-level boundary topic으로 두는가
 
 ## Papers

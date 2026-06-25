@@ -52,7 +52,11 @@ $$
 
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
+- [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
+- [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
+- [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
 - [[entities/structure|Structure]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
