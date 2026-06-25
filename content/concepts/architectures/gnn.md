@@ -25,6 +25,18 @@ $$
 
 Here $h_i$ is a node state, $e_{ij}$ is an edge feature, and $\mathcal{N}(i)$ is the neighborhood of node $i$.
 
+For a graph-level prediction, a readout should be permutation invariant:
+
+$$
+h_G = \rho(\{h_i^{(T)}: i\in V\})
+$$
+
+For node-level outputs, a GNN is usually expected to be permutation equivariant. If $P$ permutes node order, then:
+
+$$
+f(PX, PAP^\top) = P f(X,A)
+$$
+
 ## Key Ideas
 
 - Nodes hold entity features; edges hold relationships such as bonds, distances, contacts, or interaction types.

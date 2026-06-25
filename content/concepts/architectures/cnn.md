@@ -18,6 +18,24 @@ $$
 
 The same weights $w_r$ are reused at every position $i$, which gives parameter sharing and locality.
 
+For images or grids with channels, a 2D convolution is:
+
+$$
+y_{u,v,c_{\mathrm{out}}}
+= \sum_{\Delta u,\Delta v,c_{\mathrm{in}}}
+W_{\Delta u,\Delta v,c_{\mathrm{in}},c_{\mathrm{out}}}
+x_{u+\Delta u,v+\Delta v,c_{\mathrm{in}}}
++ b_{c_{\mathrm{out}}}
+$$
+
+Convolution is translation equivariant before boundary effects and pooling:
+
+$$
+\operatorname{Conv}(T_a x) = T_a\operatorname{Conv}(x)
+$$
+
+where $T_a$ shifts the input by offset $a$.
+
 ## Key Ideas
 
 - Convolutions reuse the same filter across positions, giving parameter sharing and local pattern detection.

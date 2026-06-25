@@ -15,6 +15,7 @@ Protein modeling paper notes cover structure prediction, sequence models, protei
 - What is predicted: coordinates, contact map, representation, function, or confidence?
 - What architecture is used: Transformer, state-space model, equivariant model, or hybrid?
 - How are homolog leakage, template leakage, and protein-family splits handled?
+- Is confidence, uncertainty, or failure mode analysis reported?
 
 ## Concepts
 
@@ -29,4 +30,6 @@ Protein modeling paper notes cover structure prediction, sequence models, protei
 - [[research/protein-modeling/index|Protein modeling]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[papers/claim-extraction|Claim extraction]]
+- [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[papers/paper-review-workflow|Paper review workflow]]

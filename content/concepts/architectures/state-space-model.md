@@ -20,6 +20,16 @@ $$
 
 Sequence models use discretized or structured versions of this update to mix information over long contexts.
 
+A discrete-time form is:
+
+$$
+h_t = \bar{A}h_{t-1} + \bar{B}x_t,
+\qquad
+y_t = Ch_t + Dx_t
+$$
+
+The matrices may be constrained or parameterized so the sequence can be scanned efficiently.
+
 ## Key Ideas
 
 - A state summarizes past sequence information and is updated as new inputs arrive.
@@ -27,6 +37,7 @@ Sequence models use discretized or structured versions of this update to mix inf
 - Some implementations behave like recurrent scans; others use parallel sequence transforms during training.
 - State size, discretization, gating, and input-dependent parameters define what information can be retained.
 - SSMs are often compared with [[concepts/architectures/rnn|RNNs]] and [[concepts/architectures/transformer|Transformers]] because all three solve sequence mixing differently.
+- [[concepts/architectures/mamba|Mamba]] is best treated as a selective SSM rather than a separate top-level architecture family.
 
 ## Practical Checks
 

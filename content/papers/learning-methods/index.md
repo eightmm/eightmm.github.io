@@ -16,6 +16,7 @@ Learning method paper notes focus on objectives, pretraining signals, transfer, 
 - What changes: data construction, objective, architecture, optimization, or evaluation?
 - Does the representation transfer to downstream tasks?
 - Are train/test near-duplicates or benchmark leakage controlled?
+- Is the claim about representation quality, transfer, data efficiency, stability, or preference alignment?
 
 ## Concepts
 
@@ -33,4 +34,6 @@ Learning method paper notes focus on objectives, pretraining signals, transfer, 
 
 - [[ai/learning-methods|Learning methods gateway]]
 - [[concepts/evaluation/leakage|Leakage]]
+- [[papers/claim-extraction|Claim extraction]]
+- [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[papers/paper-review-workflow|Paper review workflow]]

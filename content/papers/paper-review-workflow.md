@@ -14,9 +14,11 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 1. Triage the paper into a topic bucket.
 2. Verify metadata and source links.
 3. Write the paper-specific note using [[papers/paper-note-format|Paper note format]].
-4. Extract reusable concepts into [[concepts/index|Concepts]].
-5. Link research relevance into [[research/index|Research]].
-6. Promote mature themes into Korean [[posts/index|Posts]].
+4. Extract claims using [[papers/claim-extraction|Claim extraction]].
+5. Compare related papers with [[papers/paper-comparison-matrix|Paper comparison matrix]] when useful.
+6. Extract reusable concepts into [[concepts/index|Concepts]].
+7. Link research relevance into [[research/index|Research]].
+8. Promote mature themes into Korean [[posts/index|Posts]].
 
 ## Evidence Levels
 
@@ -39,6 +41,8 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 - [[papers/index|Papers]]
 - [[papers/reading-status|Reading status]]
+- [[papers/claim-extraction|Claim extraction]]
+- [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[concepts/research-methodology/research-question|Research question]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]

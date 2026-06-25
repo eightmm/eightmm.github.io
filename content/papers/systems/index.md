@@ -17,6 +17,7 @@ Systems paper notes cover infrastructure, training efficiency, inference serving
 - What workload is evaluated?
 - Are baselines and hardware assumptions stated clearly?
 - Can the result be generalized beyond the reported setup?
+- Is the claim about latency, throughput, memory, cost, reliability, or developer workflow?
 
 ## Concepts
 
@@ -45,4 +46,6 @@ Systems paper notes cover infrastructure, training efficiency, inference serving
 
 - [[infra/index|Infra]]
 - [[agents/index|Agents]]
+- [[papers/claim-extraction|Claim extraction]]
+- [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[papers/paper-review-workflow|Paper review workflow]]

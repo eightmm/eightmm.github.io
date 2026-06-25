@@ -40,6 +40,7 @@ $$
 고정 길이 vector나 이미 만들어진 feature를 처리하는 가장 기본적인 계열입니다.
 
 - [[concepts/architectures/mlp|MLP]]
+- [[concepts/architectures/autoencoder|Autoencoder]]
 
 ## Grid, Image, and Voxel Models
 
@@ -59,6 +60,8 @@ token, residue, text, time series처럼 순서가 있는 입력을 다룹니다.
 - [[concepts/modalities/text|Text]]
 - [[concepts/modalities/audio|Audio]]
 - [[concepts/architectures/rnn|RNN]]
+- [[concepts/architectures/lstm|LSTM]]
+- [[concepts/architectures/gru|GRU]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
 - [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
@@ -75,12 +78,14 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
+- [[concepts/architectures/perceiver|Perceiver]]
 
 ## Set and Graph Models
 
 순서가 없거나 관계 구조가 중요한 객체를 다룹니다.
 
 - [[concepts/architectures/deep-sets|Deep Sets]]
+- [[concepts/architectures/set-transformer|Set Transformer]]
 - [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph transformer]]

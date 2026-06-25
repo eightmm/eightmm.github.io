@@ -16,6 +16,7 @@ A paper note should preserve what the paper claims, what the method changes, how
 - Question: what problem the paper tries to solve.
 - Method: core model, objective, data, and evaluation protocol.
 - Results: what is claimed, with metric and benchmark context.
+- Claims: extracted statements following [[papers/claim-extraction|Claim extraction]].
 - Baselines: what the method is compared against.
 - Ablations: which components explain the result.
 - Limits: assumptions, failure modes, missing comparisons, or leakage risks.
@@ -47,6 +48,8 @@ $$
 - [[papers/index|Papers]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/reading-status|Reading status]]
+- [[papers/claim-extraction|Claim extraction]]
+- [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]

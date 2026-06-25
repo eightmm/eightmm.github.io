@@ -36,6 +36,7 @@ The first term rewards reconstruction; the KL term regularizes the latent distri
 
 ## Related
 
+- [[concepts/architectures/autoencoder|Autoencoder]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/generative-models/gan|GAN]]
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]

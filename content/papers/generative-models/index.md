@@ -16,6 +16,7 @@ Generative model paper notes cover models that sample, transform, denoise, decod
 - What objective is optimized?
 - How are validity, diversity, novelty, and task utility evaluated?
 - Does the model generate text, molecules, proteins, structures, images, or actions?
+- Is the claim about likelihood, sample quality, controllability, efficiency, or downstream utility?
 
 ## Concepts
 
@@ -31,4 +32,6 @@ Generative model paper notes cover models that sample, transform, denoise, decod
 
 - [[ai/generative-models|Generative models gateway]]
 - [[concepts/evaluation/metric|Metric]]
+- [[papers/claim-extraction|Claim extraction]]
+- [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[papers/paper-review-workflow|Paper review workflow]]

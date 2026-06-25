@@ -18,11 +18,19 @@ $$
 
 The hidden state $h_t$ is the compressed memory of the prefix up to time $t$.
 
+For sequence-to-sequence outputs, the recurrence is often paired with an output projection:
+
+$$
+y_t = W_y h_t + b_y
+$$
+
+For sequence-level prediction, the model may use $h_T$, a pooled sequence of hidden states, or an attention/readout layer over $\{h_t\}_{t=1}^{T}$.
+
 ## Key Ideas
 
 - RNNs update a hidden state one step at a time, so order is built into the computation.
 - The hidden state is a bottleneck that must carry useful past information forward.
-- Gated variants add learned mechanisms for retaining and forgetting information.
+- Gated variants such as [[concepts/architectures/lstm|LSTM]] and [[concepts/architectures/gru|GRU]] add learned mechanisms for retaining and forgetting information.
 - Bidirectional RNNs use past and future context for representation tasks, but not for strict causal generation.
 - RNNs are useful comparisons for [[concepts/architectures/state-space-model|state-space models]] because both scan sequences through state updates.
 
@@ -36,6 +44,8 @@ The hidden state $h_t$ is the compressed memory of the prefix up to time $t$.
 ## Related
 
 - [[concepts/architectures/state-space-model|State-space models]]
+- [[concepts/architectures/lstm|LSTM]]
+- [[concepts/architectures/gru|GRU]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/learning/index|Learning methods]]

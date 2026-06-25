@@ -17,6 +17,7 @@ Structure-based AI paper notes cover docking, pose generation, scoring, virtual 
 - Are pose quality, binding affinity, and virtual screening metrics separated?
 - Are ligand scaffold split, protein-family split, and geometry validity checked?
 - Are negative set construction, activity cliffs, assay harmonization, and applicability domain discussed?
+- Does the paper separate pose quality, affinity prediction, and screening enrichment claims?
 
 ## Curated Notes
 
@@ -39,3 +40,5 @@ Structure-based AI paper notes cover docking, pose generation, scoring, virtual 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/claim-extraction|Claim extraction]]
+- [[papers/paper-comparison-matrix|Paper comparison matrix]]

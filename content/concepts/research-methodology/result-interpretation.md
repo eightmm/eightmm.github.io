@@ -36,6 +36,7 @@ $$
 
 ## Related
 
+- [[papers/claim-extraction|Claim extraction]]
 - [[concepts/research-methodology/research-log|Research log]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
 - [[concepts/evaluation/robustness|Robustness]]

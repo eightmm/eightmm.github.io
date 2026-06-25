@@ -34,6 +34,7 @@ The same training objective can behave very differently depending on whether $\m
 ## Dense and Feed-Forward Models
 
 - [[concepts/architectures/mlp|MLP]]
+- [[concepts/architectures/autoencoder|Autoencoder]]
 
 ## Grid, Image, and Voxel Models
 
@@ -49,6 +50,8 @@ The same training objective can behave very differently depending on whether $\m
 - [[concepts/modalities/text|Text]]
 - [[concepts/modalities/audio|Audio]]
 - [[concepts/architectures/rnn|RNN]]
+- [[concepts/architectures/lstm|LSTM]]
+- [[concepts/architectures/gru|GRU]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
 - [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
@@ -61,10 +64,12 @@ The same training objective can behave very differently depending on whether $\m
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
+- [[concepts/architectures/perceiver|Perceiver]]
 
 ## Set, Graph, and Sparse Models
 
 - [[concepts/architectures/deep-sets|Deep Sets]]
+- [[concepts/architectures/set-transformer|Set Transformer]]
 - [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]

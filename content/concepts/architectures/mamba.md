@@ -20,6 +20,20 @@ $$
 
 The key distinction is that update parameters depend on the current input $x_t$.
 
+A more implementation-facing abstraction is:
+
+$$
+\Delta_t, B_t, C_t = g(x_t)
+$$
+
+$$
+h_t = \bar{A}(\Delta_t)h_{t-1} + \bar{B}(\Delta_t, B_t)x_t,
+\qquad
+y_t = C_t h_t
+$$
+
+where $g$ is a learned projection and $\Delta_t$ controls the input-dependent discretization or update scale.
+
 ## Key Ideas
 
 - Mamba belongs to the [[concepts/architectures/state-space-model|state-space model]] family but makes the state update input-dependent.
