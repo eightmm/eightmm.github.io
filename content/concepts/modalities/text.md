@@ -40,6 +40,7 @@ where $E_{t_i}$ is the token embedding and $p_i$ is a positional or structural e
 
 ## Related
 
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/modalities/sequence|Sequence]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/embedding|Embedding]]

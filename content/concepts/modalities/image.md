@@ -40,6 +40,7 @@ where $P_i$ is image patch $i$, $W_E$ is the patch projection, and $p_i$ is a po
 
 ## Related
 
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/vision-transformer|Vision Transformer]]
 - [[concepts/architectures/tokenization|Tokenization]]

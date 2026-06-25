@@ -27,6 +27,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/modalities/tabular|Tabular]]
 - [[concepts/modalities/graph|Graph]]
 - [[concepts/modalities/3d-structure|3D structure]]
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/modalities/modality-alignment|Modality alignment]]
 - [[concepts/modalities/missing-modality|Missing modality]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
@@ -53,6 +54,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 
 - What is the raw input signal?
 - What is the tensor, token, graph, or coordinate representation after preprocessing?
+- What [[concepts/modalities/modality-representation|modality representation]] does the model actually see?
 - What [[concepts/data/preprocessing-contract|preprocessing contract]] turns the raw signal into model input?
 - Which information is lost before the model sees the input?
 - Does the model need alignment between modalities?
@@ -65,6 +67,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/architectures/tokenization|Tokenization]]
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/modalities/modality-alignment|Modality alignment]]
 - [[concepts/modalities/missing-modality|Missing modality]]

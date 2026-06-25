@@ -51,6 +51,7 @@ $$
 
 ## Related
 
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph transformer]]

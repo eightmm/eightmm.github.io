@@ -34,6 +34,7 @@ where $T$ is the number of frames. Video modeling adds temporal structure on top
 
 ## Related
 
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/sequence|Sequence]]
 - [[concepts/modalities/audio|Audio]]

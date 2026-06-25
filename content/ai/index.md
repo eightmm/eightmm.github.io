@@ -92,6 +92,7 @@ AI 모델은 데이터 정의 위에서만 의미가 있습니다. 어떤 exampl
 모델을 보기 전에 입력과 출력의 형태를 먼저 봐야 합니다. text, image, video, audio, molecule, protein structure는 모두 서로 다른 preprocessing, tokenization, leakage 위험, evaluation 기준을 갖습니다.
 
 - [[concepts/modalities/index|Modalities]]
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/modalities/text|Text]]
 - [[concepts/modalities/sequence|Sequence]]
 - [[concepts/modalities/image|Image]]

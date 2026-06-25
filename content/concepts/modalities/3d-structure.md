@@ -50,6 +50,7 @@ $$
 
 ## Related
 
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]

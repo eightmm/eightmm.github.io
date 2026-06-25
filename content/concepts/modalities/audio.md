@@ -40,6 +40,7 @@ where $t$ indexes time windows and $f$ indexes frequency bins.
 
 ## Related
 
+- [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/modalities/sequence|Sequence]]
 - [[concepts/modalities/text|Text]]
 - [[concepts/modalities/video|Video]]
