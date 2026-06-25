@@ -42,5 +42,6 @@ $$
 
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/architectures/softmax|Softmax]]

@@ -40,6 +40,7 @@ $$
 ## Related
 
 - [[concepts/systems/inference|Inference]]
+- [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
 - [[concepts/tasks/captioning|Captioning]]

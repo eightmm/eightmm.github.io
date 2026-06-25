@@ -14,6 +14,7 @@ tags:
 - Machine learning을 왜 [[concepts/data/index|Data]], [[concepts/tasks/index|Tasks]], [[concepts/architectures/index|Architectures]], [[concepts/evaluation/index|Evaluation]]로 나눠 봐야 하는가
 - [[concepts/math/index|Math foundations]]를 AI 글에서 어느 정도까지 써야 하는가
 - [[concepts/math/statistical-estimator|Statistical estimator]]와 [[concepts/math/bias-variance-tradeoff|bias-variance tradeoff]]를 실험 해석의 기본 언어로 쓰는 법
+- [[concepts/evaluation/classification-metrics|Classification metrics]], [[concepts/evaluation/regression-metrics|regression metrics]], [[concepts/evaluation/generation-evaluation|generation evaluation]]을 task별로 구분하는 법
 - Text, [[concepts/modalities/image|image]], [[concepts/modalities/video|video]], [[concepts/modalities/sequence|sequence]], [[concepts/modalities/3d-structure|3D structure]]를 modality 관점에서 비교하기
 - [[concepts/modalities/modality-alignment|Modality alignment]]와 [[concepts/modalities/missing-modality|missing modality]]가 multimodal model 평가에서 왜 중요한가
 - [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/state-space-model|State-space model]], [[concepts/architectures/gnn|GNN]]을 입력 구조 관점에서 비교하기

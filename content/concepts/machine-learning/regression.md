@@ -45,5 +45,6 @@ then the model predicts both mean and uncertainty.
 
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[entities/assay|Assay]]

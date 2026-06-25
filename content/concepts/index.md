@@ -292,7 +292,10 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
+- [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]

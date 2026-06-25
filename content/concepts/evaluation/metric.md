@@ -46,7 +46,10 @@ $$
 ## Related
 
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
+- [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/calibration|Calibration]]

@@ -48,4 +48,7 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
+- [[concepts/evaluation/generation-evaluation|Generation evaluation]]

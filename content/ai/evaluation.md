@@ -34,7 +34,10 @@ $$
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/evaluation/regression-metrics|Regression metrics]]
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
+- [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
@@ -52,6 +55,8 @@ $$
 ## 분야별 평가 연결
 
 - Retrieval/QA: [[concepts/tasks/retrieval|Retrieval]], [[concepts/tasks/question-answering|Question answering]]
+- Classification/regression: [[concepts/evaluation/classification-metrics|Classification metrics]], [[concepts/evaluation/regression-metrics|Regression metrics]]
+- Generation: [[concepts/tasks/sequence-generation|Sequence generation]], [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - Vision: [[concepts/tasks/object-detection|Object detection]], [[concepts/tasks/segmentation|Segmentation]]
 - Molecule: [[concepts/evaluation/scaffold-split|Scaffold split]], [[concepts/sbdd/virtual-screening|Virtual screening]]
 - Protein: [[concepts/evaluation/protein-family-split|Protein family split]], [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
