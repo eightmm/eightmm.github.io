@@ -36,4 +36,5 @@ Here $V(x)$ is the visible or augmented view and $T(x)$ constructs a target from
 
 - [[ai/learning-methods|Learning methods]]
 - [[research/protein-modeling/index|Protein modeling]]
+- [[concepts/protein-modeling/protein-representation|Protein representation]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

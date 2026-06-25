@@ -65,6 +65,15 @@ Concept notes define reusable terms used across research notes, paper summaries,
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
 
+## Protein Modeling
+
+- [[concepts/protein-modeling/index|Protein modeling concepts]]
+- [[concepts/protein-modeling/protein-representation|Protein representation]]
+- [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
+- [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
+- [[concepts/protein-modeling/contact-map|Contact map]]
+- [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
+
 ## Generative Models
 
 - [[concepts/generative-models/index|Generative models]]

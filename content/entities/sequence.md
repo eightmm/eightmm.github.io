@@ -26,5 +26,7 @@ A sequence is an ordered string of tokens such as amino acids, nucleotides, or m
 
 - [[entities/protein|Protein]]
 - [[entities/structure|Structure]]
+- [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
+- [[concepts/protein-modeling/protein-representation|Protein representation]]
 - [[entities/dataset|Dataset]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

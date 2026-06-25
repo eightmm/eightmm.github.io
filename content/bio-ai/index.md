@@ -42,6 +42,11 @@ $$
 ## Protein and Sequence Modeling
 
 - [[research/protein-modeling/index|Protein modeling]]
+- [[concepts/protein-modeling/index|Protein modeling concepts]]
+- [[concepts/protein-modeling/protein-representation|Protein representation]]
+- [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
+- [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
+- [[concepts/protein-modeling/contact-map|Contact map]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 

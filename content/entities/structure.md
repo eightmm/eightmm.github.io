@@ -28,4 +28,6 @@ A structure is a spatial arrangement of atoms, residues, or coarse-grained sites
 - [[entities/protein|Protein]]
 - [[entities/ligand|Ligand]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+- [[concepts/protein-modeling/contact-map|Contact map]]
+- [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

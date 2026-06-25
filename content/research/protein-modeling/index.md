@@ -20,6 +20,12 @@ where $s$ is a protein sequence, $c$ is optional context, and $\hat{X}$ is a pre
 ## Topics
 
 - [[entities/protein|Protein]]
+- [[concepts/protein-modeling/index|Protein modeling concepts]]
+- [[concepts/protein-modeling/protein-representation|Protein representation]]
+- [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
+- [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
+- [[concepts/protein-modeling/contact-map|Contact map]]
+- [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 
 ## Adjacent Areas
@@ -27,3 +33,4 @@ where $s$ is a protein sequence, $c$ is optional context, and $\hat{X}$ is a pre
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[ai/generative-models|Generative models]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+- [[concepts/evaluation/protein-family-split|Protein family split]]

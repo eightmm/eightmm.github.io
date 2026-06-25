@@ -35,5 +35,6 @@ Here $M$ is the masked subset and $x_{\setminus M}$ is the visible context.
 ## Related
 
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+- [[concepts/protein-modeling/protein-representation|Protein representation]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
