@@ -4,53 +4,22 @@ title: Jaemin's Research Notes
 
 # Jaemin's Research Notes
 
-Personal research blog and public knowledge base for molecular AI, protein modeling, geometric deep learning, agents, and research infrastructure.
+AI, Bio-AI, research infrastructure를 정리하는 개인 연구 블로그입니다. 바깥 글은 사람이 읽기 좋은 한글 글로 쓰고, 안쪽 노트는 검색과 연결에 유리한 영어 wiki로 유지합니다.
 
-The top-level map is organized by how I think about the field: entities, architectures, geometry, learning methods, agents, and workflows. Specific methods such as SSL, JEPA, contrastive learning, or LLM wiki maintenance live under those broader buckets.
+## Main Areas
 
-## Entities
-
-- [[entities/protein|Protein]]
-- [[entities/ligand|Ligand]]
-- [[entities/molecule|Molecule]]
-- [[entities/protein-ligand-complex|Protein-ligand complex]]
-- [[entities/genome|Genome]]
-
-## Architectures
-
-- [[concepts/architectures/index|Architecture index]]
-- [[concepts/architectures/gnn|Graph neural networks]]
-- [[concepts/architectures/transformer|Transformer]]
-- [[concepts/architectures/state-space-model|State-space models]]
-- [[concepts/architectures/mamba|Mamba]]
-
-## Geometric Modeling
-
-- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
-- [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
-
-## Learning Methods
-
-- [[concepts/learning/index|Learning methods]]
-- [[concepts/learning/self-supervised-learning|Self-supervised learning]]
-- [[concepts/learning/jepa|JEPA]]
-- [[concepts/learning/contrastive-learning|Contrastive learning]]
-- [[concepts/generative-models/index|Generative models]]
-- [[concepts/generative-models/flow-matching|Flow matching]]
-
-## Agents
-
-- [[agents/index|Agents]]
-- [[agents/coding-agents|Coding agents]]
-- [[agents/paper-brief-workflow|Paper brief workflow]]
-
-## Workflows
-
-- [[inbox/index|Inbox]]
-- [[research/index|Research areas]]
-- [[papers/index|Papers]]
-- [[projects/index|Projects]]
-- [[concepts/evaluation/index|Evaluation]]
+- [[ai/index|AI]]
+- [[bio-ai/index|Bio-AI]]
 - [[infra/index|Infra]]
-- [[logs/index|Public logs]]
+- [[research/index|Research]]
 - [[posts/index|Posts]]
+
+## 최근 글
+
+- [[posts/2026-06-25-structure-based-ai-map|구조 기반 AI를 어떻게 정리할 것인가]]
+
+## 운영 방식
+
+한글 글은 생각의 흐름을 정리하는 입구입니다. 세부 개념, 논문, 모델 구조, 평가 방법은 영어 wiki 노트로 분리합니다.
+
+예를 들어 구조 기반 AI 글은 [[bio-ai/index|Bio-AI]]에서 시작해 [[research/structure-based-ai/index|Structure-based AI]], [[concepts/sbdd/scoring-function|Scoring function]], [[papers/sbdd/posebusters|PoseBusters]] 같은 내부 노트로 이어집니다.

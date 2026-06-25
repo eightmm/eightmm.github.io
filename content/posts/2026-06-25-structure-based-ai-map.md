@@ -1,67 +1,66 @@
 ---
-title: A Working Map for Structure-Based AI
+title: 구조 기반 AI를 어떻게 정리할 것인가
 date: 2026-06-25
 tags:
   - posts
   - structure-based-ai
   - docking
-status: draft
 ---
 
-# A Working Map for Structure-Based AI
+# 구조 기반 AI를 어떻게 정리할 것인가
 
-This site starts from a practical question: how should AI models reason about molecular structure when the object is not just a sequence or a graph, but a physical [[entities/protein-ligand-complex|protein-ligand complex]]?
+이 사이트를 정리할 때 가장 먼저 잡고 싶은 축은 [[bio-ai/index|Bio-AI]]입니다. 특히 구조 기반 AI에서는 모델이 단순한 sequence나 graph가 아니라 실제 3D 구조를 가진 [[entities/protein-ligand-complex|protein-ligand complex]]를 어떻게 다룰 수 있는지가 중요합니다.
 
-My current map has three layers.
+현재는 세 층으로 나눠서 생각하고 있습니다.
 
-## 1. The Objects
+## 1. 무엇을 다루는가
 
-The basic objects are [[entities/protein|Protein]], [[entities/ligand|Ligand]], [[entities/molecule|Molecule]], and [[entities/protein-ligand-complex|Protein-ligand complex]]. These pages stay short on purpose. They define what is being modeled and which representation choices matter.
+가장 먼저 구분해야 할 것은 대상입니다. [[entities/protein|Protein]], [[entities/ligand|Ligand]], [[entities/molecule|Molecule]], [[entities/protein-ligand-complex|Protein-ligand complex]]는 서로 다른 표현과 inductive bias를 요구합니다.
 
-For structure-based AI, the key representation question is whether a model sees:
+구조 기반 AI에서 중요한 질문은 모델이 무엇을 보는가입니다.
 
-- sequence only,
-- 2D molecular graph,
-- 3D coordinates,
-- binding pocket,
-- full protein-ligand complex,
-- or a mixture of these views.
+- sequence만 보는가
+- 2D molecular graph를 보는가
+- 3D coordinates를 직접 쓰는가
+- binding pocket만 자르는가
+- full protein-ligand complex를 보는가
+- 여러 view를 함께 쓰는가
 
-## 2. The Methods
+## 2. 어떤 방법으로 다루는가
 
-The method layer lives mostly in [[concepts/index|Concepts]]. Some methods are general AI building blocks, such as [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/gnn|Graph neural networks]], and [[concepts/architectures/mamba|Mamba]]. Others are more directly tied to molecular structure, such as [[concepts/geometric-deep-learning/equivariance|Equivariance]], [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]], and [[concepts/generative-models/flow-matching|Flow matching]].
+방법론은 [[ai/index|AI]]와 [[concepts/index|Concepts]]에 쌓아둘 생각입니다. 일반적인 모델 구조로는 [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/gnn|Graph neural networks]], [[concepts/architectures/mamba|Mamba]]가 있고, 구조 데이터를 다룰 때는 [[concepts/geometric-deep-learning/equivariance|Equivariance]], [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]], [[concepts/generative-models/flow-matching|Flow matching]] 같은 개념이 자주 등장합니다.
 
-For [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]], I care about three different jobs:
+예를 들어 [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]은 적어도 세 문제로 나눠 보는 편이 좋습니다.
 
-- generate candidate poses,
-- rank or score those poses,
-- reject physically implausible structures.
+- candidate pose를 생성하는 문제
+- pose를 ranking하거나 scoring하는 문제
+- 물리적으로 말이 안 되는 구조를 걸러내는 문제
 
-Keeping those jobs separate avoids a common confusion: a good [[concepts/sbdd/scoring-function|scoring function]] does not automatically mean the generated pose is chemically valid.
+이 셋을 분리해 두면 흔한 혼동을 줄일 수 있습니다. 좋은 [[concepts/sbdd/scoring-function|scoring function]]이 있다고 해서 생성된 pose가 자동으로 화학적으로 타당해지는 것은 아닙니다.
 
-## 3. The Evaluation
+## 3. 어떻게 평가하는가
 
-Evaluation is the part that prevents the wiki from becoming a list of model names. [[papers/sbdd/posebusters|PoseBusters]] is a useful starting point because it makes pose plausibility explicit. A generated complex should not be treated as successful only because it looks close by one metric.
+평가는 이 wiki가 단순히 모델 이름을 모아둔 목록이 되지 않게 해주는 부분입니다. [[papers/sbdd/posebusters|PoseBusters]]는 pose plausibility를 명시적으로 보려는 출발점이라서 유용합니다. 생성된 complex가 어떤 metric 하나에서 좋아 보인다고 해서 곧바로 성공으로 보면 안 됩니다.
 
-The checks I want to keep returning to are:
+계속 되돌아볼 질문은 이런 것들입니다.
 
-- Is the ligand chemically valid?
-- Is the protein-ligand geometry plausible?
-- Is pose quality separated from binding affinity?
-- Does the split test real generalization?
-- Are failures explained as geometry, chemistry, data, or evaluation problems?
+- ligand가 화학적으로 타당한가
+- protein-ligand geometry가 그럴듯한가
+- pose quality와 binding affinity를 구분했는가
+- split이 실제 generalization을 테스트하는가
+- 실패 원인을 geometry, chemistry, data, evaluation 중 어디로 설명할 수 있는가
 
-This connects to [[concepts/evaluation/leakage|Leakage]], [[concepts/evaluation/scaffold-split|Scaffold split]], and [[concepts/evaluation/protein-family-split|Protein family split]].
+이 질문들은 [[concepts/evaluation/leakage|Leakage]], [[concepts/evaluation/scaffold-split|Scaffold split]], [[concepts/evaluation/protein-family-split|Protein family split]]과도 연결됩니다.
 
-## How I Plan to Use This Wiki
+## 블로그와 wiki를 같이 쓰는 방식
 
-The wiki part should stay small and linked. A paper note goes into [[papers/index|Papers]]. A reusable idea goes into [[concepts/index|Concepts]]. A domain-level question goes into [[research/index|Research]]. Blog posts like this one are just readable paths through those notes.
+블로그 글은 한글로 씁니다. 대신 세부 지식은 영어 wiki note로 남겨서 검색, 연결, LLM 활용에 유리하게 유지합니다.
 
-For now, the first path is:
+현재 첫 경로는 이렇게 잡습니다.
 
 1. [[research/structure-based-ai/index|Structure-Based AI]]
-2. [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+2. [[research/structure-based-ai/protein-ligand-docking|Protein-ligand Docking]]
 3. [[papers/sbdd/posebusters|PoseBusters]]
-4. [[concepts/sbdd/scoring-function|Scoring function]]
+4. [[concepts/sbdd/scoring-function|Scoring Function]]
 
-That is enough to start writing without pretending the whole field is already organized.
+이 정도면 전체 분야를 처음부터 완벽하게 정리하려고 하기보다, 실제로 읽고 쓰면서 확장하기에 충분한 시작점입니다.

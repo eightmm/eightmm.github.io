@@ -6,16 +6,15 @@ tags:
 
 # Posts
 
-Posts are longer narrative entries derived from stable research notes.
+한글로 쓰는 공개 블로그 글입니다. 글은 읽기 쉬운 경로를 만들고, 세부 개념은 영어 wiki 노트로 연결합니다.
 
-## Draft Queue
+## 글
 
-- Turn [[concepts/generative-models/flow-matching|flow matching]] notes into a practical primer.
-- Describe the public [[research/llm-wiki|LLM Wiki]] writing workflow.
-- Write a sanitized HPC troubleshooting story from [[infra/index|Infra]] notes.
-- Introduce practical [[agents/coding-agents|coding agents]] for research workflows.
-- Synthesize a week of [[inbox/index|paper inbox]] notes into a readable research update.
+- [[posts/2026-06-25-structure-based-ai-map|구조 기반 AI를 어떻게 정리할 것인가]]
 
-## Posts
+## 앞으로 쓸 글
 
-- [[posts/2026-06-25-structure-based-ai-map|A Working Map for Structure-Based AI]]
+- [[concepts/generative-models/flow-matching|Flow matching]]을 직관적으로 정리하기
+- 공개 가능한 [[infra/index|Infra]] 운영 노하우 정리하기
+- [[agents/coding-agents|Coding agents]]를 연구 workflow에 쓰는 방법 정리하기
+- 논문 읽기 흐름을 [[papers/index|paper note]]와 연결하기
