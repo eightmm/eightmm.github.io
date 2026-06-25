@@ -28,8 +28,21 @@ Here $g$ maps a protein to a sequence or structure family and $s$ maps it to tra
 - Keep entire clusters on one side — partial overlap reintroduces leakage.
 - State the clustering method and threshold in every reported result.
 
+## What It Proves
+
+A protein-family split tests whether a model generalizes beyond close homologs:
+
+$$
+\operatorname{family}(p_i)=\operatorname{family}(p_j)
+\Rightarrow
+s(p_i)=s(p_j)
+$$
+
+It does not automatically prove generalization to new folds, new assays, new ligands, or new experimental sources. Those require separate split rules or external test sets.
+
 ## Related
 
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]

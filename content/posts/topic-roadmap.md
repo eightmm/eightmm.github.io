@@ -17,6 +17,7 @@ tags:
 - [[concepts/machine-learning/weight-decay|Weight decay]]와 [[concepts/machine-learning/gradient-clipping|gradient clipping]]을 optimizer 설정이 아니라 training stability와 generalization 관점에서 보기
 - [[concepts/math/statistical-estimator|Statistical estimator]]와 [[concepts/math/bias-variance-tradeoff|bias-variance tradeoff]]를 실험 해석의 기본 언어로 쓰는 법
 - [[concepts/evaluation/classification-metrics|Classification metrics]], [[concepts/evaluation/regression-metrics|regression metrics]], [[concepts/evaluation/generation-evaluation|generation evaluation]]을 task별로 구분하는 법
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]을 split, metric, model selection, final test의 묶음으로 보는 법
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]와 [[concepts/evaluation/threshold-selection|threshold selection]]으로 classification 결과를 decision 관점에서 읽는 법
 - [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]], [[concepts/evaluation/confidence-interval|confidence interval]], [[concepts/evaluation/reliability-diagram|reliability diagram]]으로 reported metric을 신뢰도 관점에서 해석하기
 - [[concepts/data/example-unit|Example unit]], [[concepts/data/split-unit|split unit]], [[concepts/data/preprocessing-contract|preprocessing contract]]를 data leakage 방지의 기본 단어로 쓰는 법

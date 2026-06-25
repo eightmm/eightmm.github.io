@@ -33,6 +33,7 @@ $$
 
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
@@ -71,6 +72,7 @@ $$
 ## 읽을 때 볼 질문
 
 - train/test split이 실제 generalization을 요구하는가?
+- evaluation protocol이 metric, split, model selection, final test를 분리하는가?
 - metric이 task objective와 맞는가?
 - 결과 차이가 confidence interval이나 seed variance보다 충분히 큰가?
 - confidence나 calibration이 필요한 application인가?

@@ -28,8 +28,21 @@ The shift must be named; otherwise OOD becomes a vague label.
 - Check calibration under shift — confidence degrades before accuracy does.
 - State the applicability domain: where the model is and is not expected to hold.
 
+## Claim Template
+
+An OOD result should name:
+
+- Source distribution.
+- Shifted target distribution.
+- Split rule used to simulate the shift.
+- Primary metric and uncertainty interval.
+- Failure cases and applicability boundary.
+
+Without these pieces, "OOD" is only a label, not an evaluation claim.
+
 ## Related
 
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/data/dataset-shift|Dataset shift]]
 - [[concepts/data/data-distribution|Data distribution]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

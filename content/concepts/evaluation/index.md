@@ -26,6 +26,7 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/tasks/index|Tasks]]
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]

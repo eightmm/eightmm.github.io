@@ -28,6 +28,16 @@ $$
 = \varnothing
 $$
 
+More precisely, the split should be disjoint at the unit that matters for generalization:
+
+$$
+u(x_i)=u(x_j)
+\Rightarrow
+s(x_i)=s(x_j)
+$$
+
+where $u$ maps an example to its split unit, such as molecule scaffold, protein family, patient, time period, source, or document group.
+
 Training chooses parameters:
 
 $$
@@ -50,16 +60,26 @@ $$
 \hat{R}_{\mathrm{test}}(\hat{\theta}_{\hat{\lambda}})
 $$
 
+## Split Units
+
+- Row split: useful only when rows are independent examples.
+- Group split: required when examples share a molecule, protein, subject, scaffold, family, source, or time period.
+- Temporal split: required when the claim is future performance.
+- Domain split: required when the claim is transfer to a new source or deployment environment.
+
 ## Checks
 
 - Is the test set used exactly once for final reporting?
 - Are preprocessing, imputation, and normalization fit only on train data?
 - Does the split group related molecules, proteins, structures, or time periods correctly?
 - Does validation select the same kind of generalization expected at test time?
+- Is the split unit documented alongside the metric?
 
 ## Related
 
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/data/split-unit|Split unit]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

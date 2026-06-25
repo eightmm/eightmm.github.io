@@ -28,8 +28,23 @@ Here $g$ maps a molecule to its scaffold and $s$ maps it to train, validation, o
 - Combine with duplicate/near-duplicate removal to avoid hidden leakage.
 - Report the split method explicitly; "test accuracy" is meaningless without it.
 
+## What It Proves
+
+A scaffold split does not prove broad chemical generalization by itself. It tests a specific shift:
+
+$$
+p_{\mathrm{test}}(m)
+\ne
+p_{\mathrm{train}}(m)
+\quad
+\text{through scaffold grouping}
+$$
+
+The result still depends on assay quality, target context, class balance, scaffold group size, and whether molecules were standardized consistently.
+
 ## Related
 
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

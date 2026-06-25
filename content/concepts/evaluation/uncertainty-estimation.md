@@ -36,6 +36,28 @@ $$
 
 the model predicts both mean and variance.
 
+For classification, predictive entropy is a simple uncertainty score:
+
+$$
+H[p_\theta(y\mid x)]
+=
+-\sum_{k=1}^{K}
+p_\theta(y=k\mid x)
+\log p_\theta(y=k\mid x)
+$$
+
+High entropy means the predictive distribution is diffuse, but it does not by itself prove the model knows when it is wrong.
+
+## Evaluation
+
+Uncertainty should be evaluated against a decision:
+
+- Abstention: are uncertain examples more likely to be wrong?
+- Active learning: do queried examples improve the model efficiently?
+- OOD detection: does uncertainty increase under shift?
+- Risk ranking: do high-risk predictions receive larger uncertainty?
+- Calibration: do confidence levels match empirical correctness?
+
 ## Checks
 
 - Is uncertainty used for ranking, abstention, active learning, or decision-making?
@@ -46,6 +68,7 @@ the model predicts both mean and variance.
 
 ## Related
 
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]

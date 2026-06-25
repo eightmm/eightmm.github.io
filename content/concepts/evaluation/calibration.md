@@ -33,10 +33,31 @@ $$
 - Re-check calibration under distribution shift; it degrades faster than accuracy.
 - For ranking tasks, separate calibration from discrimination (AUC).
 
+## Temperature Scaling
+
+For classification logits $z$, temperature scaling uses:
+
+$$
+p_T(y=k\mid x)
+=
+\frac{\exp(z_k/T)}
+\sum_{\ell=1}^{K}\exp(z_\ell/T)}
+$$
+
+where $T>0$ is fit on validation data. Larger $T$ softens overconfident probabilities; smaller $T$ sharpens them.
+
+## What Calibration Is Not
+
+- High accuracy does not imply calibration.
+- High AUC does not imply calibrated probabilities.
+- A model can be calibrated on IID data and miscalibrated under OOD shift.
+- Calibrating on the test set leaks evaluation information.
+
 ## Related
 
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
