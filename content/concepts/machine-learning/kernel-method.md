@@ -30,14 +30,45 @@ The kernel defines what it means for two examples to be similar. A model can the
 - Kernel ridge regression.
 - Gaussian process models.
 
+The radial basis function kernel is:
+
+$$
+K_{\mathrm{RBF}}(x,x')
+=
+\exp\left(
+-\frac{\lVert x-x'\rVert_2^2}{2\sigma^2}
+\right)
+$$
+
+where $\sigma$ controls the similarity length scale.
+
+Kernel ridge regression solves:
+
+$$
+\hat{\alpha}
+=
+(K+\lambda I)^{-1}y
+$$
+
+where $K_{ij}=K(x_i,x_j)$ and $\lambda$ is a regularization strength.
+
 ## Watch For
 
 - Kernel choice encodes strong assumptions.
 - Scaling to large datasets can be expensive.
 - Input normalization often matters.
+- Similarity must match the deployment notion of generalization.
+
+## When It Helps
+
+- Small or medium datasets where a strong similarity function is known.
+- Scientific settings where engineered features or distances are meaningful.
+- Baseline comparisons against neural representations.
 
 ## Related
 
 - [[concepts/machine-learning/linear-model|Linear model]]
+- [[concepts/machine-learning/regularization|Regularization]]
+- [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]

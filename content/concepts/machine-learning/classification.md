@@ -31,6 +31,39 @@ $$
 = -\sum_{k=1}^{K} y_k\log p_\theta(y=k\mid x)
 $$
 
+For binary classification, this becomes:
+
+$$
+\mathcal{L}_{\mathrm{BCE}}
+=
+-y\log p_\theta(y=1\mid x)
+-(1-y)\log(1-p_\theta(y=1\mid x))
+$$
+
+## Decision Rule
+
+Probabilities and decisions are different. A threshold $\tau$ converts a probability into a label:
+
+$$
+\hat{y}
+=
+\mathbb{1}\left[p_\theta(y=1\mid x)\ge \tau\right]
+$$
+
+Changing $\tau$ changes precision, recall, false positives, and false negatives without changing the model itself.
+
+## Multi-Label Case
+
+If labels are not mutually exclusive, each class often uses an independent sigmoid:
+
+$$
+p_k = \sigma(z_k),
+\qquad
+\hat{y}_k=\mathbb{1}[p_k\ge \tau_k]
+$$
+
+This is different from softmax classification, where probabilities compete across classes.
+
 ## Checks
 
 - Are labels mutually exclusive, multi-label, ordinal, or hierarchical?
@@ -43,5 +76,7 @@ $$
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
+- [[concepts/evaluation/confusion-matrix|Confusion matrix]]
+- [[concepts/evaluation/threshold-selection|Threshold selection]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/architectures/softmax|Softmax]]
