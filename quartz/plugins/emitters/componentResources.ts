@@ -375,7 +375,9 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
         }
 
         // Generate orchestrator: import all component scripts in parallel,
-        // then import SPA router last (it dispatches the initial nav event)
+        // then import SPA router last (it dispatches the initial nav event).
+        // A failed optional component must not block the initial nav event,
+        // otherwise event-driven components such as Explorer can stay empty.
         const componentImports = scriptFilenames
           .slice(0, -1)
           .map((f) => `import("./${f}")`)
@@ -383,7 +385,15 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
 
         const spaImport = `await import("./${scriptFilenames[scriptFilenames.length - 1]}");`
 
-        postscript = [`await Promise.all([\n  ${componentImports}\n]);`, spaImport]
+        postscript = [
+          `const componentResults = await Promise.allSettled([\n  ${componentImports}\n]);`,
+          `for (const result of componentResults) {
+  if (result.status === "rejected") {
+    console.error("[Quartz] Component script failed:", result.reason);
+  }
+}`,
+          spaImport,
+        ]
           .filter(Boolean)
           .join("\n")
       }
