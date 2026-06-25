@@ -23,6 +23,8 @@ where $\theta_t$ are parameters, $\eta_t$ is the learning rate, and $\nabla_\the
 
 The local geometry of the loss is controlled by [[concepts/math/jacobian-hessian|Jacobian and Hessian]] information: gradients give first-order direction, while Hessian curvature affects stability and step size.
 
+This geometry is often described as the [[concepts/machine-learning/loss-landscape|Loss landscape]]. Gradient descent only uses first-order local information, so the same update rule can behave differently in flat, sharp, noisy, or badly scaled regions.
+
 With mini-batches, the gradient is estimated from a batch $B$:
 
 $$
@@ -44,6 +46,8 @@ $$
 ## Related
 
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
+- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
+- [[concepts/machine-learning/loss-landscape|Loss landscape]]
 - [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]

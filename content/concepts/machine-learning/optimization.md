@@ -17,23 +17,62 @@ $$
 
 Here $\eta$ is the learning rate.
 
+The objective can be viewed as a [[concepts/machine-learning/loss-landscape|Loss landscape]]:
+
+$$
+\theta \mapsto \mathcal{L}(\theta)
+$$
+
+Optimization follows local information from gradients, while evaluation decides whether that local progress supports the intended generalization claim.
+
 ## Core Ideas
 
 - Loss defines the training signal.
 - Gradients indicate local directions for parameter updates.
 - Learning rate controls update size.
 - Batches estimate the objective from subsets of data.
+- Optimizer state can change the update beyond raw gradients.
+- Curvature and scale affect how stable a step size is.
+
+## Update View
+
+A generic first-order optimizer can be written as:
+
+$$
+g_t
+=
+\nabla_\theta \mathcal{L}(\theta_t)
+$$
+
+$$
+s_t
+=
+\operatorname{StateUpdate}(s_{t-1}, g_t)
+$$
+
+$$
+\theta_{t+1}
+=
+\operatorname{Update}(\theta_t, g_t, s_t, \eta_t)
+$$
+
+For plain gradient descent, $s_t$ is empty. For [[concepts/machine-learning/adam|Adam]] and [[concepts/machine-learning/adamw|AdamW]], $s_t$ contains moment estimates.
 
 ## Watch For
 
 - Lower training loss does not guarantee better generalization.
 - Optimization instability can look like model failure.
 - Hyperparameters can dominate small experiments.
+- Broken gradients can look like a bad optimizer.
+- A scheduler stepped at the wrong boundary can silently change the experiment.
 
 ## Related
 
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
+- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
+- [[concepts/machine-learning/gradient-checking|Gradient checking]]
+- [[concepts/machine-learning/loss-landscape|Loss landscape]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
 - [[concepts/machine-learning/batch-size|Batch size]]

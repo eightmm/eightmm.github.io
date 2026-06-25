@@ -56,6 +56,9 @@ $$
 - [[concepts/machine-learning/optimization|Optimization]]: parameter를 어떻게 업데이트할 것인가
 - [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]: mini-batch로 full gradient를 어떻게 추정할 것인가
 - [[concepts/machine-learning/backpropagation|Backpropagation]]: loss에서 parameter gradient를 어떻게 계산할 것인가
+- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]: computation graph에서 gradient를 어떻게 계산할 것인가
+- [[concepts/machine-learning/gradient-checking|Gradient checking]]: custom loss/layer의 gradient가 맞는지 어떻게 확인할 것인가
+- [[concepts/machine-learning/loss-landscape|Loss landscape]]: loss surface, gradient, curvature를 어떻게 해석할 것인가
 - [[concepts/machine-learning/optimizer|Optimizer]]: gradient를 실제 update로 어떻게 바꿀 것인가
 - [[concepts/machine-learning/adam|Adam]]과 [[concepts/machine-learning/adamw|AdamW]]: adaptive moment와 decoupled weight decay를 어떻게 해석할 것인가
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]: update 크기를 시간에 따라 어떻게 조절할 것인가
@@ -126,6 +129,9 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/machine-learning/training-stability|Training stability]]
 - [[concepts/machine-learning/training-step-accounting|Training step accounting]]
+- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
+- [[concepts/machine-learning/gradient-checking|Gradient checking]]
+- [[concepts/machine-learning/loss-landscape|Loss landscape]]
 - [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
 - [[concepts/systems/run-artifact|Run artifact]]

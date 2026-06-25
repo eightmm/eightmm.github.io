@@ -46,7 +46,7 @@ When gradients are accumulated, several micro-batches contribute to $g$ before t
 - Load a batch from the training split.
 - Run the forward pass.
 - Compute the loss.
-- Backpropagate gradients.
+- Backpropagate gradients through [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]].
 - Accumulate or reduce gradients across micro-batches and devices.
 - Optionally unscale, clip, or inspect gradients.
 - Update parameters with the optimizer.
@@ -97,6 +97,7 @@ where $\theta_t$ is model state, $o_t$ is optimizer state, $\eta_t$ is scheduler
 - Is [[concepts/machine-learning/training-step-accounting|training step accounting]] explicit in config and logs?
 - Are model modes set correctly for dropout and normalization?
 - Are stability signals such as loss, learning rate, and gradient norm logged?
+- Does [[concepts/machine-learning/gradient-checking|Gradient checking]] pass before long runs when custom differentiable code is used?
 - Are optimizer state, scheduler state, and mixed-precision state saved when resuming matters?
 - Are checkpoint, seed, and metric logging sufficient to reproduce the run?
 
@@ -105,6 +106,8 @@ where $\theta_t$ is model state, $o_t$ is optimizer state, $\eta_t$ is scheduler
 - [[concepts/systems/training-run|Training run]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
+- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
+- [[concepts/machine-learning/gradient-checking|Gradient checking]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/training-step-accounting|Training step accounting]]
