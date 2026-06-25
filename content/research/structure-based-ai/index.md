@@ -8,7 +8,24 @@ tags:
 
 # Structure-Based AI
 
-Structure-based AI covers protein-ligand docking, binding pose modeling, scoring, molecular generation, and geometry-aware evaluation.
+Structure-based AI is the part of AI for drug discovery that treats molecular structure as a first-class object. The central question is not just whether a model can score a molecule, but whether it can reason about [[entities/protein|protein]] structure, [[entities/ligand|ligand]] geometry, and the [[entities/protein-ligand-complex|protein-ligand complex]] as a physically plausible system.
+
+For this wiki, this area is the main anchor for molecular AI notes. It connects docking, pose generation, structure-aware scoring, geometric deep learning, molecular generation, and evaluation.
+
+## Working Map
+
+1. Define the object: protein, ligand, pocket, or complex.
+2. Generate or refine a candidate structure.
+3. Check physical and chemical plausibility.
+4. Rank or score candidates.
+5. Evaluate under realistic split and generalization assumptions.
+
+## Core Questions
+
+- When should a model use sequence-only representations, and when does it need 3D structure?
+- Is the task about pose quality, binding affinity, molecular generation, or virtual screening?
+- Which errors are geometric, chemical, data-driven, or evaluation artifacts?
+- Does a benchmark measure real generalization or memorization through related structures?
 
 ## Topics
 
@@ -19,8 +36,17 @@ Structure-based AI covers protein-ligand docking, binding pose modeling, scoring
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 
+## Evaluation Anchors
+
+- [[papers/sbdd/posebusters|PoseBusters]] for pose plausibility checks.
+- [[concepts/evaluation/leakage|Leakage]] for data and benchmark audit.
+- [[concepts/evaluation/scaffold-split|Scaffold split]] for ligand-side generalization.
+- [[concepts/evaluation/protein-family-split|Protein family split]] for protein-side generalization.
+
 ## Adjacent Areas
 
 - [[research/protein-modeling/index|Protein modeling]]
 - [[research/generative-models/index|Generative models]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+- [[concepts/generative-models/molecular-generation|Molecular generation]]
+- [[concepts/generative-models/protein-design|Protein design]]
