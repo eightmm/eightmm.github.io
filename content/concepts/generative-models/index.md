@@ -44,7 +44,9 @@ Different families choose different training signals: likelihood, reconstruction
 ## Related
 
 - [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/expectation|Expectation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
+- [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein|Protein]]

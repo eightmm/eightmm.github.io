@@ -41,6 +41,37 @@ $$
 p(y\mid x)=\frac{p(x,y)}{p(x)}
 $$
 
+The product rule factorizes a joint distribution:
+
+$$
+p(x,y)=p(y\mid x)p(x)=p(x\mid y)p(y)
+$$
+
+For a sequence $x_{1:T}$, the chain rule is:
+
+$$
+p(x_{1:T})
+=
+\prod_{t=1}^{T}
+p(x_t\mid x_{<t})
+$$
+
+This is the probability factorization behind autoregressive modeling.
+
+## Model vs Data Distribution
+
+Machine learning often compares the data distribution and a model distribution:
+
+$$
+p_{\mathrm{data}}(x,y)
+\quad\text{and}\quad
+p_\theta(y\mid x)
+\text{ or }
+p_\theta(x)
+$$
+
+Evaluation asks whether performance under a held-out or deployment distribution supports the intended claim.
+
 ## Checks
 
 - What random variable does the distribution describe?
@@ -48,11 +79,13 @@ $$
 - Is the model estimating $p(x)$, $p(y\mid x)$, $p(x,y)$, or a score?
 - Is the variable discrete, continuous, structured, or mixed?
 - Does the training distribution match the deployment distribution?
+- Is the factorization assumption explicit?
 
 ## Related
 
 - [[concepts/math/random-variable|Random variable]]
 - [[concepts/math/expectation|Expectation]]
+- [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/covariance-correlation|Covariance and correlation]]
 - [[concepts/math/bayes-rule|Bayes rule]]
 - [[concepts/machine-learning/density-estimation|Density estimation]]
