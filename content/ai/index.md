@@ -16,6 +16,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 
 - Machine Learning: 예측 문제, feature, loss, regularization, validation을 다루는 기본 층
 - Modality: text, image, video, audio, molecular/protein structure처럼 입력과 출력 신호가 어떤 형태인지 보는 층
+- Task: classification, retrieval, detection, segmentation, question answering처럼 모델이 무엇을 출력해야 하는지 보는 층
 - Architecture: 모델이 정보를 흘려보내는 구조
 - Learning: 어떤 supervision이나 objective로 표현을 학습하는지
 - Generation: 데이터를 만들거나 변환하는 방식
@@ -50,6 +51,21 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 - [[concepts/modalities/audio|Audio]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[entities/index|Entities]]
+
+## Tasks and Outputs
+
+Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image input이라도 classification, detection, segmentation, captioning은 전혀 다른 문제이고, 같은 text input이라도 retrieval, question answering, sequence generation은 실패 방식이 다릅니다.
+
+- [[concepts/tasks/index|Tasks]]
+- [[concepts/machine-learning/classification|Classification]]
+- [[concepts/machine-learning/regression|Regression]]
+- [[concepts/machine-learning/ranking|Ranking]]
+- [[concepts/tasks/retrieval|Retrieval]]
+- [[concepts/tasks/object-detection|Object detection]]
+- [[concepts/tasks/segmentation|Segmentation]]
+- [[concepts/tasks/captioning|Captioning]]
+- [[concepts/tasks/question-answering|Question answering]]
+- [[concepts/tasks/sequence-generation|Sequence generation]]
 
 ## Architectures
 

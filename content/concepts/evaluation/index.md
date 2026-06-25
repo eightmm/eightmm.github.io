@@ -23,6 +23,7 @@ This number is only meaningful if the held-out set matches the intended generali
 
 ## Topics
 
+- [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
@@ -40,4 +41,5 @@ This number is only meaningful if the held-out set matches the intended generali
 ## Related
 
 - [[agents/verification-loop|Verification loop]]
+- [[concepts/tasks/index|Tasks]]
 - [[concepts/index|Concepts]]

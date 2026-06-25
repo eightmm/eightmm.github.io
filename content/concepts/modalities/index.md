@@ -25,6 +25,15 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/modalities/audio|Audio]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 
+## Common Tasks
+
+- [[concepts/tasks/retrieval|Retrieval]]
+- [[concepts/tasks/object-detection|Object detection]]
+- [[concepts/tasks/segmentation|Segmentation]]
+- [[concepts/tasks/captioning|Captioning]]
+- [[concepts/tasks/question-answering|Question answering]]
+- [[concepts/tasks/sequence-generation|Sequence generation]]
+
 ## Why It Matters
 
 - The raw signal and the model-ready representation are often different objects.
@@ -43,6 +52,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 ## Related
 
 - [[ai/index|AI]]
+- [[concepts/tasks/index|Tasks]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]

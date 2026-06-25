@@ -14,6 +14,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/machine-learning/index|Machine learning]]
 - [[concepts/modalities/index|Modalities]]
+- [[concepts/tasks/index|Tasks]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]
@@ -29,6 +30,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - AI basics: [[concepts/machine-learning/index|Machine learning]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
 - Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
+- Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]]
 - Deep learning architecture: [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
 - Graph and geometry: [[concepts/architectures/graph-construction|Graph construction]] -> [[concepts/architectures/gnn|Graph neural networks]] -> [[concepts/geometric-deep-learning/equivariance|Equivariance]] -> [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - Structure-based AI: [[entities/pocket|Pocket]] -> [[concepts/sbdd/pose-quality|Pose quality]] -> [[concepts/sbdd/binding-affinity|Binding affinity]] -> [[concepts/sbdd/virtual-screening|Virtual screening]]
@@ -54,6 +56,19 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/modalities/video|Video]]
 - [[concepts/modalities/audio|Audio]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
+
+## Tasks
+
+- [[concepts/tasks/index|Tasks]]
+- [[concepts/machine-learning/classification|Classification]]
+- [[concepts/machine-learning/regression|Regression]]
+- [[concepts/machine-learning/ranking|Ranking]]
+- [[concepts/tasks/retrieval|Retrieval]]
+- [[concepts/tasks/object-detection|Object detection]]
+- [[concepts/tasks/segmentation|Segmentation]]
+- [[concepts/tasks/captioning|Captioning]]
+- [[concepts/tasks/question-answering|Question answering]]
+- [[concepts/tasks/sequence-generation|Sequence generation]]
 
 ## Architectures
 

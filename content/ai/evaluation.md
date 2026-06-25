@@ -31,6 +31,7 @@ $$
 
 ## 핵심 노트
 
+- [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
@@ -42,6 +43,8 @@ $$
 
 ## 분야별 평가 연결
 
+- Retrieval/QA: [[concepts/tasks/retrieval|Retrieval]], [[concepts/tasks/question-answering|Question answering]]
+- Vision: [[concepts/tasks/object-detection|Object detection]], [[concepts/tasks/segmentation|Segmentation]]
 - Molecule: [[concepts/evaluation/scaffold-split|Scaffold split]], [[concepts/sbdd/virtual-screening|Virtual screening]]
 - Protein: [[concepts/evaluation/protein-family-split|Protein family split]], [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 - Structure: [[concepts/sbdd/pose-quality|Pose quality]], [[papers/sbdd/posebusters|PoseBusters]]

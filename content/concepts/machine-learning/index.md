@@ -58,6 +58,7 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 
 ## Related
 
+- [[concepts/tasks/index|Tasks]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/evaluation/index|Evaluation]]
