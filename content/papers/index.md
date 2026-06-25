@@ -30,6 +30,7 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 
 ## Cross-Cutting Concepts
 
+- [[concepts/data/benchmark|Benchmark]]
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]

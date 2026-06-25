@@ -23,6 +23,8 @@ This number is only meaningful if the held-out set matches the intended generali
 
 ## Topics
 
+- [[concepts/data/benchmark|Benchmark]]
+- [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]

@@ -13,6 +13,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Main Hubs
 
 - [[concepts/machine-learning/index|Machine learning]]
+- [[concepts/data/index|Data]]
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/architectures/index|Architectures]]
@@ -28,7 +29,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 ## Reading Paths
 
-- AI basics: [[concepts/machine-learning/index|Machine learning]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
+- AI basics: [[concepts/machine-learning/index|Machine learning]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
+- Data path: [[entities/dataset|Dataset]] -> [[concepts/data/data-curation|Data curation]] -> [[concepts/data/annotation-labeling|Annotation and labeling]] -> [[concepts/data/benchmark|Benchmark]]
 - Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]]
 - Deep learning architecture: [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
@@ -47,6 +49,17 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[entities/ligand|Ligand]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+
+## Data
+
+- [[concepts/data/index|Data]]
+- [[entities/dataset|Dataset]]
+- [[concepts/data/data-curation|Data curation]]
+- [[concepts/data/annotation-labeling|Annotation and labeling]]
+- [[concepts/data/sampling-strategy|Sampling strategy]]
+- [[concepts/data/metadata-provenance|Metadata and provenance]]
+- [[concepts/data/benchmark|Benchmark]]
+- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 
 ## Modalities
 

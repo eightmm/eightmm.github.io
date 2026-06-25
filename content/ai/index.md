@@ -15,6 +15,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 ## 큰 축
 
 - Machine Learning: 예측 문제, feature, loss, regularization, validation을 다루는 기본 층
+- Data: dataset, annotation, sampling, benchmark, provenance를 다루는 층
 - Modality: text, image, video, audio, molecular/protein structure처럼 입력과 출력 신호가 어떤 형태인지 보는 층
 - Task: classification, retrieval, detection, segmentation, question answering처럼 모델이 무엇을 출력해야 하는지 보는 층
 - Architecture: 모델이 정보를 흘려보내는 구조
@@ -39,6 +40,19 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 - [[concepts/machine-learning/tree-based-model|Tree-based model]]
 - [[concepts/machine-learning/kernel-method|Kernel method]]
 - [[concepts/machine-learning/regularization|Regularization]]
+
+## Data and Benchmarks
+
+AI 모델은 데이터 정의 위에서만 의미가 있습니다. 어떤 example을 모았고, label이 어떻게 만들어졌고, split과 benchmark가 무엇을 검증하는지 모르면 architecture 비교도 흔들립니다.
+
+- [[concepts/data/index|Data]]
+- [[entities/dataset|Dataset]]
+- [[concepts/data/data-curation|Data curation]]
+- [[concepts/data/annotation-labeling|Annotation and labeling]]
+- [[concepts/data/sampling-strategy|Sampling strategy]]
+- [[concepts/data/metadata-provenance|Metadata and provenance]]
+- [[concepts/data/benchmark|Benchmark]]
+- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 
 ## Modalities
 

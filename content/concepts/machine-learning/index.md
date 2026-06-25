@@ -29,6 +29,7 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 
 ## Model Families
 
+- [[concepts/data/index|Data]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/machine-learning/classification|Classification]]
@@ -59,6 +60,7 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 ## Related
 
 - [[concepts/tasks/index|Tasks]]
+- [[concepts/data/index|Data]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/evaluation/index|Evaluation]]
