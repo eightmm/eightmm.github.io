@@ -7,7 +7,9 @@ tags:
 
 # Geometric Deep Learning
 
-Geometric deep learning studies models that respect structure such as graphs, coordinates, symmetries, and manifolds.
+Geometric deep learning is the AI layer built on top of [[concepts/math/geometry|geometry]] and [[concepts/math/symmetry-group|symmetry groups]]. It studies models that respect structure such as graphs, coordinates, transformations, and manifolds.
+
+This section should not be a pure math textbook. Use it as the bridge from math foundations to neural architectures for proteins, molecules, 3D structures, vision, and graph-structured data.
 
 The core question is how a model behaves under a transformation group $G$:
 
@@ -18,6 +20,12 @@ g\in G
 $$
 
 Here $\rho(g)$ describes how the output representation should transform.
+
+## Math Background
+
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
+- [[concepts/math/linear-algebra|Linear algebra]]
 
 ## Symmetry
 
@@ -41,6 +49,8 @@ Here $\rho(g)$ describes how the output representation should transform.
 
 ## Related
 
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]

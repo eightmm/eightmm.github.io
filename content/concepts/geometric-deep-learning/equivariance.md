@@ -33,6 +33,8 @@ The output changes in the same structured way as the input.
 
 ## Related
 
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/geometric-deep-learning/invariance|Invariance]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]

@@ -33,6 +33,8 @@ Invariant outputs are appropriate for scalar targets such as class labels, many 
 
 ## Related
 
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 - [[concepts/geometric-deep-learning/e3|E(3)]]
 - [[concepts/geometric-deep-learning/se3|SE(3)]]

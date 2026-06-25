@@ -19,6 +19,8 @@ $$
 ## Core Notes
 
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
@@ -32,6 +34,7 @@ $$
 - Is a probability statement conditional or marginal?
 - Is a loss a negative log-likelihood, distance, ranking loss, or surrogate?
 - Are expectations taken under data, model, sampling, or deployment distributions?
+- If the object has coordinates, what transformations should preserve meaning?
 
 ## Related
 
@@ -39,3 +42,4 @@ $$
 - [[concepts/generative-models/index|Generative models]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/architectures/index|Architectures]]
+- [[concepts/geometric-deep-learning/index|Geometric deep learning]]

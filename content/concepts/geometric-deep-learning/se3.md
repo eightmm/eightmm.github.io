@@ -35,6 +35,8 @@ Unlike E(3), it excludes reflections.
 
 ## Related
 
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 - [[concepts/geometric-deep-learning/e3|E(3)]]
 - [[concepts/geometric-deep-learning/so3|SO(3)]]

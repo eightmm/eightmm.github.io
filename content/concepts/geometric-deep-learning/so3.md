@@ -33,6 +33,8 @@ It contains rotations but not translations or reflections.
 
 ## Related
 
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/geometric-deep-learning/se3|SE(3)]]
 - [[concepts/geometric-deep-learning/spherical-harmonics|Spherical harmonics]]
 - [[concepts/geometric-deep-learning/irreducible-representation|Irreducible representation]]

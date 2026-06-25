@@ -71,8 +71,10 @@ $$
 - [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
 - [[concepts/genome-modeling/genome-annotation|Genome annotation]]
 
-## Geometry and Evaluation
+## Geometry, Structure, and Evaluation
 
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

@@ -92,8 +92,10 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 
 ## Geometry-Aware Models
 
-3D coordinate, molecular structure, protein complex처럼 회전과 이동에 대한 대칭성이 중요한 입력을 다룹니다.
+3D coordinate, molecular structure, protein complex처럼 회전과 이동에 대한 대칭성이 중요한 입력을 다룹니다. 순수한 geometry 개념은 [[concepts/math/geometry|Geometry]]와 [[concepts/math/symmetry-group|Symmetry group]]에 두고, AI 쪽에서는 그것을 모델 구조로 구현하는 [[concepts/geometric-deep-learning/index|Geometric deep learning]]을 봅니다.
 
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]

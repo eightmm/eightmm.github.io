@@ -34,7 +34,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Reading Paths
 
 - AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/index|Machine learning]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
-- Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
+- Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/geometry|Geometry]] -> [[concepts/math/symmetry-group|Symmetry group]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - Data path: [[entities/dataset|Dataset]] -> [[concepts/data/data-curation|Data curation]] -> [[concepts/data/annotation-labeling|Annotation and labeling]] -> [[concepts/data/benchmark|Benchmark]]
 - Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]]
@@ -42,7 +42,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Systems path: [[concepts/systems/training-run|Training run]] -> [[concepts/systems/inference|Inference]] -> [[concepts/systems/model-serving|Model serving]] -> [[concepts/systems/reproducibility|Reproducibility]]
 - Research method path: [[concepts/research-methodology/research-question|Research question]] -> [[concepts/research-methodology/hypothesis|Hypothesis]] -> [[concepts/research-methodology/experiment-design|Experiment design]] -> [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - Agent path: [[agents/agent-architecture|Agent architecture]] -> [[agents/context-engineering|Context engineering]] -> [[agents/tool-contract|Tool contract]] -> [[agents/verification-loop|Verification loop]]
-- Graph and geometry: [[concepts/architectures/graph-construction|Graph construction]] -> [[concepts/architectures/gnn|Graph neural networks]] -> [[concepts/geometric-deep-learning/equivariance|Equivariance]] -> [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+- Graph and geometry: [[concepts/math/geometry|Geometry]] -> [[concepts/math/symmetry-group|Symmetry group]] -> [[concepts/architectures/graph-construction|Graph construction]] -> [[concepts/architectures/gnn|Graph neural networks]] -> [[concepts/geometric-deep-learning/equivariance|Equivariance]] -> [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - Structure-based AI: [[entities/pocket|Pocket]] -> [[concepts/sbdd/pose-quality|Pose quality]] -> [[concepts/sbdd/binding-affinity|Binding affinity]] -> [[concepts/sbdd/virtual-screening|Virtual screening]]
 - Molecular modeling: [[concepts/molecular-modeling/smiles|SMILES]] -> [[concepts/molecular-modeling/molecular-graph|Molecular graph]] -> [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]] -> [[concepts/molecular-modeling/conformer|Conformer]]
 - Protein modeling: [[entities/sequence|Sequence]] -> [[concepts/protein-modeling/protein-representation|Protein representation]] -> [[concepts/protein-modeling/contact-map|Contact map]] -> [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
@@ -64,6 +64,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/math/index|Math foundations]]
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/geometry|Geometry]]
+- [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/math/probability-distribution|Probability distribution]]
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
