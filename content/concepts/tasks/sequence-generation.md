@@ -36,9 +36,11 @@ $$
 - Does decoding optimize likelihood, diversity, exactness, or utility?
 - Are invalid molecules, invalid actions, or unsupported claims filtered?
 - Is evaluation based on sequence match, functional property, human preference, or downstream execution?
+- Is decoding part of the reported method or only an implementation detail?
 
 ## Related
 
+- [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/systems/inference|Inference]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]

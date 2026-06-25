@@ -33,6 +33,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 
 ## Common Tasks
 
+- [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/tasks/retrieval|Retrieval]]
 - [[concepts/tasks/object-detection|Object detection]]
 - [[concepts/tasks/segmentation|Segmentation]]

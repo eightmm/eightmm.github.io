@@ -110,6 +110,7 @@ AI 모델은 데이터 정의 위에서만 의미가 있습니다. 어떤 exampl
 Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image input이라도 classification, detection, segmentation, captioning은 전혀 다른 문제이고, 같은 text input이라도 retrieval, question answering, sequence generation은 실패 방식이 다릅니다.
 
 - [[concepts/tasks/index|Tasks]]
+- [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/ranking|Ranking]]

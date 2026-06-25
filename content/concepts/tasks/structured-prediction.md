@@ -46,9 +46,11 @@ when the structure is generated autoregressively.
 - Does the metric evaluate local pieces or the whole object?
 - Are invalid outputs filtered, repaired, penalized, or counted as failures?
 - Does decoding leak information from references or evaluation tools?
+- Is the validity function specified before looking at predictions?
 
 ## Related
 
+- [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
 - [[concepts/tasks/segmentation|Segmentation]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]

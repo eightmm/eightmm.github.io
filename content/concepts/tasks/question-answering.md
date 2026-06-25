@@ -37,9 +37,11 @@ where $q$ is the question, $\mathcal{D}$ is the evidence corpus, and $d_{1:k}$ a
 - Are citations or source spans required?
 - Does the model abstain when evidence is missing?
 - Is evaluation measuring exact answer, reasoning, retrieval quality, or citation quality?
+- Is unsupported answer generation counted as failure even when fluent?
 
 ## Related
 
+- [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/tasks/retrieval|Retrieval]]
 - [[concepts/modalities/text|Text]]

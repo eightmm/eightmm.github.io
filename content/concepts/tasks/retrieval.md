@@ -22,6 +22,8 @@ $$
 \operatorname{TopK}(q) = \operatorname{arg\,topk}_{d \in \mathcal{D}} s(q,d)
 $$
 
+The task specification should state the corpus, relevance definition, and whether retrieval is final output or only a recall stage for a reranker or generator.
+
 ## Common Designs
 
 - Sparse lexical retrieval with term matching.
@@ -43,9 +45,11 @@ $$
 - Are near-duplicates split correctly?
 - Does retrieval optimize recall for downstream reranking, or precision for direct use?
 - Are embedding updates synchronized with the index?
+- Is freshness, citation support, or provenance required?
 
 ## Related
 
+- [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/machine-learning/ranking|Ranking]]

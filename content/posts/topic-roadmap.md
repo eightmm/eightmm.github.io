@@ -12,6 +12,7 @@ tags:
 ## AI 기본기
 
 - Machine learning을 왜 [[concepts/data/index|Data]], [[concepts/tasks/index|Tasks]], [[concepts/architectures/index|Architectures]], [[concepts/evaluation/index|Evaluation]]로 나눠 봐야 하는가
+- [[concepts/tasks/task-specification|Task specification]]으로 input, output, validity, loss, metric, split을 먼저 고정하는 법
 - [[concepts/math/index|Math foundations]]를 AI 글에서 어느 정도까지 써야 하는가
 - [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/expectation|expectation]], [[concepts/math/maximum-likelihood|maximum likelihood]], [[concepts/math/entropy-kl|entropy/KL]]를 생성모델과 평가의 공통 언어로 쓰는 법
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], [[concepts/machine-learning/gradient-descent|gradient descent]]를 training loop의 기본 수식으로 설명하기

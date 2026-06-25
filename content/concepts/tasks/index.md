@@ -19,6 +19,7 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 
 ## Task Families
 
+- [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/ranking|Ranking]]
@@ -35,6 +36,7 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 ## Checks
 
 - What is the output space?
+- What is the task specification: input, output, validity, loss, metric, and split?
 - What is the [[concepts/data/example-unit|example unit]]?
 - What [[concepts/data/split-unit|split unit]] tests the intended generalization?
 - Is the model predicting, ranking, retrieving, generating, localizing, or segmenting?
@@ -46,6 +48,7 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 ## Related
 
 - [[ai/index|AI]]
+- [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/learning/index|Learning methods]]
