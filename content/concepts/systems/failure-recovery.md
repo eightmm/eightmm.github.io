@@ -49,6 +49,7 @@ Do not include private paths, hostnames, account names, credentials, or unpublis
 - Is there a last-known-good checkpoint or model version?
 - Does the retry policy avoid hiding systematic errors?
 - Can failures be summarized publicly without leaking internal infrastructure?
+- Is terminal job state reconciled before retrying or claiming recovery?
 
 ## Related
 
@@ -56,4 +57,5 @@ Do not include private paths, hostnames, account names, credentials, or unpublis
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/systems/observability|Observability]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
+- [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]

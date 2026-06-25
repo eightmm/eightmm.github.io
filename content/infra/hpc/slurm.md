@@ -33,6 +33,7 @@ scancel <job-id>
 - Keep resource requests explicit and public-safe: CPU count, GPU count, memory class, and wall time can be described generically.
 - Use job arrays for independent shards instead of one oversized job when the workload is naturally parallel.
 - Design long jobs to checkpoint and resume before wall-time limits or preemption.
+- Reconcile terminal job state against logs and artifacts before relaunching or reporting success.
 - Link public experiment methodology into [[agents/workflows/llm-wiki|LLM Wiki]] pages when it becomes reusable.
 
 ## Related
@@ -43,6 +44,7 @@ scancel <job-id>
 - [[infra/hpc/preemption-resume|Preemption and resume]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
+- [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[projects/index|Project index]]

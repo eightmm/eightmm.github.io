@@ -20,6 +20,7 @@ A reproducible run record captures enough public metadata to understand what was
 - Environment: high-level software stack.
 - Output: artifact type, not private path.
 - Outcome: completed, failed, interrupted, or superseded.
+- Reconciliation: final scheduler/artifact/log state when the run used shared compute.
 
 ## Reproducibility Equation
 
@@ -44,10 +45,12 @@ If any component changes, the run identity changes.
 - Are private datasets, private queues, and unpublished metrics excluded?
 - Is failure recorded as a useful diagnosis rather than hidden?
 - Is the split policy clear enough to evaluate leakage risk?
+- Is the final outcome supported by logs, artifacts, and scheduler state?
 
 ## Related
 
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
+- [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[agents/verification/verification-loop|Verification loop]]

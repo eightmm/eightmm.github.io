@@ -45,6 +45,7 @@ $$
 - Are metrics aligned by timestamp with training steps or job events?
 - Are failures classified rather than only recorded?
 - Is public logging sanitized before it enters notes or dashboards?
+- Can job state, logs, and artifacts be reconciled into one final outcome?
 
 ## Related
 
@@ -52,4 +53,5 @@ $$
 - [[concepts/systems/training-run|Training run]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
+- [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

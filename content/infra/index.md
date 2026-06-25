@@ -25,6 +25,7 @@ tags:
 - [[infra/hpc/preemption-resume|Preemption and resume]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
+- [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 
 ## Training and Serving

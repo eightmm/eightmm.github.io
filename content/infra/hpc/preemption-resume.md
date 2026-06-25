@@ -34,6 +34,7 @@ The checkpoint must contain enough state to avoid silently changing the run afte
 3. Validate checkpoint compatibility before loading.
 4. Resume from the latest complete checkpoint.
 5. Record whether the final output came from a resumed run.
+6. Reconcile the resumed job before marking the run complete.
 
 ## Checks
 
@@ -42,10 +43,12 @@ The checkpoint must contain enough state to avoid silently changing the run afte
 - Are partial outputs distinguishable from complete outputs?
 - Is the resume path tested with a short smoke run?
 - Does public documentation avoid private job IDs, paths, queues, and result details?
+- Does the run record distinguish original launch, interruption, resume, and final closeout?
 
 ## Related
 
 - [[infra/hpc/checkpointing|Checkpointing]]
+- [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]

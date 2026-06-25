@@ -18,6 +18,7 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 - [[infra/hpc/resource-request|Resource request]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
+- [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/hpc/job-array|Job array]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/hpc/preemption-resume|Preemption and resume]]
@@ -38,6 +39,7 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 - Is the workload CPU-bound, GPU-bound, memory-bound, IO-bound, or scheduler-bound?
 - Is the resource request measured from a smoke run?
 - Can failed or preempted work resume without corrupting outputs?
+- Is every submitted job reconciled before relaunching or reporting completion?
 - Are public notes stripped of private infrastructure details?
 
 ## Related

@@ -17,7 +17,7 @@ An HPC job lifecycle describes how a workload moves from a local command to a sc
 3. Submit the job with explicit resource assumptions.
 4. Monitor scheduler state, logs, GPU use, and storage growth.
 5. Save checkpoints and resumable outputs.
-6. Reconcile completion, failure, or cancellation into a public or private record.
+6. Reconcile completion, failure, or cancellation into a public or private run record.
 
 ## Minimal Public Record
 
@@ -34,10 +34,27 @@ An HPC job lifecycle describes how a workload moves from a local command to a sc
 - Data issue: missing files, corrupted input, split leakage, inconsistent labels.
 - Storage issue: quota, slow I/O, checkpoint write failure.
 
+## Closeout
+
+A job should be closed by evidence, not by assumption:
+
+$$
+\operatorname{closed}(j)
+=
+\operatorname{terminal}(j)
+\land
+\operatorname{artifact\_checked}(j)
+\land
+\operatorname{recorded}(j)
+$$
+
+If any term is false, the next action is reconciliation, not a fresh launch.
+
 ## Related
 
 - [[infra/hpc/slurm|Slurm]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
+- [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/reproducible-run-record|Reproducible run record]]
 - [[infra/data-loading-io|Data loading and IO]]
