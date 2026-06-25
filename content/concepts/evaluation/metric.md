@@ -46,6 +46,8 @@ $$
 ## Related
 
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/ranking-metrics|Ranking metrics]]
+- [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/machine-learning/loss-function|Loss function]]

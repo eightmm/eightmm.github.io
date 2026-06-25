@@ -37,6 +37,8 @@ where $M$ is an evaluation metric. The sign of $\Delta M$ depends on whether hig
 
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/statistical-significance|Statistical significance]]
+- [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/machine-learning/linear-model|Linear model]]

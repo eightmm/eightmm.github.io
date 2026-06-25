@@ -33,7 +33,7 @@ $$
 
 1. Identify the paper's central question.
 2. List the main claims in one sentence each.
-3. Attach each claim to a metric, benchmark, split, and baseline.
+3. Attach each claim to a metric, benchmark, split, baseline, and uncertainty estimate when available.
 4. Mark claims that depend on ablations, assumptions, or unverified interpretations.
 5. Move reusable definitions into [[concepts/index|Concepts]].
 
@@ -42,6 +42,7 @@ $$
 - Is the claim directly supported by a table, figure, experiment, or proof?
 - Is the comparison baseline strong and fair?
 - Does the split support the generalization claim?
+- Is the effect size larger than uncertainty or seed variance?
 - Does the paper claim causality from an ablation that is too weak?
 - Is the claim still true if phrased narrowly?
 
@@ -52,3 +53,5 @@ $$
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
 - [[concepts/evaluation/baseline|Baseline]]
+- [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/evaluation/statistical-significance|Statistical significance]]

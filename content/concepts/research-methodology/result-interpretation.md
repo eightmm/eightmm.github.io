@@ -39,6 +39,8 @@ $$
 - [[papers/claim-extraction|Claim extraction]]
 - [[concepts/research-methodology/research-log|Research log]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
+- [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/robustness|Robustness]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/evaluation/metric|Metric]]

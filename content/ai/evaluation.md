@@ -34,7 +34,11 @@ $$
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/ranking-metrics|Ranking metrics]]
+- [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
+- [[concepts/evaluation/cross-validation|Cross-validation]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/calibration|Calibration]]
@@ -53,11 +57,13 @@ $$
 - Protein: [[concepts/evaluation/protein-family-split|Protein family split]], [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 - Structure: [[concepts/sbdd/pose-quality|Pose quality]], [[papers/sbdd/posebusters|PoseBusters]]
 - Agent: [[agents/agent-evaluation|Agent evaluation]], [[agents/verification-loop|Verification loop]]
+- Ranking: [[concepts/evaluation/ranking-metrics|Ranking metrics]], [[concepts/tasks/retrieval|Retrieval]]
 
 ## 읽을 때 볼 질문
 
 - train/test split이 실제 generalization을 요구하는가?
 - metric이 task objective와 맞는가?
+- 결과 차이가 confidence interval이나 seed variance보다 충분히 큰가?
 - confidence나 calibration이 필요한 application인가?
 - uncertainty, robustness, interpretability 중 어떤 진단이 필요한가?
 - 실패를 data, model, optimization, evaluation 중 어디 문제로 분해할 수 있는가?

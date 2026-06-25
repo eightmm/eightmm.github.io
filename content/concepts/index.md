@@ -47,7 +47,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Molecular modeling: [[concepts/molecular-modeling/smiles|SMILES]] -> [[concepts/molecular-modeling/molecular-graph|Molecular graph]] -> [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]] -> [[concepts/molecular-modeling/conformer|Conformer]]
 - Protein modeling: [[entities/sequence|Sequence]] -> [[concepts/protein-modeling/protein-representation|Protein representation]] -> [[concepts/protein-modeling/contact-map|Contact map]] -> [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - Genome-level sequence: [[entities/genome|Genome]] -> [[concepts/genome-modeling/genomic-region|Genomic region]] -> [[concepts/genome-modeling/k-mer|K-mer]] -> [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
-- Paper reading: [[papers/paper-note-format|Paper note format]] -> [[papers/paper-review-workflow|Paper review workflow]] -> [[papers/reading-status|Reading status]]
+- Paper reading: [[papers/paper-note-format|Paper note format]] -> [[papers/claim-extraction|Claim extraction]] -> [[concepts/evaluation/confidence-interval|Confidence interval]] -> [[papers/reading-status|Reading status]]
 - LLM Wiki: [[concepts/llm/language-model|Language model]] -> [[concepts/llm/context-window|Context window]] -> [[concepts/llm/embedding-retrieval|Embedding retrieval]] -> [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 
 ## Entity Concepts
@@ -259,9 +259,13 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/ranking-metrics|Ranking metrics]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
+- [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
+- [[concepts/evaluation/cross-validation|Cross-validation]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
