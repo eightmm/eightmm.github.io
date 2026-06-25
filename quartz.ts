@@ -3,6 +3,7 @@ import * as ExternalPlugin from "./.quartz/plugins"
 
 ExternalPlugin.Explorer({
   filterFn: (node) => {
+    // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
     const slug = node.slug ?? ""
     const slugSegment = node.slugSegment ?? ""
@@ -12,6 +13,7 @@ ExternalPlugin.Explorer({
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)
   },
   sortFn: (a, b) => {
+    // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
     const agentGroups = ["core", "tools", "workflows", "verification"]
     const aSegments = (a.slug ?? "").split("/")
