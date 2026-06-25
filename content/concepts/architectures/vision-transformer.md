@@ -32,6 +32,8 @@ where $P_i$ is image patch $i$, $W_E$ is the patch projection, and $p_i$ is a po
 
 ## Related
 
+- [[concepts/modalities/image|Image]]
+- [[concepts/modalities/video|Video]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/cnn|CNN]]

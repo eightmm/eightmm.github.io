@@ -19,6 +19,8 @@ Learning method paper notes focus on objectives, pretraining signals, transfer, 
 
 ## Concepts
 
+- [[concepts/modalities/index|Modalities]]
+- [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/masked-modeling|Masked modeling]]

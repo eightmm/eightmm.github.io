@@ -71,6 +71,8 @@ $$
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder architectures]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
+- [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[agents/index|Agents]]

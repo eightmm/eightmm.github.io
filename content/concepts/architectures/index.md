@@ -37,6 +37,8 @@ The same training objective can behave very differently depending on whether $\m
 
 ## Grid, Image, and Voxel Models
 
+- [[concepts/modalities/image|Image]]
+- [[concepts/modalities/video|Video]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/residual-network|Residual network]]
 - [[concepts/architectures/u-net|U-Net]]
@@ -44,6 +46,8 @@ The same training objective can behave very differently depending on whether $\m
 
 ## Sequence Models
 
+- [[concepts/modalities/text|Text]]
+- [[concepts/modalities/audio|Audio]]
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
@@ -53,7 +57,9 @@ The same training objective can behave very differently depending on whether $\m
 
 ## Attention and Encoder-Decoder Patterns
 
+- [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
 
 ## Set, Graph, and Sparse Models
@@ -74,6 +80,7 @@ The same training objective can behave very differently depending on whether $\m
 ## Related
 
 - [[entities/index|Entities]]
+- [[concepts/modalities/index|Modalities]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]

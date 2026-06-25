@@ -26,9 +26,11 @@ where $E_{t_i}$ is the embedding for token $t_i$, and $p_i$ is a positional or s
 ## Common Choices
 
 - Text: character, byte, subword, wordpiece, or sentence chunk.
+- Image: patch, region, pixel, feature-map cell, or visual token.
+- Video and audio: frame, clip, spectrogram patch, waveform chunk, or learned acoustic token.
 - Protein sequence: amino acid residue, motif, span, or multiple-sequence-alignment token.
 - Molecule: SMILES token, atom, bond-centered token, substructure, or conformer token.
-- Image or grid: fixed patch, adaptive region, voxel, or window token.
+- Grid or structure: voxel, contact-map cell, spatial window, or local coordinate token.
 - Agent context: message, retrieved document chunk, tool call, observation, or memory item.
 
 ## Checks
@@ -40,6 +42,10 @@ where $E_{t_i}$ is the embedding for token $t_i$, and $p_i$ is a positional or s
 
 ## Related
 
+- [[concepts/modalities/index|Modalities]]
+- [[concepts/modalities/text|Text]]
+- [[concepts/modalities/image|Image]]
+- [[concepts/modalities/audio|Audio]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/positional-encoding|Positional encoding]]
 - [[concepts/architectures/transformer|Transformer]]

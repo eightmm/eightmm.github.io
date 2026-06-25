@@ -35,6 +35,8 @@ The same weights $w_r$ are reused at every position $i$, which gives parameter s
 
 ## Related
 
+- [[concepts/modalities/image|Image]]
+- [[concepts/modalities/video|Video]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/learning/index|Learning methods]]

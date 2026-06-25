@@ -43,5 +43,6 @@ $$
 
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/learning/index|Learning methods]]

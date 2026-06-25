@@ -15,6 +15,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 ## 큰 축
 
 - Machine Learning: 예측 문제, feature, loss, regularization, validation을 다루는 기본 층
+- Modality: text, image, video, audio, molecular/protein structure처럼 입력과 출력 신호가 어떤 형태인지 보는 층
 - Architecture: 모델이 정보를 흘려보내는 구조
 - Learning: 어떤 supervision이나 objective로 표현을 학습하는지
 - Generation: 데이터를 만들거나 변환하는 방식
@@ -37,6 +38,18 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 - [[concepts/machine-learning/tree-based-model|Tree-based model]]
 - [[concepts/machine-learning/kernel-method|Kernel method]]
 - [[concepts/machine-learning/regularization|Regularization]]
+
+## Modalities
+
+모델을 보기 전에 입력과 출력의 형태를 먼저 봐야 합니다. text, image, video, audio, molecule, protein structure는 모두 서로 다른 preprocessing, tokenization, leakage 위험, evaluation 기준을 갖습니다.
+
+- [[concepts/modalities/index|Modalities]]
+- [[concepts/modalities/text|Text]]
+- [[concepts/modalities/image|Image]]
+- [[concepts/modalities/video|Video]]
+- [[concepts/modalities/audio|Audio]]
+- [[concepts/modalities/multimodal-learning|Multimodal learning]]
+- [[entities/index|Entities]]
 
 ## Architectures
 

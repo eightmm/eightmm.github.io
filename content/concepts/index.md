@@ -13,6 +13,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Main Hubs
 
 - [[concepts/machine-learning/index|Machine learning]]
+- [[concepts/modalities/index|Modalities]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]
@@ -27,6 +28,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Reading Paths
 
 - AI basics: [[concepts/machine-learning/index|Machine learning]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
+- Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - Deep learning architecture: [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
 - Graph and geometry: [[concepts/architectures/graph-construction|Graph construction]] -> [[concepts/architectures/gnn|Graph neural networks]] -> [[concepts/geometric-deep-learning/equivariance|Equivariance]] -> [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - Structure-based AI: [[entities/pocket|Pocket]] -> [[concepts/sbdd/pose-quality|Pose quality]] -> [[concepts/sbdd/binding-affinity|Binding affinity]] -> [[concepts/sbdd/virtual-screening|Virtual screening]]
@@ -44,6 +46,15 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 
+## Modalities
+
+- [[concepts/modalities/index|Modalities]]
+- [[concepts/modalities/text|Text]]
+- [[concepts/modalities/image|Image]]
+- [[concepts/modalities/video|Video]]
+- [[concepts/modalities/audio|Audio]]
+- [[concepts/modalities/multimodal-learning|Multimodal learning]]
+
 ## Architectures
 
 - [[concepts/architectures/index|Architectures]]
@@ -55,6 +66,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/positional-encoding|Positional encoding]]
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/pooling-readout|Pooling and readout]]
 - [[concepts/architectures/mlp|MLP]]
 - [[concepts/architectures/cnn|CNN]]

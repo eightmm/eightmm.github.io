@@ -45,6 +45,8 @@ $$
 
 locality와 weight sharing이 중요한 입력에 적합합니다. 이미지뿐 아니라 contact map, voxelized structure, spatial grid에도 연결됩니다.
 
+- [[concepts/modalities/image|Image]]
+- [[concepts/modalities/video|Video]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/residual-network|Residual network]]
 - [[concepts/architectures/u-net|U-Net]]
@@ -54,6 +56,8 @@ locality와 weight sharing이 중요한 입력에 적합합니다. 이미지뿐 
 
 token, residue, text, time series처럼 순서가 있는 입력을 다룹니다.
 
+- [[concepts/modalities/text|Text]]
+- [[concepts/modalities/audio|Audio]]
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
@@ -67,7 +71,9 @@ Mamba는 별도 대분류가 아니라 [[concepts/architectures/state-space-mode
 
 sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 
+- [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
 
 ## Set and Graph Models
@@ -105,5 +111,6 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 
 - [[ai/learning-methods|Learning methods]]
 - [[ai/generative-models|Generative models]]
+- [[concepts/modalities/index|Modalities]]
 - [[bio-ai/index|Bio-AI]]
 - [[concepts/protein-modeling/index|Protein modeling concepts]]
