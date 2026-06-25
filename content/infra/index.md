@@ -15,6 +15,7 @@ tags:
 ## Compute
 
 - [[infra/gpu|GPU]]
+- [[infra/gpu-utilization|GPU utilization]]
 - [[infra/gpu-memory|GPU memory]]
 - [[infra/hpc/slurm|Slurm]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
@@ -25,10 +26,14 @@ tags:
 
 - [[concepts/systems/index|AI systems]]
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/environment-management|Environment management]]
+- [[concepts/systems/storage-io|Storage and IO]]
+- [[concepts/systems/observability|Observability]]
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[infra/data-loading-io|Data loading and IO]]
 - [[infra/distributed-training|Distributed training]]
+- [[infra/environment-modules-containers|Environment modules and containers]]
 - [[infra/inference-serving|Inference serving]]
 - [[infra/reproducible-run-record|Reproducible run record]]
 

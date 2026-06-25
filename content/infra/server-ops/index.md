@@ -22,9 +22,12 @@ Server operation notes cover general troubleshooting patterns for Linux servers,
 - [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
 - [[infra/server-ops/account-management|Account and group management]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
+- [[infra/environment-modules-containers|Environment modules and containers]]
+- [[infra/gpu-utilization|GPU utilization]]
 
 ## Related
 
 - [[infra/hpc/slurm|Slurm]]
+- [[concepts/systems/observability|Observability]]
 - [[projects/index|Project index]]
 - [[logs/index|Public logs]]

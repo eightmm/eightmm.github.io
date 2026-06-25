@@ -19,6 +19,7 @@ GPUs accelerate the dense linear algebra behind training and inference. The recu
 
 ## Related
 
+- [[infra/gpu-utilization|GPU utilization]]
 - [[infra/gpu-memory|GPU memory]]
 - [[infra/distributed-training|Distributed training]]
 - [[infra/inference-serving|Inference serving]]

@@ -145,10 +145,13 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 
 - [[concepts/systems/index|AI systems]]
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
+- [[concepts/systems/storage-io|Storage and IO]]
+- [[concepts/systems/observability|Observability]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[infra/index|Infra]]

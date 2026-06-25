@@ -38,6 +38,7 @@ If $t_{\mathrm{input}}$ is large, GPU utilization falls even when the model code
 ## Related
 
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
+- [[concepts/systems/storage-io|Storage and IO]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
 - [[concepts/evaluation/leakage|Leakage]]

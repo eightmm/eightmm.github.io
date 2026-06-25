@@ -20,6 +20,7 @@ Monitoring tells you whether a shared research box is healthy and how its resour
 
 ## Related
 
+- [[concepts/systems/observability|Observability]]
 - [[infra/server-ops/gpu-driver-cuda|GPU driver and CUDA debugging]]
 - [[infra/gpu|GPU]]
 - [[infra/server-ops/index|Server operations]]

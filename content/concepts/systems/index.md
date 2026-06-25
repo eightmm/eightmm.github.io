@@ -21,16 +21,20 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 ## Topics
 
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
+- [[concepts/systems/storage-io|Storage and IO]]
+- [[concepts/systems/observability|Observability]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 
 ## Checks
 
 - Is the bottleneck data loading, compute, memory, communication, or scheduling?
+- Is the environment and storage path part of the run record?
 - Is the goal model quality, time-to-train, cost, latency, throughput, or reliability?
 - Can the run be reproduced from a commit, config, seed, dataset version, and environment?
 - Are training metrics, validation metrics, and serving metrics separated?

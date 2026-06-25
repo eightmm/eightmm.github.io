@@ -222,10 +222,13 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/systems/index|AI systems]]
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
+- [[concepts/systems/storage-io|Storage and IO]]
+- [[concepts/systems/observability|Observability]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 
