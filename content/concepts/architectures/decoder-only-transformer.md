@@ -46,4 +46,4 @@ $$
 
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
-- [[agents/tool-use|Tool use]]
+- [[agents/tools/tool-use|Tool use]]

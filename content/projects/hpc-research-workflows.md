@@ -37,4 +37,4 @@ Research runs often fail because the workflow around the model is weak: unclear 
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/reproducible-run-record|Reproducible run record]]
 - [[infra/distributed-training|Distributed training]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]

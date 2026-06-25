@@ -42,7 +42,7 @@ where $s_t$ is the working state, $a_t$ is the chosen action, and $o_t$ is the o
 
 ## Related
 
-- [[agents/planning|Planning]]
-- [[agents/tool-use|Tool use]]
-- [[agents/verification-loop|Verification loop]]
-- [[agents/context-engineering|Context engineering]]
+- [[agents/core/planning|Planning]]
+- [[agents/tools/tool-use|Tool use]]
+- [[agents/verification/verification-loop|Verification loop]]
+- [[agents/core/context-engineering|Context engineering]]

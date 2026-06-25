@@ -27,7 +27,7 @@ Context is not memory by itself. It is the temporary working set for one model i
 
 ## Related
 
-- [[agents/context-engineering|Context engineering]]
-- [[agents/agent-memory|Agent memory]]
+- [[agents/core/context-engineering|Context engineering]]
+- [[agents/core/agent-memory|Agent memory]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[concepts/architectures/attention|Attention]]

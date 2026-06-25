@@ -43,4 +43,4 @@ $$
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[infra/inference-serving|Inference serving]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
-- [[agents/tool-use|Tool use]]
+- [[agents/tools/tool-use|Tool use]]

@@ -50,7 +50,7 @@ $$
 - [[papers/reading-status|Reading status]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/paper-comparison-matrix|Paper comparison matrix]]
-- [[agents/paper-brief-workflow|Paper brief workflow]]
+- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]

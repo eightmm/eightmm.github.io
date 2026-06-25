@@ -36,5 +36,5 @@ Reading status keeps paper notes honest. It separates raw candidates from verifi
 
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/paper-note-format|Paper note format]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]

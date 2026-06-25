@@ -40,4 +40,4 @@ Here $y_w$ is the preferred output, $y_l$ is the less preferred output, and $r_\
 - [[concepts/learning/reinforcement-learning|Reinforcement learning]]
 - [[concepts/learning/supervised-learning|Supervised learning]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
-- [[agents/agent-evaluation|Agent evaluation]]
+- [[agents/verification/agent-evaluation|Agent evaluation]]

@@ -65,4 +65,4 @@ where $A_t$ is an advantage estimate.
 - [[concepts/learning/reward-modeling|Reward modeling]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 - [[concepts/machine-learning/optimization|Optimization]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]

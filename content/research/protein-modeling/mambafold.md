@@ -33,7 +33,7 @@ Here $s_{1:L}$ is a residue sequence, $h_{1:L}$ are sequence states, and $\hat{X
 
 - Separate architecture notes from benchmark results.
 - Keep unpublished experiments out of public pages.
-- Link stable concepts into [[agents/llm-wiki|LLM Wiki]] pages as they mature.
+- Link stable concepts into [[agents/workflows/llm-wiki|LLM Wiki]] pages as they mature.
 
 ## Related
 

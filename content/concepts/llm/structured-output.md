@@ -49,6 +49,6 @@ where invalid outputs are excluded or rejected.
 
 - [[concepts/tasks/structured-prediction|Structured prediction]]
 - [[concepts/llm/decoding|Decoding]]
-- [[agents/tool-contract|Tool contract]]
-- [[agents/tool-use|Tool use]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/tools/tool-contract|Tool contract]]
+- [[agents/tools/tool-use|Tool use]]
+- [[agents/verification/verification-loop|Verification loop]]

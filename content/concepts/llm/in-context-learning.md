@@ -39,6 +39,6 @@ where $I$ is an instruction and $(x_i,y_i)$ are examples.
 - [[concepts/llm/context-window|Context window]]
 - [[concepts/llm/prompting|Prompting]]
 - [[concepts/llm/structured-output|Structured output]]
-- [[agents/context-engineering|Context engineering]]
+- [[agents/core/context-engineering|Context engineering]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
 - [[concepts/evaluation/leakage|Leakage]]

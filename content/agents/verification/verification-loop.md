@@ -20,9 +20,9 @@ A verification loop closes the gap between "the agent said it's done" and "the a
 
 ## Related
 
-- [[agents/agent-loop|Agent loop]]
-- [[agents/agent-evaluation|Agent evaluation]]
-- [[agents/planning|Planning]]
-- [[agents/multi-agent-review|Multi-agent review]]
-- [[agents/tool-use|Tool use]]
+- [[agents/core/agent-loop|Agent loop]]
+- [[agents/verification/agent-evaluation|Agent evaluation]]
+- [[agents/core/planning|Planning]]
+- [[agents/workflows/multi-agent-review|Multi-agent review]]
+- [[agents/tools/tool-use|Tool use]]
 - [[concepts/evaluation/index|Evaluation]]

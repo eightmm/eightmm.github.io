@@ -73,4 +73,4 @@ Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number
 - [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
 - [[entities/protein|Protein]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
-- [[agents/coding-agents|Coding agents]]
+- [[agents/workflows/coding-agents|Coding agents]]

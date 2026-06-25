@@ -43,7 +43,7 @@ tags:
 
 ## 관련 입구
 
-- [[agents/llm-wiki|LLM Wiki]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[projects/index|Project index]]
 - [[projects/hpc-research-workflows|HPC research workflows]]
 - [[concepts/evaluation/index|Evaluation]]

@@ -37,8 +37,8 @@ where $I$ is input, $O$ is output, and $S_{\mathrm{pre}}, S_{\mathrm{post}}$ des
 
 ## Related
 
-- [[agents/tool-use|Tool use]]
-- [[agents/prompt-injection|Prompt injection]]
-- [[agents/verification-loop|Verification loop]]
-- [[agents/human-in-the-loop|Human in the loop]]
+- [[agents/tools/tool-use|Tool use]]
+- [[agents/verification/prompt-injection|Prompt injection]]
+- [[agents/verification/verification-loop|Verification loop]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[concepts/systems/model-serving|Model serving]]

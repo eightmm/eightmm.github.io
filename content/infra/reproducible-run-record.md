@@ -50,4 +50,4 @@ If any component changes, the run identity changes.
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]

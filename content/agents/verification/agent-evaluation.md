@@ -40,9 +40,9 @@ where $T_i$ is a task and $\operatorname{pass}$ is an externally checked success
 
 ## Related
 
-- [[agents/verification-loop|Verification loop]]
-- [[agents/multi-agent-review|Multi-agent review]]
+- [[agents/verification/verification-loop|Verification loop]]
+- [[agents/workflows/multi-agent-review|Multi-agent review]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/learning/reward-modeling|Reward modeling]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
-- [[agents/human-in-the-loop|Human in the loop]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]

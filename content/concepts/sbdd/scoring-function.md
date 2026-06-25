@@ -41,4 +41,4 @@ where $P$ is a protein or pocket, $L$ is a ligand, and $X$ is a candidate pose o
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
-- [[agents/llm-wiki|LLM Wiki]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]

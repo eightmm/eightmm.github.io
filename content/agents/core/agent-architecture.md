@@ -38,8 +38,8 @@ where $s_t$ is task state, $c_t$ is current context, $m_t$ is retrieved memory, 
 
 ## Related
 
-- [[agents/agent-loop|Agent loop]]
-- [[agents/agent-state|Agent state]]
-- [[agents/tool-contract|Tool contract]]
-- [[agents/context-engineering|Context engineering]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/core/agent-loop|Agent loop]]
+- [[agents/core/agent-state|Agent state]]
+- [[agents/tools/tool-contract|Tool contract]]
+- [[agents/core/context-engineering|Context engineering]]
+- [[agents/verification/verification-loop|Verification loop]]

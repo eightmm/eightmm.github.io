@@ -47,6 +47,6 @@ $$
 
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
 - [[papers/claim-extraction|Claim extraction]]

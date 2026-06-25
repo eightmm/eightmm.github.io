@@ -32,7 +32,7 @@ Here $r(x)$ is the router, $E_m$ is expert $m$, and $g_m(x)$ is the routing weig
 - Check routing granularity: token-level, sequence-level, graph-level, modality-level, or task-level.
 - Track top-k choice, capacity limits, dropped tokens, and auxiliary routing losses.
 - Compare parameter count, activated parameter count, memory traffic, and inference latency separately.
-- For agent or tool systems, distinguish MoE routing from explicit [[agents/tool-use|tool use]].
+- For agent or tool systems, distinguish MoE routing from explicit [[agents/tools/tool-use|tool use]].
 
 ## Related
 

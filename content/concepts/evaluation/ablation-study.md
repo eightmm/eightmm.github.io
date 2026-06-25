@@ -33,4 +33,4 @@ where $M$ is the evaluation metric.
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/metric|Metric]]
 - [[papers/paper-review-workflow|Paper review workflow]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]

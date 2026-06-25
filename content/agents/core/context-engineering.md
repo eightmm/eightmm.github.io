@@ -42,7 +42,7 @@ where $G$ is the goal, $S_t$ is current working state, $E_t$ is evidence from to
 
 - [[concepts/llm/context-window|Context window]]
 - [[concepts/llm/in-context-learning|In-context learning]]
-- [[agents/agent-memory|Agent memory]]
-- [[agents/agent-loop|Agent loop]]
-- [[agents/prompt-injection|Prompt injection]]
-- [[agents/llm-wiki|LLM Wiki]]
+- [[agents/core/agent-memory|Agent memory]]
+- [[agents/core/agent-loop|Agent loop]]
+- [[agents/verification/prompt-injection|Prompt injection]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]

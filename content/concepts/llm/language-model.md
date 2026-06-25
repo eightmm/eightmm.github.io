@@ -50,4 +50,4 @@ $$
 - [[concepts/llm/prompting|Prompting]]
 - [[concepts/llm/in-context-learning|In-context learning]]
 - [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
-- [[agents/tool-use|Tool use]]
+- [[agents/tools/tool-use|Tool use]]

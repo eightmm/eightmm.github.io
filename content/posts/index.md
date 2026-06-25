@@ -24,7 +24,7 @@ tags:
 - [[concepts/protein-modeling/protein-representation|Protein representation]]을 어떻게 볼 것인가
 - [[concepts/sbdd/pose-quality|Pose quality]]와 [[concepts/sbdd/binding-affinity|binding affinity]]를 왜 분리해야 하는가
 - 공개 가능한 [[infra/index|Infra]] 운영 노하우 정리하기
-- [[agents/coding-agents|Coding agents]]를 연구 workflow에 쓰는 방법 정리하기
+- [[agents/workflows/coding-agents|Coding agents]]를 연구 workflow에 쓰는 방법 정리하기
 - 논문 읽기 흐름을 [[papers/index|paper note]]와 연결하기
 
 ## 연결되는 Wiki

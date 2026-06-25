@@ -36,8 +36,8 @@ where $g$ is the goal, $C$ is constraints, $E_t$ is accumulated evidence, $P_t$ 
 
 ## Related
 
-- [[agents/context-engineering|Context engineering]]
-- [[agents/agent-memory|Agent memory]]
-- [[agents/planning|Planning]]
-- [[agents/agent-loop|Agent loop]]
-- [[agents/human-in-the-loop|Human in the loop]]
+- [[agents/core/context-engineering|Context engineering]]
+- [[agents/core/agent-memory|Agent memory]]
+- [[agents/core/planning|Planning]]
+- [[agents/core/agent-loop|Agent loop]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]

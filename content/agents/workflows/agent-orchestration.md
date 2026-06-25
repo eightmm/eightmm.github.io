@@ -36,8 +36,8 @@ where nodes $V$ are steps or roles, and edges $E$ pass artifacts, evidence, or d
 
 ## Related
 
-- [[agents/multi-agent-review|Multi-agent review]]
-- [[agents/human-in-the-loop|Human in the loop]]
-- [[agents/paper-brief-workflow|Paper brief workflow]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/workflows/multi-agent-review|Multi-agent review]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]
+- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
+- [[agents/verification/verification-loop|Verification loop]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]

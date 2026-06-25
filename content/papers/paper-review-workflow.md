@@ -49,5 +49,5 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
-- [[agents/paper-brief-workflow|Paper brief workflow]]
-- [[agents/human-in-the-loop|Human in the loop]]
+- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]

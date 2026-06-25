@@ -33,11 +33,11 @@ Research notes, paper summaries, agent outputs, and server-operation lessons eas
 
 ## Related
 
-- [[agents/llm-wiki|LLM Wiki]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
-- [[agents/context-engineering|Context engineering]]
-- [[agents/paper-brief-workflow|Paper brief workflow]]
+- [[agents/core/context-engineering|Context engineering]]
+- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[inbox/inbox-triage|Inbox triage]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]

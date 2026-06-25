@@ -35,6 +35,6 @@ Sanitization converts private working notes into public notes. The goal is to ke
 ## Related
 
 - [[logs/public-log-format|Public log format]]
-- [[agents/human-in-the-loop|Human in the loop]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[infra/index|Infra]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|Blog and wiki workflow]]

@@ -33,10 +33,10 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 
 ## Related
 
-- [[agents/coding-agents|Coding agents]]
-- [[agents/llm-wiki|LLM Wiki]]
-- [[agents/human-in-the-loop|Human in the loop]]
-- [[agents/agent-evaluation|Agent evaluation]]
+- [[agents/workflows/coding-agents|Coding agents]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]
+- [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 - [[papers/paper-note-format|Paper note format]]
 - [[papers/paper-review-workflow|Paper review workflow]]

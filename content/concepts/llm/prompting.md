@@ -51,5 +51,5 @@ where $I$ is the instruction, $C$ is context, $E$ is evidence or examples, and $
 - [[concepts/llm/in-context-learning|In-context learning]]
 - [[concepts/llm/context-window|Context window]]
 - [[concepts/llm/structured-output|Structured output]]
-- [[agents/context-engineering|Context engineering]]
-- [[agents/prompt-injection|Prompt injection]]
+- [[agents/core/context-engineering|Context engineering]]
+- [[agents/verification/prompt-injection|Prompt injection]]

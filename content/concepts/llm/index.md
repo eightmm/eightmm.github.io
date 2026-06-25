@@ -32,8 +32,8 @@ LLM concepts describe language models, context, retrieval, and workflow patterns
 ## Related
 
 - [[agents/index|Agents]]
-- [[agents/agent-architecture|Agent architecture]]
-- [[agents/llm-wiki|LLM Wiki]]
-- [[agents/context-engineering|Context engineering]]
+- [[agents/core/agent-architecture|Agent architecture]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]
+- [[agents/core/context-engineering|Context engineering]]
 - [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]

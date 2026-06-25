@@ -51,7 +51,7 @@ This number is only meaningful if the held-out set matches the intended generali
 ## Related
 
 - [[concepts/math/expectation|Expectation]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - [[concepts/index|Concepts]]

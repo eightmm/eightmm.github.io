@@ -12,30 +12,37 @@ Agent notes collect public explanations of AI agents, coding assistants, researc
 
 This section should stay practical: what the agent is useful for, where it fails, how to verify its work, and how it fits into research or infrastructure work.
 
+## Sections
+
+- [[agents/core/index|Agent Core]]
+- [[agents/tools/index|Agent Tools]]
+- [[agents/workflows/index|Agent Workflows]]
+- [[agents/verification/index|Agent Verification]]
+
 ## Core Concepts
 
-- [[agents/agent-architecture|Agent architecture]]
-- [[agents/agent-loop|Agent loop]]
-- [[agents/agent-state|Agent state]]
-- [[agents/context-engineering|Context engineering]]
+- [[agents/core/agent-architecture|Agent architecture]]
+- [[agents/core/agent-loop|Agent loop]]
+- [[agents/core/agent-state|Agent state]]
+- [[agents/core/context-engineering|Context engineering]]
 - [[concepts/llm/prompting|Prompting]]
 - [[concepts/llm/structured-output|Structured output]]
-- [[agents/tool-use|Tool use]]
-- [[agents/tool-contract|Tool contract]]
-- [[agents/planning|Planning]]
-- [[agents/agent-memory|Agent memory]]
-- [[agents/verification-loop|Verification loop]]
-- [[agents/reflection-and-critique|Reflection and critique]]
-- [[agents/agent-evaluation|Agent evaluation]]
-- [[agents/human-in-the-loop|Human in the loop]]
-- [[agents/prompt-injection|Prompt injection]]
+- [[agents/tools/tool-use|Tool use]]
+- [[agents/tools/tool-contract|Tool contract]]
+- [[agents/core/planning|Planning]]
+- [[agents/core/agent-memory|Agent memory]]
+- [[agents/verification/verification-loop|Verification loop]]
+- [[agents/verification/reflection-and-critique|Reflection and critique]]
+- [[agents/verification/agent-evaluation|Agent evaluation]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]
+- [[agents/verification/prompt-injection|Prompt injection]]
 
 ## Workflows
 
-- [[agents/coding-agents|Coding agents]]
-- [[agents/paper-brief-workflow|Paper brief workflow]]
-- [[agents/agent-orchestration|Agent orchestration]]
-- [[agents/multi-agent-review|Multi-agent review]]
+- [[agents/workflows/coding-agents|Coding agents]]
+- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
+- [[agents/workflows/agent-orchestration|Agent orchestration]]
+- [[agents/workflows/multi-agent-review|Multi-agent review]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 
 ## Learning and Feedback
@@ -54,7 +61,7 @@ This section should stay practical: what the agent is useful for, where it fails
 
 ## Related
 
-- [[agents/llm-wiki|LLM Wiki]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[inbox/index|Inbox]]

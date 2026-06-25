@@ -44,4 +44,4 @@ where $q$ is the question, $\mathcal{D}$ is the evidence corpus, and $d_{1:k}$ a
 - [[concepts/tasks/retrieval|Retrieval]]
 - [[concepts/modalities/text|Text]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]

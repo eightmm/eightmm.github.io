@@ -41,5 +41,5 @@ $$
 - [[concepts/machine-learning/representation-learning|Representation learning]]
 - [[concepts/machine-learning/ranking|Ranking]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
-- [[agents/agent-memory|Agent memory]]
-- [[agents/llm-wiki|LLM Wiki]]
+- [[agents/core/agent-memory|Agent memory]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]

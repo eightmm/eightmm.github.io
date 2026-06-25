@@ -60,4 +60,4 @@ Public change summary.
 - [[logs/public-log-format|Public log format]]
 - [[concepts/research-methodology/research-log|Research log]]
 - [[infra/reproducible-run-record|Reproducible run record]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]

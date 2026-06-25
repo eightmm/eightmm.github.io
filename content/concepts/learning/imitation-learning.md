@@ -41,5 +41,5 @@ For language models and coding agents, supervised fine-tuning on high-quality tr
 - [[concepts/learning/supervised-learning|Supervised learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
 - [[concepts/learning/reinforcement-learning|Reinforcement learning]]
-- [[agents/tool-use|Tool use]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/tools/tool-use|Tool use]]
+- [[agents/verification/verification-loop|Verification loop]]

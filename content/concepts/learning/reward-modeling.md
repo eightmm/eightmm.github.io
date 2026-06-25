@@ -48,4 +48,4 @@ where $y_w$ is preferred over $y_l$.
 - [[concepts/learning/reinforcement-learning|Reinforcement learning]]
 - [[concepts/learning/policy-gradient|Policy gradient]]
 - [[concepts/evaluation/metric|Metric]]
-- [[agents/agent-evaluation|Agent evaluation]]
+- [[agents/verification/agent-evaluation|Agent evaluation]]

@@ -84,5 +84,5 @@ tags:
 - [[posts/index|Posts]]
 - [[posts/topic-roadmap|Topic roadmap]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]
-- [[agents/llm-wiki|LLM Wiki]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

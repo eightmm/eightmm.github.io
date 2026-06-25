@@ -53,4 +53,4 @@ where $\tau$ is a trajectory and $\gamma$ discounts future reward.
 - [[concepts/learning/preference-optimization|Preference optimization]]
 - [[concepts/learning/imitation-learning|Imitation learning]]
 - [[agents/index|Agents]]
-- [[agents/agent-evaluation|Agent evaluation]]
+- [[agents/verification/agent-evaluation|Agent evaluation]]

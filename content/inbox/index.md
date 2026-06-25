@@ -66,7 +66,7 @@ source: to verify
 ## Related
 
 - [[inbox/inbox-triage|Inbox triage]]
-- [[agents/paper-brief-workflow|Paper brief workflow]]
+- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]
 - [[posts/index|Posts]]

@@ -32,11 +32,11 @@ Daily paper lists are useful but noisy. The durable output should be a small set
 
 ## Related
 
-- [[agents/paper-brief-workflow|Paper brief workflow]]
+- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[inbox/inbox-triage|Inbox triage]]
-- [[agents/verification-loop|Verification loop]]
-- [[agents/human-in-the-loop|Human in the loop]]
-- [[agents/agent-evaluation|Agent evaluation]]
+- [[agents/verification/verification-loop|Verification loop]]
+- [[agents/verification/human-in-the-loop|Human in the loop]]
+- [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[papers/paper-note-format|Paper note format]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/reading-status|Reading status]]

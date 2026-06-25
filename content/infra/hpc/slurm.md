@@ -30,7 +30,7 @@ scancel <job-id>
 
 - Capture code commit, environment, seed, and dataset version.
 - Prefer small smoke tests before large jobs.
-- Link public experiment methodology into [[agents/llm-wiki|LLM Wiki]] pages when it becomes reusable.
+- Link public experiment methodology into [[agents/workflows/llm-wiki|LLM Wiki]] pages when it becomes reusable.
 
 ## Related
 

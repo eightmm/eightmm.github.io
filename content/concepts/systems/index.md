@@ -46,4 +46,4 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[infra/index|Infra]]
 - [[papers/systems/index|Systems papers]]
 - [[concepts/evaluation/index|Evaluation]]
-- [[agents/verification-loop|Verification loop]]
+- [[agents/verification/verification-loop|Verification loop]]

@@ -37,5 +37,5 @@ Inbox triage decides whether a raw candidate becomes a paper note, concept note,
 
 - [[inbox/index|Inbox]]
 - [[papers/reading-status|Reading status]]
-- [[agents/paper-brief-workflow|Paper brief workflow]]
+- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

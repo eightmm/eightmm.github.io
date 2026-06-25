@@ -69,4 +69,4 @@ For this site, PoseBusters is the first evaluation anchor for [[research/structu
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
-- [[agents/llm-wiki|LLM Wiki]]
+- [[agents/workflows/llm-wiki|LLM Wiki]]
