@@ -10,6 +10,8 @@ tags:
 
 Data versioning records exactly which data snapshot, filters, preprocessing steps, and labels were used for a run or result. Without it, model comparisons can silently compare different datasets.
 
+[[concepts/data/data-lineage|Data lineage]] explains how that version was produced; data versioning gives it a stable identifier.
+
 A dataset version can be described as:
 
 $$
@@ -38,6 +40,7 @@ where $H$ is a content hash or another stable identifier.
 ## Related
 
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
+- [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/data-curation|Data curation]]
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/systems/reproducibility|Reproducibility]]

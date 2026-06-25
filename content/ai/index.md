@@ -104,6 +104,7 @@ AI 모델은 데이터 정의 위에서만 의미가 있습니다. 어떤 exampl
 - [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/data/sampling-bias|Sampling bias]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
+- [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 

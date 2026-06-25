@@ -16,6 +16,7 @@ For chem-bio datasets, one row should usually preserve the [[entities/target-ass
 - Splits, duplicate handling, and label provenance shape what a benchmark measures.
 - Molecular datasets often mix [[entities/molecule|molecules]], [[entities/protein|proteins]], assays, and structures.
 - Clear dataset notes make leakage risks and task definitions easier to audit.
+- Dataset lineage explains how the dataset version was produced from source records.
 
 ## Checks
 
@@ -33,6 +34,7 @@ For chem-bio datasets, one row should usually preserve the [[entities/target-ass
 - [[entities/target-assay-label|Target-assay-label contract]]
 - [[concepts/data/index|Data]]
 - [[concepts/data/data-curation|Data curation]]
+- [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[entities/bioactivity-label|Bioactivity label]]

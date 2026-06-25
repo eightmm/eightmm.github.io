@@ -10,6 +10,8 @@ tags:
 
 Metadata records the context around an example. Provenance records where an example came from and how it was transformed. Both are required for reproducible datasets and leakage audits.
 
+When provenance is chained across source, curation, preprocessing, and splits, it becomes [[concepts/data/data-lineage|data lineage]].
+
 A dataset item should be treated as:
 
 $$
@@ -38,6 +40,7 @@ where $m_i$ is metadata and $s_i$ is source or provenance information.
 ## Related
 
 - [[entities/dataset|Dataset]]
+- [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/data-curation|Data curation]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]

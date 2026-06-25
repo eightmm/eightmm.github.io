@@ -43,6 +43,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/data/sampling-bias|Sampling bias]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
+- [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 
@@ -69,7 +70,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 1. Define [[concepts/data/example-unit|example unit]] and [[concepts/data/split-unit|split unit]].
 2. Write the [[concepts/data/data-schema|data schema]] and [[concepts/data/label-semantics|label semantics]].
 3. Specify the [[concepts/data/preprocessing-contract|preprocessing contract]].
-4. Record [[concepts/data/metadata-provenance|metadata and provenance]].
+4. Record [[concepts/data/metadata-provenance|metadata and provenance]] and [[concepts/data/data-lineage|data lineage]].
 5. Choose the [[concepts/data/sampling-strategy|sampling strategy]] and [[concepts/data/dataset-split-contract|dataset split contract]].
 6. Summarize the result in a [[concepts/data/dataset-card|dataset card]].
 7. Attach an [[concepts/evaluation/evaluation-protocol|evaluation protocol]].

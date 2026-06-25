@@ -22,6 +22,7 @@ $$
 
 - Purpose: what the dataset is for.
 - Source: public origin, license, and collection process.
+- Lineage: how raw records were filtered, transformed, labeled, and split.
 - Example unit: what one example represents.
 - Schema: fields, identifiers, units, and relationships.
 - Labels: target meaning, annotation process, uncertainty, [[concepts/data/missing-data|missing values]], [[concepts/data/censored-label|censoring]], and [[concepts/data/weak-label|weak labels]].
@@ -58,6 +59,7 @@ For a public wiki note, a minimal dataset card should include:
 ## Related
 
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
+- [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/data/dataset-split-contract|Dataset split contract]]

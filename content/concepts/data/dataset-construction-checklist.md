@@ -33,6 +33,7 @@ where $\mathcal{R}$ is the source record set, $P_\phi$ is the preprocessing cont
 - State [[concepts/data/label-semantics|label semantics]] and missing-label policy.
 - Record [[concepts/data/missing-data|missing data]], [[concepts/data/censored-label|censored label]], and [[concepts/data/weak-label|weak label]] handling.
 - Record source, license, collection process, and [[concepts/data/metadata-provenance|metadata provenance]].
+- Record [[concepts/data/data-lineage|data lineage]] from sources to final splits.
 - Write the [[concepts/data/preprocessing-contract|preprocessing contract]].
 - Decide the [[concepts/data/sampling-strategy|sampling strategy]].
 - Check duplicates, near-duplicates, and grouped leakage.
@@ -55,6 +56,7 @@ For a public blog, describe dataset construction as a general method unless the 
 
 - [[concepts/data/index|Data]]
 - [[concepts/data/dataset-card|Dataset card]]
+- [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
