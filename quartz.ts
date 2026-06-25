@@ -1,16 +1,16 @@
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
 import * as ExternalPlugin from "./.quartz/plugins"
 
-const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
-const agentGroups = ["core", "tools", "workflows", "verification"]
-
 ExternalPlugin.Explorer({
   filterFn: (node) => {
+    const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
     if (node.slugSegment === "tags") return false
     const firstSegment = node.slugSegments?.[0]
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)
   },
   sortFn: (a, b) => {
+    const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
+    const agentGroups = ["core", "tools", "workflows", "verification"]
     const aIndex = explorerRoots.indexOf(a.slugSegments?.[0] ?? "")
     const bIndex = explorerRoots.indexOf(b.slugSegments?.[0] ?? "")
 
