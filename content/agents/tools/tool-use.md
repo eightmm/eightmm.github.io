@@ -20,6 +20,7 @@ Tool use lets an LLM agent call external functions — search, code execution, f
 
 ## Related
 
+- [[concepts/llm/tool-calling|Tool calling]]
 - [[agents/core/agent-loop|Agent loop]]
 - [[agents/core/planning|Planning]]
 - [[agents/verification/verification-loop|Verification loop]]

@@ -27,6 +27,8 @@ Context is not memory by itself. It is the temporary working set for one model i
 
 ## Related
 
+- [[concepts/llm/token-budget|Token budget]]
+- [[concepts/llm/context-packing|Context packing]]
 - [[agents/core/context-engineering|Context engineering]]
 - [[agents/core/agent-memory|Agent memory]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]

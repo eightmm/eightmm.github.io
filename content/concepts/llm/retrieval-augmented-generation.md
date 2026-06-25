@@ -33,6 +33,8 @@ where $q$ is a query, $\mathcal{D}$ is the document collection, and $D_q$ is the
 ## Related
 
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
+- [[concepts/llm/context-packing|Context packing]]
+- [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[agents/verification/prompt-injection|Prompt injection]]
 - [[agents/verification/verification-loop|Verification loop]]
