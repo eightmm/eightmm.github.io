@@ -46,6 +46,7 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/learning/supervised-learning|Supervised learning]]
+- [[concepts/learning/semi-supervised-learning|Semi-supervised learning]]
 - [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/masked-modeling|Masked modeling]]

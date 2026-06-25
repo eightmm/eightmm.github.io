@@ -27,8 +27,8 @@ This is the label side of the [[entities/target-assay-label|Target-assay-label c
 - Continuous: $K_d$, $K_i$, $\mathrm{IC}_{50}$, $\mathrm{EC}_{50}$, percent inhibition, activity score, affinity proxy.
 - Transformed: $pK_d$, $pK_i$, $pIC_{50}$, log concentration, standardized score.
 - Binary: active/inactive after a threshold.
-- Censored: values reported as greater-than or less-than limits.
-- Weak or missing: untested, inferred, aggregated, or source-dependent labels.
+- [[concepts/data/censored-label|Censored]]: values reported as greater-than or less-than limits.
+- [[concepts/data/weak-label|Weak]] or [[concepts/data/missing-data|missing]]: untested, inferred, aggregated, or source-dependent labels.
 
 ## Why It Matters
 
@@ -56,6 +56,9 @@ This is the label side of the [[entities/target-assay-label|Target-assay-label c
 - [[entities/target|Target]]
 - [[entities/dataset|Dataset]]
 - [[concepts/data/label-semantics|Label semantics]]
+- [[concepts/data/missing-data|Missing data]]
+- [[concepts/data/censored-label|Censored label]]
+- [[concepts/data/weak-label|Weak label]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[concepts/evaluation/negative-set|Negative set]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]

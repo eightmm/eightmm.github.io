@@ -31,7 +31,7 @@ $$
 - Are labels from different assay types mixed as if they were comparable?
 - Is the task predicting assay response, binding, toxicity, or a proxy endpoint?
 - Does the train/test split leak through repeated molecules or shared assay batches?
-- Are censored or thresholded values handled as such, instead of point labels?
+- Are [[concepts/data/censored-label|censored]] or thresholded values handled as such, instead of point labels?
 - Is the assay used as metadata, split group, task context, or prediction target?
 
 ## Related
@@ -39,6 +39,7 @@ $$
 - [[entities/entity-relation-map|Entity relation map]]
 - [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]
+- [[concepts/data/censored-label|Censored label]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[concepts/evaluation/negative-set|Negative set]]
 - [[entities/molecule|Molecule]]

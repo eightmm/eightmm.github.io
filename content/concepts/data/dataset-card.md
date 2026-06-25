@@ -24,7 +24,7 @@ $$
 - Source: public origin, license, and collection process.
 - Example unit: what one example represents.
 - Schema: fields, identifiers, units, and relationships.
-- Labels: target meaning, annotation process, uncertainty, and missing values.
+- Labels: target meaning, annotation process, uncertainty, [[concepts/data/missing-data|missing values]], [[concepts/data/censored-label|censoring]], and [[concepts/data/weak-label|weak labels]].
 - Entity contract: molecule, target, assay, label, unit, threshold, censoring, and source when relevant.
 - Preprocessing: filtering, normalization, tokenization, featurization, and version.
 - Splits: split unit, policy, sizes, and leakage checks.
@@ -48,6 +48,7 @@ For a public wiki note, a minimal dataset card should include:
 - Public source and citation status.
 - Example unit and split unit.
 - Label semantics and missing-label policy.
+- Censoring and weak-label policy when applicable.
 - Target-assay-label contract for chem-bio datasets when relevant.
 - Preprocessing contract summary.
 - Split policy and leakage checks.

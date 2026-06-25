@@ -29,6 +29,7 @@ where $c_j$ is a column or field name and $v_{ij}$ is the value for row $i$.
 - Data type: numeric, categorical, ordinal, text, sequence, graph, coordinate, timestamp, or identifier.
 - Unit and scale.
 - Missing-value policy.
+- Censoring, weak-label, and unknown-label policy.
 - Allowed value range or vocabulary.
 - Entity relationships and keys.
 - Version and source.
@@ -46,12 +47,16 @@ where $c_j$ is a column or field name and $v_{ij}$ is the value for row $i$.
 - Which fields are identifiers rather than predictive signals?
 - Which fields are available at inference time?
 - Are units, transforms, and censoring rules explicit?
+- Are missing labels and weak labels encoded separately from true negatives?
 - Can another person reconstruct the same model-ready table?
 
 ## Related
 
 - [[entities/dataset|Dataset]]
 - [[concepts/data/data-versioning|Data versioning]]
+- [[concepts/data/missing-data|Missing data]]
+- [[concepts/data/censored-label|Censored label]]
+- [[concepts/data/weak-label|Weak label]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 - [[concepts/evaluation/leakage|Leakage]]

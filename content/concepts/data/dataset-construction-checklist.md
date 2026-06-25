@@ -31,6 +31,7 @@ where $\mathcal{R}$ is the source record set, $P_\phi$ is the preprocessing cont
 - Write the [[concepts/data/dataset-split-contract|dataset split contract]].
 - Write the [[concepts/data/data-schema|data schema]].
 - State [[concepts/data/label-semantics|label semantics]] and missing-label policy.
+- Record [[concepts/data/missing-data|missing data]], [[concepts/data/censored-label|censored label]], and [[concepts/data/weak-label|weak label]] handling.
 - Record source, license, collection process, and [[concepts/data/metadata-provenance|metadata provenance]].
 - Write the [[concepts/data/preprocessing-contract|preprocessing contract]].
 - Decide the [[concepts/data/sampling-strategy|sampling strategy]].
@@ -59,5 +60,8 @@ For a public blog, describe dataset construction as a general method unless the 
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/data/label-semantics|Label semantics]]
+- [[concepts/data/missing-data|Missing data]]
+- [[concepts/data/censored-label|Censored label]]
+- [[concepts/data/weak-label|Weak label]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]

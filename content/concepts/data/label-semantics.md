@@ -23,7 +23,7 @@ where $a_i$ represents annotators, assay protocol, instrument, or source, and $q
 ## Common Label Questions
 
 - Is the label observed directly, measured indirectly, inferred, or curated?
-- Is it binary, multiclass, multilabel, ordinal, continuous, censored, or weak?
+- Is it binary, multiclass, multilabel, ordinal, continuous, [[concepts/data/censored-label|censored]], [[concepts/data/weak-label|weak]], or missing?
 - Does it represent ground truth, proxy signal, preference, rank, or a noisy observation?
 - Is the threshold arbitrary or domain-defined?
 - Are negative labels true negatives or simply unobserved positives?
@@ -49,7 +49,7 @@ For chem-bio data, the context is often the [[entities/target-assay-label|Target
 
 ## Missing and Negative Labels
 
-Missing labels are not automatically negative labels:
+[[concepts/data/missing-data|Missing labels]] are not automatically negative labels:
 
 $$
 y_i\ \text{missing}
@@ -75,6 +75,9 @@ This matters in retrieval, virtual screening, activity prediction, preference da
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
 - [[concepts/data/label-noise|Label noise]]
+- [[concepts/data/missing-data|Missing data]]
+- [[concepts/data/censored-label|Censored label]]
+- [[concepts/data/weak-label|Weak label]]
 - [[concepts/evaluation/negative-set|Negative set]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[entities/assay|Assay]]

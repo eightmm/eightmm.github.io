@@ -23,12 +23,13 @@ where $m_i$ stores metadata about how the label was produced.
 - Human annotation: category, span, mask, preference, ranking, or free-text explanation.
 - Experimental measurement: assay value, binding proxy, phenotype, expression value, or structure-derived label.
 - Derived label: computed property, thresholded activity, similarity label, or benchmark heuristic.
-- Weak label: noisy signal from metadata, rules, retrieval, or distant supervision.
+- [[concepts/data/weak-label|Weak label]]: noisy signal from metadata, rules, retrieval, or distant supervision.
 
 ## Checks
 
 - Who or what produced the label?
 - Is the label categorical, ordinal, scalar, structured, censored, or missing?
+- Is the label exact, [[concepts/data/censored-label|censored]], [[concepts/data/missing-data|missing]], or weak?
 - Are repeated annotations consistent?
 - Are label thresholds documented?
 - Does the input contain metadata that directly reveals the label?
@@ -36,6 +37,11 @@ where $m_i$ stores metadata about how the label was produced.
 ## Related
 
 - [[concepts/learning/supervised-learning|Supervised learning]]
+- [[concepts/data/label-semantics|Label semantics]]
+- [[concepts/data/label-noise|Label noise]]
+- [[concepts/data/weak-label|Weak label]]
+- [[concepts/data/censored-label|Censored label]]
+- [[concepts/data/missing-data|Missing data]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[entities/assay|Assay]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]

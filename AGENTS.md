@@ -104,6 +104,8 @@ Data notes should define example unit, split unit, preprocessing contract, label
 
 Sampling and imbalance notes should state the target population, observed sampling distribution, class or label prevalence in each split, missing-label policy, batch sampling rule, and whether evaluation uses the natural or rebalanced distribution. Do not compare metrics across different prevalence or sampling policies without saying so.
 
+Missing, censored, and weak-label notes should keep unknown, unobserved, censored, weak, noisy, and true-negative labels separate. State the missingness process when known, the censoring direction or bound, the weak-label source, whether imputation or label conversion is fit only on training data, and whether the final evaluation uses clean labels.
+
 Evaluation notes should separate primary metrics from diagnostics and should name failure modes explicitly. When adding task or evaluation notes, connect output space, metric selection, failure mode taxonomy, split rule, uncertainty, and leakage risk before making model-quality claims.
 
 Generalization notes should separate training fit, validation selection, final test evidence, and deployment or OOD claims. Do not use train performance as evidence of generalization. A generalization claim should state example unit, split unit, training distribution, target evaluation distribution, model-selection rule, metric, uncertainty, leakage checks, and dataset-shift risks.

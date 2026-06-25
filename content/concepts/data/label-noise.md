@@ -32,6 +32,7 @@ where $\epsilon$ may depend on assay, instrument, annotator, batch, or context.
 - Noise may be random, systematic, adversarial, batch-specific, or protocol-specific.
 - Multiple sources can disagree because they measure different things, not because one is simply wrong.
 - In scientific data, label semantics matter: activity, affinity, potency, pose quality, and assay outcome are not interchangeable.
+- Missing, weak, and censored labels should be represented explicitly instead of collapsed into ordinary labels.
 
 ## Practical Checks
 
@@ -44,6 +45,9 @@ where $\epsilon$ may depend on assay, instrument, annotator, batch, or context.
 ## Related
 
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
+- [[concepts/data/missing-data|Missing data]]
+- [[concepts/data/censored-label|Censored label]]
+- [[concepts/data/weak-label|Weak label]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]

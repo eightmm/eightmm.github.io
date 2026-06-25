@@ -35,6 +35,9 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
 - [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/data/label-noise|Label noise]]
+- [[concepts/data/missing-data|Missing data]]
+- [[concepts/data/censored-label|Censored label]]
+- [[concepts/data/weak-label|Weak label]]
 - [[concepts/data/class-imbalance|Class imbalance]]
 - [[concepts/data/dataset-shift|Dataset shift]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
@@ -51,6 +54,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - What schema defines the fields, units, identifiers, and relationships?
 - What produces the target label?
 - What exactly does the label mean?
+- Are missing, censored, and weak labels represented explicitly?
 - What metadata explains batch, source, protocol, time, species, target, or structure context?
 - What examples are missing because of collection bias?
 - Is the class or label distribution imbalanced?

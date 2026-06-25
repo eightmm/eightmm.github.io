@@ -102,6 +102,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
 - [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/data/label-noise|Label noise]]
+- [[concepts/data/missing-data|Missing data]]
+- [[concepts/data/censored-label|Censored label]]
+- [[concepts/data/weak-label|Weak label]]
 - [[concepts/data/class-imbalance|Class imbalance]]
 - [[concepts/data/dataset-shift|Dataset shift]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
@@ -234,6 +237,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/learning/supervised-learning|Supervised learning]]
+- [[concepts/learning/semi-supervised-learning|Semi-supervised learning]]
 - [[concepts/learning/pretraining|Pretraining]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/masked-modeling|Masked modeling]]
