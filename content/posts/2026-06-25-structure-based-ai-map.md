@@ -60,7 +60,11 @@ tags:
 
 1. [[research/structure-based-ai/index|Structure-Based AI]]
 2. [[research/structure-based-ai/protein-ligand-docking|Protein-ligand Docking]]
-3. [[papers/sbdd/posebusters|PoseBusters]]
-4. [[concepts/sbdd/scoring-function|Scoring Function]]
+3. [[concepts/sbdd/index|Structure-Based Drug Discovery]]
+4. [[concepts/sbdd/pose-quality|Pose Quality]]
+5. [[concepts/sbdd/binding-affinity|Binding Affinity]]
+6. [[papers/sbdd/posebusters|PoseBusters]]
 
 이 정도면 전체 분야를 처음부터 완벽하게 정리하려고 하기보다, 실제로 읽고 쓰면서 확장하기에 충분한 시작점입니다.
+
+이 사이트 자체를 어떻게 운영할지는 [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]에 따로 정리했습니다.

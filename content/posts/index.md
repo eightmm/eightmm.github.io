@@ -10,11 +10,23 @@ tags:
 
 ## 글
 
+- [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]
 - [[posts/2026-06-25-structure-based-ai-map|구조 기반 AI를 어떻게 정리할 것인가]]
 
-## 앞으로 쓸 글
+## 글감
 
 - [[concepts/generative-models/flow-matching|Flow matching]]을 직관적으로 정리하기
+- [[concepts/protein-modeling/protein-representation|Protein representation]]을 어떻게 볼 것인가
+- [[concepts/sbdd/pose-quality|Pose quality]]와 [[concepts/sbdd/binding-affinity|binding affinity]]를 왜 분리해야 하는가
 - 공개 가능한 [[infra/index|Infra]] 운영 노하우 정리하기
 - [[agents/coding-agents|Coding agents]]를 연구 workflow에 쓰는 방법 정리하기
 - 논문 읽기 흐름을 [[papers/index|paper note]]와 연결하기
+
+## 연결되는 Wiki
+
+- [[ai/index|AI]]
+- [[bio-ai/index|Bio-AI]]
+- [[research/index|Research]]
+- [[papers/index|Papers]]
+- [[infra/index|Infra]]
+- [[agents/index|Agents]]
