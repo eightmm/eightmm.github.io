@@ -11,7 +11,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 ## Flow
 
-1. Triage the paper into a topic bucket.
+1. Triage the paper with [[papers/paper-triage|Paper triage]].
 2. Verify metadata and source links.
 3. Write the paper-specific note using [[papers/paper-note-format|Paper note format]].
 4. Extract claims using [[papers/claim-extraction|Claim extraction]].
@@ -42,6 +42,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 ## Checks
 
+- Is the paper worth a curated note, or should it only update an existing concept?
 - Are formulas rewritten with symbol definitions rather than copied blindly?
 - Are metrics connected to [[concepts/evaluation/metric|Metric]] and split protocol?
 - Are reported gains larger than [[concepts/evaluation/confidence-interval|confidence intervals]] or run-to-run variance?
@@ -53,6 +54,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 ## Related
 
 - [[papers/index|Papers]]
+- [[papers/paper-triage|Paper triage]]
 - [[papers/reading-status|Reading status]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/evidence-table|Evidence table]]

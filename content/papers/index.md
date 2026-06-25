@@ -13,6 +13,7 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 ## Method
 
 - [[papers/paper-note-format|Paper note format]]
+- [[papers/paper-triage|Paper triage]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/reading-status|Reading status]]
 - [[papers/claim-extraction|Claim extraction]]

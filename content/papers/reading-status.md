@@ -20,7 +20,7 @@ Reading status keeps paper notes honest. It separates raw candidates from verifi
 
 ## Promotion Rules
 
-- Candidate to triaged: topic relevance is clear.
+- Candidate to triaged: topic relevance is clear and [[papers/paper-triage|Paper triage]] has a destination.
 - Triaged to reading: source link and basic metadata are present.
 - Reading to verified: claims are tied to evidence, metrics, and limitations.
 - Verified to synthesis: the paper changes how a concept, method, or workflow is explained.
@@ -35,6 +35,7 @@ Reading status keeps paper notes honest. It separates raw candidates from verifi
 ## Related
 
 - [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/paper-triage|Paper triage]]
 - [[papers/paper-note-format|Paper note format]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]

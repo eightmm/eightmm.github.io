@@ -20,11 +20,12 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 
 1. Daily brief enters [[inbox/index|Inbox]].
 2. Unclear items stay in [[inbox/curation-queue|Curation queue]].
-3. Interesting items become [[papers/index|Paper]] stubs with [[papers/reading-status|reading status]].
-4. Reusable ideas update [[concepts/index|Concepts]].
-5. Research relevance is linked into [[research/index|Research]].
-6. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
-7. Weekly or monthly synthesis becomes [[posts/index|Posts]].
+3. Interesting items pass [[papers/paper-triage|Paper triage]].
+4. Selected items become [[papers/index|Paper]] stubs with [[papers/reading-status|reading status]].
+5. Reusable ideas update [[concepts/index|Concepts]].
+6. Research relevance is linked into [[research/index|Research]].
+7. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
+8. Weekly or monthly synthesis becomes [[posts/index|Posts]].
 
 ## Rules
 
@@ -41,6 +42,7 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 - [[papers/paper-note-format|Paper note format]]
+- [[papers/paper-triage|Paper triage]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/evidence-table|Evidence table]]

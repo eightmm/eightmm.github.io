@@ -53,6 +53,7 @@ tags:
 
 ## Papers
 
+- 논문 후보를 [[papers/paper-triage|paper triage]]로 drop/inbox/paper note/concept update/synthesis로 나누는 법
 - 논문 하나를 [[papers/paper-note-format|paper note]]에서 [[concepts/index|concept note]]로 분해하는 법
 - [[papers/claim-extraction|Claim extraction]], [[papers/evidence-table|evidence table]], [[papers/limitation-taxonomy|limitation taxonomy]]로 논문 주장을 좁히는 법
 - [[papers/benchmark-card|Benchmark card]]와 [[papers/ablation-map|ablation map]]으로 benchmark와 component claim을 분리해서 읽는 법
