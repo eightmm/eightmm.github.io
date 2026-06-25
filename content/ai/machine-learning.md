@@ -41,7 +41,8 @@ $$
 ## 학습의 기본 요소
 
 - Objective: 무엇을 줄이거나 키울 것인가
-- Loss: prediction error를 어떻게 수치화할 것인가
+- [[concepts/machine-learning/loss-function|Loss function]]: prediction error를 어떻게 수치화할 것인가
+- [[concepts/machine-learning/training-loop|Training loop]]: forward, loss, backward, update를 어떻게 반복할 것인가
 - [[concepts/machine-learning/optimization|Optimization]]: parameter를 어떻게 업데이트할 것인가
 - [[concepts/machine-learning/regularization|Regularization]]: overfitting을 어떻게 줄일 것인가
 - Validation: model selection을 어떤 split에서 할 것인가

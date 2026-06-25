@@ -30,7 +30,7 @@ Here $h_i$ is a node state, $e_{ij}$ is an edge feature, and $\mathcal{N}(i)$ is
 - Nodes hold entity features; edges hold relationships such as bonds, distances, contacts, or interaction types.
 - Message passing repeatedly updates node or edge states from local neighborhoods.
 - Readout functions pool graph information for graph-level tasks such as property prediction.
-- Edge construction is a modeling choice: chemical bonds, k-nearest neighbors, radius graphs, contact maps, or learned edges change the problem.
+- [[concepts/architectures/graph-construction|Graph construction]] is a modeling choice: chemical bonds, k-nearest neighbors, radius graphs, contact maps, or learned edges change the problem.
 - Geometry-aware variants connect message passing to [[concepts/geometric-deep-learning/equivariance|equivariance]] and coordinate updates.
 
 ## Practical Checks
@@ -42,6 +42,7 @@ Here $h_i$ is a node state, $e_{ij}$ is an edge feature, and $\mathcal{N}(i)$ is
 
 ## Related
 
+- [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/architectures/pooling-readout|Pooling and readout]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

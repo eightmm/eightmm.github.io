@@ -27,6 +27,7 @@ $$
 - [[concepts/architectures/activation-function|Activation function]]
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/residual-connection|Residual connection]]
+- [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/positional-encoding|Positional encoding]]
 - [[concepts/architectures/softmax|Softmax]]
@@ -74,6 +75,7 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 순서가 없거나 관계 구조가 중요한 객체를 다룹니다.
 
 - [[concepts/architectures/deep-sets|Deep Sets]]
+- [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph transformer]]
 

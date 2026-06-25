@@ -37,6 +37,8 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 
 ## Methods
 
+- [[concepts/machine-learning/loss-function|Loss function]]
+- [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/regularization|Regularization]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/clustering|Clustering]]

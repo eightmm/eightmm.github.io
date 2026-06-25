@@ -35,6 +35,7 @@ Here $\rho(g)$ describes how the output representation should transform.
 
 ## Models and Operations
 
+- [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
 

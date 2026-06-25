@@ -23,6 +23,7 @@ The same training objective can behave very differently depending on whether $\m
 - [[concepts/architectures/activation-function|Activation function]]
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/residual-connection|Residual connection]]
+- [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/positional-encoding|Positional encoding]]
 - [[concepts/architectures/softmax|Softmax]]
@@ -58,6 +59,7 @@ The same training objective can behave very differently depending on whether $\m
 ## Set, Graph, and Sparse Models
 
 - [[concepts/architectures/deep-sets|Deep Sets]]
+- [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
 - [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
