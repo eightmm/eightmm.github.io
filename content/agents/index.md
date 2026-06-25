@@ -14,12 +14,16 @@ This section should stay practical: what the agent is useful for, where it fails
 
 ## Core Concepts
 
+- [[agents/agent-architecture|Agent architecture]]
 - [[agents/agent-loop|Agent loop]]
+- [[agents/agent-state|Agent state]]
 - [[agents/context-engineering|Context engineering]]
 - [[agents/tool-use|Tool use]]
+- [[agents/tool-contract|Tool contract]]
 - [[agents/planning|Planning]]
 - [[agents/agent-memory|Agent memory]]
 - [[agents/verification-loop|Verification loop]]
+- [[agents/reflection-and-critique|Reflection and critique]]
 - [[agents/agent-evaluation|Agent evaluation]]
 - [[agents/human-in-the-loop|Human in the loop]]
 - [[agents/prompt-injection|Prompt injection]]
@@ -28,6 +32,7 @@ This section should stay practical: what the agent is useful for, where it fails
 
 - [[agents/coding-agents|Coding agents]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
+- [[agents/agent-orchestration|Agent orchestration]]
 - [[agents/multi-agent-review|Multi-agent review]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 

@@ -37,6 +37,8 @@ Systems paper notes cover infrastructure, training efficiency, inference serving
 - [[infra/distributed-training|Distributed training]]
 - [[infra/inference-serving|Inference serving]]
 - [[infra/reproducible-run-record|Reproducible run record]]
+- [[agents/agent-architecture|Agent architecture]]
+- [[agents/agent-orchestration|Agent orchestration]]
 - [[agents/agent-evaluation|Agent evaluation]]
 
 ## Related
