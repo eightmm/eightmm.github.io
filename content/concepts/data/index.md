@@ -22,8 +22,12 @@ Training and evaluation are only meaningful when this empirical distribution is 
 ## Topics
 
 - [[entities/dataset|Dataset]]
+- [[concepts/data/dataset-card|Dataset card]]
+- [[concepts/data/example-unit|Example unit]]
+- [[concepts/data/split-unit|Split unit]]
 - [[concepts/data/data-distribution|Data distribution]]
 - [[concepts/data/data-schema|Data schema]]
+- [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/data/data-curation|Data curation]]
 - [[concepts/data/data-versioning|Data versioning]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
@@ -38,6 +42,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 ## Checks
 
 - What is one example?
+- What is the split unit?
 - What distribution should the dataset represent?
 - What schema defines the fields, units, identifiers, and relationships?
 - What produces the target label?

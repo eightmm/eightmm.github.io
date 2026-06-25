@@ -52,6 +52,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 
 - What is the raw input signal?
 - What is the tensor, token, graph, or coordinate representation after preprocessing?
+- What [[concepts/data/preprocessing-contract|preprocessing contract]] turns the raw signal into model input?
 - Which information is lost before the model sees the input?
 - Does the model need alignment between modalities?
 - Can the model handle missing, delayed, or corrupted modalities?

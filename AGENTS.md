@@ -83,6 +83,8 @@ Bio scope should stay focused on structure-based AI, protein modeling, ligand/mo
 
 Chem-bio notes should preserve data semantics: standardize molecules before deduplication and splitting, state tautomer/protonation/stereo choices, keep target and assay context explicit, prefer scaffold or protein-family splits over random splits, and flag template leakage risks in structure-based benchmarks. Do not invent assay metadata, target details, activity values, or benchmark metrics.
 
+Data notes should define example unit, split unit, preprocessing contract, label semantics, and dataset-card style limitations before adding model claims. Do not treat a row identifier as the split unit unless the note explains why that matches the generalization claim.
+
 Infra and HPC notes should be general research-engineering knowledge, not a map of any private cluster. For new HPC notes, prefer generic concepts such as resource scheduling, resource requests, job arrays, checkpointing, preemption/resume, GPU memory, storage IO, environment management, and reproducible run records. Update `content/infra/index.md`, the relevant `content/infra/hpc/` or `content/infra/server-ops/` index, and `content/concepts/systems/index.md` when the concept belongs to AI systems.
 
 Do not expand `research/` just to fill the site. Prefer `ai/`, `math/`, `concepts/`, `entities/`, `papers/`, `agents/`, and `infra/` until the user provides a concrete research direction.

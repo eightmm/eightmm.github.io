@@ -35,6 +35,8 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 ## Checks
 
 - What is the output space?
+- What is the [[concepts/data/example-unit|example unit]]?
+- What [[concepts/data/split-unit|split unit]] tests the intended generalization?
 - Is the model predicting, ranking, retrieving, generating, localizing, or segmenting?
 - Is the output independent, sequential, structured, ranked, spatial, or temporal?
 - Does the metric match the user-facing behavior?

@@ -19,6 +19,7 @@ tags:
 - [[concepts/evaluation/classification-metrics|Classification metrics]], [[concepts/evaluation/regression-metrics|regression metrics]], [[concepts/evaluation/generation-evaluation|generation evaluation]]을 task별로 구분하는 법
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]와 [[concepts/evaluation/threshold-selection|threshold selection]]으로 classification 결과를 decision 관점에서 읽는 법
 - [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]], [[concepts/evaluation/confidence-interval|confidence interval]], [[concepts/evaluation/reliability-diagram|reliability diagram]]으로 reported metric을 신뢰도 관점에서 해석하기
+- [[concepts/data/example-unit|Example unit]], [[concepts/data/split-unit|split unit]], [[concepts/data/preprocessing-contract|preprocessing contract]]를 data leakage 방지의 기본 단어로 쓰는 법
 - [[concepts/data/data-distribution|Data distribution]], [[concepts/data/data-schema|data schema]], [[concepts/data/label-semantics|label semantics]], [[concepts/data/dataset-shift|dataset shift]]를 모델보다 먼저 확인하는 이유
 - [[concepts/architectures/inductive-bias|Inductive bias]], [[concepts/architectures/parameter-sharing|parameter sharing]], [[concepts/architectures/computational-complexity|computational complexity]]를 architecture 선택 기준으로 쓰는 법
 - Text, [[concepts/modalities/image|image]], [[concepts/modalities/video|video]], [[concepts/modalities/sequence|sequence]], [[concepts/modalities/3d-structure|3D structure]]를 modality 관점에서 비교하기

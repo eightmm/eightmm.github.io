@@ -70,8 +70,12 @@ AI 모델은 데이터 정의 위에서만 의미가 있습니다. 어떤 exampl
 
 - [[concepts/data/index|Data]]
 - [[entities/dataset|Dataset]]
+- [[concepts/data/dataset-card|Dataset card]]
+- [[concepts/data/example-unit|Example unit]]
+- [[concepts/data/split-unit|Split unit]]
 - [[concepts/data/data-distribution|Data distribution]]
 - [[concepts/data/data-schema|Data schema]]
+- [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/data/data-curation|Data curation]]
 - [[concepts/data/data-versioning|Data versioning]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
