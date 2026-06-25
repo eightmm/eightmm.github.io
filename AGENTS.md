@@ -41,6 +41,8 @@ Keep the public entry points aligned with `content/index.md` and the Quartz Expl
 - `projects/`: Public project notes and implementation narratives.
 - `posts/`: Korean narrative blog posts.
 
+Public top-level navigation should stay small and stable. Do not add a new Explorer root for a concept family just because many notes exist. Prefer linking support folders from the nearest gateway page.
+
 Keep supporting wiki areas available for links, but do not expose every support folder as a main public area unless the user asks:
 
 - `entities/`: Protein, ligand, molecule, protein-ligand complex, sequence, structure, assay, dataset, genome, and other modeled objects. Treat this as a vocabulary layer, not a research category by itself.
@@ -53,12 +55,22 @@ Keep supporting wiki areas available for links, but do not expose every support 
 - `inbox/`: Sanitized daily paper briefs and uncurated candidates.
 - `logs/`: Clean public logs and sanitization records.
 
+Architecture pages should be organized by selection logic, not by popularity:
+
+- First explain the decision criteria: input object, symmetry, inductive bias, parameter sharing, computational complexity, task, and evaluation risk.
+- Keep model families under `concepts/architectures/`: MLP, CNN, RNN/LSTM/GRU, Transformer variants, GNN/Graph Transformer, Deep Sets/Set Transformer, state-space models, Mamba as a selective state-space model, Perceiver, U-Net, ViT, MoE, and related blocks.
+- Do not make `Mamba`, `LLM`, `SSL`, or any single trend a top-level public area unless the user explicitly asks.
+- Geometry as math belongs under `concepts/math/`; geometric deep learning belongs under `concepts/geometric-deep-learning/`; gateway pages may explain the relationship in Korean.
+- When adding architecture notes, update `content/ai/architectures.md`, `content/concepts/architectures/index.md`, and `content/concepts/index.md` together.
+
 Organize `agents/` with stable subfolders:
 
 - `agents/core/`: Agent architecture, loop, state, memory, planning, and context engineering.
 - `agents/tools/`: Tool use and tool contracts.
 - `agents/workflows/`: Coding agents, paper-brief workflows, orchestration, multi-agent review, and LLM Wiki operations.
 - `agents/verification/`: Verification loop, reflection, evaluation, human-in-the-loop, and prompt-injection notes.
+
+Agent content should stay grouped under `agents/`; do not scatter agent notes into `ai/` except for short links from the AI gateway. Agent pages should explain model-state-tool-memory-verifier structure, workflow runbooks, tool contracts, and verification habits with public, generic examples.
 
 Bio scope should stay focused on structure-based AI, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
 

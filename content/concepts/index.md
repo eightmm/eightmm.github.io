@@ -38,7 +38,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Data path: [[entities/dataset|Dataset]] -> [[concepts/data/data-distribution|Data distribution]] -> [[concepts/data/data-schema|Data schema]] -> [[concepts/data/data-curation|Data curation]] -> [[concepts/data/data-versioning|Data versioning]] -> [[concepts/data/label-semantics|Label semantics]] -> [[concepts/data/label-noise|Label noise]] -> [[concepts/data/dataset-shift|Dataset shift]] -> [[concepts/data/benchmark|Benchmark]]
 - Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/sequence|Sequence]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/tabular|Tabular]] -> [[concepts/modalities/graph|Graph]] -> [[concepts/modalities/3d-structure|3D structure]] -> [[concepts/modalities/modality-alignment|Modality alignment]] -> [[concepts/modalities/missing-modality|Missing modality]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]] -> [[concepts/tasks/structured-prediction|Structured prediction]]
-- Deep learning architecture: [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
+- Deep learning architecture: [[concepts/architectures/inductive-bias|Inductive bias]] -> [[concepts/architectures/parameter-sharing|Parameter sharing]] -> [[concepts/architectures/computational-complexity|Computational complexity]] -> [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
 - Systems path: [[concepts/systems/training-run|Training run]] -> [[concepts/systems/checkpoint-state|Checkpoint state]] -> [[concepts/systems/inference|Inference]] -> [[concepts/systems/batch-online-inference|Batch and online inference]] -> [[concepts/systems/model-serving|Model serving]] -> [[concepts/systems/failure-recovery|Failure recovery]] -> [[concepts/systems/reproducibility|Reproducibility]]
 - Research method path: [[concepts/research-methodology/research-question|Research question]] -> [[concepts/research-methodology/hypothesis|Hypothesis]] -> [[concepts/research-methodology/experiment-design|Experiment design]] -> [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - Agent path: [[agents/core/agent-architecture|Agent architecture]] -> [[agents/core/context-engineering|Context engineering]] -> [[agents/tools/tool-contract|Tool contract]] -> [[agents/verification/verification-loop|Verification loop]]
@@ -132,6 +132,10 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Architectures
 
 - [[concepts/architectures/index|Architectures]]
+- [[concepts/architectures/inductive-bias|Inductive bias]]
+- [[concepts/architectures/parameter-sharing|Parameter sharing]]
+- [[concepts/architectures/architecture-selection|Architecture selection]]
+- [[concepts/architectures/computational-complexity|Computational complexity]]
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/architectures/activation-function|Activation function]]
 - [[concepts/architectures/normalization|Normalization]]

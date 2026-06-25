@@ -19,6 +19,10 @@ The same training objective can behave very differently depending on whether $\m
 
 ## Basic Blocks
 
+- [[concepts/architectures/inductive-bias|Inductive bias]]
+- [[concepts/architectures/parameter-sharing|Parameter sharing]]
+- [[concepts/architectures/architecture-selection|Architecture selection]]
+- [[concepts/architectures/computational-complexity|Computational complexity]]
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/architectures/activation-function|Activation function]]
 - [[concepts/architectures/normalization|Normalization]]
@@ -78,15 +82,20 @@ The same training objective can behave very differently depending on whether $\m
 ## Reading Checklist
 
 - What is the input object: vector, sequence, grid, graph, structure, or mixed modality?
+- What [[concepts/architectures/inductive-bias|inductive bias]] is being assumed?
+- Where is [[concepts/architectures/parameter-sharing|parameter sharing]] used, and what symmetry does it encode?
 - What mixes information: dense layers, convolution, recurrence, state update, message passing, or attention?
 - What inductive bias is assumed: locality, order, permutation invariance, equivariance, sparsity, or routing?
+- What is the dominant [[concepts/architectures/computational-complexity|computational complexity]] term?
 - What fails first in practice: memory, length, graph size, data leakage, calibration, or decoding constraints?
 
 ## Related
 
 - [[entities/index|Entities]]
 - [[concepts/modalities/index|Modalities]]
+- [[concepts/tasks/index|Tasks]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]
+- [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[research/protein-modeling/index|Protein modeling]]

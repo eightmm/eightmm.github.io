@@ -19,6 +19,15 @@ $$
 
 예를 들어 CNN은 locality와 translation equivariance를 강하게 가정하고, GNN은 graph connectivity와 permutation invariance/equivariance를 가정합니다.
 
+## 고르는 기준
+
+아키텍처를 볼 때는 "유명한 모델인가"보다 "어떤 입력 구조와 대칭성을 가정하는가"를 먼저 봐야 합니다.
+
+- [[concepts/architectures/inductive-bias|Inductive bias]]: architecture가 어떤 함수 공간을 선호하는가
+- [[concepts/architectures/parameter-sharing|Parameter sharing]]: 같은 parameter를 어디에 반복 적용하는가
+- [[concepts/architectures/architecture-selection|Architecture selection]]: modality, task, data, compute를 기준으로 모델 family를 고르는 법
+- [[concepts/architectures/computational-complexity|Computational complexity]]: sequence length, graph size, image resolution이 커질 때 비용이 어떻게 늘어나는가
+
 ## 기본 구성요소
 
 딥러닝 아키텍처를 읽을 때 먼저 봐야 하는 building block입니다.

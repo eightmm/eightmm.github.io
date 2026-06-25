@@ -118,6 +118,10 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 아키텍처 노트는 입력의 형태와 inductive bias를 기준으로 봅니다. 이미지, sequence, graph, structure, set처럼 데이터가 달라지면 좋은 기본 구조도 달라집니다.
 
 - [[ai/architectures|아키텍처 지도]]
+- [[concepts/architectures/inductive-bias|Inductive bias]]
+- [[concepts/architectures/parameter-sharing|Parameter sharing]]
+- [[concepts/architectures/architecture-selection|Architecture selection]]
+- [[concepts/architectures/computational-complexity|Computational complexity]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/cnn|CNN]]
