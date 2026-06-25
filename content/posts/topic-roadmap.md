@@ -13,6 +13,8 @@ tags:
 
 - Machine learning을 왜 [[concepts/data/index|Data]], [[concepts/tasks/index|Tasks]], [[concepts/architectures/index|Architectures]], [[concepts/evaluation/index|Evaluation]]로 나눠 봐야 하는가
 - [[concepts/math/index|Math foundations]]를 AI 글에서 어느 정도까지 써야 하는가
+- [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], [[concepts/machine-learning/gradient-descent|gradient descent]]를 training loop의 기본 수식으로 설명하기
+- [[concepts/machine-learning/weight-decay|Weight decay]]와 [[concepts/machine-learning/gradient-clipping|gradient clipping]]을 optimizer 설정이 아니라 training stability와 generalization 관점에서 보기
 - [[concepts/math/statistical-estimator|Statistical estimator]]와 [[concepts/math/bias-variance-tradeoff|bias-variance tradeoff]]를 실험 해석의 기본 언어로 쓰는 법
 - [[concepts/evaluation/classification-metrics|Classification metrics]], [[concepts/evaluation/regression-metrics|regression metrics]], [[concepts/evaluation/generation-evaluation|generation evaluation]]을 task별로 구분하는 법
 - [[concepts/data/data-distribution|Data distribution]], [[concepts/data/data-schema|data schema]], [[concepts/data/label-semantics|label semantics]], [[concepts/data/dataset-shift|dataset shift]]를 모델보다 먼저 확인하는 이유

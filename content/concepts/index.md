@@ -33,7 +33,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 ## Reading Paths
 
-- AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/index|Machine learning]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
+- AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]] -> [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
 - Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/calculus|Calculus]] -> [[concepts/math/matrix-calculus|Matrix calculus]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - Data path: [[entities/dataset|Dataset]] -> [[concepts/data/data-distribution|Data distribution]] -> [[concepts/data/data-schema|Data schema]] -> [[concepts/data/data-curation|Data curation]] -> [[concepts/data/data-versioning|Data versioning]] -> [[concepts/data/label-semantics|Label semantics]] -> [[concepts/data/label-noise|Label noise]] -> [[concepts/data/dataset-shift|Dataset shift]] -> [[concepts/data/benchmark|Benchmark]]
 - Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/sequence|Sequence]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/tabular|Tabular]] -> [[concepts/modalities/graph|Graph]] -> [[concepts/modalities/3d-structure|3D structure]] -> [[concepts/modalities/modality-alignment|Modality alignment]] -> [[concepts/modalities/missing-modality|Missing modality]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
@@ -173,12 +173,16 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/machine-learning/ranking|Ranking]]
 - [[concepts/machine-learning/density-estimation|Density estimation]]
 - [[concepts/machine-learning/representation-learning|Representation learning]]
+- [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/training-loop|Training loop]]
+- [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
+- [[concepts/machine-learning/weight-decay|Weight decay]]
+- [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
 - [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/machine-learning/linear-model|Linear model]]
 - [[concepts/machine-learning/tree-based-model|Tree-based model]]

@@ -138,4 +138,5 @@ Paper notes should not stop at summary. When a paper is important, extract claim
 - When a formula has standard intermediate variables, include them unless doing so would obscure the note: logits, probabilities, hidden states, messages, score/velocity/noise targets, or metric components.
 - Do not add equations only for decoration. Use them to clarify assumptions, training signals, evaluation metrics, or model structure.
 - For AI/ML notes, formulas should be included whenever the topic naturally has one: loss functions, empirical risk, likelihood, Bayes rule, attention, graph message passing, diffusion/flow objectives, calibration, and evaluation metrics.
+- For optimization notes, include the full update rule when useful: objective, gradient estimate, learning rate, optimizer state, regularizer, clipping rule, and symbol definitions.
 - Keep formulas public and generic. Do not include private dataset names, unpublished results, or internal experiment details.

@@ -43,12 +43,16 @@ $$
 ## 학습의 기본 요소
 
 - Objective: 무엇을 줄이거나 키울 것인가
+- [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]: observed data에서 평균 손실을 줄이는 기본 원리
 - [[concepts/machine-learning/loss-function|Loss function]]: prediction error를 어떻게 수치화할 것인가
 - [[concepts/machine-learning/training-loop|Training loop]]: forward, loss, backward, update를 어떻게 반복할 것인가
 - [[concepts/machine-learning/optimization|Optimization]]: parameter를 어떻게 업데이트할 것인가
+- [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]: mini-batch로 full gradient를 어떻게 추정할 것인가
 - [[concepts/machine-learning/backpropagation|Backpropagation]]: loss에서 parameter gradient를 어떻게 계산할 것인가
 - [[concepts/machine-learning/optimizer|Optimizer]]: gradient를 실제 update로 어떻게 바꿀 것인가
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]: update 크기를 시간에 따라 어떻게 조절할 것인가
+- [[concepts/machine-learning/weight-decay|Weight decay]]: parameter 크기를 어떻게 제한할 것인가
+- [[concepts/machine-learning/gradient-clipping|Gradient clipping]]: 불안정한 gradient를 어떻게 제한할 것인가
 - [[concepts/machine-learning/batch-size|Batch size]]: gradient estimate와 memory/throughput을 어떻게 trade-off할 것인가
 - [[concepts/machine-learning/regularization|Regularization]]: overfitting을 어떻게 줄일 것인가
 - [[concepts/evaluation/train-validation-test-split|Validation split]]: model selection을 어떤 split에서 할 것인가

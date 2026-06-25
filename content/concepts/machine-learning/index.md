@@ -47,15 +47,19 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 
 ## Methods
 
+- [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/regularization|Regularization]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 - [[concepts/machine-learning/optimization|Optimization]]
+- [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
+- [[concepts/machine-learning/weight-decay|Weight decay]]
+- [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
 - [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/machine-learning/clustering|Clustering]]
 - [[concepts/machine-learning/dimensionality-reduction|Dimensionality reduction]]
