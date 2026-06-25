@@ -26,10 +26,13 @@ tags:
 
 - [[concepts/systems/index|AI systems]]
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/storage-io|Storage and IO]]
 - [[concepts/systems/observability|Observability]]
+- [[concepts/systems/failure-recovery|Failure recovery]]
 - [[concepts/systems/inference|Inference]]
+- [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[infra/data-loading-io|Data loading and IO]]
 - [[infra/distributed-training|Distributed training]]

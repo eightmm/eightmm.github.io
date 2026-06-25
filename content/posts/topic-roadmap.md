@@ -40,6 +40,8 @@ tags:
 
 - [[infra/hpc/slurm|Slurm]]을 연구 workflow 관점에서 이해하기
 - [[infra/gpu-memory|GPU memory]] 문제를 parameters, activations, optimizer state, KV cache로 나눠 보는 법
+- [[concepts/systems/checkpoint-state|Checkpoint state]]와 [[concepts/systems/failure-recovery|failure recovery]]를 긴 training run의 기본 설계로 보는 법
+- [[concepts/systems/batch-online-inference|Batch and online inference]]를 throughput/latency 관점에서 나눠 보는 법
 - [[infra/reproducible-run-record|Reproducible run record]]를 왜 연구 로그와 연결해야 하는가
 
 ## Agents

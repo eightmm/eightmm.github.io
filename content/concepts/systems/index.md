@@ -21,13 +21,16 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 ## Topics
 
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/inference|Inference]]
+- [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[concepts/systems/storage-io|Storage and IO]]
 - [[concepts/systems/observability|Observability]]
+- [[concepts/systems/failure-recovery|Failure recovery]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 
@@ -37,6 +40,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - Is the environment and storage path part of the run record?
 - Is the goal model quality, time-to-train, cost, latency, throughput, or reliability?
 - Can the run be reproduced from a commit, config, seed, dataset version, and environment?
+- Can the workflow recover from preemption, partial output, or service failure?
 - Are training metrics, validation metrics, and serving metrics separated?
 - Does the deployment path preserve the same preprocessing and constraints as evaluation?
 

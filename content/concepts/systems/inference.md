@@ -43,6 +43,7 @@ Inference cost depends on input length, output length, batch size, model size, p
 
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
+- [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[infra/inference-serving|Inference serving]]

@@ -42,5 +42,7 @@ but the actual run also includes optimizer state, scheduler state, random seeds,
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
+- [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
+- [[concepts/systems/failure-recovery|Failure recovery]]
 - [[infra/hpc/checkpointing|Checkpointing]]

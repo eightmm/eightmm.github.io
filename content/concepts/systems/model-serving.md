@@ -40,7 +40,9 @@ $$
 ## Related
 
 - [[concepts/systems/inference|Inference]]
+- [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
+- [[concepts/systems/failure-recovery|Failure recovery]]
 - [[infra/inference-serving|Inference serving]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
 - [[agents/tools/tool-use|Tool use]]
