@@ -28,6 +28,20 @@ $$
 \left[-\log p_\theta(x_{\mathrm{masked}} \mid x_{\mathrm{visible}})\right]
 $$
 
+Reinforcement learning은 label 대신 environment나 evaluator가 주는 reward를 최대화합니다.
+
+$$
+\max_\theta
+J(\theta)
+=
+\mathbb{E}_{\tau\sim\pi_\theta}
+\left[
+\sum_{t=0}^{T}\gamma^t r(s_t,a_t)
+\right]
+$$
+
+Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning과 RL-style objective를 분리해서 보는 것이 중요합니다.
+
 ## 핵심 노트
 
 - [[concepts/learning/index|Learning methods]]
@@ -38,6 +52,11 @@ $$
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
+- [[concepts/learning/reinforcement-learning|Reinforcement learning]]
+- [[concepts/learning/policy-gradient|Policy gradient]]
+- [[concepts/learning/reward-modeling|Reward modeling]]
+- [[concepts/learning/imitation-learning|Imitation learning]]
+- [[concepts/learning/active-learning|Active learning]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 
 ## 읽을 때 볼 질문
@@ -46,9 +65,11 @@ $$
 - representation을 instance-level, token-level, structure-level 중 어디에 맞출 것인가?
 - downstream task와 pretraining task 사이에 mismatch가 있는가?
 - objective가 downstream evaluation과 같은 정보를 요구하는가?
+- reward나 preference signal이 실제 목표와 proxy mismatch를 일으키지 않는가?
 
 ## Related
 
 - [[ai/architectures|Architectures]]
 - [[ai/evaluation|Evaluation]]
 - [[ai/learning-methods|Learning methods]]
+- [[agents/index|Agents]]

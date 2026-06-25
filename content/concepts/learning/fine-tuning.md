@@ -38,3 +38,5 @@ $$
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 - [[concepts/learning/supervised-learning|Supervised learning]]
+- [[concepts/learning/imitation-learning|Imitation learning]]
+- [[concepts/learning/reward-modeling|Reward modeling]]

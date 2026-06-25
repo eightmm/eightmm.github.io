@@ -7,12 +7,12 @@ tags:
 
 # Learning Method Papers
 
-Learning method paper notes focus on objectives, pretraining signals, transfer, fine-tuning, preference optimization, and representation learning.
+Learning method paper notes focus on objectives, pretraining signals, transfer, fine-tuning, active learning, reinforcement learning, preference optimization, and representation learning.
 
 ## Reading Axes
 
 - What target signal is constructed?
-- Is the method supervised, self-supervised, contrastive, masked, predictive, or preference-based?
+- Is the method supervised, self-supervised, contrastive, masked, predictive, active, reinforcement-based, or preference-based?
 - What changes: data construction, objective, architecture, optimization, or evaluation?
 - Does the representation transfer to downstream tasks?
 - Are train/test near-duplicates or benchmark leakage controlled?
@@ -28,6 +28,9 @@ Learning method paper notes focus on objectives, pretraining signals, transfer, 
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[concepts/learning/active-learning|Active learning]]
+- [[concepts/learning/reinforcement-learning|Reinforcement learning]]
+- [[concepts/learning/reward-modeling|Reward modeling]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 
 ## Related

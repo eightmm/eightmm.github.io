@@ -36,6 +36,13 @@ This section should stay practical: what the agent is useful for, where it fails
 - [[agents/multi-agent-review|Multi-agent review]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 
+## Learning and Feedback
+
+- [[concepts/learning/imitation-learning|Imitation learning]]
+- [[concepts/learning/reinforcement-learning|Reinforcement learning]]
+- [[concepts/learning/reward-modeling|Reward modeling]]
+- [[concepts/learning/preference-optimization|Preference optimization]]
+
 ## Writing Rules
 
 - Explain workflows with generic examples.

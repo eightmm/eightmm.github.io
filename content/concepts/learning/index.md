@@ -24,7 +24,8 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 - [[concepts/learning/supervised-learning|Supervised learning]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
-- [[concepts/learning/preference-optimization|Preference optimization]]
+- [[concepts/learning/imitation-learning|Imitation learning]]
+- [[concepts/learning/active-learning|Active learning]]
 
 ## Self-Supervised Learning
 
@@ -33,10 +34,18 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 - [[concepts/learning/jepa|JEPA]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 
+## Reinforcement and Preference Learning
+
+- [[concepts/learning/reinforcement-learning|Reinforcement learning]]
+- [[concepts/learning/policy-gradient|Policy gradient]]
+- [[concepts/learning/reward-modeling|Reward modeling]]
+- [[concepts/learning/preference-optimization|Preference optimization]]
+
 ## Related
 
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/evaluation/index|Evaluation]]
+- [[agents/index|Agents]]
 - [[research/protein-modeling/index|Protein modeling]]
 - [[research/structure-based-ai/index|Structure-based AI]]
