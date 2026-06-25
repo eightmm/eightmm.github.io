@@ -74,6 +74,7 @@ Adding devices helps only when the added parallelism reduces the dominant term m
 - Does single-device training produce a sensible loss curve before scaling out?
 - Is $B_{\mathrm{eff}}$ reported, including accumulation and world size?
 - Are learning rate schedule and warmup adjusted for the effective batch size?
+- Are gradient accumulation steps counted consistently across workers?
 - Are gradients synchronized at the intended frequency?
 - Does checkpoint state include distributed sampler, optimizer shards, and global step?
 - Is the bottleneck compute, communication, input pipeline, memory, or scheduler queue time?
@@ -85,6 +86,8 @@ Adding devices helps only when the added parallelism reduces the dominant term m
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[concepts/machine-learning/batch-size|Batch size]]
+- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
+- [[concepts/machine-learning/training-stability|Training stability]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[infra/distributed-training|Distributed training runbook]]
 - [[infra/gpu-memory|GPU memory]]

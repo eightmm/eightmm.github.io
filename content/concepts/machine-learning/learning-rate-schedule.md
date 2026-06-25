@@ -36,6 +36,7 @@ $$
 
 - Is warmup needed for large batch, mixed precision, or unstable early training?
 - Is total step count defined before choosing the schedule?
+- Are steps counted as micro-steps, optimizer steps, consumed samples, or epochs?
 - Are scheduler state and current step saved in checkpoints?
 - Are comparisons fair when different methods use different schedules?
 
@@ -43,5 +44,7 @@ $$
 
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/batch-size|Batch size]]
+- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
+- [[concepts/machine-learning/training-stability|Training stability]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[infra/reproducible-run-record|Reproducible run record]]

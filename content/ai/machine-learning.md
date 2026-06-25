@@ -57,8 +57,10 @@ $$
 - [[concepts/machine-learning/optimizer|Optimizer]]: gradient를 실제 update로 어떻게 바꿀 것인가
 - [[concepts/machine-learning/adam|Adam]]과 [[concepts/machine-learning/adamw|AdamW]]: adaptive moment와 decoupled weight decay를 어떻게 해석할 것인가
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]: update 크기를 시간에 따라 어떻게 조절할 것인가
+- [[concepts/machine-learning/training-stability|Training stability]]: loss, gradient norm, learning rate, batch size, checkpoint resume가 안정적으로 맞물리는가
 - [[concepts/machine-learning/weight-decay|Weight decay]]: parameter 크기를 어떻게 제한할 것인가
 - [[concepts/machine-learning/gradient-clipping|Gradient clipping]]: 불안정한 gradient를 어떻게 제한할 것인가
+- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]: memory limit 안에서 effective batch size를 어떻게 만들 것인가
 - [[concepts/machine-learning/batch-size|Batch size]]: gradient estimate와 memory/throughput을 어떻게 trade-off할 것인가
 - [[concepts/machine-learning/regularization|Regularization]]: overfitting을 어떻게 줄일 것인가
 - [[concepts/evaluation/train-validation-test-split|Validation split]]: model selection을 어떤 split에서 할 것인가
@@ -102,5 +104,7 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
+- [[concepts/machine-learning/training-stability|Training stability]]
+- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
 - [[concepts/systems/run-artifact|Run artifact]]

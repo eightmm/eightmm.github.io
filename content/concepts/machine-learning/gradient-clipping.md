@@ -57,4 +57,6 @@ Gradient clipping changes optimization dynamics. It should be recorded as part o
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
+- [[concepts/machine-learning/training-stability|Training stability]]
+- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
 - [[concepts/systems/training-run|Training run]]

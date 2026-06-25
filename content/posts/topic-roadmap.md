@@ -20,6 +20,8 @@ tags:
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]], [[concepts/machine-learning/mean-squared-error|mean squared error]], [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]]를 task와 probability model의 연결로 설명하기
 - [[concepts/evaluation/probability-metrics|Probability metrics]]로 NLL, Brier score, calibration, threshold metric을 구분하는 법
 - [[concepts/machine-learning/adam|Adam]]과 [[concepts/machine-learning/adamw|AdamW]]를 bias correction, adaptive step, decoupled weight decay 관점에서 설명하기
+- [[concepts/machine-learning/training-stability|Training stability]]로 loss, gradient norm, learning rate, batch size, resume 문제를 하나의 학습 안정성 축으로 보는 법
+- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]으로 micro-batch, optimizer step, effective batch size를 구분하는 법
 - [[concepts/machine-learning/weight-decay|Weight decay]]와 [[concepts/machine-learning/gradient-clipping|gradient clipping]]을 optimizer 설정이 아니라 training stability와 generalization 관점에서 보기
 - [[concepts/math/statistical-estimator|Statistical estimator]]와 [[concepts/math/bias-variance-tradeoff|bias-variance tradeoff]]를 실험 해석의 기본 언어로 쓰는 법
 - [[concepts/evaluation/classification-metrics|Classification metrics]], [[concepts/evaluation/regression-metrics|regression metrics]], [[concepts/evaluation/generation-evaluation|generation evaluation]]을 task별로 구분하는 법
