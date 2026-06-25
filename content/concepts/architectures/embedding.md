@@ -25,6 +25,8 @@ $$
 
 where $p_t$ is a positional or structural encoding.
 
+Embeddings are often compared with [[concepts/math/vector-norm-similarity|dot product, cosine similarity, or Euclidean distance]], depending on whether magnitude should affect the score.
+
 ## Checks
 
 - What does one token represent: wordpiece, residue, atom, k-mer, patch, or node?
@@ -37,5 +39,6 @@ where $p_t$ is a positional or structural encoding.
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/positional-encoding|Positional encoding]]
+- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[entities/sequence|Sequence]]

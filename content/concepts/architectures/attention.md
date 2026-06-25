@@ -19,6 +19,8 @@ $$
 
 Here $Q$ contains queries, $K$ contains keys, $V$ contains values, and $d_k$ is the key dimension. The softmax term defines which elements are mixed.
 
+The score $QK^\top$ is a batched [[concepts/math/vector-norm-similarity|dot-product similarity]] between query and key vectors.
+
 For an input sequence $X\in\mathbb{R}^{T\times d_{\mathrm{model}}}$, self-attention first projects tokens into queries, keys, and values:
 
 $$
@@ -71,6 +73,7 @@ $$
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder architectures]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]

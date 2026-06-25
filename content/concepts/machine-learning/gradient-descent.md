@@ -21,6 +21,8 @@ $$
 
 where $\theta_t$ are parameters, $\eta_t$ is the learning rate, and $\nabla_\theta\mathcal{L}$ is the gradient.
 
+The local geometry of the loss is controlled by [[concepts/math/jacobian-hessian|Jacobian and Hessian]] information: gradients give first-order direction, while Hessian curvature affects stability and step size.
+
 With mini-batches, the gradient is estimated from a batch $B$:
 
 $$
@@ -42,6 +44,7 @@ $$
 ## Related
 
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
+- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
 - [[concepts/machine-learning/training-loop|Training loop]]

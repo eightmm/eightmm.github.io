@@ -37,6 +37,8 @@ $$
 \|x\|_2 = \sqrt{x^\top x}
 $$
 
+See [[concepts/math/vector-norm-similarity|Vector norm and similarity]] for dot product, cosine similarity, Euclidean distance, and normalized embeddings.
+
 Matrix multiplication:
 
 $$
@@ -67,6 +69,7 @@ Spectral structure:
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
 - [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/machine-learning/dimensionality-reduction|Dimensionality reduction]]

@@ -27,7 +27,7 @@ where $v \ne 0$ is an eigenvector and $\lambda$ is the corresponding eigenvalue.
 ## Why It Matters
 
 - PCA uses eigenvectors of a covariance matrix.
-- Optimization stability is shaped by curvature and Hessian eigenvalues.
+- Optimization stability is shaped by curvature and [[concepts/math/jacobian-hessian|Hessian]] eigenvalues.
 - Graph methods use eigenvectors of adjacency or Laplacian matrices.
 - Dynamical systems and state-space models often analyze eigenvalues for stability.
 
@@ -51,6 +51,7 @@ where $I$ is the identity matrix.
 ## Related
 
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
 - [[concepts/math/covariance-correlation|Covariance and correlation]]
 - [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/machine-learning/dimensionality-reduction|Dimensionality reduction]]

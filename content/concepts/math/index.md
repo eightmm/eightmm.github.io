@@ -19,10 +19,12 @@ $$
 ## Core Notes
 
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
 - [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/math/calculus|Calculus]]
 - [[concepts/math/matrix-calculus|Matrix calculus]]
+- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/math/random-variable|Random variable]]

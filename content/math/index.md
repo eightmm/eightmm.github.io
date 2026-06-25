@@ -24,10 +24,12 @@ $$
 
 - [[concepts/math/index|Math foundations]]
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
 - [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/math/calculus|Calculus]]
 - [[concepts/math/matrix-calculus|Matrix calculus]]
+- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/math/random-variable|Random variable]]
@@ -51,9 +53,9 @@ $$
 
 ## Reading Path
 
-1. Start with [[concepts/math/linear-algebra|Linear algebra]] for vectors, matrices, projections, and layers.
+1. Start with [[concepts/math/linear-algebra|Linear algebra]] and [[concepts/math/vector-norm-similarity|Vector norm and similarity]] for vectors, matrices, projections, distances, and embedding scores.
 2. Use [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]] and [[concepts/math/singular-value-decomposition|Singular value decomposition]] for PCA, low-rank structure, stability, and representation analysis.
-3. Use [[concepts/math/calculus|Calculus]] and [[concepts/math/matrix-calculus|Matrix calculus]] for gradients, Jacobians, and optimization.
+3. Use [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], and [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for gradients, curvature, and optimization.
 4. Use [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], and [[concepts/machine-learning/gradient-descent|gradient descent]] to connect formulas to training.
 5. Use [[concepts/math/random-variable|Random variable]], [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/expectation|Expectation]], and [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] for likelihood, loss, sampling, and estimates.
 6. Use [[concepts/math/covariance-correlation|Covariance and correlation]], [[concepts/math/statistical-estimator|Statistical estimator]], and [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]] when interpreting experiments.

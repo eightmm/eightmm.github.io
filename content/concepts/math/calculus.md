@@ -39,6 +39,16 @@ $$
 f'(g(x))g'(x)
 $$
 
+Second-order information describes curvature. For a scalar loss $\mathcal{L}$, this is captured by the Hessian:
+
+$$
+H_{\mathcal{L}}(x)
+=
+\nabla_x^2\mathcal{L}(x)
+$$
+
+See [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for vector-valued derivatives, curvature, and Jacobian/Hessian products.
+
 ## Key Ideas
 
 - Derivatives describe local sensitivity.
@@ -57,6 +67,7 @@ $$
 ## Related
 
 - [[concepts/math/matrix-calculus|Matrix calculus]]
+- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/optimization|Optimization]]

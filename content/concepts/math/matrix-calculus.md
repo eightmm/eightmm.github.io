@@ -24,6 +24,8 @@ J_f(x)
 \end{bmatrix}
 $$
 
+See [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for the relationship between Jacobians, Hessians, curvature, and automatic differentiation products.
+
 For a linear map:
 
 $$
@@ -66,6 +68,7 @@ $$
 
 - [[concepts/math/calculus|Calculus]]
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
