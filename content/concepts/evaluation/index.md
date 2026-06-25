@@ -23,6 +23,8 @@ This number is only meaningful if the held-out set matches the intended generali
 
 ## Topics
 
+- [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

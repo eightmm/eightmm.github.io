@@ -32,6 +32,8 @@ $$
 ## 핵심 노트
 
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/calibration|Calibration]]

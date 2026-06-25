@@ -43,6 +43,10 @@ Concept notes define reusable terms used across research notes, paper summaries,
 ## Machine Learning
 
 - [[concepts/machine-learning/index|Machine learning]]
+- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
+- [[concepts/machine-learning/feature-engineering|Feature engineering]]
+- [[concepts/machine-learning/classification|Classification]]
+- [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/linear-model|Linear model]]
@@ -81,6 +85,8 @@ Concept notes define reusable terms used across research notes, paper summaries,
 ## Evaluation
 
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/calibration|Calibration]]

@@ -29,6 +29,10 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 
 ## Model Families
 
+- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
+- [[concepts/machine-learning/feature-engineering|Feature engineering]]
+- [[concepts/machine-learning/classification|Classification]]
+- [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/linear-model|Linear model]]
 - [[concepts/machine-learning/tree-based-model|Tree-based model]]
 - [[concepts/machine-learning/kernel-method|Kernel method]]

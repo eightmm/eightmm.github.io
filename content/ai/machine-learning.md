@@ -23,8 +23,8 @@ $$
 
 ## 문제 유형
 
-- Classification: discrete label을 예측합니다.
-- Regression: continuous value를 예측합니다.
+- [[concepts/machine-learning/classification|Classification]]: discrete label을 예측합니다.
+- [[concepts/machine-learning/regression|Regression]]: continuous value를 예측합니다.
 - Ranking: 후보들을 순서화합니다.
 - Clustering: label 없이 비슷한 sample을 묶습니다.
 - Density estimation: data distribution 자체를 모델링합니다.
@@ -32,6 +32,8 @@ $$
 
 ## 모델 계열
 
+- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
+- [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/machine-learning/linear-model|Linear model]]
 - [[concepts/machine-learning/tree-based-model|Tree-based model]]
 - [[concepts/machine-learning/kernel-method|Kernel method]]

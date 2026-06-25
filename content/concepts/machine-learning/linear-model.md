@@ -44,6 +44,7 @@ $$
 
 ## Related
 
+- [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/machine-learning/regularization|Regularization]]
 - [[concepts/machine-learning/kernel-method|Kernel method]]
 - [[concepts/architectures/mlp|MLP]]

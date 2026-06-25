@@ -34,6 +34,8 @@ The main assumption is that labels $y_i$ are meaningful for the target task and 
 
 ## Related
 
+- [[concepts/machine-learning/classification|Classification]]
+- [[concepts/machine-learning/regression|Regression]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/fine-tuning|Fine-tuning]]
