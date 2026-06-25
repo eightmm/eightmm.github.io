@@ -16,6 +16,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]
+- [[concepts/llm/index|LLM concepts]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
@@ -32,6 +33,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Molecular modeling: [[concepts/molecular-modeling/smiles|SMILES]] -> [[concepts/molecular-modeling/molecular-graph|Molecular graph]] -> [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]] -> [[concepts/molecular-modeling/conformer|Conformer]]
 - Protein modeling: [[entities/sequence|Sequence]] -> [[concepts/protein-modeling/protein-representation|Protein representation]] -> [[concepts/protein-modeling/contact-map|Contact map]] -> [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - Paper reading: [[papers/paper-note-format|Paper note format]] -> [[papers/paper-review-workflow|Paper review workflow]] -> [[papers/reading-status|Reading status]]
+- LLM Wiki: [[concepts/llm/language-model|Language model]] -> [[concepts/llm/context-window|Context window]] -> [[concepts/llm/embedding-retrieval|Embedding retrieval]] -> [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 
 ## Entity Concepts
 
@@ -134,6 +136,15 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/generative-models/gan|GAN]]
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]
+
+## LLM Concepts
+
+- [[concepts/llm/index|LLM concepts]]
+- [[concepts/llm/language-model|Language model]]
+- [[concepts/llm/context-window|Context window]]
+- [[concepts/llm/in-context-learning|In-context learning]]
+- [[concepts/llm/embedding-retrieval|Embedding retrieval]]
+- [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 
 ## Geometric Deep Learning
 

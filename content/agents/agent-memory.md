@@ -20,6 +20,8 @@ Agent memory is how an agent carries information beyond a single context window 
 
 ## Related
 
+- [[concepts/llm/embedding-retrieval|Embedding retrieval]]
+- [[concepts/llm/context-window|Context window]]
 - [[agents/context-engineering|Context engineering]]
 - [[agents/planning|Planning]]
 - [[agents/tool-use|Tool use]]

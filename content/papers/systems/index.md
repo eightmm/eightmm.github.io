@@ -20,6 +20,8 @@ Systems paper notes cover infrastructure, training efficiency, inference serving
 
 ## Concepts
 
+- [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
+- [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
 - [[concepts/machine-learning/batch-size|Batch size]]
