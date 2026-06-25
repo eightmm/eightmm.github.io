@@ -67,6 +67,8 @@ $$
 - [[concepts/machine-learning/model-selection|Model selection]]: 여러 후보 중 최종 모델을 어떤 근거로 고를 것인가
 - [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]: learning rate, weight decay, model size 같은 선택을 어떤 budget 안에서 탐색할 것인가
 - [[concepts/machine-learning/early-stopping|Early stopping]]: validation metric으로 checkpoint를 고를 때 어떤 leakage를 피해야 하는가
+- [[concepts/machine-learning/learning-curve|Learning curve]]: train/validation curve로 optimization, underfit, overfit을 어떻게 구분할 것인가
+- [[concepts/machine-learning/validation-curve|Validation curve]]: hyperparameter 변화에 따른 train/validation 성능을 어떻게 해석할 것인가
 - [[concepts/machine-learning/regularization|Regularization]]: overfitting을 어떻게 줄일 것인가
 - [[concepts/evaluation/train-validation-test-split|Validation split]]: model selection을 어떤 split에서 할 것인가
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]: 질문, 가설, 설계, run, artifact, 분석, claim을 어떻게 연결할 것인가
@@ -113,6 +115,8 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[concepts/machine-learning/model-selection|Model selection]]
 - [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]
 - [[concepts/machine-learning/early-stopping|Early stopping]]
+- [[concepts/machine-learning/learning-curve|Learning curve]]
+- [[concepts/machine-learning/validation-curve|Validation curve]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/machine-learning/training-stability|Training stability]]

@@ -57,6 +57,8 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 - [[concepts/machine-learning/model-selection|Model selection]]
 - [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]
 - [[concepts/machine-learning/early-stopping|Early stopping]]
+- [[concepts/machine-learning/learning-curve|Learning curve]]
+- [[concepts/machine-learning/validation-curve|Validation curve]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]

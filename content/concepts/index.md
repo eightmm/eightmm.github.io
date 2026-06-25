@@ -196,6 +196,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/machine-learning/model-selection|Model selection]]
 - [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]
 - [[concepts/machine-learning/early-stopping|Early stopping]]
+- [[concepts/machine-learning/learning-curve|Learning curve]]
+- [[concepts/machine-learning/validation-curve|Validation curve]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
 - [[concepts/machine-learning/mean-squared-error|Mean squared error]]

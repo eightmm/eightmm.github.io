@@ -25,6 +25,7 @@ $$
 - Configuration and hyperparameters.
 - Hardware and environment summary.
 - Metrics, artifacts, and checkpoints.
+- Learning curves, validation curves, and selection decisions.
 - Failure reason when the run fails.
 
 ## Checks
@@ -40,6 +41,8 @@ $$
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
 - [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/machine-learning/learning-curve|Learning curve]]
+- [[concepts/machine-learning/validation-curve|Validation curve]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[infra/reproducible-run-record|Reproducible run record]]
 - [[logs/public-log-format|Public log format]]

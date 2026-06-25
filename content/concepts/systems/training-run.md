@@ -34,6 +34,7 @@ but the actual run also includes optimizer state, scheduler state, random seeds,
 - Can the run resume after interruption?
 - Are public [[concepts/systems/run-artifact|run artifacts]] sufficient for later inspection?
 - Are [[concepts/machine-learning/training-stability|training stability]] signals logged with the run?
+- Are [[concepts/machine-learning/learning-curve|learning curves]] and validation metrics recorded on the same step axis?
 - Are validation metrics separated from training loss?
 - Is the best checkpoint selected only from validation data?
 - Are failed runs recorded with enough context to learn from them?
@@ -45,6 +46,8 @@ but the actual run also includes optimizer state, scheduler state, random seeds,
 - [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/training-stability|Training stability]]
+- [[concepts/machine-learning/learning-curve|Learning curve]]
+- [[concepts/machine-learning/validation-curve|Validation curve]]
 - [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
