@@ -33,6 +33,7 @@ tags:
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]로 question, hypothesis, design, run, artifact, analysis, claim을 하나의 흐름으로 묶는 법
 - [[concepts/systems/run-artifact|Run artifact]]로 config, log, metric, prediction, checkpoint, environment를 공개 가능한 수준으로 기록하는 법
 - [[concepts/modalities/modality-representation|Modality representation]]으로 raw signal, preprocessing, model input, information loss를 분리해서 보는 법
+- [[concepts/modalities/modality-task-map|Modality-task map]]으로 text, image, video, graph, structure 입력을 output space, loss, metric, split까지 연결하는 법
 - [[concepts/architectures/inductive-bias|Inductive bias]], [[concepts/architectures/parameter-sharing|parameter sharing]], [[concepts/architectures/computational-complexity|computational complexity]]를 architecture 선택 기준으로 쓰는 법
 - [[concepts/architectures/linear-layer|Linear layer]], [[concepts/architectures/activation-function|activation function]], [[concepts/architectures/feed-forward-network|feed-forward network]], [[concepts/architectures/normalization|normalization]], [[concepts/architectures/residual-connection|residual connection]]을 Transformer/GNN/SSM을 읽기 전 공통 블록으로 정리하기
 - Text, [[concepts/modalities/image|image]], [[concepts/modalities/video|video]], [[concepts/modalities/sequence|sequence]], [[concepts/modalities/3d-structure|3D structure]]를 modality 관점에서 비교하기

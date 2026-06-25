@@ -54,6 +54,8 @@ where $\mathcal{L}$ is the training loss, $\mathcal{M}$ is the metric set, and $
 
 For example, a generated molecule string can be scored by token loss, validity, uniqueness, property prediction, docking score, or downstream assay relevance. These are not interchangeable.
 
+The output space should be interpreted together with [[concepts/modalities/modality-task-map|Modality-task map]], because the same raw modality can produce a class, scalar, ranking, sequence, mask, graph, coordinates, or action depending on the task.
+
 ## Checks
 
 - What exactly is one target output?
@@ -67,6 +69,7 @@ For example, a generated molecule string can be scored by token loss, validity, 
 
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/tasks/task-specification|Task specification]]
+- [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/tasks/structured-prediction|Structured prediction]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
 - [[concepts/tasks/retrieval|Retrieval]]

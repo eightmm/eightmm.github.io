@@ -21,6 +21,7 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 
 - [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/tasks/task-output-space|Task output space]]
+- [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/ranking|Ranking]]
@@ -39,6 +40,7 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 - What is the output space?
 - What [[concepts/tasks/task-output-space|task output space]] constrains valid predictions?
 - What is the task specification: input, output, validity, loss, metric, and split?
+- What modality-task map connects raw input, representation, output space, and metric?
 - What is the [[concepts/data/example-unit|example unit]]?
 - What [[concepts/data/split-unit|split unit]] tests the intended generalization?
 - Is the model predicting, ranking, retrieving, generating, localizing, or segmenting?
@@ -53,6 +55,7 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 - [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/modalities/index|Modalities]]
+- [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/evaluation/index|Evaluation]]

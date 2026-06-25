@@ -46,6 +46,8 @@ Public top-level navigation should stay small and stable. Do not add a new Explo
 Keep supporting wiki areas available for links, but do not expose every support folder as a main public area unless the user asks:
 
 - `entities/`: Protein, ligand, molecule, protein-ligand complex, sequence, structure, assay, dataset, genome, and other modeled objects. Treat this as a vocabulary layer, not a research category by itself.
+- `concepts/modalities/`: Text, image, video, audio, graph, sequence, tabular, 3D structure, and modality-task mapping. When adding modality notes, connect raw input, representation, task output space, loss, metric, split, and leakage risk.
+- `concepts/tasks/`: Task specification, output spaces, retrieval, generation, localization, segmentation, and structured prediction. Task notes should state valid outputs, loss, metric, split rule, and failure mode.
 - `concepts/architectures/`: CNN, RNN, Transformer, GNN, state-space models, MoE, and other model families.
 - `concepts/geometric-deep-learning/`: Equivariance, invariance, geometry, coordinates, and symmetry.
 - `concepts/learning/`: Supervised learning, SSL, JEPA, contrastive learning, RL, preference optimization, and learning objectives.

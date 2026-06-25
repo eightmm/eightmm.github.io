@@ -51,6 +51,8 @@ $$
 
 If $\phi$ removes information needed for the task, the model cannot recover it. If $\phi$ includes deployment-unavailable information, evaluation can become invalid.
 
+Representation should be chosen together with [[concepts/modalities/modality-task-map|Modality-task map]], because the same raw signal may support classification, retrieval, generation, localization, ranking, or structured prediction.
+
 ## Checks
 
 - What is the raw signal, and what exactly is the model input?
@@ -71,6 +73,7 @@ If $\phi$ removes information needed for the task, the model cannot recover it. 
 ## Related
 
 - [[concepts/modalities/index|Modalities]]
+- [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/embedding|Embedding]]

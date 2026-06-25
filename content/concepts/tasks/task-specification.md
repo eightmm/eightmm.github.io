@@ -34,6 +34,8 @@ where $\mathcal{X}$ is the input space, $\mathcal{Y}$ is the [[concepts/tasks/ta
 
 Two systems can use the same architecture but solve different tasks. A decoder-only transformer can do sequence generation, retrieval reranking, tool-call structured output, or classification depending on the task specification.
 
+The task should also be checked against [[concepts/modalities/modality-task-map|Modality-task map]] so the raw modality, representation, output space, loss, metric, and split rule stay aligned.
+
 ## Checks
 
 - What is one example and one target?
@@ -47,6 +49,7 @@ Two systems can use the same architecture but solve different tasks. A decoder-o
 
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/tasks/task-output-space|Task output space]]
+- [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
