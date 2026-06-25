@@ -37,11 +37,27 @@ $$
 - Does the split support the intended benchmark claim?
 - Are limitations explicit enough to narrow claims?
 - Does the card avoid private sources, paths, or unpublished results?
+- Are preprocessing and split decisions versioned?
+- Is the intended evaluation protocol stated, not only the metric?
+
+## Minimum Public Card
+
+For a public wiki note, a minimal dataset card should include:
+
+- Public source and citation status.
+- Example unit and split unit.
+- Label semantics and missing-label policy.
+- Preprocessing contract summary.
+- Split policy and leakage checks.
+- Supported tasks and metrics.
+- Known limitations and out-of-scope claims.
 
 ## Related
 
+- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[papers/benchmark-card|Benchmark card]]

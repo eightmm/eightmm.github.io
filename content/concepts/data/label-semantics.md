@@ -35,6 +35,28 @@ where $a_i$ represents annotators, assay protocol, instrument, or source, and $q
 - A relevance label may mean clicked, judged useful, cited, or retrieved.
 - A segmentation mask may represent visible object boundary, annotator convention, or task-specific region.
 
+## Label Function
+
+A label should be described as a function of example, context, and measurement:
+
+$$
+y_i = h(u_i, c_i, m_i)
+$$
+
+where $u_i$ is the example unit, $c_i$ is the task context, and $m_i$ is the measurement or annotation process. If two records have the same $u_i$ but different $c_i$ or $m_i$, their labels may not be interchangeable.
+
+## Missing and Negative Labels
+
+Missing labels are not automatically negative labels:
+
+$$
+y_i\ \text{missing}
+\not\Rightarrow
+y_i = 0
+$$
+
+This matters in retrieval, virtual screening, activity prediction, preference data, and any dataset where observations are selectively recorded.
+
 ## Checks
 
 - What process produced $y$?
@@ -42,9 +64,12 @@ where $a_i$ represents annotators, assay protocol, instrument, or source, and $q
 - Are thresholds, units, and censoring rules documented?
 - Are missing labels treated as negatives?
 - Does the metric reward the intended semantic target or an easier proxy?
+- Does the label require context such as assay, target, dose, pocket, prompt, or source?
 
 ## Related
 
+- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
+- [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/annotation-labeling|Annotation and labeling]]
 - [[concepts/data/label-noise|Label noise]]
 - [[concepts/evaluation/negative-set|Negative set]]

@@ -22,6 +22,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 ## Topics
 
 - [[entities/dataset|Dataset]]
+- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
 - [[concepts/data/dataset-card|Dataset card]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
@@ -53,6 +54,16 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - Does the split match the intended generalization claim?
 - Can another person reconstruct the dataset version and filtering policy?
 - Are labels noisy, censored, inconsistent, or protocol-dependent?
+
+## Construction Path
+
+1. Define [[concepts/data/example-unit|example unit]] and [[concepts/data/split-unit|split unit]].
+2. Write the [[concepts/data/data-schema|data schema]] and [[concepts/data/label-semantics|label semantics]].
+3. Specify the [[concepts/data/preprocessing-contract|preprocessing contract]].
+4. Record [[concepts/data/metadata-provenance|metadata and provenance]].
+5. Choose the [[concepts/data/sampling-strategy|sampling strategy]] and leakage checks.
+6. Summarize the result in a [[concepts/data/dataset-card|dataset card]].
+7. Attach an [[concepts/evaluation/evaluation-protocol|evaluation protocol]].
 
 ## Related
 

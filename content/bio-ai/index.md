@@ -62,6 +62,19 @@ $$
 - [[concepts/sbdd/template-leakage|Template leakage]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 
+## Data, Labels, and Splits
+
+- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
+- [[concepts/data/example-unit|Example unit]]
+- [[concepts/data/split-unit|Split unit]]
+- [[concepts/data/label-semantics|Label semantics]]
+- [[concepts/data/preprocessing-contract|Preprocessing contract]]
+- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
+- [[concepts/evaluation/scaffold-split|Scaffold split]]
+- [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
+- [[concepts/evaluation/leakage|Leakage]]
+
 ## Protein and Sequence Modeling
 
 - [[research/protein-modeling/index|Protein modeling]]

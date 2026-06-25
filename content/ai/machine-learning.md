@@ -32,6 +32,10 @@ $$
 
 ## 모델 계열
 
+- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
+- [[concepts/data/example-unit|Example unit]]
+- [[concepts/data/split-unit|Split unit]]
+- [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/machine-learning/linear-model|Linear model]]
@@ -78,6 +82,7 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 ## 평가 질문
 
 - train/test split이 deployment 상황을 반영하는가?
+- example unit, split unit, label semantics가 명확한가?
 - metric이 실제 목표와 맞는가?
 - [[concepts/evaluation/baseline|baseline]]과 비교했을 때 개선이 의미 있는가?
 - [[concepts/evaluation/ablation-study|ablation study]]가 설계 선택을 지지하는가?

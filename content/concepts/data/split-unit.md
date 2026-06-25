@@ -38,9 +38,24 @@ Examples sharing the same split unit should not be separated across train and te
 - Are near-duplicates grouped before splitting?
 - Are preprocessing, scaling, and threshold choices fit only on train?
 - Does the paper or benchmark report the split unit explicitly?
+- Does validation use the same unit type as the final test claim?
+- Are multiple unit types needed, such as scaffold and protein family?
+
+## Multi-Axis Splits
+
+Some datasets need more than one grouping axis. For protein-ligand modeling, a leakage-safe split may require grouping both sides:
+
+$$
+g(x_i)
+=
+(g_{\mathrm{protein}}(x_i), g_{\mathrm{ligand}}(x_i))
+$$
+
+The split rule should state whether it holds out new proteins, new ligands, new pairs, new assays, or a combination.
 
 ## Related
 
+- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
