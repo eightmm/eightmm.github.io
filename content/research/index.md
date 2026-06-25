@@ -17,6 +17,11 @@ tags:
 
 ## 연결되는 방법론
 
+- [[concepts/research-methodology/index|Research methodology]]
+- [[concepts/research-methodology/research-question|Research question]]
+- [[concepts/research-methodology/hypothesis|Hypothesis]]
+- [[concepts/research-methodology/experiment-design|Experiment design]]
+- [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/architectures/index|Architectures]]

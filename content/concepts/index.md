@@ -21,6 +21,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]
 - [[concepts/systems/index|AI systems]]
+- [[concepts/research-methodology/index|Research methodology]]
 - [[concepts/llm/index|LLM concepts]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
@@ -39,6 +40,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]]
 - Deep learning architecture: [[concepts/architectures/tokenization|Tokenization]] -> [[concepts/architectures/embedding|Embedding]] -> [[concepts/architectures/attention|Attention]] -> [[concepts/architectures/transformer|Transformer]]
 - Systems path: [[concepts/systems/training-run|Training run]] -> [[concepts/systems/inference|Inference]] -> [[concepts/systems/model-serving|Model serving]] -> [[concepts/systems/reproducibility|Reproducibility]]
+- Research method path: [[concepts/research-methodology/research-question|Research question]] -> [[concepts/research-methodology/hypothesis|Hypothesis]] -> [[concepts/research-methodology/experiment-design|Experiment design]] -> [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - Agent path: [[agents/agent-architecture|Agent architecture]] -> [[agents/context-engineering|Context engineering]] -> [[agents/tool-contract|Tool contract]] -> [[agents/verification-loop|Verification loop]]
 - Graph and geometry: [[concepts/architectures/graph-construction|Graph construction]] -> [[concepts/architectures/gnn|Graph neural networks]] -> [[concepts/geometric-deep-learning/equivariance|Equivariance]] -> [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - Structure-based AI: [[entities/pocket|Pocket]] -> [[concepts/sbdd/pose-quality|Pose quality]] -> [[concepts/sbdd/binding-affinity|Binding affinity]] -> [[concepts/sbdd/virtual-screening|Virtual screening]]
@@ -212,6 +214,15 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
+
+## Research Methodology
+
+- [[concepts/research-methodology/index|Research methodology]]
+- [[concepts/research-methodology/research-question|Research question]]
+- [[concepts/research-methodology/hypothesis|Hypothesis]]
+- [[concepts/research-methodology/experiment-design|Experiment design]]
+- [[concepts/research-methodology/result-interpretation|Result interpretation]]
+- [[concepts/research-methodology/research-log|Research log]]
 
 ## LLM Concepts
 

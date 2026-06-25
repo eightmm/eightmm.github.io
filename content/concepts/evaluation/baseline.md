@@ -35,6 +35,7 @@ where $M$ is an evaluation metric. The sign of $\Delta M$ depends on whether hig
 
 ## Related
 
+- [[concepts/research-methodology/hypothesis|Hypothesis]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/ablation-study|Ablation study]]

@@ -39,5 +39,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 - [[papers/index|Papers]]
 - [[papers/reading-status|Reading status]]
+- [[concepts/research-methodology/research-question|Research question]]
+- [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
 - [[agents/human-in-the-loop|Human in the loop]]

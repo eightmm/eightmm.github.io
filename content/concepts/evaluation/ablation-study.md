@@ -29,6 +29,7 @@ where $M$ is the evaluation metric.
 
 ## Related
 
+- [[concepts/research-methodology/experiment-design|Experiment design]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/metric|Metric]]
 - [[papers/paper-review-workflow|Paper review workflow]]
