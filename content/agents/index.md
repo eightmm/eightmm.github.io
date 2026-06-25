@@ -22,6 +22,7 @@ This section should stay practical: what the agent is useful for, where it fails
 ## Core Concepts
 
 - [[agents/core/agent-architecture|Agent architecture]]
+- [[agents/core/agent-operating-contract|Agent operating contract]]
 - [[agents/core/agent-loop|Agent loop]]
 - [[agents/core/agent-environment|Agent environment]]
 - [[agents/core/action-space|Action space]]

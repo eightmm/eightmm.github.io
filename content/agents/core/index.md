@@ -12,6 +12,7 @@ Core agent notes describe the basic loop, state, memory, planning, and context d
 ## Notes
 
 - [[agents/core/agent-architecture|Agent architecture]]
+- [[agents/core/agent-operating-contract|Agent operating contract]]
 - [[agents/core/agent-loop|Agent loop]]
 - [[agents/core/agent-environment|Agent environment]]
 - [[agents/core/action-space|Action space]]
