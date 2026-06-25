@@ -60,6 +60,7 @@ for the next $k$ steps, subject to nondeterministic hardware behavior.
 ## Related
 
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/distributed-training|Distributed training]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/reproducible-run-record|Reproducible run record]]

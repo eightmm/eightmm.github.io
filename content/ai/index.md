@@ -184,6 +184,7 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 - [[concepts/systems/index|AI systems]]
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/distributed-training|Distributed training]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/inference|Inference]]

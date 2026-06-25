@@ -8,7 +8,7 @@ tags:
 
 # Distributed Training
 
-Distributed training splits a model or its data across multiple devices to fit larger models or finish faster. The main paradigms are data parallelism, tensor/model parallelism, pipeline parallelism, and sharded optimizers (e.g. ZeRO/FSDP).
+Distributed training splits a model or its data across multiple devices to fit larger models or finish faster. The conceptual layer is [[concepts/systems/distributed-training|Distributed training]]; this note focuses on public operational checks.
 
 ## Practical Checks
 
@@ -21,6 +21,7 @@ Distributed training splits a model or its data across multiple devices to fit l
 ## Related
 
 - [[concepts/machine-learning/batch-size|Batch size]]
+- [[concepts/systems/distributed-training|Distributed training]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[infra/gpu|GPU]]
 - [[infra/gpu-memory|GPU memory]]

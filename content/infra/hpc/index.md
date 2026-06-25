@@ -26,6 +26,7 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 ## Related Systems
 
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/distributed-training|Distributed training]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/storage-io|Storage and IO]]
 - [[concepts/systems/failure-recovery|Failure recovery]]

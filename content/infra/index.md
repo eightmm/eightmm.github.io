@@ -32,6 +32,7 @@ tags:
 
 - [[concepts/systems/index|AI systems]]
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/distributed-training|Distributed training]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/storage-io|Storage and IO]]

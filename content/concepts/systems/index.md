@@ -21,6 +21,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 ## Topics
 
 - [[concepts/systems/training-run|Training run]]
+- [[concepts/systems/distributed-training|Distributed training]]
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]
@@ -39,6 +40,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 ## Checks
 
 - Is the bottleneck data loading, compute, memory, communication, or scheduling?
+- Does the workload need single-device, data-parallel, sharded, pipeline, or model-parallel training?
 - Is the workload shaped for the scheduler: resource request, job size, queue time, and preemption risk?
 - Is the environment and storage path part of the run record?
 - Is the goal model quality, time-to-train, cost, latency, throughput, or reliability?

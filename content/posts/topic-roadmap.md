@@ -79,6 +79,7 @@ tags:
 - [[infra/hpc/slurm|Slurm]]을 연구 workflow 관점에서 이해하기
 - [[concepts/systems/resource-scheduling|Resource scheduling]], [[infra/hpc/resource-request|resource request]], [[infra/hpc/job-array|job array]]를 shared HPC 사용의 기본 단어로 정리하기
 - [[infra/gpu-memory|GPU memory]] 문제를 parameters, activations, optimizer state, KV cache로 나눠 보는 법
+- [[concepts/systems/distributed-training|Distributed training]]을 effective batch size, communication, sharding, checkpoint state 관점에서 정리하기
 - [[concepts/systems/checkpoint-state|Checkpoint state]]와 [[concepts/systems/failure-recovery|failure recovery]]를 긴 training run의 기본 설계로 보는 법
 - [[infra/hpc/preemption-resume|Preemption and resume]]를 긴 실험의 reliability 문제로 설명하기
 - [[infra/hpc/job-reconciliation|Job reconciliation]]으로 오래 도는 job을 중복 실행하지 않고 닫는 법
