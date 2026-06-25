@@ -384,6 +384,10 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
           .join(",\n  ")
 
         const spaImport = `await import("./${scriptFilenames[scriptFilenames.length - 1]}");`
+        const postSpaRender = `requestAnimationFrame(() => {
+  const event = new CustomEvent("render", { detail: { url: document.body?.dataset?.slug } });
+  document.dispatchEvent(event);
+});`
 
         postscript = [
           `const componentResults = await Promise.allSettled([\n  ${componentImports}\n]);`,
@@ -393,6 +397,7 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
   }
 }`,
           spaImport,
+          postSpaRender,
         ]
           .filter(Boolean)
           .join("\n")
