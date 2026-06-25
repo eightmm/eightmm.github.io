@@ -48,6 +48,7 @@ $$
 
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
+- [[concepts/tasks/localization|Localization]]
 - [[concepts/tasks/segmentation|Segmentation]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/vision-transformer|Vision Transformer]]

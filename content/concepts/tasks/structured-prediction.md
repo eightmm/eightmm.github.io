@@ -54,6 +54,8 @@ when the structure is generated autoregressively.
 - [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
 - [[concepts/tasks/segmentation|Segmentation]]
+- [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
+- [[concepts/tasks/graph-prediction|Graph prediction]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/evaluation/metric|Metric]]

@@ -54,6 +54,9 @@ $$
 ## Structure-Based AI
 
 - [[concepts/tasks/interaction-prediction|Interaction prediction]]
+- [[concepts/tasks/localization|Localization]]
+- [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
+- [[concepts/tasks/graph-prediction|Graph prediction]]
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
@@ -119,6 +122,8 @@ $$
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/modalities/graph|Graph]]
 - [[concepts/modalities/3d-structure|3D structure]]
+- [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
+- [[concepts/tasks/graph-prediction|Graph prediction]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
 - [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
