@@ -1,0 +1,32 @@
+---
+title: Evaluation
+tags:
+  - ai
+  - evaluation
+---
+
+# Evaluation
+
+평가는 모델 목록을 실제 지식으로 바꾸는 기준입니다. AI note를 쓸 때는 어떤 benchmark에서 좋았는지보다, 어떤 split과 metric이 무엇을 검증하는지 먼저 봅니다.
+
+## Core Notes
+
+- [[concepts/evaluation/index|Evaluation]]
+- [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/evaluation/ood-generalization|OOD generalization]]
+- [[concepts/evaluation/calibration|Calibration]]
+- [[concepts/evaluation/scaffold-split|Scaffold split]]
+- [[concepts/evaluation/protein-family-split|Protein family split]]
+
+## Questions
+
+- train/test split이 실제 generalization을 요구하는가?
+- metric이 task objective와 맞는가?
+- confidence나 calibration이 필요한 application인가?
+- 실패를 data, model, optimization, evaluation 중 어디 문제로 분해할 수 있는가?
+
+## Related
+
+- [[ai/learning-methods|Learning methods]]
+- [[bio-ai/index|Bio-AI]]
+- [[papers/index|Papers]]

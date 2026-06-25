@@ -22,6 +22,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 
 아키텍처 노트는 입력의 형태와 inductive bias를 기준으로 봅니다. 이미지, sequence, graph, structure, set처럼 데이터가 달라지면 좋은 기본 구조도 달라집니다.
 
+- [[ai/architectures|Architecture gateway]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/gnn|Graph neural networks]]
@@ -33,6 +34,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 
 학습 방법은 label이 충분한 상황과 부족한 상황을 나눠서 봅니다. 특히 [[concepts/learning/self-supervised-learning|self-supervised learning]], [[concepts/learning/jepa|JEPA]], [[concepts/learning/contrastive-learning|contrastive learning]]은 representation을 어떻게 만들 것인가와 직접 연결됩니다.
 
+- [[ai/learning-methods|Learning methods gateway]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/learning/masked-modeling|Masked modeling]]
@@ -44,6 +46,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 
 생성 모델은 likelihood, denoising, flow, autoregressive factorization처럼 서로 다른 관점에서 볼 수 있습니다. Bio-AI에서는 molecule generation, protein design, structure generation과 연결됩니다.
 
+- [[ai/generative-models|Generative models gateway]]
 - [[concepts/generative-models/index|Generative models]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
@@ -54,6 +57,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 
 Agent는 LLM을 단일 답변 생성기로만 보지 않고, planning, tool use, memory, verification loop를 묶은 작업 시스템으로 보는 관점입니다. 연구 블로그 자동화, 논문 후보 정리, 코드 변경 검증 같은 workflow와 연결해 정리합니다.
 
+- [[ai/agents|Agents gateway]]
 - [[agents/index|Agents]]
 - [[agents/coding-agents|Coding agents]]
 - [[agents/tool-use|Tool use]]
@@ -64,6 +68,7 @@ Agent는 LLM을 단일 답변 생성기로만 보지 않고, planning, tool use,
 
 AI 노트는 평가 기준 없이 모델 목록이 되는 것을 피해야 합니다. 그래서 leakage, split, calibration, out-of-distribution generalization 같은 평가 노트를 계속 연결합니다.
 
+- [[ai/evaluation|Evaluation gateway]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
