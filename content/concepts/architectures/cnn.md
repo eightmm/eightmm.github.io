@@ -10,6 +10,14 @@ tags:
 
 Convolutional neural networks use local filters with shared weights. They are useful when neighboring positions carry repeated local patterns, such as images, grids, sequences, or voxelized structures.
 
+For a 1D signal, a convolution can be written as:
+
+$$
+y_i = \sum_{r=-R}^{R} w_r x_{i+r}
+$$
+
+The same weights $w_r$ are reused at every position $i$, which gives parameter sharing and locality.
+
 ## Key Ideas
 
 - Convolutions reuse the same filter across positions, giving parameter sharing and local pattern detection.

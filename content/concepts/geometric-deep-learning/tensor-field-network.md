@@ -10,6 +10,15 @@ tags:
 
 A tensor field network is an equivariant neural architecture that represents features by their transformation type under 3D rotations.
 
+An equivariant layer should satisfy:
+
+$$
+\Phi(D_{\mathrm{in}}(g)h)
+= D_{\mathrm{out}}(g)\Phi(h)
+$$
+
+Here $D_{\mathrm{in}}$ and $D_{\mathrm{out}}$ describe how input and output feature types transform.
+
 ## Why It Matters
 
 - It is an important design pattern for handling scalar, vector, and higher-order geometric features.

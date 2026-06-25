@@ -10,6 +10,16 @@ tags:
 
 A scaffold split groups molecules by their core structure (e.g. Bemis–Murcko scaffold) and keeps each scaffold entirely in one split. It estimates how a model generalizes to chemotypes it has not seen, unlike a random split that scatters close analogs across train and test.
 
+The grouped split constraint is:
+
+$$
+g(m_i)=g(m_j)
+\Rightarrow
+s(m_i)=s(m_j)
+$$
+
+Here $g$ maps a molecule to its scaffold and $s$ maps it to train, validation, or test.
+
 ## Practical Checks
 
 - Compute scaffolds consistently and assign whole scaffold groups to a single split.

@@ -10,6 +10,15 @@ tags:
 
 A score-based model learns the gradient of the log data density (the score) across noise levels and samples by following the score, often via a stochastic differential equation.
 
+The score is:
+
+$$
+s_\theta(x,t)
+\approx \nabla_x \log p_t(x)
+$$
+
+It points toward regions of higher probability under the noisy distribution at time $t$.
+
 ## Why It Matters
 
 - Provides a continuous, unifying view of diffusion generation.

@@ -10,6 +10,14 @@ tags:
 
 SO(3) is the group of 3D rotations around the origin.
 
+The group is:
+
+$$
+SO(3)=\{R\in \mathbb{R}^{3\times 3}\mid R^\top R=I,\ \det(R)=1\}
+$$
+
+It contains rotations but not translations or reflections.
+
 ## Why It Matters
 
 - Rotational symmetry is central to models over coordinates, directions, and local frames.

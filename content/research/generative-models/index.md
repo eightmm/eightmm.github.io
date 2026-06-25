@@ -9,6 +9,14 @@ tags:
 
 Generative model notes cover diffusion, flow matching, structure generation, molecular generation, and evaluation.
 
+For this research area, the core question is conditional generation:
+
+$$
+x \sim p_\theta(x \mid c)
+$$
+
+where $x$ may be a molecule, protein sequence, structure, pose, or trajectory, and $c$ is the design condition.
+
 ## Topics
 
 - [[concepts/generative-models/flow-matching|Flow matching]]

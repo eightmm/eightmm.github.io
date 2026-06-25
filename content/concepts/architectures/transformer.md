@@ -10,6 +10,18 @@ tags:
 
 Transformers use attention to model relationships across tokens. They are common in language models, protein sequence models, molecular sequence models, and agent systems.
 
+A Transformer block is often summarized as:
+
+$$
+h' = h + \operatorname{Attention}(\operatorname{LN}(h))
+$$
+
+$$
+h_{\mathrm{out}} = h' + \operatorname{MLP}(\operatorname{LN}(h'))
+$$
+
+Residual connections, normalization, attention, and feed-forward mixing are all part of the pattern.
+
 ## Key Ideas
 
 - Self-attention lets each token mix information from other tokens according to learned relevance.

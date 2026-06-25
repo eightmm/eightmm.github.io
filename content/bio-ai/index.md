@@ -8,6 +8,14 @@ tags:
 
 Bio-AI notes focus on structure-based modeling, proteins, molecules, and genome-level sequence modeling. The scope is intentionally narrower than all of computational biology.
 
+The recurring pattern is to model biological or chemical objects with AI functions:
+
+$$
+\hat{y} = f_\theta(x_{\mathrm{bio}}, x_{\mathrm{context}})
+$$
+
+Here $x_{\mathrm{bio}}$ may be a sequence, molecule, structure, or complex, and $x_{\mathrm{context}}$ may be a pocket, target condition, or assay context.
+
 ## Objects
 
 - [[entities/protein|Protein]]

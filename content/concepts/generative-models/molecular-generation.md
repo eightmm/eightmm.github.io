@@ -10,6 +10,14 @@ tags:
 
 Molecular generation produces novel molecular structures—as strings, graphs, or 3D coordinates—often under constraints such as validity, synthesizability, or target properties.
 
+Conditional molecular generation can be written as:
+
+$$
+m \sim p_\theta(m \mid c)
+$$
+
+where $m$ is a molecule and $c$ can represent a target property, scaffold, protein pocket, or design constraint.
+
 ## Why It Matters
 
 - A core tool for de novo design in drug discovery and materials.

@@ -21,6 +21,16 @@ Pose quality should not be judged only by a model score. Docking and generative 
 
 PoseBusters is useful because it shifts the question from "did the model output a pose close to a reference?" to "is the generated complex physically and chemically usable enough to evaluate further?"
 
+A useful way to think about this is a conjunction of checks:
+
+$$
+\operatorname{pass}(X)
+= \prod_{k=1}^{K}
+\mathbf{1}\{c_k(X)=1\}
+$$
+
+Here $X$ is a generated pose or complex and each $c_k$ is a plausibility check. A pose can fail even if one aggregate score looks good.
+
 ## Why It Matters
 
 - Helps diagnose failures in [[research/structure-based-ai/protein-ligand-docking|protein-ligand docking]].

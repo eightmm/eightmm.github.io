@@ -10,6 +10,17 @@ tags:
 
 Fine-tuning adapts a pretrained model to a target task by continuing training on task data, either updating all weights or a small subset (parameter-efficient fine-tuning).
 
+The basic objective is supervised training initialized from pretrained weights:
+
+$$
+\theta^\*
+= \arg\min_\theta
+\frac{1}{n}\sum_{i=1}^{n}
+\mathcal{L}(f_\theta(x_i), y_i),
+\qquad
+\theta_0 = \theta_{\mathrm{pretrained}}
+$$
+
 ## Why It Matters
 
 - The standard way to specialize a general pretrained model.

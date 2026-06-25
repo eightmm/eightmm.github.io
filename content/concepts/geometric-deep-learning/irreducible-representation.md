@@ -10,6 +10,14 @@ tags:
 
 An irreducible representation is a basic transformation block that cannot be decomposed into smaller independent representations.
 
+For a group action represented by $D(g)$, a feature transforms as:
+
+$$
+h' = D(g)h
+$$
+
+Irreducible representations organize channels by transformation behavior, such as scalar or vector channels.
+
 ## Why It Matters
 
 - Equivariant networks use irreducible representations to organize feature channels by transformation behavior.

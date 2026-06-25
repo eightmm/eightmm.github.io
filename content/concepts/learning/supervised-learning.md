@@ -9,6 +9,17 @@ tags:
 
 Supervised learning fits a model to map inputs to known target labels by minimizing a loss over labeled examples. It covers classification, regression, and structured prediction.
 
+The empirical supervised objective is:
+
+$$
+\hat{\theta}
+= \arg\min_\theta
+\frac{1}{n}\sum_{i=1}^{n}
+\mathcal{L}(f_\theta(x_i), y_i)
+$$
+
+The main assumption is that labels $y_i$ are meaningful for the target task and split.
+
 ## Why It Matters
 
 - The baseline paradigm when labels are available and trustworthy.

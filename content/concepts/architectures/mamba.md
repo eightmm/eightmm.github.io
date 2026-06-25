@@ -10,6 +10,16 @@ tags:
 
 Mamba is a selective state-space architecture for sequence modeling. In this wiki, it is mainly a seed topic for efficient long-context models and protein modeling experiments.
 
+A generic selective state update can be viewed as:
+
+$$
+h_t = A(x_t)h_{t-1} + B(x_t)x_t,
+\qquad
+y_t = C(x_t)h_t
+$$
+
+The key distinction is that update parameters depend on the current input $x_t$.
+
 ## Key Ideas
 
 - Mamba belongs to the [[concepts/architectures/state-space-model|state-space model]] family but makes the state update input-dependent.

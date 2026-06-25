@@ -10,6 +10,14 @@ tags:
 
 Equivariance means a model output transforms predictably when the input is transformed.
 
+Formally, for a transformation $g$:
+
+$$
+f(g \cdot x) = g \cdot f(x)
+$$
+
+The output changes in the same structured way as the input.
+
 ## Why It Matters
 
 - Coordinate predictions should rotate or translate with the input structure.

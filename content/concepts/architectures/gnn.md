@@ -10,6 +10,21 @@ tags:
 
 Graph neural networks operate on nodes, edges, and message passing. In molecular modeling, atoms, residues, bonds, contacts, and interactions can all be represented as graph structure.
 
+A common message-passing update is:
+
+$$
+m_i^{(t)}
+= \sum_{j\in \mathcal{N}(i)}
+\phi_m(h_i^{(t)}, h_j^{(t)}, e_{ij})
+$$
+
+$$
+h_i^{(t+1)}
+= \phi_u(h_i^{(t)}, m_i^{(t)})
+$$
+
+Here $h_i$ is a node state, $e_{ij}$ is an edge feature, and $\mathcal{N}(i)$ is the neighborhood of node $i$.
+
 ## Key Ideas
 
 - Nodes hold entity features; edges hold relationships such as bonds, distances, contacts, or interaction types.

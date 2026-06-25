@@ -9,6 +9,14 @@ tags:
 
 Generative model notes describe ways to model and sample data distributions, including sequences, graphs, coordinates, molecules, and proteins.
 
+The shared goal is to learn a model distribution close to the data distribution:
+
+$$
+p_\theta(x) \approx p_{\mathrm{data}}(x)
+$$
+
+Different families choose different training signals: likelihood, reconstruction, adversarial discrimination, denoising, score estimation, or velocity matching.
+
 ## Core Families
 
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]

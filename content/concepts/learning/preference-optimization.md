@@ -10,6 +10,15 @@ tags:
 
 Preference optimization trains a model to prefer outputs that humans (or a proxy) rank higher. It includes reward-model-based reinforcement learning and direct objectives over preference pairs.
 
+For pairwise preference data $(y_w, y_l)$, a common loss is:
+
+$$
+\mathcal{L}
+= -\log \sigma(r_\theta(x,y_w) - r_\theta(x,y_l))
+$$
+
+Here $y_w$ is the preferred output, $y_l$ is the less preferred output, and $r_\theta$ is a reward or preference score.
+
 ## Why It Matters
 
 - Aligns model behavior with goals that are hard to specify as a loss.

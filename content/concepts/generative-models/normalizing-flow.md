@@ -10,6 +10,18 @@ tags:
 
 A normalizing flow transforms a simple base distribution into a complex one through a sequence of invertible, differentiable maps, giving exact likelihoods via the change-of-variables formula.
 
+The change-of-variables formula is:
+
+$$
+\log p_X(x)
+= \log p_Z(f^{-1}(x))
++ \log \left|
+\det \frac{\partial f^{-1}}{\partial x}
+\right|
+$$
+
+The transform must be invertible and have a tractable Jacobian determinant.
+
 ## Why It Matters
 
 - Exact density evaluation and sampling in one model.

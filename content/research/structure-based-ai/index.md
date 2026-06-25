@@ -12,6 +12,15 @@ Structure-based AI is the part of AI for drug discovery that treats molecular st
 
 For this wiki, this area is the main anchor for molecular AI notes. It connects docking, pose generation, structure-aware scoring, geometric deep learning, molecular generation, and evaluation.
 
+A useful abstraction is:
+
+$$
+\hat{y}, \hat{X}
+= f_\theta(P, L, X_0)
+$$
+
+where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or noisy geometry, $\hat{X}$ is a predicted pose or structure, and $\hat{y}$ is a score or property.
+
 ## Working Map
 
 1. Define the object: protein, ligand, pocket, or complex.

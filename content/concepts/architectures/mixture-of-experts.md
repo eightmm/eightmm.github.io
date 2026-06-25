@@ -10,6 +10,15 @@ tags:
 
 Mixture-of-experts models route each input through a subset of expert modules. The pattern separates model capacity from the amount of computation used per token or example.
 
+A sparse MoE layer can be summarized as:
+
+$$
+y = \sum_{m \in \operatorname{TopK}(r(x))}
+g_m(x) E_m(x)
+$$
+
+Here $r(x)$ is the router, $E_m$ is expert $m$, and $g_m(x)$ is the routing weight.
+
 ## Key Ideas
 
 - A router selects one or more experts for each token, example, node, or region.

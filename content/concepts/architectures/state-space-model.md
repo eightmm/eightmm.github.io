@@ -10,6 +10,16 @@ tags:
 
 State-space models are sequence architectures that model long-range dependencies through recurrent state updates or structured sequence transformations.
 
+A simple continuous state-space form is:
+
+$$
+\frac{dh(t)}{dt} = Ah(t) + Bx(t),
+\qquad
+y(t) = Ch(t)
+$$
+
+Sequence models use discretized or structured versions of this update to mix information over long contexts.
+
 ## Key Ideas
 
 - A state summarizes past sequence information and is updated as new inputs arrive.

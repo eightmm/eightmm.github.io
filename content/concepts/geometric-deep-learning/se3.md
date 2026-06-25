@@ -10,6 +10,16 @@ tags:
 
 SE(3) is the group of 3D rotations and translations that preserve distances and orientation.
 
+An SE(3) transform is:
+
+$$
+x' = Rx + t,
+\qquad
+R\in SO(3)
+$$
+
+Unlike E(3), it excludes reflections.
+
 ## Why It Matters
 
 - Many molecular structures can be moved or rotated in space without changing their physical identity.

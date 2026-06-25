@@ -11,6 +11,16 @@ tags:
 
 Graph transformers combine graph-structured inputs with attention-based message mixing. They are a bridge between [[concepts/architectures/gnn|GNNs]] and [[concepts/architectures/transformer|Transformers]].
 
+A simple graph-biased attention score is:
+
+$$
+a_{ij}
+= \frac{q_i^\top k_j}{\sqrt{d}}
++ b(e_{ij})
+$$
+
+where $b(e_{ij})$ injects edge, distance, or relation information into attention.
+
 ## Key Ideas
 
 - Attention can connect distant graph nodes without many local message-passing steps.

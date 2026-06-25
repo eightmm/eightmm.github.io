@@ -10,6 +10,14 @@ tags:
 
 A scoring function assigns a value to a candidate structure, pose, or interaction. In docking, it often ranks protein-ligand poses or estimates binding-related quality.
 
+A generic scoring function is:
+
+$$
+s = S_\theta(P, L, X)
+$$
+
+where $P$ is a protein or pocket, $L$ is a ligand, and $X$ is a candidate pose or complex geometry. Lower or higher scores may be better depending on the convention.
+
 ## Uses
 
 - Rank candidate poses from [[research/structure-based-ai/protein-ligand-docking|protein-ligand docking]].

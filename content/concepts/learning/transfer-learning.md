@@ -10,6 +10,16 @@ tags:
 
 Transfer learning reuses knowledge learned on a source task or domain to improve learning on a related target task, typically by reusing pretrained representations.
 
+One way to view it is source pretraining followed by target adaptation:
+
+$$
+\theta_s = \arg\min_\theta \mathcal{L}_{\mathrm{source}}(\theta),
+\qquad
+\theta_t = \arg\min_\theta \mathcal{L}_{\mathrm{target}}(\theta;\theta_s)
+$$
+
+The benefit depends on how much useful structure transfers from source to target.
+
 ## Why It Matters
 
 - Reduces the labeled data needed on the target task.

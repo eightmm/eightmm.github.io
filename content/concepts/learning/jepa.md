@@ -10,6 +10,18 @@ tags:
 
 Joint-embedding predictive architectures (JEPA) train models to predict the representation of a missing or future part of the data in embedding space, rather than reconstructing it in input space. A context encoder, a target encoder, and a predictor are trained together; the target encoder is usually held stable (e.g. an EMA copy) to avoid trivial collapse.
 
+A simplified JEPA objective is:
+
+$$
+\mathcal{L}
+= \left\|
+q_\theta(f_\theta(x_{\mathrm{context}}))
+- \operatorname{sg}(g_\xi(x_{\mathrm{target}}))
+\right\|_2^2
+$$
+
+Here $f_\theta$ encodes context, $g_\xi$ encodes the target view, $q_\theta$ predicts in embedding space, and $\operatorname{sg}$ stops gradients through the target.
+
 ## Why It Matters
 
 - Avoids reconstructing every low-level detail, unlike pixel/token-level [[concepts/learning/masked-modeling|masked modeling]].

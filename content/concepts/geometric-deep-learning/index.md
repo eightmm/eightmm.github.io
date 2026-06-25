@@ -9,6 +9,16 @@ tags:
 
 Geometric deep learning studies models that respect structure such as graphs, coordinates, symmetries, and manifolds.
 
+The core question is how a model behaves under a transformation group $G$:
+
+$$
+f(g\cdot x) = \rho(g) f(x),
+\qquad
+g\in G
+$$
+
+Here $\rho(g)$ describes how the output representation should transform.
+
 ## Symmetry
 
 - [[concepts/geometric-deep-learning/invariance|Invariance]]

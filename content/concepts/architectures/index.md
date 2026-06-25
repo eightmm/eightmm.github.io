@@ -9,6 +9,14 @@ tags:
 
 Architecture notes describe model families used across molecular AI, protein modeling, agents, and implementation reading. Use these pages as quick checks for what a paper is mixing, what inductive bias it assumes, and where evaluation can go wrong.
 
+An architecture defines the function class searched during training:
+
+$$
+f_\theta \in \mathcal{F}_{\text{arch}}
+$$
+
+The same training objective can behave very differently depending on whether $\mathcal{F}_{\text{arch}}$ encodes locality, order, graph structure, or symmetry.
+
 ## Basic Blocks
 
 - [[concepts/architectures/mlp|MLP]]

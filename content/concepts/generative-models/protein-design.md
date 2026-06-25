@@ -10,6 +10,14 @@ tags:
 
 Protein design generates sequences and/or structures intended to fold, bind, or function as specified, including de novo backbones and sequence design for a target structure.
 
+One conditional view is:
+
+$$
+s \sim p_\theta(s \mid X, c)
+$$
+
+where $s$ is a sequence, $X$ is a backbone or structural context, and $c$ is a design condition such as binding, fold, or function.
+
 ## Why It Matters
 
 - Enables novel binders, enzymes, and scaffolds beyond natural proteins.

@@ -10,6 +10,18 @@ tags:
 
 A VAE learns a latent-variable generative model by jointly training an encoder and decoder to maximize a variational lower bound on the data likelihood.
 
+The evidence lower bound is:
+
+$$
+\log p_\theta(x)
+\ge
+\mathbb{E}_{q_\phi(z\mid x)}
+[\log p_\theta(x\mid z)]
+- D_{\mathrm{KL}}(q_\phi(z\mid x)\,\Vert\,p(z))
+$$
+
+The first term rewards reconstruction; the KL term regularizes the latent distribution.
+
 ## Why It Matters
 
 - Provides a structured, continuous latent space for sampling and interpolation.

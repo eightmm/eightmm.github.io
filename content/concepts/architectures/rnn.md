@@ -10,6 +10,14 @@ tags:
 
 Recurrent neural networks process sequences through a carried hidden state. They are an older sequence-modeling family and a useful reference point for [[concepts/architectures/state-space-model|state-space models]].
 
+The basic recurrence is:
+
+$$
+h_t = \phi(W_x x_t + W_h h_{t-1} + b)
+$$
+
+The hidden state $h_t$ is the compressed memory of the prefix up to time $t$.
+
 ## Key Ideas
 
 - RNNs update a hidden state one step at a time, so order is built into the computation.

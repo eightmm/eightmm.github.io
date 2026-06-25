@@ -10,6 +10,14 @@ tags:
 
 Multilayer perceptrons map fixed-size inputs through stacked dense layers and nonlinearities. They are simple baselines, projection heads, and feed-forward blocks inside larger architectures.
 
+One layer is:
+
+$$
+h_{\ell+1} = \sigma(W_\ell h_\ell + b_\ell)
+$$
+
+Stacking these affine transforms and nonlinearities gives the full MLP.
+
 ## Key Ideas
 
 - Each layer applies a learned affine transform followed by a nonlinearity.

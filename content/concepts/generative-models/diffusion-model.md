@@ -10,6 +10,17 @@ tags:
 
 A diffusion model learns to reverse a gradual noising process: it is trained to denoise corrupted data and generates samples by iteratively denoising from noise.
 
+A common forward noising form is:
+
+$$
+x_t = \sqrt{\bar{\alpha}_t}x_0
++ \sqrt{1-\bar{\alpha}_t}\epsilon,
+\qquad
+\epsilon \sim \mathcal{N}(0,I)
+$$
+
+The model is often trained to predict $\epsilon$, $x_0$, or a related velocity target.
+
 ## Why It Matters
 
 - Strong sample quality and stable training across images, molecules, and proteins.

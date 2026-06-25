@@ -9,6 +9,14 @@ tags:
 
 Protein modeling notes cover folding, structure prediction, protein representation learning, and links to downstream structure-based tasks.
 
+A broad protein modeling view is:
+
+$$
+\hat{X} = f_\theta(s, c)
+$$
+
+where $s$ is a protein sequence, $c$ is optional context, and $\hat{X}$ is a predicted structure or representation.
+
 ## Topics
 
 - [[entities/protein|Protein]]

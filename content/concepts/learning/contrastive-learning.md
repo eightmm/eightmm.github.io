@@ -10,6 +10,17 @@ tags:
 
 Contrastive learning trains representations by pulling related views (positives) together in embedding space and pushing unrelated views (negatives) apart. Positives are usually augmented views of the same instance; negatives are other instances.
 
+The common InfoNCE form is:
+
+$$
+\mathcal{L}_i
+= -\log
+\frac{\exp(\operatorname{sim}(z_i,z_i^+)/\tau)}
+\sum_{j} \exp(\operatorname{sim}(z_i,z_j)/\tau)}
+$$
+
+Here $z_i^+$ is a positive view, $z_j$ are candidate positives/negatives, $\operatorname{sim}$ is a similarity function, and $\tau$ is temperature.
+
 ## Why It Matters
 
 - Learns useful representations without labels, from the structure of views alone.

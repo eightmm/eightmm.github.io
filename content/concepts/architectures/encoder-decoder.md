@@ -10,6 +10,20 @@ tags:
 
 Encoder-decoder architectures map an input representation into an output representation through separate encoding and generation or prediction stages.
 
+The basic decomposition is:
+
+$$
+h = \operatorname{Encoder}(x),
+\qquad
+\hat{y} = \operatorname{Decoder}(h)
+$$
+
+For autoregressive decoders, the output distribution is usually factorized as:
+
+$$
+p(y \mid x) = \prod_{t=1}^{T} p(y_t \mid y_{<t}, h)
+$$
+
 ## Key Ideas
 
 - The encoder builds a representation of the input; the decoder consumes that representation to produce outputs.

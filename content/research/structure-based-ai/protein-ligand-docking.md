@@ -10,6 +10,14 @@ tags:
 
 Protein-ligand docking estimates how a small molecule may bind to a protein binding site. A useful docking workflow separates pose generation, pose filtering, and affinity or ranking models.
 
+Docking can be framed as searching over ligand pose variables:
+
+$$
+X^\* = \arg\min_X S(P, L, X)
+$$
+
+Here $P$ is the protein or pocket, $L$ is the ligand, $X$ is the ligand pose/conformation in the binding site, and $S$ is a scoring function. In learned methods, $S$ may be replaced or complemented by a generative model.
+
 ## What Docking Produces
 
 Docking output is usually a set of candidate ligand poses in a binding site. A pose is not automatically a binding explanation. It has to be checked for geometry, chemistry, protein-ligand contacts, and whether the assumed binding site is meaningful.

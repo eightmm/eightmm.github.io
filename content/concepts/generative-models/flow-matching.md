@@ -10,6 +10,18 @@ tags:
 
 Flow matching trains a model to predict a velocity field that transports samples from a simple distribution to a data distribution. It is closely related to diffusion and continuous normalizing flow perspectives.
 
+The training objective is usually written as:
+
+$$
+\mathcal{L}
+= \mathbb{E}_{t,x_t}
+\left[
+\lVert v_\theta(x_t,t) - u_t(x_t) \rVert^2
+\right]
+$$
+
+Here $v_\theta$ is the learned velocity field and $u_t$ is the target velocity along a chosen probability path.
+
 ## Why It Matters
 
 - Provides a generative modeling framework for continuous objects.

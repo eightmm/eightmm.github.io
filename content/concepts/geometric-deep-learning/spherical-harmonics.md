@@ -10,6 +10,14 @@ tags:
 
 Spherical harmonics are basis functions on the sphere used to represent angular structure.
 
+They are commonly written as:
+
+$$
+Y_\ell^m(\theta,\phi)
+$$
+
+where $\ell$ is the degree and $m$ is the order. Higher $\ell$ captures higher-frequency angular structure.
+
 ## Why It Matters
 
 - They encode directional information in rotation-aware neural networks.

@@ -10,6 +10,16 @@ tags:
 
 Masked modeling hides part of an input and trains the model to predict the missing content from the visible context. The masked target can be tokens, patches, nodes, or residues.
 
+The typical objective is:
+
+$$
+\mathcal{L}
+= -\sum_{i\in M}
+\log p_\theta(x_i \mid x_{\setminus M})
+$$
+
+Here $M$ is the masked subset and $x_{\setminus M}$ is the visible context.
+
 ## Why It Matters
 
 - A simple, scalable self-supervised objective across text, images, graphs, and sequences.

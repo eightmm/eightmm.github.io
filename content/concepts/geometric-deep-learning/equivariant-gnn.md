@@ -10,6 +10,14 @@ tags:
 
 An equivariant graph neural network preserves known geometric transformations in its outputs. For molecular modeling, this usually means rotations and translations of coordinates should transform predictions consistently.
 
+For coordinate outputs, SE(3) equivariance requires:
+
+$$
+F(RX+t) = RF(X)+t
+$$
+
+where $X$ is a set of coordinates, $R$ is a rotation, and $t$ is a translation.
+
 ## Role in Molecular Modeling
 
 - Encode atoms, residues, and interactions as graphs.

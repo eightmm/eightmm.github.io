@@ -10,6 +10,14 @@ tags:
 
 Invariance means a model output stays unchanged when an allowed transformation is applied to the input.
 
+Formally:
+
+$$
+f(g\cdot x) = f(x)
+$$
+
+Invariant outputs are appropriate for scalar targets such as class labels, many energies, or global scores.
+
 ## Why It Matters
 
 - Molecular energies, class labels, and many scores should not change under global rotation or translation.

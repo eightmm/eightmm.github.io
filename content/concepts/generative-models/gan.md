@@ -10,6 +10,16 @@ tags:
 
 A GAN trains a generator against a discriminator in a minimax game: the generator produces samples and the discriminator tries to tell them from real data.
 
+The original minimax objective is:
+
+$$
+\min_G \max_D
+\mathbb{E}_{x\sim p_{\mathrm{data}}}[\log D(x)]
++ \mathbb{E}_{z\sim p(z)}[\log(1-D(G(z)))]
+$$
+
+Here $G$ generates samples and $D$ distinguishes real from generated samples.
+
 ## Why It Matters
 
 - Can produce sharp, high-fidelity samples without an explicit likelihood.

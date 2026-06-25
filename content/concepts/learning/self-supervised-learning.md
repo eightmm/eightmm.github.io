@@ -10,6 +10,16 @@ tags:
 
 Self-supervised learning trains representations from structure in the data instead of direct human labels. The target can be masked tokens, corrupted views, contrastive pairs, future states, or reconstruction objectives.
 
+The common pattern is to create a training signal from the input:
+
+$$
+t = T(x),
+\qquad
+\min_\theta \mathcal{L}(f_\theta(V(x)), t)
+$$
+
+Here $V(x)$ is the visible or augmented view and $T(x)$ constructs a target from the same raw example.
+
 ## Why It Matters
 
 - Useful when labels are sparse or expensive.

@@ -10,6 +10,15 @@ tags:
 
 Attention computes context-dependent interactions between elements. It is the core mixing mechanism in [[concepts/architectures/transformer|Transformers]] and appears in graph, multimodal, retrieval, and agent systems.
 
+Scaled dot-product attention is:
+
+$$
+\operatorname{Attention}(Q,K,V)
+= \operatorname{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+$$
+
+Here $Q$ contains queries, $K$ contains keys, $V$ contains values, and $d_k$ is the key dimension. The softmax term defines which elements are mixed.
+
 ## Key Ideas
 
 - Queries ask what information is needed; keys decide what can be matched; values carry the mixed information.

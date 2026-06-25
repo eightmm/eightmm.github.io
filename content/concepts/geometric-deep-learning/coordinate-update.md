@@ -10,6 +10,16 @@ tags:
 
 A coordinate update is a model step that changes point positions while preserving the intended geometric symmetry.
 
+A translation-invariant coordinate update often uses relative vectors:
+
+$$
+x_i' = x_i
++ \sum_{j\in \mathcal{N}(i)}
+\alpha_{ij}(x_j - x_i)
+$$
+
+If $\alpha_{ij}$ is invariant to global rotations and translations, the coordinate update can be equivariant.
+
 ## Why It Matters
 
 - Coordinate updates appear in structure refinement, docking, diffusion, and flow-based generation.

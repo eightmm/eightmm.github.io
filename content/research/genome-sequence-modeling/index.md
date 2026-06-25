@@ -10,6 +10,16 @@ tags:
 
 Genome sequence modeling is a narrow bio-AI scope for this site: sequence representations, long-context architectures, masked objectives, and evaluation issues around genomic data.
 
+A sequence model usually estimates token probabilities or representations:
+
+$$
+p_\theta(x_t \mid x_{<t})
+\quad\text{or}\quad
+h_t = f_\theta(x_{1:T})_t
+$$
+
+The long-context question is how much of $x_{1:T}$ can influence $h_t$ or the prediction at $t$.
+
 ## In Scope
 
 - Genome and DNA sequence representation.
