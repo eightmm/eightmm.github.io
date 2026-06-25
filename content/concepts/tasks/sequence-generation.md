@@ -41,6 +41,7 @@ $$
 ## Related
 
 - [[concepts/tasks/task-specification|Task specification]]
+- [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/systems/inference|Inference]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]

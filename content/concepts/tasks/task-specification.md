@@ -18,7 +18,7 @@ $$
 (\mathcal{X}, \mathcal{Y}, v, \mathcal{L}, \mathcal{M}, s)
 $$
 
-where $\mathcal{X}$ is the input space, $\mathcal{Y}$ is the output space, $v$ is a validity function, $\mathcal{L}$ is the training loss, $\mathcal{M}$ is the metric set, and $s$ is the split rule.
+where $\mathcal{X}$ is the input space, $\mathcal{Y}$ is the [[concepts/tasks/task-output-space|output space]], $v$ is a validity function, $\mathcal{L}$ is the training loss, $\mathcal{M}$ is the metric set, and $s$ is the split rule.
 
 ## Required Fields
 
@@ -46,6 +46,7 @@ Two systems can use the same architecture but solve different tasks. A decoder-o
 ## Related
 
 - [[concepts/tasks/index|Tasks]]
+- [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]

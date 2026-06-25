@@ -112,6 +112,7 @@ Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image i
 
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/tasks/task-specification|Task specification]]
+- [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/ranking|Ranking]]

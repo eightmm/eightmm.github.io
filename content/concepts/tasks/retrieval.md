@@ -50,6 +50,7 @@ The task specification should state the corpus, relevance definition, and whethe
 ## Related
 
 - [[concepts/tasks/task-specification|Task specification]]
+- [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/machine-learning/ranking|Ranking]]

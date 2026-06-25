@@ -19,7 +19,7 @@ $$
 s_\theta(x,y)
 $$
 
-where $\mathcal{Y}(x)$ is the valid output space and $s_\theta$ scores candidate structures.
+where $\mathcal{Y}(x)$ is the valid [[concepts/tasks/task-output-space|output space]] and $s_\theta$ scores candidate structures.
 
 For probabilistic models:
 
@@ -51,6 +51,7 @@ when the structure is generated autoregressively.
 ## Related
 
 - [[concepts/tasks/task-specification|Task specification]]
+- [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/tasks/sequence-generation|Sequence generation]]
 - [[concepts/tasks/segmentation|Segmentation]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
