@@ -52,6 +52,8 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 - [[concepts/machine-learning/classification|Classification]]
 - [[concepts/machine-learning/regression|Regression]]
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
+- [[concepts/machine-learning/generalization|Generalization]]
+- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]
@@ -63,6 +65,9 @@ Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기
 - [[concepts/machine-learning/tree-based-model|Tree-based model]]
 - [[concepts/machine-learning/kernel-method|Kernel method]]
 - [[concepts/machine-learning/regularization|Regularization]]
+- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
+- [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/data/dataset-shift|Dataset shift]]
 
 ## Data and Benchmarks
 

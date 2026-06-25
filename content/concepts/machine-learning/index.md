@@ -26,6 +26,7 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 - Objective: the quantity optimized during training.
 - Optimization: the procedure used to update model parameters.
 - Evaluation: the procedure used to estimate generalization.
+- Generalization: the held-out or deployment behavior being claimed.
 
 ## Model Families
 
@@ -48,6 +49,8 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 ## Methods
 
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
+- [[concepts/machine-learning/generalization|Generalization]]
+- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
 - [[concepts/machine-learning/mean-squared-error|Mean squared error]]
@@ -55,6 +58,9 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/regularization|Regularization]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
+- [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/data/dataset-shift|Dataset shift]]
+- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]

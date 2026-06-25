@@ -104,6 +104,8 @@ Data notes should define example unit, split unit, preprocessing contract, label
 
 Evaluation notes should separate primary metrics from diagnostics and should name failure modes explicitly. When adding task or evaluation notes, connect output space, metric selection, failure mode taxonomy, split rule, uncertainty, and leakage risk before making model-quality claims.
 
+Generalization notes should separate training fit, validation selection, final test evidence, and deployment or OOD claims. Do not use train performance as evidence of generalization. A generalization claim should state example unit, split unit, training distribution, target evaluation distribution, model-selection rule, metric, uncertainty, leakage checks, and dataset-shift risks.
+
 Retrieval task notes should distinguish corpus search, similarity search, and reranking. State the candidate corpus, representation, scoring function, top-k or listwise output, relevance definition, metric, duplicate policy, and whether the stage optimizes recall, precision, enrichment, or downstream answer quality.
 
 Optimization and training notes should connect loss, gradient estimate, optimizer state, learning-rate schedule, effective batch size, gradient accumulation, clipping, checkpoint state, and stability signals. State whether counts refer to micro-steps, optimizer steps, consumed samples, or epochs.

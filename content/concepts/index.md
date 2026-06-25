@@ -33,7 +33,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 ## Reading Paths
 
-- AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]] -> [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/learning/augmentation-policy|Augmentation policy]] -> [[concepts/evaluation/evaluation-protocol|Evaluation protocol]] -> [[concepts/evaluation/index|Evaluation]]
+- AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]] -> [[concepts/machine-learning/generalization|Generalization]] -> [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/learning/augmentation-policy|Augmentation policy]] -> [[concepts/evaluation/evaluation-protocol|Evaluation protocol]] -> [[concepts/evaluation/index|Evaluation]]
 - Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/calculus|Calculus]] -> [[concepts/math/matrix-calculus|Matrix calculus]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - Data path: [[entities/dataset|Dataset]] -> [[concepts/data/dataset-construction-checklist|Dataset construction checklist]] -> [[concepts/data/example-unit|Example unit]] -> [[concepts/data/split-unit|Split unit]] -> [[concepts/data/dataset-split-contract|Dataset split contract]] -> [[concepts/data/preprocessing-contract|Preprocessing contract]] -> [[concepts/data/label-semantics|Label semantics]] -> [[concepts/data/dataset-shift|Dataset shift]] -> [[concepts/data/benchmark|Benchmark]]
 - Modality path: [[concepts/modalities/modality-representation|Modality representation]] -> [[concepts/modalities/modality-task-map|Modality-task map]] -> [[concepts/modalities/text|Text]] -> [[concepts/modalities/sequence|Sequence]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/tabular|Tabular]] -> [[concepts/modalities/graph|Graph]] -> [[concepts/modalities/3d-structure|3D structure]] -> [[concepts/modalities/modality-alignment|Modality alignment]] -> [[concepts/modalities/missing-modality|Missing modality]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
@@ -191,6 +191,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/machine-learning/density-estimation|Density estimation]]
 - [[concepts/machine-learning/representation-learning|Representation learning]]
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
+- [[concepts/machine-learning/generalization|Generalization]]
+- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
 - [[concepts/machine-learning/mean-squared-error|Mean squared error]]
@@ -215,6 +217,9 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/machine-learning/regularization|Regularization]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/dimensionality-reduction|Dimensionality reduction]]
+- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
+- [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/data/dataset-shift|Dataset shift]]
 
 ## Learning Methods
 

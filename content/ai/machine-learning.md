@@ -62,6 +62,8 @@ $$
 - [[concepts/machine-learning/gradient-clipping|Gradient clipping]]: 불안정한 gradient를 어떻게 제한할 것인가
 - [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]: memory limit 안에서 effective batch size를 어떻게 만들 것인가
 - [[concepts/machine-learning/batch-size|Batch size]]: gradient estimate와 memory/throughput을 어떻게 trade-off할 것인가
+- [[concepts/machine-learning/generalization|Generalization]]: train data 밖에서도 성능이 유지된다는 claim을 어떻게 정의할 것인가
+- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]: train/validation/test curve를 어떻게 해석할 것인가
 - [[concepts/machine-learning/regularization|Regularization]]: overfitting을 어떻게 줄일 것인가
 - [[concepts/evaluation/train-validation-test-split|Validation split]]: model selection을 어떤 split에서 할 것인가
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]: 질문, 가설, 설계, run, artifact, 분석, claim을 어떻게 연결할 것인가
@@ -93,6 +95,7 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[concepts/evaluation/baseline|baseline]]과 비교했을 때 개선이 의미 있는가?
 - [[concepts/evaluation/ablation-study|ablation study]]가 설계 선택을 지지하는가?
 - overfitting, leakage, distribution shift를 확인했는가?
+- generalization claim이 IID인지, OOD인지, deployment claim인지 명확한가?
 
 ## Related
 
@@ -102,6 +105,8 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
+- [[concepts/machine-learning/generalization|Generalization]]
+- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/machine-learning/training-stability|Training stability]]
