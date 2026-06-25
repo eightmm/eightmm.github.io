@@ -4,16 +4,18 @@ import * as ExternalPlugin from "./.quartz/plugins"
 ExternalPlugin.Explorer({
   filterFn: (node) => {
     const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
-    if (node.slugSegment === "tags") return false
-    const segments = node.slug.split("/")
+    const slug = node.slug ?? ""
+    const slugSegment = node.slugSegment ?? ""
+    if (slugSegment === "tags") return false
+    const segments = slug.split("/")
     const firstSegment = segments[0]
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)
   },
   sortFn: (a, b) => {
     const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
     const agentGroups = ["core", "tools", "workflows", "verification"]
-    const aSegments = a.slug.split("/")
-    const bSegments = b.slug.split("/")
+    const aSegments = (a.slug ?? "").split("/")
+    const bSegments = (b.slug ?? "").split("/")
     if (aSegments.at(-1) === "index") aSegments.pop()
     if (bSegments.at(-1) === "index") bSegments.pop()
     const aIndex = explorerRoots.indexOf(aSegments[0] ?? "")
