@@ -35,5 +35,7 @@ Research notes, paper summaries, agent outputs, and server-operation lessons eas
 - [[agents/llm-wiki|LLM Wiki]]
 - [[agents/context-engineering|Context engineering]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
+- [[inbox/inbox-triage|Inbox triage]]
+- [[logs/sanitization-checklist|Sanitization checklist]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 - [[concepts/index|Concepts]]

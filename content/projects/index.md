@@ -23,6 +23,10 @@ Project pages should describe public goals, interfaces, design decisions, and re
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 - [[projects/hpc-research-workflows|HPC research workflows]]
 
+## Formats
+
+- [[projects/project-milestone-format|Project milestone format]]
+
 ## Future Candidates
 
 - Structure-based screening pipeline.
@@ -36,4 +40,5 @@ Project pages should describe public goals, interfaces, design decisions, and re
 - [[papers/index|Papers]]
 - [[infra/hpc/slurm|Slurm]]
 - [[logs/index|Public logs]]
+- [[logs/public-log-format|Public log format]]
 - [[agents/index|Agents]]

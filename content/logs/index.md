@@ -16,6 +16,11 @@ Logs are cleaned work records. They should capture what was learned, not private
 - Project milestones and design decisions.
 - Short notes that may later become [[posts/index|Posts]].
 
+## Formats
+
+- [[logs/public-log-format|Public log format]]
+- [[logs/sanitization-checklist|Sanitization checklist]]
+
 ## Do Not Include
 
 - Server IPs, ports, usernames, private paths, credentials, or node names.
@@ -27,3 +32,4 @@ Logs are cleaned work records. They should capture what was learned, not private
 - [[projects/index|Projects]]
 - [[infra/index|Infra]]
 - [[research/index|Research]]
+- [[inbox/inbox-triage|Inbox triage]]

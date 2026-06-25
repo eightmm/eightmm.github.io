@@ -16,6 +16,11 @@ Inbox notes hold sanitized daily candidates before they become curated paper not
 - Short follow-up queues.
 - Notes that need verification before public synthesis.
 
+## Workflow
+
+- [[inbox/inbox-triage|Inbox triage]]
+- [[logs/sanitization-checklist|Sanitization checklist]]
+
 ## Status Labels
 
 - `inbox`: collected but not curated.
@@ -60,6 +65,7 @@ source: to verify
 
 ## Related
 
+- [[inbox/inbox-triage|Inbox triage]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]
