@@ -54,5 +54,7 @@ where $B$ is the available token budget after reserving instructions and output.
 - [[concepts/llm/token-budget|Token budget]]
 - [[concepts/llm/context-window|Context window]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
+- [[concepts/llm/chunking|Chunking]]
+- [[concepts/llm/query-rewriting|Query rewriting]]
 - [[agents/core/context-engineering|Context engineering]]
 - [[agents/core/memory-boundary|Memory boundary]]

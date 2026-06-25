@@ -32,9 +32,13 @@ $$
 
 Good retrieval can still produce an unsupported answer if generation ignores or distorts evidence.
 
+In practical systems, retrieval often includes [[concepts/llm/query-rewriting|query rewriting]], [[concepts/llm/chunking|chunking]], [[concepts/llm/hybrid-retrieval|hybrid retrieval]], [[concepts/tasks/reranking|reranking]], and [[concepts/llm/context-packing|context packing]].
+
 ## Checks
 
 - Are retrieved documents relevant, current, and source-attributed?
+- What is the retrieval unit: document, section, paragraph, chunk, table, or code block?
+- Is query rewriting improving recall without changing intent?
 - Is retrieval evaluated separately from generation?
 - Are untrusted retrieved documents protected against prompt injection?
 - Does the answer cite or link the evidence it used?
@@ -45,6 +49,9 @@ Good retrieval can still produce an unsupported answer if generation ignores or 
 
 - [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
+- [[concepts/llm/chunking|Chunking]]
+- [[concepts/llm/hybrid-retrieval|Hybrid retrieval]]
+- [[concepts/llm/query-rewriting|Query rewriting]]
 - [[concepts/llm/context-packing|Context packing]]
 - [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]

@@ -27,6 +27,9 @@ LLM concepts describe language models, context, retrieval, and workflow patterns
 - [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
+- [[concepts/llm/chunking|Chunking]]
+- [[concepts/llm/hybrid-retrieval|Hybrid retrieval]]
+- [[concepts/llm/query-rewriting|Query rewriting]]
 - [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 
 ## Checks
@@ -36,6 +39,7 @@ LLM concepts describe language models, context, retrieval, and workflow patterns
 - How is token budget allocated?
 - What decoding and output constraints are used?
 - Are retrieved documents trusted as data, not instructions?
+- Is retrieval unit, query rewriting, and reranking behavior visible enough to debug?
 - Are generated claims grounded in evidence or marked `to verify`?
 - Is the output verified outside the model?
 

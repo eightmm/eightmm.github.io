@@ -28,7 +28,7 @@ D_q
 s(q,d)
 $$
 
-Chunking changes the retrieval task. The retrieval unit can be:
+[[concepts/llm/chunking|Chunking]] changes the retrieval task. The retrieval unit can be:
 
 $$
 u_d \in \{\text{page}, \text{section}, \text{paragraph}, \text{table}, \text{code block}, \text{metadata}\}
@@ -49,6 +49,8 @@ The unit should match the evidence granularity needed by downstream generation.
 ## Related
 
 - [[concepts/tasks/retrieval|Retrieval]]
+- [[concepts/llm/chunking|Chunking]]
+- [[concepts/llm/hybrid-retrieval|Hybrid retrieval]]
 - [[concepts/machine-learning/representation-learning|Representation learning]]
 - [[concepts/machine-learning/ranking|Ranking]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]

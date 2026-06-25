@@ -41,6 +41,8 @@ where $G$ is the goal, $S_t$ is current working state, $E_t$ is evidence from to
 ## Related
 
 - [[concepts/llm/context-packing|Context packing]]
+- [[concepts/llm/chunking|Chunking]]
+- [[concepts/llm/query-rewriting|Query rewriting]]
 - [[concepts/llm/token-budget|Token budget]]
 - [[concepts/llm/context-window|Context window]]
 - [[concepts/llm/in-context-learning|In-context learning]]
