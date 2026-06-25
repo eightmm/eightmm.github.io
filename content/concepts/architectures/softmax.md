@@ -33,6 +33,8 @@ Here $z_i$ is a logit and $p_i$ is the normalized probability for class or optio
 
 ## Related
 
+- [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/evaluation/calibration|Calibration]]

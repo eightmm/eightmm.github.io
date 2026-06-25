@@ -36,6 +36,8 @@ Different families choose different training signals: likelihood, reconstruction
 
 ## Related
 
+- [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein|Protein]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]

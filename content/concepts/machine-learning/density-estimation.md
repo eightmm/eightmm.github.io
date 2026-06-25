@@ -42,6 +42,8 @@ $$
 
 ## Related
 
+- [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/generative-models/index|Generative models]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]

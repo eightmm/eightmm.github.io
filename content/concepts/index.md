@@ -12,6 +12,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 ## Main Hubs
 
+- [[concepts/math/index|Math foundations]]
 - [[concepts/machine-learning/index|Machine learning]]
 - [[concepts/data/index|Data]]
 - [[concepts/modalities/index|Modalities]]
@@ -30,7 +31,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 ## Reading Paths
 
-- AI basics: [[concepts/machine-learning/index|Machine learning]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
+- AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/index|Machine learning]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/evaluation/index|Evaluation]]
+- Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - Data path: [[entities/dataset|Dataset]] -> [[concepts/data/data-curation|Data curation]] -> [[concepts/data/annotation-labeling|Annotation and labeling]] -> [[concepts/data/benchmark|Benchmark]]
 - Modality path: [[concepts/modalities/text|Text]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - Task path: [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]]
@@ -51,6 +53,16 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[entities/ligand|Ligand]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+
+## Math Foundations
+
+- [[concepts/math/index|Math foundations]]
+- [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/expectation|Expectation]]
+- [[concepts/math/maximum-likelihood|Maximum likelihood]]
+- [[concepts/math/entropy-kl|Entropy and KL divergence]]
+- [[concepts/math/bayes-rule|Bayes rule]]
 
 ## Data
 

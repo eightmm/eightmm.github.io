@@ -42,6 +42,9 @@ Here $p_k$ is the predicted probability for class $k$, and $y_k$ is the target d
 
 ## Related
 
+- [[concepts/math/expectation|Expectation]]
+- [[concepts/math/maximum-likelihood|Maximum likelihood]]
+- [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/evaluation/index|Evaluation]]

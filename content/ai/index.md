@@ -14,6 +14,7 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 
 ## 큰 축
 
+- Math Foundations: probability, linear algebra, likelihood, information theory 같은 공통 수식 기반
 - Machine Learning: 예측 문제, feature, loss, regularization, validation을 다루는 기본 층
 - Data: dataset, annotation, sampling, benchmark, provenance를 다루는 층
 - Modality: text, image, video, audio, molecular/protein structure처럼 입력과 출력 신호가 어떤 형태인지 보는 층
@@ -29,6 +30,12 @@ AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표
 
 Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기 전에도 problem type, feature, loss, optimization, regularization, validation을 구분해야 합니다.
 
+- [[concepts/math/index|Math foundations]]
+- [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/expectation|Expectation]]
+- [[concepts/math/maximum-likelihood|Maximum likelihood]]
+- [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[ai/machine-learning|Machine learning gateway]]
 - [[concepts/machine-learning/index|Machine learning]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]

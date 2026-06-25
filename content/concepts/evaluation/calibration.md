@@ -35,6 +35,8 @@ $$
 
 ## Related
 
+- [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/expectation|Expectation]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/index|Evaluation]]
