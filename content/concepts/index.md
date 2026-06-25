@@ -27,6 +27,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/protein-modeling/index|Protein modeling concepts]]
+- [[concepts/genome-modeling/index|Genome modeling concepts]]
 - [[entities/index|Entities]]
 
 ## Reading Paths
@@ -43,6 +44,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Structure-based AI: [[entities/pocket|Pocket]] -> [[concepts/sbdd/pose-quality|Pose quality]] -> [[concepts/sbdd/binding-affinity|Binding affinity]] -> [[concepts/sbdd/virtual-screening|Virtual screening]]
 - Molecular modeling: [[concepts/molecular-modeling/smiles|SMILES]] -> [[concepts/molecular-modeling/molecular-graph|Molecular graph]] -> [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]] -> [[concepts/molecular-modeling/conformer|Conformer]]
 - Protein modeling: [[entities/sequence|Sequence]] -> [[concepts/protein-modeling/protein-representation|Protein representation]] -> [[concepts/protein-modeling/contact-map|Contact map]] -> [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
+- Genome-level sequence: [[entities/genome|Genome]] -> [[concepts/genome-modeling/genomic-region|Genomic region]] -> [[concepts/genome-modeling/k-mer|K-mer]] -> [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
 - Paper reading: [[papers/paper-note-format|Paper note format]] -> [[papers/paper-review-workflow|Paper review workflow]] -> [[papers/reading-status|Reading status]]
 - LLM Wiki: [[concepts/llm/language-model|Language model]] -> [[concepts/llm/context-window|Context window]] -> [[concepts/llm/embedding-retrieval|Embedding retrieval]] -> [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 
@@ -177,6 +179,14 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
+
+## Genome Modeling
+
+- [[concepts/genome-modeling/index|Genome modeling concepts]]
+- [[concepts/genome-modeling/genomic-region|Genomic region]]
+- [[concepts/genome-modeling/k-mer|K-mer]]
+- [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
+- [[concepts/genome-modeling/genome-annotation|Genome annotation]]
 
 ## Generative Models
 

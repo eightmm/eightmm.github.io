@@ -27,6 +27,7 @@ $$
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]
+- [[entities/genome|Genome]]
 
 ## Molecule and Ligand Modeling
 
@@ -58,6 +59,16 @@ $$
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+
+## Genome-Level Sequence Modeling
+
+유전체는 이 블로그에서 넓은 omics 주제가 아니라 sequence/region/variant 수준의 입력 객체로만 다룹니다.
+
+- [[concepts/genome-modeling/index|Genome modeling concepts]]
+- [[concepts/genome-modeling/genomic-region|Genomic region]]
+- [[concepts/genome-modeling/k-mer|K-mer]]
+- [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
+- [[concepts/genome-modeling/genome-annotation|Genome annotation]]
 
 ## Geometry and Evaluation
 

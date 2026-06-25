@@ -25,6 +25,10 @@ A genome is the complete genetic sequence of an organism or sample. In this wiki
 
 ## Related
 
+- [[concepts/genome-modeling/index|Genome modeling concepts]]
+- [[concepts/genome-modeling/genomic-region|Genomic region]]
+- [[concepts/genome-modeling/k-mer|K-mer]]
+- [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
 - [[entities/sequence|Sequence]]
 - [[entities/dataset|Dataset]]
 - [[concepts/architectures/transformer|Transformer]]
