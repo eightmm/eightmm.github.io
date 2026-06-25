@@ -12,6 +12,7 @@ A paper note should preserve what the paper claims, what the method changes, how
 ## Suggested Shape
 
 - Citation: verified title, authors, venue or preprint status, and link.
+- Status: one of the values in [[papers/reading-status|Reading status]].
 - Question: what problem the paper tries to solve.
 - Method: core model, objective, data, and evaluation protocol.
 - Results: what is claimed, with metric and benchmark context.
@@ -40,6 +41,8 @@ $$
 ## Related
 
 - [[papers/index|Papers]]
+- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/reading-status|Reading status]]
 - [[agents/paper-brief-workflow|Paper brief workflow]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]

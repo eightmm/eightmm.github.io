@@ -13,17 +13,20 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 ## Method
 
 - [[papers/paper-note-format|Paper note format]]
+- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/reading-status|Reading status]]
 
 ## Structure-Based AI
 
+- [[papers/sbdd/index|Structure-based AI papers]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 
-## Future Buckets
+## Paper Buckets
 
-- Protein modeling
-- Generative models
-- Self-supervised learning
-- Systems and infrastructure
+- [[papers/protein-modeling/index|Protein modeling papers]]
+- [[papers/generative-models/index|Generative model papers]]
+- [[papers/learning-methods/index|Learning method papers]]
+- [[papers/systems/index|Systems papers]]
 
 ## Related
 

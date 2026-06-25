@@ -19,7 +19,7 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 ## Flow
 
 1. Daily brief enters [[inbox/index|Inbox]].
-2. Interesting items become [[papers/index|Paper]] stubs with `status: reading`.
+2. Interesting items become [[papers/index|Paper]] stubs with [[papers/reading-status|reading status]].
 3. Reusable ideas update [[concepts/index|Concepts]].
 4. Research relevance is linked into [[research/index|Research]].
 5. Weekly or monthly synthesis becomes [[posts/index|Posts]].
@@ -39,5 +39,6 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 - [[agents/agent-evaluation|Agent evaluation]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
 - [[papers/paper-note-format|Paper note format]]
+- [[papers/paper-review-workflow|Paper review workflow]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]

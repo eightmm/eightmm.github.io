@@ -62,6 +62,7 @@ For this site, PoseBusters is the first evaluation anchor for [[research/structu
 
 ## Related
 
+- [[papers/sbdd/index|Structure-based AI papers]]
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/pose-quality|Pose quality]]

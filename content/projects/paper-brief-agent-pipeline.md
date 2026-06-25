@@ -37,4 +37,6 @@ Daily paper lists are useful but noisy. The durable output should be a small set
 - [[agents/human-in-the-loop|Human in the loop]]
 - [[agents/agent-evaluation|Agent evaluation]]
 - [[papers/paper-note-format|Paper note format]]
+- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/reading-status|Reading status]]
 - [[projects/llm-wiki-blog|LLM Wiki blog]]
