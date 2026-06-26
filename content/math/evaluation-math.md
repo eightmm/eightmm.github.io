@@ -82,6 +82,32 @@ where $s_{A,j}$ and $s_{B,j}$ are scores or losses for two systems on the same e
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/conformal-prediction|Conformal prediction]]
 
+## Reporting Checks
+
+Use the evaluation formula only after the quantities are pinned down.
+
+| Question | Mathematical Object |
+| --- | --- |
+| What is averaged? | per-example loss, score, binary success, rank statistic, or generated-sample property |
+| Over which set? | test examples, queries, targets, scaffolds, proteins, prompts, seeds, or generated samples |
+| What is random? | data sampling, model initialization, decoding, environment, assay noise, or bootstrap resampling |
+| What is compared? | paired examples, independent aggregates, confidence intervals, or effect sizes |
+| What was selected? | checkpoint, prompt, threshold, hyperparameter, preprocessing rule, or model family |
+
+For a reported score $S$, a useful paper note should identify:
+
+$$
+S
+=
+\operatorname{aggregate}
+\left(
+\{s_j\}_{j=1}^{m};
+\text{metric},\ \text{selection rule},\ \text{split}
+\right)
+$$
+
+where $s_j$ is the per-unit score and the aggregation rule is part of the claim.
+
 ## Checks
 
 - Is the reported score a point estimate or an uncertainty-aware comparison?

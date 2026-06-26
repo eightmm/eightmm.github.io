@@ -61,6 +61,22 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
 
+## Bio Evidence Package
+
+For Bio papers, a model score is not enough. Record the biological object and the measurement context before the metric.
+
+| Field | Required Detail |
+| --- | --- |
+| Example unit | molecule, protein, assay record, complex, pose, generated sample, or genomic region |
+| Label semantics | endpoint, direction, unit, threshold, censoring, replicate aggregation, and source |
+| Preprocessing | molecule standardization, protein/structure cleaning, sequence filtering, coordinate source |
+| Split unit | scaffold, protein family, complex pair, assay/source, time, or template-aware split |
+| Baseline | fingerprint/tree model, sequence similarity, docking baseline, or task-specific simple model |
+| Metric | primary decision metric plus diagnostics for calibration, uncertainty, or failure modes |
+| Leakage check | duplicate, scaffold, homolog, template, assay/source, or preprocessing leakage |
+
+For structure-based benchmarks, also state whether the known ligand pose, close analogs, templates, or pocket definition are available at inference time.
+
 ## Checks
 
 - What is one example: molecule, protein, assay record, protein-ligand complex, or generated pose?

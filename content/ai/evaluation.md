@@ -135,6 +135,22 @@ $$
 
 If any part is missing, the score should be treated as an incomplete observation rather than a stable conclusion.
 
+## Minimum Evidence Package
+
+When turning a paper into a wiki note or post, record the smallest evidence package that makes the result interpretable.
+
+| Field | Why It Matters |
+| --- | --- |
+| Task and output space | prevents comparing classification, ranking, generation, and coordinate prediction as if they were the same claim |
+| Dataset and split | defines the population and generalization boundary |
+| Model-selection rule | separates validation decisions from final test evidence |
+| Baseline | shows whether the method beats a relevant simple alternative |
+| Primary metric | states what success means before looking at secondary diagnostics |
+| Uncertainty or variance | prevents overreading small score differences |
+| Failure modes | turns a score into a reusable lesson |
+
+If a paper does not provide one of these fields, mark it as `to verify` instead of filling the gap from memory.
+
 ## Related
 
 - [[ai/learning-methods|Learning methods]]
