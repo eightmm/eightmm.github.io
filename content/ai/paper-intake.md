@@ -20,6 +20,7 @@ $$
 | Field | Question | Route |
 | --- | --- | --- |
 | Input and output | What object enters the model, and what object is predicted? | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
+| Claim pattern | Is the strongest claim architecture, learning method, generation, evaluation, scaling, systems, or agent workflow? | [AI paper claim patterns](/ai/paper-claim-patterns) |
 | Prediction type | Is it classification, regression, ranking, retrieval, generation, or action selection? | [Machine Learning](/ai/machine-learning) |
 | Architecture | What inductive bias, parameter sharing, and complexity does the model use? | [Architectures](/ai/architectures) |
 | Learning signal | Is the signal label, mask, contrast, denoising target, preference, reward, or synthetic target? | [Learning Methods](/ai/learning-methods) |
@@ -71,11 +72,13 @@ After reading, update the smallest durable note that captures the reusable idea.
 - Paper-specific claim: [[papers/analysis/claim-extraction|Claim extraction]] and [[papers/analysis/evidence-table|Evidence table]]
 - Scaling or efficiency claim: [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - Multi-axis paper: [[papers/workflows/claim-routing|Claim routing]]
+- Repeated AI paper type: [[ai/paper-claim-patterns|AI paper claim patterns]]
 
 ## Related
 
 - [[ai/index|AI]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[ai/paper-claim-patterns|AI paper claim patterns]]
 - [[math/formula-intake|Formula intake]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]

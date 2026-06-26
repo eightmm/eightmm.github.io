@@ -30,6 +30,7 @@ $$
 | --- | --- | --- |
 | Reusable wiki note | definition, boundary, contract, checks, links, public boundary | [Wiki note quality gate](/concepts/wiki-note-quality-gate) |
 | AI paper claim | architecture, objective, evidence, and system boundary | [AI paper intake](/ai/paper-intake) |
+| AI claim pattern | architecture, learning, generation, evaluation, scaling, systems, or agent workflow | [AI paper claim patterns](/ai/paper-claim-patterns) |
 | Computational biology paper claim | object, representation, label, split, leakage | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
 | Computational biology claim pattern | property, activity, docking, generation, protein design, genome sequence modeling | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 | Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
@@ -99,6 +100,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One claim boundary when the result could be overread: [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
 - One paper note or paper-analysis note when a specific paper claim is being discussed.
 - One claim-routing pass when a paper or post candidate spans multiple axes: [[papers/workflows/claim-routing|Claim routing]].
+- One AI claim-pattern pass when the paper's method contribution is central: [[ai/paper-claim-patterns|AI paper claim patterns]].
 - One cross-axis contract when AI, computational biology, and Math all matter: [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]].
 - One concept-update pass when a paper changes reusable definitions, formulas, contracts, or evidence boundaries: [[papers/workflows/concept-update-contract|Concept update contract]].
 - One readiness gate pass before promoting a multi-axis candidate: [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]].

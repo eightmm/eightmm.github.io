@@ -24,6 +24,7 @@ where $p$ is a paper or post candidate and $a$ is an axis such as architecture, 
 | Question | If Yes | Start |
 | --- | --- | --- |
 | Is the main contribution a model structure? | architecture paper or concept update | [Architecture papers](/papers/architectures) |
+| Is the main contribution an AI method claim whose type is unclear? | AI claim pattern catalog | [AI paper claim patterns](/ai/paper-claim-patterns) |
 | Is the main contribution a supervision or training signal? | learning-method paper or concept update | [Learning method papers](/papers/learning-methods) |
 | Is the main contribution sampling or density modeling? | generative-model paper or concept update | [Generative model papers](/papers/generative-models) |
 | Is the main contribution about molecules, proteins, docking, conformers, or complexes? | molecular modeling paper intake | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
@@ -99,6 +100,7 @@ public artifact status: to verify
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[ai/paper-intake|AI paper intake]]
+- [[ai/paper-claim-patterns|AI paper claim patterns]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 - [[math/formula-intake|Formula intake]]
