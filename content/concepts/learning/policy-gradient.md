@@ -117,6 +117,26 @@ $$
 
 For language models, $a_t$ is a token and the trajectory is the generated response. The KL term prevents the policy from exploiting reward-model artifacts too aggressively.
 
+This can also be read as a constrained optimization problem:
+
+$$
+\max_\theta
+\mathbb{E}_{x,y\sim\pi_\theta}
+[r(x,y)]
+\quad
+\text{subject to}
+\quad
+D_{\mathrm{KL}}
+(
+\pi_\theta
+\|
+\pi_{\mathrm{ref}}
+)
+\le \epsilon
+$$
+
+The penalty coefficient $\beta$ is a practical way to approximate or control this constraint.
+
 ## PPO-Style Clipped Surrogate
 
 For samples from an old policy, define:
@@ -180,5 +200,6 @@ Policy gradient is attractive when the reward is non-differentiable, but sample 
 - [[concepts/learning/reward-modeling|Reward modeling]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 - [[concepts/machine-learning/objective-metric-alignment|Objective metric alignment]]
+- [[concepts/math/constrained-optimization|Constrained optimization]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[agents/verification/verification-loop|Verification loop]]

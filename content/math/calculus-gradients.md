@@ -32,6 +32,7 @@ This page is Math-facing. It explains derivatives, chain rules, Jacobians, Hessi
 - [[concepts/math/calculus|Calculus]]
 - [[concepts/math/matrix-calculus|Matrix calculus]]
 - [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
+- [[concepts/math/constrained-optimization|Constrained optimization]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
 - [[concepts/machine-learning/gradient-checking|Gradient checking]]
@@ -180,6 +181,7 @@ Keep these in Math:
 - chain rule and matrix calculus
 - curvature and local approximation
 - second-order optimization diagnostics
+- Lagrangians, KKT conditions, projection, and feasibility
 
 Keep these in AI:
 

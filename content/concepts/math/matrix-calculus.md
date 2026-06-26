@@ -138,6 +138,39 @@ For coordinate outputs $X\in\mathbb{R}^{N\times 3}$, derivatives can be taken wi
 
 The derivative should respect the same symmetry contract as the model output.
 
+## Constrained Variables
+
+Some variables do not live in unconstrained Euclidean space. Examples include probability simplexes, unit vectors, rotation matrices, valid molecular graphs, and restrained coordinate sets.
+
+For a feasible set $\mathcal{C}$:
+
+$$
+x\in\mathcal{C}
+$$
+
+an update may require projection:
+
+$$
+x_{t+1}
+=
+\Pi_{\mathcal{C}}
+\left(
+x_t-\eta\nabla_x f(x_t)
+\right)
+$$
+
+or a reparameterization:
+
+$$
+x = \phi(z),
+\qquad
+\nabla_z f(\phi(z))
+=
+J_\phi(z)^\top \nabla_x f(x)
+$$
+
+This distinction is important when a paper claims valid molecules, normalized probabilities, rotations, or geometry constraints.
+
 ## Practical Checks
 
 - What are the input and output shapes?
@@ -145,6 +178,7 @@ The derivative should respect the same symmetry contract as the model output.
 - Are tensors treated as row vectors or column vectors in the notation?
 - Does the implementation detach or stop gradients through part of the computation?
 - Is the derivative with respect to inputs, parameters, coordinates, or time?
+- Is the variable unconstrained, projected, or reparameterized?
 - Does the paper need an exact derivative matrix, or only an autograd product?
 
 ## Related
@@ -152,6 +186,7 @@ The derivative should respect the same symmetry contract as the model output.
 - [[concepts/math/calculus|Calculus]]
 - [[concepts/math/linear-algebra|Linear algebra]]
 - [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
+- [[concepts/math/constrained-optimization|Constrained optimization]]
 - [[concepts/math/tensor-shape-notation|Tensor shape notation]]
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]

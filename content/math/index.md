@@ -29,6 +29,7 @@ $$
 | Foundations | definitions, formulas, reusable checks | [Math foundations](/concepts/math) |
 | Linear algebra | vectors, matrices, tensor shapes, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Calculus | derivatives, chain rule, Jacobians, Hessians, backpropagation math | [Calculus and gradients](/math/calculus-gradients) |
+| Constrained optimization | Lagrangian, KKT, penalties, barriers, projection, feasibility | [Constrained optimization](/concepts/math/constrained-optimization) |
 | Probability | random variables, distributions, estimators, Bayesian inference, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
 | Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
 | Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry) |
@@ -61,7 +62,7 @@ $$
 | Context | Links |
 | --- | --- |
 | Architecture | [Linear layer](/concepts/architectures/linear-layer), [Attention](/concepts/architectures/attention), [Normalization](/concepts/architectures/normalization) |
-| Learning | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus), [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Optimization](/concepts/machine-learning/optimization) |
+| Learning | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus), [Constrained optimization](/concepts/math/constrained-optimization), [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Optimization](/concepts/machine-learning/optimization) |
 | Objective and metric | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment), [Loss function](/concepts/machine-learning/loss-function), [Metric selection](/concepts/evaluation/metric-selection), [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
 | Selection and uncertainty | [Model selection](/concepts/machine-learning/model-selection), [Confidence interval](/concepts/evaluation/confidence-interval), [Cross-validation](/concepts/evaluation/cross-validation), [Calibration](/concepts/evaluation/calibration) |
 | Numerical stability | [Numerical computing](/math/numerical-computing), [Softmax](/concepts/architectures/softmax), [Training stability](/concepts/machine-learning/training-stability), [Memory-compute tradeoff](/concepts/systems/memory-compute-tradeoff) |
@@ -108,6 +109,7 @@ $$
 | --- | --- | --- |
 | Linear operation | shape, axis, projection, rank, similarity | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Gradient or update | objective, parameter, gradient estimate, optimizer state | [Calculus and gradients](/math/calculus-gradients) |
+| Constraint | feasible set, Lagrangian, penalty, projection, invalid-output handling | [Constrained optimization](/concepts/math/constrained-optimization) |
 | Probability / expectation | random variable, conditioning, sampling distribution | [Probability and statistics](/math/probability-statistics) |
 | Likelihood / entropy / KL | modeled distribution, target distribution, bound or approximation | [Information and likelihood](/math/information-likelihood) |
 | Symmetry / coordinate rule | transformation group, invariant target, equivariant target | [Geometry and symmetry](/math/geometry-symmetry) |

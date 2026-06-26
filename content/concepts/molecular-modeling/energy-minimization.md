@@ -64,6 +64,18 @@ $$
 
 where $R$ penalizes movement away from a reference geometry $X_0$.
 
+If constraints are enforced exactly, the problem is:
+
+$$
+\min_X E_\pi(X)
+\quad
+\text{subject to}
+\quad
+c(X)=0,\quad g(X)\le 0
+$$
+
+If they are only penalties, invalid geometry may still remain. See [[concepts/math/constrained-optimization|Constrained optimization]].
+
 Second-order or quasi-Newton methods use curvature information:
 
 $$
@@ -109,6 +121,7 @@ For docking papers, this scope should be reported with the same care as the mode
 - [[concepts/molecular-modeling/force-field|Force field]]
 - [[concepts/generative-models/energy-based-model|Energy-based model]]
 - [[concepts/generative-models/score-based-model|Score-based model]]
+- [[concepts/math/constrained-optimization|Constrained optimization]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/pose-quality|Pose quality]]

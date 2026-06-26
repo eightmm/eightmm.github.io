@@ -34,6 +34,7 @@ Optimization follows local information from gradients, while evaluation decides 
 - Optimizer state can change the update beyond raw gradients.
 - Curvature and scale affect how stable a step size is.
 - Second-order methods or diagnostics use curvature information directly or approximately.
+- Constraints may be enforced exactly, approximated by penalties, or handled by projection/decoding.
 
 ## Update View
 
@@ -85,6 +86,30 @@ $$
 
 where $\tilde{g}_t$ is the processed gradient after masking, averaging, clipping, scaling, or preconditioning, and $P_t$ represents optimizer-specific scaling such as adaptive moments or approximate curvature.
 
+## Constraints and Penalties
+
+Some optimization problems include a feasible set:
+
+$$
+\theta^\*
+=
+\arg\min_{\theta\in\mathcal{C}}
+\mathcal{L}(\theta)
+$$
+
+Others use a soft penalty:
+
+$$
+\theta^\*
+=
+\arg\min_\theta
+\mathcal{L}(\theta)+\lambda R(\theta)
+$$
+
+These are not the same claim. A constraint says the solution must remain valid; a penalty only changes the objective. See [[concepts/math/constrained-optimization|Constrained optimization]].
+
+This distinction matters for constrained decoding, KL-regularized policies, molecular geometry, valid graphs, and resource-constrained model selection.
+
 ## Curvature View
 
 First-order methods use gradients. Second-order methods also use curvature:
@@ -129,6 +154,7 @@ Optimization only proves that the training procedure reduced the chosen objectiv
 - Gradient accumulation changes the effective batch only if loss scaling and synchronization boundaries are correct.
 - Mixed precision can silently skip optimizer steps or change numerical behavior.
 - Comparing optimizers without equal tuning budget is usually not a clean optimizer claim.
+- A hard constraint, a soft regularizer, and a post-hoc filter support different claims.
 
 ## Related
 
@@ -139,6 +165,7 @@ Optimization only proves that the training procedure reduced the chosen objectiv
 - [[concepts/machine-learning/gradient-checking|Gradient checking]]
 - [[concepts/machine-learning/loss-landscape|Loss landscape]]
 - [[concepts/machine-learning/second-order-optimization|Second-order optimization]]
+- [[concepts/math/constrained-optimization|Constrained optimization]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
 - [[concepts/machine-learning/batch-size|Batch size]]
