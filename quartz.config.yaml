@@ -146,9 +146,9 @@ plugins:
     enabled: true
     options:
       title: Contents
-      folderClickBehavior: link
-      folderDefaultState: open
-      useSavedState: false
+      folderClickBehavior: collapse
+      folderDefaultState: collapsed
+      useSavedState: true
     layout:
       position: left
       priority: 50
