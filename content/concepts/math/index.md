@@ -16,6 +16,8 @@ $$
 \text{representation} + \text{probability model} + \text{objective} + \text{optimization}
 $$
 
+Use these pages to identify the object, distribution, parameter, and estimator behind a formula. Proof-heavy material can be added later only when it clarifies an AI, Bio-AI, or evaluation note.
+
 ## Core Notes
 
 - [[concepts/math/linear-algebra|Linear algebra]]
@@ -50,6 +52,35 @@ $$
 - Is a loss a negative log-likelihood, distance, ranking loss, or surrogate?
 - Are expectations taken under data, model, sampling, or deployment distributions?
 - If the object has coordinates, what transformations should preserve meaning?
+
+## Formula Reading Template
+
+When adding or expanding a concept page, prefer formulas that define the quantity directly.
+
+- Define symbols before using them.
+- Separate population quantities from finite-sample estimates.
+- State the distribution behind each expectation.
+- State whether a matrix/vector shape matters.
+- Name the variable being optimized or differentiated.
+- Link the formula to the modeling decision it supports.
+
+Example:
+
+$$
+\hat{R}(f)
+=
+\frac{1}{m}\sum_{j=1}^{m}
+\mathcal{L}(f(x_j), y_j)
+$$
+
+This is an empirical estimate of test risk. It is not the same object as the population risk
+
+$$
+R(f)
+=
+\mathbb{E}_{(x,y)\sim p_{\mathrm{test}}}
+[\mathcal{L}(f(x), y)].
+$$
 
 ## Related
 

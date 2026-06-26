@@ -6,295 +6,77 @@ tags:
 
 # AI
 
-AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표면에 가까운 안내 페이지이고, 세부 개념은 영어 wiki 노트로 연결합니다.
+AI 전반을 정리하는 입구입니다. 이 페이지는 공개 블로그 표면에 가까운 한글 안내이고, 세부 개념은 영어 canonical wiki note로 유지합니다.
 
-이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/*` 문서는 재사용 가능한 canonical wiki note로 영어를 유지합니다.
+여기서 목표는 모델 이름을 많이 나열하는 것이 아니라, AI 문헌과 구현을 읽을 때 반복해서 나오는 축을 안정적으로 분리하는 것입니다.
 
-여기서 다루려는 핵심은 특정 모델 이름을 외우는 것이 아니라, 모델이 어떤 구조로 정보를 처리하고, 어떤 학습 신호로 표현을 만들고, 어떤 방식으로 생성하거나 판단하는지입니다.
+$$
+\text{AI system}
+=
+\text{data}
++ \text{representation}
++ \text{architecture}
++ \text{objective}
++ \text{evaluation}
++ \text{runtime}
+$$
 
-## 큰 축
+## 먼저 볼 지도
 
-- Math Foundations: probability, linear algebra, likelihood, information theory 같은 공통 수식 기반
-- Machine Learning: 예측 문제, feature, loss, regularization, validation을 다루는 기본 층
-- Data: dataset, annotation, sampling, benchmark, provenance를 다루는 층
-- Modality: text, image, video, audio, molecular/protein structure처럼 입력과 출력 신호가 어떤 형태인지 보는 층
-- Task: classification, retrieval, detection, segmentation, question answering처럼 모델이 무엇을 출력해야 하는지 보는 층
-- Architecture: 모델이 정보를 흘려보내는 구조
-- Learning: 어떤 supervision이나 objective로 표현을 학습하는지
-- Generation: 데이터를 만들거나 변환하는 방식
-- Systems: training run, inference, serving, reproducibility처럼 모델을 실제로 돌리는 방식
-- Evaluation: 모델이 실제로 일반화했는지 확인하는 방식
-- Geometry and scientific AI: graph, coordinate, protein, molecule 같은 구조적 입력을 다루는 방식
+- [[math/index|Math]]: probability, linear algebra, calculus, likelihood, information theory처럼 모든 AI 노트가 기대는 수식 기반
+- [[ai/machine-learning|Machine Learning]]: prediction problem, feature, loss, optimization, regularization, validation을 다루는 기본 층
+- [[ai/architectures|Architectures]]: MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE처럼 정보가 흐르는 구조
+- [[ai/learning-methods|Learning Methods]]: supervised, self-supervised, contrastive, JEPA, fine-tuning, preference/RL-style objective
+- [[ai/generative-models|Generative Models]]: autoregressive, VAE, GAN, diffusion, score-based model, flow matching, normalizing flow
+- [[ai/evaluation|Evaluation]]: metric, split, leakage, calibration, OOD generalization, uncertainty, failure analysis
+- [[agents/index|Agents]]: tool use, memory, planning, verification, orchestration은 별도 영역으로 관리
 
-## Machine Learning
+## 분류 기준
 
-Machine learning은 AI 노트의 기본 층입니다. 딥러닝 모델을 보기 전에도 problem type, feature, loss, optimization, regularization, validation을 구분해야 합니다.
+AI note는 아래 질문으로 위치를 정합니다.
 
-- [[concepts/math/index|Math foundations]]
-- [[math/index|Math gateway]]
-- [[concepts/math/linear-algebra|Linear algebra]]
-- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
-- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
-- [[concepts/math/singular-value-decomposition|Singular value decomposition]]
-- [[concepts/math/calculus|Calculus]]
-- [[concepts/math/matrix-calculus|Matrix calculus]]
-- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
-- [[concepts/math/random-variable|Random variable]]
-- [[concepts/math/probability-distribution|Probability distribution]]
-- [[concepts/math/normal-distribution|Normal distribution]]
-- [[concepts/math/expectation|Expectation]]
-- [[concepts/math/statistical-estimator|Statistical estimator]]
-- [[concepts/math/central-limit-theorem|Central limit theorem]]
-- [[concepts/math/hypothesis-testing|Hypothesis testing]]
-- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
-- [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
-- [[concepts/math/maximum-likelihood|Maximum likelihood]]
-- [[concepts/math/entropy-kl|Entropy and KL divergence]]
-- [[ai/machine-learning|Machine learning gateway]]
-- [[concepts/machine-learning/index|Machine learning]]
-- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
-- [[concepts/machine-learning/feature-engineering|Feature engineering]]
-- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
-- [[concepts/machine-learning/decision-rule|Decision rule]]
-- [[concepts/machine-learning/classification|Classification]]
-- [[concepts/machine-learning/regression|Regression]]
-- [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
-- [[concepts/machine-learning/generalization|Generalization]]
-- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]
-- [[concepts/machine-learning/model-selection|Model selection]]
-- [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]
-- [[concepts/machine-learning/early-stopping|Early stopping]]
-- [[concepts/machine-learning/learning-curve|Learning curve]]
-- [[concepts/machine-learning/validation-curve|Validation curve]]
-- [[concepts/machine-learning/loss-function|Loss function]]
-- [[concepts/machine-learning/training-loop|Training loop]]
-- [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]
-- [[concepts/machine-learning/gradient-descent|Gradient descent]]
-- [[concepts/machine-learning/optimizer|Optimizer]]
-- [[concepts/machine-learning/weight-decay|Weight decay]]
-- [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
-- [[concepts/machine-learning/linear-model|Linear model]]
-- [[concepts/machine-learning/tree-based-model|Tree-based model]]
-- [[concepts/machine-learning/kernel-method|Kernel method]]
-- [[concepts/machine-learning/regularization|Regularization]]
-- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
-- [[concepts/evaluation/leakage|Leakage]]
-- [[concepts/data/dataset-shift|Dataset shift]]
+| 질문 | 둘 곳 |
+| --- | --- |
+| 필요한 수학 정의인가? | [[math/index|Math]] 또는 [[concepts/math/index|Math foundations]] |
+| 입력과 출력이 무엇인가? | [[concepts/modalities/index|Modalities]], [[concepts/tasks/index|Tasks]] |
+| 예측 문제와 loss의 기본형인가? | [[ai/machine-learning|Machine Learning]] |
+| 모델 내부 구조인가? | [[ai/architectures|Architectures]] |
+| supervision/objective/transfer 방식인가? | [[ai/learning-methods|Learning Methods]] |
+| sample을 만들거나 distribution을 모델링하는가? | [[ai/generative-models|Generative Models]] |
+| 성능 claim을 어떻게 검증하는가? | [[ai/evaluation|Evaluation]] |
+| 실행, serving, reproducibility 문제인가? | [[concepts/systems/index|Systems]] 또는 [[infra/index|Infra]] |
+| LLM이 도구를 쓰고 작업을 끝내는 방식인가? | [[agents/index|Agents]] |
 
-## Data and Benchmarks
+## 기본 읽기 경로
 
-AI 모델은 데이터 정의 위에서만 의미가 있습니다. 어떤 example을 모았고, label이 어떻게 만들어졌고, split과 benchmark가 무엇을 검증하는지 모르면 architecture 비교도 흔들립니다.
+1. [[math/index|Math]]에서 vector, probability, likelihood, entropy/KL, calculus를 먼저 잡습니다.
+2. [[ai/machine-learning|Machine Learning]]에서 data, target, loss, optimization, validation의 기본 구조를 봅니다.
+3. [[ai/architectures|Architectures]]에서 입력 구조별 inductive bias를 비교합니다.
+4. [[ai/learning-methods|Learning Methods]]에서 label, pretraining signal, transfer, preference objective를 분리합니다.
+5. [[ai/generative-models|Generative Models]]에서 likelihood, denoising, score, velocity, sampling 관점을 비교합니다.
+6. [[ai/evaluation|Evaluation]]에서 split, metric, leakage, calibration, failure mode를 확인합니다.
 
-- [[concepts/data/index|Data]]
-- [[entities/dataset|Dataset]]
-- [[concepts/data/dataset-card|Dataset card]]
-- [[concepts/data/example-unit|Example unit]]
-- [[concepts/data/split-unit|Split unit]]
-- [[concepts/data/dataset-split-contract|Dataset split contract]]
-- [[concepts/data/data-distribution|Data distribution]]
-- [[concepts/data/data-schema|Data schema]]
-- [[concepts/data/preprocessing-contract|Preprocessing contract]]
-- [[concepts/data/data-curation|Data curation]]
-- [[concepts/data/data-versioning|Data versioning]]
-- [[concepts/data/annotation-labeling|Annotation and labeling]]
-- [[concepts/data/label-semantics|Label semantics]]
-- [[concepts/data/label-noise|Label noise]]
-- [[concepts/data/missing-data|Missing data]]
-- [[concepts/data/censored-label|Censored label]]
-- [[concepts/data/weak-label|Weak label]]
-- [[concepts/data/class-imbalance|Class imbalance]]
-- [[concepts/data/dataset-shift|Dataset shift]]
-- [[concepts/data/sampling-strategy|Sampling strategy]]
-- [[concepts/data/sampling-bias|Sampling bias]]
-- [[concepts/data/metadata-provenance|Metadata and provenance]]
-- [[concepts/data/data-lineage|Data lineage]]
-- [[concepts/data/benchmark|Benchmark]]
-- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
+## 입력 대상별 경로
 
-## Modalities
+- Text/sequence: [[concepts/modalities/text|Text]], [[concepts/modalities/sequence|Sequence]], [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/state-space-model|State-space model]]
+- Image/video: [[concepts/modalities/image|Image]], [[concepts/modalities/video|Video]], [[concepts/architectures/cnn|CNN]], [[concepts/architectures/vision-transformer|Vision Transformer]]
+- Graph/set: [[concepts/modalities/graph|Graph]], [[concepts/architectures/gnn|Graph neural networks]], [[concepts/architectures/deep-sets|Deep Sets]]
+- 3D/geometry: [[concepts/modalities/3d-structure|3D structure]], [[concepts/math/geometry|Geometry]], [[concepts/geometric-deep-learning/index|Geometric deep learning]]
+- Molecule/protein: [[bio-ai/index|Bio-AI]], [[concepts/molecular-modeling/index|Molecular modeling]], [[concepts/protein-modeling/index|Protein modeling]], [[concepts/sbdd/index|SBDD concepts]]
+- Agent workflow: [[agents/core/index|Agent core]], [[agents/tools/index|Agent tools]], [[agents/verification/index|Agent verification]], [[agents/workflows/index|Agent workflows]]
 
-모델을 보기 전에 입력과 출력의 형태를 먼저 봐야 합니다. text, image, video, audio, molecule, protein structure는 모두 서로 다른 preprocessing, tokenization, leakage 위험, evaluation 기준을 갖습니다.
+## 작성 원칙
 
-- [[concepts/modalities/index|Modalities]]
-- [[concepts/modalities/modality-representation|Modality representation]]
-- [[concepts/modalities/modality-task-map|Modality-task map]]
-- [[concepts/modalities/text|Text]]
-- [[concepts/modalities/sequence|Sequence]]
-- [[concepts/modalities/image|Image]]
-- [[concepts/modalities/video|Video]]
-- [[concepts/modalities/audio|Audio]]
-- [[concepts/modalities/tabular|Tabular]]
-- [[concepts/modalities/graph|Graph]]
-- [[concepts/modalities/3d-structure|3D structure]]
-- [[concepts/modalities/modality-alignment|Modality alignment]]
-- [[concepts/modalities/missing-modality|Missing modality]]
-- [[concepts/modalities/multimodal-learning|Multimodal learning]]
-- [[entities/index|Entities]]
-
-## Tasks and Outputs
-
-Task는 모델의 출력 공간과 평가 기준을 정합니다. 같은 image input이라도 classification, detection, segmentation, captioning은 전혀 다른 문제이고, 같은 text input이라도 retrieval, question answering, sequence generation은 실패 방식이 다릅니다.
-
-- [[concepts/tasks/index|Tasks]]
-- [[concepts/tasks/task-specification|Task specification]]
-- [[concepts/tasks/task-output-space|Task output space]]
-- [[concepts/modalities/modality-task-map|Modality-task map]]
-- [[concepts/machine-learning/classification|Classification]]
-- [[concepts/machine-learning/regression|Regression]]
-- [[concepts/machine-learning/ranking|Ranking]]
-- [[concepts/tasks/property-prediction|Property prediction]]
-- [[concepts/tasks/interaction-prediction|Interaction prediction]]
-- [[concepts/tasks/retrieval|Retrieval]]
-- [[concepts/tasks/similarity-search|Similarity search]]
-- [[concepts/tasks/reranking|Reranking]]
-- [[concepts/tasks/object-detection|Object detection]]
-- [[concepts/tasks/localization|Localization]]
-- [[concepts/tasks/segmentation|Segmentation]]
-- [[concepts/tasks/captioning|Captioning]]
-- [[concepts/tasks/question-answering|Question answering]]
-- [[concepts/tasks/sequence-generation|Sequence generation]]
-- [[concepts/tasks/structured-prediction|Structured prediction]]
-- [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
-- [[concepts/tasks/graph-prediction|Graph prediction]]
-- [[concepts/tasks/time-series-forecasting|Time-series forecasting]]
-- [[concepts/tasks/anomaly-detection|Anomaly detection]]
-
-## Architectures
-
-아키텍처 노트는 입력의 형태와 inductive bias를 기준으로 봅니다. 이미지, sequence, graph, structure, set처럼 데이터가 달라지면 좋은 기본 구조도 달라집니다.
-
-- [[ai/architectures|아키텍처 지도]]
-- [[concepts/architectures/inductive-bias|Inductive bias]]
-- [[concepts/architectures/parameter-sharing|Parameter sharing]]
-- [[concepts/architectures/architecture-selection|Architecture selection]]
-- [[concepts/architectures/computational-complexity|Computational complexity]]
-- [[concepts/architectures/tokenization|Tokenization]]
-- [[concepts/architectures/attention|Attention]]
-- [[concepts/architectures/cnn|CNN]]
-- [[concepts/architectures/rnn|RNN]]
-- [[concepts/architectures/transformer|Transformer]]
-- [[concepts/architectures/graph-construction|Graph construction]]
-- [[concepts/architectures/gnn|Graph neural networks]]
-- [[concepts/architectures/state-space-model|State-space models]]
-- [[concepts/architectures/mixture-of-experts|Mixture of experts]]
-
-## Learning Methods
-
-학습 방법은 label이 충분한 상황과 부족한 상황을 나눠서 봅니다. 특히 [[concepts/learning/self-supervised-learning|self-supervised learning]], [[concepts/learning/jepa|JEPA]], [[concepts/learning/contrastive-learning|contrastive learning]]은 representation을 어떻게 만들 것인가와 직접 연결됩니다.
-
-- [[ai/learning-methods|Learning methods gateway]]
-- [[concepts/learning/index|Learning methods]]
-- [[concepts/learning/pretraining|Pretraining]]
-- [[concepts/learning/self-supervised-learning|Self-supervised learning]]
-- [[concepts/learning/representation-evaluation|Representation evaluation]]
-- [[concepts/learning/linear-probing|Linear probing]]
-- [[concepts/learning/masked-modeling|Masked modeling]]
-- [[concepts/learning/jepa|JEPA]]
-- [[concepts/learning/contrastive-learning|Contrastive learning]]
-- [[concepts/learning/fine-tuning|Fine-tuning]]
-- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
-- [[concepts/learning/instruction-tuning|Instruction tuning]]
-- [[concepts/learning/domain-adaptation|Domain adaptation]]
-- [[concepts/learning/curriculum-learning|Curriculum learning]]
-- [[concepts/learning/preference-optimization|Preference optimization]]
-
-## Generative Models
-
-생성 모델은 likelihood, denoising, flow, autoregressive factorization처럼 서로 다른 관점에서 볼 수 있습니다. Bio-AI에서는 molecule generation, protein design, structure generation과 연결됩니다.
-
-- [[ai/generative-models|Generative models gateway]]
-- [[concepts/generative-models/index|Generative models]]
-- [[concepts/generative-models/latent-variable-model|Latent variable model]]
-- [[concepts/generative-models/conditional-generation|Conditional generation]]
-- [[concepts/generative-models/sampling|Sampling]]
-- [[concepts/generative-models/guidance|Guidance]]
-- [[concepts/generative-models/diffusion-model|Diffusion model]]
-- [[concepts/generative-models/flow-matching|Flow matching]]
-- [[concepts/generative-models/rectified-flow|Rectified flow]]
-- [[concepts/generative-models/autoregressive-model|Autoregressive model]]
-
-## Systems and Operations
-
-모델은 학습되고, 저장되고, 실행되고, 평가되는 시스템입니다. 같은 architecture라도 training run 관리, inference path, latency/throughput 목표, reproducibility 기준에 따라 실제 가치는 달라집니다.
-
-- [[concepts/systems/index|AI systems]]
-- [[concepts/systems/resource-scheduling|Resource scheduling]]
-- [[concepts/systems/training-run|Training run]]
-- [[concepts/systems/distributed-training|Distributed training]]
-- [[concepts/systems/checkpoint-state|Checkpoint state]]
-- [[concepts/systems/environment-management|Environment management]]
-- [[concepts/systems/inference|Inference]]
-- [[concepts/systems/inference-contract|Inference contract]]
-- [[concepts/systems/model-card|Model card]]
-- [[concepts/systems/model-versioning|Model versioning]]
-- [[concepts/systems/data-validation|Data validation]]
-- [[concepts/systems/batch-online-inference|Batch and online inference]]
-- [[concepts/systems/model-serving|Model serving]]
-- [[concepts/systems/deployment-strategy|Deployment strategy]]
-- [[concepts/systems/latency-throughput|Latency and throughput]]
-- [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
-- [[concepts/systems/storage-io|Storage and IO]]
-- [[concepts/systems/observability|Observability]]
-- [[concepts/systems/failure-recovery|Failure recovery]]
-- [[concepts/systems/experiment-tracking|Experiment tracking]]
-- [[concepts/systems/reproducibility|Reproducibility]]
-- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
-- [[infra/index|Infra]]
-
-## Geometry and Scientific AI
-
-AI를 Bio-AI와 연결할 때는 구조적 입력을 어떻게 표현하는지가 중요합니다. 단백질, 분자, pocket, complex는 단순 text token이 아니라 graph와 coordinate를 함께 갖습니다.
-
-- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
-- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
-- [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
-- [[concepts/protein-modeling/index|Protein modeling concepts]]
-- [[concepts/sbdd/index|Structure-based drug discovery]]
-- [[bio-ai/index|Bio-AI]]
-
-## LLM and Agents
-
-LLM은 생성 모델이면서 agent workflow의 실행 엔진이 될 수 있습니다. 여기서는 model 자체보다 context, retrieval, verification이 더 중요합니다.
-
-- [[concepts/llm/index|LLM concepts]]
-- [[concepts/llm/language-model|Language model]]
-- [[concepts/llm/context-window|Context window]]
-- [[concepts/llm/token-budget|Token budget]]
-- [[concepts/llm/context-packing|Context packing]]
-- [[concepts/llm/prompting|Prompting]]
-- [[concepts/llm/decoding|Decoding]]
-- [[concepts/llm/structured-output|Structured output]]
-- [[concepts/llm/tool-calling|Tool calling]]
-- [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]
-- [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
-- [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
-- [[concepts/llm/embedding-retrieval|Embedding retrieval]]
-- [[concepts/llm/chunking|Chunking]]
-- [[concepts/llm/hybrid-retrieval|Hybrid retrieval]]
-- [[concepts/llm/query-rewriting|Query rewriting]]
-- [[agents/index|Agents]]
-- [[agents/core/agent-architecture|Agent architecture]]
-- [[agents/core/task-decomposition|Task decomposition]]
-- [[agents/workflows/agent-orchestration|Agent orchestration]]
-- [[agents/workflows/agent-runbook|Agent runbook]]
-
-## Evaluation
-
-AI 노트는 평가 기준 없이 모델 목록이 되는 것을 피해야 합니다. 그래서 leakage, split, calibration, out-of-distribution generalization 같은 평가 노트를 계속 연결합니다.
-
-- [[ai/evaluation|Evaluation gateway]]
-- [[concepts/evaluation/index|Evaluation]]
-- [[concepts/evaluation/metric|Metric]]
-- [[concepts/evaluation/classification-metrics|Classification metrics]]
-- [[concepts/evaluation/regression-metrics|Regression metrics]]
-- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
-- [[concepts/evaluation/leakage|Leakage]]
-- [[concepts/evaluation/ood-generalization|OOD generalization]]
-- [[concepts/evaluation/calibration|Calibration]]
+- 공개 표면은 한글로 간결하게 씁니다.
+- 재사용 가능한 wiki note는 영어로 씁니다.
+- 수식이 이해를 고정해 주는 경우에는 가능한 한 넣습니다.
+- 모델 설명은 `input -> representation -> architecture -> objective -> evaluation` 순서로 정리합니다.
+- 연구/논문/프로젝트로 커질 내용은 각각 [[research/index|Research]], [[papers/index|Papers]], [[projects/index|Projects]]로 보냅니다.
 
 ## Related
 
+- [[concepts/index|Concepts]]
+- [[math/index|Math]]
 - [[bio-ai/index|Bio-AI]]
+- [[infra/index|Infra]]
 - [[agents/index|Agents]]
-- [[ai/generative-models|Generative models]]
-- [[ai/learning-methods|Learning methods]]

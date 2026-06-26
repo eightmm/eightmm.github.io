@@ -20,31 +20,29 @@ $$
 \text{evaluation}
 $$
 
+이 블로그에서 Math는 독립적인 수학 교과서가 아니라, AI 문서의 수식을 읽기 위한 최소 공통 언어입니다. 더 깊은 증명보다 "이 식이 어떤 object, distribution, optimization target을 말하는가"를 우선합니다.
+
 ## Core Foundations
 
-- [[concepts/math/index|Math foundations]]
-- [[concepts/math/linear-algebra|Linear algebra]]
-- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
-- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
-- [[concepts/math/singular-value-decomposition|Singular value decomposition]]
-- [[concepts/math/calculus|Calculus]]
-- [[concepts/math/matrix-calculus|Matrix calculus]]
-- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
-- [[concepts/math/geometry|Geometry]]
-- [[concepts/math/symmetry-group|Symmetry group]]
-- [[concepts/math/random-variable|Random variable]]
-- [[concepts/math/probability-distribution|Probability distribution]]
-- [[concepts/math/normal-distribution|Normal distribution]]
-- [[concepts/math/expectation|Expectation]]
-- [[concepts/math/covariance-correlation|Covariance and correlation]]
-- [[concepts/math/central-limit-theorem|Central limit theorem]]
-- [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
-- [[concepts/math/maximum-likelihood|Maximum likelihood]]
-- [[concepts/math/entropy-kl|Entropy and KL divergence]]
-- [[concepts/math/bayes-rule|Bayes rule]]
-- [[concepts/math/statistical-estimator|Statistical estimator]]
-- [[concepts/math/hypothesis-testing|Hypothesis testing]]
-- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
+- [[concepts/math/index|Math foundations]]: canonical wiki index
+- Linear algebra: [[concepts/math/linear-algebra|Linear algebra]], [[concepts/math/vector-norm-similarity|Vector norm and similarity]], [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]], [[concepts/math/singular-value-decomposition|Singular value decomposition]]
+- Calculus and optimization: [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
+- Probability: [[concepts/math/random-variable|Random variable]], [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/normal-distribution|Normal distribution]], [[concepts/math/expectation|Expectation]], [[concepts/math/bayes-rule|Bayes rule]]
+- Statistics: [[concepts/math/statistical-estimator|Statistical estimator]], [[concepts/math/covariance-correlation|Covariance and correlation]], [[concepts/math/central-limit-theorem|Central limit theorem]], [[concepts/math/hypothesis-testing|Hypothesis testing]], [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
+- Estimation and likelihood: [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]], [[concepts/math/maximum-likelihood|Maximum likelihood]], [[concepts/math/entropy-kl|Entropy and KL divergence]]
+- Geometry and symmetry: [[concepts/math/geometry|Geometry]], [[concepts/math/symmetry-group|Symmetry group]]
+
+## Formula Checklist
+
+수식이 나오면 먼저 아래를 확인합니다.
+
+- Object: scalar, vector, matrix, sequence, graph, coordinate, distribution 중 무엇인가?
+- Index: batch index, token index, residue index, graph node index, time index가 무엇인가?
+- Distribution: expectation이 data, model, noise, policy, test distribution 중 어디에서 잡히는가?
+- Parameter: 미분 대상이 input $x$, parameter $\theta$, coordinate $X$, time $t$ 중 무엇인가?
+- Objective: 식이 loss, likelihood, score, reward, metric, constraint 중 무엇인가?
+- Symmetry: permutation, translation, rotation, scale 변환에서 보존돼야 할 양이 무엇인가?
+- Estimation: population quantity와 finite-sample estimate가 구분되어 있는가?
 
 ## Where It Connects
 
@@ -65,6 +63,14 @@ $$
 7. Use [[concepts/math/maximum-likelihood|Maximum likelihood]] and [[concepts/math/entropy-kl|Entropy and KL divergence]] for generative models and representation learning.
 8. Use [[concepts/math/geometry|Geometry]] and [[concepts/math/symmetry-group|Symmetry group]] for graph, structure, molecule, and protein notes.
 9. Use [[concepts/evaluation/confidence-interval|Confidence interval]] and [[concepts/evaluation/statistical-significance|Statistical significance]] when interpreting reported results.
+
+## AI 연결 예시
+
+- Linear layer는 matrix multiplication입니다: [[concepts/architectures/linear-layer|Linear layer]]
+- Attention은 dot product, softmax, weighted sum입니다: [[concepts/architectures/attention|Attention]]
+- Loss는 probability model이나 decision objective를 반영합니다: [[concepts/machine-learning/loss-function|Loss function]]
+- Diffusion/flow는 probability path와 vector field를 다룹니다: [[concepts/generative-models/diffusion-model|Diffusion model]], [[concepts/generative-models/flow-matching|Flow matching]]
+- Equivariance는 group action 아래에서 output이 어떻게 변해야 하는지를 말합니다: [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 
 ## Related
 
