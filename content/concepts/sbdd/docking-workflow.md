@@ -31,6 +31,7 @@ The first arrow is [[concepts/sbdd/pose-generation|pose generation]]. The second
 - Pose generation and scoring are different tasks.
 - A good score is not enough if the generated pose is physically implausible.
 - Docking boxes, protonation, conformer generation, and protein preparation can dominate results.
+- Force-field minimization or pose relaxation should be reported as part of the method if it changes the output.
 - Receptor and ligand preparation should be treated as part of the method, not as invisible preprocessing.
 - Learned scoring functions should be evaluated separately from search and filtering heuristics.
 - Public notes should describe generic workflow decisions, not private targets or unpublished results.
@@ -40,6 +41,7 @@ The first arrow is [[concepts/sbdd/pose-generation|pose generation]]. The second
 - What protein structure and binding site definition are used?
 - How are ligand states, conformers, charges, and stereochemistry prepared?
 - How many poses are generated and how is diversity handled?
+- Are poses minimized or relaxed after generation, and are raw invalid poses counted?
 - Is the workflow evaluating pose prediction, enrichment, affinity, or prioritization?
 - Are invalid poses filtered before ranking metrics are reported?
 - Are baselines and split protocols appropriate for the generalization claim?
@@ -55,4 +57,6 @@ The first arrow is [[concepts/sbdd/pose-generation|pose generation]]. The second
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
+- [[concepts/molecular-modeling/force-field|Force field]]
+- [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
 - [[papers/sbdd/posebusters|PoseBusters]]

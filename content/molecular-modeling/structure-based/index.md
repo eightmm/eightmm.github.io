@@ -40,6 +40,7 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 - Is the task about pose quality, binding affinity, molecular generation, or virtual screening?
 - Which errors are geometric, chemical, data-driven, or evaluation artifacts?
 - Does a benchmark measure real generalization or memorization through related structures?
+- Is a classical force field, minimization, or simulation protocol part of the method or only a diagnostic?
 
 ## Topics
 
@@ -54,6 +55,9 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
+- [[concepts/molecular-modeling/force-field|Force field]]
+- [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
+- [[concepts/molecular-modeling/molecular-dynamics|Molecular dynamics]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 
 ## Evaluation Anchors
@@ -77,3 +81,4 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]
+- [[concepts/molecular-modeling/force-field|Force field]]

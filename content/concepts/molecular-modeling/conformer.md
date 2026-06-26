@@ -53,6 +53,7 @@ The contract should state:
 - Are metrics stable across conformer ensembles?
 - Does the task need ligand-only conformers or protein-bound poses?
 - Is the conformer generation protocol part of the featurization contract?
+- Is a [[concepts/molecular-modeling/force-field|force field]] used for ranking or minimization?
 
 ## Evaluation Boundary
 
@@ -96,6 +97,8 @@ The pose depends on the protein or pocket context $P$. A model trained on bound 
 ## Related
 
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
+- [[concepts/molecular-modeling/force-field|Force field]]
+- [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
 - [[molecular-modeling/modeling-scope|Molecular Modeling Scope]]
 - [[molecular-modeling/molecules|Molecules]]
 - [[molecular-modeling/docking|Docking]]

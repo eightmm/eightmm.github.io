@@ -31,6 +31,7 @@ where $L$ is a molecular object and $c$ can include pH, assay condition, conform
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
 - [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]]
+- [[concepts/molecular-modeling/fragment-selfies|Fragment-SELFIES]]
 
 ## Representation Choices
 
@@ -64,6 +65,9 @@ where $L_{\mathrm{raw}}$ is the input molecule record, $L_{\mathrm{std}}$ is the
 - [[concepts/molecular-modeling/tautomer|Tautomer]]
 - [[concepts/molecular-modeling/substructure-search|Substructure search]]
 - [[concepts/molecular-modeling/fragment-selfies|Fragment SELFIES]]
+- [[concepts/molecular-modeling/force-field|Force field]]
+- [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
+- [[concepts/molecular-modeling/molecular-dynamics|Molecular dynamics]]
 
 ## Tasks
 
@@ -85,6 +89,7 @@ where $L_{\mathrm{raw}}$ is the input molecule record, $L_{\mathrm{std}}$ is the
 
 - Has the molecule been standardized before deduplication and split construction?
 - Are stereochemistry, protonation, tautomer, salts, and conformer source handled explicitly?
+- Are force-field, minimization, or simulation protocols recorded when coordinates are modified?
 - Is the split scaffold-based, temporal, assay-based, or target-aware?
 - Is similarity measured on the right representation for the claim?
 

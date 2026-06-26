@@ -33,7 +33,7 @@ $$
 | Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
 | Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry) |
 | Graphs | sets, neighborhoods, permutations, graph modeling | [Discrete math and graphs](/math/discrete-graphs) |
-| Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows | [Dynamical systems](/math/dynamical-systems) |
+| Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows, molecular dynamics | [Dynamical systems](/math/dynamical-systems) |
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
 | Formula intake | paper equations, objectives, indices, distributions, evidence checks | [Formula intake](/math/formula-intake) |
@@ -79,7 +79,7 @@ $$
 7. Use [[concepts/math/maximum-likelihood|Maximum likelihood]] and [[concepts/math/entropy-kl|Entropy and KL divergence]] for generative models and representation learning.
 8. Use [[concepts/math/geometry|Geometry]] and [[concepts/math/symmetry-group|Symmetry group]] for graph, structure, molecule, and protein notes.
 9. Use [[math/discrete-graphs|Discrete math and graphs]] for graph neural networks, molecular graphs, contact maps, retrieval, and set functions.
-10. Use [[math/dynamical-systems|Dynamical systems]] for diffusion, flow matching, probability-flow ODEs, recurrent models, and iterative refinement.
+10. Use [[math/dynamical-systems|Dynamical systems]] for diffusion, flow matching, probability-flow ODEs, recurrent models, molecular dynamics, and iterative refinement.
 11. Use [[math/numerical-computing|Numerical computing]] when formulas involve exponentials, probabilities, mixed precision, reductions, or NaNs.
 12. Use [[concepts/evaluation/confidence-interval|Confidence interval]] and [[concepts/evaluation/statistical-significance|Statistical significance]] when interpreting reported results.
 
