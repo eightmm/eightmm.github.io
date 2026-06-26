@@ -34,12 +34,53 @@ For sequence-level prediction, the model may use $h_T$, a pooled sequence of hid
 - Bidirectional RNNs use past and future context for representation tasks, but not for strict causal generation.
 - RNNs are useful comparisons for [[concepts/architectures/state-space-model|state-space models]] because both scan sequences through state updates.
 
+## Sequence Contract
+
+| Field | Question |
+| --- | --- |
+| Direction | causal, bidirectional, or encoder-only? |
+| State size | how much memory can $h_t$ carry? |
+| Output | token-level, sequence-level, pooled, or autoregressive? |
+| Masking | how are padding and variable lengths handled? |
+| Truncation | full BPTT or truncated backpropagation through time? |
+| Streaming | can inference process one token at a time? |
+
+For long sequences, the hidden state is both the memory and the bottleneck:
+
+$$
+h_t = F_\theta(x_t, h_{t-1})
+$$
+
+so information from $x_1$ must survive repeated updates to affect $y_T$.
+
+## Complexity
+
+For sequence length $L$ and hidden width $d$, recurrent computation is usually:
+
+$$
+O(Ld^2)
+$$
+
+for dense recurrent matrices, with sequential dependence over $t$. This makes RNNs efficient for streaming but harder to parallelize across time than Transformers.
+
+## Paper Reading Boundary
+
+| Claim | What To Check |
+| --- | --- |
+| long-context modeling | truncation length and gradient stability |
+| streaming inference | latency, state carry-over, reset policy |
+| compact baseline | parameter count and hidden size |
+| protein sequence modeling | homolog split, sequence identity, length handling |
+| time-series or trajectory | sampling rate, missing data, and episode boundary |
+
 ## Practical Checks
 
 - Check whether the task needs causal, bidirectional, or streaming inference.
 - Watch sequence length, truncation, masking, and padding behavior.
 - Inspect how the final representation is chosen: last state, pooled states, attention over states, or token-level outputs.
 - Compare with [[concepts/architectures/transformer|Transformers]] when long-range interactions or parallel training are central.
+- Is hidden state reset per example, carried across chunks, or initialized from context?
+- Are sequence-level metrics separated from token-level metrics?
 
 ## Related
 

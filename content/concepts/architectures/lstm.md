@@ -45,12 +45,58 @@ The forget gate $f_t$ controls retained memory, the input gate $i_t$ controls ne
 - They remain useful baselines for streaming, low-latency, and smaller sequence tasks.
 - In modern papers, they often appear as historical baselines against [[concepts/architectures/transformer|Transformers]] or [[concepts/architectures/state-space-model|state-space models]].
 
+## Gate Interpretation
+
+| Gate | Formula | Role |
+| --- | --- | --- |
+| input gate | $i_t$ | how much candidate content enters memory |
+| forget gate | $f_t$ | how much previous memory is retained |
+| output gate | $o_t$ | how much cell state is exposed as hidden state |
+| candidate | $\tilde{c}_t$ | new content proposed from input and previous hidden state |
+
+The additive memory path:
+
+$$
+c_t = f_t\odot c_{t-1}+i_t\odot\tilde{c}_t
+$$
+
+helps gradients move through time when $f_t$ stays near one.
+
+## Variants and Boundaries
+
+| Variant | Difference | Check |
+| --- | --- | --- |
+| bidirectional LSTM | reads past and future | invalid for causal generation |
+| stacked LSTM | multiple recurrent layers | depth and dropout policy |
+| peephole LSTM | gates also see cell state | compare parameter count |
+| projected LSTM | lower-dimensional exposed hidden state | projection bottleneck |
+
+When used as a baseline, record whether the baseline is tuned comparably to the proposed model.
+
+## Protein and Sequence Use
+
+LSTMs can be used for residue sequence modeling:
+
+$$
+p(s)=\prod_{t=1}^{L}p(a_t\mid a_{<t})
+$$
+
+or for sequence representation:
+
+$$
+z = \operatorname{pool}(h_1,\ldots,h_L)
+$$
+
+For protein claims, sequence identity split and family leakage matter more than the recurrent cell name.
+
 ## Practical Checks
 
 - Check whether the model is unidirectional or bidirectional.
 - Track whether the output uses $h_T$, pooled states, or token-level hidden states.
 - Inspect truncation length for backpropagation through time.
 - Compare against [[concepts/architectures/gru|GRU]] when parameter count and speed matter.
+- Is the cell state initialized, reset, or carried between chunks?
+- Are long-sequence claims tested beyond the training truncation length?
 
 ## Related
 
@@ -58,3 +104,4 @@ The forget gate $f_t$ controls retained memory, the input gate $i_t$ controls ne
 - [[concepts/architectures/gru|GRU]]
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[entities/sequence|Sequence]]
