@@ -49,6 +49,31 @@ $$
 
 The scalar message stays invariant while the coordinate delta rotates with the input.
 
+## Layer Contract
+
+An equivariant GNN layer should state:
+
+| Component | Expected Behavior |
+| --- | --- |
+| scalar node features $h_i$ | invariant to global rigid motion |
+| coordinates $x_i$ | transform by rotation and translation |
+| relative vector $x_i-x_j$ | rotates, does not translate |
+| distance $\|x_i-x_j\|$ | invariant |
+| vector output | equivariant |
+| scalar readout | invariant |
+
+The architecture is only as equivariant as the features and preprocessing supplied to it.
+
+## Common Variants
+
+| Variant | Main Idea | Caveat |
+| --- | --- | --- |
+| scalar-distance message passing | use invariant distances and scalar messages | may lose orientation or chirality |
+| coordinate-update networks | move points using relative vectors | stability and unit scale matter |
+| tensor/irreducible representation models | carry higher-order geometric features | more complex and expensive |
+| equivariant attention | attention over scalar and geometric features | masking, frames, and pair features define symmetry |
+| local-frame models | represent geometry in residue or pocket frames | frame construction can leak or break equivariance |
+
 ## Role in Molecular Modeling
 
 - Encode atoms, residues, and interactions as graphs.
@@ -69,6 +94,9 @@ The scalar message stays invariant while the coordinate delta rotates with the i
 - Atom or residue order changes without permutation-safe aggregation.
 - Chirality or stereochemistry is lost in graph features while the task depends on it.
 - Reported performance comes from random splits rather than scaffold, protein-family, or complex-level splits.
+- The model is called equivariant but only the coordinate update, not the full pipeline, is equivariant.
+- Reflection behavior is mismatched with chirality-sensitive molecular tasks.
+- Evaluation aligns outputs in a way that hides frame or permutation errors.
 
 ## Design Checks
 
@@ -79,12 +107,18 @@ The scalar message stays invariant while the coordinate delta rotates with the i
 - Does the readout match the target: scalar score, vector field, coordinates, or pose?
 - Is graph construction fit only from inputs available at inference time?
 - Are stereochemistry, protonation, conformer source, and coordinate units specified?
+- Is equivariance tested by applying random rigid transforms to the same input?
+- Are atom/residue mappings and symmetry corrections fixed before evaluation?
 
 ## Related
 
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
+- [[concepts/architectures/gnn|Graph neural networks]]
+- [[concepts/architectures/graph-construction|Graph construction]]
+- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
 - [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

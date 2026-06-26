@@ -51,6 +51,40 @@ and the update is rotation equivariant.
 
 Coordinate updates are often repeated across layers, refinement steps, or sampling steps. Stability depends on step scale, neighborhood definition, normalization, and whether updates preserve physically meaningful constraints.
 
+One way to make the step size explicit is:
+
+$$
+x_i^{(l+1)}
+=
+x_i^{(l)}
++ \eta_l \Delta x_i^{(l)}
+$$
+
+where $\eta_l$ may be fixed, learned, scheduled, or controlled by a numerical solver. Large $\eta_l$ can improve speed but create clashes, drift, or invalid geometry.
+
+## Update Types
+
+| Update | Form | Use |
+| --- | --- | --- |
+| displacement | $x_i' = x_i + \Delta x_i$ | refinement, denoising, coordinate prediction |
+| velocity field | $\frac{dx}{dt}=v_\theta(x,t)$ | flow matching, probability-flow ODEs |
+| score field | $\nabla_x \log p_t(x)$ | score-based diffusion and denoising |
+| force-like field | $F_i=-\nabla_{x_i}E$ | energy-based or physics-inspired models |
+| frame update | rotate/translate local frame | residue frames, rigid body refinement |
+
+## Constraint Boundary
+
+Coordinate updates can optimize a loss while violating constraints:
+
+$$
+\mathcal{L}_{\mathrm{coord}}
+\downarrow
+\quad\not\Rightarrow\quad
+\text{valid chemistry or structure}
+$$
+
+For molecules and proteins, record which constraints are enforced or only evaluated: bond lengths, angles, chirality, steric clashes, chain connectivity, pocket constraints, atom mapping, and symmetry.
+
 ## Why It Matters
 
 - Coordinate updates appear in structure refinement, docking, diffusion, and flow-based generation.
@@ -72,6 +106,8 @@ Coordinate updates are often repeated across layers, refinement steps, or sampli
 - Is the update stable under repeated refinement or sampling steps?
 - Are units consistent, such as Angstrom versus nanometer?
 - Are generated structures evaluated for validity, not only coordinate loss?
+- Is the step size, solver, or number of refinement steps fixed across comparisons?
+- Are chemistry, chain, or rigid-body constraints enforced during the update?
 
 ## Related
 
@@ -80,4 +116,6 @@ Coordinate updates are often repeated across layers, refinement steps, or sampli
 - [[concepts/geometric-deep-learning/se3|SE(3)]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
