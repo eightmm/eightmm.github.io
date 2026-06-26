@@ -33,6 +33,7 @@ $$
 | Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI-Molecular-Math post intake](/posts/ai-bio-math-post-intake) |
+| Topic map | reader question, primary axis, object boundary, methods, evidence, next path | [Topic map contract](/concepts/topic-map-contract) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | Claim route | primary axis, secondary axes, bucket, concept updates | [Claim routing](/papers/workflows/claim-routing) |
 | Concept update | reusable definitions, formulas, contracts, evidence boundaries | [Concept update contract](/papers/workflows/concept-update-contract) |
@@ -78,6 +79,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 
 - One route page: [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]].
 - One data or benchmark page when a score is central: [[concepts/data/benchmark-intake|Benchmark intake]].
+- One topic-map contract when a cluster spans several axes: [[concepts/topic-map-contract|Topic map contract]].
 - One object/modality/task page when the input or output is nontrivial.
 - One representation contract when preprocessing or featurization changes the object seen by the model.
 - One coordinate modeling contract when a paper predicts poses, conformers, structures, vectors, forces, or coordinate updates.
@@ -108,6 +110,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - [[bio/index|Molecular Modeling]]
 - [[math/index|Math]]
 - [[papers/index|Papers]]
+- [[concepts/topic-map-contract|Topic map contract]]
 - [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]

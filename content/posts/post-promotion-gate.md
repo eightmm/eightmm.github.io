@@ -30,6 +30,7 @@ $$
 | --- | --- |
 | Reader question | the post answers one clear question |
 | Primary axis | AI, Molecular Modeling, Math, Paper cluster, Project, Infra, or Agents is central |
+| Topic map | broad posts have an explicit map contract rather than a loose link list |
 | Wiki bundle | at least 3-5 reusable notes can be linked instead of redefined |
 | Minimum formula | necessary equations are included with symbols, or linked to Math notes |
 | Evidence boundary | paper, benchmark, split, metric, baseline, leakage, and uncertainty claims are scoped |
@@ -84,6 +85,7 @@ status: draft
 - The post would mostly define one term.
 - The post needs private context to make sense.
 - The post has no reusable wiki links.
+- The post is a broad map but does not pass [[concepts/topic-map-contract|Topic map contract]].
 - The post depends on a paper claim whose metadata or evidence is still `to verify`.
 - The post repeats long definitions that should live in Concepts, Papers, Math, or Infra.
 - The post has no next reading path.
@@ -94,6 +96,7 @@ status: draft
 - [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
 - [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/blog-writing-guide|Blog writing guide]]
+- [[concepts/topic-map-contract|Topic map contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]

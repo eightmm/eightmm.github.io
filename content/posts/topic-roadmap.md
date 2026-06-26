@@ -9,6 +9,8 @@ tags:
 
 이 페이지는 한글 post로 풀어낼 만한 글감을 모아두는 지도입니다. 세부 지식은 영어 wiki note로 이미 쌓고, post는 읽는 경로와 관점을 만들어 주는 역할을 합니다.
 
+넓은 지도형 글감은 [[concepts/topic-map-contract|Topic map contract]]로 reader question, primary axis, object boundary, method family, evidence boundary, next path를 먼저 확인합니다.
+
 ## AI 기본기
 
 - Machine learning을 왜 [[concepts/data/index|Data]], [[concepts/tasks/index|Tasks]], [[concepts/architectures/index|Architectures]], [[concepts/evaluation/index|Evaluation]]로 나눠 봐야 하는가
@@ -145,6 +147,7 @@ tags:
 
 - [[posts/index|Posts]]
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
+- [[concepts/topic-map-contract|Topic map contract]]
 - [[concepts/index|Concepts]]
 - [[research/index|Research]]
 - [[papers/index|Papers]]

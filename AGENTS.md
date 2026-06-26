@@ -210,6 +210,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - For Korean posts that combine AI, molecular modeling, and Math, use `content/posts/ai-bio-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
 - Before promoting a Korean post, use `content/posts/post-promotion-gate.md` to confirm reader question, wiki bundle, evidence boundary, public boundary, and next path.
 - For Korean synthesis posts that cross several axes, use `content/posts/synthesis-post-template.md` as the draft structure and keep detailed definitions in wiki notes.
+- For broad map-style notes or posts, use `content/concepts/topic-map-contract.md` so the page has a reader question, primary axis, object boundary, method family, evidence boundary, and next path.
 - For new paper clusters, topic maps, or synthesis posts, check `content/concepts/coverage-matrix.md` so object, representation, task, data, architecture, learning method, math, evaluation, systems, and public boundary links are not missing.
 - For agent-collected paper candidates or daily paper briefs, use `content/inbox/paper-candidate-intake.md` and include source, metadata, why collected, route, main axis, candidate claim, evidence pointer, risk, next action, and status.
 - For mixed AI/molecular modeling/Math paper notes, use `content/papers/workflows/ai-bio-math-paper-template.md` as the fillable skeleton and keep unknown metadata or metrics as `to verify`.
