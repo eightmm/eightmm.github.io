@@ -36,6 +36,7 @@ $$
 | Representation contract | Raw object, representation, unit, preprocessing, split, and leakage risk are explicit | [Representation contract](/concepts/modalities/representation-contract) |
 | Coordinate contract | Frame, symmetry, atom or residue mapping, coordinate loss, and metric are explicit when 3D claims matter | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Objective-metric alignment | Training loss, selection metric, reported metric, and utility claim are connected | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| Benchmark claim | Dataset, split, task, metric, baseline, uncertainty, and allowed information support the stated claim | [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) |
 | Claim-evidence boundary | The supported scope is narrower than the headline claim when evidence is limited | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
 | Molecular modeling intake | Molecule, ligand, protein, pocket, conformer, complex, assay, split, and leakage fields are handled when relevant | [Molecular modeling paper intake](/bio/paper-intake) |
 | Formula intake | Symbols, distributions, objectives, estimators, and metrics are rewritten in local notation | [Formula intake](/math/formula-intake) |
@@ -86,6 +87,7 @@ secondary_axes: to verify
 representation_contract: to verify
 coordinate_contract: not applicable
 objective_metric_alignment: to verify
+benchmark_claim_contract: to verify
 claim_evidence_boundary: to verify
 molecular_modeling_intake: not applicable
 formula_intake: to verify
@@ -103,5 +105,6 @@ public_boundary: to verify
 - [[bio/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]
+- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
 - [[posts/synthesis-post-template|Synthesis post template]]

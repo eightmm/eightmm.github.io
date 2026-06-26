@@ -35,6 +35,7 @@ $$
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
+- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
@@ -84,6 +85,7 @@ For any reported result, first narrow the claim with [[concepts/evaluation/claim
 | The model is robust OOD | explicit shifted evaluation set | random split does not test the claimed shift |
 | The model is calibrated | probability quality metric and reliability curve | accurate labels are treated as calibrated probabilities |
 | The model is better than baseline | paired comparison against a relevant baseline | comparison uses different examples or selection rules |
+| The benchmark score supports a broad claim | benchmark claim contract and claim-evidence boundary | leaderboard score is overstated as general superiority |
 | The method explains a design choice | ablation under fixed protocol | ablation changes multiple variables at once |
 
 ## Metric Families

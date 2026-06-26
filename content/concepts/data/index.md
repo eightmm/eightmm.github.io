@@ -46,6 +46,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/data/benchmark|Benchmark]]
+- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 
@@ -77,7 +78,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 6. Summarize the result in a [[concepts/data/dataset-card|dataset card]].
 7. Design the [[concepts/evaluation/evaluation-set-design|evaluation set]].
 8. Attach an [[concepts/evaluation/evaluation-protocol|evaluation protocol]].
-9. Use [[concepts/data/benchmark-intake|benchmark intake]] before treating a score as evidence for a paper claim.
+9. Use [[concepts/data/benchmark-intake|benchmark intake]] and [[concepts/evaluation/benchmark-claim-contract|benchmark claim contract]] before treating a score as evidence for a paper claim.
 
 ## Related
 

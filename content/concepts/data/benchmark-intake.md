@@ -30,6 +30,7 @@ where $\mathcal{D}$ is data, $\mathcal{T}$ is the task, $\mathcal{S}$ is the spl
 | Example unit | What counts as one prediction or one generated sample? | [Example unit](/concepts/data/example-unit) |
 | Split unit | What unit is prevented from crossing train, validation, and test? | [Split unit](/concepts/data/split-unit), [Dataset split contract](/concepts/data/dataset-split-contract) |
 | Metric | What number decides success, and what diagnostics are secondary? | [Metric selection](/concepts/evaluation/metric-selection) |
+| Claim contract | What narrow claim does the score actually support? | [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) |
 | Baseline | What simple or established method makes the score meaningful? | [Baseline](/concepts/evaluation/baseline) |
 | Allowed information | What training data, templates, retrieval corpus, prompts, or preprocessing are allowed? | [Test-set contamination](/concepts/evaluation/test-set-contamination) |
 | Reporting | Are uncertainty, paired comparisons, invalid outputs, and subgroup failures reported? | [Evaluation protocol](/concepts/evaluation/evaluation-protocol) |
@@ -82,6 +83,7 @@ If $\theta^\*$, preprocessing, threshold, prompt, or filtering choices are selec
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/data/dataset-card|Dataset card]]
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
+- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
 - [[ai/paper-intake|AI paper intake]]

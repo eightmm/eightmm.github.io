@@ -58,6 +58,7 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
+- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/calibration|Calibration]]
@@ -76,6 +77,7 @@ For molecular modeling papers, a model score is not enough. Record the modeled o
 | Split unit | scaffold, protein family, complex pair, assay/source, time, or template-aware split |
 | Baseline | fingerprint/tree model, sequence similarity, docking baseline, or task-specific simple model |
 | Metric | primary decision metric plus diagnostics for calibration, uncertainty, or failure modes |
+| Benchmark claim | what the reported score can support after split, metric, baseline, and uncertainty are checked |
 | Objective-metric alignment | whether the optimized loss supports the reported metric and claimed utility |
 | Leakage check | duplicate, scaffold, homolog, template, assay/source, or preprocessing leakage |
 
