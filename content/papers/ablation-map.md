@@ -42,4 +42,6 @@ $M$ is the metric, $A_{\mathrm{full}}$ is the full method, and $A_{\setminus c_i
 - [[papers/evidence-table|Evidence table]]
 - [[papers/claim-extraction|Claim extraction]]
 - [[papers/limitation-taxonomy|Limitation taxonomy]]
+- [[concepts/evaluation/effect-size|Effect size]]
+- [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
 - [[concepts/research-methodology/threat-to-validity|Threat to validity]]

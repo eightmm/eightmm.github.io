@@ -50,6 +50,9 @@ $$
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
+- [[concepts/evaluation/effect-size|Effect size]]
+- [[concepts/evaluation/paired-comparison|Paired comparison]]
+- [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/cross-validation|Cross-validation]]
 - [[concepts/evaluation/leakage|Leakage]]
@@ -94,6 +97,8 @@ $$
 - primary metric과 diagnostic metric이 분리되어 있는가?
 - failure mode가 wrong output, invalid output, miscalibration, OOD, system failure처럼 분해되어 있는가?
 - 결과 차이가 confidence interval이나 seed variance보다 충분히 큰가?
+- 같은 test example 위에서 비교했는가, 아니면 독립 aggregate score만 비교했는가?
+- 많은 seed, prompt, threshold, ablation 중 가장 좋아 보이는 결과만 고른 것은 아닌가?
 - confidence, probability quality, calibration이 필요한 application인가?
 - uncertainty, abstention, robustness, interpretability 중 어떤 진단이 필요한가?
 - 실패를 data, model, optimization, evaluation 중 어디 문제로 분해할 수 있는가?

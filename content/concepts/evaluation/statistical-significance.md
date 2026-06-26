@@ -56,6 +56,9 @@ $$
 ## Related
 
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/evaluation/effect-size|Effect size]]
+- [[concepts/evaluation/paired-comparison|Paired comparison]]
+- [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
 - [[concepts/math/hypothesis-testing|Hypothesis testing]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]

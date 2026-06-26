@@ -25,6 +25,8 @@ where $M$ is the evaluation metric.
 - Is only one component changed at a time?
 - Are all variants trained and evaluated under the same budget?
 - Is variance across seeds or splits reported when the effect is small?
+- Is the ablation interpreted with effect size, not only statistical significance?
+- Were many ablations tried and only the strongest one emphasized?
 - Does the ablation test the claimed mechanism, or only a weaker implementation?
 
 ## Related
@@ -32,5 +34,7 @@ where $M$ is the evaluation metric.
 - [[concepts/research-methodology/experiment-design|Experiment design]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/effect-size|Effect size]]
+- [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
 - [[papers/paper-review-workflow|Paper review workflow]]
 - [[agents/verification/verification-loop|Verification loop]]
