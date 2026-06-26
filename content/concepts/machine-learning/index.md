@@ -76,6 +76,7 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 - [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
 - [[concepts/machine-learning/gradient-checking|Gradient checking]]
 - [[concepts/machine-learning/loss-landscape|Loss landscape]]
+- [[concepts/machine-learning/second-order-optimization|Second-order optimization]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/adam|Adam]]
 - [[concepts/machine-learning/adamw|AdamW]]

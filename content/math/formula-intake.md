@@ -24,8 +24,10 @@ $$
 | Index set | Does the index run over batch, token, node, edge, residue, atom, time, sample, or candidate? | [Discrete math and graphs](/math/discrete-graphs) |
 | Distribution | Is the expectation over data, model samples, noise, policy rollouts, or test population? | [Probability and statistics](/math/probability-statistics) |
 | Objective | Is the formula a loss, likelihood, bound, score, reward, constraint, or metric? | [Information and likelihood](/math/information-likelihood) |
+| Bayesian quantity | Is the formula a prior, likelihood, posterior, MAP estimate, or posterior predictive distribution? | [Bayesian inference](/concepts/math/bayesian-inference) |
 | Objective-metric link | Does the optimized loss support the reported metric and claimed utility? | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Derivative | Is the derivative with respect to parameters, inputs, coordinates, time, or latent variables? | [Calculus and gradients](/math/calculus-gradients) |
+| Curvature | Does the method use Hessian, Fisher, Newton step, curvature, or local quadratic approximation? | [Second-order optimization](/concepts/machine-learning/second-order-optimization) |
 | Symmetry | Should the output be invariant or equivariant under permutation, translation, rotation, or reflection? | [Geometry and symmetry](/math/geometry-symmetry) |
 | Numerics | Does implementation require stable softmax, log-sum-exp, precision control, or conditioning checks? | [Numerical computing](/math/numerical-computing) |
 | Evidence | Is the reported number a point estimate, confidence interval, paired comparison, or selected checkpoint? | [Evaluation math](/math/evaluation-math) |
@@ -64,6 +66,7 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 | Attention | How are $Q$, $K$, $V$, mask, softmax, head concatenation, and output projection defined? |
 | Message passing | What node, edge, neighbor, message, aggregation, and update functions are used? |
 | Likelihood | What distribution is modeled, and what observation is conditioned on? |
+| Bayesian inference | What is prior, likelihood, posterior, evidence, MAP estimate, or predictive distribution? |
 | Contrastive loss | What is the anchor, positive, negative set, similarity, and temperature? |
 | Diffusion or flow | What is the state, time variable, noise/score/velocity target, and sampling path? |
 | Equivariance | What group acts on the input, and how should the output transform? |
@@ -98,5 +101,7 @@ Use [[math/formula-explanation-ladder|Formula explanation ladder]] before decidi
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
+- [[concepts/math/bayesian-inference|Bayesian inference]]
+- [[concepts/machine-learning/second-order-optimization|Second-order optimization]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]

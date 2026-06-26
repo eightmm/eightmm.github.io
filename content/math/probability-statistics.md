@@ -24,6 +24,7 @@ The distribution under the expectation matters as much as the loss itself.
 - [[concepts/math/normal-distribution|Normal distribution]]
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/math/bayes-rule|Bayes rule]]
+- [[concepts/math/bayesian-inference|Bayesian inference]]
 
 ## Distribution Map
 
@@ -84,6 +85,7 @@ $$
 - Probabilistic prediction needs calibrated probabilities, not only scores.
 - Dataset shift changes the distribution under the expected risk.
 - Uncertainty estimation depends on what randomness is being modeled.
+- Bayesian inference separates prior, likelihood, posterior, and posterior predictive claims.
 - Hypothesis testing and confidence intervals help interpret benchmark differences.
 
 ## Checks
@@ -98,3 +100,4 @@ $$
 - [[math/index|Math]]
 - [[ai/evaluation|Evaluation]]
 - [[concepts/evaluation/calibration|Calibration]]
+- [[concepts/math/bayesian-inference|Bayesian inference]]

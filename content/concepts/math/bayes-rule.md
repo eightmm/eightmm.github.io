@@ -89,6 +89,7 @@ Practical ML systems often approximate this integral with ensembles, variational
 - Latent-variable models infer hidden causes from observations.
 - Uncertainty estimation often asks for posterior distributions.
 - Bayesian framing separates prior assumptions from evidence.
+- MAP estimation connects priors to regularized optimization.
 - Many practical ML systems approximate Bayesian reasoning without doing exact inference.
 - Posterior uncertainty can be more informative than a single best prediction.
 
@@ -103,6 +104,7 @@ Practical ML systems often approximate this integral with ensembles, variational
 ## Related
 
 - [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/bayesian-inference|Bayesian inference]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/generative-models/vae|VAE]]

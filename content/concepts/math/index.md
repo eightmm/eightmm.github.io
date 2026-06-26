@@ -39,6 +39,7 @@ Use these pages to identify the object, distribution, parameter, and estimator b
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/math/bayes-rule|Bayes rule]]
+- [[concepts/math/bayesian-inference|Bayesian inference]]
 - [[concepts/math/statistical-estimator|Statistical estimator]]
 - [[concepts/math/hypothesis-testing|Hypothesis testing]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]

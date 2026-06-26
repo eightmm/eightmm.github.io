@@ -36,7 +36,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Reading Paths
 
 - AI basics: [[concepts/math/index|Math foundations]] -> [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]] -> [[concepts/machine-learning/generalization|Generalization]] -> [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]] -> [[concepts/data/index|Data]] -> [[concepts/architectures/index|Architectures]] -> [[concepts/learning/index|Learning methods]] -> [[concepts/learning/augmentation-policy|Augmentation policy]] -> [[concepts/evaluation/evaluation-protocol|Evaluation protocol]] -> [[concepts/evaluation/index|Evaluation]]
-- Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/calculus|Calculus]] -> [[concepts/math/matrix-calculus|Matrix calculus]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/normal-distribution|Normal distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/central-limit-theorem|Central limit theorem]] -> [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
+- Math path: [[concepts/math/linear-algebra|Linear algebra]] -> [[concepts/math/calculus|Calculus]] -> [[concepts/math/matrix-calculus|Matrix calculus]] -> [[concepts/math/probability-distribution|Probability distribution]] -> [[concepts/math/normal-distribution|Normal distribution]] -> [[concepts/math/expectation|Expectation]] -> [[concepts/math/central-limit-theorem|Central limit theorem]] -> [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] -> [[concepts/math/maximum-likelihood|Maximum likelihood]] -> [[concepts/math/bayesian-inference|Bayesian inference]] -> [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - Data path: [[entities/dataset|Dataset]] -> [[concepts/data/dataset-construction-checklist|Dataset construction checklist]] -> [[concepts/data/example-unit|Example unit]] -> [[concepts/data/split-unit|Split unit]] -> [[concepts/data/dataset-split-contract|Dataset split contract]] -> [[concepts/data/preprocessing-contract|Preprocessing contract]] -> [[concepts/data/label-semantics|Label semantics]] -> [[concepts/data/dataset-shift|Dataset shift]] -> [[concepts/data/benchmark|Benchmark]]
 - Modality path: [[concepts/modalities/modality-representation|Modality representation]] -> [[concepts/modalities/modality-task-map|Modality-task map]] -> [[concepts/modalities/text|Text]] -> [[concepts/modalities/sequence|Sequence]] -> [[concepts/modalities/image|Image]] -> [[concepts/modalities/video|Video]] -> [[concepts/modalities/audio|Audio]] -> [[concepts/modalities/tabular|Tabular]] -> [[concepts/modalities/graph|Graph]] -> [[concepts/modalities/3d-structure|3D structure]] -> [[concepts/modalities/modality-alignment|Modality alignment]] -> [[concepts/modalities/missing-modality|Missing modality]] -> [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - Task path: [[concepts/tasks/task-specification|Task specification]] -> [[concepts/modalities/modality-task-map|Modality-task map]] -> [[concepts/tasks/task-output-space|Task output space]] -> [[concepts/tasks/retrieval|Retrieval]] -> [[concepts/tasks/similarity-search|Similarity search]] -> [[concepts/tasks/reranking|Reranking]] -> [[concepts/tasks/question-answering|Question answering]] -> [[concepts/tasks/sequence-generation|Sequence generation]] -> [[concepts/tasks/structured-prediction|Structured prediction]]
@@ -87,6 +87,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/math/bayes-rule|Bayes rule]]
+- [[concepts/math/bayesian-inference|Bayesian inference]]
 - [[concepts/math/statistical-estimator|Statistical estimator]]
 - [[concepts/math/hypothesis-testing|Hypothesis testing]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
@@ -232,6 +233,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
+- [[concepts/machine-learning/second-order-optimization|Second-order optimization]]
 - [[concepts/machine-learning/adam|Adam]]
 - [[concepts/machine-learning/adamw|AdamW]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]

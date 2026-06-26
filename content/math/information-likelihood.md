@@ -22,6 +22,7 @@ Maximum likelihood trains a model to assign high probability to observed data un
 ## Core Notes
 
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
+- [[concepts/math/bayesian-inference|Bayesian inference]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
@@ -64,6 +65,7 @@ where $y_k$ is a one-hot or soft target.
 | Objective Type | Learns | Watch |
 | --- | --- | --- |
 | Likelihood | normalized probability or tractable factorization | high likelihood may not imply useful samples |
+| Bayesian posterior | prior plus likelihood updated by evidence | posterior approximation and prior assumptions matter |
 | Variational bound | latent encoder and decoder | bound tightness and posterior assumptions matter |
 | Denoising / score | gradient or denoising target over noisy data | sampling path and noise schedule define behavior |
 | Flow matching | velocity field along a probability path | path choice and ODE integration affect samples |
@@ -81,3 +83,4 @@ where $y_k$ is a one-hot or soft target.
 - [[math/index|Math]]
 - [[ai/generative-models|Generative Models]]
 - [[ai/learning-methods|Learning Methods]]
+- [[concepts/math/bayesian-inference|Bayesian inference]]

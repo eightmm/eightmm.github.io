@@ -36,6 +36,7 @@ This page is Math-facing. It explains derivatives, chain rules, Jacobians, Hessi
 - [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
 - [[concepts/machine-learning/gradient-checking|Gradient checking]]
 - [[concepts/machine-learning/loss-landscape|Loss landscape]]
+- [[concepts/machine-learning/second-order-optimization|Second-order optimization]]
 
 ## Derivative
 
@@ -178,6 +179,7 @@ Keep these in Math:
 - gradients, Jacobians, Hessians
 - chain rule and matrix calculus
 - curvature and local approximation
+- second-order optimization diagnostics
 
 Keep these in AI:
 
