@@ -63,6 +63,7 @@ $$
 | Geometry | [Geometric deep learning](/concepts/geometric-deep-learning), [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Equivariance](/concepts/geometric-deep-learning/equivariance) |
 | Graphs and dynamics | [Discrete math and graphs](/math/discrete-graphs), [Dynamical systems](/math/dynamical-systems), [GNN](/concepts/architectures/gnn), [Probability flow ODE](/concepts/generative-models/probability-flow-ode) |
 | Evaluation | [Metric](/concepts/evaluation/metric), [Confidence interval](/concepts/evaluation/confidence-interval), [Statistical significance](/concepts/evaluation/statistical-significance) |
+| Claim boundary | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark intake](/concepts/data/benchmark-intake), [Evidence table](/papers/analysis/evidence-table) |
 
 ## Reading Path
 

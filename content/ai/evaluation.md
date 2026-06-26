@@ -33,6 +33,7 @@ $$
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
+- [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
@@ -73,6 +74,8 @@ $$
 - [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 
 ## Claim to Evidence Map
+
+For any reported result, first narrow the claim with [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
 
 | Claim | Evidence Needed | Common Failure |
 | --- | --- | --- |

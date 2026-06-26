@@ -51,6 +51,7 @@ $$
 | Generative model | What distribution, score, velocity, or sampling path is modeled? | [Generative models](/concepts/generative-models), [AI generative models](/ai/generative-models) |
 | Math | Which formula, object type, distribution, or estimator is needed? | [Math](/math), [Math foundations](/concepts/math) |
 | Evaluation | Which metric, baseline, split, uncertainty, and failure mode support the claim? | [Evaluation](/ai/evaluation), [Evaluation concepts](/concepts/evaluation) |
+| Claim boundary | What exactly does the evidence prove, and where does it stop? | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
 | Systems | Does the claim depend on training, serving, tools, reproducibility, or compute? | [AI systems](/concepts/systems), [Infra](/infra) |
 | Agent workflow | Does an LLM use tools, memory, planning, or verification? | [Agents](/agents) |
 
@@ -75,6 +76,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One object/modality/task page when the input or output is nontrivial.
 - One architecture or learning-method page when the method is central.
 - One evaluation page explaining metric, split, baseline, uncertainty, or failure mode.
+- One claim boundary when the result could be overread: [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
 - One paper note or paper-analysis note when a specific paper claim is being discussed.
 - One claim-routing pass when a paper or post candidate spans multiple axes: [[papers/workflows/claim-routing|Claim routing]].
 - One fillable template pass for mixed AI/molecular modeling/Math papers: [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]].

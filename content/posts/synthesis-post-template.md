@@ -83,6 +83,8 @@ $$
 | Leakage | 평가 시점에 쓰면 안 되는 정보가 들어갔는가? |
 | Artifact | code, data, split, weight, config가 공개되어 있는가? |
 
+Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when a result can easily be overstated.
+
 ## 내 관점
 
 공개 가능한 범위에서 해석, 의문, 다음에 볼 질문을 적는다.

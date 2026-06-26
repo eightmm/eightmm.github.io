@@ -28,6 +28,7 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
+- [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]

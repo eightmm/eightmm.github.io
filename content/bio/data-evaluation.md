@@ -56,6 +56,7 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
+- [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/calibration|Calibration]]

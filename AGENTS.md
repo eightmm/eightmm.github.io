@@ -108,6 +108,8 @@ Missing, censored, and weak-label notes should keep unknown, unobserved, censore
 
 Evaluation notes should separate primary metrics from diagnostics and should name failure modes explicitly. When adding task or evaluation notes, connect output space, metric selection, failure mode taxonomy, split rule, uncertainty, and leakage risk before making model-quality claims.
 
+For claims that combine AI, molecular modeling, and Math, add or link a claim-evidence boundary. State the exact claim, task, data, protocol, metric, baseline, uncertainty, and supported scope.
+
 Generalization notes should separate training fit, validation selection, final test evidence, and deployment or OOD claims. Do not use train performance as evidence of generalization. A generalization claim should state example unit, split unit, training distribution, target evaluation distribution, model-selection rule, metric, uncertainty, leakage checks, and dataset-shift risks.
 
 Model-selection notes should treat hyperparameter tuning, checkpoint choice, threshold choice, preprocessing choice, and failed-run exclusion as part of the learning protocol. Record the candidate set or search space, selection metric, validation split, search budget, fixed final model, and whether the test set was untouched until final evaluation.
