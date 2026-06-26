@@ -91,6 +91,47 @@ $$
 
 This is normal when the loss is a smooth surrogate for a discrete or domain-specific metric. The important question is whether lower validation loss and better task metric move together.
 
+## Loss Decomposition
+
+For paper notes, write the training objective as:
+
+$$
+\mathcal{J}(\theta)
+=
+\mathbb{E}_{u\sim q_{\mathrm{train}}}
+\left[
+w(u)\,\ell(f_\theta(r(u)), y(u))
+\right]
++ \lambda \Omega(\theta)
+$$
+
+where $u$ is the sampled training unit, $r(u)$ is the representation, $y(u)$ is the target, $w(u)$ is an optional weight, and $\Omega$ is regularization. This makes hidden assumptions visible: sampling distribution, label semantics, representation, weighting, and regularization.
+
+## Choosing A Loss
+
+| Target / Claim | Common Loss | Check |
+| --- | --- | --- |
+| calibrated class probability | cross-entropy, NLL | evaluate NLL, Brier score, calibration, not only accuracy |
+| hard classification | cross-entropy, focal loss, hinge loss | threshold and class prevalence must match deployment |
+| numeric regression | MSE, MAE, Huber, Gaussian NLL | unit, scale, censoring, and outlier policy define meaning |
+| ranking or retrieval | pairwise, listwise, contrastive | sampled negatives must match candidate corpus |
+| sequence generation | token NLL, sequence loss, RL-style objective | teacher forcing may not match free-running generation |
+| molecule or structure generation | denoising, score, velocity, validity-filtered objective | loss may not imply validity, novelty, or task utility |
+| pose or coordinate prediction | coordinate loss, distance loss, equivariant loss | atom mapping, symmetry, and frame must be explicit |
+
+## Reduction Boundary
+
+For variable-length examples, the denominator matters:
+
+$$
+\mathcal{L}
+=
+\frac{\sum_i \sum_{j\in \mathcal{V}_i} \ell_{ij}}
+{\sum_i |\mathcal{V}_i|}
+$$
+
+where $\mathcal{V}_i$ is the valid token, residue, atom, edge, pixel, or candidate set for example $i$. Averaging per token and averaging per example can optimize different populations.
+
 ## Common Loss Families
 
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]] for categorical labels and next-token prediction.
@@ -107,12 +148,17 @@ This is normal when the loss is a smooth surrogate for a discrete or domain-spec
 - Does gradient accumulation divide the loss at the right boundary?
 - Does imbalance require weighting, sampling, or calibration?
 - Is label noise large enough that a robust loss matters?
+- Is the sampled unit an example, token, residue, atom, edge, pair, pose, or trajectory?
+- Does the loss denominator match the population implied by the reported metric?
+- Is the loss compatible with censored, missing, weak, or noisy labels?
 
 ## Related
 
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
+- [[concepts/data/label-semantics|Label semantics]]
+- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/training-step-accounting|Training step accounting]]

@@ -66,6 +66,37 @@ $$
 
 where $\epsilon_\lambda$ is validation noise. As $|\Lambda|$ grows, the selected candidate can have unusually favorable $\epsilon_\lambda$ even if its true risk is not best.
 
+## Selection Record
+
+For each paper or project note, record selection as a protocol object:
+
+$$
+\pi_{\mathrm{select}}
+=
+(\Lambda, \mathcal{D}_{\mathrm{val}}, M_{\mathrm{select}}, B, \rho)
+$$
+
+where $\Lambda$ is the candidate set, $\mathcal{D}_{\mathrm{val}}$ is validation data, $M_{\mathrm{select}}$ is the selection metric, $B$ is the search budget, and $\rho$ is the reporting rule.
+
+| Field | Examples |
+| --- | --- |
+| Candidate set | architectures, seeds, checkpoints, hyperparameters, prompts, thresholds, filters |
+| Selection metric | validation loss, AUROC, enrichment, RMSD success, calibration, human preference |
+| Search budget | number of trials, sweeps, seeds, folds, reruns, failed runs |
+| Fixed artifact | checkpoint hash, config, preprocessing version, threshold, decoding setting |
+| Reporting rule | include failed runs, best seed, mean over seeds, median over folds, final ensemble |
+
+## Common Failure Modes
+
+| Pattern | Why It Matters |
+| --- | --- |
+| best seed reporting | turns random variance into apparent method improvement |
+| checkpoint chosen by test metric | test set becomes validation data |
+| threshold tuned on test | reported classification metric is biased |
+| preprocessing chosen after seeing results | data construction becomes part of selection |
+| primary metric chosen after results | narrative overfits the benchmark |
+| failed runs excluded silently | stability claim becomes unsupported |
+
 ## Protocol
 
 For a public result, record:
@@ -85,6 +116,8 @@ For a public result, record:
 - Are failed or discarded runs accounted for in the narrative?
 - Does the validation split match the intended [[concepts/machine-learning/generalization|generalization]] claim?
 - Is the final model reproducible from the recorded configuration and checkpoint?
+- Is the selection budget large enough that selection bias should be reported?
+- Was the final threshold, prompt, filter, or decoding setting fixed before final testing?
 
 ## Related
 
@@ -94,6 +127,8 @@ For a public result, record:
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/evaluation/seed-variance|Seed variance]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]

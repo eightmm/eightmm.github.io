@@ -16,6 +16,14 @@ $$
 \mathbb{P}(Y=\hat{Y} \mid \hat{P}=p) = p
 $$
 
+More generally, for a predicted probability $\hat{p}(x)$:
+
+$$
+\mathbb{P}(Y=1 \mid \hat{p}(X)=p) = p
+$$
+
+for all confidence levels $p$ where enough data exists.
+
 Expected calibration error estimates the average gap between confidence and empirical accuracy:
 
 $$
@@ -27,6 +35,35 @@ $$
 
 Calibration complements [[concepts/evaluation/probability-metrics|probability metrics]] such as NLL and [[concepts/evaluation/brier-score|Brier score]]. NLL and Brier score summarize probability quality as scalar metrics; calibration diagnostics show where confidence and empirical frequency disagree.
 
+## Discrimination vs Calibration
+
+| Property | Question | Example Metric |
+| --- | --- | --- |
+| discrimination | can the model rank positives above negatives? | AUROC, PR-AUC, enrichment |
+| calibration | do predicted probabilities match frequencies? | ECE, reliability diagram |
+| sharpness | are probabilities confident when justified? | entropy, Brier decomposition |
+| decision quality | do probabilities improve actions under a cost? | expected utility, selective risk |
+
+A ranking model can have excellent AUROC and still be poorly calibrated. A calibrated model can still be useless if it cannot separate cases.
+
+## Binning Caveat
+
+ECE depends on bins:
+
+$$
+\operatorname{acc}(B_b)
+=
+\frac{1}{|B_b|}
+\sum_{i\in B_b}\mathbf{1}[\hat{y}_i=y_i],
+\qquad
+\operatorname{conf}(B_b)
+=
+\frac{1}{|B_b|}
+\sum_{i\in B_b}\hat{p}_i
+$$
+
+Small bins, class imbalance, and distribution shift can make ECE unstable. Use reliability diagrams and per-slice checks when decisions depend on confidence.
+
 ## Practical Checks
 
 - Plot a reliability diagram; bin predictions and compare to empirical accuracy.
@@ -35,6 +72,8 @@ Calibration complements [[concepts/evaluation/probability-metrics|probability me
 - Re-check calibration under distribution shift; it degrades faster than accuracy.
 - For ranking tasks, separate calibration from discrimination (AUC).
 - For abstention or human review, evaluate [[concepts/evaluation/selective-prediction|selective prediction]] instead of reporting confidence alone.
+- Check whether calibration is evaluated on the same population where decisions will be made.
+- For imbalanced datasets, inspect calibration by class, target, scaffold, subgroup, or score range.
 
 ## Temperature Scaling
 
@@ -67,6 +106,7 @@ where $T>0$ is fit on validation data. Larger $T$ softens overconfident probabil
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/selective-prediction|Selective prediction]]
+- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/index|Evaluation]]

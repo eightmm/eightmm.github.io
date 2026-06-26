@@ -46,6 +46,46 @@ The interval is estimated from the empirical quantiles of bootstrap metric value
 - Overlapping intervals do not automatically prove no difference; paired tests or bootstrap differences are often better.
 - For model comparisons, estimate the uncertainty of $\Delta M$, not only the uncertainty of each model separately.
 
+## Paired Difference
+
+For two models evaluated on the same examples, estimate uncertainty on the paired difference:
+
+$$
+d_i = m_A(z_i) - m_B(z_i)
+$$
+
+$$
+\bar{d}
+=
+\frac{1}{n}\sum_{i=1}^{n} d_i
+$$
+
+Then compute an interval for $\bar{d}$ or bootstrap the paired test set. This is usually more informative than comparing two independent confidence intervals.
+
+## What Population Varies?
+
+| Uncertainty Source | What Changes | Typical Report |
+| --- | --- | --- |
+| example sampling | test examples | bootstrap CI over examples |
+| random seed | initialization, order, stochastic training | mean and interval over seeds |
+| split choice | train/test partition | grouped CV or repeated split interval |
+| annotator or assay noise | measured label | label-aware uncertainty or sensitivity analysis |
+| prompt or decoding randomness | sampled generation or agent run | run-level interval and failure rate |
+
+Do not mix these sources without saying what the interval means.
+
+## Small Sample Warning
+
+For rare events or small benchmark slices, normal intervals can be misleading. Prefer bootstrap, exact/binomial intervals, or report the raw numerator and denominator:
+
+$$
+\hat{p}
+=
+\frac{s}{n}
+$$
+
+where $s$ is the number of successes and $n$ is the number of evaluated cases.
+
 ## Practical Checks
 
 - Is uncertainty across examples, random seeds, data splits, or annotators?
@@ -53,6 +93,8 @@ The interval is estimated from the empirical quantiles of bootstrap metric value
 - Is the metric paired by the same test examples across models?
 - Are reported improvements larger than the interval width?
 - Is the interval computed on the held-out set, not on validation data used for selection?
+- Is the interval for the metric itself or for the improvement over a baseline?
+- Are subgroup or target-level intervals needed before making broad claims?
 
 ## Related
 
