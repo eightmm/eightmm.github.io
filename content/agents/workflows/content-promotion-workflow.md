@@ -68,6 +68,7 @@ An agent should:
 - Classify the raw input.
 - Prefer updating existing pages over creating weak duplicates.
 - Create small stubs only when they are linked and useful.
+- Use [[papers/workflows/concept-update-contract|Concept update contract]] when a paper candidate contains reusable definitions, formulas, contracts, or evidence boundaries.
 - Add formulas where they clarify objectives, metrics, update rules, or decision criteria.
 - Mark missing facts as `to verify`.
 - Run link, privacy, and build checks before committing.
@@ -86,6 +87,7 @@ An agent should:
 
 - [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
+- [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[agents/workflows/agent-runbook|Agent runbook]]
 - [[inbox/inbox-triage|Inbox triage]]
 - [[inbox/curation-queue|Curation queue]]

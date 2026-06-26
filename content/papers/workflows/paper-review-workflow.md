@@ -31,7 +31,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 15. Write a [[papers/reproducibility/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
 16. Record any rerun, reimplementation, or diagnostic as [[papers/reproducibility/reproduction-result|Reproduction result]].
 17. Compare related papers with [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]] when useful.
-18. Extract reusable concepts into [[concepts/index|Concepts]].
+18. Extract reusable concepts with [[papers/workflows/concept-update-contract|Concept update contract]] into [[concepts/index|Concepts]].
 19. Link research relevance into [[research/index|Research]].
 20. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
 21. Promote mature themes into Korean [[posts/index|Posts]].
@@ -55,6 +55,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 ## Checks
 
 - Is the paper worth a curated note, or should it only update an existing concept?
+- Does the paper add a reusable definition, formula, contract, or evidence boundary that belongs in a concept note?
 - Are formulas rewritten with symbol definitions rather than copied blindly?
 - Has the paper been routed through [[papers/workflows/claim-routing|Claim routing]] and the relevant intake page: [[ai/paper-intake|AI]], [[bio/paper-intake|Molecular Modeling]], or [[math/formula-intake|Math]]?
 - Has a multi-axis candidate passed [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]] before being promoted?
@@ -73,6 +74,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[ai/paper-intake|AI paper intake]]
 - [[bio/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]

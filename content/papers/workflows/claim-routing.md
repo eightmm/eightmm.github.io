@@ -69,6 +69,7 @@ primary axis: to verify
 secondary axes: to verify
 paper bucket: to verify
 concept updates: to verify
+concept update contract: to verify
 benchmark/evaluation update: to verify
 formula update: to verify
 public artifact status: to verify
@@ -91,6 +92,7 @@ public artifact status: to verify
 
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[ai/paper-intake|AI paper intake]]
 - [[bio/paper-intake|Molecular modeling paper intake]]
