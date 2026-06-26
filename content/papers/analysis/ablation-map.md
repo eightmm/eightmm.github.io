@@ -1,5 +1,6 @@
 ---
 title: Ablation Map
+unlisted: true
 aliases:
   - papers/ablation-map
 tags:

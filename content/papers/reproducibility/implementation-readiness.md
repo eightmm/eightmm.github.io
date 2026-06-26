@@ -1,5 +1,6 @@
 ---
 title: Implementation Readiness
+unlisted: true
 aliases:
   - papers/implementation-readiness
 tags:

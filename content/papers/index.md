@@ -6,26 +6,26 @@ tags:
 
 # Papers
 
-Paper notes summarize public work and link claims back into reusable concepts.
+Paper notes summarize public work and link claims back into reusable concepts. The visible tree should feel like a curated reading shelf, not a dump of every workflow, checklist, or analysis template.
 
 Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected papers should become curated notes here.
 
 ## Curated Areas
 
 - [[papers/sbdd/index|Structure-based AI papers]]
-- [[papers/sbdd/posebusters|PoseBusters]]
 - [[papers/protein-modeling/index|Protein modeling papers]]
 - [[papers/generative-models/index|Generative model papers]]
 
 ## Active Paper Notes
 
+- [[papers/sbdd/posebusters|PoseBusters]]
 - [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
 - [[papers/protein-modeling/meet-equivariant-peptide|MEET]]
 - [[papers/generative-models/molexar|Molexar]]
 
 ## Reading Utilities
 
-These pages are support material for reading papers, not paper buckets. They are linked here but kept out of the main Explorer tree.
+These pages are support material for reading papers, not paper buckets. They remain directly linked from this page but are marked `unlisted` so the Explorer sidebar stays focused on curated paper areas and actual paper notes.
 
 - [[papers/workflows/index|Paper workflows]]
 - [[papers/analysis/index|Paper analysis]]

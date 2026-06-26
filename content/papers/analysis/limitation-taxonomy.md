@@ -1,5 +1,6 @@
 ---
 title: Limitation Taxonomy
+unlisted: true
 aliases:
   - papers/limitation-taxonomy
 tags:

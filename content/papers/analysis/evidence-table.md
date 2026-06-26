@@ -1,5 +1,6 @@
 ---
 title: Evidence Table
+unlisted: true
 aliases:
   - papers/evidence-table
 tags:

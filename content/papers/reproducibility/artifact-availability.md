@@ -1,5 +1,6 @@
 ---
 title: Artifact Availability
+unlisted: true
 aliases:
   - papers/artifact-availability
 tags:

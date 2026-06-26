@@ -1,5 +1,6 @@
 ---
 title: Paper Analysis
+unlisted: true
 tags:
   - papers
   - methodology

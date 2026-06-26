@@ -1,5 +1,6 @@
 ---
 title: Paper Comparison Matrix
+unlisted: true
 aliases:
   - papers/paper-comparison-matrix
 tags:

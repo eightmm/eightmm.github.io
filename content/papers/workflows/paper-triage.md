@@ -1,5 +1,6 @@
 ---
 title: Paper Triage
+unlisted: true
 aliases:
   - papers/paper-triage
 tags:

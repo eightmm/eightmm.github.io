@@ -1,5 +1,6 @@
 ---
 title: Paper Review Workflow
+unlisted: true
 aliases:
   - papers/paper-review-workflow
 tags:

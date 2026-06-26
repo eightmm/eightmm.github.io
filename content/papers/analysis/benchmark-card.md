@@ -1,5 +1,6 @@
 ---
 title: Benchmark Card
+unlisted: true
 aliases:
   - papers/benchmark-card
 tags:

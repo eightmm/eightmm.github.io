@@ -1,5 +1,6 @@
 ---
 title: Paper Workflows
+unlisted: true
 tags:
   - papers
   - workflows

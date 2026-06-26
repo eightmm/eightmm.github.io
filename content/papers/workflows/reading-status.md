@@ -1,5 +1,6 @@
 ---
 title: Reading Status
+unlisted: true
 aliases:
   - papers/reading-status
 tags:

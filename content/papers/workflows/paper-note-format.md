@@ -1,5 +1,6 @@
 ---
 title: Paper Note Format
+unlisted: true
 aliases:
   - papers/paper-note-format
 tags:
