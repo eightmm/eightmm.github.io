@@ -41,6 +41,8 @@ Here $\operatorname{MHA}$ is multi-head attention, $\operatorname{LN}$ is layer 
 ## Related
 
 - [[concepts/architectures/normalization|Normalization]]
+- [[concepts/architectures/normalization-placement|Normalization placement]]
+- [[concepts/architectures/weight-initialization|Weight initialization]]
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/mlp|MLP]]

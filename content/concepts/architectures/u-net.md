@@ -38,6 +38,7 @@ Skip connections preserve high-resolution information while the bottleneck captu
 
 ## Related
 
+- [[concepts/architectures/convolution|Convolution]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]

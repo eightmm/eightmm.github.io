@@ -33,9 +33,11 @@ $$
 딥러닝 아키텍처를 읽을 때 먼저 봐야 하는 building block입니다.
 
 - [[concepts/architectures/linear-layer|Linear layer]]
+- [[concepts/architectures/weight-initialization|Weight initialization]]
 - [[concepts/architectures/activation-function|Activation function]]
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/normalization|Normalization]]
+- [[concepts/architectures/normalization-placement|Normalization placement]]
 - [[concepts/architectures/residual-connection|Residual connection]]
 - [[concepts/architectures/residual-network|Residual network]]
 - [[concepts/architectures/tokenization|Tokenization]]
@@ -59,6 +61,7 @@ locality와 weight sharing이 중요한 입력에 적합합니다. 이미지뿐 
 
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
+- [[concepts/architectures/convolution|Convolution]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/residual-network|Residual network]]
 - [[concepts/architectures/u-net|U-Net]]
@@ -128,6 +131,7 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 - 모델이 locality, order, permutation invariance, equivariance 중 무엇을 가정하는가?
 - Linear layer는 channel을 섞는가, attention/convolution/message passing은 token이나 neighborhood를 섞는가?
 - Activation, normalization, residual path가 gradient flow를 안정화하는가?
+- Weight initialization과 normalization placement가 깊은 모델의 안정성에 맞는가?
 - long-context scaling, sparse routing, geometric bias가 필요한가?
 - architecture의 inductive bias가 task의 symmetry와 맞는가?
 

@@ -70,6 +70,8 @@ Here $X$ is the token matrix, $M$ is a padding or causal mask, $H$ is the number
 
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
+- [[concepts/architectures/normalization-placement|Normalization placement]]
+- [[concepts/architectures/weight-initialization|Weight initialization]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
 - [[entities/protein|Protein]]

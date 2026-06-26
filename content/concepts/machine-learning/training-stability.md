@@ -28,6 +28,7 @@ where $g_t$ is the gradient at step $t$. Very large, very small, or highly errat
 - Missing warmup for large models, large batches, or mixed precision.
 - Loss scale mismatch across objectives or modalities.
 - Bad initialization, normalization, or residual path behavior.
+- Poor normalization placement in very deep residual or Transformer blocks.
 - Exploding gradients in sequence, recurrent, RL, or very deep models.
 - Data preprocessing mismatch between train and validation.
 - Incorrect model mode for dropout or normalization.
@@ -73,6 +74,8 @@ A run can be stable but overfit, or unstable but still occasionally produce a go
 - [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
 - [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/machine-learning/regularization|Regularization]]
+- [[concepts/architectures/weight-initialization|Weight initialization]]
+- [[concepts/architectures/normalization-placement|Normalization placement]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
 - [[concepts/systems/training-run|Training run]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]

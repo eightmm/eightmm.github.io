@@ -53,6 +53,7 @@ where $T_a$ shifts the input by offset $a$.
 
 ## Related
 
+- [[concepts/architectures/convolution|Convolution]]
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
 - [[concepts/architectures/gnn|Graph neural networks]]

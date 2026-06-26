@@ -1,3 +1,11 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// Keep the main knowledge-map categories visible from the sidebar. The
+// Explorer plugin currently serializes this preference but does not apply it
+// at runtime, so the first folder level is opened here as a stable fallback.
+.explorer-content > .explorer-ul > li > .folder-outer {
+  visibility: visible;
+  grid-template-rows: 1fr;
+}

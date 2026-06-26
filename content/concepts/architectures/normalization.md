@@ -106,6 +106,7 @@ Pre-norm often improves optimization stability in deep Transformers because grad
 
 ## Related
 
+- [[concepts/architectures/normalization-placement|Normalization placement]]
 - [[concepts/architectures/residual-connection|Residual connection]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]

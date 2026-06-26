@@ -79,7 +79,7 @@ This is one reason linear layers are easy to optimize but easy to overuse: they 
 - Width: controls representation capacity and memory.
 - Low-rank factorization: replaces $W$ with $AB$ to reduce parameters.
 - Weight tying: reuses a matrix across input embedding and output projection.
-- Initialization: affects activation scale and gradient flow in deep networks.
+- [[concepts/architectures/weight-initialization|Weight initialization]]: affects activation scale and gradient flow in deep networks.
 
 ## Where It Appears
 
@@ -103,6 +103,7 @@ This is one reason linear layers are easy to optimize but easy to overuse: they 
 - [[concepts/architectures/mlp|MLP]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
+- [[concepts/architectures/weight-initialization|Weight initialization]]
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/parameter-sharing|Parameter sharing]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
