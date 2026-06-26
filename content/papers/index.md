@@ -17,6 +17,8 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 | [Structure-based AI papers](/papers/sbdd) | docking, pose quality, scoring, screening |
 | [Protein modeling papers](/papers/protein-modeling) | protein representation, structure, antibody/protein interaction |
 | [Generative model papers](/papers/generative-models) | diffusion, flow, molecule/protein generation |
+| [Learning method papers](/papers/learning-methods) | SSL, contrastive learning, JEPA, fine-tuning, preference/RL-style objectives |
+| [Systems papers](/papers/systems) | training efficiency, inference, tooling, agents, reproducibility |
 
 ## Active Paper Notes
 
@@ -43,7 +45,8 @@ These pages are support material for reading papers, not paper buckets. They rem
 | --- | --- |
 | Data and benchmark | [Benchmark](/concepts/data/benchmark) |
 | Inputs and tasks | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks), [Multimodal learning](/concepts/modalities/multimodal-learning) |
-| Models and evidence | [Architectures](/concepts/architectures), [Evaluation](/concepts/evaluation) |
+| Models and evidence | [Architectures](/concepts/architectures), [Evaluation](/concepts/evaluation), [Coverage matrix](/concepts/coverage-matrix) |
+| Paper creation | [AI-Bio-Math paper template](/papers/workflows/ai-bio-math-paper-template), [Paper review workflow](/papers/workflows/paper-review-workflow) |
 
 ## Related
 

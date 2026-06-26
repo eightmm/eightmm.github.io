@@ -204,6 +204,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - For Korean posts that combine AI, Bio-AI, and Math, use `content/posts/ai-bio-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
 - For new paper clusters, topic maps, or synthesis posts, check `content/concepts/coverage-matrix.md` so object, representation, task, data, architecture, learning method, math, evaluation, systems, and public boundary links are not missing.
 - For mixed AI/Bio-AI/Math paper notes, use `content/papers/workflows/ai-bio-math-paper-template.md` as the fillable skeleton and keep unknown metadata or metrics as `to verify`.
+- When adding a paper note, route it through `content/papers/workflows/paper-triage.md` and choose the strongest paper bucket before creating a new topical folder.
 
 ## Mathematical Writing
 

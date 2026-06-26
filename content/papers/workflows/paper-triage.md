@@ -39,6 +39,19 @@ where $p$ is a candidate paper.
 - Concept update: the idea is reusable and should strengthen an existing note.
 - Synthesis: several verified papers support a broader map or Korean post.
 
+## Paper Buckets
+
+| Bucket | Use For |
+| --- | --- |
+| [Structure-based AI papers](/papers/sbdd) | docking, pose, scoring, screening, protein-ligand evaluation |
+| [Protein modeling papers](/papers/protein-modeling) | protein representation, structure, antibody/protein interaction |
+| [Generative model papers](/papers/generative-models) | diffusion, flow, molecule/protein generation, sampling objectives |
+| [Learning method papers](/papers/learning-methods) | SSL, contrastive learning, JEPA, fine-tuning, preference/RL-style objectives |
+| [Systems papers](/papers/systems) | training efficiency, inference, tooling, agents, reproducibility |
+| Concept update only | math-heavy or method-definition paper where no paper-specific note is needed |
+
+If a paper spans several buckets, choose the strongest claim as the paper location and use [[concepts/coverage-matrix|Coverage matrix]] for cross-links.
+
 ## Minimum Metadata
 
 - Title.
@@ -53,6 +66,7 @@ If metadata is missing, write `to verify` rather than inventing it.
 ## Checks
 
 - What existing concept page would this update?
+- Which paper bucket should hold the note?
 - What claim would be extracted first?
 - What benchmark, split, metric, or baseline does the paper rely on?
 - What public artifacts are available: code, data, splits, configs, weights, logs, or predictions?

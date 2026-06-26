@@ -35,6 +35,7 @@ $$
 | Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI-Bio-Math post intake](/posts/ai-bio-math-post-intake) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | Fillable paper note | reusable skeleton for AI/Bio-AI/Math papers | [AI-Bio-Math paper template](/papers/workflows/ai-bio-math-paper-template) |
+| Paper bucket | decide whether the paper belongs in SBDD, protein modeling, generation, learning methods, or systems | [Paper triage](/papers/workflows/paper-triage) |
 
 ## Axis Coverage
 

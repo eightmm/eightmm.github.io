@@ -28,6 +28,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 
 - Triage decisions and reading status.
 - Note shape for curated paper notes.
+- Paper bucket routing.
 - Review workflow from metadata check to concept updates.
 - Domain intake through AI, Bio-AI, and Math foundations.
 - Agent-assisted paper briefs after human-readable sanitization.
