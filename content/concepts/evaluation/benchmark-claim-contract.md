@@ -84,6 +84,7 @@ The claim is weak when $\theta^\*$, $\phi^\*$, thresholds, prompts, filtering, o
 - Invalid generations or failed predictions are removed without a denominator.
 - Only aggregate performance is shown while subgroup failures are plausible.
 - The result is within seed variance or confidence intervals.
+- The table reports a best seed or best checkpoint without the selection rule.
 - The paper's evidence supports a benchmark-specific claim, but the draft says the method is generally superior.
 
 ## Related
@@ -92,6 +93,8 @@ The claim is weak when $\theta^\*$, $\phi^\*$, thresholds, prompts, filtering, o
 - [[concepts/data/dataset-card|Dataset card]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
+- [[concepts/evaluation/seed-variance|Seed variance]]
+- [[papers/analysis/result-table-reading|Result table reading]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/paired-comparison|Paired comparison]]

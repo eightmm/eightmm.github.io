@@ -36,6 +36,7 @@ This keeps a paper note from becoming only a summary of the abstract.
 
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]
+- [[papers/analysis/result-table-reading|Result table reading]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
 - [[papers/analysis/ablation-map|Ablation map]]
 - [[papers/analysis/limitation-taxonomy|Limitation taxonomy]]

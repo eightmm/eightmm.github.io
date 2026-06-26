@@ -49,6 +49,7 @@ $$
 - [[concepts/evaluation/ranking-metrics|Ranking metrics]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/evaluation/seed-variance|Seed variance]]
 - [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/effect-size|Effect size]]
@@ -68,6 +69,7 @@ $$
 - [[concepts/evaluation/robustness|Robustness]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
 - [[concepts/evaluation/interpretability|Interpretability]]
+- [[papers/analysis/result-table-reading|Result table reading]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/learning/representation-evaluation|Representation evaluation]]
@@ -152,7 +154,7 @@ When turning a paper into a wiki note or post, record the smallest evidence pack
 | Model-selection rule | separates validation decisions from final test evidence |
 | Baseline | shows whether the method beats a relevant simple alternative |
 | Primary metric | states what success means before looking at secondary diagnostics |
-| Uncertainty or variance | prevents overreading small score differences |
+| Uncertainty or variance | prevents overreading small score differences; use [Seed variance](/concepts/evaluation/seed-variance) when runs differ by initialization, split, prompt, or sampler |
 | Failure modes | turns a score into a reusable lesson |
 
 If a paper does not provide one of these fields, mark it as `to verify` instead of filling the gap from memory.

@@ -49,6 +49,7 @@ The interval is estimated from the empirical quantiles of bootstrap metric value
 ## Practical Checks
 
 - Is uncertainty across examples, random seeds, data splits, or annotators?
+- If uncertainty is across random runs, should it be treated as [[concepts/evaluation/seed-variance|seed variance]] rather than only sampling error?
 - Is the metric paired by the same test examples across models?
 - Are reported improvements larger than the interval width?
 - Is the interval computed on the held-out set, not on validation data used for selection?
@@ -57,6 +58,7 @@ The interval is estimated from the empirical quantiles of bootstrap metric value
 
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]]
+- [[concepts/evaluation/seed-variance|Seed variance]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/effect-size|Effect size]]
 - [[concepts/evaluation/paired-comparison|Paired comparison]]

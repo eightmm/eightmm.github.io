@@ -64,11 +64,13 @@ This is not a scientific score; it is a checklist for whether the paper gives en
 - Is the baseline strong enough?
 - Does the split support the stated generalization claim?
 - Are uncertainty and failure cases reported?
+- Does the result table state whether values are single-run, mean, best seed, or validation-selected?
 - Is the claim phrased no broader than the evidence?
 
 ## Related
 
 - [[papers/analysis/claim-extraction|Claim extraction]]
+- [[papers/analysis/result-table-reading|Result table reading]]
 - [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[papers/workflows/paper-note-format|Paper note format]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
