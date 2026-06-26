@@ -24,7 +24,7 @@ where $s$ is a protein sequence, $X_{\mathrm{obs}}$ is optional observed or pred
 | Question | Start |
 | --- | --- |
 | What object is being modeled? | [[entities/protein|Protein]], [[entities/sequence|Sequence]], [[entities/structure|Structure]] |
-| How is the protein represented? | [[concepts/protein-modeling/protein-representation|Protein representation]], [[concepts/modalities/sequence|Sequence]], [[concepts/modalities/3d-structure|3D structure]] |
+| How is the protein represented? | [[concepts/protein-modeling/protein-representation|Protein representation]], [[concepts/protein-modeling/protein-language-model|Protein language model]], [[concepts/modalities/sequence|Sequence]], [[concepts/modalities/3d-structure|3D structure]] |
 | Does the method use evolutionary context? | [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]], [[concepts/protein-modeling/protein-domain|Protein domain]] |
 | Does the method predict coordinates or contacts? | [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]], [[concepts/protein-modeling/contact-map|Contact map]], [[concepts/tasks/coordinate-prediction|Coordinate prediction]] |
 | Is residue numbering or chain mapping important? | [[concepts/protein-modeling/residue-indexing|Residue indexing]], [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]] |
@@ -81,12 +81,25 @@ Keep these separate when reading a method:
 | Objective | Sketch | What It Trains |
 | --- | --- | --- |
 | masked residue prediction | $-\log p_\theta(a_i\mid s_{\setminus i})$ | sequence representation |
+| autoregressive protein modeling | $-\sum_i \log p_\theta(a_i\mid a_{<i})$ | sequence distribution and generation |
 | contrastive protein learning | $-\log \frac{\exp(\operatorname{sim}(z_i,z_i^+)/\tau)}{\sum_j \exp(\operatorname{sim}(z_i,z_j)/\tau)}$ | representation invariance |
 | distance/contact prediction | $\ell(\hat{d}_{ij}, d_{ij})$ or BCE over contacts | pair geometry |
 | coordinate prediction | $\lVert \hat{X}-X\rVert$ after an alignment policy | structure geometry |
 | functional prediction | $\ell(f_\theta(s,X), y)$ | downstream task behavior |
 
 The objective should be linked to the evidence. A good language-modeling loss does not automatically prove structure, binding, or functional transfer.
+
+For sequence-only models, the distinction is:
+
+$$
+\text{sequence likelihood}
+\rightarrow
+\text{representation or generation claim}
+\not\Rightarrow
+\text{biological function claim}
+$$
+
+Function, binding, stability, and design claims need downstream labels, structural evidence, or experimental validation.
 
 ## Evidence Fields
 
@@ -113,6 +126,7 @@ The objective should be linked to the evidence. A good language-modeling loss do
 ## Adjacent Areas
 
 - [[concepts/protein-modeling/index|Protein modeling concepts]]
+- [[concepts/protein-modeling/protein-language-model|Protein language model]]
 - [[concepts/protein-modeling/protein-structure-cleaning|Protein structure cleaning]]
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[ai/generative-models|Generative models]]

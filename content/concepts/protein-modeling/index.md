@@ -14,6 +14,7 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 | Need | Start | Risk |
 | --- | --- | --- |
 | choose a protein representation | [Protein representation](/concepts/protein-modeling/protein-representation) | pooling, tokenization, MSA/template leakage |
+| understand sequence-only pretraining | [Protein language model](/concepts/protein-modeling/protein-language-model), [Multiple sequence alignment](/concepts/protein-modeling/multiple-sequence-alignment) | likelihood confused with fitness |
 | define protein units and groups | [Protein domain](/concepts/protein-modeling/protein-domain), [Sequence identity clustering](/concepts/protein-modeling/sequence-identity-clustering) | homologs crossing train/test |
 | connect sequence to structure | [Sequence-structure alignment](/concepts/protein-modeling/sequence-structure-alignment), [Residue indexing](/concepts/protein-modeling/residue-indexing) | residue mismatches, missing residues, insertion codes |
 | prepare structures | [Protein structure cleaning](/concepts/protein-modeling/protein-structure-cleaning) | chain selection, alternate locations, unresolved regions |
@@ -24,7 +25,7 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 
 | Group | Notes |
 | --- | --- |
-| Representation | [Protein representation](/concepts/protein-modeling/protein-representation), [Multiple sequence alignment](/concepts/protein-modeling/multiple-sequence-alignment) |
+| Representation | [Protein representation](/concepts/protein-modeling/protein-representation), [Protein language model](/concepts/protein-modeling/protein-language-model), [Multiple sequence alignment](/concepts/protein-modeling/multiple-sequence-alignment) |
 | Structure | [Protein structure cleaning](/concepts/protein-modeling/protein-structure-cleaning), [Protein structure prediction](/concepts/protein-modeling/protein-structure-prediction), [Contact map](/concepts/protein-modeling/contact-map) |
 | Indexing | [Residue indexing](/concepts/protein-modeling/residue-indexing), [Sequence-structure alignment](/concepts/protein-modeling/sequence-structure-alignment) |
 | Binding | [Binding site](/concepts/protein-modeling/binding-site), [Pocket representation](/concepts/protein-modeling/pocket-representation) |
@@ -32,6 +33,7 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 ## Checks
 
 - Is the model sequence-only, structure-only, or sequence-structure fused?
+- Is sequence likelihood being treated as evidence for function, stability, or binding without downstream validation?
 - Is the pocket representation ligand-defined, predicted, or deployable?
 - Are residue indices aligned across sequence tokens, structure residues, and coordinates?
 - Are homologs and near-duplicate proteins separated across splits?
@@ -44,5 +46,6 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 - [[entities/protein|Protein]]
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]
+- [[concepts/protein-modeling/protein-language-model|Protein language model]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

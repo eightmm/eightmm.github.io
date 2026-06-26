@@ -20,6 +20,18 @@ $$
 
 Here $g$ maps a protein to a sequence or structure family and $s$ maps it to train, validation, or test.
 
+The split is usually implemented by clustering:
+
+$$
+p_i \sim p_j
+\quad
+\text{if}
+\quad
+\operatorname{identity}(p_i,p_j)\ge \tau
+$$
+
+then assigning whole clusters to splits. Smaller $\tau$ makes the test set more remote from training proteins.
+
 ## Practical Checks
 
 - Cluster by sequence identity (e.g. via MMseqs2/CD-HIT) and split whole clusters.
@@ -27,6 +39,18 @@ Here $g$ maps a protein to a sequence or structure family and $s$ maps it to tra
 - Consider structural similarity when sequences diverge but folds are shared.
 - Keep entire clusters on one side — partial overlap reintroduces leakage.
 - State the clustering method and threshold in every reported result.
+
+## Threshold Interpretation
+
+| Split rule | Typical claim | Remaining risk |
+|---|---|---|
+| random rows | interpolation over seen families | strong homolog leakage |
+| high-identity clusters | near-duplicate control | family-level memorization may remain |
+| low-identity clusters | remote homolog transfer | shared folds or domains may remain |
+| fold/domain split | structural novelty | limited data and label shift |
+| external target set | deployment-like transfer | source and assay shift |
+
+The right threshold depends on the claim. A lenient threshold can be fine for interpolation, but weak for new-family claims.
 
 ## What It Proves
 
@@ -39,6 +63,19 @@ s(p_i)=s(p_j)
 $$
 
 It does not automatically prove generalization to new folds, new assays, new ligands, or new experimental sources. Those require separate split rules or external test sets. For protein-ligand tasks, it should be interpreted together with [[concepts/sbdd/protein-ligand-split|Protein-ligand split]] so target novelty is not confused with ligand-side interpolation.
+
+## Reporting Fields
+
+| Field | Why it matters |
+|---|---|
+| clustering tool and version | identity definitions differ |
+| identity threshold $\tau$ | controls novelty strength |
+| representative sequence policy | affects cluster membership |
+| train/validation/test cluster counts | reveals imbalance |
+| label distribution per split | detects target and assay shift |
+| overlap audit | proves grouped splitting was enforced |
+
+For structure-based tasks, also report whether proteins share pockets, ligands, domains, or structures across splits.
 
 ## Related
 
