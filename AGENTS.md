@@ -110,7 +110,7 @@ Missing, censored, and weak-label notes should keep unknown, unobserved, censore
 
 Evaluation notes should separate primary metrics from diagnostics and should name failure modes explicitly. When adding task or evaluation notes, connect output space, metric selection, failure mode taxonomy, split rule, uncertainty, and leakage risk before making model-quality claims.
 
-For claims that combine AI, molecular modeling, and Math, add or link a claim-evidence boundary. State the exact claim, task, data, protocol, metric, baseline, uncertainty, and supported scope.
+For claims that combine AI, Computational Biology, and Math, add or link the AI Computational Biology Math contract and a claim-evidence boundary. State the exact claim, task, data, protocol, metric, baseline, uncertainty, and supported scope.
 
 When a paper or post reports a metric that differs from the optimized loss, add or link objective-metric alignment. State training loss, sampling distribution, selection metric, final test metric, and claimed utility.
 
@@ -208,13 +208,13 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - Keep table cells short. If a cell needs multiple sentences, split the table or move detail into the linked note.
 - For AI/Molecular Modeling/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
 - When adding a paper note or Korean post, check whether `content/ai/index.md`, `content/molecular-modeling/index.md`, or `content/math/index.md` needs one additional route row, but do not duplicate full paper summaries there.
-- For Korean posts that combine AI, molecular modeling, and Math, use `content/posts/ai-molecular-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
+- For Korean posts that combine AI, Computational Biology, and Math, use `content/posts/ai-molecular-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
 - Before promoting a Korean post, use `content/posts/post-promotion-gate.md` to confirm reader question, wiki bundle, evidence boundary, public boundary, and next path.
 - For Korean synthesis posts that cross several axes, use `content/posts/synthesis-post-template.md` as the draft structure and keep detailed definitions in wiki notes.
 - For broad map-style notes or posts, use `content/concepts/topic-map-contract.md` so the page has a reader question, primary axis, object boundary, method family, evidence boundary, and next path.
 - For new paper clusters, topic maps, or synthesis posts, check `content/concepts/coverage-matrix.md` so object, representation, task, data, architecture, learning method, math, evaluation, systems, and public boundary links are not missing.
 - For agent-collected paper candidates or daily paper briefs, use `content/inbox/paper-candidate-intake.md` and include source, metadata, why collected, route, main axis, candidate claim, evidence pointer, risk, next action, and status.
-- For mixed AI/molecular modeling/Math paper notes, use `content/papers/workflows/ai-molecular-math-paper-template.md` as the fillable skeleton and keep unknown metadata or metrics as `to verify`.
+- For mixed AI/Computational Biology/Math paper notes, use `content/papers/workflows/ai-molecular-math-paper-template.md` as the fillable skeleton and keep unknown metadata or metrics as `to verify`.
 - For multi-axis papers or posts, use `content/papers/workflows/claim-routing.md` before choosing the paper bucket or Korean post angle. Record primary axis, secondary axes, concept updates, formula updates, benchmark/evaluation updates, and artifact status.
 - When a paper introduces reusable definitions, formulas, contracts, or evidence boundaries, use `content/papers/workflows/concept-update-contract.md` so the wiki graph improves instead of only adding an isolated paper summary.
 - Before promoting a multi-axis paper candidate, topic map, or Korean synthesis post, use `content/papers/workflows/ai-molecular-math-readiness-gate.md` and keep missing fields as `to verify`.

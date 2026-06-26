@@ -54,7 +54,7 @@ $$
 | Contract | object, representation, objective, metric, split, or artifact fields |
 | Evidence boundary | what paper evidence supports and what remains unproven |
 | Related papers | link paper notes without copying their full summaries |
-| Related concepts | connect AI, Molecular Modeling, Math, Data, Evaluation, Systems, or Agents |
+| Related concepts | connect AI, Computational Biology, Math, Data, Evaluation, Systems, or Agents |
 
 ## Update Pattern
 

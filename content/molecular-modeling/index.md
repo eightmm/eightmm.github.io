@@ -40,7 +40,8 @@ $$
 | Geometry | coordinates, frames, invariance, equivariance | [Geometry](/molecular-modeling/geometry) |
 | Genome | sequence, region, k-mer, variant-level modeling | [Genome](/molecular-modeling/genome) |
 | Paper intake | object, representation, label, split, leakage, public boundary | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
-| Post intake | AI, molecular modeling, and math synthesis writing | [AI-Molecular-Math post intake](/posts/ai-molecular-math-post-intake) |
+| Cross-axis contract | AI method, computational biology object, Math objective, evidence | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
+| Post intake | AI, computational biology, and math synthesis writing | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
 | Coverage matrix | object, data, model, objective, evidence, public boundary | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## 다루는 객체
@@ -148,4 +149,5 @@ Computational biology 쪽 논문은 모델 성능보다 object, label, split, le
 - [[projects/index|Projects]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[molecular-modeling/modeling-scope|Molecular modeling scope]]
+- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]

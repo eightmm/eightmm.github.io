@@ -17,7 +17,7 @@ $$
 \arg\max_a \ \text{claim strength}(p,a)
 $$
 
-where $p$ is a paper or post candidate and $a$ is an axis such as architecture, learning method, generative modeling, molecular modeling, math, evaluation, systems, or agents.
+where $p$ is a paper or post candidate and $a$ is an axis such as architecture, learning method, generative modeling, computational biology, math, evaluation, systems, or agents.
 
 ## First Question
 
@@ -27,6 +27,7 @@ where $p$ is a paper or post candidate and $a$ is an axis such as architecture, 
 | Is the main contribution a supervision or training signal? | learning-method paper or concept update | [Learning method papers](/papers/learning-methods) |
 | Is the main contribution sampling or density modeling? | generative-model paper or concept update | [Generative model papers](/papers/generative-models) |
 | Is the main contribution about molecules, proteins, docking, conformers, or complexes? | molecular modeling paper intake | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
+| Does the claim require AI method, computational biology object, and Math evidence together? | cross-axis contract before writing | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Is the main contribution an equation, estimator, metric, or derivation? | formula intake or math concept update | [Formula intake](/math/formula-intake) |
 | Is the main contribution a benchmark or evaluation protocol? | benchmark card or evaluation concept update | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Is the main contribution training, inference, reproducibility, or tooling? | systems or infra note | [Systems](/concepts/systems) |
@@ -54,7 +55,7 @@ Score each axis with a short note before creating a new paper page.
 | Architecture | new block, connectivity pattern, inductive bias, scaling rule, or complexity change |
 | Learning method | new target, masking rule, contrast set, pretraining signal, preference signal, or adaptation protocol |
 | Generative model | new likelihood, score, velocity, latent path, sampler, or validity filter |
-| Molecular modeling | molecule/protein/complex object boundary, docking workflow, conformer policy, label semantics, split, or leakage issue |
+| Computational biology | molecule/protein/complex object boundary, docking workflow, conformer policy, label semantics, split, or leakage issue |
 | Math | new estimator, derivation, objective decomposition, metric definition, or uncertainty calculation |
 | Evaluation | new benchmark, split, metric, baseline, ablation, failure taxonomy, or reproducibility evidence |
 | Systems | compute, memory, throughput, serving, reproducibility, artifact, scaling evidence, or implementation boundary |
@@ -82,7 +83,7 @@ public artifact status: to verify
 | Architecture | architecture concept, complexity or scaling note, ablation note, evaluation risk |
 | Learning method | objective formula, data/signal description, transfer or evaluation protocol |
 | Generative model | probability path or sampling formula, validity metrics, failure examples |
-| Molecular modeling | object contract, preprocessing/split rule, leakage check, task metric |
+| Computational biology | object contract, preprocessing/split rule, leakage check, task metric |
 | Math | symbol definitions, sampled distribution, relation to model or metric |
 | Evaluation | benchmark contract, metric definition, selection rule, uncertainty |
 | Systems | artifact availability, reproducibility checklist, compute or runtime boundary |
@@ -91,9 +92,10 @@ public artifact status: to verify
 ## Related
 
 - [[papers/workflows/paper-triage|Paper triage]]
-- [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
+- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[ai/paper-intake|AI paper intake]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]

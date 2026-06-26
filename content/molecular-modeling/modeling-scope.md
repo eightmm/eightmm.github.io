@@ -41,7 +41,7 @@ where $\mathcal{A}$ can include object, representation, architecture, objective,
 | What model family is used? | [AI architectures](/ai/architectures), [Learning methods](/ai/learning-methods) |
 | What equation explains the claim? | [Math](/math), [Formula intake](/math/formula-intake) |
 | What evidence supports the claim? | [Data and evaluation](/molecular-modeling/data-evaluation), [Evaluation](/ai/evaluation) |
-| Is the note ready to publish? | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
+| Is the note ready to publish? | [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 
 ## Examples
 

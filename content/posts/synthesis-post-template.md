@@ -9,7 +9,7 @@ tags:
 
 # Synthesis Post Template
 
-AI, molecular modeling, Math가 섞인 글은 한 번에 많은 개념을 설명하려고 하면 흐름이 흐려집니다. 먼저 한 문장 질문을 정하고, 본문은 독자가 읽을 지도와 판단 기준을 얻도록 씁니다.
+AI, computational biology, Math가 섞인 글은 한 번에 많은 개념을 설명하려고 하면 흐름이 흐려집니다. 먼저 한 문장 질문을 정하고, 본문은 독자가 읽을 지도와 판단 기준을 얻도록 씁니다.
 
 $$
 \text{synthesis post}
@@ -53,7 +53,8 @@ tags:
 | Formula depth | post 안에 둘 수식과 wiki note로 넘길 수식을 어떻게 나눌 것인가 | [Formula explanation ladder](/math/formula-explanation-ladder) |
 | Evidence | 어떤 benchmark, split, metric, baseline을 믿을 수 있는가 | [Coverage matrix](/concepts/coverage-matrix) |
 | Objective | 학습 loss와 reported metric이 같은 claim을 지지하는가 | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
-| Readiness | route, representation, objective, evidence, public boundary가 통과됐는가 | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
+| Cross-axis contract | object, representation, model, objective, evidence가 분리됐는가 | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
+| Readiness | route, representation, objective, evidence, public boundary가 통과됐는가 | [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 
 ## 핵심 개념
 
@@ -100,7 +101,7 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 ## 다음에 볼 노트
 
 - 관련 AI note
-- 관련 molecular modeling note
+- 관련 computational biology note
 - 관련 Math note
 - 관련 paper note
 - 관련 project 또는 infra note
@@ -111,9 +112,9 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 | Check | Pass When |
 | --- | --- |
 | Reader question | 글이 한 문장 질문에 답한다 |
-| Primary axis | AI, molecular modeling, Math, paper cluster, project 중 중심축이 분명하다 |
+| Primary axis | AI, computational biology, Math, paper cluster, project 중 중심축이 분명하다 |
 | Claim routing | multi-axis 주제는 [Claim routing](/papers/workflows/claim-routing)을 통과했다 |
-| Readiness gate | 승격 전 [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate)를 통과했다 |
+| Readiness gate | 승격 전 [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate)를 통과했다 |
 | Formula | 필요한 수식과 모든 symbol 설명이 있다 |
 | Formula depth | post는 level 1-2, paper/wiki evidence는 level 3 이상으로 분리했다 |
 | Evidence boundary | split, metric, baseline, leakage, uncertainty 중 필요한 항목이 있다 |
@@ -130,11 +131,12 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 
 ## Related
 
-- [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
+- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
 - [[posts/wiki-to-post-workflow|Wiki to post workflow]]
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[papers/workflows/claim-routing|Claim routing]]
-- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
+- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]

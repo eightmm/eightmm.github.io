@@ -32,14 +32,15 @@ $$
 | AI paper claim | architecture, objective, evidence, and system boundary | [AI paper intake](/ai/paper-intake) |
 | Computational biology paper claim | object, representation, label, split, leakage | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
 | Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
+| AI + computational biology + Math claim | object, representation, model, objective, evidence, public boundary | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
-| Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI-Molecular-Math post intake](/posts/ai-molecular-math-post-intake) |
+| Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
 | Topic map | reader question, primary axis, object boundary, methods, evidence, next path | [Topic map contract](/concepts/topic-map-contract) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | Claim route | primary axis, secondary axes, bucket, concept updates | [Claim routing](/papers/workflows/claim-routing) |
 | Concept update | reusable definitions, formulas, contracts, evidence boundaries | [Concept update contract](/papers/workflows/concept-update-contract) |
-| Promotion readiness | route, representation, objective, evidence, and public boundary | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
-| Fillable paper note | reusable skeleton for AI/molecular modeling/Math papers | [AI-Molecular-Math paper template](/papers/workflows/ai-molecular-math-paper-template) |
+| Promotion readiness | route, representation, objective, evidence, and public boundary | [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
+| Fillable paper note | reusable skeleton for AI/computational biology/Math papers | [AI Computational Biology Math paper template](/papers/workflows/ai-molecular-math-paper-template) |
 | Paper bucket | decide whether the paper belongs in SBDD, protein modeling, architecture, generation, learning methods, or systems | [Paper triage](/papers/workflows/paper-triage) |
 
 ## Axis Coverage
@@ -94,15 +95,16 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One claim boundary when the result could be overread: [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
 - One paper note or paper-analysis note when a specific paper claim is being discussed.
 - One claim-routing pass when a paper or post candidate spans multiple axes: [[papers/workflows/claim-routing|Claim routing]].
+- One cross-axis contract when AI, computational biology, and Math all matter: [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]].
 - One concept-update pass when a paper changes reusable definitions, formulas, contracts, or evidence boundaries: [[papers/workflows/concept-update-contract|Concept update contract]].
-- One readiness gate pass before promoting a multi-axis candidate: [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]].
-- One fillable template pass for mixed AI/molecular modeling/Math papers: [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]].
-- One Korean post intake pass when the result is reader-facing: [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]].
+- One readiness gate pass before promoting a multi-axis candidate: [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]].
+- One fillable template pass for mixed AI/computational biology/Math papers: [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]].
+- One Korean post intake pass when the result is reader-facing: [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]].
 
 ## Checks
 
 - Is the central axis clear: object, method, formula, benchmark, paper cluster, or project?
-- Are AI, molecular modeling, and Math links separated instead of collapsed into one vague topic?
+- Are AI, computational biology, and Math links separated instead of collapsed into one vague topic?
 - Does every performance claim have a route to benchmark intake or evaluation protocol?
 - Does every molecular modeling claim name object, label, split, and leakage risk?
 - Does every formula-heavy claim define symbols and the sampled distribution?
@@ -112,11 +114,12 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 
 - [[concepts/index|Concepts]]
 - [[concepts/wiki-note-quality-gate|Wiki note quality gate]]
+- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[ai/index|AI]]
 - [[molecular-modeling/index|Computational Biology]]
 - [[math/index|Math]]
 - [[papers/index|Papers]]
 - [[concepts/topic-map-contract|Topic map contract]]
-- [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
-- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
+- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]

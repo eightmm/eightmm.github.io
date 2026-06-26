@@ -1,7 +1,8 @@
 ---
-title: AI-Molecular-Math Paper Template
+title: AI Computational Biology Math Paper Template
 aliases:
   - papers/workflows/ai-bio-math-paper-template
+  - papers/workflows/ai-computational-biology-math-paper-template
 unlisted: true
 tags:
   - papers
@@ -11,9 +12,9 @@ tags:
   - math
 ---
 
-# AI-Molecular-Math Paper Template
+# AI Computational Biology Math Paper Template
 
-Use this template when a paper connects AI methods, molecular modeling objects, and mathematical objectives. Keep missing metadata as `to verify`; do not invent authors, metrics, artifacts, or benchmark details.
+Use this template when a paper connects AI methods, computational biology objects, and mathematical objectives. Keep missing metadata as `to verify`; do not invent authors, metrics, artifacts, or benchmark details.
 
 ## Frontmatter
 
@@ -36,7 +37,7 @@ tags:
 
 - One-line question: `to verify`
 - Main contribution: `to verify`
-- Main axis: AI method / molecular modeling object / Math objective / benchmark / system / agent workflow
+- Main axis: AI method / computational biology object / Math objective / benchmark / system / agent workflow
 - Secondary axes: `to verify`
 - Public source: `to verify`
 - Reading status: [[papers/workflows/reading-status|Reading status]]
@@ -51,7 +52,8 @@ tags:
 | Formula explanation | [Formula explanation ladder](/math/formula-explanation-ladder) |
 | Benchmark intake | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Claim routing | [Claim routing](/papers/workflows/claim-routing) |
-| Readiness gate | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
+| Cross-axis contract | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
+| Readiness gate | [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 | Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## Claim
@@ -92,9 +94,9 @@ $$
 - Explanation level: name / canonical formula / operational form / claim contract / derivation
 - Relation to evaluation metric: `to verify`
 
-## Molecular Modeling Contract
+## Computational Biology Contract
 
-Use `not applicable` only when the paper is not about molecular modeling.
+Use `not applicable` only when the paper is not about computational biology.
 
 | Field | Value |
 | --- | --- |
@@ -135,14 +137,15 @@ Use `not applicable` only when the paper is not about molecular modeling.
 - Architecture or learning note to update: `to verify`
 - Math note to update: `to verify`
 - Evaluation or benchmark note to update: `to verify`
-- Potential Korean post route: [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
-- Promotion readiness: [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
+- Potential Korean post route: [[posts/ai-molecular-math-post-intake|AI computational biology math post intake]]
+- Promotion readiness: [[papers/workflows/ai-molecular-math-readiness-gate|AI computational biology math readiness gate]]
 
 ## Related
 
 - [[papers/workflows/paper-note-format|Paper note format]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
-- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
+- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI computational biology math readiness gate]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[papers/analysis/claim-extraction|Claim extraction]]

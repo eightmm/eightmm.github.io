@@ -38,7 +38,8 @@ $$
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
 | Formula intake | paper equations, objectives, indices, distributions, evidence checks | [Formula intake](/math/formula-intake) |
 | Formula explanation | how much equation detail belongs in posts, wiki notes, and paper notes | [Formula explanation ladder](/math/formula-explanation-ladder) |
-| Post intake | formulas inside Korean AI/molecular modeling synthesis posts | [AI-Molecular-Math post intake](/posts/ai-molecular-math-post-intake) |
+| Cross-axis contract | formulas used in AI + computational biology paper or post claims | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
+| Post intake | formulas inside Korean AI/computational biology synthesis posts | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
 | Coverage matrix | check whether a topic has object, formula, data, evidence, and public boundary notes | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## Formula Checklist
@@ -122,4 +123,5 @@ $$
 - [[papers/index|Papers]]
 - [[math/formula-intake|Formula intake]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
+- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]

@@ -31,7 +31,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Paper bucket routing.
 - Primary claim-axis routing.
 - Review workflow from metadata check to concept updates.
-- Domain intake through AI, molecular modeling, and Math foundations.
+- Domain intake through AI, Computational Biology, and Math foundations.
 - Readiness checks before promoting multi-axis notes or synthesis posts.
 - Agent-assisted paper briefs after human-readable sanitization.
 
@@ -40,10 +40,10 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
-- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/paper-note-format|Paper note format]]
-- [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[ai/paper-intake|AI paper intake]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
@@ -55,10 +55,10 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Is the note status visible and honest?
 - Is the output a paper note, concept update, inbox item, synthesis post, or archive decision?
 - Are missing claims, metrics, authors, and artifacts marked `to verify` instead of invented?
-- For AI/molecular modeling/Math papers, was [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]] used?
+- For AI/Computational Biology/Math papers, was [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]] used?
 - Is the primary claim axis recorded with [[papers/workflows/claim-routing|Claim routing]]?
 - Are reusable definitions, formulas, contracts, and evidence boundaries extracted with [[papers/workflows/concept-update-contract|Concept update contract]]?
-- Did multi-axis candidates pass [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]] before promotion?
+- Did multi-axis candidates pass [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]] before promotion?
 - Does the workflow update the relevant concept pages instead of only accumulating paper summaries?
 
 ## Where New Notes Go

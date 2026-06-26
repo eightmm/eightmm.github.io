@@ -29,7 +29,7 @@ $$
 | Field | Pass When |
 | --- | --- |
 | Reader question | the post answers one clear question |
-| Primary axis | AI, Molecular Modeling, Math, Paper cluster, Project, Infra, or Agents is central |
+| Primary axis | AI, Computational Biology, Math, Paper cluster, Project, Infra, or Agents is central |
 | Topic map | broad posts have an explicit map contract rather than a loose link list |
 | Wiki bundle | at least 3-5 reusable notes can be linked instead of redefined |
 | Minimum formula | necessary equations are included with symbols, or linked to Math notes |
@@ -93,10 +93,10 @@ status: draft
 ## Related
 
 - [[posts/wiki-to-post-workflow|Wiki to post workflow]]
-- [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
+- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
 - [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[concepts/topic-map-contract|Topic map contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
-- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]

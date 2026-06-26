@@ -12,7 +12,7 @@ tags:
 
 A paper note should preserve what the paper claims, what the method changes, how it is evaluated, and how it connects to reusable concepts. It should not become a copied abstract or a raw reading log.
 
-For papers that combine AI methods, molecular modeling objects, and mathematical objectives, start from [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]].
+For papers that combine AI methods, computational biology objects, and mathematical objectives, start from [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]].
 
 ## Suggested Shape
 
@@ -58,7 +58,8 @@ $$
 - [[papers/index|Papers]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/reading-status|Reading status]]
-- [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
+- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
+- [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
