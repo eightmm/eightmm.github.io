@@ -27,6 +27,13 @@ ExternalPlugin.Explorer({
   sortFn: (a, b) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = ["ai", "bio", "math", "infra", "research", "papers", "agents", "projects", "posts"]
+    const aiGroups = [
+      "machine-learning",
+      "architectures",
+      "learning-methods",
+      "generative-models",
+      "evaluation",
+    ]
     const bioGroups = [
       "computational-biology",
       "entities",
@@ -63,6 +70,14 @@ ExternalPlugin.Explorer({
 
     if (aSegments.length === 1 && bSegments.length === 1 && aIndex !== bIndex) {
       return aIndex - bIndex
+    }
+
+    if (aSegments[0] === "ai" && bSegments[0] === "ai") {
+      const aGroupIndex = aiGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = aiGroups.indexOf(bSegments[1] ?? "")
+      if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
+        return aGroupIndex - bGroupIndex
+      }
     }
 
     if (aSegments[0] === "bio" && bSegments[0] === "bio") {
