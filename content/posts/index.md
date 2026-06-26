@@ -22,6 +22,7 @@ tags:
 
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
 - [[posts/ai-bio-math-post-intake|AI-Molecular-Math 포스트 인테이크]]
+- [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/topic-roadmap|글감 로드맵]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 

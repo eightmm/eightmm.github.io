@@ -102,6 +102,7 @@ $$
 - [[posts/index|Posts]]
 - [[posts/topic-roadmap|Topic roadmap]]
 - [[posts/ai-bio-math-post-intake|AI-Molecular-Math 포스트 인테이크]]
+- [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]

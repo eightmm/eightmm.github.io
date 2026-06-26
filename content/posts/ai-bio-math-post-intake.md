@@ -62,6 +62,8 @@ $$
 
 ## 추천 구조
 
+실제 초안은 [[posts/synthesis-post-template|Synthesis post template]]을 복사하지 말고 구조만 따라 씁니다.
+
 ```markdown
 ---
 title: 글 제목
@@ -105,6 +107,7 @@ claim, split, metric, leakage, baseline, uncertainty를 점검.
 ## Related
 
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
+- [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[ai/paper-intake|AI paper intake]]
