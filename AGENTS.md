@@ -208,6 +208,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - For AI/Molecular Modeling/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
 - When adding a paper note or Korean post, check whether `content/ai/index.md`, `content/bio/index.md`, or `content/math/index.md` needs one additional route row, but do not duplicate full paper summaries there.
 - For Korean posts that combine AI, molecular modeling, and Math, use `content/posts/ai-bio-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
+- Before promoting a Korean post, use `content/posts/post-promotion-gate.md` to confirm reader question, wiki bundle, evidence boundary, public boundary, and next path.
 - For Korean synthesis posts that cross several axes, use `content/posts/synthesis-post-template.md` as the draft structure and keep detailed definitions in wiki notes.
 - For new paper clusters, topic maps, or synthesis posts, check `content/concepts/coverage-matrix.md` so object, representation, task, data, architecture, learning method, math, evaluation, systems, and public boundary links are not missing.
 - For agent-collected paper candidates or daily paper briefs, use `content/inbox/paper-candidate-intake.md` and include source, metadata, why collected, route, main axis, candidate claim, evidence pointer, risk, next action, and status.

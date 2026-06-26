@@ -15,7 +15,7 @@ tags:
 
 한글 글은 완결된 설명을 목표로 하지만, 모든 세부 개념을 글 안에 반복해서 넣지는 않습니다. 세부 개념은 [[concepts/index|Concepts]], 논문은 [[papers/index|Papers]], 연구 축은 [[research/index|Research]], 구현과 운영 경험은 [[projects/index|Projects]]와 [[infra/index|Infra]]로 넘깁니다.
 
-AI, molecular modeling, Math가 함께 나오는 글은 [[posts/ai-bio-math-post-intake|AI-Molecular-Math 포스트 인테이크]]로 먼저 중심축을 정합니다.
+AI, molecular modeling, Math가 함께 나오는 글은 [[posts/ai-bio-math-post-intake|AI-Molecular-Math 포스트 인테이크]]로 먼저 중심축을 정합니다. 실제 post로 승격할지는 [[posts/post-promotion-gate|Post promotion gate]]로 확인합니다.
 
 ## 기본 구조
 
@@ -75,7 +75,7 @@ tags:
 
 ## 승격 기준
 
-Wiki note가 충분히 쌓였을 때만 post로 승격합니다. 자세한 흐름은 [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]과 [[agents/workflows/content-promotion-workflow|Content promotion workflow]]를 따릅니다.
+Wiki note가 충분히 쌓였을 때만 post로 승격합니다. 자세한 흐름은 [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]], [[posts/post-promotion-gate|Post promotion gate]], [[agents/workflows/content-promotion-workflow|Content promotion workflow]]를 따릅니다.
 
 $$
 \text{post-ready}
@@ -102,6 +102,7 @@ $$
 - [[posts/index|Posts]]
 - [[posts/topic-roadmap|Topic roadmap]]
 - [[posts/ai-bio-math-post-intake|AI-Molecular-Math 포스트 인테이크]]
+- [[posts/post-promotion-gate|Post promotion gate]]
 - [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]

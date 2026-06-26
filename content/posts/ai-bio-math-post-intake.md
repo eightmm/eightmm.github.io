@@ -32,6 +32,7 @@ $$
 | Formula need | 독자 이해에 필요한 최소 수식은 무엇인가? | [Formula intake](/math/formula-intake) |
 | Benchmark boundary | 성능 claim을 어디까지 믿을 수 있는가? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Coverage check | 연결해야 할 object, data, method, formula, evidence note가 있는가? | [Coverage matrix](/concepts/coverage-matrix) |
+| Post promotion | wiki bundle, reader question, evidence boundary, next path가 충분한가? | [Post promotion gate](/posts/post-promotion-gate) |
 | Readiness gate | route, representation, objective, evidence, public boundary가 통과됐는가? | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 | Public boundary | 공개하면 안 되는 내부 정보가 섞여 있지 않은가? | [Publishing gate](/inbox/publishing-gate) |
 
@@ -104,12 +105,14 @@ claim, split, metric, leakage, baseline, uncertainty를 점검.
 - 세부 정의를 post에 반복하지 않고 wiki note로 넘겼는가?
 - paper나 benchmark claim은 evidence boundary를 갖는가?
 - multi-axis 주제는 readiness gate를 통과했는가?
+- post로 승격할 만큼 wiki bundle과 next path가 충분한가?
 - 내부 정보, 미공개 결과, 서버 정보, collaborator 정보가 빠졌는가?
 
 ## Related
 
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
 - [[posts/synthesis-post-template|Synthesis post template]]
+- [[posts/post-promotion-gate|Post promotion gate]]
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[ai/paper-intake|AI paper intake]]
