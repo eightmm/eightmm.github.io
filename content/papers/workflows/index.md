@@ -75,5 +75,5 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[papers/analysis/index|Paper analysis]]
 - [[papers/reproducibility/index|Paper reproducibility]]
 - [[ai/index|AI]]
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[math/index|Math]]

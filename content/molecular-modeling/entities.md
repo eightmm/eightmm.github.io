@@ -49,6 +49,6 @@ $$
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[molecular-modeling/data-evaluation|Data and evaluation]]
 - [[concepts/evaluation/leakage|Leakage]]

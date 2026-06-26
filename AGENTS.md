@@ -32,7 +32,7 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
 - `ai/`: Korean gateway pages for broad AI foundations.
-- `molecular-modeling/`: Korean gateway pages for molecular modeling focused on structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling. Old `bio/` paths may remain only as aliases.
+- `molecular-modeling/`: Korean gateway pages shown publicly as Computational Biology, focused on molecular modeling, structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling. Old `bio/` paths may remain only as aliases.
 - `math/`: Korean gateway pages for mathematical foundations.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
@@ -94,7 +94,7 @@ When adding agent notes, update the nearest subfolder index and `content/agents/
 - Workflows: coding agents, paper briefs, LLM Wiki maintenance, orchestration, handoff, and runbooks.
 - Verification: acceptance criteria, verification loops, evaluation, reflection, human review, and prompt-injection boundaries.
 
-Molecular Modeling scope should stay focused on computational biology that directly supports structure-based modeling, docking, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
+Computational Biology scope should stay focused on molecular modeling that directly supports structure-based modeling, docking, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
 
 Chem-bio notes should preserve data semantics: standardize molecules before deduplication and splitting, state tautomer/protonation/stereo choices, keep target and assay context explicit, prefer scaffold or protein-family splits over random splits, and flag template leakage risks in structure-based benchmarks. Do not invent assay metadata, target details, activity values, or benchmark metrics.
 

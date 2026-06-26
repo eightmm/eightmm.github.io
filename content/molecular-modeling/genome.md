@@ -73,6 +73,6 @@ This section does not try to cover full transcriptomics, proteomics, single-cell
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[ai/learning-methods|Learning methods]]
 - [[concepts/modalities/sequence|Sequence]]

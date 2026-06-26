@@ -31,7 +31,7 @@ $$
 - **Evaluation**: metric, split, leakage, calibration, OOD, uncertainty, failure analysis. [Start](/ai/evaluation)
 - **Agents**: tool use, memory, planning, verification, orchestration. [Start](/agents)
 - **Paper Intake**: input/output, architecture, objective, evidence, and system boundary. [Start](/ai/paper-intake)
-- **Post Intake**: Korean synthesis posts that combine AI, molecular modeling, and Math. [Start](/posts/ai-molecular-math-post-intake)
+- **Post Intake**: Korean synthesis posts that combine AI, computational biology, and Math. [Start](/posts/ai-molecular-math-post-intake)
 - **Coverage Matrix**: check whether a topic has object, data, model, objective, evidence, and public boundary notes. [Start](/concepts/coverage-matrix)
 
 ## 분류 기준
@@ -65,7 +65,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Image / video | [Image](/concepts/modalities/image), [Video](/concepts/modalities/video) | [CNN](/concepts/architectures/cnn), [Vision Transformer](/concepts/architectures/vision-transformer) |
 | Graph / set | [Graph](/concepts/modalities/graph) | [GNN](/concepts/architectures/gnn), [Deep Sets](/concepts/architectures/deep-sets) |
 | 3D / geometry | [3D structure](/concepts/modalities/3d-structure), [Geometry](/concepts/math/geometry) | [Geometric deep learning](/concepts/geometric-deep-learning) |
-| Molecule / protein | [Molecular Modeling](/molecular-modeling) | [Molecular modeling](/concepts/molecular-modeling), [Protein modeling](/concepts/protein-modeling), [SBDD concepts](/concepts/sbdd) |
+| Molecule / protein | [Computational Biology](/molecular-modeling) | [Molecular modeling](/concepts/molecular-modeling), [Protein modeling](/concepts/protein-modeling), [SBDD concepts](/concepts/sbdd) |
 | Agent workflow | [Agents](/agents) | [Core](/agents/core), [Tools](/agents/tools), [Verification](/agents/verification), [Workflows](/agents/workflows) |
 
 ## 논문과 포스트를 읽을 때
@@ -88,7 +88,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 
 - [[concepts/index|Concepts]]
 - [[math/index|Math]]
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[infra/index|Infra]]
 - [[agents/index|Agents]]
 - [[ai/paper-intake|AI paper intake]]

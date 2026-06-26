@@ -30,7 +30,7 @@ $$
 | --- | --- | --- |
 | Reusable wiki note | definition, boundary, contract, checks, links, public boundary | [Wiki note quality gate](/concepts/wiki-note-quality-gate) |
 | AI paper claim | architecture, objective, evidence, and system boundary | [AI paper intake](/ai/paper-intake) |
-| Molecular modeling paper claim | object, representation, label, split, leakage | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
+| Computational biology paper claim | object, representation, label, split, leakage | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
 | Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI-Molecular-Math post intake](/posts/ai-molecular-math-post-intake) |
@@ -46,7 +46,7 @@ $$
 
 | Axis | Question | Canonical Area |
 | --- | --- | --- |
-| Object | What entity is being modeled? | [Entities](/entities), [Molecular modeling entities](/molecular-modeling/entities) |
+| Object | What entity is being modeled? | [Entities](/entities), [Computational biology entities](/molecular-modeling/entities) |
 | Modality | What form is the input or output? | [Modalities](/concepts/modalities) |
 | Representation | How does the raw object become tokens, graph, coordinates, embedding, or features? | [Representation contract](/concepts/modalities/representation-contract), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Task | What output space and validity rule define success? | [Tasks](/concepts/tasks) |
@@ -63,7 +63,7 @@ $$
 | Scaling | Does quality depend on data size, model size, compute, memory, latency, or inference budget? | [Scaling claim contract](/concepts/systems/scaling-claim-contract) |
 | Agent workflow | Does an LLM use tools, memory, planning, or verification? | [Agents](/agents) |
 
-## Molecular Modeling Coverage
+## Computational Biology Coverage
 
 | Topic | Must Cover | Route |
 | --- | --- | --- |
@@ -71,9 +71,9 @@ $$
 | Protein model | sequence, structure, domains, residue indexing, family split, representation | [Proteins](/molecular-modeling/proteins) |
 | Protein-ligand complex | protein context, ligand context, pocket, pose, interaction, split on both axes | [Structure-based modeling](/molecular-modeling/structure-based) |
 | Docking or virtual screening | receptor/ligand preparation, pose generation, scoring, filtering, enrichment metric | [Docking](/molecular-modeling/docking) |
-| Geometry-heavy model | coordinate frame, invariant/equivariant target, rotation/translation behavior, leakage risk | [Molecular Modeling geometry](/molecular-modeling/geometry) |
+| Geometry-heavy model | coordinate frame, invariant/equivariant target, rotation/translation behavior, leakage risk | [Computational biology geometry](/molecular-modeling/geometry) |
 | Genome sequence model | region, k-mer, variant, sequence context, split and annotation boundary | [Genome](/molecular-modeling/genome) |
-| Molecular Modeling benchmark | label semantics, assay/source, split unit, leakage, baseline, metric | [Data and evaluation](/molecular-modeling/data-evaluation) |
+| Molecular modeling benchmark | label semantics, assay/source, split unit, leakage, baseline, metric | [Data and evaluation](/molecular-modeling/data-evaluation) |
 
 ## Minimum Note Bundle
 
@@ -113,7 +113,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - [[concepts/index|Concepts]]
 - [[concepts/wiki-note-quality-gate|Wiki note quality gate]]
 - [[ai/index|AI]]
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[math/index|Math]]
 - [[papers/index|Papers]]
 - [[concepts/topic-map-contract|Topic map contract]]

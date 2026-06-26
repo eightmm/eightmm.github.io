@@ -295,7 +295,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[concepts/sbdd/template-leakage|Template leakage]]
 
-## Molecular Modeling
+## Computational Biology Concepts
 
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]

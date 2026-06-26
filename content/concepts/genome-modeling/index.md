@@ -46,7 +46,7 @@ This section intentionally does not expand into broad cell omics, transcriptomic
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[entities/sequence|Sequence]]
 - [[concepts/modalities/text|Text]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

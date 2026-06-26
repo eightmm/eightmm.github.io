@@ -1,5 +1,5 @@
 ---
-title: Computational Biology
+title: Computational Biology Boundary
 aliases:
   - bio/computational-biology
 tags:
@@ -7,9 +7,9 @@ tags:
   - computational-biology
 ---
 
-# Computational Biology
+# Computational Biology Boundary
 
-Computational biology in this site is a focused support layer for AI-driven molecular, protein, structure, and sequence modeling. It is not a broad survey of omics, systems biology, or clinical biology.
+Computational biology in this site is a focused support layer for AI-driven molecular, protein, structure, and sequence modeling. It is not a broad survey of omics, systems biology, transcriptomics, single-cell analysis, or clinical biology.
 
 The practical unit is:
 
@@ -29,7 +29,7 @@ If the object, measurement, representation, or claim is vague, the model result 
 
 | Area | Use For |
 | --- | --- |
-| [Molecular Modeling Scope](/molecular-modeling/modeling-scope) | naming, route choice, and boundary between domain, AI method, Math, and Agents |
+| [Computational Biology Scope](/molecular-modeling/modeling-scope) | naming, route choice, and boundary between domain, AI method, Math, and Agents |
 | [Entities](/molecular-modeling/entities) | protein, molecule, ligand, pocket, complex, assay, sequence, structure |
 | [Molecules](/molecular-modeling/molecules) | small-molecule identity, standardization, fingerprints, graphs, conformers |
 | [Proteins](/molecular-modeling/proteins) | sequence, structure, domains, binding sites, representations |
@@ -58,7 +58,7 @@ If the object, measurement, representation, or claim is vague, the model result 
 
 ## Claim Template
 
-A public Molecular Modeling claim should be reducible to:
+A public computational biology claim should be reducible to:
 
 $$
 (\text{object},\ \text{context},\ \text{representation},\ \text{split},\ \text{metric})
@@ -80,8 +80,8 @@ For example, a docking note should not only say that a model performs well. It s
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
-- [[molecular-modeling/modeling-scope|Molecular Modeling Scope]]
+- [[molecular-modeling/index|Computational Biology]]
+- [[molecular-modeling/modeling-scope|Computational Biology Scope]]
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[entities/entity-relation-map|Entity relation map]]

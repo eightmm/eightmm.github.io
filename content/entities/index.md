@@ -68,7 +68,7 @@ For Molecular Modeling, the same entity can play different roles:
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/modalities/modality-representation|Modality representation]]

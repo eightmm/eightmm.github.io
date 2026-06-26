@@ -71,7 +71,7 @@ The split unit should match the generalization claim:
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[entities/target|Target]]
 - [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]

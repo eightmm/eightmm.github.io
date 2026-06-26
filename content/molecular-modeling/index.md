@@ -1,6 +1,8 @@
 ---
-title: Molecular Modeling
+title: Computational Biology
 aliases:
+  - computational-biology
+  - comp-bio
   - bio
   - bio-ai
   - molecular-modeling
@@ -9,9 +11,11 @@ tags:
 ---
 
 
-# Molecular Modeling
+# Computational Biology
 
-이 영역은 넓은 biology 전체가 아니라 molecule, protein, ligand, pocket, complex, conformer, docking처럼 계산 모델링에서 직접 다루는 객체와 workflow에 집중합니다. AI 모델은 이 안의 방법 중 하나이고, docking이나 conformer generation 자체는 먼저 molecular modeling 문제로 봅니다.
+이 영역은 넓은 biology 전체가 아니라 molecule, protein, ligand, pocket, complex, conformer, docking, genome sequence처럼 계산 모델링에서 직접 다루는 객체와 workflow에 집중합니다. `Computational Biology`를 큰 이름으로 쓰고, 그 안에서 docking, conformer, structure-based modeling은 `Molecular Modeling` 하위 영역으로 봅니다.
+
+AI 모델은 이 안의 방법 중 하나입니다. Docking이나 conformer generation 자체는 먼저 computational biology 또는 molecular modeling 문제로 보고, GNN, Transformer, diffusion, flow matching 같은 모델 구조와 학습법은 [[ai/index|AI]] 쪽에서 설명합니다.
 
 반복해서 등장하는 기본 형태는 화학적/구조적 객체와 context를 모델 입력으로 두는 것입니다.
 
@@ -25,8 +29,8 @@ $$
 
 | Area | Use For | Start |
 | --- | --- | --- |
-| Scope and naming | what belongs under Molecular Modeling vs AI, Math, Agents | [Molecular Modeling Scope](/molecular-modeling/modeling-scope) |
-| Scope and objects | object, measurement, representation, claim boundary | [Computational Biology](/molecular-modeling/computational-biology) |
+| Scope and naming | what belongs under Computational Biology vs AI, Math, Agents | [Computational Biology Scope](/molecular-modeling/modeling-scope) |
+| Scope and objects | object, measurement, representation, claim boundary | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
 | Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure | [Entities](/molecular-modeling/entities) |
 | Molecules | standardization, molecular graphs, fingerprints, conformers | [Molecules](/molecular-modeling/molecules) |
 | Proteins | sequence, structure, domains, binding sites, representation | [Proteins](/molecular-modeling/proteins) |
@@ -120,9 +124,9 @@ $$
 | Coordinates and features | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Invariant feature](/concepts/geometric-deep-learning/invariant-feature), [Equivariant feature](/concepts/geometric-deep-learning/equivariant-feature) |
 | Evaluation risk | [Evaluation](/concepts/evaluation), [Leakage](/concepts/evaluation/leakage) |
 
-## Molecular Modeling 논문을 읽을 때
+## Computational Biology 논문을 읽을 때
 
-Molecular modeling 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저 분리해야 합니다.
+Computational biology 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저 분리해야 합니다.
 
 | 먼저 볼 것 | 확인할 내용 | Start |
 | --- | --- | --- |
@@ -134,7 +138,7 @@ Molecular modeling 쪽 논문은 모델 성능보다 object, label, split, leaka
 | Structure context | apo/holo, predicted/experimental, pocket-defined/blind, ligand-defined 여부가 명확한가 | [Structure-based modeling](/molecular-modeling/structure-based), [Docking](/molecular-modeling/docking) |
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and evaluation](/molecular-modeling/data-evaluation) |
 | Evaluation claim | pose, affinity, ranking, enrichment, property, generation 중 무엇을 주장하는가 | [Docking](/molecular-modeling/docking), [Evaluation](/ai/evaluation) |
-| Public boundary | 내부 데이터나 미공개 결과 없이 일반화 가능한가 | [Computational Biology](/molecular-modeling/computational-biology) |
+| Public boundary | 내부 데이터나 미공개 결과 없이 일반화 가능한가 | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
 | Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
 
 ## 관련 입구

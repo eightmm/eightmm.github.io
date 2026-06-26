@@ -1,14 +1,14 @@
 ---
-title: Molecular Modeling Scope
+title: Computational Biology Scope
 aliases:
   - bio/modeling-scope
 tags:
   - molecular-modeling
 ---
 
-# Molecular Modeling Scope
+# Computational Biology Scope
 
-Use `Molecular Modeling` for the domain layer: molecules, ligands, proteins, pockets, complexes, conformers, docking, structure-based modeling, and sequence-level genome objects. Use `AI` for the method layer: architectures, learning signals, objectives, generative models, evaluation, and systems.
+Use `Computational Biology` as the public umbrella for molecule, ligand, protein, pocket, complex, conformer, docking, structure-based modeling, and sequence-level genome objects. Use `Molecular Modeling` for the molecule/structure/docking-heavy subset. Use `AI` for the method layer: architectures, learning signals, objectives, generative models, evaluation, and systems.
 
 The same paper can touch both, but the page title should follow the strongest claim:
 
@@ -25,7 +25,7 @@ where $\mathcal{A}$ can include object, representation, architecture, objective,
 
 | Center | Prefer | Avoid |
 | --- | --- | --- |
-| Protein, ligand, molecule, pocket, complex | Molecular Modeling | Bio-AI as the main label |
+| Protein, ligand, molecule, pocket, complex | Computational Biology / Molecular Modeling | Overbroad bio label |
 | Docking, pose, conformer, virtual screening | Structure-Based Modeling | Calling the task itself AI |
 | GNN, Transformer, diffusion, flow matching, SSL | AI | Hiding the method under Molecular Modeling |
 | Symmetry, coordinate frame, likelihood, loss | Math | Treating equations as paper-specific details |
@@ -63,8 +63,8 @@ where $\mathcal{A}$ can include object, representation, architecture, objective,
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
-- [[molecular-modeling/computational-biology|Computational Biology]]
+- [[molecular-modeling/index|Computational Biology]]
+- [[molecular-modeling/computational-biology|Computational Biology Boundary]]
 - [[molecular-modeling/structure-based/index|Structure-Based Modeling]]
 - [[molecular-modeling/docking|Docking]]
 - [[concepts/coverage-matrix|Coverage Matrix]]

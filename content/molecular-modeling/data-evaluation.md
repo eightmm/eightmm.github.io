@@ -95,6 +95,6 @@ For structure-based benchmarks, also state whether the known ligand pose, close 
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[molecular-modeling/entities|Entities]]
 - [[ai/evaluation|Evaluation]]

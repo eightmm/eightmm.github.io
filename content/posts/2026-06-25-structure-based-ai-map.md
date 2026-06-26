@@ -9,7 +9,7 @@ tags:
 
 # 구조 기반 모델링을 어떻게 정리할 것인가
 
-이 사이트를 정리할 때 가장 먼저 잡고 싶은 축은 [[molecular-modeling/index|Molecular Modeling]]입니다. 특히 구조 기반 모델링에서는 모델이 단순한 sequence나 graph가 아니라 실제 3D 구조를 가진 [[entities/protein-ligand-complex|protein-ligand complex]]를 어떻게 다룰 수 있는지가 중요합니다.
+이 사이트를 정리할 때 가장 먼저 잡고 싶은 축은 [[molecular-modeling/index|Computational Biology]]입니다. 특히 구조 기반 모델링에서는 모델이 단순한 sequence나 graph가 아니라 실제 3D 구조를 가진 [[entities/protein-ligand-complex|protein-ligand complex]]를 어떻게 다룰 수 있는지가 중요합니다.
 
 현재는 세 층으로 나눠서 생각하고 있습니다.
 

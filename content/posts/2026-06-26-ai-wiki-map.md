@@ -95,7 +95,7 @@ $$
 4. [[ai/learning-methods|Learning methods]]에서 supervision과 representation learning을 봅니다.
 5. [[ai/generative-models|Generative models]]에서 sampling과 distribution modeling을 봅니다.
 6. [[ai/evaluation|Evaluation]]에서 split, metric, uncertainty, failure mode를 점검합니다.
-7. [[molecular-modeling/index|Molecular Modeling]]에서 protein, molecule, ligand, structure-based modeling로 좁힙니다.
+7. [[molecular-modeling/index|Computational Biology]]에서 protein, molecule, ligand, structure-based modeling로 좁힙니다.
 8. [[infra/index|Infra]]와 [[agents/index|Agents]]에서 실제 workflow와 운영을 연결합니다.
 
 목표는 모든 글을 하나의 taxonomy에 억지로 넣는 것이 아닙니다. 글마다 가장 강한 축을 정하고, 나머지 축은 wikilink로 연결하는 것입니다. 그렇게 하면 블로그는 한글 narrative가 되고, wiki는 영어 canonical note가 됩니다.

@@ -24,7 +24,7 @@ $$
 | Object | Is the example a molecule, ligand, protein, pocket, complex, pose, assay record, or genome region? | [Entities](/molecular-modeling/entities) |
 | Representation | Is it SMILES, graph, fingerprint, sequence, embedding, conformer, coordinate, or complex graph? | [Molecules](/molecular-modeling/molecules), [Proteins](/molecular-modeling/proteins), [Geometry](/molecular-modeling/geometry) |
 | Chemical state | Are salt, stereochemistry, tautomer, protonation, charge, and conformer policy fixed? | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
-| Context | Does prediction depend on target, assay, pocket, receptor state, species, construct, or template? | [Computational Biology](/molecular-modeling/computational-biology) |
+| Context | Does prediction depend on target, assay, pocket, receptor state, species, construct, or template? | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
 | Label | What endpoint, unit, direction, threshold, censoring, replicate rule, and source define the target? | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 | Split | What unit is held out: scaffold, sequence family, complex pair, assay/source, time, or template? | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 | Metric | Is the claim about affinity, pose, ranking, enrichment, validity, novelty, or property prediction? | [Evaluation](/ai/evaluation) |
@@ -80,7 +80,7 @@ If evaluation uses a known ligand pose, ligand-defined pocket, homologous templa
 
 ## Related
 
-- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/index|Computational Biology]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
