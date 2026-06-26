@@ -95,6 +95,7 @@ $$
 | Evaluation protocol | [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Leakage](/concepts/evaluation/leakage) |
 | Molecular Modeling-specific splits | [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split), [Protein-ligand split](/concepts/sbdd/protein-ligand-split) |
 | Assay integration | [Assay harmonization](/concepts/evaluation/assay-harmonization) |
+| Benchmark traps | [Negative set](/concepts/evaluation/negative-set), [Activity cliff](/concepts/evaluation/activity-cliff), [Applicability domain](/concepts/evaluation/applicability-domain), [Boltzmann ceiling analysis](/concepts/evaluation/boltzmann-ceiling) |
 
 ## Protein and Sequence Modeling
 
@@ -140,6 +141,7 @@ Computational biology 쪽 논문은 모델 성능보다 object, label, split, le
 | Label context | target, assay, endpoint, unit, threshold, censoring, source가 명확한가 | [Data and evaluation](/molecular-modeling/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
 | Structure context | apo/holo, predicted/experimental, pocket-defined/blind, ligand-defined 여부가 명확한가 | [Structure-based modeling](/molecular-modeling/structure-based), [Docking](/molecular-modeling/docking) |
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and evaluation](/molecular-modeling/data-evaluation) |
+| Benchmark trap | negative set, activity cliff, applicability domain, assay harmonization 문제가 있는가 | [Data and evaluation](/molecular-modeling/data-evaluation), [Coverage matrix](/concepts/coverage-matrix) |
 | Evaluation claim | pose, affinity, ranking, enrichment, property, generation 중 무엇을 주장하는가 | [Docking](/molecular-modeling/docking), [Evaluation](/ai/evaluation) |
 | Public boundary | 내부 데이터나 미공개 결과 없이 일반화 가능한가 | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
 | Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [Computational Biology paper intake](/molecular-modeling/paper-intake) |

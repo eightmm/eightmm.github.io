@@ -102,6 +102,8 @@ Entity notes for Molecular Modeling should keep the target-assay-label contract 
 
 For protein-ligand or SBDD benchmark notes, state the example unit and split unit on both sides: ligand scaffold/similarity group, protein sequence or structure family, complex pair, assay/source, and temporal split when relevant. Do not make broad generalization claims from a split that only tests interpolation.
 
+For Computational Biology benchmark notes, check the common traps before accepting a metric claim: negative-set provenance, activity cliffs, applicability domain, assay harmonization, label noise or distinguishability ceilings, calibration, and uncertainty. Link the relevant evaluation note rather than repeating a full tutorial in every paper note.
+
 Data notes should define example unit, split unit, preprocessing contract, label semantics, and dataset-card style limitations before adding model claims. Do not treat a row identifier as the split unit unless the note explains why that matches the generalization claim.
 
 Sampling and imbalance notes should state the target population, observed sampling distribution, class or label prevalence in each split, missing-label policy, batch sampling rule, and whether evaluation uses the natural or rebalanced distribution. Do not compare metrics across different prevalence or sampling policies without saying so.

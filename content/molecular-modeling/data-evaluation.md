@@ -66,6 +66,10 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
+- [[concepts/evaluation/negative-set|Negative set]]
+- [[concepts/evaluation/activity-cliff|Activity cliff]]
+- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
+- [[concepts/evaluation/boltzmann-ceiling|Boltzmann ceiling analysis]]
 - [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 
 ## Molecular Modeling Evidence Package
@@ -84,8 +88,19 @@ For molecular modeling papers, a model score is not enough. Record the modeled o
 | Benchmark claim | what the reported score can support after split, metric, baseline, and uncertainty are checked |
 | Objective-metric alignment | whether the optimized loss supports the reported metric and claimed utility |
 | Leakage check | duplicate, scaffold, homolog, template, assay/source, or preprocessing leakage |
+| Benchmark traps | negative construction, activity cliffs, applicability domain, assay harmonization, and measurement ceiling |
 
 For structure-based benchmarks, also state whether the known ligand pose, close analogs, templates, or pocket definition are available at inference time.
+
+## Benchmark Trap Map
+
+| Trap | Ask First | Start |
+| --- | --- | --- |
+| assumed negative | is `inactive` measured, censored, sampled, or missing? | [Negative set](/concepts/evaluation/negative-set) |
+| analog cliff | do similar molecules have assay-compatible but very different labels? | [Activity cliff](/concepts/evaluation/activity-cliff) |
+| out-of-domain example | is the test object far from training support on the relevant axis? | [Applicability domain](/concepts/evaluation/applicability-domain) |
+| mixed assays | are endpoints, units, constructs, sources, and censoring compatible? | [Assay harmonization](/concepts/evaluation/assay-harmonization) |
+| physical or assay ceiling | is the effect size below distinguishability or label noise? | [Boltzmann ceiling analysis](/concepts/evaluation/boltzmann-ceiling) |
 
 ## Checks
 
