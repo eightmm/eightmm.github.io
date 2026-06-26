@@ -28,6 +28,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/modalities/graph|Graph]]
 - [[concepts/modalities/3d-structure|3D structure]]
 - [[concepts/modalities/modality-representation|Modality representation]]
+- [[concepts/modalities/representation-contract|Representation contract]]
 - [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/modalities/modality-alignment|Modality alignment]]
 - [[concepts/modalities/missing-modality|Missing modality]]
@@ -60,6 +61,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - What is the raw input signal?
 - What is the tensor, token, graph, or coordinate representation after preprocessing?
 - What [[concepts/modalities/modality-representation|modality representation]] does the model actually see?
+- What [[concepts/modalities/representation-contract|representation contract]] connects raw object, model input, output, loss, metric, split, and leakage?
 - What [[concepts/modalities/modality-task-map|modality-task map]] connects input, output, loss, metric, and split?
 - What [[concepts/data/preprocessing-contract|preprocessing contract]] turns the raw signal into model input?
 - Which information is lost before the model sees the input?
@@ -74,6 +76,7 @@ where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalitie
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/modalities/modality-representation|Modality representation]]
+- [[concepts/modalities/representation-contract|Representation contract]]
 - [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/modalities/modality-alignment|Modality alignment]]

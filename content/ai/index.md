@@ -76,6 +76,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 | --- | --- | --- |
 | Input object | text, image, graph, set, coordinate, molecule, protein, agent state 중 무엇인가 | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
 | Task output | class, scalar, ranking, sequence, graph, coordinate, sample, action 중 무엇인가 | [Task specification](/concepts/tasks/task-specification), [Task output space](/concepts/tasks/task-output-space) |
+| Representation | raw object가 token, graph, coordinate, embedding, conformer로 어떻게 바뀌는가 | [Representation contract](/concepts/modalities/representation-contract) |
 | Architecture | 어떤 inductive bias, parameter sharing, complexity를 쓰는가 | [Architectures](/ai/architectures) |
 | Learning signal | label, mask, contrast, preference, reward, denoising, velocity 중 무엇인가 | [Learning Methods](/ai/learning-methods) |
 | Objective | loss, likelihood, score, reward, metric이 어떻게 정의되는가 | [Machine Learning](/ai/machine-learning), [Math](/math) |

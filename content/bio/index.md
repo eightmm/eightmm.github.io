@@ -122,6 +122,7 @@ Molecular modeling 쪽 논문은 모델 성능보다 object, label, split, leaka
 | --- | --- | --- |
 | Modeled object | molecule, protein, ligand, pocket, complex, genome region 중 무엇인가 | [Entities](/bio/entities) |
 | Representation | string, graph, fingerprint, embedding, conformer, coordinate, complex graph 중 무엇인가 | [Molecules](/bio/molecules), [Proteins](/bio/proteins), [Geometry](/bio/geometry) |
+| Representation contract | raw object가 model-ready input으로 어떻게 바뀌는가 | [Representation contract](/concepts/modalities/representation-contract) |
 | Label context | target, assay, endpoint, unit, threshold, censoring, source가 명확한가 | [Data and evaluation](/bio/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
 | Structure context | apo/holo, predicted/experimental, pocket-defined/blind, ligand-defined 여부가 명확한가 | [Structure-based modeling](/bio/structure-based-ai), [Docking](/bio/docking) |
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and evaluation](/bio/data-evaluation) |

@@ -51,6 +51,8 @@ $$
 
 where $\mathcal{X}_{\mathrm{raw}}$ is the raw input space, $\phi$ is preprocessing or representation, $\mathcal{Y}$ is the output space, $v$ is the validity rule, $\mathcal{L}$ is the training loss, $\mathcal{M}$ is the metric set, and $s$ is the split rule.
 
+Use [[concepts/modalities/representation-contract|Representation contract]] when $\phi$ is nontrivial, cached, learned, stochastic, or domain-specific.
+
 The metric set $\mathcal{M}$ should be chosen with [[concepts/evaluation/metric-selection|Metric selection]], and failure cases should be named with [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]].
 
 ## Evaluation Implications
@@ -81,6 +83,7 @@ For example, an image can produce a class, box, mask, caption, embedding, or ret
 
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/modalities/modality-representation|Modality representation]]
+- [[concepts/modalities/representation-contract|Representation contract]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/tasks/task-specification|Task specification]]
 - [[concepts/tasks/task-output-space|Task output space]]

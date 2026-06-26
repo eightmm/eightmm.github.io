@@ -44,6 +44,7 @@ $$
 | --- | --- | --- |
 | Object | What entity is being modeled? | [Entities](/entities), [Molecular modeling entities](/bio/entities) |
 | Modality | What form is the input or output? | [Modalities](/concepts/modalities) |
+| Representation | How does the raw object become tokens, graph, coordinates, embedding, or features? | [Representation contract](/concepts/modalities/representation-contract) |
 | Task | What output space and validity rule define success? | [Tasks](/concepts/tasks) |
 | Data | What example, label, split, and preprocessing contract define the dataset? | [Data](/concepts/data) |
 | Architecture | What inductive bias and complexity does the model use? | [Architectures](/concepts/architectures), [AI architectures](/ai/architectures) |
@@ -75,6 +76,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One route page: [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]].
 - One data or benchmark page when a score is central: [[concepts/data/benchmark-intake|Benchmark intake]].
 - One object/modality/task page when the input or output is nontrivial.
+- One representation contract when preprocessing or featurization changes the object seen by the model.
 - One architecture or learning-method page when the method is central.
 - One objective-metric alignment check when the training loss and reported metric differ.
 - One evaluation page explaining metric, split, baseline, uncertainty, or failure mode.
