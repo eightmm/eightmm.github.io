@@ -66,6 +66,7 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
+- [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 
 ## Molecular Modeling Evidence Package
 
@@ -97,4 +98,5 @@ For structure-based benchmarks, also state whether the known ligand pose, close 
 
 - [[molecular-modeling/index|Computational Biology]]
 - [[molecular-modeling/entities|Entities]]
+- [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 - [[ai/evaluation|Evaluation]]

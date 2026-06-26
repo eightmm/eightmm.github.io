@@ -28,6 +28,7 @@ $$
 | Label | What endpoint, unit, direction, threshold, censoring, replicate rule, and source define the target? | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 | Split | What unit is held out: scaffold, sequence family, complex pair, assay/source, time, or template? | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 | Metric | Is the claim about affinity, pose, ranking, enrichment, validity, novelty, or property prediction? | [Evaluation](/ai/evaluation) |
+| Claim pattern | Is it property prediction, activity prediction, protein representation, docking, generation, protein design, or genome sequence modeling? | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 | Benchmark claim | Does the benchmark define data, task, split, metric, allowed information, and reporting rule? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Public boundary | Are data, metadata, artifacts, and claims public and non-sensitive? | [Papers](/papers) |
 
@@ -77,11 +78,13 @@ If evaluation uses a known ligand pose, ligand-defined pocket, homologous templa
 - General AI method issue: [[ai/paper-intake|AI paper intake]]
 - Formula issue: [[math/formula-intake|Formula intake]]
 - Multi-axis issue: [[papers/workflows/claim-routing|Claim routing]]
+- Repeated paper type: [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 
 ## Related
 
 - [[molecular-modeling/index|Computational Biology]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
 - [[papers/reproducibility/checklist|Reproducibility checklist]]

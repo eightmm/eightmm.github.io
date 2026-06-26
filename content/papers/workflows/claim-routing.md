@@ -27,6 +27,7 @@ where $p$ is a paper or post candidate and $a$ is an axis such as architecture, 
 | Is the main contribution a supervision or training signal? | learning-method paper or concept update | [Learning method papers](/papers/learning-methods) |
 | Is the main contribution sampling or density modeling? | generative-model paper or concept update | [Generative model papers](/papers/generative-models) |
 | Is the main contribution about molecules, proteins, docking, conformers, or complexes? | molecular modeling paper intake | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
+| Does the paper match a repeated computational biology paper type? | claim pattern catalog | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 | Does the claim require AI method, computational biology object, and Math evidence together? | cross-axis contract before writing | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Is the main contribution an equation, estimator, metric, or derivation? | formula intake or math concept update | [Formula intake](/math/formula-intake) |
 | Is the main contribution a benchmark or evaluation protocol? | benchmark card or evaluation concept update | [Benchmark intake](/concepts/data/benchmark-intake) |
@@ -99,6 +100,7 @@ public artifact status: to verify
 - [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[ai/paper-intake|AI paper intake]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 - [[math/formula-intake|Formula intake]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]

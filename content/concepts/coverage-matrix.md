@@ -31,6 +31,7 @@ $$
 | Reusable wiki note | definition, boundary, contract, checks, links, public boundary | [Wiki note quality gate](/concepts/wiki-note-quality-gate) |
 | AI paper claim | architecture, objective, evidence, and system boundary | [AI paper intake](/ai/paper-intake) |
 | Computational biology paper claim | object, representation, label, split, leakage | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
+| Computational biology claim pattern | property, activity, docking, generation, protein design, genome sequence modeling | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 | Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
 | AI + computational biology + Math claim | object, representation, model, objective, evidence, public boundary | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
@@ -81,6 +82,7 @@ $$
 Before promoting a paper cluster into a Korean post, check that the bundle has:
 
 - One route page: [[ai/paper-intake|AI paper intake]], [[molecular-modeling/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]].
+- One claim pattern when the paper is in computational biology: [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]].
 - One wiki-note quality pass before a concept becomes a reusable anchor: [[concepts/wiki-note-quality-gate|Wiki note quality gate]].
 - One data or benchmark page when a score is central: [[concepts/data/benchmark-intake|Benchmark intake]].
 - One topic-map contract when a cluster spans several axes: [[concepts/topic-map-contract|Topic map contract]].
