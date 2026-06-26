@@ -101,7 +101,7 @@ In an $L$-layer message passing GNN, node $i$ can usually receive information fr
 
 - Molecular structure: atoms as nodes, bonds or spatial contacts as edges.
 - Protein modeling: residues as nodes, contact maps or distance cutoffs as edges.
-- Structure-based AI: ligand, pocket, and interaction graphs.
+- Structure-based modeling: ligand, pocket, and interaction graphs.
 - Retrieval: candidates, neighborhoods, ranking sets, and graph-based indexes.
 
 ## Checks

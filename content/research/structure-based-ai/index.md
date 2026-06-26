@@ -1,14 +1,14 @@
 ---
-title: Structure-Based AI
+title: Structure-Based Modeling
 tags:
   - research
   - structure-based-ai
   - drug-discovery
 ---
 
-# Structure-Based AI
+# Structure-Based Modeling
 
-Structure-based AI is the part of AI for drug discovery that treats molecular structure as a first-class object. The central question is not just whether a model can score a molecule, but whether it can reason about [[entities/protein|protein]] structure, [[entities/ligand|ligand]] geometry, and the [[entities/protein-ligand-complex|protein-ligand complex]] as a physically plausible system.
+Structure-based modeling is the part of AI for drug discovery that treats molecular structure as a first-class object. The central question is not just whether a model can score a molecule, but whether it can reason about [[entities/protein|protein]] structure, [[entities/ligand|ligand]] geometry, and the [[entities/protein-ligand-complex|protein-ligand complex]] as a physically plausible system.
 
 For this wiki, this area is the main anchor for molecular AI notes. It connects docking, pose generation, structure-aware scoring, geometric deep learning, molecular generation, and evaluation.
 

@@ -32,7 +32,7 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
 - `ai/`: Korean gateway pages for broad AI foundations.
-- `bio/`: Korean gateway pages for computational biology focused on structure-based AI, docking, molecule/protein modeling, and sequence-level bio AI.
+- `bio/`: Korean gateway pages for computational biology focused on structure-based modeling, docking, molecule/protein modeling, and sequence-level bio AI.
 - `math/`: Korean gateway pages for mathematical foundations.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
@@ -72,7 +72,7 @@ Geometric notes should keep the math/model boundary explicit:
 - Always state the transformation group when relevant: translation, rotation, reflection, permutation, `SO(3)`, `SE(3)`, or `E(3)`.
 - Distinguish invariant targets/features from equivariant targets/features. Scalars such as energy, affinity, class probability, and ranking are usually invariant; coordinates, directions, fields, forces, velocities, and coordinate updates are usually equivariant.
 - When a formula clarifies the note, include the complete transform rule such as `x' = Rx + t`, `d_ij = ||x_i - x_j||_2`, or `phi(g.x) = rho(g) phi(x)`, then define the symbols.
-- For structure-based AI, mention coordinate-frame leakage risks when preprocessing depends on deployment-unavailable context such as a known ligand pose.
+- For structure-based modeling, mention coordinate-frame leakage risks when preprocessing depends on deployment-unavailable context such as a known ligand pose.
 
 Organize `agents/` with stable subfolders:
 
@@ -92,7 +92,7 @@ When adding agent notes, update the nearest subfolder index and `content/agents/
 - Workflows: coding agents, paper briefs, LLM Wiki maintenance, orchestration, handoff, and runbooks.
 - Verification: acceptance criteria, verification loops, evaluation, reflection, human review, and prompt-injection boundaries.
 
-Bio scope should stay focused on computational biology that directly supports structure-based AI, docking, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
+Bio scope should stay focused on computational biology that directly supports structure-based modeling, docking, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
 
 Chem-bio notes should preserve data semantics: standardize molecules before deduplication and splitting, state tautomer/protonation/stereo choices, keep target and assay context explicit, prefer scaffold or protein-family splits over random splits, and flag template leakage risks in structure-based benchmarks. Do not invent assay metadata, target details, activity values, or benchmark metrics.
 
@@ -199,12 +199,13 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - Do not expose internal editorial mechanics on public gateway pages, such as saying a page is a gateway or that linked notes are canonical wiki notes. Put those rules in `AGENTS.md`, workflow notes, or writing guides instead.
 - When a section has more than four similar bullets with descriptions, consider a Markdown table with columns such as `Area`, `Use For`, `Start Here`, `Risk`, or `Next`.
 - Keep table cells short. If a cell needs multiple sentences, split the table or move detail into the linked note.
-- For AI/Bio/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
+- For AI/Molecular Modeling/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
 - When adding a paper note or Korean post, check whether `content/ai/index.md`, `content/bio/index.md`, or `content/math/index.md` needs one additional route row, but do not duplicate full paper summaries there.
-- For Korean posts that combine AI, Bio-AI, and Math, use `content/posts/ai-bio-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
+- For Korean posts that combine AI, molecular modeling, and Math, use `content/posts/ai-bio-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
 - For new paper clusters, topic maps, or synthesis posts, check `content/concepts/coverage-matrix.md` so object, representation, task, data, architecture, learning method, math, evaluation, systems, and public boundary links are not missing.
-- For mixed AI/Bio-AI/Math paper notes, use `content/papers/workflows/ai-bio-math-paper-template.md` as the fillable skeleton and keep unknown metadata or metrics as `to verify`.
+- For mixed AI/molecular modeling/Math paper notes, use `content/papers/workflows/ai-bio-math-paper-template.md` as the fillable skeleton and keep unknown metadata or metrics as `to verify`.
 - When adding a paper note, route it through `content/papers/workflows/paper-triage.md` and choose the strongest paper bucket before creating a new topical folder.
+- Architecture-centric papers belong under `content/papers/architectures/` unless the stronger claim is learning objective, generation, systems, or molecular modeling evaluation.
 
 ## Mathematical Writing
 

@@ -1,5 +1,5 @@
 ---
-title: AI-Bio-Math Paper Template
+title: AI-Molecular-Math Paper Template
 unlisted: true
 tags:
   - papers
@@ -9,9 +9,9 @@ tags:
   - math
 ---
 
-# AI-Bio-Math Paper Template
+# AI-Molecular-Math Paper Template
 
-Use this template when a paper connects AI methods, Bio-AI objects, and mathematical objectives. Keep missing metadata as `to verify`; do not invent authors, metrics, artifacts, or benchmark details.
+Use this template when a paper connects AI methods, molecular modeling objects, and mathematical objectives. Keep missing metadata as `to verify`; do not invent authors, metrics, artifacts, or benchmark details.
 
 ## Frontmatter
 
@@ -34,7 +34,7 @@ tags:
 
 - One-line question: `to verify`
 - Main contribution: `to verify`
-- Main axis: AI method / Bio-AI object / Math objective / benchmark / system
+- Main axis: AI method / molecular modeling object / Math objective / benchmark / system
 - Public source: `to verify`
 - Reading status: [[papers/workflows/reading-status|Reading status]]
 
@@ -43,7 +43,7 @@ tags:
 | Route | Fill |
 | --- | --- |
 | AI intake | [AI paper intake](/ai/paper-intake) |
-| Bio-AI intake | [Bio-AI paper intake](/bio/paper-intake) or `not applicable` |
+| Molecular modeling intake | [Molecular modeling paper intake](/bio/paper-intake) or `not applicable` |
 | Formula intake | [Formula intake](/math/formula-intake) |
 | Benchmark intake | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
@@ -85,9 +85,9 @@ $$
 - $\theta$: `to verify`
 - Relation to evaluation metric: `to verify`
 
-## Bio-AI Contract
+## Molecular Modeling Contract
 
-Use `not applicable` only when the paper is not about Bio-AI.
+Use `not applicable` only when the paper is not about molecular modeling.
 
 | Field | Value |
 | --- | --- |
@@ -128,7 +128,7 @@ Use `not applicable` only when the paper is not about Bio-AI.
 - Architecture or learning note to update: `to verify`
 - Math note to update: `to verify`
 - Evaluation or benchmark note to update: `to verify`
-- Potential Korean post route: [[posts/ai-bio-math-post-intake|AI-Bio-Math post intake]]
+- Potential Korean post route: [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
 
 ## Related
 

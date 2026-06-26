@@ -86,4 +86,4 @@ The group choice should match both the data and the deployment setting. A symmet
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
-- [[research/structure-based-ai/index|Structure-based AI]]
+- [[research/structure-based-ai/index|Structure-based modeling]]

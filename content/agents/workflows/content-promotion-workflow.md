@@ -57,7 +57,7 @@ A Korean post is ready when:
 - The reader needs a map or point of view, not another isolated definition.
 - There is a clear question that the post answers.
 - The post can link to concepts, papers, projects, or infra notes instead of copying them.
-- AI, Bio-AI, and Math-heavy topics pass [[posts/ai-bio-math-post-intake|AI-Bio-Math post intake]].
+- AI, molecular modeling, and Math-heavy topics pass [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]].
 - The content passes [[inbox/publishing-gate|Publishing gate]] and [[logs/sanitization-checklist|Sanitization checklist]].
 
 ## Agent Role
@@ -90,7 +90,7 @@ An agent should:
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[posts/blog-writing-guide|Blog writing guide]]
-- [[posts/ai-bio-math-post-intake|AI-Bio-Math post intake]]
+- [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
 - [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
 - [[projects/llm-wiki-blog|LLM Wiki blog]]
 - [[logs/public-log-taxonomy|Public log taxonomy]]

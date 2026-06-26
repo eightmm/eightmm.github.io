@@ -8,7 +8,7 @@ tags:
 
 # Protein-Ligand Split
 
-A protein-ligand split defines how complexes, proteins, ligands, assays, and structures are separated across train, validation, and test sets. It is the core benchmark contract for structure-based AI.
+A protein-ligand split defines how complexes, proteins, ligands, assays, and structures are separated across train, validation, and test sets. It is the core benchmark contract for structure-based modeling.
 
 For a complex $c_i=(P_i,L_i,A_i,X_i)$, where $P_i$ is a protein or pocket, $L_i$ is a ligand, $A_i$ is assay or label context, and $X_i$ is structure or pose information, a split function is:
 

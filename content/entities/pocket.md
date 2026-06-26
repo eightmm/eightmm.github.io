@@ -8,7 +8,7 @@ tags:
 
 # Pocket
 
-A pocket is a local region of a protein that can host a ligand, cofactor, substrate, or designed molecule. In structure-based AI, the pocket is often the practical input object rather than the full protein.
+A pocket is a local region of a protein that can host a ligand, cofactor, substrate, or designed molecule. In structure-based modeling, the pocket is often the practical input object rather than the full protein.
 
 ## Modeling Views
 

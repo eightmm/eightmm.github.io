@@ -58,12 +58,12 @@ The exact checklist depends on the benchmark configuration, but the important ca
 
 ## Connection to This Wiki
 
-For this site, PoseBusters is the first evaluation anchor for [[research/structure-based-ai/index|Structure-Based AI]]. It should be linked whenever a docking, pose generation, or protein-ligand structure model claims good structural performance.
+For this site, PoseBusters is the first evaluation anchor for [[research/structure-based-ai/index|Structure-Based Modeling]]. It should be linked whenever a docking, pose generation, or protein-ligand structure model claims good structural performance.
 
 ## Related
 
-- [[papers/sbdd/index|Structure-based AI papers]]
-- [[research/structure-based-ai/index|Structure-based AI]]
+- [[papers/sbdd/index|Structure-based modeling papers]]
+- [[research/structure-based-ai/index|Structure-based modeling]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/evaluation/leakage|Leakage]]

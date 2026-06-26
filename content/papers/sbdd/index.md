@@ -1,14 +1,14 @@
 ---
-title: Structure-Based AI Papers
+title: Structure-Based Modeling Papers
 tags:
   - papers
   - structure-based-ai
   - sbdd
 ---
 
-# Structure-Based AI Papers
+# Structure-Based Modeling Papers
 
-Structure-based AI paper notes cover docking, pose generation, scoring, virtual screening, molecular generation, protein-ligand evaluation, and structure-aware learning.
+Structure-based modeling paper notes cover docking, conformers, pose generation, scoring, virtual screening, molecular generation, protein-ligand evaluation, and structure-aware learning.
 
 ## Reading Axes
 
@@ -37,7 +37,7 @@ Structure-based AI paper notes cover docking, pose generation, scoring, virtual 
 
 ## Related
 
-- [[research/structure-based-ai/index|Structure-based AI]]
+- [[research/structure-based-ai/index|Structure-based modeling]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/analysis/claim-extraction|Claim extraction]]

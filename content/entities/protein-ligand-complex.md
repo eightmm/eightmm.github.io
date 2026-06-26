@@ -8,7 +8,7 @@ tags:
 
 # Protein-Ligand Complex
 
-A protein-ligand complex combines a protein binding site, ligand conformation, and interaction geometry. It is a central object in structure-based AI.
+A protein-ligand complex combines a protein binding site, ligand conformation, and interaction geometry. It is a central object in structure-based modeling.
 
 A complex can be viewed as:
 

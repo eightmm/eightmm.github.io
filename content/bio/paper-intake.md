@@ -1,13 +1,13 @@
 ---
-title: Bio-AI Paper Intake
+title: Molecular Modeling Paper Intake
 tags:
   - bio
   - papers
 ---
 
-# Bio-AI Paper Intake
+# Molecular Modeling Paper Intake
 
-Bio-AI 논문은 model score보다 object, label, split, leakage를 먼저 고정해야 합니다. 특히 molecule, protein, ligand, pocket, complex를 다루는 논문은 row 하나가 무엇을 의미하는지부터 확인해야 합니다.
+Molecular modeling 논문은 model score보다 object, label, split, leakage를 먼저 고정해야 합니다. 특히 molecule, protein, ligand, pocket, conformer, complex를 다루는 논문은 row 하나가 무엇을 의미하는지부터 확인해야 합니다.
 
 $$
 \text{bio example}
@@ -39,9 +39,9 @@ $$
 | Docking | pose success may depend on known pocket or ligand-defined frame | inference-time information boundary |
 | Virtual screening | decoys may separate by trivial physicochemical properties | property-only baseline and enrichment metrics |
 
-## Minimum Bio-AI Evidence
+## Minimum Evidence
 
-A Bio-AI paper note should record:
+A molecular modeling paper note should record:
 
 - Example unit: molecule, protein, complex, pose, assay record, or generated sample.
 - Label semantics: endpoint, unit, direction, threshold, censoring, replicate aggregation, and source.
@@ -53,7 +53,7 @@ A Bio-AI paper note should record:
 
 ## Structure-Based Shortcut
 
-For structure-based AI, ask this before trusting a score:
+For structure-based modeling, ask this before trusting a score:
 
 $$
 \text{available at inference}
@@ -75,7 +75,7 @@ If evaluation uses a known ligand pose, ligand-defined pocket, homologous templa
 
 ## Related
 
-- [[bio/index|Bio-AI]]
+- [[bio/index|Molecular Modeling]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
 - [[papers/reproducibility/checklist|Reproducibility checklist]]

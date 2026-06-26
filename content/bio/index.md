@@ -1,23 +1,24 @@
 ---
-title: Bio-AI
+title: Molecular Modeling
 aliases:
   - bio-ai
+  - molecular-modeling
 tags:
   - bio
 ---
 
 
-# Bio-AI
+# Molecular Modeling
 
-Bio-AI 영역은 computational biology 전체를 넓게 훑기보다, AI와 직접 연결되는 구조 기반 모델링, 단백질, 분자, 리간드, docking, protein-ligand interaction, sequence-level genome modeling에 범위를 좁힙니다.
+이 영역은 넓은 biology 전체가 아니라 molecule, protein, ligand, pocket, complex, conformer, docking처럼 계산 모델링에서 직접 다루는 객체와 workflow에 집중합니다. AI 모델은 이 안의 방법 중 하나이고, docking이나 conformer generation 자체는 먼저 molecular modeling 문제로 봅니다.
 
-반복해서 등장하는 기본 형태는 생물학적/화학적 객체와 context를 모델 입력으로 두는 것입니다.
+반복해서 등장하는 기본 형태는 화학적/구조적 객체와 context를 모델 입력으로 두는 것입니다.
 
 $$
-\hat{y} = f_\theta(x_{\mathrm{bio}}, x_{\mathrm{context}})
+\hat{y} = f_\theta(x_{\mathrm{mol}}, x_{\mathrm{context}})
 $$
 
-여기서 $x_{\mathrm{bio}}$는 sequence, molecule, structure, complex일 수 있고, $x_{\mathrm{context}}$는 pocket, target condition, assay context일 수 있습니다.
+여기서 $x_{\mathrm{mol}}$은 molecule, protein sequence, structure, conformer, complex일 수 있고, $x_{\mathrm{context}}$는 pocket, target condition, assay context일 수 있습니다.
 
 ## 먼저 볼 지도
 
@@ -27,13 +28,13 @@ $$
 | Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure | [Entities](/bio/entities) |
 | Molecules | standardization, molecular graphs, fingerprints, conformers | [Molecules](/bio/molecules) |
 | Proteins | sequence, structure, domains, binding sites, representation | [Proteins](/bio/proteins) |
-| Structure-based AI | protein-ligand geometry, interaction, scoring, generation | [Structure-based AI](/bio/structure-based-ai) |
+| Structure-based modeling | protein-ligand geometry, interaction, scoring, generation | [Structure-based modeling](/bio/structure-based-ai) |
 | Docking | preparation, pose generation, scoring, filtering, evaluation | [Docking](/bio/docking) |
 | Data and evaluation | label semantics, split units, leakage, assay harmonization | [Data and evaluation](/bio/data-evaluation) |
 | Geometry | coordinates, frames, invariance, equivariance | [Geometry](/bio/geometry) |
 | Genome | sequence, region, k-mer, variant-level modeling | [Genome](/bio/genome) |
-| Paper intake | object, representation, label, split, leakage, public boundary | [Bio paper intake](/bio/paper-intake) |
-| Post intake | AI/Bio-AI/Math synthesis writing | [AI-Bio-Math post intake](/posts/ai-bio-math-post-intake) |
+| Paper intake | object, representation, label, split, leakage, public boundary | [Molecular modeling paper intake](/bio/paper-intake) |
+| Post intake | AI, molecular modeling, and math synthesis writing | [AI-Molecular-Math post intake](/posts/ai-bio-math-post-intake) |
 | Coverage matrix | object, data, model, objective, evidence, public boundary | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## 다루는 객체
@@ -59,11 +60,11 @@ $$
 | Structure and chemistry details | [Conformer](/concepts/molecular-modeling/conformer), [Tautomer](/concepts/molecular-modeling/tautomer), [Protonation state](/concepts/molecular-modeling/protonation-state), [Stereochemistry](/concepts/molecular-modeling/stereochemistry) |
 | Search | [Substructure search](/concepts/molecular-modeling/substructure-search) |
 
-## Structure-Based AI
+## Structure-Based Modeling
 
 | Topic | Start |
 | --- | --- |
-| Overview | [Structure-based AI](/bio/structure-based-ai), [SBDD concepts](/concepts/sbdd) |
+| Overview | [Structure-based modeling](/bio/structure-based-ai), [SBDD concepts](/concepts/sbdd) |
 | Core tasks | [Interaction prediction](/concepts/tasks/interaction-prediction), [Localization](/concepts/tasks/localization), [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) |
 | Docking workflow | [Docking](/bio/docking), [Docking workflow](/concepts/sbdd/docking-workflow), [Receptor and ligand preparation](/concepts/sbdd/receptor-ligand-preparation) |
 | Pose and interaction | [Pose generation](/concepts/sbdd/pose-generation), [Pose RMSD](/concepts/sbdd/pose-rmsd), [Pose quality](/concepts/sbdd/pose-quality), [Protein-ligand interaction](/concepts/sbdd/protein-ligand-interaction) |
@@ -113,25 +114,25 @@ $$
 | Coordinates and features | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Invariant feature](/concepts/geometric-deep-learning/invariant-feature), [Equivariant feature](/concepts/geometric-deep-learning/equivariant-feature) |
 | Evaluation risk | [Evaluation](/concepts/evaluation), [Leakage](/concepts/evaluation/leakage) |
 
-## Bio-AI 논문을 읽을 때
+## Molecular Modeling 논문을 읽을 때
 
-Bio-AI 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저 분리해야 합니다.
+Molecular modeling 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저 분리해야 합니다.
 
 | 먼저 볼 것 | 확인할 내용 | Start |
 | --- | --- | --- |
-| Biological object | molecule, protein, ligand, pocket, complex, genome region 중 무엇인가 | [Entities](/bio/entities) |
+| Modeled object | molecule, protein, ligand, pocket, complex, genome region 중 무엇인가 | [Entities](/bio/entities) |
 | Representation | string, graph, fingerprint, embedding, conformer, coordinate, complex graph 중 무엇인가 | [Molecules](/bio/molecules), [Proteins](/bio/proteins), [Geometry](/bio/geometry) |
 | Label context | target, assay, endpoint, unit, threshold, censoring, source가 명확한가 | [Data and evaluation](/bio/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
-| Structure context | apo/holo, predicted/experimental, pocket-defined/blind, ligand-defined 여부가 명확한가 | [Structure-based AI](/bio/structure-based-ai), [Docking](/bio/docking) |
+| Structure context | apo/holo, predicted/experimental, pocket-defined/blind, ligand-defined 여부가 명확한가 | [Structure-based modeling](/bio/structure-based-ai), [Docking](/bio/docking) |
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and evaluation](/bio/data-evaluation) |
 | Evaluation claim | pose, affinity, ranking, enrichment, property, generation 중 무엇을 주장하는가 | [Docking](/bio/docking), [Evaluation](/ai/evaluation) |
 | Public boundary | 내부 데이터나 미공개 결과 없이 일반화 가능한가 | [Computational Biology](/bio/computational-biology) |
-| Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [Bio paper intake](/bio/paper-intake) |
+| Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [Molecular modeling paper intake](/bio/paper-intake) |
 
 ## 관련 입구
 
 - [[ai/index|AI]]
 - [[papers/index|Papers]]
 - [[projects/index|Projects]]
-- [[bio/paper-intake|Bio paper intake]]
+- [[bio/paper-intake|Molecular modeling paper intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]

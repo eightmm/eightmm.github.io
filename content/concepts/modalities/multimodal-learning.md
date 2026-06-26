@@ -44,7 +44,7 @@ where $\operatorname{sim}$ is a similarity function and $\tau$ is a temperature.
 
 - Image-text alignment for retrieval, captioning, and visual question answering.
 - Video-audio-text alignment for temporal understanding.
-- Molecule-protein or ligand-pocket modeling for structure-based AI.
+- Molecule-protein or ligand-pocket modeling for structure-based modeling.
 - Text-tool-state fusion in agent systems.
 - Missing-modality robustness when one signal is unavailable at deployment.
 

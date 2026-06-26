@@ -58,7 +58,7 @@ tags:
 
 현재 첫 경로는 이렇게 잡습니다.
 
-1. [[research/structure-based-ai/index|Structure-Based AI]]
+1. [[research/structure-based-ai/index|Structure-Based Modeling]]
 2. [[research/structure-based-ai/protein-ligand-docking|Protein-ligand Docking]]
 3. [[concepts/sbdd/index|Structure-Based Drug Discovery]]
 4. [[concepts/sbdd/pose-quality|Pose Quality]]

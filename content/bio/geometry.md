@@ -80,6 +80,6 @@ where $X$ is a coordinate set, $R$ is a rotation, and $t$ is a translation.
 
 ## Related
 
-- [[bio/structure-based-ai|Structure-based AI]]
+- [[bio/structure-based-ai|Structure-based modeling]]
 - [[ai/architectures|Architectures]]
 - [[concepts/architectures/gnn|Graph neural networks]]

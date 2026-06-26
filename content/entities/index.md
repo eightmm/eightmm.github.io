@@ -69,7 +69,7 @@ For Bio, the same entity can play different roles:
 ## Related
 
 - [[bio/index|Bio]]
-- [[research/structure-based-ai/index|Structure-based AI]]
+- [[research/structure-based-ai/index|Structure-based modeling]]
 - [[research/protein-modeling/index|Protein modeling]]
 - [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/modalities/modality-task-map|Modality-task map]]

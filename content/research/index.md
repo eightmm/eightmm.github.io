@@ -14,7 +14,7 @@ tags:
 
 | Domain | Focus |
 | --- | --- |
-| [Structure-based AI](/research/structure-based-ai) | protein-ligand interaction, docking, pose quality, scoring, virtual screening |
+| [Structure-based modeling](/research/structure-based-ai) | protein-ligand interaction, docking, pose quality, scoring, virtual screening |
 | [Protein modeling](/research/protein-modeling) | protein representation, structure, sequence-structure relation, evaluation |
 
 ## 연결되는 방법론

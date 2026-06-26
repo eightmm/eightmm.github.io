@@ -53,7 +53,7 @@ The first evaluates a given pose $X$; the second samples or searches for candida
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
-- [[research/structure-based-ai/index|Structure-based AI]]
+- [[research/structure-based-ai/index|Structure-based modeling]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]

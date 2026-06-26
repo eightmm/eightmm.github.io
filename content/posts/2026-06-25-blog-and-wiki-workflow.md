@@ -23,7 +23,7 @@ tags:
 
 - [[posts/index|Posts]]: 한글 글, 생각의 흐름, 입구 역할
 - [[ai/index|AI]]: ML, architecture, learning, generation, evaluation의 큰 지도
-- [[bio/index|Bio]]: structure-based AI, protein, molecule, ligand 중심의 지도
+- [[bio/index|Bio]]: structure-based modeling, protein, molecule, ligand 중심의 지도
 - [[research/index|Research]]: 실제 연구 질문으로 이어지는 영역
 - [[papers/index|Papers]]: 검증된 paper note와 reading workflow
 - [[infra/index|Infra]]: 공개 가능한 HPC, GPU, server operation 지식
@@ -42,7 +42,7 @@ tags:
 예를 들어 구조 기반 AI를 읽는다면:
 
 1. [[bio/index|Bio]]
-2. [[research/structure-based-ai/index|Structure-based AI]]
+2. [[research/structure-based-ai/index|Structure-based modeling]]
 3. [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
 4. [[concepts/sbdd/index|Structure-based drug discovery]]
 5. [[papers/sbdd/posebusters|PoseBusters]]

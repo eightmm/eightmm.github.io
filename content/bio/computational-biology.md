@@ -30,7 +30,7 @@ If the object, measurement, representation, or claim is vague, the model result 
 | [Entities](/bio/entities) | protein, molecule, ligand, pocket, complex, assay, sequence, structure |
 | [Molecules](/bio/molecules) | small-molecule identity, standardization, fingerprints, graphs, conformers |
 | [Proteins](/bio/proteins) | sequence, structure, domains, binding sites, representations |
-| [Structure-based AI](/bio/structure-based-ai) | protein-ligand geometry, pose, interaction, scoring |
+| [Structure-based modeling](/bio/structure-based-ai) | protein-ligand geometry, pose, interaction, scoring |
 | [Docking](/bio/docking) | receptor/ligand preparation, pose generation, pose quality, ranking |
 | [Data and evaluation](/bio/data-evaluation) | split units, label semantics, leakage, benchmark contracts |
 | [Genome](/bio/genome) | sequence, region, k-mer, variant-effect modeling |
@@ -69,7 +69,7 @@ For example, a docking note should not only say that a model performs well. It s
 
 | Include | Defer |
 | --- | --- |
-| structure-based AI | broad systems biology |
+| structure-based modeling | broad systems biology |
 | molecular modeling | transcriptomics and single-cell analysis |
 | protein modeling | clinical omics |
 | genome sequence / variant-level modeling | pathway biology unless a concrete project needs it |

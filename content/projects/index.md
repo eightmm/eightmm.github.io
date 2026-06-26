@@ -19,7 +19,7 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 | Bucket | Use For |
 | --- | --- |
 | Research systems | pipelines, experiment workflows, reproducible artifacts |
-| Structure-based AI | docking, scoring, pose quality, screening workflows |
+| Structure-based modeling | docking, scoring, pose quality, screening workflows |
 | Protein modeling | representation, structure, sequence-structure tools |
 | HPC / server utilities | Slurm, GPU, storage, environment workflow tools |
 | Knowledge-base tooling | blog/wiki structure, paper curation, note promotion |

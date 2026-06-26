@@ -43,8 +43,9 @@ where $p$ is a candidate paper.
 
 | Bucket | Use For |
 | --- | --- |
-| [Structure-based AI papers](/papers/sbdd) | docking, pose, scoring, screening, protein-ligand evaluation |
+| [Structure-based modeling papers](/papers/sbdd) | docking, conformers, pose, scoring, screening, protein-ligand evaluation |
 | [Protein modeling papers](/papers/protein-modeling) | protein representation, structure, antibody/protein interaction |
+| [Architecture papers](/papers/architectures) | Transformer, GNN, SSM/Mamba, MoE, geometric architecture design |
 | [Generative model papers](/papers/generative-models) | diffusion, flow, molecule/protein generation, sampling objectives |
 | [Learning method papers](/papers/learning-methods) | SSL, contrastive learning, JEPA, fine-tuning, preference/RL-style objectives |
 | [Systems papers](/papers/systems) | training efficiency, inference, tooling, agents, reproducibility |

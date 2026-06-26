@@ -90,5 +90,5 @@ where $L_{\mathrm{raw}}$ is the input molecule record, $L_{\mathrm{std}}$ is the
 ## Related
 
 - [[bio/index|Bio]]
-- [[bio/structure-based-ai|Structure-based AI]]
+- [[bio/structure-based-ai|Structure-based modeling]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

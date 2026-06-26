@@ -19,7 +19,7 @@ A reported multi-scale ML framework for antibody-antigen binding affinity predic
 
 ## Why It Matters
 
-This paper may be relevant to [[research/structure-based-ai/index|Structure-based AI]] and [[concepts/sbdd/binding-affinity|binding affinity]]. Its useful angle is not only model performance, but how antibody-antigen binding evaluation handles mutation units, pathogen or antigen holdouts, confidence filtering, and theoretical performance ceilings.
+This paper may be relevant to [[research/structure-based-ai/index|Structure-based modeling]] and [[concepts/sbdd/binding-affinity|binding affinity]]. Its useful angle is not only model performance, but how antibody-antigen binding evaluation handles mutation units, pathogen or antigen holdouts, confidence filtering, and theoretical performance ceilings.
 
 ## Key Points
 

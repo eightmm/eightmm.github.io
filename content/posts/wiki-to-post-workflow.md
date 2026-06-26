@@ -26,7 +26,7 @@ $$
 
 아이디어가 바로 post가 되지는 않습니다. 먼저 [[concepts/index|Concepts]], [[papers/index|Papers]], [[projects/index|Projects]], [[infra/index|Infra]], [[agents/index|Agents]] 중 어디에 들어갈지 정합니다.
 
-AI, Bio-AI, Math가 섞인 주제는 [[posts/ai-bio-math-post-intake|AI-Bio-Math 포스트 인테이크]]로 중심축, 최소 수식, benchmark boundary를 먼저 정합니다.
+AI, molecular modeling, Math가 섞인 주제는 [[posts/ai-bio-math-post-intake|AI-Molecular-Math 포스트 인테이크]]로 중심축, 최소 수식, benchmark boundary를 먼저 정합니다.
 
 ## Post로 올릴 때
 
@@ -75,7 +75,7 @@ Post는 아래 조건을 만족할 때 씁니다.
 
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
 - [[posts/topic-roadmap|글감 로드맵]]
-- [[posts/ai-bio-math-post-intake|AI-Bio-Math 포스트 인테이크]]
+- [[posts/ai-bio-math-post-intake|AI-Molecular-Math 포스트 인테이크]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]

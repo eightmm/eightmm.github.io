@@ -10,7 +10,7 @@ tags:
 
 Entity notes define what object a model is operating on. In Bio, the same model family can mean different things depending on whether the unit is a molecule, protein, pocket, complex, assay row, or dataset.
 
-The central relation for structure-based AI is:
+The central relation for structure-based modeling is:
 
 $$
 \text{protein} + \text{pocket} + \text{ligand}

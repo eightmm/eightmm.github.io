@@ -30,7 +30,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Note shape for curated paper notes.
 - Paper bucket routing.
 - Review workflow from metadata check to concept updates.
-- Domain intake through AI, Bio-AI, and Math foundations.
+- Domain intake through AI, molecular modeling, and Math foundations.
 - Agent-assisted paper briefs after human-readable sanitization.
 
 ## Notes
@@ -38,10 +38,10 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/paper-note-format|Paper note format]]
-- [[papers/workflows/ai-bio-math-paper-template|AI-Bio-Math paper template]]
+- [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[ai/paper-intake|AI paper intake]]
-- [[bio/paper-intake|Bio-AI paper intake]]
+- [[bio/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]
 
 ## Checks
@@ -50,7 +50,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Is the note status visible and honest?
 - Is the output a paper note, concept update, inbox item, synthesis post, or archive decision?
 - Are missing claims, metrics, authors, and artifacts marked `to verify` instead of invented?
-- For AI/Bio-AI/Math papers, was [[papers/workflows/ai-bio-math-paper-template|AI-Bio-Math paper template]] used?
+- For AI/molecular modeling/Math papers, was [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]] used?
 - Does the workflow update the relevant concept pages instead of only accumulating paper summaries?
 
 ## Where New Notes Go
@@ -67,5 +67,5 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[papers/analysis/index|Paper analysis]]
 - [[papers/reproducibility/index|Paper reproducibility]]
 - [[ai/index|AI]]
-- [[bio/index|Bio-AI]]
+- [[bio/index|Molecular Modeling]]
 - [[math/index|Math]]

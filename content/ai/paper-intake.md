@@ -74,4 +74,4 @@ After reading, update the smallest durable note that captures the reusable idea.
 - [[ai/index|AI]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[math/formula-intake|Formula intake]]
-- [[bio/paper-intake|Bio-AI paper intake]]
+- [[bio/paper-intake|Molecular modeling paper intake]]
