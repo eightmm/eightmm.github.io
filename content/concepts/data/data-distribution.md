@@ -54,6 +54,50 @@ If they differ, validation performance may not estimate deployment behavior.
 - Time, location, instrument, batch, species, target, or task context.
 - Missing data and unobserved negative examples.
 
+## Factorization
+
+A supervised distribution can be factorized as:
+
+$$
+p(x,y)
+=
+p(y\mid x)p(x)
+$$
+
+or, when metadata matters:
+
+$$
+p(x,y,m)
+=
+p(y\mid x,m)p(x\mid m)p(m)
+$$
+
+where $m$ may include source, time, assay, domain, user, device, scaffold, family, or other grouping context. Distribution shift can affect any part of this factorization.
+
+## Split Distributions
+
+Train, validation, test, and deployment distributions should be named:
+
+$$
+p_{\mathrm{train}},
+\quad
+p_{\mathrm{val}},
+\quad
+p_{\mathrm{test}},
+\quad
+p_{\mathrm{deploy}}
+$$
+
+Validation estimates are useful only if $p_{\mathrm{val}}$ supports the model-selection decision, while test estimates matter only if $p_{\mathrm{test}}$ matches the claimed generalization target.
+
+## Failure Modes
+
+- The dataset is treated as IID even though examples share groups or sources.
+- The test set has a different label prevalence than deployment.
+- Source-specific artifacts dominate the input distribution.
+- Missing labels are mistaken for true negatives.
+- The model is evaluated on a curated distribution but deployed on raw data.
+
 ## Checks
 
 - What population should the dataset represent?
@@ -61,6 +105,9 @@ If they differ, validation performance may not estimate deployment behavior.
 - Are labels sampled from the same protocol across splits?
 - Does the test distribution match the intended claim?
 - Are multiple data sources pooled without source-aware evaluation?
+- Are train, validation, test, and deployment distributions described separately?
+- Is the shift in $p(x)$, $p(y\mid x)$, metadata, or label availability?
+- Are subgroup distributions reported for important domains or sources?
 
 ## Related
 
@@ -68,4 +115,7 @@ If they differ, validation performance may not estimate deployment behavior.
 - [[concepts/data/dataset-shift|Dataset shift]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
+- [[concepts/data/example-unit|Example unit]]
+- [[concepts/data/split-unit|Split unit]]
+- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
