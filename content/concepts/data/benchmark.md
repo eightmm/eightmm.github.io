@@ -25,6 +25,7 @@ This estimate supports a claim only when the test set and metric match the inten
 
 - Task definition.
 - Dataset version.
+- Benchmark intake record for the claim being made.
 - Evaluation set design.
 - Split policy.
 - Metric and aggregation rule.
@@ -88,6 +89,7 @@ Random splits, scaffold splits, protein-family splits, temporal splits, and sour
 ## Related
 
 - [[concepts/tasks/index|Tasks]]
+- [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]

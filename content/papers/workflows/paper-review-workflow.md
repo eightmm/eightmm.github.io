@@ -16,7 +16,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 1. Triage the paper with [[papers/workflows/paper-triage|Paper triage]].
 2. Verify metadata and source links.
-3. Route the paper through [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Bio paper intake]], or [[math/formula-intake|Formula intake]] as needed.
+3. Route the paper through [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Bio-AI paper intake]], or [[math/formula-intake|Formula intake]] as needed.
 4. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]].
 5. Extract claims using [[papers/analysis/claim-extraction|Claim extraction]].
 6. Map claims to evidence using [[papers/analysis/evidence-table|Evidence table]].
@@ -54,7 +54,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 - Is the paper worth a curated note, or should it only update an existing concept?
 - Are formulas rewritten with symbol definitions rather than copied blindly?
-- Has the paper been routed through the relevant intake page: [[ai/paper-intake|AI]], [[bio/paper-intake|Bio]], or [[math/formula-intake|Math]]?
+- Has the paper been routed through the relevant intake page: [[ai/paper-intake|AI]], [[bio/paper-intake|Bio-AI]], or [[math/formula-intake|Math]]?
 - Are metrics connected to [[concepts/evaluation/metric|Metric]] and split protocol?
 - Are reported gains larger than [[concepts/evaluation/confidence-interval|confidence intervals]] or run-to-run variance?
 - Does the paper require [[concepts/evaluation/statistical-significance|statistical significance]] checks?
@@ -68,7 +68,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[ai/paper-intake|AI paper intake]]
-- [[bio/paper-intake|Bio paper intake]]
+- [[bio/paper-intake|Bio-AI paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]

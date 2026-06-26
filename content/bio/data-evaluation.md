@@ -10,7 +10,7 @@ tags:
 
 # Data and Evaluation
 
-Bio evaluation is mostly decided before training: by example definitions, label semantics, split units, leakage controls, and benchmark design. Random splits are often too weak for molecule, protein, and complex-level claims.
+Bio-AI evaluation is mostly decided before training: by example definitions, label semantics, split units, leakage controls, and benchmark design. Random splits are often too weak for molecule, protein, and complex-level claims.
 
 $$
 \hat{R}(f)
@@ -56,14 +56,15 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
+- [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
 
-## Bio Evidence Package
+## Bio-AI Evidence Package
 
-For Bio papers, a model score is not enough. Record the biological object and the measurement context before the metric.
+For Bio-AI papers, a model score is not enough. Record the biological object and the measurement context before the metric.
 
 | Field | Required Detail |
 | --- | --- |
@@ -86,6 +87,6 @@ For structure-based benchmarks, also state whether the known ligand pose, close 
 
 ## Related
 
-- [[bio/index|Bio]]
+- [[bio/index|Bio-AI]]
 - [[bio/entities|Entities]]
 - [[ai/evaluation|Evaluation]]

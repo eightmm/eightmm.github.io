@@ -33,6 +33,7 @@ $$
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
+- [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]

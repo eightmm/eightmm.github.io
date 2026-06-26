@@ -1,5 +1,5 @@
 ---
-title: Bio
+title: Bio-AI
 aliases:
   - bio-ai
 tags:
@@ -7,9 +7,9 @@ tags:
 ---
 
 
-# Bio
+# Bio-AI
 
-Bio 영역은 computational biology 전체를 넓게 훑기보다, AI와 직접 연결되는 구조 기반 모델링, 단백질, 분자, 리간드, docking, protein-ligand interaction, sequence-level genome modeling에 범위를 좁힙니다.
+Bio-AI 영역은 computational biology 전체를 넓게 훑기보다, AI와 직접 연결되는 구조 기반 모델링, 단백질, 분자, 리간드, docking, protein-ligand interaction, sequence-level genome modeling에 범위를 좁힙니다.
 
 반복해서 등장하는 기본 형태는 생물학적/화학적 객체와 context를 모델 입력으로 두는 것입니다.
 
@@ -23,7 +23,7 @@ $$
 
 | Area | Use For | Start |
 | --- | --- | --- |
-| Computational biology | object, measurement, representation, claim boundary | [Computational Biology](/bio/computational-biology) |
+| Scope and objects | object, measurement, representation, claim boundary | [Computational Biology](/bio/computational-biology) |
 | Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure | [Entities](/bio/entities) |
 | Molecules | standardization, molecular graphs, fingerprints, conformers | [Molecules](/bio/molecules) |
 | Proteins | sequence, structure, domains, binding sites, representation | [Proteins](/bio/proteins) |
@@ -111,9 +111,9 @@ $$
 | Coordinates and features | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Invariant feature](/concepts/geometric-deep-learning/invariant-feature), [Equivariant feature](/concepts/geometric-deep-learning/equivariant-feature) |
 | Evaluation risk | [Evaluation](/concepts/evaluation), [Leakage](/concepts/evaluation/leakage) |
 
-## Bio 논문을 읽을 때
+## Bio-AI 논문을 읽을 때
 
-Bio 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저 분리해야 합니다.
+Bio-AI 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저 분리해야 합니다.
 
 | 먼저 볼 것 | 확인할 내용 | Start |
 | --- | --- | --- |

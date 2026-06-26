@@ -21,6 +21,8 @@ $$
 
 $\mathcal{D}$ is data, $\mathcal{T}$ is task, $S$ is split policy, $M$ is metric, and $P$ is preprocessing or protocol.
 
+Use [[concepts/data/benchmark-intake|Benchmark intake]] before writing the card. The intake pass decides whether the reported score is testing the paper's stated claim or only a narrower interpolation setting.
+
 ## Fields
 
 - Task: what input-output mapping is evaluated.
@@ -46,6 +48,7 @@ $\mathcal{D}$ is data, $\mathcal{T}$ is task, $S$ is split policy, $M$ is metric
 ## Related
 
 - [[concepts/data/benchmark|Benchmark]]
+- [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[papers/analysis/evidence-table|Evidence table]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]

@@ -27,6 +27,7 @@ $$
 | Symmetry | Should the output be invariant or equivariant under permutation, translation, rotation, or reflection? | [Geometry and symmetry](/math/geometry-symmetry) |
 | Numerics | Does implementation require stable softmax, log-sum-exp, precision control, or conditioning checks? | [Numerical computing](/math/numerical-computing) |
 | Evidence | Is the reported number a point estimate, confidence interval, paired comparison, or selected checkpoint? | [Evaluation math](/math/evaluation-math) |
+| Benchmark score | What aggregation, split, selection rule, and denominator define the reported number? | [Benchmark intake](/concepts/data/benchmark-intake) |
 
 ## Rewrite Pattern
 
@@ -79,5 +80,6 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 
 - [[math/index|Math]]
 - [[ai/paper-intake|AI paper intake]]
-- [[bio/paper-intake|Bio paper intake]]
+- [[bio/paper-intake|Bio-AI paper intake]]
+- [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]

@@ -25,6 +25,7 @@ $$
 | Learning signal | Is the signal label, mask, contrast, denoising target, preference, reward, or synthetic target? | [Learning Methods](/ai/learning-methods) |
 | Distribution model | Does the method model $p_\theta(x)$, $p_\theta(y\mid x)$, a score, or a vector field? | [Generative Models](/ai/generative-models), [Math](/math) |
 | Evidence | Which metric, split, baseline, ablation, and uncertainty support the claim? | [Evaluation](/ai/evaluation) |
+| Benchmark claim | What data, task, split, metric, allowed information, and reporting rule define the score? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | System boundary | Does the contribution depend on data scale, compute, serving, tools, or reproducibility? | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
 
 ## Claim Shapes
@@ -65,6 +66,7 @@ After reading, update the smallest durable note that captures the reusable idea.
 - Learning signal: [[ai/learning-methods|Learning Methods]] or [[concepts/learning/index|Learning concepts]]
 - Generative objective: [[ai/generative-models|Generative Models]] or [[concepts/generative-models/index|Generative model concepts]]
 - Evaluation issue: [[ai/evaluation|Evaluation]] or [[concepts/evaluation/index|Evaluation concepts]]
+- Benchmark issue: [[concepts/data/benchmark-intake|Benchmark intake]] or [[papers/analysis/benchmark-card|Benchmark card]]
 - Paper-specific claim: [[papers/analysis/claim-extraction|Claim extraction]] and [[papers/analysis/evidence-table|Evidence table]]
 
 ## Related
@@ -72,4 +74,4 @@ After reading, update the smallest durable note that captures the reusable idea.
 - [[ai/index|AI]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[math/formula-intake|Formula intake]]
-- [[bio/paper-intake|Bio paper intake]]
+- [[bio/paper-intake|Bio-AI paper intake]]

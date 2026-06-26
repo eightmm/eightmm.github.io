@@ -22,6 +22,7 @@ The empirical test score is only an estimate of this target.
 
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
+- [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]

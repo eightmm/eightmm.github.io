@@ -1,13 +1,13 @@
 ---
-title: Bio Paper Intake
+title: Bio-AI Paper Intake
 tags:
   - bio
   - papers
 ---
 
-# Bio Paper Intake
+# Bio-AI Paper Intake
 
-Bio 논문은 model score보다 object, label, split, leakage를 먼저 고정해야 합니다. 특히 molecule, protein, ligand, pocket, complex를 다루는 논문은 row 하나가 무엇을 의미하는지부터 확인해야 합니다.
+Bio-AI 논문은 model score보다 object, label, split, leakage를 먼저 고정해야 합니다. 특히 molecule, protein, ligand, pocket, complex를 다루는 논문은 row 하나가 무엇을 의미하는지부터 확인해야 합니다.
 
 $$
 \text{bio example}
@@ -25,6 +25,7 @@ $$
 | Label | What endpoint, unit, direction, threshold, censoring, replicate rule, and source define the target? | [Data and Evaluation](/bio/data-evaluation) |
 | Split | What unit is held out: scaffold, sequence family, complex pair, assay/source, time, or template? | [Data and Evaluation](/bio/data-evaluation) |
 | Metric | Is the claim about affinity, pose, ranking, enrichment, validity, novelty, or property prediction? | [Evaluation](/ai/evaluation) |
+| Benchmark claim | Does the benchmark define data, task, split, metric, allowed information, and reporting rule? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Public boundary | Are data, metadata, artifacts, and claims public and non-sensitive? | [Papers](/papers) |
 
 ## Domain Risk Map
@@ -38,9 +39,9 @@ $$
 | Docking | pose success may depend on known pocket or ligand-defined frame | inference-time information boundary |
 | Virtual screening | decoys may separate by trivial physicochemical properties | property-only baseline and enrichment metrics |
 
-## Minimum Bio Evidence
+## Minimum Bio-AI Evidence
 
-A Bio paper note should record:
+A Bio-AI paper note should record:
 
 - Example unit: molecule, protein, complex, pose, assay record, or generated sample.
 - Label semantics: endpoint, unit, direction, threshold, censoring, replicate aggregation, and source.
@@ -68,12 +69,13 @@ If evaluation uses a known ligand pose, ligand-defined pocket, homologous templa
 - Protein or sequence issue: [[bio/proteins|Proteins]] and [[concepts/protein-modeling/index|Protein modeling]]
 - Docking or SBDD issue: [[bio/docking|Docking]] and [[concepts/sbdd/index|SBDD concepts]]
 - Split or benchmark issue: [[bio/data-evaluation|Data and Evaluation]]
+- Benchmark contract issue: [[concepts/data/benchmark-intake|Benchmark intake]]
 - General AI method issue: [[ai/paper-intake|AI paper intake]]
 - Formula issue: [[math/formula-intake|Formula intake]]
 
 ## Related
 
-- [[bio/index|Bio]]
+- [[bio/index|Bio-AI]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
 - [[papers/reproducibility/checklist|Reproducibility checklist]]
