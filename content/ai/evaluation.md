@@ -71,6 +71,28 @@ $$
 - [[concepts/learning/linear-probing|Linear probing]]
 - [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 
+## Claim to Evidence Map
+
+| Claim | Evidence Needed | Common Failure |
+| --- | --- | --- |
+| The model fits the training task | train loss and diagnostics | optimization success is mistaken for generalization |
+| The model generalizes IID | held-out validation/test from the same distribution | test set touched during model selection |
+| The model is robust OOD | explicit shifted evaluation set | random split does not test the claimed shift |
+| The model is calibrated | probability quality metric and reliability curve | accurate labels are treated as calibrated probabilities |
+| The model is better than baseline | paired comparison against a relevant baseline | comparison uses different examples or selection rules |
+| The method explains a design choice | ablation under fixed protocol | ablation changes multiple variables at once |
+
+## Metric Families
+
+| Output Type | Primary Metrics | Diagnostics |
+| --- | --- | --- |
+| Class label | accuracy, F1, AUROC, PR-AUC | confusion matrix, threshold sweep, calibration |
+| Probability | NLL, Brier score, ECE | reliability diagram, selective prediction |
+| Scalar regression | RMSE, MAE, $R^2$ | residual plot, rank correlation, interval coverage |
+| Ranking | NDCG, MAP, enrichment, top-k success | per-query error, early enrichment, tie policy |
+| Generated sample | validity, diversity, novelty, utility | constraint satisfaction, duplicate rate, failure taxonomy |
+| Coordinates / structure | RMSD, lDDT-style quality, clash/geometry checks | symmetry correction, atom mapping, interaction quality |
+
 ## 분야별 평가 연결
 
 - Retrieval/QA: [[concepts/tasks/retrieval|Retrieval]], [[concepts/tasks/question-answering|Question answering]]
@@ -100,6 +122,18 @@ $$
 - confidence, probability quality, calibration이 필요한 application인가?
 - uncertainty, abstention, robustness, interpretability 중 어떤 진단이 필요한가?
 - 실패를 data, model, optimization, evaluation 중 어디 문제로 분해할 수 있는가?
+
+## Evidence Record
+
+Good evaluation notes should preserve enough information to reconstruct the claim:
+
+$$
+(\text{task},\ \text{split},\ \text{selection rule},\ \text{metric},\ \text{baseline},\ \text{uncertainty})
+\rightarrow
+\text{claim}
+$$
+
+If any part is missing, the score should be treated as an incomplete observation rather than a stable conclusion.
 
 ## Related
 

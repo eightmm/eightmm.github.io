@@ -26,6 +26,18 @@ $$
 - [[concepts/architectures/architecture-selection|Architecture selection]]: modality, task, data, compute를 기준으로 모델 family를 고르는 법
 - [[concepts/architectures/computational-complexity|Computational complexity]]: sequence length, graph size, image resolution이 커질 때 비용이 어떻게 늘어나는가
 
+## Input Structure Map
+
+| Input Structure | Useful Bias | Typical Architecture | Watch |
+| --- | --- | --- | --- |
+| Fixed feature vector | feature mixing | MLP, linear model, tree model | feature scale, missing values, leakage |
+| Grid / image / voxel | local translation sharing | CNN, U-Net, ViT | resolution, receptive field, augmentation |
+| Sequence | order and long-range context | RNN/LSTM/GRU, Transformer, SSM/Mamba | length scaling, positional encoding, truncation |
+| Set | permutation invariance | Deep Sets, Set Transformer | pooling/readout and element identity |
+| Graph | neighborhood message passing | GNN, Graph Transformer | graph construction and over-smoothing |
+| 3D coordinates | invariance/equivariance | equivariant GNN, tensor-field model | coordinate frame, units, chirality, leakage |
+| Multimodal input | cross-modal alignment | encoder-decoder, cross-attention, Perceiver | missing modality, modality leakage, fusion timing |
+
 ## 기본 구성요소
 
 딥러닝 아키텍처를 읽을 때 먼저 봐야 하는 building block입니다.
@@ -122,6 +134,16 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 모든 parameter를 항상 쓰지 않고 routing이나 sparsity를 활용합니다.
 
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
+
+## Architecture Claim Checklist
+
+| Claim | Check |
+| --- | --- |
+| Better inductive bias | Does the architecture match the input symmetry or locality? |
+| Better scaling | What is the compute/memory complexity in sequence length, nodes, or pixels? |
+| Better representation | Is the readout or pooling rule aligned with the task output? |
+| Better generation | Does the architecture support the sampling path and conditioning interface? |
+| Better structure modeling | Are invariant and equivariant quantities handled separately? |
 
 ## 읽을 때 볼 질문
 

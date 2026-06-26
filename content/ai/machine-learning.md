@@ -30,6 +30,27 @@ $$
 - [[concepts/machine-learning/density-estimation|Density estimation]]: data distribution 자체를 모델링합니다.
 - [[concepts/machine-learning/representation-learning|Representation learning]]: downstream task에 쓸 embedding을 학습합니다.
 
+## Problem to Loss Map
+
+| Problem | Output | Common Loss | Evaluation |
+| --- | --- | --- | --- |
+| Classification | class probability $p_\theta(y\mid x)$ | cross-entropy / NLL | accuracy, F1, AUROC, PR-AUC, calibration |
+| Regression | scalar or vector $\hat{y}$ | MSE, MAE, Gaussian NLL | RMSE, MAE, $R^2$, rank correlation |
+| Ranking | ordered candidate list | pairwise/listwise ranking loss | NDCG, MAP, enrichment, top-k success |
+| Density estimation | probability model $p_\theta(x)$ | negative log-likelihood | held-out NLL, sampling quality |
+| Representation learning | embedding $z=f_\theta(x)$ | contrastive, masked, predictive, reconstruction loss | linear probe, retrieval, transfer task |
+| Clustering | cluster assignment or latent grouping | reconstruction, mixture likelihood, contrastive proxy | purity, ARI/NMI, downstream utility |
+
+For probabilistic prediction, the model should expose uncertainty before a hard decision:
+
+$$
+p_\theta(y\mid x)
+\rightarrow
+\hat{y}=\arg\max_y p_\theta(y\mid x)
+$$
+
+The decision rule $\hat{y}$ is not the same object as the probability distribution $p_\theta(y\mid x)$.
+
 ## 모델 계열
 
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
@@ -77,6 +98,31 @@ $$
 - [[concepts/evaluation/train-validation-test-split|Validation split]]: model selection을 어떤 split에서 할 것인가
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]: 질문, 가설, 설계, run, artifact, 분석, claim을 어떻게 연결할 것인가
 - [[concepts/systems/run-artifact|Run artifact]]: config, logs, metrics, predictions, checkpoint, environment를 어떤 수준으로 남길 것인가
+
+## Training State
+
+Training is not only a loss value. A reproducible training note should identify:
+
+| State | Meaning |
+| --- | --- |
+| Parameters $\theta_t$ | model weights at step $t$ |
+| Optimizer state $m_t$ | momentum, variance estimate, or other update memory |
+| Batch $B_t$ | examples used for one gradient estimate |
+| Gradient $g_t$ | estimated direction from the current loss |
+| Learning rate $\eta_t$ | update scale at step $t$ |
+| Checkpoint | parameters, optimizer state, scheduler state, config, and step count |
+
+The generic update is:
+
+$$
+\theta_{t+1}
+=
+\theta_t
+-
+\eta_t\,u(g_t, m_t)
+$$
+
+where $u(g_t,m_t)$ is the optimizer-specific update direction.
 
 일반화 관점에서는 train loss와 test loss를 구분해야 합니다.
 
