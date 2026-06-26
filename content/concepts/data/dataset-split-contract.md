@@ -37,6 +37,34 @@ This prevents examples from the same split unit from crossing train, validation,
 - Version: stable identifiers for raw data, processed data, and split files.
 - Leakage audit: checks performed and known residual risks.
 
+## Multi-Axis Splits
+
+Some tasks need more than one grouping function:
+
+$$
+g(x)
+=
+\left(
+g_{\mathrm{ligand}}(x),
+g_{\mathrm{protein}}(x),
+g_{\mathrm{assay}}(x),
+g_{\mathrm{time}}(x)
+\right)
+$$
+
+A split can hold out one axis or several axes. The claim must match the axis:
+
+| Held-out axis | Claim tested |
+|---|---|
+| row only | interpolation over the collected table |
+| scaffold | new ligand chemotypes |
+| protein family | new target families |
+| protein-ligand pair | new interaction pairs |
+| assay/source | source or protocol transfer |
+| time | future-data performance |
+
+If the paper says "generalization" without naming the held-out axis, the split contract is incomplete.
+
 ## Split Assignment Table
 
 A public split contract can be summarized as:
@@ -52,6 +80,17 @@ A public split contract can be summarized as:
 
 Use `to specify` rather than inventing missing details.
 
+## Audit Table
+
+| Check | Status | Evidence |
+|---|---|---|
+| exact duplicates removed before split | `to specify` | hash/count |
+| near-duplicates checked | `to specify` | similarity threshold |
+| group overlap checked | `to specify` | group counts per split |
+| preprocessing fit only on train | `to specify` | preprocessing contract |
+| validation used for selection only | `to specify` | selection rule |
+| test untouched until final report | `to specify` | test-use log |
+
 ## Molecular Modeling Examples
 
 - Molecule property prediction: hold out molecular scaffolds or clusters.
@@ -65,6 +104,8 @@ Use `to specify` rather than inventing missing details.
 - Is validation the same type of shift as test, or only a tuning split?
 - Are split files versioned and reconstructable?
 - Are preprocessing statistics fit only on training data?
+- Are multiple leakage axes needed for this task?
+- Is the denominator after preprocessing/filtering the same as the intended benchmark denominator?
 - Are public notes free of private dataset names, internal paths, unpublished metrics, and collaborator-specific details?
 
 ## Related
@@ -77,5 +118,6 @@ Use `to specify` rather than inventing missing details.
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

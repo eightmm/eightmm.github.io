@@ -38,6 +38,17 @@ The subscript means exact row overlap is not enough; near-duplicates, shared gro
 - Target-derived features, post-outcome metadata, or future information.
 - Test-set iteration during model selection.
 
+## Domain-Specific Channels
+
+| Domain | Leakage unit | Example |
+|---|---|---|
+| molecule property | duplicate, salt form, tautomer, scaffold, close analog | same chemotype appears in train and test |
+| protein modeling | sequence identity cluster, domain, template, MSA database | homolog or template crosses the boundary |
+| protein-ligand task | protein, ligand scaffold, pair, assay source | target novelty confused with ligand interpolation |
+| structure prediction | template, predicted structure source, database date | benchmark structure appears in retrieval context |
+| LLM or agent task | prompt family, answer key, tool trace, benchmark discussion | final task appears in pretraining or prompt examples |
+| clinical or assay data | subject, lab, batch, time, source | source-specific artifacts predict labels |
+
 ## Leakage Test
 
 For a split function $s$ and information unit $u$, a basic grouped-leakage condition is:
@@ -50,6 +61,31 @@ $$
 
 This condition must be checked for every unit that could transmit target-relevant information.
 
+Equivalently, no leakage-relevant group should appear in more than one split:
+
+$$
+\left|
+\{s(x): u(x)=a\}
+\right|
+=
+1
+\quad
+\forall a
+$$
+
+## Audit Evidence
+
+| Audit | Evidence to record |
+|---|---|
+| exact duplicate check | duplicate count before and after split |
+| near-duplicate check | similarity threshold and cross-split hits |
+| grouped split audit | number of groups per split and cross-split violations |
+| preprocessing audit | which statistics were fit on train only |
+| label/source audit | source distribution and label distribution per split |
+| test-iteration audit | number of final-test inspections or submissions |
+
+An audit should report both the rule and the residual risk. "No leakage" is too broad unless the leakage unit is named.
+
 ## Related
 
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
@@ -59,5 +95,6 @@ This condition must be checked for every unit that could transmit target-relevan
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/index|Evaluation]]

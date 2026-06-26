@@ -38,6 +38,16 @@ $$
 
 $\cap_{\mathrm{info}}$ means information overlap, not only identical rows. For molecules this can include scaffold or near-neighbor overlap; for proteins, homolog or template overlap; for LLM tasks, prompt-answer overlap; for retrieval systems, corpus-answer overlap.
 
+The final-test decision path must also exclude test feedback:
+
+$$
+\hat{\theta},\hat{\lambda},\hat{\tau}
+\not\leftarrow
+\mathcal{D}_{\mathrm{test}}
+$$
+
+where $\hat{\theta}$ is selected model state, $\hat{\lambda}$ is hyperparameter choice, and $\hat{\tau}$ is a threshold or decoding setting. These should come from train/validation only.
+
 ## Audit Checklist
 
 - Deduplicate exact examples before splitting.
@@ -48,9 +58,31 @@ $\cap_{\mathrm{info}}$ means information overlap, not only identical rows. For m
 - Record how many times the final benchmark was inspected or submitted.
 - For public benchmarks, state whether benchmark-aware prompt engineering or training is allowed.
 
+## Contamination Report
+
+| Channel | Report |
+|---|---|
+| training corpus | whether benchmark examples, labels, structures, prompts, or answers were excluded |
+| pretraining date | database or corpus cutoff when relevant |
+| retrieval corpus | whether final examples or answer keys are indexed |
+| template/source database | database version and cutoff |
+| validation/test separation | which split selected checkpoints, thresholds, prompts, or filters |
+| leaderboard interaction | number of submissions or public feedback rounds |
+
+For public LLM and Bio-AI benchmarks, a date or database version is often part of the test boundary.
+
 ## Interpretation
 
 Contamination does not always make a result useless, but it narrows the claim. A contaminated score may still debug an implementation, compare within a known benchmark setting, or measure memorization. It should not be used as evidence for new-data generalization.
+
+Use a narrower status:
+
+| Situation | Safer wording |
+|---|---|
+| possible pretraining overlap | benchmark score may include memorization |
+| repeated leaderboard tuning | score is leaderboard-optimized, not untouched-test evidence |
+| template overlap | structure result tests template use, not de novo generalization |
+| scaffold or homolog overlap | result supports interpolation, not remote generalization |
 
 ## Related
 

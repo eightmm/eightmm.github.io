@@ -25,6 +25,7 @@ where $\mathcal{D}$ is the dataset, $\mathcal{S}$ is the split, $\mathcal{T}$ is
 | Dataset | name, version, source, filtering, preprocessing | defines the population being measured |
 | Example unit | one molecule, protein, complex, image, prompt, trajectory, or generated sample | prevents mismatched denominators |
 | Split unit | random row, scaffold, protein family, time, source, complex pair, or task instance | defines the generalization boundary |
+| Split axis | single-axis or multi-axis holdout, with grouped-unit counts | prevents broad generalization claims from a weak split |
 | Task | input, output, validity rule, allowed context | separates classification, ranking, generation, and coordinate claims |
 | Metric | primary metric, diagnostics, aggregation, invalid-output policy | states what success means |
 | Selection rule | validation metric, threshold choice, checkpoint choice, prompt choice, filtering rule | separates model selection from final evidence |
@@ -40,6 +41,7 @@ where $\mathcal{D}$ is the dataset, $\mathcal{S}$ is the split, $\mathcal{T}$ is
 | Higher IID test score | better on this dataset distribution under this protocol |
 | Higher scaffold split score | better chemical-series generalization if scaffold grouping is valid |
 | Higher protein-family split score | better target-family generalization if homolog leakage is controlled |
+| Higher multi-axis split score | better joint-axis transfer only for the named held-out axes |
 | Higher pose success | better pose placement under the same receptor, ligand, and symmetry policy |
 | Higher docking enrichment | better early ranking under this active/decoy construction |
 | Higher generation validity | fewer invalid samples under this sampler and filtering policy |
@@ -80,6 +82,7 @@ The claim is weak when $\theta^\*$, $\phi^\*$, thresholds, prompts, filtering, o
 
 - The dataset version or filtering policy is missing.
 - The split does not match the claimed deployment shift.
+- The held-out axis is unnamed or weaker than the claim.
 - The baseline uses different data, examples, or allowed information.
 - The proposed method uses a larger compute, data, model-selection, or inference budget without stating it.
 - The primary metric was chosen after seeing many alternatives.
@@ -89,11 +92,23 @@ The claim is weak when $\theta^\*$, $\phi^\*$, thresholds, prompts, filtering, o
 - The table reports a best seed or best checkpoint without the selection rule.
 - The paper's evidence supports a benchmark-specific claim, but the draft says the method is generally superior.
 
+## Audit Evidence
+
+| Claim Risk | Evidence Needed |
+|---|---|
+| leakage | duplicate, near-duplicate, scaffold, homolog, source, and preprocessing audit |
+| contamination | pretraining/retrieval/template/prompt corpus cutoff or exclusion policy |
+| weak split | group counts and label distribution per split |
+| filtered denominator | attempted, failed, repaired, filtered, and scored counts |
+| unstable improvement | paired comparison, confidence interval, or seed variance |
+
 ## Related
 
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/data/dataset-card|Dataset card]]
+- [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
 - [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
 - [[concepts/evaluation/seed-variance|Seed variance]]
 - [[papers/analysis/result-table-reading|Result table reading]]

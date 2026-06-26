@@ -29,6 +29,7 @@ where $\mathcal{D}$ is data, $\mathcal{T}$ is the task, $\mathcal{S}$ is the spl
 | Task | What input-output mapping is evaluated? | [Tasks](/concepts/tasks), [Task specification](/concepts/tasks/task-specification) |
 | Example unit | What counts as one prediction or one generated sample? | [Example unit](/concepts/data/example-unit) |
 | Split unit | What unit is prevented from crossing train, validation, and test? | [Split unit](/concepts/data/split-unit), [Dataset split contract](/concepts/data/dataset-split-contract) |
+| Split axis | Is the held-out axis row, scaffold, protein family, pair, source, time, or multiple axes? | [Dataset split contract](/concepts/data/dataset-split-contract) |
 | Metric | What number decides success, and what diagnostics are secondary? | [Metric selection](/concepts/evaluation/metric-selection) |
 | Claim contract | What narrow claim does the score actually support? | [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) |
 | Baseline | What simple or established method makes the score meaningful? | [Baseline](/concepts/evaluation/baseline) |
@@ -45,6 +46,7 @@ where $\mathcal{D}$ is data, $\mathcal{T}$ is the task, $\mathcal{S}$ is the spl
 | Better protein modeling | sequence/family split, structure source, residue mapping, and template risks are stated |
 | Better generative model | validity, diversity, novelty, utility, filtering, and sampling budget are stated |
 | Better agent benchmark | task suite, tool access, verifier, human boundary, and failure accounting are stated |
+| Better under constraints | hard/soft constraint, repair/filtering, invalid denominator, and deployment-available constraints are stated |
 
 ## Evidence Rule
 
@@ -67,6 +69,7 @@ If $\theta^\*$, preprocessing, threshold, prompt, or filtering choices are selec
 - Are invalid predictions counted in the denominator?
 - Are repeated test submissions or leaderboard feedback part of the selection loop?
 - Could pretraining, retrieval, templates, or prompt examples contain test items?
+- Are split axes strong enough for the claimed deployment shift?
 - Is the baseline too weak to expose a dataset shortcut?
 - Does one aggregate hide per-target, per-scaffold, per-source, or per-domain failures?
 - Are uncertainty intervals or paired comparisons needed to interpret the reported gain?
@@ -77,6 +80,7 @@ If $\theta^\*$, preprocessing, threshold, prompt, or filtering choices are selec
 - Protein benchmarks: sequence identity, family split, structure source, residue indexing, and homolog leakage.
 - Protein-ligand benchmarks: ligand scaffold, protein family, complex pair, pocket definition, and template leakage.
 - Assay benchmarks: endpoint, unit, threshold, censoring, source, and assay harmonization.
+- Multi-axis benchmarks: state whether ligand, protein, pair, assay/source, and time axes are held out independently or jointly.
 
 ## Related
 
@@ -84,6 +88,7 @@ If $\theta^\*$, preprocessing, threshold, prompt, or filtering choices are selec
 - [[concepts/data/dataset-card|Dataset card]]
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
 - [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
 - [[ai/paper-intake|AI paper intake]]
