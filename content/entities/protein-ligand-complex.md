@@ -93,4 +93,4 @@ For stronger claims, hold out both protein families and ligand scaffolds. Holdin
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]

@@ -96,4 +96,4 @@ The claim is weak when $\theta^\*$, $\phi^\*$, thresholds, prompts, filtering, o
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/paired-comparison|Paired comparison]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
-- [[bio/data-evaluation|Molecular modeling data and evaluation]]
+- [[molecular-modeling/data-evaluation|Molecular modeling data and evaluation]]

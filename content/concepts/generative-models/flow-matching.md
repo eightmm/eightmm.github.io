@@ -86,5 +86,5 @@ but other paths can be chosen to fit geometry, noise schedules, or conditional c
 - [[concepts/generative-models/rectified-flow|Rectified flow]]
 - [[concepts/generative-models/score-matching|Score matching]]
 - [[concepts/generative-models/conditional-generation|Conditional generation]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/scoring-function|Scoring function]]

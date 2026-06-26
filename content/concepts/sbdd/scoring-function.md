@@ -21,7 +21,7 @@ where $P$ is a protein or pocket, $L$ is a ligand, and $X$ is a candidate pose o
 ## Uses
 
 - Score candidate poses produced by [[concepts/sbdd/pose-generation|pose generation]].
-- Rank candidate poses from [[research/structure-based-ai/protein-ligand-docking|protein-ligand docking]].
+- Rank candidate poses from [[molecular-modeling/structure-based/protein-ligand-docking|protein-ligand docking]].
 - Estimate or proxy [[concepts/sbdd/binding-affinity|binding affinity]].
 - Filter physically implausible structures.
 - Compare model outputs under a shared objective.
@@ -53,7 +53,7 @@ The first evaluates a given pose $X$; the second samples or searches for candida
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
-- [[research/structure-based-ai/index|Structure-based modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[papers/sbdd/posebusters|PoseBusters]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]

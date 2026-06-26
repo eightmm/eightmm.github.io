@@ -160,6 +160,6 @@ If a paper does not provide one of these fields, mark it as `to verify` instead 
 ## Related
 
 - [[ai/learning-methods|Learning methods]]
-- [[bio/index|Bio]]
+- [[molecular-modeling/index|Molecular Modeling]]
 - [[papers/index|Papers]]
 - [[concepts/modalities/modality-task-map|Modality-task map]]

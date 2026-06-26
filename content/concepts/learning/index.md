@@ -59,5 +59,5 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[agents/index|Agents]]
-- [[research/protein-modeling/index|Protein modeling]]
-- [[research/structure-based-ai/index|Structure-based modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]

@@ -1,7 +1,9 @@
 ---
 title: Protein Modeling
+aliases:
+  - research/protein-modeling
 tags:
-  - research
+  - bio
   - protein-modeling
 ---
 
@@ -32,7 +34,7 @@ where $s$ is a protein sequence, $c$ is optional context, and $\hat{X}$ is a pre
 
 ## Adjacent Areas
 
-- [[research/structure-based-ai/index|Structure-based modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[ai/generative-models|Generative models]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

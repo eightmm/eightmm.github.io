@@ -53,5 +53,5 @@ where $g$ is a learned projection and $\Delta_t$ controls the input-dependent di
 
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[concepts/architectures/transformer|Transformer]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

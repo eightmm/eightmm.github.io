@@ -1,5 +1,7 @@
 ---
 title: Computational Biology
+aliases:
+  - bio/computational-biology
 tags:
   - bio
   - computational-biology
@@ -27,14 +29,14 @@ If the object, measurement, representation, or claim is vague, the model result 
 
 | Area | Use For |
 | --- | --- |
-| [Molecular Modeling Scope](/bio/modeling-scope) | naming, route choice, and boundary between domain, AI method, Math, and Agents |
-| [Entities](/bio/entities) | protein, molecule, ligand, pocket, complex, assay, sequence, structure |
-| [Molecules](/bio/molecules) | small-molecule identity, standardization, fingerprints, graphs, conformers |
-| [Proteins](/bio/proteins) | sequence, structure, domains, binding sites, representations |
-| [Structure-based modeling](/bio/structure-based-ai) | protein-ligand geometry, pose, interaction, scoring |
-| [Docking](/bio/docking) | receptor/ligand preparation, pose generation, pose quality, ranking |
-| [Data and evaluation](/bio/data-evaluation) | split units, label semantics, leakage, benchmark contracts |
-| [Genome](/bio/genome) | sequence, region, k-mer, variant-effect modeling |
+| [Molecular Modeling Scope](/molecular-modeling/modeling-scope) | naming, route choice, and boundary between domain, AI method, Math, and Agents |
+| [Entities](/molecular-modeling/entities) | protein, molecule, ligand, pocket, complex, assay, sequence, structure |
+| [Molecules](/molecular-modeling/molecules) | small-molecule identity, standardization, fingerprints, graphs, conformers |
+| [Proteins](/molecular-modeling/proteins) | sequence, structure, domains, binding sites, representations |
+| [Structure-based modeling](/molecular-modeling/structure-based) | protein-ligand geometry, pose, interaction, scoring |
+| [Docking](/molecular-modeling/docking) | receptor/ligand preparation, pose generation, pose quality, ranking |
+| [Data and evaluation](/molecular-modeling/data-evaluation) | split units, label semantics, leakage, benchmark contracts |
+| [Genome](/molecular-modeling/genome) | sequence, region, k-mer, variant-effect modeling |
 
 ## Core Questions
 
@@ -56,7 +58,7 @@ If the object, measurement, representation, or claim is vague, the model result 
 
 ## Claim Template
 
-A public Bio claim should be reducible to:
+A public Molecular Modeling claim should be reducible to:
 
 $$
 (\text{object},\ \text{context},\ \text{representation},\ \text{split},\ \text{metric})
@@ -78,8 +80,8 @@ For example, a docking note should not only say that a model performs well. It s
 
 ## Related
 
-- [[bio/index|Bio]]
-- [[bio/modeling-scope|Molecular Modeling Scope]]
+- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/modeling-scope|Molecular Modeling Scope]]
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[entities/entity-relation-map|Entity relation map]]

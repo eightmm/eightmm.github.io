@@ -6,16 +6,28 @@ tags:
 
 # Research
 
-실제 연구 질문으로 이어질 수 있는 주제만 모아두는 입구입니다. 방법론 자체는 [[ai/index|AI]]와 [[concepts/index|Concepts]]에 두고, 여기에는 구조 기반 AI와 단백질 모델링처럼 직접 연구 축으로 삼을 도메인만 남깁니다.
+실제 연구 질문으로 이어질 수 있는 주제만 모아두는 입구입니다. 방법론 자체는 [[ai/index|AI]], [[molecular-modeling/index|Molecular Modeling]], [[math/index|Math]], [[concepts/index|Concepts]]에 두고, 이곳은 구체적인 연구 질문이 생겼을 때 synthesis note로 채웁니다.
 
 미공개 실험, 내부 과제 정보, 협업 세부 내용은 공개하지 않고, 공개 가능한 질문과 방법론만 남깁니다.
 
-## 연구 도메인
+## 현재 위치
 
-| Domain | Focus |
+| Need | Route |
 | --- | --- |
-| [Structure-based modeling](/research/structure-based-ai) | protein-ligand interaction, docking, pose quality, scoring, virtual screening |
-| [Protein modeling](/research/protein-modeling) | protein representation, structure, sequence-structure relation, evaluation |
+| 구조기반 모델링 기본기 | [Structure-based modeling](/molecular-modeling/structure-based) |
+| 단백질 모델링 기본기 | [Protein modeling](/molecular-modeling/protein-modeling) |
+| 분자/리간드/컨포머 | [Molecules](/molecular-modeling/molecules) |
+| 논문 읽기 | [Papers](/papers), [Paper review workflow](/papers/workflows/paper-review-workflow) |
+| 공개 가능한 실험 기록 형식 | [Experiment ledger](/concepts/research-methodology/experiment-ledger), [Run record](/infra/reproducibility/run-record) |
+
+## Research Note 조건
+
+| Field | Requirement |
+| --- | --- |
+| Question | 공개 가능한 연구 질문이 명확해야 합니다. |
+| Scope | 어떤 object, task, data, metric을 다루는지 제한해야 합니다. |
+| Evidence | paper, public benchmark, 공개 artifact, 또는 공개 가능한 실험 설계로 뒷받침해야 합니다. |
+| Boundary | 내부 과제명, 협업 세부 정보, 미공개 결과, private dataset을 포함하지 않아야 합니다. |
 
 ## 연결되는 방법론
 
@@ -30,7 +42,7 @@ tags:
 
 ## 관련 입구
 
-- [[bio/index|Bio]]
+- [[molecular-modeling/index|Molecular Modeling]]
 - [[entities/index|Entities]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]

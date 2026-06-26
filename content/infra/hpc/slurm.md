@@ -45,6 +45,6 @@ scancel <job-id>
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[projects/index|Project index]]
 - [[infra/index|Infra]]

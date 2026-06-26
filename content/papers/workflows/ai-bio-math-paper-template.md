@@ -44,7 +44,7 @@ tags:
 | Route | Fill |
 | --- | --- |
 | AI intake | [AI paper intake](/ai/paper-intake) |
-| Molecular modeling intake | [Molecular modeling paper intake](/bio/paper-intake) or `not applicable` |
+| Molecular modeling intake | [Molecular modeling paper intake](/molecular-modeling/paper-intake) or `not applicable` |
 | Formula intake | [Formula intake](/math/formula-intake) |
 | Formula explanation | [Formula explanation ladder](/math/formula-explanation-ladder) |
 | Benchmark intake | [Benchmark intake](/concepts/data/benchmark-intake) |

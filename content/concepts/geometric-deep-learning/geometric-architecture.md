@@ -88,4 +88,4 @@ These are different architecture contracts.
 - [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
 - [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/sbdd/template-leakage|Template leakage]]
-- [[research/structure-based-ai/index|Structure-based modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]

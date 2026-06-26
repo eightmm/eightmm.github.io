@@ -51,4 +51,4 @@ MSA generation can leak information when homolog or template databases include e
 - [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]

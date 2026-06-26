@@ -6,7 +6,7 @@ tags:
 
 # Math
 
-수학은 AI, Bio, geometry, generative model, evaluation을 읽기 위한 공통 기반입니다.
+수학은 AI, Molecular Modeling, geometry, generative model, evaluation을 읽기 위한 공통 기반입니다.
 
 공식은 모델을 어렵게 보이게 하려는 장식이 아니라, 어떤 quantity를 예측하고 최적화하고 평가하는지 고정하는 도구입니다.
 
@@ -117,7 +117,7 @@ $$
 ## Related
 
 - [[ai/index|AI]]
-- [[bio/index|Molecular Modeling]]
+- [[molecular-modeling/index|Molecular Modeling]]
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]
 - [[math/formula-intake|Formula intake]]

@@ -50,6 +50,6 @@ The matrices may be constrained or parameterized so the sequence can be scanned 
 
 - [[concepts/architectures/mamba|Mamba]]
 - [[concepts/architectures/rnn|RNN]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[entities/protein|Protein]]

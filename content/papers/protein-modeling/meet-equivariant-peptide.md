@@ -20,7 +20,7 @@ An E(3)-equivariant backbone that achieves linear memory scaling with atom count
 
 ## Why It Matters
 
-This paper may be relevant to [[research/protein-modeling/index|Protein modeling]] and [[concepts/geometric-deep-learning/equivariant-gnn|equivariant GNNs]]. The linear memory scaling claim is significant — if reproducible, it enables systematic model/data scaling for structure-based peptide design.
+This paper may be relevant to [[molecular-modeling/protein-modeling|Protein modeling]] and [[concepts/geometric-deep-learning/equivariant-gnn|equivariant GNNs]]. The linear memory scaling claim is significant — if reproducible, it enables systematic model/data scaling for structure-based peptide design.
 
 ## Key Points
 

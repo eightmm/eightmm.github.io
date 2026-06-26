@@ -33,7 +33,7 @@ Here $X$ is a generated pose or complex and each $c_k$ is a plausibility check. 
 
 ## Why It Matters
 
-- Helps diagnose failures in [[research/structure-based-ai/protein-ligand-docking|protein-ligand docking]].
+- Helps diagnose failures in [[molecular-modeling/structure-based/protein-ligand-docking|protein-ligand docking]].
 - Separates geometric validity from [[concepts/sbdd/scoring-function|scoring function]] performance.
 - Provides a public reference point for evaluating generated poses.
 - Encourages evaluation that includes both native-like binding mode and pose plausibility.
@@ -58,13 +58,13 @@ The exact checklist depends on the benchmark configuration, but the important ca
 
 ## Connection to This Wiki
 
-For this site, PoseBusters is the first evaluation anchor for [[research/structure-based-ai/index|Structure-Based Modeling]]. It should be linked whenever a docking, pose generation, or protein-ligand structure model claims good structural performance.
+For this site, PoseBusters is the first evaluation anchor for [[molecular-modeling/structure-based/index|Structure-Based Modeling]]. It should be linked whenever a docking, pose generation, or protein-ligand structure model claims good structural performance.
 
 ## Related
 
 - [[papers/sbdd/index|Structure-based modeling papers]]
-- [[research/structure-based-ai/index|Structure-based modeling]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

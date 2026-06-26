@@ -105,4 +105,4 @@ The same training objective can behave very differently depending on whether $\m
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]

@@ -44,7 +44,7 @@ $$
 - Distributional prediction: mean and uncertainty, censored range, or calibrated probability.
 - Ranking score: prioritization value used for retrieval, screening, or triage.
 
-## Bio Notes
+## Molecular Modeling Notes
 
 Molecular property prediction is a special case where the entity is a [[entities/molecule|Molecule]] and the representation may be SMILES, graph, fingerprint, conformer, or embedding.
 

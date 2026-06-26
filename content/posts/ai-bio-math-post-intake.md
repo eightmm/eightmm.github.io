@@ -27,7 +27,7 @@ $$
 | Field | Question | Route |
 | --- | --- | --- |
 | Reader question | 이 글이 답하는 한 문장 질문은 무엇인가? | [Blog writing guide](/posts/blog-writing-guide) |
-| Main axis | AI 방법, molecular modeling 대상, Math 수식, paper claim 중 무엇이 중심인가? | [AI](/ai), [Molecular Modeling](/bio), [Math](/math) |
+| Main axis | AI 방법, molecular modeling 대상, Math 수식, paper claim 중 무엇이 중심인가? | [AI](/ai), [Molecular Modeling](/molecular-modeling), [Math](/math) |
 | Required wiki notes | 글 안에서 반복하지 않고 링크할 개념은 무엇인가? | [Concepts](/concepts) |
 | Formula need | 독자 이해에 필요한 최소 수식은 무엇인가? | [Formula intake](/math/formula-intake) |
 | Benchmark boundary | 성능 claim을 어디까지 믿을 수 있는가? | [Benchmark intake](/concepts/data/benchmark-intake) |
@@ -116,7 +116,7 @@ claim, split, metric, leakage, baseline, uncertainty를 점검.
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[ai/paper-intake|AI paper intake]]
-- [[bio/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]

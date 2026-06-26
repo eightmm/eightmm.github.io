@@ -122,4 +122,4 @@ Record:
 - [[concepts/machine-learning/model-selection|Model selection]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/learning/representation-evaluation|Representation evaluation]]
-- [[bio/data-evaluation|Molecular modeling data and evaluation]]
+- [[molecular-modeling/data-evaluation|Molecular modeling data and evaluation]]

@@ -38,7 +38,7 @@ $$
 | Objective-metric alignment | Training loss, selection metric, reported metric, and utility claim are connected | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Benchmark claim | Dataset, split, task, metric, baseline, uncertainty, and allowed information support the stated claim | [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) |
 | Claim-evidence boundary | The supported scope is narrower than the headline claim when evidence is limited | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
-| Molecular modeling intake | Molecule, ligand, protein, pocket, conformer, complex, assay, split, and leakage fields are handled when relevant | [Molecular modeling paper intake](/bio/paper-intake) |
+| Molecular modeling intake | Molecule, ligand, protein, pocket, conformer, complex, assay, split, and leakage fields are handled when relevant | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
 | Formula intake | Symbols, distributions, objectives, estimators, and metrics are rewritten in local notation | [Formula intake](/math/formula-intake) |
 | Coverage matrix | Missing object, method, math, data, evaluation, system, or agent notes are identified | [Coverage matrix](/concepts/coverage-matrix) |
 | Post route | Korean reader-facing synthesis has one question, one main axis, minimum formulas, and next links | [Synthesis post template](/posts/synthesis-post-template) |
@@ -102,7 +102,7 @@ public_boundary: to verify
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
 - [[ai/paper-intake|AI paper intake]]
-- [[bio/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]

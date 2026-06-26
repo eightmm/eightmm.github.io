@@ -22,7 +22,7 @@ $$
 
 where $e$ is an entity, $c$ is context such as target, assay, pocket, source, or time, $\phi$ is a representation function, and $\hat{y}$ is the model output.
 
-For Bio, the same entity can play different roles:
+For Molecular Modeling, the same entity can play different roles:
 
 | Entity | Common role | Typical risk |
 | --- | --- | --- |
@@ -68,9 +68,9 @@ For Bio, the same entity can play different roles:
 
 ## Related
 
-- [[bio/index|Bio]]
-- [[research/structure-based-ai/index|Structure-based modeling]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/modalities/modality-task-map|Modality-task map]]
 - [[concepts/data/index|Data]]

@@ -45,4 +45,4 @@ Affinity values should be interpreted with the [[entities/target-assay-label|Tar
 - [[entities/bioactivity-label|Bioactivity label]]
 - [[entities/assay|Assay]]
 - [[entities/target-assay-label|Target-assay-label contract]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]

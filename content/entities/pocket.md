@@ -84,5 +84,5 @@ If the extraction function uses the test ligand pose, bound ligand center, or be
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
 - [[concepts/protein-modeling/pocket-representation|Pocket representation]]
 - [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]

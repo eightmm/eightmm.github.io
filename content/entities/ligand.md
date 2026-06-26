@@ -22,7 +22,7 @@ where $m$ is molecular identity, $X_L$ is ligand coordinates, $q$ represents che
 
 - Graph view for atoms, bonds, and molecular topology.
 - Conformer view for 3D geometry and pose generation.
-- Interaction view for [[research/structure-based-ai/protein-ligand-docking|protein-ligand docking]].
+- Interaction view for [[molecular-modeling/structure-based/protein-ligand-docking|protein-ligand docking]].
 - Dataset view for scaffold splits, [[entities/bioactivity-label|bioactivity labels]], and assay provenance.
 
 ## Identity vs State

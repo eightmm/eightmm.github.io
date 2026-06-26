@@ -83,5 +83,5 @@ so pairwise distances are invariant to rigid motions.
 ## Related
 
 - [[math/index|Math]]
-- [[bio/geometry|Bio geometry]]
+- [[molecular-modeling/geometry|Molecular Modeling geometry]]
 - [[concepts/architectures/gnn|Graph neural networks]]

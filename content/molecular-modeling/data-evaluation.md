@@ -1,6 +1,7 @@
 ---
 title: Data and Evaluation
 aliases:
+  - bio/data-evaluation
   - bio-ai/data-evaluation
 tags:
   - bio
@@ -92,6 +93,6 @@ For structure-based benchmarks, also state whether the known ligand pose, close 
 
 ## Related
 
-- [[bio/index|Molecular Modeling]]
-- [[bio/entities|Entities]]
+- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/entities|Entities]]
 - [[ai/evaluation|Evaluation]]

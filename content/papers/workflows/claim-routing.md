@@ -26,7 +26,7 @@ where $p$ is a paper or post candidate and $a$ is an axis such as architecture, 
 | Is the main contribution a model structure? | architecture paper or concept update | [Architecture papers](/papers/architectures) |
 | Is the main contribution a supervision or training signal? | learning-method paper or concept update | [Learning method papers](/papers/learning-methods) |
 | Is the main contribution sampling or density modeling? | generative-model paper or concept update | [Generative model papers](/papers/generative-models) |
-| Is the main contribution about molecules, proteins, docking, conformers, or complexes? | molecular modeling paper intake | [Molecular modeling paper intake](/bio/paper-intake) |
+| Is the main contribution about molecules, proteins, docking, conformers, or complexes? | molecular modeling paper intake | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
 | Is the main contribution an equation, estimator, metric, or derivation? | formula intake or math concept update | [Formula intake](/math/formula-intake) |
 | Is the main contribution a benchmark or evaluation protocol? | benchmark card or evaluation concept update | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Is the main contribution training, inference, reproducibility, or tooling? | systems or infra note | [Systems](/concepts/systems) |
@@ -95,7 +95,7 @@ public artifact status: to verify
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[ai/paper-intake|AI paper intake]]
-- [[bio/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]

@@ -32,7 +32,7 @@ Protein modeling paper notes cover structure prediction, sequence models, protei
 
 ## Related
 
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]

@@ -24,7 +24,7 @@ $$
 x \sim p_\theta(x \mid c)
 $$
 
-Bio에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, or partial structure일 수 있습니다.
+Molecular modeling에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, or partial structure일 수 있습니다.
 
 ## 핵심 노트
 
@@ -89,7 +89,7 @@ $$
 
 When reading a paper, first identify the learned quantity before comparing architectures.
 
-## Bio 연결
+## Molecular Modeling 연결
 
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]

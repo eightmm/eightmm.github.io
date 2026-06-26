@@ -95,7 +95,7 @@ Use [[math/formula-explanation-ladder|Formula explanation ladder]] before decidi
 - [[math/index|Math]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[ai/paper-intake|AI paper intake]]
-- [[bio/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]

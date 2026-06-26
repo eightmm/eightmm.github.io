@@ -8,7 +8,7 @@ tags:
 
 # Entity Relation Map
 
-Entity notes define what object a model is operating on. In Bio, the same model family can mean different things depending on whether the unit is a molecule, protein, pocket, complex, assay row, or dataset.
+Entity notes define what object a model is operating on. In Molecular Modeling, the same model family can mean different things depending on whether the unit is a molecule, protein, pocket, complex, assay row, or dataset.
 
 The central relation for structure-based modeling is:
 
@@ -71,7 +71,7 @@ The split unit should match the generalization claim:
 
 ## Related
 
-- [[bio/index|Bio]]
+- [[molecular-modeling/index|Molecular Modeling]]
 - [[entities/target|Target]]
 - [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]

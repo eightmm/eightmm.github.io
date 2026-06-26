@@ -46,7 +46,7 @@ tags:
 | 축 | 이 글에서 볼 것 | 더 볼 곳 |
 | --- | --- | --- |
 | AI | architecture, learning method, objective, evaluation 중 무엇이 중심인가 | [AI](/ai) |
-| Molecular modeling | molecule, protein, ligand, pocket, conformer, complex 중 무엇이 중심인가 | [Molecular Modeling](/bio) |
+| Molecular modeling | molecule, protein, ligand, pocket, conformer, complex 중 무엇이 중심인가 | [Molecular Modeling](/molecular-modeling) |
 | Representation | raw object가 model input으로 어떻게 바뀌는가 | [Representation contract](/concepts/modalities/representation-contract) |
 | Coordinates | 좌표계, symmetry, pose/RMSD claim이 필요한가 | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Math | 어떤 수식, distribution, metric, optimization target이 필요한가 | [Math](/math) |

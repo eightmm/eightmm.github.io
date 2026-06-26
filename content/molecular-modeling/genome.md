@@ -1,6 +1,7 @@
 ---
 title: Genome
 aliases:
+  - bio/genome
   - bio-ai/genome
 tags:
   - bio
@@ -72,6 +73,6 @@ This section does not try to cover full transcriptomics, proteomics, single-cell
 
 ## Related
 
-- [[bio/index|Bio]]
+- [[molecular-modeling/index|Molecular Modeling]]
 - [[ai/learning-methods|Learning methods]]
 - [[concepts/modalities/sequence|Sequence]]

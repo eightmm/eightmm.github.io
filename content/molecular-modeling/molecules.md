@@ -1,6 +1,7 @@
 ---
 title: Molecules
 aliases:
+  - bio/molecules
   - bio-ai/molecules
 tags:
   - bio
@@ -89,6 +90,6 @@ where $L_{\mathrm{raw}}$ is the input molecule record, $L_{\mathrm{std}}$ is the
 
 ## Related
 
-- [[bio/index|Bio]]
-- [[bio/structure-based-ai|Structure-based modeling]]
+- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

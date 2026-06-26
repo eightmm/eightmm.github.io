@@ -71,7 +71,7 @@ If $\theta^\*$, preprocessing, threshold, prompt, or filtering choices are selec
 - Does one aggregate hide per-target, per-scaffold, per-source, or per-domain failures?
 - Are uncertainty intervals or paired comparisons needed to interpret the reported gain?
 
-## Bio-Specific Checks
+## Molecular Modeling-Specific Checks
 
 - Molecule benchmarks: standardization, scaffold grouping, decoy provenance, and activity cliffs.
 - Protein benchmarks: sequence identity, family split, structure source, residue indexing, and homolog leakage.
@@ -87,5 +87,5 @@ If $\theta^\*$, preprocessing, threshold, prompt, or filtering choices are selec
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
 - [[ai/paper-intake|AI paper intake]]
-- [[bio/paper-intake|Bio paper intake]]
+- [[molecular-modeling/paper-intake|Molecular Modeling paper intake]]
 - [[math/formula-intake|Formula intake]]

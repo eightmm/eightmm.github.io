@@ -1,16 +1,21 @@
 ---
 title: Structure-Based Modeling
+aliases:
+  - bio/structure-based-ai
+  - bio-ai/structure-based-ai
+  - molecular-modeling/structure-based-ai
+  - research/structure-based-ai
 tags:
-  - research
+  - bio
   - structure-based-ai
   - drug-discovery
 ---
 
 # Structure-Based Modeling
 
-Structure-based modeling is the part of AI for drug discovery that treats molecular structure as a first-class object. The central question is not just whether a model can score a molecule, but whether it can reason about [[entities/protein|protein]] structure, [[entities/ligand|ligand]] geometry, and the [[entities/protein-ligand-complex|protein-ligand complex]] as a physically plausible system.
+Structure-based modeling treats molecular structure as a first-class object. It covers classical docking and conformer workflows as well as AI-based pose generation, scoring, and structure-aware generation. The central question is not just whether a model can score a molecule, but whether it can reason about [[entities/protein|protein]] structure, [[entities/ligand|ligand]] geometry, and the [[entities/protein-ligand-complex|protein-ligand complex]] as a physically plausible system.
 
-For this wiki, this area is the main anchor for molecular AI notes. It connects docking, pose generation, structure-aware scoring, geometric deep learning, molecular generation, and evaluation.
+For this wiki, this area is a molecular modeling anchor first. AI methods enter when the strongest claim is about learned representation, generation, scoring, or evaluation.
 
 A useful abstraction is:
 
@@ -42,7 +47,7 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 - [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
@@ -67,7 +72,7 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 
 ## Adjacent Areas
 
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[ai/generative-models|Generative models]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/molecular-generation|Molecular generation]]

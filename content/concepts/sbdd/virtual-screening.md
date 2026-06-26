@@ -47,4 +47,4 @@ $$
 - [[concepts/evaluation/negative-set|Negative set]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
 - [[concepts/evaluation/metric|Metric]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]

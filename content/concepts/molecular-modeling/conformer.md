@@ -79,9 +79,9 @@ The pose depends on the protein or pocket context $P$. A model trained on bound 
 
 | Question | Route |
 | --- | --- |
-| How is the molecule standardized before coordinates? | [Molecules](/bio/molecules) |
-| Is this ligand-only geometry or protein-bound placement? | [Structure-based modeling](/bio/structure-based-ai) |
-| Is a pose generated, scored, or filtered in a pocket? | [Docking](/bio/docking) |
+| How is the molecule standardized before coordinates? | [Molecules](/molecular-modeling/molecules) |
+| Is this ligand-only geometry or protein-bound placement? | [Structure-based modeling](/molecular-modeling/structure-based) |
+| Is a pose generated, scored, or filtered in a pocket? | [Docking](/molecular-modeling/docking) |
 | Does the model need equivariance or coordinate losses? | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Is conformer generation used as featurization? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract) |
 
@@ -96,9 +96,9 @@ The pose depends on the protein or pocket context $P$. A model trained on bound 
 ## Related
 
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
-- [[bio/modeling-scope|Molecular Modeling Scope]]
-- [[bio/molecules|Molecules]]
-- [[bio/docking|Docking]]
+- [[molecular-modeling/modeling-scope|Molecular Modeling Scope]]
+- [[molecular-modeling/molecules|Molecules]]
+- [[molecular-modeling/docking|Docking]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
 - [[concepts/molecular-modeling/protonation-state|Protonation state]]
 - [[concepts/sbdd/pose-generation|Pose generation]]

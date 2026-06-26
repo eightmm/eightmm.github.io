@@ -58,7 +58,7 @@ Pose generation should be evaluated before scoring claims:
 
 ## Related
 
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/scoring-function|Scoring function]]

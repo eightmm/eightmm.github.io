@@ -37,8 +37,8 @@ Structure-based modeling paper notes cover docking, conformers, pose generation,
 
 ## Related
 
-- [[research/structure-based-ai/index|Structure-based modeling]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]

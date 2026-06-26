@@ -1,6 +1,7 @@
 ---
 title: Docking
 aliases:
+  - bio/docking
   - bio-ai/docking
 tags:
   - bio
@@ -79,7 +80,7 @@ The same method can be strong for one claim and weak for another. A low pose RMS
 
 ## Related
 
-- [[bio/structure-based-ai|Structure-based modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/index|SBDD concepts]]
-- [[bio/data-evaluation|Data and evaluation]]
+- [[molecular-modeling/data-evaluation|Data and evaluation]]

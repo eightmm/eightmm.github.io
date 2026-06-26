@@ -122,4 +122,4 @@ This alignment is fragile. Missing density, insertion codes, chain breaks, alter
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 - [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/architectures/tokenization|Tokenization]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]

@@ -1,5 +1,5 @@
 ---
-title: 구조 기반 AI를 어떻게 정리할 것인가
+title: 구조 기반 모델링을 어떻게 정리할 것인가
 date: 2026-06-25
 tags:
   - posts
@@ -7,9 +7,9 @@ tags:
   - docking
 ---
 
-# 구조 기반 AI를 어떻게 정리할 것인가
+# 구조 기반 모델링을 어떻게 정리할 것인가
 
-이 사이트를 정리할 때 가장 먼저 잡고 싶은 축은 [[bio/index|Bio]]입니다. 특히 구조 기반 AI에서는 모델이 단순한 sequence나 graph가 아니라 실제 3D 구조를 가진 [[entities/protein-ligand-complex|protein-ligand complex]]를 어떻게 다룰 수 있는지가 중요합니다.
+이 사이트를 정리할 때 가장 먼저 잡고 싶은 축은 [[molecular-modeling/index|Molecular Modeling]]입니다. 특히 구조 기반 모델링에서는 모델이 단순한 sequence나 graph가 아니라 실제 3D 구조를 가진 [[entities/protein-ligand-complex|protein-ligand complex]]를 어떻게 다룰 수 있는지가 중요합니다.
 
 현재는 세 층으로 나눠서 생각하고 있습니다.
 
@@ -17,7 +17,7 @@ tags:
 
 가장 먼저 구분해야 할 것은 대상입니다. [[entities/protein|Protein]], [[entities/ligand|Ligand]], [[entities/molecule|Molecule]], [[entities/protein-ligand-complex|Protein-ligand complex]]는 서로 다른 표현과 inductive bias를 요구합니다.
 
-구조 기반 AI에서 중요한 질문은 모델이 무엇을 보는가입니다.
+구조 기반 모델링에서 중요한 질문은 모델이 무엇을 보는가입니다.
 
 - sequence만 보는가
 - 2D molecular graph를 보는가
@@ -30,7 +30,7 @@ tags:
 
 방법론은 [[ai/index|AI]]와 [[concepts/index|Concepts]]에 쌓아둘 생각입니다. 일반적인 모델 구조로는 [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/gnn|Graph neural networks]], [[concepts/architectures/mamba|Mamba]]가 있고, 구조 데이터를 다룰 때는 [[concepts/geometric-deep-learning/equivariance|Equivariance]], [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]], [[concepts/generative-models/flow-matching|Flow matching]] 같은 개념이 자주 등장합니다.
 
-예를 들어 [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]은 적어도 세 문제로 나눠 보는 편이 좋습니다.
+예를 들어 [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]은 적어도 세 문제로 나눠 보는 편이 좋습니다.
 
 - candidate pose를 생성하는 문제
 - pose를 ranking하거나 scoring하는 문제
@@ -58,8 +58,8 @@ tags:
 
 현재 첫 경로는 이렇게 잡습니다.
 
-1. [[research/structure-based-ai/index|Structure-Based Modeling]]
-2. [[research/structure-based-ai/protein-ligand-docking|Protein-ligand Docking]]
+1. [[molecular-modeling/structure-based/index|Structure-Based Modeling]]
+2. [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand Docking]]
 3. [[concepts/sbdd/index|Structure-Based Drug Discovery]]
 4. [[concepts/sbdd/pose-quality|Pose Quality]]
 5. [[concepts/sbdd/binding-affinity|Binding Affinity]]

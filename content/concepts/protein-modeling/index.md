@@ -34,7 +34,7 @@ Protein modeling concepts describe how sequences, evolutionary signals, structur
 
 ## Related
 
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[entities/protein|Protein]]
 - [[entities/sequence|Sequence]]
 - [[entities/structure|Structure]]

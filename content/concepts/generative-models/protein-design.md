@@ -34,4 +34,4 @@ where $s$ is a sequence, $X$ is a backbone or structural context, and $c$ is a d
 
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]

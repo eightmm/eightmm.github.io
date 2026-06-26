@@ -1,5 +1,7 @@
 ---
 title: Protein-Ligand Docking
+aliases:
+  - research/structure-based-ai/protein-ligand-docking
 tags:
   - docking
   - structure-based-drug-discovery
@@ -74,6 +76,6 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
-- [[research/structure-based-ai/index|Structure-based modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]

@@ -20,7 +20,7 @@ A unified multimodal molecular foundation model built on Fragment-SELFIES that a
 
 ## Why It Matters
 
-This paper may be relevant to [[research/structure-based-ai/index|Structure-based modeling]] and [[concepts/generative-models/molecular-generation|molecular generation]]. The unified single-path design avoids per-condition separate heads and could simplify multi-property drug-design pipelines.
+This paper may be relevant to [[molecular-modeling/structure-based/index|Structure-based modeling]] and [[concepts/generative-models/molecular-generation|molecular generation]]. The unified single-path design avoids per-condition separate heads and could simplify multi-property drug-design pipelines.
 
 ## Key Points
 

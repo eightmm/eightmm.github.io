@@ -14,7 +14,7 @@ tags:
 | --- | --- |
 | [AI Wiki를 어떤 축으로 나눠 볼 것인가](/posts/2026-06-26-ai-wiki-map) | AI taxonomy and reading map |
 | [블로그와 위키를 같이 쓰는 방식](/posts/2026-06-25-blog-and-wiki-workflow) | blog/wiki workflow |
-| [구조 기반 AI를 어떻게 정리할 것인가](/posts/2026-06-25-structure-based-ai-map) | structure-based modeling map |
+| [구조 기반 모델링을 어떻게 정리할 것인가](/posts/2026-06-25-structure-based-ai-map) | structure-based modeling map |
 | [Wiki에서 Post로 승격하는 방식](/posts/wiki-to-post-workflow) | note-to-post promotion |
 | [AI-Molecular-Math 포스트 인테이크](/posts/ai-bio-math-post-intake) | AI, molecular modeling, and math synthesis writing |
 | [Post promotion gate](/posts/post-promotion-gate) | post readiness checklist |
@@ -42,7 +42,7 @@ tags:
 ## 연결되는 영역
 
 - [[ai/index|AI]]
-- [[bio/index|Molecular Modeling]]
+- [[molecular-modeling/index|Molecular Modeling]]
 - [[research/index|Research]]
 - [[papers/index|Papers]]
 - [[infra/index|Infra]]

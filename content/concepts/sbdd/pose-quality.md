@@ -53,4 +53,4 @@ It does not by itself prove binding affinity, selectivity, or screening utility.
 - [[concepts/sbdd/pose-rmsd|Pose RMSD]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]

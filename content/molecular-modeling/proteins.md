@@ -1,6 +1,7 @@
 ---
 title: Proteins
 aliases:
+  - bio/proteins
   - bio-ai/proteins
 tags:
   - bio
@@ -88,6 +89,6 @@ Here $s_{1:L}$ is the amino-acid sequence, $h_{1:L}$ is a residue-level represen
 
 ## Related
 
-- [[bio/index|Bio]]
-- [[bio/structure-based-ai|Structure-based modeling]]
+- [[molecular-modeling/index|Molecular Modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

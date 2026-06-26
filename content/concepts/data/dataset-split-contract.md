@@ -52,7 +52,7 @@ A public split contract can be summarized as:
 
 Use `to specify` rather than inventing missing details.
 
-## Bio Examples
+## Molecular Modeling Examples
 
 - Molecule property prediction: hold out molecular scaffolds or clusters.
 - Protein representation: hold out sequence-identity clusters or protein families.

@@ -1,5 +1,7 @@
 ---
 title: Molecular Modeling Paper Intake
+aliases:
+  - bio/paper-intake
 tags:
   - bio
   - papers
@@ -19,11 +21,11 @@ $$
 
 | Field | Question | Route |
 | --- | --- | --- |
-| Object | Is the example a molecule, ligand, protein, pocket, complex, pose, assay record, or genome region? | [Entities](/bio/entities) |
-| Representation | Is it SMILES, graph, fingerprint, sequence, embedding, conformer, coordinate, or complex graph? | [Molecules](/bio/molecules), [Proteins](/bio/proteins), [Geometry](/bio/geometry) |
-| Context | Does prediction depend on target, assay, pocket, receptor state, species, construct, or template? | [Computational Biology](/bio/computational-biology) |
-| Label | What endpoint, unit, direction, threshold, censoring, replicate rule, and source define the target? | [Data and Evaluation](/bio/data-evaluation) |
-| Split | What unit is held out: scaffold, sequence family, complex pair, assay/source, time, or template? | [Data and Evaluation](/bio/data-evaluation) |
+| Object | Is the example a molecule, ligand, protein, pocket, complex, pose, assay record, or genome region? | [Entities](/molecular-modeling/entities) |
+| Representation | Is it SMILES, graph, fingerprint, sequence, embedding, conformer, coordinate, or complex graph? | [Molecules](/molecular-modeling/molecules), [Proteins](/molecular-modeling/proteins), [Geometry](/molecular-modeling/geometry) |
+| Context | Does prediction depend on target, assay, pocket, receptor state, species, construct, or template? | [Computational Biology](/molecular-modeling/computational-biology) |
+| Label | What endpoint, unit, direction, threshold, censoring, replicate rule, and source define the target? | [Data and Evaluation](/molecular-modeling/data-evaluation) |
+| Split | What unit is held out: scaffold, sequence family, complex pair, assay/source, time, or template? | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 | Metric | Is the claim about affinity, pose, ranking, enrichment, validity, novelty, or property prediction? | [Evaluation](/ai/evaluation) |
 | Benchmark claim | Does the benchmark define data, task, split, metric, allowed information, and reporting rule? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Public boundary | Are data, metadata, artifacts, and claims public and non-sensitive? | [Papers](/papers) |
@@ -65,10 +67,10 @@ If evaluation uses a known ligand pose, ligand-defined pocket, homologous templa
 
 ## Update Targets
 
-- Molecule or ligand issue: [[bio/molecules|Molecules]] and [[concepts/molecular-modeling/index|Molecular modeling]]
-- Protein or sequence issue: [[bio/proteins|Proteins]] and [[concepts/protein-modeling/index|Protein modeling]]
-- Docking or SBDD issue: [[bio/docking|Docking]] and [[concepts/sbdd/index|SBDD concepts]]
-- Split or benchmark issue: [[bio/data-evaluation|Data and Evaluation]]
+- Molecule or ligand issue: [[molecular-modeling/molecules|Molecules]] and [[concepts/molecular-modeling/index|Molecular modeling]]
+- Protein or sequence issue: [[molecular-modeling/proteins|Proteins]] and [[concepts/protein-modeling/index|Protein modeling]]
+- Docking or SBDD issue: [[molecular-modeling/docking|Docking]] and [[concepts/sbdd/index|SBDD concepts]]
+- Split or benchmark issue: [[molecular-modeling/data-evaluation|Data and Evaluation]]
 - Benchmark contract issue: [[concepts/data/benchmark-intake|Benchmark intake]]
 - General AI method issue: [[ai/paper-intake|AI paper intake]]
 - Formula issue: [[math/formula-intake|Formula intake]]
@@ -76,7 +78,7 @@ If evaluation uses a known ligand pose, ligand-defined pocket, homologous templa
 
 ## Related
 
-- [[bio/index|Molecular Modeling]]
+- [[molecular-modeling/index|Molecular Modeling]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/analysis/benchmark-card|Benchmark card]]

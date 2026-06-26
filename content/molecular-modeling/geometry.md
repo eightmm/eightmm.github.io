@@ -1,6 +1,7 @@
 ---
 title: Geometry
 aliases:
+  - bio/geometry
   - bio-ai/geometry
 tags:
   - bio
@@ -10,7 +11,7 @@ tags:
 
 # Geometry
 
-Geometry connects Bio to graph, coordinate, symmetry, and equivariant modeling. Molecules and protein complexes are not only strings or graphs; many tasks depend on distances, angles, frames, and valid coordinate transformations.
+Geometry connects molecular modeling to graph, coordinate, symmetry, and equivariant modeling. Molecules and protein complexes are not only strings or graphs; many tasks depend on distances, angles, frames, and valid coordinate transformations.
 
 $$
 F(RX + t) = R F(X) + t
@@ -82,6 +83,6 @@ where $X$ is a coordinate set, $R$ is a rotation, and $t$ is a translation.
 
 ## Related
 
-- [[bio/structure-based-ai|Structure-based modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[ai/architectures|Architectures]]
 - [[concepts/architectures/gnn|Graph neural networks]]

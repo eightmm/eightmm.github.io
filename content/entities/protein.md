@@ -98,5 +98,5 @@ where the cluster can be based on sequence identity, domain family, fold, or tar
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 - [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]

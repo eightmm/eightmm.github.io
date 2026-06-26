@@ -62,7 +62,7 @@ where $z_q=f_\theta(q)$, $z_i=f_\theta(x_i)$, and $s$ is cosine similarity. The 
 - Separate representation selection, downstream model selection, and final test.
 - Compare against simple baselines such as raw features, fingerprints, bag-of-tokens, or random encoders.
 
-## Bio Notes
+## Molecular Modeling Notes
 
 For protein, molecule, and structure-based tasks, representation evaluation must state the biological or chemical split unit:
 

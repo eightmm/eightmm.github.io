@@ -76,6 +76,6 @@ Common evaluation modes are [[concepts/learning/linear-probing|linear probing]],
 - [[concepts/learning/representation-evaluation|Representation evaluation]]
 - [[concepts/learning/linear-probing|Linear probing]]
 - [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
-- [[research/protein-modeling/index|Protein modeling]]
+- [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

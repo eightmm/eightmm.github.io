@@ -26,7 +26,7 @@ where $p$ is a candidate paper.
 ## Triage Criteria
 
 - Source is public and metadata can be verified.
-- Topic fits the site scope: AI, Bio, Infra, Agents, Papers, Projects, or Research.
+- Topic fits the site scope: AI, Molecular Modeling, Infra, Agents, Papers, Projects, or Research.
 - The paper introduces a reusable method, benchmark, failure mode, concept, or workflow.
 - The claims can be tied to an evaluation protocol, benchmark, baseline, or reproducibility signal.
 - The paper is not only interesting news; it changes a concept map or reading path.

@@ -32,7 +32,7 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
 - `ai/`: Korean gateway pages for broad AI foundations.
-- `bio/`: Korean gateway pages for molecular modeling focused on structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling.
+- `molecular-modeling/`: Korean gateway pages for molecular modeling focused on structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling. Old `bio/` paths may remain only as aliases.
 - `math/`: Korean gateway pages for mathematical foundations.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
@@ -94,11 +94,11 @@ When adding agent notes, update the nearest subfolder index and `content/agents/
 - Workflows: coding agents, paper briefs, LLM Wiki maintenance, orchestration, handoff, and runbooks.
 - Verification: acceptance criteria, verification loops, evaluation, reflection, human review, and prompt-injection boundaries.
 
-Bio scope should stay focused on computational biology that directly supports structure-based modeling, docking, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
+Molecular Modeling scope should stay focused on computational biology that directly supports structure-based modeling, docking, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
 
 Chem-bio notes should preserve data semantics: standardize molecules before deduplication and splitting, state tautomer/protonation/stereo choices, keep target and assay context explicit, prefer scaffold or protein-family splits over random splits, and flag template leakage risks in structure-based benchmarks. Do not invent assay metadata, target details, activity values, or benchmark metrics.
 
-Entity notes for Bio should keep the target-assay-label contract explicit when labels are involved. Do not collapse a supervised chem-bio row into only `molecule -> label` if target, assay, endpoint, unit, threshold, censoring, source, or split group matters.
+Entity notes for Molecular Modeling should keep the target-assay-label contract explicit when labels are involved. Do not collapse a supervised chem-bio row into only `molecule -> label` if target, assay, endpoint, unit, threshold, censoring, source, or split group matters.
 
 For protein-ligand or SBDD benchmark notes, state the example unit and split unit on both sides: ligand scaffold/similarity group, protein sequence or structure family, complex pair, assay/source, and temporal split when relevant. Do not make broad generalization claims from a split that only tests interpolation.
 
@@ -207,7 +207,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - When a section has more than four similar bullets with descriptions, consider a Markdown table with columns such as `Area`, `Use For`, `Start Here`, `Risk`, or `Next`.
 - Keep table cells short. If a cell needs multiple sentences, split the table or move detail into the linked note.
 - For AI/Molecular Modeling/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
-- When adding a paper note or Korean post, check whether `content/ai/index.md`, `content/bio/index.md`, or `content/math/index.md` needs one additional route row, but do not duplicate full paper summaries there.
+- When adding a paper note or Korean post, check whether `content/ai/index.md`, `content/molecular-modeling/index.md`, or `content/math/index.md` needs one additional route row, but do not duplicate full paper summaries there.
 - For Korean posts that combine AI, molecular modeling, and Math, use `content/posts/ai-bio-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
 - Before promoting a Korean post, use `content/posts/post-promotion-gate.md` to confirm reader question, wiki bundle, evidence boundary, public boundary, and next path.
 - For Korean synthesis posts that cross several axes, use `content/posts/synthesis-post-template.md` as the draft structure and keep detailed definitions in wiki notes.
@@ -219,7 +219,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - When a paper introduces reusable definitions, formulas, contracts, or evidence boundaries, use `content/papers/workflows/concept-update-contract.md` so the wiki graph improves instead of only adding an isolated paper summary.
 - Before promoting a multi-axis paper candidate, topic map, or Korean synthesis post, use `content/papers/workflows/ai-molecular-math-readiness-gate.md` and keep missing fields as `to verify`.
 - Before turning a reported benchmark score into a public claim, use `content/concepts/evaluation/benchmark-claim-contract.md` to state dataset, split, task, metric, selection rule, baseline, uncertainty, and allowed information.
-- For docking, conformer, pose, virtual screening, protein-ligand, or structure-based workflow notes, use `content/bio/modeling-scope.md` first. Treat them as Molecular Modeling unless the strongest claim is specifically architecture, learning method, objective, system, or agent workflow.
+- For docking, conformer, pose, virtual screening, protein-ligand, or structure-based workflow notes, use `content/molecular-modeling/modeling-scope.md` first. Treat them as Molecular Modeling unless the strongest claim is specifically architecture, learning method, objective, system, or agent workflow.
 - When adding a paper note, route it through `content/papers/workflows/paper-triage.md` and choose the strongest paper bucket before creating a new topical folder.
 - Architecture-centric papers belong under `content/papers/architectures/` unless the stronger claim is learning objective, generation, systems, or molecular modeling evaluation.
 

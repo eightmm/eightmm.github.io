@@ -56,7 +56,7 @@ A useful lineage record should include:
 - Dataset version identifier and any content hashes that can be shared publicly.
 - Link to the training run, evaluation protocol, and dataset card.
 
-## Bio Lineage
+## Molecular Modeling Lineage
 
 For structure-based and molecular datasets, lineage should preserve entity relationships:
 

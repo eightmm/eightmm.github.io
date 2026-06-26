@@ -59,4 +59,4 @@ where $T_a$ shifts the input by offset $a$.
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/learning/index|Learning methods]]
-- [[research/structure-based-ai/index|Structure-based modeling]]
+- [[molecular-modeling/structure-based/index|Structure-based modeling]]
