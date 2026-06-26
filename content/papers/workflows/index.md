@@ -32,12 +32,14 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Primary claim-axis routing.
 - Review workflow from metadata check to concept updates.
 - Domain intake through AI, molecular modeling, and Math foundations.
+- Readiness checks before promoting multi-axis notes or synthesis posts.
 - Agent-assisted paper briefs after human-readable sanitization.
 
 ## Notes
 
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/paper-note-format|Paper note format]]
 - [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
@@ -54,6 +56,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Are missing claims, metrics, authors, and artifacts marked `to verify` instead of invented?
 - For AI/molecular modeling/Math papers, was [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]] used?
 - Is the primary claim axis recorded with [[papers/workflows/claim-routing|Claim routing]]?
+- Did multi-axis candidates pass [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]] before promotion?
 - Does the workflow update the relevant concept pages instead of only accumulating paper summaries?
 
 ## Where New Notes Go

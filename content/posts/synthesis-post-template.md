@@ -52,6 +52,7 @@ tags:
 | Math | 어떤 수식, distribution, metric, optimization target이 필요한가 | [Math](/math) |
 | Evidence | 어떤 benchmark, split, metric, baseline을 믿을 수 있는가 | [Coverage matrix](/concepts/coverage-matrix) |
 | Objective | 학습 loss와 reported metric이 같은 claim을 지지하는가 | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| Readiness | route, representation, objective, evidence, public boundary가 통과됐는가 | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 
 ## 핵심 개념
 
@@ -111,6 +112,7 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 | Reader question | 글이 한 문장 질문에 답한다 |
 | Primary axis | AI, molecular modeling, Math, paper cluster, project 중 중심축이 분명하다 |
 | Claim routing | multi-axis 주제는 [Claim routing](/papers/workflows/claim-routing)을 통과했다 |
+| Readiness gate | 승격 전 [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate)를 통과했다 |
 | Formula | 필요한 수식과 모든 symbol 설명이 있다 |
 | Evidence boundary | split, metric, baseline, leakage, uncertainty 중 필요한 항목이 있다 |
 | Link path | 다음에 읽을 wiki note가 충분히 연결되어 있다 |
@@ -130,5 +132,6 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 - [[posts/wiki-to-post-workflow|Wiki to post workflow]]
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]

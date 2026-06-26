@@ -212,6 +212,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - For new paper clusters, topic maps, or synthesis posts, check `content/concepts/coverage-matrix.md` so object, representation, task, data, architecture, learning method, math, evaluation, systems, and public boundary links are not missing.
 - For mixed AI/molecular modeling/Math paper notes, use `content/papers/workflows/ai-bio-math-paper-template.md` as the fillable skeleton and keep unknown metadata or metrics as `to verify`.
 - For multi-axis papers or posts, use `content/papers/workflows/claim-routing.md` before choosing the paper bucket or Korean post angle. Record primary axis, secondary axes, concept updates, formula updates, benchmark/evaluation updates, and artifact status.
+- Before promoting a multi-axis paper candidate, topic map, or Korean synthesis post, use `content/papers/workflows/ai-molecular-math-readiness-gate.md` and keep missing fields as `to verify`.
 - When adding a paper note, route it through `content/papers/workflows/paper-triage.md` and choose the strongest paper bucket before creating a new topical folder.
 - Architecture-centric papers belong under `content/papers/architectures/` unless the stronger claim is learning objective, generation, systems, or molecular modeling evaluation.
 

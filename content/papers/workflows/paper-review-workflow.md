@@ -17,23 +17,24 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 1. Triage the paper with [[papers/workflows/paper-triage|Paper triage]].
 2. Verify metadata and source links.
 3. Route the paper through [[papers/workflows/claim-routing|Claim routing]], then [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]] as needed.
-4. Check missing support notes with [[concepts/coverage-matrix|Coverage matrix]].
-5. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]] or [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]].
-6. Extract claims using [[papers/analysis/claim-extraction|Claim extraction]].
-7. Map claims to evidence using [[papers/analysis/evidence-table|Evidence table]].
-8. Create a [[papers/analysis/benchmark-card|Benchmark card]] for the benchmark when the evaluation protocol matters.
-9. Map component claims with [[papers/analysis/ablation-map|Ablation map]] when the paper argues why a method works.
-10. Record limits with [[papers/analysis/limitation-taxonomy|Limitation taxonomy]].
-11. Record public artifacts using [[papers/reproducibility/artifact-availability|Artifact availability]].
-12. Check reproducibility using [[papers/reproducibility/checklist|Reproducibility checklist]].
-13. Decide [[papers/reproducibility/implementation-readiness|Implementation readiness]] before spending compute.
-14. Write a [[papers/reproducibility/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
-15. Record any rerun, reimplementation, or diagnostic as [[papers/reproducibility/reproduction-result|Reproduction result]].
-16. Compare related papers with [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]] when useful.
-17. Extract reusable concepts into [[concepts/index|Concepts]].
-18. Link research relevance into [[research/index|Research]].
-19. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
-20. Promote mature themes into Korean [[posts/index|Posts]].
+4. Run [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]] for multi-axis AI, molecular modeling, or Math candidates.
+5. Check missing support notes with [[concepts/coverage-matrix|Coverage matrix]].
+6. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]] or [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]].
+7. Extract claims using [[papers/analysis/claim-extraction|Claim extraction]].
+8. Map claims to evidence using [[papers/analysis/evidence-table|Evidence table]].
+9. Create a [[papers/analysis/benchmark-card|Benchmark card]] for the benchmark when the evaluation protocol matters.
+10. Map component claims with [[papers/analysis/ablation-map|Ablation map]] when the paper argues why a method works.
+11. Record limits with [[papers/analysis/limitation-taxonomy|Limitation taxonomy]].
+12. Record public artifacts using [[papers/reproducibility/artifact-availability|Artifact availability]].
+13. Check reproducibility using [[papers/reproducibility/checklist|Reproducibility checklist]].
+14. Decide [[papers/reproducibility/implementation-readiness|Implementation readiness]] before spending compute.
+15. Write a [[papers/reproducibility/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
+16. Record any rerun, reimplementation, or diagnostic as [[papers/reproducibility/reproduction-result|Reproduction result]].
+17. Compare related papers with [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]] when useful.
+18. Extract reusable concepts into [[concepts/index|Concepts]].
+19. Link research relevance into [[research/index|Research]].
+20. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
+21. Promote mature themes into Korean [[posts/index|Posts]].
 
 ## Evidence Levels
 
@@ -56,6 +57,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - Is the paper worth a curated note, or should it only update an existing concept?
 - Are formulas rewritten with symbol definitions rather than copied blindly?
 - Has the paper been routed through [[papers/workflows/claim-routing|Claim routing]] and the relevant intake page: [[ai/paper-intake|AI]], [[bio/paper-intake|Molecular Modeling]], or [[math/formula-intake|Math]]?
+- Has a multi-axis candidate passed [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]] before being promoted?
 - Are metrics connected to [[concepts/evaluation/metric|Metric]] and split protocol?
 - Are reported gains larger than [[concepts/evaluation/confidence-interval|confidence intervals]] or run-to-run variance?
 - Does the paper require [[concepts/evaluation/statistical-significance|statistical significance]] checks?
@@ -69,6 +71,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[ai/paper-intake|AI paper intake]]
 - [[bio/paper-intake|Molecular modeling paper intake]]

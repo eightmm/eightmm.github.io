@@ -35,6 +35,7 @@ $$
 | Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI-Molecular-Math post intake](/posts/ai-bio-math-post-intake) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | Claim route | primary axis, secondary axes, bucket, concept updates | [Claim routing](/papers/workflows/claim-routing) |
+| Promotion readiness | route, representation, objective, evidence, and public boundary | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 | Fillable paper note | reusable skeleton for AI/molecular modeling/Math papers | [AI-Molecular-Math paper template](/papers/workflows/ai-bio-math-paper-template) |
 | Paper bucket | decide whether the paper belongs in SBDD, protein modeling, architecture, generation, learning methods, or systems | [Paper triage](/papers/workflows/paper-triage) |
 
@@ -85,6 +86,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One claim boundary when the result could be overread: [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
 - One paper note or paper-analysis note when a specific paper claim is being discussed.
 - One claim-routing pass when a paper or post candidate spans multiple axes: [[papers/workflows/claim-routing|Claim routing]].
+- One readiness gate pass before promoting a multi-axis candidate: [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]].
 - One fillable template pass for mixed AI/molecular modeling/Math papers: [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]].
 - One Korean post intake pass when the result is reader-facing: [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]].
 
@@ -105,3 +107,4 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - [[math/index|Math]]
 - [[papers/index|Papers]]
 - [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]

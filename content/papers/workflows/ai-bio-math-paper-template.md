@@ -48,6 +48,7 @@ tags:
 | Formula intake | [Formula intake](/math/formula-intake) |
 | Benchmark intake | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Claim routing | [Claim routing](/papers/workflows/claim-routing) |
+| Readiness gate | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 | Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## Claim
@@ -131,11 +132,13 @@ Use `not applicable` only when the paper is not about molecular modeling.
 - Math note to update: `to verify`
 - Evaluation or benchmark note to update: `to verify`
 - Potential Korean post route: [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
+- Promotion readiness: [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 
 ## Related
 
 - [[papers/workflows/paper-note-format|Paper note format]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]
