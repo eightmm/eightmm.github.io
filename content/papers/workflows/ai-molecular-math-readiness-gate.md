@@ -43,6 +43,7 @@ $$
 | Objective family | Likelihood, contrastive, score, energy, velocity, reward, constraint, or metric objective is named | [Formula intake](/math/formula-intake), [Energy-based model](/concepts/generative-models/energy-based-model), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Benchmark claim | Dataset, split, task, metric, baseline, uncertainty, and allowed information support the stated claim | [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) |
 | Claim-evidence boundary | The supported scope is narrower than the headline claim when evidence is limited | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
+| Artifact readiness | Code, data, splits, configs, weights, logs, predictions, and environment are checked for the scoped claim | [Artifact availability](/papers/reproducibility/artifact-availability), [Implementation readiness](/papers/reproducibility/implementation-readiness) |
 | Computational biology intake | Molecule, ligand, protein, pocket, conformer, complex, genome region, assay, split, and leakage fields are handled when relevant | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
 | Formula intake | Symbols, distributions, objectives, estimators, and metrics are rewritten in local notation | [Formula intake](/math/formula-intake) |
 | Coverage matrix | Missing object, method, math, data, evaluation, system, or agent notes are identified | [Coverage matrix](/concepts/coverage-matrix) |
@@ -59,6 +60,7 @@ $$
 | Objective | Key loss or estimator with symbol definitions |
 | Evidence | Benchmark, split, metric, baseline, uncertainty, strongest evidence, weakest evidence |
 | Artifact status | Code, data, splits, weights, configs, logs, predictions, environment |
+| Implementation readiness | Scoped claim, minimum viable reproduction, compute feasibility, failure taxonomy |
 | Public status | `inbox`, `reading`, `verified`, `archived`, or `to verify` |
 
 ## Claim-Type Gates
@@ -147,6 +149,8 @@ claim_evidence_boundary: to verify
 computational_biology_intake: not applicable
 formula_intake: to verify
 coverage_matrix: to verify
+artifact_availability: to verify
+implementation_readiness: to verify
 post_route: not applicable
 public_boundary: to verify
 claim_type_gate: to verify

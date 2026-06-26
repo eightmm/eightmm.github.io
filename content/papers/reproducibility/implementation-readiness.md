@@ -49,6 +49,20 @@ where $p$ is the paper and $c$ is the target claim.
 - Compute estimate: public hardware class, memory, runtime, and fallback plan.
 - Risk: missing details, dependency drift, ambiguous preprocessing, or unavailable data.
 
+## Readiness Matrix
+
+| Field | Ready When | Common Blocker |
+|---|---|---|
+| object | input/output units are explicit | row, molecule, protein, pose, or trajectory is ambiguous |
+| data | public source and filtering are reconstructable | private processed data only |
+| split | train/validation/test rule or files are available | paper reports only aggregate score |
+| objective | loss, reward, score, energy, or constraint is specified | auxiliary weights or masks missing |
+| implementation | architecture and inference path are concrete | hidden preprocessing or custom kernels |
+| evaluation | metric script or exact formula is available | invalid samples or failed cases omitted |
+| compute | feasible minimum run is defined | original scale is too expensive |
+
+Readiness should be assigned per claim, not per paper.
+
 ## Decision Rule
 
 Do not start a full reproduction when a smaller check can falsify the useful part:
@@ -65,6 +79,30 @@ $$
 
 A failed run is useful when it can distinguish paper ambiguity, implementation error, data mismatch, compute limitation, or a false claim.
 
+## Minimum Viable Reproduction
+
+Before a full reproduction, define the smallest check:
+
+$$
+R_{\min}
+=
+\arg\min_R \operatorname{cost}(R)
+\quad
+\text{s.t.}
+\quad
+R \text{ can falsify claim } c
+$$
+
+Examples:
+
+| Claim | Minimum check |
+|---|---|
+| better metric | rerun metric on released predictions |
+| better split generalization | audit split files and rerun baseline |
+| better sampler | evaluate released samples before retraining |
+| better docking pose | verify pose RMSD/validity on released poses |
+| better agent workflow | replay a small public task subset with logs |
+
 ## Checks
 
 - Is the implementation target one explicit claim?
@@ -73,6 +111,8 @@ A failed run is useful when it can distinguish paper ambiguity, implementation e
 - Is the benchmark public and compatible with the claimed split?
 - Are expected metrics and tolerances defined before running?
 - Would a failure produce a useful [[papers/reproducibility/reproduction-result|Reproduction result]] note?
+- Is the first run a metric check, baseline rerun, small-scale run, or full training run?
+- Can failure be attributed to data, code, config, compute, or paper ambiguity?
 
 ## Related
 
@@ -81,5 +121,6 @@ A failed run is useful when it can distinguish paper ambiguity, implementation e
 - [[papers/reproducibility/reproduction-plan|Reproduction plan]]
 - [[papers/reproducibility/reproduction-result|Reproduction result]]
 - [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]]
+- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[concepts/systems/training-run|Training run]]
 - [[concepts/systems/run-artifact|Run artifact]]

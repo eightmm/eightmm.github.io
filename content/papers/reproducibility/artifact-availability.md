@@ -34,6 +34,28 @@ where $p$ is the paper. Missing artifacts should be marked `not found` or `to ve
 - Predictions: test predictions, generated samples, retrieval outputs, or benchmark submissions.
 - Environment: package versions, CUDA/runtime notes, container, or lockfile.
 
+## Artifact Dependency Graph
+
+Artifacts depend on each other:
+
+$$
+\text{data}
+\rightarrow
+\text{preprocessing}
+\rightarrow
+\text{splits}
+\rightarrow
+\text{config}
+\rightarrow
+\text{run}
+\rightarrow
+\text{predictions}
+\rightarrow
+\text{metric}
+$$
+
+For a benchmark claim, missing split files can be more serious than missing model weights. For an architecture claim, missing training config can be more serious than missing pretrained weights.
+
 ## Availability Matrix
 
 | Artifact | Status | Notes |
@@ -46,6 +68,17 @@ where $p$ is the paper. Missing artifacts should be marked `not found` or `to ve
 | Logs | `to verify` | Metrics and run metadata |
 | Predictions | `to verify` | Outputs for independent scoring |
 | Environment | `to verify` | Runtime and dependency contract |
+
+## Claim-Specific Minimums
+
+| Claim | Minimum artifacts |
+|---|---|
+| architecture improvement | code, config, baseline config, training/eval script |
+| benchmark score | data version, split, metric script, predictions or runnable eval |
+| generative model | sampler config, sample count, filtering rule, generated samples |
+| docking or pose | receptor/ligand preparation, pose files, atom mapping, metric script |
+| protein model | sequence/structure source, MSA/template policy, split, residue mapping |
+| agent workflow | task suite, tool boundary, verifier, logs or traces |
 
 ## Why It Matters
 
@@ -65,6 +98,8 @@ where $p$ is the paper. Missing artifacts should be marked `not found` or `to ve
 - Are benchmark submissions or predictions available for independent metric checks?
 - Is compute cost estimated from public information rather than private assumptions?
 - Which missing artifact would block a minimum viable reproduction?
+- Which artifact is required for the exact claim, rather than the whole paper?
+- Are generated samples, failed cases, and filtered outputs available when generation is claimed?
 
 ## Related
 
@@ -74,6 +109,8 @@ where $p$ is the paper. Missing artifacts should be marked `not found` or `to ve
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/analysis/evidence-table|Evidence table]]
 - [[concepts/data/dataset-split-contract|Dataset split contract]]
+- [[concepts/data/preprocessing-contract|Preprocessing contract]]
+- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/systems/environment-management|Environment management]]
 - [[infra/reproducibility/run-record|Reproducible run record]]

@@ -187,6 +187,8 @@ Use `not applicable` only when the paper is not about computational biology.
 - Failure modes: `to verify`
 - Applicability domain: `to verify`
 - Public artifact availability: [[papers/reproducibility/artifact-availability|Artifact availability]]
+- Implementation readiness: [[papers/reproducibility/implementation-readiness|Implementation readiness]]
+- Reproduction plan: [[papers/reproducibility/reproduction-plan|Reproduction plan]]
 - Reproducibility status: [[papers/reproducibility/checklist|Reproducibility checklist]]
 
 ## Concept Updates
