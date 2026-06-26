@@ -9,8 +9,6 @@ tags:
 
 평가는 모델 목록을 실제 지식으로 바꾸는 기준입니다. AI note를 쓸 때는 어떤 benchmark에서 좋았는지보다, 어떤 split과 metric이 무엇을 검증하는지 먼저 봅니다.
 
-이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/evaluation/*` 문서는 영어 canonical wiki note로 유지합니다.
-
 일반화 성능은 보지 못한 데이터 분포에서의 기대 손실로 보는 것이 기본입니다.
 
 $$

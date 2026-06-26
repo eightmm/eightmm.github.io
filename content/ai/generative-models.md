@@ -12,8 +12,6 @@ tags:
 
 생성 모델은 data distribution에서 sample을 만들거나, noise에서 structure를 복원하거나, 조건에 맞는 output을 구성하는 모델군입니다.
 
-이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/generative-models/*` 문서는 영어 canonical wiki note로 유지합니다.
-
 핵심 목표는 실제 데이터 분포 $p_{\mathrm{data}}(x)$를 잘 근사하는 모델 분포 $p_\theta(x)$를 만드는 것입니다.
 
 $$

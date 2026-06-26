@@ -9,8 +9,6 @@ tags:
 
 Machine learning은 AI를 이해하기 위한 기본 문법입니다. 복잡한 deep learning model도 결국 data, feature, objective, optimization, evaluation의 조합으로 봐야 합니다.
 
-이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/machine-learning/*` 문서는 영어 canonical wiki note로 유지합니다.
-
 가장 기본적인 관점은 데이터셋 $\mathcal{D}$에서 모델 $f_\theta$를 학습해, 보지 못한 입력에서도 손실이 작아지게 만드는 것입니다.
 
 $$

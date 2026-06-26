@@ -24,18 +24,22 @@ Use the category that explains the durable idea, not the product name that happe
 
 ## Sections
 
-- [[agents/core/index|Agent Core]]
-- [[agents/tools/index|Agent Tools]]
-- [[agents/workflows/index|Agent Workflows]]
-- [[agents/verification/index|Agent Verification]]
+| Section | Use For |
+| --- | --- |
+| [[agents/core/index|Agent Core]] | architecture, loop, state, memory, planning |
+| [[agents/tools/index|Agent Tools]] | tool contracts, side effects, result handling |
+| [[agents/workflows/index|Agent Workflows]] | coding, paper briefs, orchestration, handoff |
+| [[agents/verification/index|Agent Verification]] | acceptance criteria, evidence, audits, evaluation |
 
 ## Routing Guide
 
-- Put model-state-memory-planning ideas in [[agents/core/index|Agent Core]].
-- Put tool schemas, side effects, permissions, and output handling in [[agents/tools/index|Agent Tools]].
-- Put repeatable use cases such as coding, paper briefs, and wiki maintenance in [[agents/workflows/index|Agent Workflows]].
-- Put acceptance criteria, evidence, audits, review, and safety checks in [[agents/verification/index|Agent Verification]].
-- Put Korean reader-facing narratives in [[posts/index|Posts]] only after the underlying wiki notes are stable.
+| If the note is about... | Put it in |
+| --- | --- |
+| model state, memory, planning, context | [[agents/core/index|Agent Core]] |
+| schemas, side effects, permissions, outputs | [[agents/tools/index|Agent Tools]] |
+| repeatable use cases and handoffs | [[agents/workflows/index|Agent Workflows]] |
+| acceptance criteria, evidence, audits, safety checks | [[agents/verification/index|Agent Verification]] |
+| broad reader-facing stories | [[posts/index|Posts]] |
 
 ## Core Concepts
 

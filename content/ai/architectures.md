@@ -9,8 +9,6 @@ tags:
 
 모델 아키텍처는 데이터가 어떤 구조를 갖는지에 대한 가정입니다. 같은 objective를 쓰더라도 sequence, graph, image, 3D structure를 어떻게 표현하느냐에 따라 적합한 architecture가 달라집니다.
 
-이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/architectures/*` 문서는 영어 canonical wiki note로 유지합니다.
-
 형식적으로는 architecture가 가능한 함수 공간 $\mathcal{F}$를 정합니다.
 
 $$

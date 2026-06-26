@@ -6,7 +6,7 @@ tags:
 
 # Math
 
-수학은 AI, Bio-AI, geometry, generative model, evaluation을 읽기 위한 공통 기반입니다. 이 페이지는 사이드바와 홈에서 바로 들어오는 한글 gateway이고, 세부 개념은 영어 canonical wiki note로 유지합니다.
+수학은 AI, Bio-AI, geometry, generative model, evaluation을 읽기 위한 공통 기반입니다.
 
 공식은 모델을 어렵게 보이게 하려는 장식이 아니라, 어떤 quantity를 예측하고 최적화하고 평가하는지 고정하는 도구입니다.
 
@@ -24,16 +24,18 @@ $$
 
 ## Core Foundations
 
-- [[concepts/math/index|Math foundations]]: canonical wiki index
-- [[math/linear-algebra|Linear algebra]]: vectors, matrices, embeddings, projections, similarity, SVD
-- [[math/calculus-gradients|Calculus and gradients]]: derivatives, chain rule, Jacobians, Hessians, backpropagation math
-- [[math/probability-statistics|Probability and statistics]]: random variables, distributions, estimators, uncertainty, hypothesis tests
-- [[math/information-likelihood|Information and likelihood]]: maximum likelihood, entropy, KL, cross-entropy, generative objectives
-- [[math/geometry-symmetry|Geometry and symmetry]]: groups, frames, invariance, equivariance, coordinate modeling
-- [[math/discrete-graphs|Discrete math and graphs]]: graphs, sets, neighborhoods, permutations, graph modeling
-- [[math/dynamical-systems|Dynamical systems]]: discrete updates, ODEs, SDEs, vector fields, generative flows
-- [[math/numerical-computing|Numerical computing]]: floating point, stable softmax, log-sum-exp, conditioning, precision
-- [[math/evaluation-math|Evaluation math]]: metrics, confidence intervals, calibration, statistical comparison
+| Area | Use For | Start |
+| --- | --- | --- |
+| Foundations | definitions, formulas, reusable checks | [[concepts/math/index|Math foundations]] |
+| Linear algebra | vectors, matrices, embeddings, projections, similarity, SVD | [[math/linear-algebra|Linear algebra]] |
+| Calculus | derivatives, chain rule, Jacobians, Hessians, backpropagation math | [[math/calculus-gradients|Calculus and gradients]] |
+| Probability | random variables, distributions, estimators, uncertainty, hypothesis tests | [[math/probability-statistics|Probability and statistics]] |
+| Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [[math/information-likelihood|Information and likelihood]] |
+| Geometry | groups, frames, invariance, equivariance, coordinate modeling | [[math/geometry-symmetry|Geometry and symmetry]] |
+| Graphs | sets, neighborhoods, permutations, graph modeling | [[math/discrete-graphs|Discrete math and graphs]] |
+| Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows | [[math/dynamical-systems|Dynamical systems]] |
+| Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [[math/numerical-computing|Numerical computing]] |
+| Evaluation | metrics, confidence intervals, calibration, statistical comparison | [[math/evaluation-math|Evaluation math]] |
 
 ## Formula Checklist
 
@@ -49,13 +51,15 @@ $$
 
 ## Where It Connects
 
-- Architecture: [[concepts/architectures/linear-layer|Linear layer]], [[concepts/architectures/attention|Attention]], [[concepts/architectures/normalization|Normalization]]
-- Learning: [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/loss-function|Loss function]], [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]], [[concepts/machine-learning/optimization|Optimization]], [[concepts/learning/reinforcement-learning|Reinforcement learning]]
-- Numerical stability: [[math/numerical-computing|Numerical computing]], [[concepts/architectures/softmax|Softmax]], [[concepts/architectures/normalization|Normalization]], [[concepts/machine-learning/training-stability|Training stability]], [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
-- Generation: [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/maximum-likelihood|Maximum likelihood]], [[concepts/math/entropy-kl|Entropy and KL divergence]], [[concepts/generative-models/diffusion-model|Diffusion model]], [[concepts/generative-models/flow-matching|Flow matching]], [[concepts/generative-models/normalizing-flow|Normalizing flow]]
-- Geometry: [[concepts/geometric-deep-learning/index|Geometric deep learning]], [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]], [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]], [[concepts/geometric-deep-learning/equivariance|Equivariance]]
-- Graphs and dynamics: [[math/discrete-graphs|Discrete math and graphs]], [[math/dynamical-systems|Dynamical systems]], [[concepts/architectures/gnn|Graph neural networks]], [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
-- Evaluation: [[concepts/evaluation/metric|Metric]], [[concepts/evaluation/confidence-interval|Confidence interval]], [[concepts/evaluation/statistical-significance|Statistical significance]]
+| Context | Links |
+| --- | --- |
+| Architecture | [[concepts/architectures/linear-layer|Linear layer]], [[concepts/architectures/attention|Attention]], [[concepts/architectures/normalization|Normalization]] |
+| Learning | [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], [[concepts/machine-learning/empirical-risk-minimization|ERM]], [[concepts/machine-learning/loss-function|Loss function]], [[concepts/machine-learning/optimization|Optimization]] |
+| Numerical stability | [[math/numerical-computing|Numerical computing]], [[concepts/architectures/softmax|Softmax]], [[concepts/machine-learning/training-stability|Training stability]], [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]] |
+| Generation | [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/maximum-likelihood|Maximum likelihood]], [[concepts/math/entropy-kl|Entropy and KL]], [[concepts/generative-models/diffusion-model|Diffusion]], [[concepts/generative-models/flow-matching|Flow matching]] |
+| Geometry | [[concepts/geometric-deep-learning/index|Geometric deep learning]], [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]], [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]], [[concepts/geometric-deep-learning/equivariance|Equivariance]] |
+| Graphs and dynamics | [[math/discrete-graphs|Discrete math and graphs]], [[math/dynamical-systems|Dynamical systems]], [[concepts/architectures/gnn|GNN]], [[concepts/generative-models/probability-flow-ode|Probability flow ODE]] |
+| Evaluation | [[concepts/evaluation/metric|Metric]], [[concepts/evaluation/confidence-interval|Confidence interval]], [[concepts/evaluation/statistical-significance|Statistical significance]] |
 
 ## Reading Path
 

@@ -8,8 +8,6 @@ tags:
 
 Bio-AI 영역을 구조 기반 모델링, 단백질, 분자, 리간드, protein-ligand interaction 중심으로 정리하는 입구입니다. 전체 computational biology를 다루기보다, 실제로 다룰 가능성이 높은 구조 기반 AI와 단백질/분자 모델링에 범위를 좁힙니다.
 
-이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/*`, `entities/*`, `research/*` 문서는 영어 canonical wiki note로 유지합니다.
-
 반복해서 등장하는 기본 형태는 생물학적/화학적 객체와 context를 모델 입력으로 두는 것입니다.
 
 $$
@@ -20,95 +18,59 @@ $$
 
 ## 다루는 객체
 
-- [[bio-ai/entities|Entities]]
-- [[entities/entity-relation-map|Entity relation map]]
-- [[entities/target|Target]]
-- [[entities/protein|Protein]]
-- [[entities/pocket|Pocket]]
-- [[entities/ligand|Ligand]]
-- [[entities/molecule|Molecule]]
-- [[entities/protein-ligand-complex|Protein-ligand complex]]
-- [[entities/sequence|Sequence]]
-- [[entities/structure|Structure]]
-- [[entities/target-assay-label|Target-assay-label contract]]
-- [[entities/bioactivity-label|Bioactivity label]]
-- [[entities/genome|Genome]]
+| Object | Start | Why It Matters |
+| --- | --- | --- |
+| Entity map | [[bio-ai/entities|Entities]], [[entities/entity-relation-map|Entity relation map]] | 전체 객체 관계를 먼저 잡습니다. |
+| Protein / target | [[entities/protein|Protein]], [[entities/target|Target]] | sequence, structure, family split, target context의 기준입니다. |
+| Molecule / ligand | [[entities/molecule|Molecule]], [[entities/ligand|Ligand]] | standardization, scaffold, property, pose의 기준입니다. |
+| Pocket / complex | [[entities/pocket|Pocket]], [[entities/protein-ligand-complex|Protein-ligand complex]] | interaction, docking, pose quality를 정의합니다. |
+| Sequence / structure | [[entities/sequence|Sequence]], [[entities/structure|Structure]] | sequence model과 coordinate model을 연결합니다. |
+| Label context | [[entities/target-assay-label|Target-assay-label contract]], [[entities/bioactivity-label|Bioactivity label]] | assay, endpoint, unit, censoring을 분리합니다. |
+| Genome | [[entities/genome|Genome]] | broad omics가 아니라 sequence/region/variant 입력으로 다룹니다. |
 
 ## Molecule and Ligand Modeling
 
-- [[bio-ai/molecules|Molecules]]
-- [[concepts/tasks/property-prediction|Property prediction]]
-- [[concepts/molecular-modeling/index|Molecular modeling concepts]]
-- [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
-- [[concepts/molecular-modeling/molecular-identity|Molecular identity]]
-- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
-- [[concepts/molecular-modeling/smiles|SMILES]]
-- [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
-- [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
-- [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]]
-- [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]
-- [[concepts/molecular-modeling/substructure-search|Substructure search]]
-- [[concepts/molecular-modeling/conformer|Conformer]]
-- [[concepts/molecular-modeling/tautomer|Tautomer]]
-- [[concepts/molecular-modeling/protonation-state|Protonation state]]
-- [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
+| Topic | Start |
+| --- | --- |
+| Overview | [[bio-ai/molecules|Molecules]], [[concepts/molecular-modeling/index|Molecular modeling concepts]] |
+| Identity and cleanup | [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]], [[concepts/molecular-modeling/molecular-identity|Molecular identity]] |
+| Representation | [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]], [[concepts/molecular-modeling/smiles|SMILES]], [[concepts/molecular-modeling/molecular-graph|Molecular graph]], [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]] |
+| Tasks | [[concepts/tasks/property-prediction|Property prediction]], [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]], [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]] |
+| Structure and chemistry details | [[concepts/molecular-modeling/conformer|Conformer]], [[concepts/molecular-modeling/tautomer|Tautomer]], [[concepts/molecular-modeling/protonation-state|Protonation state]], [[concepts/molecular-modeling/stereochemistry|Stereochemistry]] |
+| Search | [[concepts/molecular-modeling/substructure-search|Substructure search]] |
 
 ## Structure-Based AI
 
-- [[bio-ai/structure-based-ai|Structure-based AI gateway]]
-- [[concepts/tasks/interaction-prediction|Interaction prediction]]
-- [[concepts/tasks/localization|Localization]]
-- [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
-- [[concepts/tasks/graph-prediction|Graph prediction]]
-- [[research/structure-based-ai/index|Structure-based AI]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
-- [[concepts/sbdd/index|Structure-based drug discovery]]
-- [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
-- [[concepts/sbdd/pose-generation|Pose generation]]
-- [[concepts/sbdd/pose-rmsd|Pose RMSD]]
-- [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
-- [[concepts/sbdd/docking-workflow|Docking workflow]]
-- [[concepts/sbdd/scoring-function|Scoring function]]
-- [[concepts/sbdd/pose-quality|Pose quality]]
-- [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
-- [[concepts/sbdd/binding-affinity|Binding affinity]]
-- [[concepts/sbdd/virtual-screening|Virtual screening]]
-- [[concepts/sbdd/template-leakage|Template leakage]]
-- [[papers/sbdd/posebusters|PoseBusters]]
+| Topic | Start |
+| --- | --- |
+| Overview | [[bio-ai/structure-based-ai|Structure-based AI]], [[research/structure-based-ai/index|Structure-based AI]], [[concepts/sbdd/index|SBDD concepts]] |
+| Core tasks | [[concepts/tasks/interaction-prediction|Interaction prediction]], [[concepts/tasks/localization|Localization]], [[concepts/tasks/coordinate-prediction|Coordinate prediction]], [[concepts/tasks/graph-prediction|Graph prediction]] |
+| Docking workflow | [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]], [[concepts/sbdd/docking-workflow|Docking workflow]], [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]] |
+| Pose and interaction | [[concepts/sbdd/pose-generation|Pose generation]], [[concepts/sbdd/pose-rmsd|Pose RMSD]], [[concepts/sbdd/pose-quality|Pose quality]], [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]] |
+| Scoring and screening | [[concepts/sbdd/scoring-function|Scoring function]], [[concepts/sbdd/binding-affinity|Binding affinity]], [[concepts/sbdd/virtual-screening|Virtual screening]], [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]] |
+| Benchmark risk | [[concepts/sbdd/template-leakage|Template leakage]], [[papers/sbdd/posebusters|PoseBusters]] |
 
 ## Data, Labels, and Splits
 
-- [[bio-ai/data-evaluation|Data and evaluation]]
-- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
-- [[concepts/data/example-unit|Example unit]]
-- [[concepts/data/split-unit|Split unit]]
-- [[concepts/data/label-semantics|Label semantics]]
-- [[entities/target-assay-label|Target-assay-label contract]]
-- [[entities/bioactivity-label|Bioactivity label]]
-- [[concepts/data/preprocessing-contract|Preprocessing contract]]
-- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
-- [[concepts/evaluation/scaffold-split|Scaffold split]]
-- [[concepts/evaluation/protein-family-split|Protein family split]]
-- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
-- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
-- [[concepts/evaluation/leakage|Leakage]]
+| Concern | Start |
+| --- | --- |
+| Data construction | [[bio-ai/data-evaluation|Data and evaluation]], [[concepts/data/dataset-construction-checklist|Dataset construction checklist]] |
+| Example and split units | [[concepts/data/example-unit|Example unit]], [[concepts/data/split-unit|Split unit]] |
+| Label semantics | [[concepts/data/label-semantics|Label semantics]], [[entities/target-assay-label|Target-assay-label contract]], [[entities/bioactivity-label|Bioactivity label]] |
+| Preprocessing | [[concepts/data/preprocessing-contract|Preprocessing contract]] |
+| Evaluation protocol | [[concepts/evaluation/evaluation-protocol|Evaluation protocol]], [[concepts/evaluation/leakage|Leakage]] |
+| Bio-specific splits | [[concepts/evaluation/scaffold-split|Scaffold split]], [[concepts/evaluation/protein-family-split|Protein family split]], [[concepts/sbdd/protein-ligand-split|Protein-ligand split]] |
+| Assay integration | [[concepts/evaluation/assay-harmonization|Assay harmonization]] |
 
 ## Protein and Sequence Modeling
 
-- [[bio-ai/proteins|Proteins]]
-- [[research/protein-modeling/index|Protein modeling]]
-- [[concepts/protein-modeling/index|Protein modeling concepts]]
-- [[concepts/protein-modeling/protein-representation|Protein representation]]
-- [[concepts/protein-modeling/protein-domain|Protein domain]]
-- [[concepts/protein-modeling/binding-site|Binding site]]
-- [[concepts/protein-modeling/pocket-representation|Pocket representation]]
-- [[concepts/protein-modeling/protein-structure-cleaning|Protein structure cleaning]]
-- [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
-- [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
-- [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]
-- [[concepts/protein-modeling/residue-indexing|Residue indexing]]
-- [[concepts/protein-modeling/contact-map|Contact map]]
-- [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+| Topic | Start |
+| --- | --- |
+| Overview | [[bio-ai/proteins|Proteins]], [[research/protein-modeling/index|Protein modeling]], [[concepts/protein-modeling/index|Protein modeling concepts]] |
+| Representation | [[concepts/protein-modeling/protein-representation|Protein representation]], [[concepts/learning/self-supervised-learning|Self-supervised learning]] |
+| Structure | [[concepts/protein-modeling/protein-structure-cleaning|Protein structure cleaning]], [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]], [[concepts/protein-modeling/contact-map|Contact map]] |
+| Domain and site | [[concepts/protein-modeling/protein-domain|Protein domain]], [[concepts/protein-modeling/binding-site|Binding site]], [[concepts/protein-modeling/pocket-representation|Pocket representation]] |
+| Sequence handling | [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]], [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]], [[concepts/protein-modeling/residue-indexing|Residue indexing]] |
 
 ## Genome-Level Sequence Modeling
 
@@ -123,22 +85,13 @@ $$
 
 ## Geometry, Structure, and Evaluation
 
-- [[bio-ai/geometry|Geometry]]
-- [[concepts/math/geometry|Geometry]]
-- [[concepts/math/symmetry-group|Symmetry group]]
-- [[concepts/modalities/graph|Graph]]
-- [[concepts/modalities/3d-structure|3D structure]]
-- [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
-- [[concepts/tasks/graph-prediction|Graph prediction]]
-- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
-- [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
-- [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
-- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
-- [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
-- [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
-- [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
-- [[concepts/evaluation/index|Evaluation]]
-- [[concepts/evaluation/leakage|Leakage]]
+| Topic | Start |
+| --- | --- |
+| Geometry basics | [[bio-ai/geometry|Geometry]], [[concepts/math/geometry|Geometry]], [[concepts/math/symmetry-group|Symmetry group]] |
+| Modalities and tasks | [[concepts/modalities/graph|Graph]], [[concepts/modalities/3d-structure|3D structure]], [[concepts/tasks/coordinate-prediction|Coordinate prediction]], [[concepts/tasks/graph-prediction|Graph prediction]] |
+| Geometric DL | [[concepts/geometric-deep-learning/index|Geometric deep learning]], [[concepts/geometric-deep-learning/equivariance|Equivariance]], [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]] |
+| Coordinates and features | [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]], [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]], [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]], [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]] |
+| Evaluation risk | [[concepts/evaluation/index|Evaluation]], [[concepts/evaluation/leakage|Leakage]] |
 
 ## 관련 입구
 

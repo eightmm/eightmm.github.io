@@ -12,8 +12,6 @@ tags:
 
 학습 방법은 모델이 어떤 신호로 representation을 만드는지에 대한 분류입니다. 같은 architecture라도 supervised, self-supervised, preference-based objective에 따라 모델이 배우는 것이 달라집니다.
 
-이 페이지는 한글 안내 페이지입니다. 링크된 `concepts/learning/*` 문서는 영어 canonical wiki note로 유지합니다.
-
 Supervised learning의 기본 objective는 label이 있는 데이터에서 prediction loss를 줄이는 것입니다.
 
 $$
