@@ -17,6 +17,32 @@ $$
 
 Different families choose different training signals: likelihood, reconstruction, adversarial discrimination, denoising, score estimation, or velocity matching.
 
+## Selection Axes
+
+Choose a generative family by the object, output validity rule, likelihood need, sampling budget, and conditioning mechanism.
+
+| Family | Training signal | Sampling shape | Strength | Common risk |
+| --- | --- | --- | --- | --- |
+| [[concepts/generative-models/autoregressive-model|Autoregressive]] | Next-token likelihood | Sequential | Stable likelihood training | Slow long-horizon sampling |
+| [[concepts/generative-models/vae|VAE]] | ELBO | Latent decode | Structured latent space | Posterior collapse, blurry samples |
+| [[concepts/generative-models/gan|GAN]] | Adversarial game | One-shot generator | Sharp samples | Mode collapse, unstable training |
+| [[concepts/generative-models/normalizing-flow|Normalizing flow]] | Exact likelihood | Invertible transform | Tractable density | Invertibility constraints |
+| [[concepts/generative-models/diffusion-model|Diffusion]] | Denoising/noise prediction | Iterative denoising | Stable high-quality samples | Many sampling steps |
+| [[concepts/generative-models/score-based-model|Score-based]] | Score matching | SDE/ODE sampler | Continuous-time view | Noise-level coverage |
+| [[concepts/generative-models/flow-matching|Flow matching]] | Velocity matching | ODE transport | Direct path learning | Path and symmetry design |
+| [[concepts/generative-models/consistency-model|Consistency]] | Trajectory consistency | One/few step | Fast sampling | Distillation or consistency quality |
+
+## Evaluation Boundary
+
+Generation quality is not one metric. A useful evaluation names:
+
+- Validity: does the sample obey the syntax, physics, geometry, or task constraints?
+- Diversity: does the model cover modes rather than repeat a few outputs?
+- Novelty: is the sample distinct from training examples under the right equivalence relation?
+- Utility: does the generated object improve the downstream objective?
+- Calibration or likelihood: if probabilities are used, are they meaningful for the decision?
+- Cost: how many steps, tokens, calls, or device-hours are needed per useful sample?
+
 ## Common Concepts
 
 - [[concepts/generative-models/latent-variable-model|Latent variable model]]
@@ -51,6 +77,7 @@ Different families choose different training signals: likelihood, reconstruction
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/evaluation/generation-evaluation|Generation evaluation]]
+- [[concepts/evaluation/metric-selection|Metric selection]]
 - [[entities/molecule|Molecule]]
 - [[entities/protein|Protein]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
