@@ -93,4 +93,4 @@ where $m$ is the target metric and the error terms represent seed variation, non
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

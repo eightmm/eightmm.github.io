@@ -37,6 +37,6 @@ Learning method paper notes focus on objectives, pretraining signals, transfer, 
 
 - [[ai/learning-methods|Learning methods gateway]]
 - [[concepts/evaluation/leakage|Leakage]]
-- [[papers/claim-extraction|Claim extraction]]
-- [[papers/paper-comparison-matrix|Paper comparison matrix]]
-- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/analysis/claim-extraction|Claim extraction]]
+- [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]

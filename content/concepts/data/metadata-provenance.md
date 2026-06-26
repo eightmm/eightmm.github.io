@@ -91,4 +91,4 @@ The same column should not silently change roles. For example, a source identifi
 - [[concepts/data/split-unit|Split unit]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
-- [[papers/paper-note-format|Paper note format]]
+- [[papers/workflows/paper-note-format|Paper note format]]

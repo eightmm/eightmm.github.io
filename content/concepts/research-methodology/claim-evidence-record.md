@@ -8,7 +8,7 @@ tags:
 
 # Claim Evidence Record
 
-A claim evidence record links a public claim to the evidence that supports it. It is the bridge between [[concepts/systems/experiment-lifecycle|Experiment lifecycle]], [[concepts/systems/run-artifact|Run artifact]], [[concepts/research-methodology/result-interpretation|Result interpretation]], and paper-style [[papers/evidence-table|Evidence table]] writing.
+A claim evidence record links a public claim to the evidence that supports it. It is the bridge between [[concepts/systems/experiment-lifecycle|Experiment lifecycle]], [[concepts/systems/run-artifact|Run artifact]], [[concepts/research-methodology/result-interpretation|Result interpretation]], and paper-style [[papers/analysis/evidence-table|Evidence table]] writing.
 
 A claim should be represented as:
 
@@ -93,6 +93,6 @@ This is not a real score. It is a reminder that unsupported claims should stay n
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]
 - [[concepts/research-methodology/threat-to-validity|Threat to validity]]
-- [[papers/evidence-table|Evidence table]]
-- [[papers/claim-extraction|Claim extraction]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[papers/analysis/evidence-table|Evidence table]]
+- [[papers/analysis/claim-extraction|Claim extraction]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

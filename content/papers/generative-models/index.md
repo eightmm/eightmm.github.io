@@ -28,10 +28,14 @@ Generative model paper notes cover models that sample, transform, denoise, decod
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]
 
+## Curated Notes
+
+- [[papers/generative-models/molexar|Molexar]]
+
 ## Related
 
 - [[ai/generative-models|Generative models gateway]]
 - [[concepts/evaluation/metric|Metric]]
-- [[papers/claim-extraction|Claim extraction]]
-- [[papers/paper-comparison-matrix|Paper comparison matrix]]
-- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/analysis/claim-extraction|Claim extraction]]
+- [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]

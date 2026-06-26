@@ -30,10 +30,10 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/storage-io|Storage and IO]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
-- [[infra/gpu|GPU]]
-- [[infra/gpu-memory|GPU memory]]
-- [[infra/data-loading-io|Data loading and IO]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/gpu/index|GPU]]
+- [[infra/gpu/memory|GPU memory]]
+- [[infra/io/data-loading|Data loading and IO]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 
 ## Checks
 

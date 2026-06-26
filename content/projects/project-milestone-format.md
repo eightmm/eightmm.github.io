@@ -63,5 +63,5 @@ Public change summary.
 - [[projects/project-artifact-release|Project artifact release]]
 - [[logs/public-log-format|Public log format]]
 - [[concepts/research-methodology/research-log|Research log]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 - [[agents/verification/verification-loop|Verification loop]]

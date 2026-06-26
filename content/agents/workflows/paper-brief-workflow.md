@@ -20,11 +20,11 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 
 1. Daily brief enters [[inbox/index|Inbox]].
 2. Unclear items stay in [[inbox/curation-queue|Curation queue]].
-3. Interesting items pass [[papers/paper-triage|Paper triage]].
-4. Selected items become [[papers/index|Paper]] stubs with [[papers/reading-status|reading status]].
-5. Public materials are recorded with [[papers/artifact-availability|Artifact availability]].
-6. Implementation candidates pass [[papers/implementation-readiness|Implementation readiness]].
-7. Reruns or diagnostics get a [[papers/reproduction-plan|Reproduction plan]] and [[papers/reproduction-result|Reproduction result]].
+3. Interesting items pass [[papers/workflows/paper-triage|Paper triage]].
+4. Selected items become [[papers/index|Paper]] stubs with [[papers/workflows/reading-status|reading status]].
+5. Public materials are recorded with [[papers/reproducibility/artifact-availability|Artifact availability]].
+6. Implementation candidates pass [[papers/reproducibility/implementation-readiness|Implementation readiness]].
+7. Reruns or diagnostics get a [[papers/reproducibility/reproduction-plan|Reproduction plan]] and [[papers/reproducibility/reproduction-result|Reproduction result]].
 8. Reusable ideas update [[concepts/index|Concepts]].
 9. Research relevance is linked into [[research/index|Research]].
 10. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
@@ -45,16 +45,16 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 - [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
-- [[papers/paper-note-format|Paper note format]]
-- [[papers/paper-triage|Paper triage]]
-- [[papers/paper-review-workflow|Paper review workflow]]
-- [[papers/claim-extraction|Claim extraction]]
-- [[papers/evidence-table|Evidence table]]
-- [[papers/artifact-availability|Artifact availability]]
-- [[papers/reproducibility-checklist|Reproducibility checklist]]
-- [[papers/implementation-readiness|Implementation readiness]]
-- [[papers/reproduction-plan|Reproduction plan]]
-- [[papers/reproduction-result|Reproduction result]]
+- [[papers/workflows/paper-note-format|Paper note format]]
+- [[papers/workflows/paper-triage|Paper triage]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[papers/analysis/claim-extraction|Claim extraction]]
+- [[papers/analysis/evidence-table|Evidence table]]
+- [[papers/reproducibility/artifact-availability|Artifact availability]]
+- [[papers/reproducibility/checklist|Reproducibility checklist]]
+- [[papers/reproducibility/implementation-readiness|Implementation readiness]]
+- [[papers/reproducibility/reproduction-plan|Reproduction plan]]
+- [[papers/reproducibility/reproduction-result|Reproduction result]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]
 - [[inbox/curation-queue|Curation queue]]

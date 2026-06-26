@@ -133,5 +133,5 @@ Activation memory usually grows with batch size and sequence length. If memory i
 - [[concepts/machine-learning/training-step-accounting|Training step accounting]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[concepts/systems/distributed-training|Distributed training]]
-- [[infra/distributed-training|Distributed training]]
-- [[infra/gpu-memory|GPU memory]]
+- [[infra/training/distributed-training|Distributed training]]
+- [[infra/gpu/memory|GPU memory]]

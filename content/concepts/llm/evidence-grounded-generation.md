@@ -68,6 +68,6 @@ A grounded answer should separate:
 - [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
-- [[papers/evidence-table|Evidence table]]
+- [[papers/analysis/evidence-table|Evidence table]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]

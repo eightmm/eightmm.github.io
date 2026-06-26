@@ -37,7 +37,7 @@ In [[concepts/sbdd/binding-affinity|binding affinity]] prediction, it separates 
 
 ## Related Papers
 
-- [[papers/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
+- [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
 
 ## Related Concepts
 

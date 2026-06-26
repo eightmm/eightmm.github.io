@@ -67,4 +67,4 @@ For a public wiki note, a minimal dataset card should include:
 - [[entities/target-assay-label|Target-assay-label contract]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
 - [[concepts/data/benchmark|Benchmark]]
-- [[papers/benchmark-card|Benchmark card]]
+- [[papers/analysis/benchmark-card|Benchmark card]]

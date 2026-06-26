@@ -39,6 +39,6 @@ Structure-based AI paper notes cover docking, pose generation, scoring, virtual 
 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
-- [[papers/paper-review-workflow|Paper review workflow]]
-- [[papers/claim-extraction|Claim extraction]]
-- [[papers/paper-comparison-matrix|Paper comparison matrix]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[papers/analysis/claim-extraction|Claim extraction]]
+- [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]

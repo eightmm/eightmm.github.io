@@ -94,6 +94,6 @@ For public notes, artifact pointers should be public-safe summaries or release a
 - [[concepts/machine-learning/learning-curve|Learning curve]]
 - [[concepts/machine-learning/validation-curve|Validation curve]]
 - [[concepts/systems/reproducibility|Reproducibility]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 - [[logs/public-log-format|Public log format]]
 - [[projects/project-milestone-format|Project milestone format]]

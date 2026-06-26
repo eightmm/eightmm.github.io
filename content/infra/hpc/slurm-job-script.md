@@ -119,5 +119,5 @@ The public version can describe these fields without exposing private paths or c
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 - [[projects/hpc-research-workflows|HPC research workflows]]

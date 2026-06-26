@@ -16,7 +16,7 @@ Inbox triage decides whether a raw candidate becomes a paper note, concept note,
 - Does it contain private or unpublished information that must be removed?
 - Does it need human review before publication?
 - What is the smallest useful destination page?
-- If it is a paper candidate, does it pass [[papers/paper-triage|Paper triage]]?
+- If it is a paper candidate, does it pass [[papers/workflows/paper-triage|Paper triage]]?
 - Which destination has the strongest fit according to [[agents/workflows/content-promotion-workflow|Content promotion workflow]]?
 
 ## Destination Rules
@@ -46,8 +46,8 @@ For cleaned work records, use [[logs/public-log-taxonomy|Public log taxonomy]] a
 - [[inbox/index|Inbox]]
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/publishing-gate|Publishing gate]]
-- [[papers/reading-status|Reading status]]
-- [[papers/paper-triage|Paper triage]]
+- [[papers/workflows/reading-status|Reading status]]
+- [[papers/workflows/paper-triage|Paper triage]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[logs/sanitization-checklist|Sanitization checklist]]

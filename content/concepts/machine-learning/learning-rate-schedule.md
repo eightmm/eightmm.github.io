@@ -76,4 +76,4 @@ The variable $t$ should be defined by [[concepts/machine-learning/training-step-
 - [[concepts/machine-learning/training-stability|Training stability]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/machine-learning/training-step-accounting|Training step accounting]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

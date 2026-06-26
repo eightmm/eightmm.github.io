@@ -25,7 +25,7 @@ source: OpenClaw
 ### Molexar: A Unified Multimodal Molecular Foundation Model for Drug Design
 
 - Track: [[research/structure-based-ai/index|Structure-based AI]]
-- Paper note: [[papers/molexar|Molexar]]
+- Paper note: [[papers/generative-models/molexar|Molexar]]
 - Source metadata: arXiv:2606.25865, submitted 2026-06-24
 - Related concepts:
   - [[concepts/generative-models/molecular-generation|Molecular generation]]
@@ -41,7 +41,7 @@ source: OpenClaw
 ### Scalable Peptide Design via Memory-Efficient Equivariant Transformer (MEET)
 
 - Track: [[research/protein-modeling/index|Protein modeling]]
-- Paper note: [[papers/meet-equivariant-peptide|MEET]]
+- Paper note: [[papers/protein-modeling/meet-equivariant-peptide|MEET]]
 - Source metadata: arXiv:2606.25006, submitted 2026-06-23
 - Related concepts:
   - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
@@ -56,7 +56,7 @@ source: OpenClaw
 ### Multi-Scale Machine Learning for Antibody-Antigen Binding Affinity Prediction
 
 - Track: [[research/structure-based-ai/index|Structure-based AI]]
-- Paper note: [[papers/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
+- Paper note: [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
 - Source metadata: bioRxiv preprint, posted 2026-06-23
 - Related concepts:
   - [[concepts/sbdd/binding-affinity|Binding affinity]]

@@ -60,4 +60,4 @@ $\delta_{\mathrm{min}}$ is the smallest improvement that would change a decision
 - [[concepts/evaluation/paired-comparison|Paired comparison]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
-- [[papers/claim-extraction|Claim extraction]]
+- [[papers/analysis/claim-extraction|Claim extraction]]

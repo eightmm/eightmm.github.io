@@ -52,4 +52,4 @@ $$
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
-- [[papers/claim-extraction|Claim extraction]]
+- [[papers/analysis/claim-extraction|Claim extraction]]

@@ -52,4 +52,4 @@ The public ledger should generalize or omit private run identifiers, internal ta
 - [[concepts/research-methodology/experiment-design|Experiment design]]
 - [[concepts/research-methodology/negative-result|Negative result]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

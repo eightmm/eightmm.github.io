@@ -77,5 +77,5 @@ Optimizing one can hurt the other.
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
-- [[infra/inference-serving|Inference serving]]
+- [[infra/inference/serving|Inference serving]]
 - [[concepts/systems/storage-io|Storage and IO]]

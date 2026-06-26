@@ -41,5 +41,5 @@ $Y_E$ is the result of experiment $E$, and $I(H;Y_E)$ is the information the res
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
 - [[concepts/research-methodology/experiment-design|Experiment design]]
 - [[concepts/research-methodology/negative-result|Negative result]]
-- [[papers/reproduction-plan|Reproduction plan]]
+- [[papers/reproducibility/reproduction-plan|Reproduction plan]]
 - [[concepts/evaluation/baseline|Baseline]]

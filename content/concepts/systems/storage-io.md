@@ -93,7 +93,7 @@ If any part changes, stale cached features can silently invalidate evaluation.
 
 ## Related
 
-- [[infra/data-loading-io|Data loading and IO]]
+- [[infra/io/data-loading|Data loading and IO]]
 - [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
 - [[concepts/data/data-versioning|Data versioning]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]

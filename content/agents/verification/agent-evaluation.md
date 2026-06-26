@@ -114,7 +114,7 @@ Messy tasks include dirty worktrees, ambiguous instructions, flaky tools, partia
 - [[agents/verification/prompt-injection|Prompt injection]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]
 - [[concepts/evaluation/metric|Metric]]
-- [[papers/benchmark-card|Benchmark card]]
+- [[papers/analysis/benchmark-card|Benchmark card]]
 - [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/math/statistical-estimator|Statistical estimator]]
 - [[concepts/learning/reward-modeling|Reward modeling]]

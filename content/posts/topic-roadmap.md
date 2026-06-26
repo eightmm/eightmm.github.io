@@ -74,36 +74,36 @@ tags:
 
 ## Papers
 
-- 논문 후보를 [[papers/paper-triage|paper triage]]로 drop/inbox/paper note/concept update/synthesis로 나누는 법
-- 논문 하나를 [[papers/paper-note-format|paper note]]에서 [[concepts/index|concept note]]로 분해하는 법
-- [[papers/claim-extraction|Claim extraction]], [[papers/evidence-table|evidence table]], [[papers/limitation-taxonomy|limitation taxonomy]]로 논문 주장을 좁히는 법
-- [[papers/benchmark-card|Benchmark card]]와 [[papers/ablation-map|ablation map]]으로 benchmark와 component claim을 분리해서 읽는 법
-- [[papers/reproduction-plan|Reproduction plan]]과 [[concepts/research-methodology/minimum-viable-experiment|minimum viable experiment]]로 논문을 실제 실험으로 줄이는 법
-- [[papers/artifact-availability|Artifact availability]]로 code, data, split, config, weight, log, prediction, environment 공개 여부를 먼저 확인하는 법
-- [[papers/implementation-readiness|Implementation readiness]]로 논문을 구현할 가치가 있는 claim 단위로 좁히는 법
-- [[papers/reproduction-result|Reproduction result]]로 성공/실패/불확실한 재현 결과를 공개 가능한 evidence로 남기는 법
-- [[papers/reproducibility-checklist|Reproducibility checklist]]로 논문 구현 가능성을 빠르게 판별하는 법
+- 논문 후보를 [[papers/workflows/paper-triage|paper triage]]로 drop/inbox/paper note/concept update/synthesis로 나누는 법
+- 논문 하나를 [[papers/workflows/paper-note-format|paper note]]에서 [[concepts/index|concept note]]로 분해하는 법
+- [[papers/analysis/claim-extraction|Claim extraction]], [[papers/analysis/evidence-table|evidence table]], [[papers/analysis/limitation-taxonomy|limitation taxonomy]]로 논문 주장을 좁히는 법
+- [[papers/analysis/benchmark-card|Benchmark card]]와 [[papers/analysis/ablation-map|ablation map]]으로 benchmark와 component claim을 분리해서 읽는 법
+- [[papers/reproducibility/reproduction-plan|Reproduction plan]]과 [[concepts/research-methodology/minimum-viable-experiment|minimum viable experiment]]로 논문을 실제 실험으로 줄이는 법
+- [[papers/reproducibility/artifact-availability|Artifact availability]]로 code, data, split, config, weight, log, prediction, environment 공개 여부를 먼저 확인하는 법
+- [[papers/reproducibility/implementation-readiness|Implementation readiness]]로 논문을 구현할 가치가 있는 claim 단위로 좁히는 법
+- [[papers/reproducibility/reproduction-result|Reproduction result]]로 성공/실패/불확실한 재현 결과를 공개 가능한 evidence로 남기는 법
+- [[papers/reproducibility/checklist|Reproducibility checklist]]로 논문 구현 가능성을 빠르게 판별하는 법
 - [[concepts/research-methodology/threat-to-validity|Threat to validity]]를 이용해 paper claim을 좁히는 법
 - [[concepts/research-methodology/literature-synthesis|Literature synthesis]]로 여러 논문을 하나의 연구 질문으로 묶는 법
 - [[papers/sbdd/posebusters|PoseBusters]]를 pose plausibility 체크리스트로 읽는 법
-- [[papers/reading-status|Reading status]]를 써서 raw candidate와 verified note를 구분하는 법
+- [[papers/workflows/reading-status|Reading status]]를 써서 raw candidate와 verified note를 구분하는 법
 
 ## Infra
 
 - [[infra/hpc/slurm|Slurm]]을 연구 workflow 관점에서 이해하기
 - [[concepts/systems/resource-scheduling|Resource scheduling]], [[infra/hpc/resource-request|resource request]], [[infra/hpc/job-array|job array]]를 shared HPC 사용의 기본 단어로 정리하기
-- [[infra/gpu-memory|GPU memory]] 문제를 parameters, activations, optimizer state, KV cache로 나눠 보는 법
-- [[infra/gpu-bottleneck-taxonomy|GPU bottleneck taxonomy]]로 utilization, memory, IO, communication 문제를 분리해서 진단하는 법
+- [[infra/gpu/memory|GPU memory]] 문제를 parameters, activations, optimizer state, KV cache로 나눠 보는 법
+- [[infra/gpu/bottleneck-taxonomy|GPU bottleneck taxonomy]]로 utilization, memory, IO, communication 문제를 분리해서 진단하는 법
 - [[concepts/systems/distributed-training|Distributed training]]을 effective batch size, communication, sharding, checkpoint state 관점에서 정리하기
 - [[concepts/systems/checkpoint-state|Checkpoint state]]와 [[concepts/systems/failure-recovery|failure recovery]]를 긴 training run의 기본 설계로 보는 법
 - [[infra/hpc/preemption-resume|Preemption and resume]]를 긴 실험의 reliability 문제로 설명하기
 - [[infra/hpc/job-reconciliation|Job reconciliation]]으로 오래 도는 job을 중복 실행하지 않고 닫는 법
 - [[concepts/systems/batch-online-inference|Batch and online inference]]를 throughput/latency 관점에서 나눠 보는 법
-- [[infra/inference-capacity-planning|Inference capacity planning]]으로 context length, concurrency, KV cache, p95 latency를 연결하는 법
+- [[infra/inference/capacity-planning|Inference capacity planning]]으로 context length, concurrency, KV cache, p95 latency를 연결하는 법
 - [[concepts/systems/model-card|Model card]]와 [[concepts/systems/inference-contract|inference contract]]로 모델 artifact를 공개 가능한 사용 경계까지 설명하는 법
 - [[logs/public-incident-note|Public incident note]]로 운영 실패를 공개 가능한 lesson으로 바꾸는 법
 - [[infra/server-ops/incident-response|Incident response]], [[infra/server-ops/backup-restore|backup and restore]], [[infra/server-ops/access-boundary|access boundary]]를 서버 운영 글의 기본 runbook으로 쓰는 법
-- [[infra/reproducible-run-record|Reproducible run record]]를 왜 연구 로그와 연결해야 하는가
+- [[infra/reproducibility/run-record|Reproducible run record]]를 왜 연구 로그와 연결해야 하는가
 - [[logs/public-log-taxonomy|Public log taxonomy]]와 [[logs/log-promotion-rule|log promotion rule]]로 작업 로그를 concept/project/post로 승격하는 법
 
 ## Agents

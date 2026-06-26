@@ -48,4 +48,4 @@ where $a_t$ is the proposed action or artifact, $E_t$ is evidence, and $R$ is th
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]
 - [[concepts/evaluation/error-analysis|Error analysis]]
-- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]

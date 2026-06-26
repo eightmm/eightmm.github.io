@@ -51,4 +51,4 @@ Public notes can describe retention classes, validation checks, and recovery rea
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/systems/run-artifact|Run artifact]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

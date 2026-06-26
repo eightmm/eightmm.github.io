@@ -66,5 +66,5 @@ The claim should become weaker when any upstream piece is missing. A result with
 - [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
-- [[papers/reproduction-plan|Reproduction plan]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[papers/reproducibility/reproduction-plan|Reproduction plan]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

@@ -103,6 +103,6 @@ If these do not match, the run may load without crashing but continue as a diffe
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/hpc/preemption-resume|Preemption and resume]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
-- [[infra/reproducible-run-record|Reproducible run record]]
-- [[infra/distributed-training|Distributed training]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
+- [[infra/training/distributed-training|Distributed training]]
 - [[infra/index|Infra]]

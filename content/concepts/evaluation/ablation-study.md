@@ -107,6 +107,6 @@ This is evidence that the component may be unnecessary, redundant, or only usefu
 - [[concepts/evaluation/paired-comparison|Paired comparison]]
 - [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
-- [[papers/paper-review-workflow|Paper review workflow]]
-- [[papers/ablation-map|Ablation map]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[papers/analysis/ablation-map|Ablation map]]
 - [[agents/verification/verification-loop|Verification loop]]

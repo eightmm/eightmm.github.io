@@ -43,4 +43,4 @@ The agent should make the proposal and evidence cheap to inspect; the human rema
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[agents/workflows/multi-agent-review|Multi-agent review]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
-- [[papers/paper-note-format|Paper note format]]
+- [[papers/workflows/paper-note-format|Paper note format]]

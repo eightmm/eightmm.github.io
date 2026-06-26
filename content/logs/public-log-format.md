@@ -68,5 +68,5 @@ Generic, public context only.
 - [[logs/log-promotion-rule|Log promotion rule]]
 - [[logs/public-incident-note|Public incident note]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 - [[projects/project-milestone-format|Project milestone format]]

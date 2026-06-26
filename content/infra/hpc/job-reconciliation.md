@@ -62,6 +62,6 @@ Public notes should describe the failure class and recovery lesson without publi
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/preemption-resume|Preemption and resume]]
 - [[infra/hpc/checkpointing|Checkpointing]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[concepts/systems/observability|Observability]]

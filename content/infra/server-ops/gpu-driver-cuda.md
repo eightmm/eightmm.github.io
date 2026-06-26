@@ -36,7 +36,7 @@ Debug from the host layer upward instead of changing project dependencies first.
 
 ## Related
 
-- [[infra/gpu|GPU]]
+- [[infra/gpu/index|GPU]]
 - [[infra/server-ops/index|Server operations]]
 - [[infra/server-ops/incident-response|Incident response]]
 - [[infra/hpc/slurm|Slurm]]

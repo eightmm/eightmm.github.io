@@ -146,4 +146,4 @@ This boundary should match [[concepts/machine-learning/training-step-accounting|
 - [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
 - [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
 - [[infra/hpc/checkpointing|Checkpointing]]
-- [[infra/gpu-memory|GPU memory]]
+- [[infra/gpu/memory|GPU memory]]

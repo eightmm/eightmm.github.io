@@ -60,5 +60,5 @@ $$
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
-- [[papers/paper-review-workflow|Paper review workflow]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

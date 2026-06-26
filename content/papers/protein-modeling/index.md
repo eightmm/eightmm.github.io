@@ -25,11 +25,16 @@ Protein modeling paper notes cover structure prediction, sequence models, protei
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 
+## Curated Notes
+
+- [[papers/protein-modeling/meet-equivariant-peptide|MEET]]
+- [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
+
 ## Related
 
 - [[research/protein-modeling/index|Protein modeling]]
 - [[research/protein-modeling/mambafold|MambaFold]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
-- [[papers/claim-extraction|Claim extraction]]
-- [[papers/paper-comparison-matrix|Paper comparison matrix]]
-- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/analysis/claim-extraction|Claim extraction]]
+- [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]

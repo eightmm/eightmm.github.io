@@ -99,7 +99,7 @@ This makes failures smaller, improves scheduling flexibility, and reduces the co
 - Increase memory only when logs or monitoring show memory pressure.
 - Request wall time based on measured iteration speed, not a guess.
 - Separate CPU-heavy preprocessing from GPU-heavy training when possible.
-- Record the final public-safe resource shape in [[infra/reproducible-run-record|Reproducible run record]].
+- Record the final public-safe resource shape in [[infra/reproducibility/run-record|Reproducible run record]].
 - Keep GPU count, batch size, data-loader workers, and checkpoint interval consistent with measured throughput.
 - For public writeups, describe resource class generically instead of naming private cluster resources.
 
@@ -121,6 +121,6 @@ This makes failures smaller, improves scheduling flexibility, and reduces the co
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/job-array|Job array]]
-- [[infra/gpu-utilization|GPU utilization]]
-- [[infra/data-loading-io|Data loading and IO]]
-- [[infra/gpu-memory|GPU memory]]
+- [[infra/gpu/utilization|GPU utilization]]
+- [[infra/io/data-loading|Data loading and IO]]
+- [[infra/gpu/memory|GPU memory]]

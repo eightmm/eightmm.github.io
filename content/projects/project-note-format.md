@@ -154,6 +154,6 @@ A project note is ready for public linking when:
 - [[concepts/research-methodology/decision-record|Decision record]]
 - [[concepts/systems/model-card|Model card]]
 - [[concepts/systems/inference-contract|Inference contract]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 - [[agents/verification/acceptance-criteria|Acceptance criteria]]
 - [[inbox/publishing-gate|Publishing gate]]

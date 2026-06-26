@@ -47,7 +47,7 @@ The hard part is not only syntactic validity, but whether the fragment vocabular
 
 ## Related Papers
 
-- [[papers/molexar|Molexar]]
+- [[papers/generative-models/molexar|Molexar]]
 
 ## Related Concepts
 

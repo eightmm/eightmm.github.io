@@ -78,4 +78,4 @@ This is usually implemented as vector-Jacobian products rather than explicit Jac
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/training-loop|Training loop]]
 - [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
-- [[infra/gpu-memory|GPU memory]]
+- [[infra/gpu/memory|GPU memory]]

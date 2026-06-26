@@ -10,61 +10,31 @@ tags:
 
 이 페이지는 한글 안내 페이지입니다. 링크된 세부 `infra/*` 문서는 영어 canonical wiki note로 유지합니다.
 
-공개하면 안 되는 정보: private host, account name, SSH connection detail, internal path, credential, private queue name, user list, firewall detail, unpublished run result.
+운영 글은 문제를 그대로 적기보다 공개 가능한 runbook으로 정제합니다. 증상, 원인 후보, 수집할 evidence, 안전한 조치, 예방책을 남기고 private host, account name, SSH connection detail, internal path, credential, private queue name, user list, firewall detail, unpublished run result는 쓰지 않습니다.
 
-## Compute
+## Main Areas
 
-- [[infra/gpu|GPU]]
-- [[infra/gpu-bottleneck-taxonomy|GPU bottleneck taxonomy]]
-- [[infra/gpu-utilization|GPU utilization]]
-- [[infra/gpu-memory|GPU memory]]
 - [[infra/hpc/index|HPC]]
-- [[infra/hpc/slurm|Slurm]]
-- [[concepts/systems/resource-scheduling|Resource scheduling]]
-- [[infra/hpc/resource-request|Resource request]]
-- [[infra/hpc/job-array|Job array]]
-- [[infra/hpc/preemption-resume|Preemption and resume]]
-- [[infra/hpc/slurm-job-script|Slurm job script]]
-- [[infra/hpc/job-lifecycle|HPC job lifecycle]]
-- [[infra/hpc/job-reconciliation|Job reconciliation]]
-- [[infra/hpc/checkpointing|Checkpointing]]
-
-## Training and Serving
-
-- [[concepts/systems/index|AI systems]]
-- [[concepts/systems/training-run|Training run]]
-- [[concepts/systems/distributed-training|Distributed training]]
-- [[concepts/systems/checkpoint-state|Checkpoint state]]
-- [[concepts/systems/environment-management|Environment management]]
-- [[concepts/systems/storage-io|Storage and IO]]
-- [[concepts/systems/observability|Observability]]
-- [[concepts/systems/failure-recovery|Failure recovery]]
-- [[concepts/systems/inference|Inference]]
-- [[concepts/systems/batch-online-inference|Batch and online inference]]
-- [[concepts/systems/model-serving|Model serving]]
-- [[concepts/systems/model-versioning|Model versioning]]
-- [[concepts/systems/deployment-strategy|Deployment strategy]]
-- [[concepts/systems/data-validation|Data validation]]
-- [[infra/inference-capacity-planning|Inference capacity planning]]
-- [[infra/data-loading-io|Data loading and IO]]
-- [[infra/distributed-training|Distributed training]]
-- [[infra/environment-modules-containers|Environment modules and containers]]
-- [[infra/inference-serving|Inference serving]]
-- [[infra/reproducible-run-record|Reproducible run record]]
-
-## Server Operations
-
+- [[infra/gpu/index|GPU]]
+- [[infra/inference/index|Inference]]
+- [[infra/training/index|Training]]
+- [[infra/io/index|Storage and IO]]
+- [[infra/environments/index|Environments]]
+- [[infra/reproducibility/index|Reproducibility]]
 - [[infra/server-ops/index|Server operations]]
-- [[infra/server-ops/incident-response|Incident response]]
-- [[infra/server-ops/backup-restore|Backup and restore]]
-- [[infra/server-ops/access-boundary|Access boundary]]
-- [[infra/server-ops/monitoring|Monitoring shared machines]]
-- [[infra/server-ops/gpu-driver-cuda|GPU driver and CUDA debugging]]
-- [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
-- [[infra/server-ops/account-management|Account and group management]]
+
+## How To Read
+
+- GPU utilization, memory, and bottlenecks belong under [[infra/gpu/index|GPU]].
+- Slurm, resource requests, job arrays, preemption, and checkpointing belong under [[infra/hpc/index|HPC]].
+- Serving capacity, batching, and latency planning belong under [[infra/inference/index|Inference]].
+- Distributed training belongs under [[infra/training/index|Training]] and links back to [[concepts/systems/distributed-training|Distributed training]].
+- Storage and dataloading problems belong under [[infra/io/index|Storage and IO]].
+- Environment modules, containers, and run records belong under [[infra/environments/index|Environments]] and [[infra/reproducibility/index|Reproducibility]].
 
 ## 관련 입구
 
+- [[concepts/systems/index|AI systems]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]
 - [[projects/index|Project index]]
 - [[projects/hpc-research-workflows|HPC research workflows]]

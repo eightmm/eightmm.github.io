@@ -29,7 +29,7 @@ where $s$ is a protein sequence, $c$ is optional context, and $\hat{X}$ is a pre
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 - [[research/protein-modeling/mambafold|MambaFold]]
-- [[papers/meet-equivariant-peptide|MEET]] — memory-efficient equivariant transformer for scalable peptide design
+- [[papers/protein-modeling/meet-equivariant-peptide|MEET]] — memory-efficient equivariant transformer for scalable peptide design
 
 ## Adjacent Areas
 

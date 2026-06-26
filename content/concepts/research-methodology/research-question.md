@@ -42,4 +42,4 @@ $$
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/evaluation/metric|Metric]]
-- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]

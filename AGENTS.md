@@ -124,6 +124,8 @@ Optimization and training notes should connect loss, gradient estimate, optimize
 
 Infra and HPC notes should be general research-engineering knowledge, not a map of any private cluster. For new HPC notes, prefer generic concepts such as resource scheduling, resource requests, job arrays, checkpointing, preemption/resume, GPU memory, storage IO, environment management, and reproducible run records. Update `content/infra/index.md`, the relevant `content/infra/hpc/` or `content/infra/server-ops/` index, and `content/concepts/systems/index.md` when the concept belongs to AI systems.
 
+Keep `infra/` grouped by operational area rather than flat note names. GPU utilization, GPU memory, and bottleneck diagnosis belong under `infra/gpu/`; serving and capacity planning belong under `infra/inference/`; distributed training belongs under `infra/training/`; data loading and storage issues belong under `infra/io/`; modules and containers belong under `infra/environments/`; run records belong under `infra/reproducibility/`. Add or update the nearest folder `index.md` when moving or creating an infra note.
+
 GPU and serving notes should classify bottlenecks before giving fixes: capacity, bandwidth, compute, input pipeline, synchronization, communication, scheduler, latency, throughput, and memory budget. Do not publish private device IDs, process lists, dashboards, hostnames, or live utilization metrics.
 
 Server-ops notes should be written as public runbooks: symptom, likely causes, evidence to collect, safe action, prevention, and public boundary. Use placeholders such as `gpu-node`, `shared-storage`, `/path/to/project`, and `user-or-group`; never publish live topology, exact security controls, hostnames, usernames, ports, dashboards, incident times tied to private systems, or exploit-ready instructions.
@@ -178,6 +180,8 @@ Daily briefs should flow:
 Codex should act as wiki maintainer and draft editor. Human review decides what becomes a curated public note. Repository changes still follow the Commit and Push Policy after verification.
 
 Paper notes should not stop at summary. When a paper is important, extract claims, evidence, benchmark cards, ablation maps, limitations, public artifact availability, reproducibility status, and a reproduction plan. Convert useful follow-up work into `concepts/research-methodology/` notes such as minimum viable experiments and threats to validity.
+
+Keep `papers/` readable as a paper library, not a dumping ground for every paper-method helper. Actual paper notes may live at the root or in topical buckets such as `papers/sbdd/`, `papers/protein-modeling/`, `papers/generative-models/`, `papers/learning-methods/`, and `papers/systems/`. Paper-reading process notes belong under `papers/workflows/`; claim/evidence/benchmark/ablation/limitation/comparison notes belong under `papers/analysis/`; artifact, checklist, implementation readiness, plan, and result notes belong under `papers/reproducibility/`. Update `content/papers/index.md` and the nearest folder index together.
 
 Before starting a paper reproduction, add or update implementation readiness: target one claim, list public artifacts, define the minimum viable experiment, estimate public compute class, and state what success, contradiction, and inconclusive outcomes mean. After any rerun or diagnostic, record a reproduction result with public-safe artifacts, metrics, limitations, and next decision.
 

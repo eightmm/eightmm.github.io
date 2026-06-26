@@ -61,4 +61,4 @@ The distribution of $\Delta^{(b)}$ estimates the uncertainty of the improvement.
 - [[concepts/evaluation/effect-size|Effect size]]
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
-- [[papers/evidence-table|Evidence table]]
+- [[papers/analysis/evidence-table|Evidence table]]

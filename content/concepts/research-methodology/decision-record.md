@@ -48,5 +48,5 @@ $$
 - [[projects/project-milestone-format|Project milestone format]]
 - [[concepts/research-methodology/experiment-ledger|Experiment ledger]]
 - [[concepts/research-methodology/literature-synthesis|Literature synthesis]]
-- [[papers/evidence-table|Evidence table]]
+- [[papers/analysis/evidence-table|Evidence table]]
 - [[logs/public-log-format|Public log format]]

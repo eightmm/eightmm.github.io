@@ -65,4 +65,4 @@ This is an implementation contract, not a universal law. The paper, code, or run
 - [[concepts/machine-learning/weight-decay|Weight decay]]
 - [[concepts/machine-learning/regularization|Regularization]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

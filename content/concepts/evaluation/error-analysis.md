@@ -48,4 +48,4 @@ Aggregate performance can hide large group-specific failures.
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/evaluation/robustness|Robustness]]
-- [[papers/paper-review-workflow|Paper review workflow]]
+- [[papers/workflows/paper-review-workflow|Paper review workflow]]

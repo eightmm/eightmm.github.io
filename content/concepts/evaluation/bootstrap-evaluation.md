@@ -57,5 +57,5 @@ This estimates uncertainty in the improvement directly.
 - [[concepts/evaluation/paired-comparison|Paired comparison]]
 - [[concepts/evaluation/effect-size|Effect size]]
 - [[concepts/evaluation/metric|Metric]]
-- [[papers/evidence-table|Evidence table]]
+- [[papers/analysis/evidence-table|Evidence table]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]

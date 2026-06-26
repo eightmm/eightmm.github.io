@@ -39,8 +39,8 @@ $$
 - [[infra/server-ops/incident-response|Incident response]]
 - [[infra/server-ops/backup-restore|Backup and restore]]
 - [[infra/server-ops/access-boundary|Access boundary]]
-- [[infra/environment-modules-containers|Environment modules and containers]]
-- [[infra/gpu-utilization|GPU utilization]]
+- [[infra/environments/modules-containers|Environment modules and containers]]
+- [[infra/gpu/utilization|GPU utilization]]
 
 ## Related
 

@@ -35,9 +35,9 @@ where $p_i$ are paper notes and $\mathcal{Q}$ is the research question being cla
 
 1. Start from a concrete [[concepts/research-methodology/research-question|research question]].
 2. Select a small set of papers with comparable tasks.
-3. Extract claims with [[papers/claim-extraction|Claim extraction]].
-4. Map evidence with [[papers/evidence-table|Evidence table]].
-5. Compare methods with [[papers/paper-comparison-matrix|Paper comparison matrix]].
+3. Extract claims with [[papers/analysis/claim-extraction|Claim extraction]].
+4. Map evidence with [[papers/analysis/evidence-table|Evidence table]].
+5. Compare methods with [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]].
 6. Convert stable ideas into [[concepts/index|Concepts]].
 7. Write a Korean post only when the synthesis has a clear reader path.
 
@@ -52,7 +52,7 @@ where $p_i$ are paper notes and $\mathcal{Q}$ is the research question being cla
 ## Related
 
 - [[papers/index|Papers]]
-- [[papers/evidence-table|Evidence table]]
-- [[papers/limitation-taxonomy|Limitation taxonomy]]
+- [[papers/analysis/evidence-table|Evidence table]]
+- [[papers/analysis/limitation-taxonomy|Limitation taxonomy]]
 - [[concepts/research-methodology/research-question|Research question]]
 - [[posts/topic-roadmap|글감 로드맵]]

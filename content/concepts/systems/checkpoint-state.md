@@ -65,5 +65,5 @@ for the next $k$ steps, subject to nondeterministic hardware behavior.
 - [[concepts/machine-learning/training-stability|Training stability]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[infra/hpc/checkpointing|Checkpointing]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 - [[concepts/systems/failure-recovery|Failure recovery]]

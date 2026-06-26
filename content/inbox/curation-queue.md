@@ -36,8 +36,8 @@ $$
 
 ## Promotion Rules
 
-- Promote to [[papers/index|Papers]] when the item is paper-specific, metadata is verified, and it passes [[papers/paper-triage|Paper triage]].
-- Before reproduction planning, record paper-specific public artifacts with [[papers/artifact-availability|Artifact availability]].
+- Promote to [[papers/index|Papers]] when the item is paper-specific, metadata is verified, and it passes [[papers/workflows/paper-triage|Paper triage]].
+- Before reproduction planning, record paper-specific public artifacts with [[papers/reproducibility/artifact-availability|Artifact availability]].
 - Promote to [[concepts/index|Concepts]] when the idea is reusable across papers or projects.
 - Promote to [[projects/index|Projects]] when it describes a public artifact or design decision.
 - Promote to [[logs/index|Public logs]] when it is a cleaned work record.
@@ -66,6 +66,6 @@ $$
 - [[inbox/publishing-gate|Publishing gate]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
-- [[papers/reading-status|Reading status]]
-- [[papers/paper-triage|Paper triage]]
-- [[papers/artifact-availability|Artifact availability]]
+- [[papers/workflows/reading-status|Reading status]]
+- [[papers/workflows/paper-triage|Paper triage]]
+- [[papers/reproducibility/artifact-availability|Artifact availability]]

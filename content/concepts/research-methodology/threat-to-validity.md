@@ -36,12 +36,12 @@ A threat weakens the implication by attacking the data, measurement, comparison,
 - Is the threat severe enough to narrow the claim?
 - Can a small experiment test the threat?
 - Does the paper or experiment report enough evidence to rule it out?
-- Should the limitation be added to [[papers/limitation-taxonomy|Limitation taxonomy]]?
+- Should the limitation be added to [[papers/analysis/limitation-taxonomy|Limitation taxonomy]]?
 
 ## Related
 
-- [[papers/limitation-taxonomy|Limitation taxonomy]]
-- [[papers/ablation-map|Ablation map]]
-- [[papers/evidence-table|Evidence table]]
+- [[papers/analysis/limitation-taxonomy|Limitation taxonomy]]
+- [[papers/analysis/ablation-map|Ablation map]]
+- [[papers/analysis/evidence-table|Evidence table]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/research-methodology/result-interpretation|Result interpretation]]

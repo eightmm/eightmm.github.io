@@ -38,7 +38,7 @@ $$
 
 ## Related
 
-- [[papers/claim-extraction|Claim extraction]]
+- [[papers/analysis/claim-extraction|Claim extraction]]
 - [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[concepts/research-methodology/negative-result|Negative result]]
 - [[concepts/research-methodology/experiment-ledger|Experiment ledger]]

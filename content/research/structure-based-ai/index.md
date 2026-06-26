@@ -61,9 +61,9 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 
 ## Recent Papers
 
-- [[papers/molexar|Molexar]] — unified multimodal molecular foundation model on Fragment-SELFIES
-- [[papers/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]] — multi-scale fusion for affinity prediction, cross-pathogen transfer failure
-- [[papers/meet-equivariant-peptide|MEET]] — memory-efficient equivariant transformer for scalable peptide design
+- [[papers/generative-models/molexar|Molexar]] — unified multimodal molecular foundation model on Fragment-SELFIES
+- [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]] — multi-scale fusion for affinity prediction, cross-pathogen transfer failure
+- [[papers/protein-modeling/meet-equivariant-peptide|MEET]] — memory-efficient equivariant transformer for scalable peptide design
 
 ## Adjacent Areas
 

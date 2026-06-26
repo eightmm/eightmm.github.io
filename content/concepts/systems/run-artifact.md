@@ -8,7 +8,7 @@ tags:
 
 # Run Artifact
 
-A run artifact is any durable output that lets a later reader inspect, resume, compare, or verify a run. It is the systems-side counterpart of [[papers/artifact-availability|Artifact availability]].
+A run artifact is any durable output that lets a later reader inspect, resume, compare, or verify a run. It is the systems-side counterpart of [[papers/reproducibility/artifact-availability|Artifact availability]].
 
 For a run $r$, an artifact bundle can be represented as:
 
@@ -63,6 +63,6 @@ Public blog notes should usually publish the shape of the artifact bundle, not p
 - [[concepts/systems/experiment-tracking|Experiment tracking]]
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
-- [[papers/artifact-availability|Artifact availability]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[papers/reproducibility/artifact-availability|Artifact availability]]
+- [[infra/reproducibility/run-record|Reproducible run record]]
 - [[logs/public-log-format|Public log format]]

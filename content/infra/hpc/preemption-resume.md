@@ -52,4 +52,4 @@ The checkpoint must contain enough state to avoid silently changing the run afte
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
-- [[infra/reproducible-run-record|Reproducible run record]]
+- [[infra/reproducibility/run-record|Reproducible run record]]

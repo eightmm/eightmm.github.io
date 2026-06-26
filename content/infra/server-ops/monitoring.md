@@ -39,5 +39,5 @@ For public notes, keep signals generic and remove live dashboard details.
 - [[concepts/systems/observability|Observability]]
 - [[infra/server-ops/incident-response|Incident response]]
 - [[infra/server-ops/gpu-driver-cuda|GPU driver and CUDA debugging]]
-- [[infra/gpu|GPU]]
+- [[infra/gpu/index|GPU]]
 - [[infra/server-ops/index|Server operations]]

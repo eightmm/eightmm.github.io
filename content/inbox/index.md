@@ -19,7 +19,7 @@ Inbox notes hold sanitized daily candidates before they become curated paper not
 ## Workflow
 
 - [[inbox/inbox-triage|Inbox triage]]
-- [[papers/paper-triage|Paper triage]]
+- [[papers/workflows/paper-triage|Paper triage]]
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
@@ -72,7 +72,7 @@ source: to verify
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
-- [[papers/paper-triage|Paper triage]]
+- [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]
 - [[posts/index|Posts]]
