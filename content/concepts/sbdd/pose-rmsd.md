@@ -24,6 +24,8 @@ $$
 
 The coordinates should be compared in the same receptor frame. For docking pose evaluation, the receptor is usually fixed and the ligand pose is compared directly in that coordinate system.
 
+Use [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]] to record the frame, atom mapping, symmetry correction, loss, and metric before interpreting RMSD.
+
 ## Symmetry-Corrected RMSD
 
 Ligands can have symmetric atoms. A naive atom order can make an equivalent pose look wrong. Symmetry-corrected RMSD minimizes over valid atom permutations:
@@ -81,6 +83,7 @@ for a successful docked pose. This is a convention, not a universal scientific l
 - Is top-1 RMSD separated from best-of-N pose generation?
 - Are pose RMSD, interaction quality, and affinity metrics reported separately?
 - Is the benchmark protected against [[concepts/sbdd/template-leakage|Template leakage]]?
+- Is the coordinate modeling contract explicit enough to reproduce the comparison?
 
 ## Related
 
@@ -90,4 +93,5 @@ for a successful docked pose. This is a convention, not a universal scientific l
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
 - [[papers/sbdd/posebusters|PoseBusters]]

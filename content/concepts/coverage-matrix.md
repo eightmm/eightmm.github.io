@@ -46,6 +46,7 @@ $$
 | Modality | What form is the input or output? | [Modalities](/concepts/modalities) |
 | Representation | How does the raw object become tokens, graph, coordinates, embedding, or features? | [Representation contract](/concepts/modalities/representation-contract) |
 | Task | What output space and validity rule define success? | [Tasks](/concepts/tasks) |
+| Coordinate contract | What frame, symmetry, mapping, loss, and metric define coordinate claims? | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Data | What example, label, split, and preprocessing contract define the dataset? | [Data](/concepts/data) |
 | Architecture | What inductive bias and complexity does the model use? | [Architectures](/concepts/architectures), [AI architectures](/ai/architectures) |
 | Learning method | What supervision, pretraining, transfer, or preference signal is used? | [Learning methods](/concepts/learning), [AI learning methods](/ai/learning-methods) |
@@ -77,6 +78,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One data or benchmark page when a score is central: [[concepts/data/benchmark-intake|Benchmark intake]].
 - One object/modality/task page when the input or output is nontrivial.
 - One representation contract when preprocessing or featurization changes the object seen by the model.
+- One coordinate modeling contract when a paper predicts poses, conformers, structures, vectors, forces, or coordinate updates.
 - One architecture or learning-method page when the method is central.
 - One objective-metric alignment check when the training loss and reported metric differ.
 - One evaluation page explaining metric, split, baseline, uncertainty, or failure mode.

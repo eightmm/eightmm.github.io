@@ -75,6 +75,7 @@ with the same point ordering.
 - Does preprocessing introduce a frame that changes the symmetry assumption?
 - Are vector or coordinate targets transformed consistently during augmentation?
 - Is the same equivariance contract valid for train, validation, test, and deployment inputs?
+- Does the [[concepts/geometric-deep-learning/coordinate-modeling-contract|coordinate modeling contract]] state output type, loss, and metric?
 
 ## Related
 
@@ -85,3 +86,4 @@ with the same point ordering.
 - [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
 - [[concepts/geometric-deep-learning/irreducible-representation|Irreducible representation]]
 - [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]

@@ -38,6 +38,7 @@ where $X$ is a coordinate set, $R$ is a rotation, and $t$ is a translation.
 
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
 - [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 - [[concepts/geometric-deep-learning/invariance|Invariance]]
@@ -75,6 +76,7 @@ where $X$ is a coordinate set, $R$ is a rotation, and $t$ is a translation.
 
 - Which outputs should be invariant and which should be equivariant?
 - Are coordinates centered, aligned, or frame-dependent?
+- Does the coordinate modeling contract match the claimed output and metric?
 - Are edges constructed only from inputs available at inference time?
 - Are chirality, stereochemistry, units, and atom/residue indexing preserved?
 

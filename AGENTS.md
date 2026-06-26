@@ -48,6 +48,7 @@ Keep supporting wiki areas available for links, but do not expose every support 
 - `entities/`: Protein, ligand, molecule, protein-ligand complex, sequence, structure, assay, dataset, genome, and other modeled objects. Treat this as a vocabulary layer, not a research category by itself.
 - `concepts/modalities/`: Text, image, video, audio, graph, sequence, tabular, 3D structure, and modality-task mapping. When adding modality notes, connect raw input, representation, task output space, loss, metric, split, and leakage risk.
 - For multi-axis AI/molecular/Math notes, add or link a representation contract when preprocessing, featurization, tokenization, graph construction, conformer generation, coordinate extraction, or embedding caching changes what the model actually sees.
+- For coordinate-heavy notes, add or link a coordinate modeling contract. State coordinate source, frame, unit, transformation group, input features, output type, loss, metric, atom/residue mapping, and leakage risks.
 - `concepts/tasks/`: Task specification, output spaces, retrieval, generation, localization, segmentation, and structured prediction. Task notes should state valid outputs, loss, metric, split rule, and failure mode.
 - `concepts/architectures/`: CNN, RNN, Transformer, GNN, state-space models, MoE, and other model families.
 - `concepts/geometric-deep-learning/`: Equivariance, invariance, geometry, coordinates, and symmetry.

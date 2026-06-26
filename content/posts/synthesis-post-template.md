@@ -48,6 +48,7 @@ tags:
 | AI | architecture, learning method, objective, evaluation 중 무엇이 중심인가 | [AI](/ai) |
 | Molecular modeling | molecule, protein, ligand, pocket, conformer, complex 중 무엇이 중심인가 | [Molecular Modeling](/bio) |
 | Representation | raw object가 model input으로 어떻게 바뀌는가 | [Representation contract](/concepts/modalities/representation-contract) |
+| Coordinates | 좌표계, symmetry, pose/RMSD claim이 필요한가 | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Math | 어떤 수식, distribution, metric, optimization target이 필요한가 | [Math](/math) |
 | Evidence | 어떤 benchmark, split, metric, baseline을 믿을 수 있는가 | [Coverage matrix](/concepts/coverage-matrix) |
 | Objective | 학습 loss와 reported metric이 같은 claim을 지지하는가 | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
@@ -80,6 +81,7 @@ $$
 | --- | --- |
 | Claim | 논문이 실제로 주장하는 것은 무엇인가? |
 | Representation | 모델이 실제로 본 입력은 무엇인가? |
+| Coordinates | frame, atom/residue mapping, symmetry correction이 명확한가? |
 | Split | 어떤 단위가 train/test 사이에서 분리되는가? |
 | Metric | metric이 task utility를 직접 반영하는가? |
 | Objective | training objective와 selection/test metric이 어긋나지 않는가? |

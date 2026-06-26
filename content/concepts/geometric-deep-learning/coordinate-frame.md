@@ -63,6 +63,7 @@ If a model predicts coordinates, directions, forces, vector fields, or docking p
 - Which features are invariant scalars?
 - Which features are equivariant vectors or tensors?
 - Does train/test preprocessing use the same frame contract?
+- Is the broader [[concepts/geometric-deep-learning/coordinate-modeling-contract|coordinate modeling contract]] explicit?
 
 ## Related
 
@@ -72,4 +73,5 @@ If a model predicts coordinates, directions, forces, vector fields, or docking p
 - [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
 - [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
 - [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
 - [[concepts/modalities/3d-structure|3D structure]]
