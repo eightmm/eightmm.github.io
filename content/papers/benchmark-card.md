@@ -27,6 +27,8 @@ $\mathcal{D}$ is data, $\mathcal{T}$ is task, $S$ is split policy, $M$ is metric
 - Metric: what number decides success.
 - Baseline: what comparison makes the metric meaningful.
 - Leakage risks: entity overlap, template leakage, duplicate records, or label leakage.
+- Contamination risks: pretraining, retrieval, prompt, feature, model-selection, or leaderboard feedback overlap.
+- Saturation status: whether score differences still exceed metric noise.
 - Scope: what deployment or scientific claim the benchmark can and cannot support.
 
 ## Checks
@@ -34,6 +36,7 @@ $\mathcal{D}$ is data, $\mathcal{T}$ is task, $S$ is split policy, $M$ is metric
 - Does the split match the generalization claim?
 - Does the metric match the task objective?
 - Are preprocessing and filtering choices stated?
+- Is the final test set protected from contamination?
 - Is the benchmark saturated or still discriminative?
 - Can a simple baseline expose shortcut learning?
 
@@ -42,6 +45,9 @@ $\mathcal{D}$ is data, $\mathcal{T}$ is task, $S$ is split policy, $M$ is metric
 - [[concepts/data/benchmark|Benchmark]]
 - [[papers/evidence-table|Evidence table]]
 - [[papers/claim-extraction|Claim extraction]]
+- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
+- [[concepts/evaluation/benchmark-saturation|Benchmark saturation]]
 - [[concepts/sbdd/template-leakage|Template leakage]]

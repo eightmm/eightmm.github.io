@@ -114,6 +114,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/data/sampling-bias|Sampling bias]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/benchmark|Benchmark]]
+- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 
 ## Modalities
@@ -416,6 +417,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
+- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
@@ -434,6 +436,8 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/cross-validation|Cross-validation]]
 - [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
+- [[concepts/evaluation/benchmark-saturation|Benchmark saturation]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 - [[concepts/evaluation/negative-set|Negative set]]

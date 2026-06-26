@@ -45,6 +45,7 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/benchmark|Benchmark]]
+- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
 
 ## Checks
@@ -73,7 +74,8 @@ Training and evaluation are only meaningful when this empirical distribution is 
 4. Record [[concepts/data/metadata-provenance|metadata and provenance]] and [[concepts/data/data-lineage|data lineage]].
 5. Choose the [[concepts/data/sampling-strategy|sampling strategy]] and [[concepts/data/dataset-split-contract|dataset split contract]].
 6. Summarize the result in a [[concepts/data/dataset-card|dataset card]].
-7. Attach an [[concepts/evaluation/evaluation-protocol|evaluation protocol]].
+7. Design the [[concepts/evaluation/evaluation-set-design|evaluation set]].
+8. Attach an [[concepts/evaluation/evaluation-protocol|evaluation protocol]].
 
 ## Related
 
@@ -82,4 +84,5 @@ Training and evaluation are only meaningful when this empirical distribution is 
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
 - [[concepts/systems/reproducibility|Reproducibility]]

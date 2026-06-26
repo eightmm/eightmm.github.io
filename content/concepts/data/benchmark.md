@@ -25,11 +25,13 @@ This estimate supports a claim only when the test set and metric match the inten
 
 - Task definition.
 - Dataset version.
+- Evaluation set design.
 - Split policy.
 - Metric and aggregation rule.
 - Baselines.
 - Allowed training data and preprocessing.
 - Reporting protocol for uncertainty and failure cases.
+- Contamination and saturation checks.
 
 ## Checks
 
@@ -37,12 +39,17 @@ This estimate supports a claim only when the test set and metric match the inten
 - Is the split random, temporal, scaffold-based, family-based, source-based, or user-defined?
 - Are baselines strong enough to expose trivial shortcuts?
 - Is hyperparameter tuning separated from final test evaluation?
+- Is the test set protected from contamination?
+- Is the benchmark saturated or still discriminative?
 - Does the leaderboard reward the behavior that matters?
 
 ## Related
 
 - [[concepts/tasks/index|Tasks]]
+- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
+- [[concepts/evaluation/benchmark-saturation|Benchmark saturation]]

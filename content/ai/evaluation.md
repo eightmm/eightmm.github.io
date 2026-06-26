@@ -34,6 +34,7 @@ $$
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
+- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/metric|Metric]]
 - [[concepts/evaluation/metric-selection|Metric selection]]
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
@@ -52,6 +53,8 @@ $$
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/evaluation/cross-validation|Cross-validation]]
 - [[concepts/evaluation/leakage|Leakage]]
+- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
+- [[concepts/evaluation/benchmark-saturation|Benchmark saturation]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]
@@ -83,7 +86,10 @@ $$
 ## 읽을 때 볼 질문
 
 - train/test split이 실제 generalization을 요구하는가?
+- evaluation set 자체가 어떤 population, strata, failure mode를 대표하도록 설계됐는가?
 - evaluation protocol이 metric, split, model selection, final test를 분리하는가?
+- final test set이 pretraining, retrieval, prompt, feature engineering, leaderboard iteration에 오염되지 않았는가?
+- benchmark가 이미 saturated라서 score 차이가 metric noise보다 작은 것은 아닌가?
 - metric이 task objective와 맞는가?
 - primary metric과 diagnostic metric이 분리되어 있는가?
 - failure mode가 wrong output, invalid output, miscalibration, OOD, system failure처럼 분해되어 있는가?
