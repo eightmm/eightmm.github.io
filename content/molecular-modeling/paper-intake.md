@@ -1,5 +1,5 @@
 ---
-title: Molecular Modeling Paper Intake
+title: Computational Biology Paper Intake
 aliases:
   - bio/paper-intake
 tags:
@@ -7,9 +7,9 @@ tags:
   - papers
 ---
 
-# Molecular Modeling Paper Intake
+# Computational Biology Paper Intake
 
-Molecular modeling 논문은 model score보다 object, label, split, leakage를 먼저 고정해야 합니다. 특히 molecule, protein, ligand, pocket, conformer, complex를 다루는 논문은 row 하나가 무엇을 의미하는지부터 확인해야 합니다.
+Computational biology 논문은 model score보다 object, label, split, leakage를 먼저 고정해야 합니다. 특히 molecule, protein, ligand, pocket, conformer, complex, genome region을 다루는 논문은 row 하나가 무엇을 의미하는지부터 확인해야 합니다.
 
 $$
 \text{bio example}
@@ -45,7 +45,7 @@ $$
 
 ## Minimum Evidence
 
-A molecular modeling paper note should record:
+A computational biology paper note should record:
 
 - Example unit: molecule, protein, complex, pose, assay record, or generated sample.
 - Label semantics: endpoint, unit, direction, threshold, censoring, replicate aggregation, and source.

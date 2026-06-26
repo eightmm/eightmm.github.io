@@ -234,7 +234,7 @@ Minimum evidence:
 
 ## Related
 
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[molecular-modeling/data-evaluation|Data and evaluation]]
 - [[ai/paper-intake|AI paper intake]]

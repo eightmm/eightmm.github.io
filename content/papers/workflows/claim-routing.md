@@ -27,7 +27,7 @@ where $p$ is a paper or post candidate and $a$ is an axis such as architecture, 
 | Is the main contribution an AI method claim whose type is unclear? | AI claim pattern catalog | [AI paper claim patterns](/ai/paper-claim-patterns) |
 | Is the main contribution a supervision or training signal? | learning-method paper or concept update | [Learning method papers](/papers/learning-methods) |
 | Is the main contribution sampling or density modeling? | generative-model paper or concept update | [Generative model papers](/papers/generative-models) |
-| Is the main contribution about molecules, proteins, docking, conformers, or complexes? | molecular modeling paper intake | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
+| Is the main contribution about molecules, proteins, docking, conformers, complexes, or genome-level sequence objects? | computational biology paper intake | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
 | Does the paper match a repeated computational biology paper type? | claim pattern catalog | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 | Does the claim require AI method, computational biology object, and Math evidence together? | cross-axis contract before writing | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Is the main contribution an equation, estimator, metric, or derivation? | formula intake or math concept update | [Formula intake](/math/formula-intake) |
@@ -101,7 +101,7 @@ public artifact status: to verify
 - [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[ai/paper-intake|AI paper intake]]
 - [[ai/paper-claim-patterns|AI paper claim patterns]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 - [[math/formula-intake|Formula intake]]
 - [[papers/analysis/claim-extraction|Claim extraction]]

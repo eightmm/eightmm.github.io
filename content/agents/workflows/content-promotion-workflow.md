@@ -57,7 +57,7 @@ A Korean post is ready when:
 - The reader needs a map or point of view, not another isolated definition.
 - There is a clear question that the post answers.
 - The post can link to concepts, papers, projects, or infra notes instead of copying them.
-- AI, molecular modeling, and Math-heavy topics pass [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]].
+- AI, Computational Biology, and Math-heavy topics pass [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]] and [[posts/wiki-bundle-checklist|Wiki bundle checklist]].
 - Post candidates pass [[posts/post-promotion-gate|Post promotion gate]] before drafting.
 - Draft structure follows [[posts/synthesis-post-template|Synthesis post template]] when the post crosses several axes.
 - The content passes [[inbox/publishing-gate|Publishing gate]] and [[logs/sanitization-checklist|Sanitization checklist]].
@@ -96,7 +96,8 @@ An agent should:
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[posts/blog-writing-guide|Blog writing guide]]
-- [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
+- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
 - [[posts/post-promotion-gate|Post promotion gate]]
 - [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]

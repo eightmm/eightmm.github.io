@@ -32,7 +32,7 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
 - `ai/`: Korean gateway pages for broad AI foundations.
-- `molecular-modeling/`: Korean gateway pages shown publicly as Computational Biology, focused on molecular modeling, structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling. Old `bio/` paths may remain only as aliases.
+- `molecular-modeling/`: Korean gateway pages shown publicly as Computational Biology, focused on molecular modeling, structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling. Keep `Computational Biology` as the public umbrella and reserve `Molecular Modeling` for the molecule/structure/docking-heavy subset. Old `bio/` paths may remain only as aliases.
 - `math/`: Korean gateway pages for mathematical foundations.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
@@ -209,6 +209,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - For AI/Molecular Modeling/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
 - When adding a paper note or Korean post, check whether `content/ai/index.md`, `content/molecular-modeling/index.md`, or `content/math/index.md` needs one additional route row, but do not duplicate full paper summaries there.
 - For Korean posts that combine AI, Computational Biology, and Math, use `content/posts/ai-molecular-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
+- Before drafting a Korean synthesis post, use `content/posts/wiki-bundle-checklist.md` to confirm that object, representation, method, formula, evidence, paper source, public boundary, and next-path notes exist or are created first.
 - Before promoting a Korean post, use `content/posts/post-promotion-gate.md` to confirm reader question, wiki bundle, evidence boundary, public boundary, and next path.
 - For Korean synthesis posts that cross several axes, use `content/posts/synthesis-post-template.md` as the draft structure and keep detailed definitions in wiki notes.
 - For broad map-style notes or posts, use `content/concepts/topic-map-contract.md` so the page has a reader question, primary axis, object boundary, method family, evidence boundary, and next path.

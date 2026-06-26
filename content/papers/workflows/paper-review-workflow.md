@@ -16,7 +16,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 1. Triage the paper with [[papers/workflows/paper-triage|Paper triage]].
 2. Verify metadata and source links.
-3. Route the paper through [[papers/workflows/claim-routing|Claim routing]], then [[ai/paper-intake|AI paper intake]], [[molecular-modeling/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]] as needed.
+3. Route the paper through [[papers/workflows/claim-routing|Claim routing]], then [[ai/paper-intake|AI paper intake]], [[molecular-modeling/paper-intake|Computational Biology paper intake]], or [[math/formula-intake|Formula intake]] as needed.
 4. Match important equations to [[math/formula-patterns|Formula pattern catalog]] before deciding how much derivation belongs in the note.
 5. Run [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]] and [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]] for multi-axis AI, computational biology, or Math candidates.
 6. Check missing support notes with [[concepts/coverage-matrix|Coverage matrix]].
@@ -78,7 +78,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[ai/paper-intake|AI paper intake]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[math/formula-patterns|Formula pattern catalog]]
 - [[concepts/coverage-matrix|Coverage matrix]]

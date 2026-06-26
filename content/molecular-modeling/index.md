@@ -39,7 +39,7 @@ $$
 | Data and evaluation | label semantics, split units, leakage, assay harmonization | [Data and evaluation](/molecular-modeling/data-evaluation) |
 | Geometry | coordinates, frames, invariance, equivariance | [Geometry](/molecular-modeling/geometry) |
 | Genome | sequence, region, k-mer, variant-level modeling | [Genome](/molecular-modeling/genome) |
-| Paper intake | object, representation, label, split, leakage, public boundary | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
+| Paper intake | object, representation, label, split, leakage, public boundary | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
 | Paper claim patterns | common paper types and their required evidence | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 | Cross-axis contract | AI method, computational biology object, Math objective, evidence | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Post intake | AI, computational biology, and math synthesis writing | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
@@ -141,7 +141,7 @@ Computational biology 쪽 논문은 모델 성능보다 object, label, split, le
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and evaluation](/molecular-modeling/data-evaluation) |
 | Evaluation claim | pose, affinity, ranking, enrichment, property, generation 중 무엇을 주장하는가 | [Docking](/molecular-modeling/docking), [Evaluation](/ai/evaluation) |
 | Public boundary | 내부 데이터나 미공개 결과 없이 일반화 가능한가 | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
-| Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
+| Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
 | Claim pattern | property, activity, docking, generation, protein design, genome sequence 중 어떤 형태인가 | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 
 ## 관련 입구
@@ -149,8 +149,8 @@ Computational biology 쪽 논문은 모델 성능보다 object, label, split, le
 - [[ai/index|AI]]
 - [[papers/index|Papers]]
 - [[projects/index|Projects]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
-- [[molecular-modeling/modeling-scope|Molecular modeling scope]]
+- [[molecular-modeling/modeling-scope|Computational Biology scope]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]

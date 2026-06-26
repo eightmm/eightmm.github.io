@@ -31,13 +31,13 @@ $$
 | Reusable wiki note | definition, boundary, contract, checks, links, public boundary | [Wiki note quality gate](/concepts/wiki-note-quality-gate) |
 | AI paper claim | architecture, objective, evidence, and system boundary | [AI paper intake](/ai/paper-intake) |
 | AI claim pattern | architecture, learning, generation, evaluation, scaling, systems, or agent workflow | [AI paper claim patterns](/ai/paper-claim-patterns) |
-| Computational biology paper claim | object, representation, label, split, leakage | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
+| Computational biology paper claim | object, representation, label, split, leakage | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
 | Computational biology claim pattern | property, activity, docking, generation, protein design, genome sequence modeling | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 | Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
 | Formula pattern | common objective or metric pattern before detailed derivation | [Formula pattern catalog](/math/formula-patterns) |
 | AI + computational biology + Math claim | object, representation, model, objective, evidence, public boundary | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
-| Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
+| Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake), [Wiki bundle checklist](/posts/wiki-bundle-checklist) |
 | Topic map | reader question, primary axis, object boundary, methods, evidence, next path | [Topic map contract](/concepts/topic-map-contract) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | Claim route | primary axis, secondary axes, bucket, concept updates | [Claim routing](/papers/workflows/claim-routing) |
@@ -77,13 +77,13 @@ $$
 | Docking or virtual screening | receptor/ligand preparation, pose generation, scoring, filtering, enrichment metric | [Docking](/molecular-modeling/docking) |
 | Geometry-heavy model | coordinate frame, invariant/equivariant target, rotation/translation behavior, leakage risk | [Computational biology geometry](/molecular-modeling/geometry) |
 | Genome sequence model | region, k-mer, variant, sequence context, split and annotation boundary | [Genome](/molecular-modeling/genome) |
-| Molecular modeling benchmark | label semantics, assay/source, split unit, leakage, baseline, metric | [Data and evaluation](/molecular-modeling/data-evaluation) |
+| Computational biology benchmark | label semantics, assay/source, split unit, leakage, baseline, metric | [Data and evaluation](/molecular-modeling/data-evaluation) |
 
 ## Minimum Note Bundle
 
 Before promoting a paper cluster into a Korean post, check that the bundle has:
 
-- One route page: [[ai/paper-intake|AI paper intake]], [[molecular-modeling/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]].
+- One route page: [[ai/paper-intake|AI paper intake]], [[molecular-modeling/paper-intake|Computational Biology paper intake]], or [[math/formula-intake|Formula intake]].
 - One claim pattern when the paper is in computational biology: [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]].
 - One wiki-note quality pass before a concept becomes a reusable anchor: [[concepts/wiki-note-quality-gate|Wiki note quality gate]].
 - One data or benchmark page when a score is central: [[concepts/data/benchmark-intake|Benchmark intake]].
@@ -106,13 +106,14 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One readiness gate pass before promoting a multi-axis candidate: [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]].
 - One fillable template pass for mixed AI/computational biology/Math papers: [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]].
 - One Korean post intake pass when the result is reader-facing: [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]].
+- One post bundle pass before writing a synthesis post: [[posts/wiki-bundle-checklist|Wiki bundle checklist]].
 
 ## Checks
 
 - Is the central axis clear: object, method, formula, benchmark, paper cluster, or project?
 - Are AI, computational biology, and Math links separated instead of collapsed into one vague topic?
 - Does every performance claim have a route to benchmark intake or evaluation protocol?
-- Does every molecular modeling claim name object, label, split, and leakage risk?
+- Does every computational biology claim name object, label, split, and leakage risk?
 - Does every formula-heavy claim define symbols and the sampled distribution?
 - Is the public boundary clear before adding a post or paper note?
 
@@ -127,5 +128,6 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - [[papers/index|Papers]]
 - [[concepts/topic-map-contract|Topic map contract]]
 - [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]

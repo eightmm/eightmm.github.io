@@ -31,7 +31,7 @@ $$
 | Reader question | the post answers one clear question |
 | Primary axis | AI, Computational Biology, Math, Paper cluster, Project, Infra, or Agents is central |
 | Topic map | broad posts have an explicit map contract rather than a loose link list |
-| Wiki bundle | at least 3-5 reusable notes can be linked instead of redefined |
+| Wiki bundle | required support notes pass [[posts/wiki-bundle-checklist|Wiki bundle checklist]] |
 | Minimum formula | necessary equations are included with symbols, or linked to Math notes |
 | Evidence boundary | paper, benchmark, split, metric, baseline, leakage, and uncertainty claims are scoped |
 | Personal angle | the post adds reading order, interpretation, or practical judgment |
@@ -94,6 +94,7 @@ status: draft
 
 - [[posts/wiki-to-post-workflow|Wiki to post workflow]]
 - [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
 - [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[concepts/topic-map-contract|Topic map contract]]

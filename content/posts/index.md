@@ -17,12 +17,14 @@ tags:
 | [구조 기반 모델링을 어떻게 정리할 것인가](/posts/2026-06-25-structure-based-ai-map) | structure-based modeling map |
 | [Wiki에서 Post로 승격하는 방식](/posts/wiki-to-post-workflow) | note-to-post promotion |
 | [AI Computational Biology Math 포스트 인테이크](/posts/ai-molecular-math-post-intake) | AI, computational biology, and math synthesis writing |
+| [Wiki bundle checklist](/posts/wiki-bundle-checklist) | minimum support notes before writing a post |
 | [Post promotion gate](/posts/post-promotion-gate) | post readiness checklist |
 
 ## 작성 시스템
 
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
 - [[posts/ai-molecular-math-post-intake|AI Computational Biology Math 포스트 인테이크]]
+- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
 - [[posts/post-promotion-gate|Post promotion gate]]
 - [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/topic-roadmap|글감 로드맵]]

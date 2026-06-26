@@ -36,6 +36,7 @@ $$
 | Formula need | 독자 이해에 필요한 최소 수식은 무엇인가? | [Formula intake](/math/formula-intake) |
 | Benchmark boundary | 성능 claim을 어디까지 믿을 수 있는가? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Coverage check | 연결해야 할 object, data, method, formula, evidence note가 있는가? | [Coverage matrix](/concepts/coverage-matrix) |
+| Wiki bundle | post를 쓰기 전에 최소 support note가 준비됐는가? | [Wiki bundle checklist](/posts/wiki-bundle-checklist) |
 | Post promotion | wiki bundle, reader question, evidence boundary, next path가 충분한가? | [Post promotion gate](/posts/post-promotion-gate) |
 | Readiness gate | route, representation, objective, evidence, public boundary가 통과됐는가? | [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 | Public boundary | 공개하면 안 되는 내부 정보가 섞여 있지 않은가? | [Publishing gate](/inbox/publishing-gate) |
@@ -116,12 +117,13 @@ claim, split, metric, leakage, baseline, uncertainty를 점검.
 
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
 - [[posts/synthesis-post-template|Synthesis post template]]
+- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
 - [[posts/post-promotion-gate|Post promotion gate]]
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[ai/paper-intake|AI paper intake]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]

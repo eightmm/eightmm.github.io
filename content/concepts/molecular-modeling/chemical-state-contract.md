@@ -103,5 +103,5 @@ This separates ligand-only conformers from protein-bound poses and prevents a do
 - [[concepts/molecular-modeling/tautomer|Tautomer]]
 - [[concepts/molecular-modeling/protonation-state|Protonation state]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[molecular-modeling/data-evaluation|Data and evaluation]]

@@ -103,7 +103,7 @@ This rewrite forces the note to separate biological object, computational repres
 ## Related
 
 - [[ai/paper-intake|AI paper intake]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/ai-molecular-math-paper-template|AI computational biology math paper template]]

@@ -46,7 +46,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[ai/paper-intake|AI paper intake]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[math/formula-intake|Formula intake]]
 
 ## Checks

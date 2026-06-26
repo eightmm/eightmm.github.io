@@ -81,4 +81,4 @@ After reading, update the smallest durable note that captures the reusable idea.
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[ai/paper-claim-patterns|AI paper claim patterns]]
 - [[math/formula-intake|Formula intake]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]

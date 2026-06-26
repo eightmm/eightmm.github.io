@@ -102,7 +102,7 @@ Use [[math/formula-explanation-ladder|Formula explanation ladder]] before decidi
 - [[math/formula-patterns|Formula pattern catalog]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[ai/paper-intake|AI paper intake]]
-- [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
+- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/math/bayesian-inference|Bayesian inference]]
