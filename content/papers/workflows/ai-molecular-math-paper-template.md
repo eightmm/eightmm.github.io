@@ -64,6 +64,27 @@ State claims as paper claims, not facts.
 | --- | --- | --- |
 | `to verify` | figure/table/section `to verify` | to verify |
 
+## Claim-Type Gate
+
+Select all that apply before summarizing the result.
+
+| Claim Type | Applies? | Required Check |
+| --- | --- | --- |
+| architecture improvement | to verify | fair baseline, ablation, parameter/compute boundary |
+| SSL or pretraining | to verify | pretraining unit, positive/corruption rule, transfer split |
+| generative model | to verify | sampler budget, validity/diversity/novelty/utility, invalid denominator |
+| property or activity prediction | to verify | label semantics, target/assay context, split unit |
+| protein modeling | to verify | sequence/structure source, MSA/template policy, family split |
+| docking or pose | to verify | receptor/ligand preparation, pose metric, failed docking handling |
+| benchmark result | to verify | allowed information, selection rule, baseline, uncertainty |
+| formula or estimator | to verify | variables, distributions, objective, estimator assumptions |
+
+Evidence level:
+
+```yaml
+evidence_level: mentioned # mentioned | specified | supported | bounded | reproducible
+```
+
 ## Method
 
 - Input object: `to verify`
@@ -73,6 +94,18 @@ State claims as paper claims, not facts.
 - Learning signal: `to verify`
 - Objective: `to verify`
 - Inference or sampling procedure: `to verify`
+
+## Representation Contract
+
+| Field | Value |
+| --- | --- |
+| Raw unit | molecule / protein / residue / atom / complex / text / image / graph / assay row / to verify |
+| Model input | token / graph / coordinate / embedding / pair feature / latent / to verify |
+| Tokenization or graph construction | `to verify` |
+| Positional or geometric encoding | `to verify` |
+| Context source | target / pocket / assay / retrieval / template / prompt / not applicable |
+| Information available at inference | `to verify` |
+| Information that must be excluded | labels, future data, ground-truth structures, private context, or `to verify` |
 
 ## Formula Slot
 
@@ -94,6 +127,16 @@ $$
 - Explanation level: name / canonical formula / operational form / claim contract / derivation
 - Relation to evaluation metric: `to verify`
 
+## Objective and Metric Alignment
+
+| Field | Value |
+| --- | --- |
+| Training objective | `to verify` |
+| Model-selection metric | `to verify` |
+| Reported metric | `to verify` |
+| Claimed utility | `to verify` |
+| Mismatch risk | `to verify` |
+
 ## Computational Biology Contract
 
 Use `not applicable` only when the paper is not about computational biology.
@@ -106,6 +149,16 @@ Use `not applicable` only when the paper is not about computational biology.
 | Preprocessing | molecule standardization, protein cleaning, coordinate source, or `not applicable` |
 | Split unit | scaffold, protein family, complex pair, assay/source, time, template-aware, or `to verify` |
 | Leakage risks | duplicate, scaffold, homolog, template, assay/source, coordinate-frame, or `to verify` |
+
+## Public Boundary
+
+| Field | Value |
+| --- | --- |
+| Uses only public sources | to verify |
+| No private paths, servers, accounts, ports, or credentials | yes |
+| No collaborator-private details | yes |
+| No unpublished internal results | yes |
+| Sensitive details removed or generalized | to verify |
 
 ## Benchmark
 

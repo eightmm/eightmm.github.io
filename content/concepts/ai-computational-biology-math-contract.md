@@ -87,6 +87,37 @@ This rewrite forces the note to separate biological object, computational repres
 | New benchmark or leaderboard result is central | [Evaluation](/ai/evaluation) | dataset card, split, baseline, uncertainty |
 | New implementation makes the method practical | [Infra](/infra) | artifact availability, reproducibility, scaling boundary |
 
+## Cross-Axis Failure Modes
+
+| Failure Mode | Symptom | Fix |
+| --- | --- | --- |
+| model name hides object | "Transformer for molecules" without molecule state or label context | add object and representation contract |
+| biology hides method | "docking model" without architecture, objective, or sampler | route method details through AI and Math |
+| formula hides data | clean loss equation without sampled unit or split | add $u$, $q(u)$, preprocessing, and split unit |
+| metric hides objective | training loss and reported metric measure different things | add objective-metric alignment |
+| benchmark hides leakage | high score with row split or unclear allowed information | add split, leakage, and allowed-information check |
+| public post hides uncertainty | Korean synthesis states paper claim as fact | mark claim level and evidence boundary |
+
+## Claim Record
+
+Use this compact record inside paper notes or posts:
+
+```yaml
+claim:
+  text: to verify
+  primary_axis: ai | computational-biology | math | evaluation | systems | agents
+  object: to verify
+  representation: to verify
+  model: to verify
+  objective: to verify
+  metric: to verify
+  split: to verify
+  evidence_level: mentioned
+  public_boundary: to verify
+```
+
+This keeps the note from becoming a loose summary. Every major statement should be traceable to one claim record or to a reusable wiki definition.
+
 ## Readiness Checks
 
 - The title makes the primary axis clear.

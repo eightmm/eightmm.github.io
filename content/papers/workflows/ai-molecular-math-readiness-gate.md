@@ -60,6 +60,49 @@ $$
 | Artifact status | Code, data, splits, weights, configs, logs, predictions, environment |
 | Public status | `inbox`, `reading`, `verified`, `archived`, or `to verify` |
 
+## Claim-Type Gates
+
+Different mixed AI, computational biology, and Math papers fail in different ways. Use the matching row before promotion.
+
+| Claim Type | Must Name | Minimum Evidence |
+| --- | --- | --- |
+| Architecture improvement | input representation, block changed, complexity, baseline architecture | fair baseline, ablation, compute or parameter boundary |
+| SSL or pretraining | pretraining unit, corruption/positive pair, transfer protocol | downstream split, linear probe or fine-tune protocol, leakage check |
+| Generative model | sampling distribution, objective, sampler budget, validity definition | validity, diversity, novelty, utility, invalid-sample denominator |
+| Molecular property/activity | molecule state, target, assay, endpoint, unit, threshold | split unit, assay/source handling, negative construction, calibration if probabilistic |
+| Protein modeling | sequence/structure source, MSA/template policy, residue mapping | family split, template leakage check, structure/source boundary |
+| Docking or pose | receptor state, ligand state, pocket definition, pose metric | pose quality, failed docking denominator, leakage/template policy |
+| Benchmark paper | task definition, allowed information, metric, selection rule | baseline strength, uncertainty, saturation, failure modes |
+| Formula or estimator | random variables, distributions, objective, estimator | operational form, assumptions, metric relation, numerical budget |
+
+If the paper spans multiple claim types, all relevant rows apply.
+
+## Evidence Ladder
+
+Use the weakest true level when writing status:
+
+| Level | Meaning |
+| --- | --- |
+| `mentioned` | paper text states it, but the note has not checked support |
+| `specified` | dataset, split, metric, and formula are identified |
+| `supported` | figure/table/ablation or experiment supports the claim |
+| `bounded` | limitations, failure modes, and applicability domain are stated |
+| `reproducible` | public artifacts are sufficient to rerun or audit the result |
+
+Do not write a claim as established fact unless it reaches at least `supported`, and do not imply deployment confidence unless it reaches `bounded`.
+
+## Missing-Information Defaults
+
+| Missing Item | Default Status |
+| --- | --- |
+| unknown metadata | `to verify` |
+| unavailable code or weights | `not released` or `to verify` |
+| unclear split | `claim not ready` |
+| unclear label semantics | `claim not ready` for computational biology tasks |
+| formula without symbol definitions | `formula intake needed` |
+| metric without baseline or uncertainty | `weak evidence` |
+| private or unpublished detail needed | `do not publish` |
+
 ## Synthesis Post Minimum
 
 - One reader question.
@@ -99,6 +142,9 @@ formula_intake: to verify
 coverage_matrix: to verify
 post_route: not applicable
 public_boundary: to verify
+claim_type_gate: to verify
+evidence_level: mentioned
+missing_information_defaults_applied: to verify
 ```
 
 ## Related
