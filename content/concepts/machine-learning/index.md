@@ -28,68 +28,42 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 - Evaluation: the procedure used to estimate generalization.
 - Generalization: the held-out or deployment behavior being claimed.
 
-## Model Families
+## Route Map
 
-- [[concepts/data/index|Data]]
-- [[concepts/math/random-variable|Random variable]]
-- [[concepts/math/statistical-estimator|Statistical estimator]]
-- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
-- [[concepts/machine-learning/feature-engineering|Feature engineering]]
-- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
-- [[concepts/machine-learning/decision-rule|Decision rule]]
-- [[concepts/machine-learning/classification|Classification]]
-- [[concepts/machine-learning/regression|Regression]]
-- [[concepts/machine-learning/ranking|Ranking]]
-- [[concepts/machine-learning/density-estimation|Density estimation]]
-- [[concepts/machine-learning/representation-learning|Representation learning]]
-- [[concepts/machine-learning/linear-model|Linear model]]
-- [[concepts/machine-learning/tree-based-model|Tree-based model]]
-- [[concepts/machine-learning/kernel-method|Kernel method]]
-- [[concepts/machine-learning/ensemble-method|Ensemble method]]
-- [[concepts/architectures/mlp|MLP]]
+| Question | Start | Then Check |
+| --- | --- | --- |
+| what is one training example? | [Data](/concepts/data), [Data preprocessing](/concepts/machine-learning/data-preprocessing) | [Example unit](/concepts/data/example-unit), [Split unit](/concepts/data/split-unit) |
+| what does the model output? | [Probabilistic prediction](/concepts/machine-learning/probabilistic-prediction), [Decision rule](/concepts/machine-learning/decision-rule) | [Task output space](/concepts/tasks/task-output-space) |
+| is it classification, regression, or ranking? | [Classification](/concepts/machine-learning/classification), [Regression](/concepts/machine-learning/regression), [Ranking](/concepts/machine-learning/ranking) | metric and threshold policy |
+| what objective is optimized? | [Empirical risk minimization](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function) | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| is the loss probabilistic? | [Negative log-likelihood](/concepts/machine-learning/negative-log-likelihood), [Cross-entropy loss](/concepts/machine-learning/cross-entropy-loss), [Mean squared error](/concepts/machine-learning/mean-squared-error) | likelihood family and reduction boundary |
+| how are parameters updated? | [Optimization](/concepts/machine-learning/optimization), [Gradient descent](/concepts/machine-learning/gradient-descent), [Backpropagation](/concepts/machine-learning/backpropagation) | learning rate, batch size, gradient scale |
+| how is generalization estimated? | [Generalization](/concepts/machine-learning/generalization), [Model selection](/concepts/machine-learning/model-selection) | [Train/validation/test split](/concepts/evaluation/train-validation-test-split), [Leakage](/concepts/evaluation/leakage) |
+| why did training fail? | [Training stability](/concepts/machine-learning/training-stability), [Loss landscape](/concepts/machine-learning/loss-landscape) | gradients, optimizer state, data scale |
 
-## Methods
+## Foundations
 
-- [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
-- [[concepts/machine-learning/generalization|Generalization]]
-- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]
-- [[concepts/machine-learning/model-selection|Model selection]]
-- [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]
-- [[concepts/machine-learning/early-stopping|Early stopping]]
-- [[concepts/machine-learning/learning-curve|Learning curve]]
-- [[concepts/machine-learning/validation-curve|Validation curve]]
-- [[concepts/machine-learning/loss-function|Loss function]]
-- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
-- [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
-- [[concepts/machine-learning/mean-squared-error|Mean squared error]]
-- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
-- [[concepts/machine-learning/training-loop|Training loop]]
-- [[concepts/machine-learning/regularization|Regularization]]
-- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
-- [[concepts/evaluation/leakage|Leakage]]
-- [[concepts/data/dataset-shift|Dataset shift]]
-- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
-- [[concepts/machine-learning/optimization|Optimization]]
-- [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]
-- [[concepts/machine-learning/gradient-descent|Gradient descent]]
-- [[concepts/machine-learning/backpropagation|Backpropagation]]
-- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
-- [[concepts/machine-learning/gradient-checking|Gradient checking]]
-- [[concepts/machine-learning/loss-landscape|Loss landscape]]
-- [[concepts/machine-learning/second-order-optimization|Second-order optimization]]
-- [[concepts/machine-learning/optimizer|Optimizer]]
-- [[concepts/machine-learning/adam|Adam]]
-- [[concepts/machine-learning/adamw|AdamW]]
-- [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
-- [[concepts/machine-learning/training-stability|Training stability]]
-- [[concepts/machine-learning/training-step-accounting|Training step accounting]]
-- [[concepts/machine-learning/model-state-contract|Model state contract]]
-- [[concepts/machine-learning/weight-decay|Weight decay]]
-- [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
-- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
-- [[concepts/machine-learning/batch-size|Batch size]]
-- [[concepts/machine-learning/clustering|Clustering]]
-- [[concepts/machine-learning/dimensionality-reduction|Dimensionality reduction]]
+| Group | Notes |
+| --- | --- |
+| Probability and estimators | [Random variable](/concepts/math/random-variable), [Statistical estimator](/concepts/math/statistical-estimator), [Maximum likelihood](/concepts/math/maximum-likelihood) |
+| Data and features | [Data preprocessing](/concepts/machine-learning/data-preprocessing), [Feature engineering](/concepts/machine-learning/feature-engineering), [Dataset shift](/concepts/data/dataset-shift) |
+| Prediction tasks | [Classification](/concepts/machine-learning/classification), [Regression](/concepts/machine-learning/regression), [Ranking](/concepts/machine-learning/ranking), [Density estimation](/concepts/machine-learning/density-estimation) |
+| Classical models | [Linear model](/concepts/machine-learning/linear-model), [Tree-based model](/concepts/machine-learning/tree-based-model), [Kernel method](/concepts/machine-learning/kernel-method), [Ensemble method](/concepts/machine-learning/ensemble-method) |
+| Representations | [Representation learning](/concepts/machine-learning/representation-learning), [Dimensionality reduction](/concepts/machine-learning/dimensionality-reduction), [MLP](/concepts/architectures/mlp) |
+
+## Training and Selection
+
+| Group | Notes |
+| --- | --- |
+| Objective | [Empirical risk minimization](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| Losses | [Cross-entropy loss](/concepts/machine-learning/cross-entropy-loss), [Mean squared error](/concepts/machine-learning/mean-squared-error), [Negative log-likelihood](/concepts/machine-learning/negative-log-likelihood) |
+| Optimization | [Optimization](/concepts/machine-learning/optimization), [Stochastic gradient](/concepts/machine-learning/stochastic-gradient), [Gradient descent](/concepts/machine-learning/gradient-descent), [Second-order optimization](/concepts/machine-learning/second-order-optimization) |
+| Gradients | [Backpropagation](/concepts/machine-learning/backpropagation), [Automatic differentiation](/concepts/machine-learning/automatic-differentiation), [Gradient checking](/concepts/machine-learning/gradient-checking) |
+| Optimizers | [Optimizer](/concepts/machine-learning/optimizer), [Adam](/concepts/machine-learning/adam), [AdamW](/concepts/machine-learning/adamw), [Learning rate schedule](/concepts/machine-learning/learning-rate-schedule) |
+| Stability | [Training loop](/concepts/machine-learning/training-loop), [Training stability](/concepts/machine-learning/training-stability), [Training step accounting](/concepts/machine-learning/training-step-accounting), [Model state contract](/concepts/machine-learning/model-state-contract) |
+| Regularization | [Regularization](/concepts/machine-learning/regularization), [Weight decay](/concepts/machine-learning/weight-decay), [Gradient clipping](/concepts/machine-learning/gradient-clipping), [Gradient accumulation](/concepts/machine-learning/gradient-accumulation), [Batch size](/concepts/machine-learning/batch-size) |
+| Model choice | [Model selection](/concepts/machine-learning/model-selection), [Hyperparameter tuning](/concepts/machine-learning/hyperparameter-tuning), [Early stopping](/concepts/machine-learning/early-stopping), [Learning curve](/concepts/machine-learning/learning-curve), [Validation curve](/concepts/machine-learning/validation-curve) |
+| Failure modes | [Overfitting and underfitting](/concepts/machine-learning/overfitting-underfitting), [Bias-variance tradeoff](/concepts/math/bias-variance-tradeoff), [Leakage](/concepts/evaluation/leakage) |
 
 ## Related
 
