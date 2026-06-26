@@ -90,6 +90,21 @@ $$
 - Diffusion/flow는 probability path와 vector field를 다룹니다: [[concepts/generative-models/diffusion-model|Diffusion model]], [[concepts/generative-models/flow-matching|Flow matching]]
 - Equivariance는 group action 아래에서 output이 어떻게 변해야 하는지를 말합니다: [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 
+## 논문 수식을 읽을 때
+
+새 논문의 수식은 멋있어 보이는 notation보다 어떤 양을 정의하는지 먼저 봅니다.
+
+| 수식 종류 | 먼저 확인할 것 | Start |
+| --- | --- | --- |
+| Linear operation | shape, axis, projection, rank, similarity | [Linear algebra](/math/linear-algebra) |
+| Gradient or update | objective, parameter, gradient estimate, optimizer state | [Calculus and gradients](/math/calculus-gradients) |
+| Probability / expectation | random variable, conditioning, sampling distribution | [Probability and statistics](/math/probability-statistics) |
+| Likelihood / entropy / KL | modeled distribution, target distribution, bound or approximation | [Information and likelihood](/math/information-likelihood) |
+| Symmetry / coordinate rule | transformation group, invariant target, equivariant target | [Geometry and symmetry](/math/geometry-symmetry) |
+| Graph or set equation | node/edge/set unit, permutation behavior, aggregation | [Discrete math and graphs](/math/discrete-graphs) |
+| ODE/SDE/flow | state, time, vector field, integration or sampling path | [Dynamical systems](/math/dynamical-systems) |
+| Metric / comparison | point estimate, uncertainty, paired examples, selection rule | [Evaluation math](/math/evaluation-math) |
+
 ## Related
 
 - [[ai/index|AI]]

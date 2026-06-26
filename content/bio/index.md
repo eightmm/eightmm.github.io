@@ -110,6 +110,20 @@ $$
 | Coordinates and features | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Invariant feature](/concepts/geometric-deep-learning/invariant-feature), [Equivariant feature](/concepts/geometric-deep-learning/equivariant-feature) |
 | Evaluation risk | [Evaluation](/concepts/evaluation), [Leakage](/concepts/evaluation/leakage) |
 
+## Bio 논문을 읽을 때
+
+Bio 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저 분리해야 합니다.
+
+| 먼저 볼 것 | 확인할 내용 | Start |
+| --- | --- | --- |
+| Biological object | molecule, protein, ligand, pocket, complex, genome region 중 무엇인가 | [Entities](/bio/entities) |
+| Representation | string, graph, fingerprint, embedding, conformer, coordinate, complex graph 중 무엇인가 | [Molecules](/bio/molecules), [Proteins](/bio/proteins), [Geometry](/bio/geometry) |
+| Label context | target, assay, endpoint, unit, threshold, censoring, source가 명확한가 | [Data and evaluation](/bio/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
+| Structure context | apo/holo, predicted/experimental, pocket-defined/blind, ligand-defined 여부가 명확한가 | [Structure-based AI](/bio/structure-based-ai), [Docking](/bio/docking) |
+| Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and evaluation](/bio/data-evaluation) |
+| Evaluation claim | pose, affinity, ranking, enrichment, property, generation 중 무엇을 주장하는가 | [Docking](/bio/docking), [Evaluation](/ai/evaluation) |
+| Public boundary | 내부 데이터나 미공개 결과 없이 일반화 가능한가 | [Computational Biology](/bio/computational-biology) |
+
 ## 관련 입구
 
 - [[ai/index|AI]]

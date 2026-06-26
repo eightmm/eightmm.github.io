@@ -69,6 +69,20 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Molecule / protein | [Bio](/bio) | [Molecular modeling](/concepts/molecular-modeling), [Protein modeling](/concepts/protein-modeling), [SBDD concepts](/concepts/sbdd) |
 | Agent workflow | [Agents](/agents) | [Core](/agents/core), [Tools](/agents/tools), [Verification](/agents/verification), [Workflows](/agents/workflows) |
 
+## 논문과 포스트를 읽을 때
+
+새 AI 논문이나 글감을 넣을 때는 모델 이름보다 아래 항목을 먼저 고정합니다.
+
+| 먼저 볼 것 | 확인할 내용 | Start |
+| --- | --- | --- |
+| Input object | text, image, graph, set, coordinate, molecule, protein, agent state 중 무엇인가 | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
+| Task output | class, scalar, ranking, sequence, graph, coordinate, sample, action 중 무엇인가 | [Task specification](/concepts/tasks/task-specification), [Task output space](/concepts/tasks/task-output-space) |
+| Architecture | 어떤 inductive bias, parameter sharing, complexity를 쓰는가 | [Architectures](/ai/architectures) |
+| Learning signal | label, mask, contrast, preference, reward, denoising, velocity 중 무엇인가 | [Learning Methods](/ai/learning-methods) |
+| Objective | loss, likelihood, score, reward, metric이 어떻게 정의되는가 | [Machine Learning](/ai/machine-learning), [Math](/math) |
+| Evaluation claim | 어떤 split, metric, baseline, uncertainty로 주장을 검증하는가 | [Evaluation](/ai/evaluation) |
+| System boundary | training, inference, serving, reproducibility, tool-use 문제가 있는가 | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
+
 ## Related
 
 - [[concepts/index|Concepts]]
