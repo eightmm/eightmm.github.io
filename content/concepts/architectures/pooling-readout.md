@@ -29,6 +29,24 @@ $$
 h_{\mathrm{pool}} = \sum_{i=1}^{n}\alpha_i h_i
 $$
 
+For padded batches, pooling must use a mask:
+
+$$
+h_{\mathrm{mean}}
+=
+\frac{\sum_i m_i h_i}{\sum_i m_i}
+$$
+
+where $m_i=1$ for valid tokens and $0$ for padding. Without this, longer padding or special tokens change the representation.
+
+Task heads then map the readout into the output space:
+
+$$
+\hat{y} = g_\phi(h_{\mathrm{pool}})
+$$
+
+For graph-level prediction, sum pooling can preserve extensive quantities while mean pooling is better for size-normalized properties.
+
 ## Common Choices
 
 - Last-token readout for causal sequence models.
@@ -49,3 +67,5 @@ $$
 - [[concepts/architectures/deep-sets|Deep Sets]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/embedding|Embedding]]
+- [[concepts/tasks/property-prediction|Property prediction]]

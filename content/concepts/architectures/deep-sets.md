@@ -17,6 +17,29 @@ $$
 
 Here $\phi$ embeds each element and $\rho$ maps the pooled representation to the output.
 
+Permutation invariance means:
+
+$$
+f(\{x_1,\ldots,x_n\})
+=
+f(\{x_{\pi(1)},\ldots,x_{\pi(n)}\})
+$$
+
+for any permutation $\pi$. If the output is one value per element, the model should be permutation-equivariant instead:
+
+$$
+g(\pi X) = \pi g(X)
+$$
+
+## Design Choices
+
+- Sum pooling preserves set size information; mean pooling removes direct size scale.
+- Max pooling focuses on the strongest element but can ignore aggregate evidence.
+- Attention pooling is more expressive but must still be designed to respect permutation behavior.
+- Independent $\phi(x_i)$ embeddings miss pairwise interactions unless $\rho$ can infer them from aggregates or additional features.
+
+Deep Sets are often the simplest baseline before using [[concepts/architectures/set-transformer|Set Transformer]], [[concepts/architectures/gnn|Graph neural networks]], or cross-attention over candidates.
+
 ## Why It Matters
 
 - Encodes permutation invariance by construction.
@@ -33,4 +56,6 @@ Here $\phi$ embeds each element and $\rho$ maps the pooled representation to the
 
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/gnn|Graph neural networks]]
+- [[concepts/architectures/set-transformer|Set Transformer]]
+- [[concepts/architectures/pooling-readout|Pooling and readout]]
 - [[concepts/geometric-deep-learning/invariance|Invariance]]

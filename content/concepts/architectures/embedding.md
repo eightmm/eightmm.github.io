@@ -27,6 +27,29 @@ where $p_t$ is a positional or structural encoding.
 
 Embeddings are often compared with [[concepts/math/vector-norm-similarity|dot product, cosine similarity, or Euclidean distance]], depending on whether magnitude should affect the score.
 
+For a batch of token ids $X\in\{1,\ldots,V\}^{B\times T}$, lookup produces:
+
+$$
+H = E[X]\in\mathbb{R}^{B\times T\times d}
+$$
+
+An output classifier may tie weights to the input embedding table:
+
+$$
+\operatorname{logits}_t = h_t E^\top
+$$
+
+This reduces parameters and keeps input/output token spaces aligned.
+
+## Common Embedding Types
+
+- Token embeddings: wordpieces, residues, atoms, k-mers, patches, or graph nodes.
+- Positional embeddings: sequence index, relative offset, chain id, or spatial bucket.
+- Type embeddings: segment, modality, atom type, residue type, or role.
+- Pretrained embeddings: frozen or fine-tuned representations from a larger model.
+
+Embedding quality is not only dimensionality. It also depends on tokenization, normalization, pooling, masking, and whether the downstream metric matches the embedding geometry.
+
 ## Checks
 
 - What does one token represent: wordpiece, residue, atom, k-mer, patch, or node?
@@ -41,4 +64,5 @@ Embeddings are often compared with [[concepts/math/vector-norm-similarity|dot pr
 - [[concepts/architectures/positional-encoding|Positional encoding]]
 - [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
+- [[concepts/architectures/pooling-readout|Pooling and readout]]
 - [[entities/sequence|Sequence]]

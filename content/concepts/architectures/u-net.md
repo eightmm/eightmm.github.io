@@ -24,6 +24,25 @@ $$
 
 Skip connections preserve high-resolution information while the bottleneck captures global context.
 
+For a denoising model, the U-Net often predicts noise or a velocity field:
+
+$$
+\epsilon_\theta(x_t, t, c)
+\quad\text{or}\quad
+v_\theta(x_t, t, c)
+$$
+
+where $x_t$ is a noisy input, $t$ is the noise level or time, and $c$ is optional conditioning. Conditioning can enter through time embeddings, class embeddings, cross-attention, or feature-wise modulation.
+
+## Shape Pattern
+
+- Down path: reduce spatial resolution while increasing channels.
+- Bottleneck: mix broad context at low resolution.
+- Up path: recover resolution using learned upsampling or transposed convolution.
+- Skip paths: copy high-resolution features from encoder to decoder.
+
+The architecture is strongest when input and output share a spatial grid, such as segmentation masks, denoised images, voxel maps, contact maps, or latent feature grids.
+
 ## Why It Matters
 
 - Useful when output has the same spatial format as input.
@@ -42,3 +61,5 @@ Skip connections preserve high-resolution information while the bottleneck captu
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
+- [[concepts/generative-models/flow-matching|Flow matching]]
+- [[concepts/tasks/segmentation|Segmentation]]

@@ -28,6 +28,27 @@ $$
 
 where $e_t$ is a token embedding and $p_t$ is the positional encoding.
 
+Relative position bias modifies the attention logits directly:
+
+$$
+\operatorname{Attn}(Q,K,V)
+=
+\operatorname{softmax}
+\left(
+\frac{QK^\top}{\sqrt{d_k}} + b_{i-j}
+\right)V
+$$
+
+Rotary position embeddings apply a position-dependent rotation to query and key vectors:
+
+$$
+\operatorname{score}_{ij}
+=
+\frac{(R_i q_i)^\top (R_j k_j)}{\sqrt{d_k}}
+$$
+
+This makes attention depend on relative offsets through the rotated inner product.
+
 ## Variants
 
 - Absolute learned positions attach one vector to each index.
@@ -48,3 +69,4 @@ where $e_t$ is a token embedding and $p_t$ is the positional encoding.
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
+- [[concepts/math/symmetry-group|Symmetry group]]

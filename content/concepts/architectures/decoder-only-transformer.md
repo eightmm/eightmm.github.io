@@ -28,6 +28,39 @@ p_\theta(x_{1:T})
 p_\theta(x_t \mid x_{<t})
 $$
 
+At layer $\ell$, causal self-attention computes:
+
+$$
+Q = H^{(\ell)}W_Q,\quad
+K = H^{(\ell)}W_K,\quad
+V = H^{(\ell)}W_V
+$$
+
+$$
+\operatorname{Attn}(H^{(\ell)})
+=
+\operatorname{softmax}
+\left(
+\frac{QK^\top}{\sqrt{d_k}} + M
+\right)V
+$$
+
+where $M$ prevents a token from attending to future tokens. During inference, previously computed keys and values can be cached:
+
+$$
+K_{\le t} = [K_{<t}; K_t],\quad
+V_{\le t} = [V_{<t}; V_t]
+$$
+
+This makes incremental decoding avoid recomputing the whole prefix, but memory grows with context length, layers, heads, and batch size.
+
+## Training and Inference
+
+- Training usually uses teacher forcing: every position predicts the next token in parallel under the causal mask.
+- Inference samples or decodes one step at a time, often with KV cache.
+- Long-context behavior depends on [[concepts/architectures/positional-encoding|positional encoding]], attention implementation, and memory budget.
+- Valid output may require constrained decoding for molecules, tool calls, code, or structured actions.
+
 ## Uses
 
 - Text generation.
@@ -46,4 +79,7 @@ $$
 
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
+- [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/positional-encoding|Positional encoding]]
+- [[infra/gpu/index#memory|GPU memory]]
 - [[agents/tools/tool-use|Tool use]]
