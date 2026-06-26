@@ -29,6 +29,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Triage decisions and reading status.
 - Note shape for curated paper notes.
 - Review workflow from metadata check to concept updates.
+- Domain intake through AI, Bio, and Math foundations.
 - Agent-assisted paper briefs after human-readable sanitization.
 
 ## Notes
@@ -37,6 +38,9 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/paper-note-format|Paper note format]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[ai/paper-intake|AI paper intake]]
+- [[bio/paper-intake|Bio paper intake]]
+- [[math/formula-intake|Formula intake]]
 
 ## Checks
 
@@ -59,3 +63,6 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[papers/analysis/index|Paper analysis]]
 - [[papers/reproducibility/index|Paper reproducibility]]
+- [[ai/index|AI]]
+- [[bio/index|Bio]]
+- [[math/index|Math]]

@@ -30,6 +30,7 @@ $$
 - **Generative Models**: autoregressive model, VAE, GAN, diffusion, score model, flow matching, normalizing flow. [Start](/ai/generative-models)
 - **Evaluation**: metric, split, leakage, calibration, OOD, uncertainty, failure analysis. [Start](/ai/evaluation)
 - **Agents**: tool use, memory, planning, verification, orchestration. [Start](/agents)
+- **Paper Intake**: input/output, architecture, objective, evidence, and system boundary. [Start](/ai/paper-intake)
 
 ## 분류 기준
 
@@ -78,6 +79,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Objective | loss, likelihood, score, reward, metric이 어떻게 정의되는가 | [Machine Learning](/ai/machine-learning), [Math](/math) |
 | Evaluation claim | 어떤 split, metric, baseline, uncertainty로 주장을 검증하는가 | [Evaluation](/ai/evaluation) |
 | System boundary | training, inference, serving, reproducibility, tool-use 문제가 있는가 | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
+| Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [AI paper intake](/ai/paper-intake) |
 
 ## Related
 
@@ -86,3 +88,4 @@ AI note는 아래 질문으로 위치를 정합니다.
 - [[bio/index|Bio]]
 - [[infra/index|Infra]]
 - [[agents/index|Agents]]
+- [[ai/paper-intake|AI paper intake]]

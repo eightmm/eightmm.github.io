@@ -32,6 +32,7 @@ $$
 | Data and evaluation | label semantics, split units, leakage, assay harmonization | [Data and evaluation](/bio/data-evaluation) |
 | Geometry | coordinates, frames, invariance, equivariance | [Geometry](/bio/geometry) |
 | Genome | sequence, region, k-mer, variant-level modeling | [Genome](/bio/genome) |
+| Paper intake | object, representation, label, split, leakage, public boundary | [Bio paper intake](/bio/paper-intake) |
 
 ## 다루는 객체
 
@@ -123,9 +124,11 @@ Bio 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저 �
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and evaluation](/bio/data-evaluation) |
 | Evaluation claim | pose, affinity, ranking, enrichment, property, generation 중 무엇을 주장하는가 | [Docking](/bio/docking), [Evaluation](/ai/evaluation) |
 | Public boundary | 내부 데이터나 미공개 결과 없이 일반화 가능한가 | [Computational Biology](/bio/computational-biology) |
+| Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [Bio paper intake](/bio/paper-intake) |
 
 ## 관련 입구
 
 - [[ai/index|AI]]
 - [[papers/index|Papers]]
 - [[projects/index|Projects]]
+- [[bio/paper-intake|Bio paper intake]]

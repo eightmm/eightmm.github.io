@@ -16,22 +16,23 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 1. Triage the paper with [[papers/workflows/paper-triage|Paper triage]].
 2. Verify metadata and source links.
-3. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]].
-4. Extract claims using [[papers/analysis/claim-extraction|Claim extraction]].
-5. Map claims to evidence using [[papers/analysis/evidence-table|Evidence table]].
-6. Create a [[papers/analysis/benchmark-card|Benchmark card]] for the benchmark when the evaluation protocol matters.
-7. Map component claims with [[papers/analysis/ablation-map|Ablation map]] when the paper argues why a method works.
-8. Record limits with [[papers/analysis/limitation-taxonomy|Limitation taxonomy]].
-9. Record public artifacts using [[papers/reproducibility/artifact-availability|Artifact availability]].
-10. Check reproducibility using [[papers/reproducibility/checklist|Reproducibility checklist]].
-11. Decide [[papers/reproducibility/implementation-readiness|Implementation readiness]] before spending compute.
-12. Write a [[papers/reproducibility/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
-13. Record any rerun, reimplementation, or diagnostic as [[papers/reproducibility/reproduction-result|Reproduction result]].
-14. Compare related papers with [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]] when useful.
-15. Extract reusable concepts into [[concepts/index|Concepts]].
-16. Link research relevance into [[research/index|Research]].
-17. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
-18. Promote mature themes into Korean [[posts/index|Posts]].
+3. Route the paper through [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Bio paper intake]], or [[math/formula-intake|Formula intake]] as needed.
+4. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]].
+5. Extract claims using [[papers/analysis/claim-extraction|Claim extraction]].
+6. Map claims to evidence using [[papers/analysis/evidence-table|Evidence table]].
+7. Create a [[papers/analysis/benchmark-card|Benchmark card]] for the benchmark when the evaluation protocol matters.
+8. Map component claims with [[papers/analysis/ablation-map|Ablation map]] when the paper argues why a method works.
+9. Record limits with [[papers/analysis/limitation-taxonomy|Limitation taxonomy]].
+10. Record public artifacts using [[papers/reproducibility/artifact-availability|Artifact availability]].
+11. Check reproducibility using [[papers/reproducibility/checklist|Reproducibility checklist]].
+12. Decide [[papers/reproducibility/implementation-readiness|Implementation readiness]] before spending compute.
+13. Write a [[papers/reproducibility/reproduction-plan|Reproduction plan]] only if the paper is worth rerunning or reimplementing.
+14. Record any rerun, reimplementation, or diagnostic as [[papers/reproducibility/reproduction-result|Reproduction result]].
+15. Compare related papers with [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]] when useful.
+16. Extract reusable concepts into [[concepts/index|Concepts]].
+17. Link research relevance into [[research/index|Research]].
+18. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
+19. Promote mature themes into Korean [[posts/index|Posts]].
 
 ## Evidence Levels
 
@@ -53,6 +54,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 - Is the paper worth a curated note, or should it only update an existing concept?
 - Are formulas rewritten with symbol definitions rather than copied blindly?
+- Has the paper been routed through the relevant intake page: [[ai/paper-intake|AI]], [[bio/paper-intake|Bio]], or [[math/formula-intake|Math]]?
 - Are metrics connected to [[concepts/evaluation/metric|Metric]] and split protocol?
 - Are reported gains larger than [[concepts/evaluation/confidence-interval|confidence intervals]] or run-to-run variance?
 - Does the paper require [[concepts/evaluation/statistical-significance|statistical significance]] checks?
@@ -65,6 +67,9 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/index|Papers]]
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/reading-status|Reading status]]
+- [[ai/paper-intake|AI paper intake]]
+- [[bio/paper-intake|Bio paper intake]]
+- [[math/formula-intake|Formula intake]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]
 - [[papers/analysis/benchmark-card|Benchmark card]]

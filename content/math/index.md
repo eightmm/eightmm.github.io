@@ -36,6 +36,7 @@ $$
 | Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows | [Dynamical systems](/math/dynamical-systems) |
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
+| Formula intake | paper equations, objectives, indices, distributions, evidence checks | [Formula intake](/math/formula-intake) |
 
 ## Formula Checklist
 
@@ -104,6 +105,7 @@ $$
 | Graph or set equation | node/edge/set unit, permutation behavior, aggregation | [Discrete math and graphs](/math/discrete-graphs) |
 | ODE/SDE/flow | state, time, vector field, integration or sampling path | [Dynamical systems](/math/dynamical-systems) |
 | Metric / comparison | point estimate, uncertainty, paired examples, selection rule | [Evaluation math](/math/evaluation-math) |
+| Full paper equation | object, index, distribution, operation, claim | [Formula intake](/math/formula-intake) |
 
 ## Related
 
@@ -111,3 +113,4 @@ $$
 - [[bio/index|Bio]]
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]
+- [[math/formula-intake|Formula intake]]
