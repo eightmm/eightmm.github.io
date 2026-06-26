@@ -5,7 +5,7 @@ tags:
   - papers
   - workflows
   - ai
-  - bio-ai
+  - molecular-modeling
   - math
 ---
 
@@ -34,7 +34,8 @@ tags:
 
 - One-line question: `to verify`
 - Main contribution: `to verify`
-- Main axis: AI method / molecular modeling object / Math objective / benchmark / system
+- Main axis: AI method / molecular modeling object / Math objective / benchmark / system / agent workflow
+- Secondary axes: `to verify`
 - Public source: `to verify`
 - Reading status: [[papers/workflows/reading-status|Reading status]]
 
@@ -46,6 +47,7 @@ tags:
 | Molecular modeling intake | [Molecular modeling paper intake](/bio/paper-intake) or `not applicable` |
 | Formula intake | [Formula intake](/math/formula-intake) |
 | Benchmark intake | [Benchmark intake](/concepts/data/benchmark-intake) |
+| Claim routing | [Claim routing](/papers/workflows/claim-routing) |
 | Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## Claim

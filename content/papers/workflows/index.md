@@ -29,6 +29,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Triage decisions and reading status.
 - Note shape for curated paper notes.
 - Paper bucket routing.
+- Primary claim-axis routing.
 - Review workflow from metadata check to concept updates.
 - Domain intake through AI, molecular modeling, and Math foundations.
 - Agent-assisted paper briefs after human-readable sanitization.
@@ -36,6 +37,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 ## Notes
 
 - [[papers/workflows/paper-triage|Paper triage]]
+- [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/paper-note-format|Paper note format]]
 - [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
@@ -51,6 +53,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Is the output a paper note, concept update, inbox item, synthesis post, or archive decision?
 - Are missing claims, metrics, authors, and artifacts marked `to verify` instead of invented?
 - For AI/molecular modeling/Math papers, was [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]] used?
+- Is the primary claim axis recorded with [[papers/workflows/claim-routing|Claim routing]]?
 - Does the workflow update the relevant concept pages instead of only accumulating paper summaries?
 
 ## Where New Notes Go

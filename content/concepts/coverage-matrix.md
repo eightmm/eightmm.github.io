@@ -3,7 +3,7 @@ title: Coverage Matrix
 tags:
   - concepts
   - ai
-  - bio-ai
+  - molecular-modeling
   - math
   - papers
 ---
@@ -34,6 +34,7 @@ $$
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI-Molecular-Math post intake](/posts/ai-bio-math-post-intake) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
+| Claim route | primary axis, secondary axes, bucket, concept updates | [Claim routing](/papers/workflows/claim-routing) |
 | Fillable paper note | reusable skeleton for AI/molecular modeling/Math papers | [AI-Molecular-Math paper template](/papers/workflows/ai-bio-math-paper-template) |
 | Paper bucket | decide whether the paper belongs in SBDD, protein modeling, architecture, generation, learning methods, or systems | [Paper triage](/papers/workflows/paper-triage) |
 
@@ -75,6 +76,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One architecture or learning-method page when the method is central.
 - One evaluation page explaining metric, split, baseline, uncertainty, or failure mode.
 - One paper note or paper-analysis note when a specific paper claim is being discussed.
+- One claim-routing pass when a paper or post candidate spans multiple axes: [[papers/workflows/claim-routing|Claim routing]].
 - One fillable template pass for mixed AI/molecular modeling/Math papers: [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]].
 - One Korean post intake pass when the result is reader-facing: [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]].
 

@@ -72,10 +72,12 @@ If evaluation uses a known ligand pose, ligand-defined pocket, homologous templa
 - Benchmark contract issue: [[concepts/data/benchmark-intake|Benchmark intake]]
 - General AI method issue: [[ai/paper-intake|AI paper intake]]
 - Formula issue: [[math/formula-intake|Formula intake]]
+- Multi-axis issue: [[papers/workflows/claim-routing|Claim routing]]
 
 ## Related
 
 - [[bio/index|Molecular Modeling]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
 - [[papers/reproducibility/checklist|Reproducibility checklist]]

@@ -68,10 +68,12 @@ After reading, update the smallest durable note that captures the reusable idea.
 - Evaluation issue: [[ai/evaluation|Evaluation]] or [[concepts/evaluation/index|Evaluation concepts]]
 - Benchmark issue: [[concepts/data/benchmark-intake|Benchmark intake]] or [[papers/analysis/benchmark-card|Benchmark card]]
 - Paper-specific claim: [[papers/analysis/claim-extraction|Claim extraction]] and [[papers/analysis/evidence-table|Evidence table]]
+- Multi-axis paper: [[papers/workflows/claim-routing|Claim routing]]
 
 ## Related
 
 - [[ai/index|AI]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[papers/workflows/claim-routing|Claim routing]]
 - [[math/formula-intake|Formula intake]]
 - [[bio/paper-intake|Molecular modeling paper intake]]

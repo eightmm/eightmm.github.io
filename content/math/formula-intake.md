@@ -81,5 +81,6 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 - [[math/index|Math]]
 - [[ai/paper-intake|AI paper intake]]
 - [[bio/paper-intake|Molecular modeling paper intake]]
+- [[papers/workflows/claim-routing|Claim routing]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]

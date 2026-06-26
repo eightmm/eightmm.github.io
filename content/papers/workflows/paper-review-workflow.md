@@ -16,7 +16,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 1. Triage the paper with [[papers/workflows/paper-triage|Paper triage]].
 2. Verify metadata and source links.
-3. Route the paper through [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]] as needed.
+3. Route the paper through [[papers/workflows/claim-routing|Claim routing]], then [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]] as needed.
 4. Check missing support notes with [[concepts/coverage-matrix|Coverage matrix]].
 5. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]] or [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]].
 6. Extract claims using [[papers/analysis/claim-extraction|Claim extraction]].
@@ -55,7 +55,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 
 - Is the paper worth a curated note, or should it only update an existing concept?
 - Are formulas rewritten with symbol definitions rather than copied blindly?
-- Has the paper been routed through the relevant intake page: [[ai/paper-intake|AI]], [[bio/paper-intake|Molecular Modeling]], or [[math/formula-intake|Math]]?
+- Has the paper been routed through [[papers/workflows/claim-routing|Claim routing]] and the relevant intake page: [[ai/paper-intake|AI]], [[bio/paper-intake|Molecular Modeling]], or [[math/formula-intake|Math]]?
 - Are metrics connected to [[concepts/evaluation/metric|Metric]] and split protocol?
 - Are reported gains larger than [[concepts/evaluation/confidence-interval|confidence intervals]] or run-to-run variance?
 - Does the paper require [[concepts/evaluation/statistical-significance|statistical significance]] checks?
@@ -69,6 +69,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/claim-routing|Claim routing]]
 - [[ai/paper-intake|AI paper intake]]
 - [[bio/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]

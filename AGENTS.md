@@ -32,7 +32,7 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
 - `ai/`: Korean gateway pages for broad AI foundations.
-- `bio/`: Korean gateway pages for computational biology focused on structure-based modeling, docking, molecule/protein modeling, and sequence-level bio AI.
+- `bio/`: Korean gateway pages for molecular modeling focused on structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling.
 - `math/`: Korean gateway pages for mathematical foundations.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
@@ -204,6 +204,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - For Korean posts that combine AI, molecular modeling, and Math, use `content/posts/ai-bio-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
 - For new paper clusters, topic maps, or synthesis posts, check `content/concepts/coverage-matrix.md` so object, representation, task, data, architecture, learning method, math, evaluation, systems, and public boundary links are not missing.
 - For mixed AI/molecular modeling/Math paper notes, use `content/papers/workflows/ai-bio-math-paper-template.md` as the fillable skeleton and keep unknown metadata or metrics as `to verify`.
+- For multi-axis papers or posts, use `content/papers/workflows/claim-routing.md` before choosing the paper bucket or Korean post angle. Record primary axis, secondary axes, concept updates, formula updates, benchmark/evaluation updates, and artifact status.
 - When adding a paper note, route it through `content/papers/workflows/paper-triage.md` and choose the strongest paper bucket before creating a new topical folder.
 - Architecture-centric papers belong under `content/papers/architectures/` unless the stronger claim is learning objective, generation, systems, or molecular modeling evaluation.
 

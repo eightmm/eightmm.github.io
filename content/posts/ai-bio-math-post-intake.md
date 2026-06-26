@@ -4,7 +4,7 @@ tags:
   - posts
   - writing
   - ai
-  - bio-ai
+  - molecular-modeling
   - math
 ---
 

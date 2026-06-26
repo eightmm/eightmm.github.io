@@ -51,7 +51,7 @@ where $p$ is a candidate paper.
 | [Systems papers](/papers/systems) | training efficiency, inference, tooling, agents, reproducibility |
 | Concept update only | math-heavy or method-definition paper where no paper-specific note is needed |
 
-If a paper spans several buckets, choose the strongest claim as the paper location and use [[concepts/coverage-matrix|Coverage matrix]] for cross-links.
+If a paper spans several buckets, choose the strongest claim as the paper location with [[papers/workflows/claim-routing|Claim routing]] and use [[concepts/coverage-matrix|Coverage matrix]] for cross-links.
 
 ## Minimum Metadata
 
@@ -67,6 +67,7 @@ If metadata is missing, write `to verify` rather than inventing it.
 ## Checks
 
 - What existing concept page would this update?
+- Which primary claim axis owns the note?
 - Which paper bucket should hold the note?
 - What claim would be extracted first?
 - What benchmark, split, metric, or baseline does the paper rely on?
@@ -77,6 +78,7 @@ If metadata is missing, write `to verify` rather than inventing it.
 ## Related
 
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]
