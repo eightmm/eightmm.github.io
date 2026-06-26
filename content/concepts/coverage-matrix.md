@@ -34,6 +34,7 @@ $$
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI-Bio-Math post intake](/posts/ai-bio-math-post-intake) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
+| Fillable paper note | reusable skeleton for AI/Bio-AI/Math papers | [AI-Bio-Math paper template](/papers/workflows/ai-bio-math-paper-template) |
 
 ## Axis Coverage
 
@@ -73,6 +74,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One architecture or learning-method page when the method is central.
 - One evaluation page explaining metric, split, baseline, uncertainty, or failure mode.
 - One paper note or paper-analysis note when a specific paper claim is being discussed.
+- One fillable template pass for mixed AI/Bio-AI/Math papers: [[papers/workflows/ai-bio-math-paper-template|AI-Bio-Math paper template]].
 - One Korean post intake pass when the result is reader-facing: [[posts/ai-bio-math-post-intake|AI-Bio-Math post intake]].
 
 ## Checks

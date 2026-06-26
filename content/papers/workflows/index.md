@@ -37,6 +37,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/paper-note-format|Paper note format]]
+- [[papers/workflows/ai-bio-math-paper-template|AI-Bio-Math paper template]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[ai/paper-intake|AI paper intake]]
 - [[bio/paper-intake|Bio-AI paper intake]]
@@ -48,6 +49,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Is the note status visible and honest?
 - Is the output a paper note, concept update, inbox item, synthesis post, or archive decision?
 - Are missing claims, metrics, authors, and artifacts marked `to verify` instead of invented?
+- For AI/Bio-AI/Math papers, was [[papers/workflows/ai-bio-math-paper-template|AI-Bio-Math paper template]] used?
 - Does the workflow update the relevant concept pages instead of only accumulating paper summaries?
 
 ## Where New Notes Go

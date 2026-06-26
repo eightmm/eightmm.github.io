@@ -12,6 +12,8 @@ tags:
 
 A paper note should preserve what the paper claims, what the method changes, how it is evaluated, and how it connects to reusable concepts. It should not become a copied abstract or a raw reading log.
 
+For papers that combine AI methods, Bio-AI objects, and mathematical objectives, start from [[papers/workflows/ai-bio-math-paper-template|AI-Bio-Math paper template]].
+
 ## Suggested Shape
 
 - Citation: verified title, authors, venue or preprint status, and link.
@@ -56,6 +58,7 @@ $$
 - [[papers/index|Papers]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/reading-status|Reading status]]
+- [[papers/workflows/ai-bio-math-paper-template|AI-Bio-Math paper template]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]
 - [[papers/analysis/benchmark-card|Benchmark card]]
