@@ -53,6 +53,42 @@ $$
 
 where $\rho$ contains rules such as distance cutoffs, k-nearest neighbors, bond definitions, contact thresholds, relation extraction, or temporal adjacency. Changing $\rho$ changes the task input.
 
+## Representation Contract
+
+A graph input should state:
+
+$$
+\mathcal{G}
+=
+(V,E,X,E_f,M)
+$$
+
+where $V$ is the node set, $E$ is the edge set, $X$ are node features, $E_f$ are edge features, and $M$ stores masks for valid nodes, edges, or subgraphs.
+
+| Domain | Node | Edge | Split Risk |
+| --- | --- | --- | --- |
+| molecule | atom | bond, distance, contact | same scaffold or standardized molecule across splits |
+| protein | residue, atom, domain | contact, sequence adjacency, spatial neighbor | homolog or template leakage |
+| protein-ligand complex | atom, residue, ligand fragment | bond, contact, distance, interaction | same protein family or ligand scaffold |
+| knowledge graph | entity | relation triple | entity leakage across train/test edges |
+| agent trace | state, message, tool call | transition, dependency, citation | same task template or hidden state reuse |
+
+## Permutation Contract
+
+If node order is arbitrary, a graph-level output should be invariant:
+
+$$
+f(PX, PAP^\top)=f(X,A)
+$$
+
+where $P$ is a permutation matrix. Node-level outputs should be equivariant:
+
+$$
+F(PX, PAP^\top)=P F(X,A)
+$$
+
+This distinction should be stated before choosing pooling, attention, or message passing.
+
 ## Output Levels
 
 Graph tasks differ by prediction unit:
@@ -69,6 +105,20 @@ Y
 $$
 
 The pooling/readout, loss, metric, and split should match the output level. A graph-level split does not necessarily prevent node or entity leakage.
+
+## Edge Semantics
+
+Edges can mean very different things:
+
+| Edge Type | Meaning | Risk |
+| --- | --- | --- |
+| observed bond/relation | part of the raw object | may miss alternative chemical states or relation uncertainty |
+| distance cutoff | geometric proximity | cutoff is a modeling hyperparameter |
+| k-nearest neighbor | fixed local density | can connect through unavailable deployment context |
+| learned edge | inferred during model execution | must not use test labels or future information |
+| temporal edge | event order | future edges can leak labels |
+
+For molecular and protein graphs, edge construction is often as important as the GNN architecture.
 
 ## Leakage Risks
 
@@ -87,6 +137,8 @@ The pooling/readout, loss, metric, and split should match the output level. A gr
 - Does batching preserve graph isolation?
 - Are edge construction rules fixed before evaluation?
 - Is the model expected to be permutation invariant or equivariant?
+- Does the edge definition preserve the task's physical, biological, or relational meaning?
+- Are graph-level metrics hiding node-level or edge-level failure modes?
 
 ## Related
 

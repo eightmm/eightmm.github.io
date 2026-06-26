@@ -17,36 +17,25 @@ $$
 
 where $m$ indexes a modality and $\mathcal{M}$ is the set of available modalities.
 
-## Core Modalities
+## Route Map
 
-- [[concepts/modalities/text|Text]]
-- [[concepts/modalities/sequence|Sequence]]
-- [[concepts/modalities/image|Image]]
-- [[concepts/modalities/video|Video]]
-- [[concepts/modalities/audio|Audio]]
-- [[concepts/modalities/tabular|Tabular]]
-- [[concepts/modalities/graph|Graph]]
-- [[concepts/modalities/3d-structure|3D structure]]
-- [[concepts/modalities/modality-representation|Modality representation]]
-- [[concepts/modalities/representation-contract|Representation contract]]
-- [[concepts/modalities/modality-task-map|Modality-task map]]
-- [[concepts/modalities/modality-alignment|Modality alignment]]
-- [[concepts/modalities/missing-modality|Missing modality]]
-- [[concepts/modalities/multimodal-learning|Multimodal learning]]
+| Question | Start | Then Check |
+| --- | --- | --- |
+| what is the raw signal? | [Text](/concepts/modalities/text), [Sequence](/concepts/modalities/sequence), [Image](/concepts/modalities/image), [Video](/concepts/modalities/video), [Audio](/concepts/modalities/audio), [Tabular](/concepts/modalities/tabular) | preprocessing and lost information |
+| is the object relational? | [Graph](/concepts/modalities/graph) | node/edge definition and graph construction |
+| is the object geometric? | [3D structure](/concepts/modalities/3d-structure) | coordinate frame, invariance, equivariance |
+| what does the model actually see? | [Modality representation](/concepts/modalities/modality-representation), [Representation contract](/concepts/modalities/representation-contract) | tensor shape, tokens, graph, coordinates |
+| how does modality map to task? | [Modality-task map](/concepts/modalities/modality-task-map), [Task specification](/concepts/tasks/task-specification) | output space, loss, metric, split |
+| are multiple modalities aligned? | [Modality alignment](/concepts/modalities/modality-alignment), [Multimodal learning](/concepts/modalities/multimodal-learning) | missing modality and leakage |
 
-## Common Tasks
+## Modality Groups
 
-- [[concepts/tasks/task-specification|Task specification]]
-- [[concepts/modalities/modality-task-map|Modality-task map]]
-- [[concepts/tasks/retrieval|Retrieval]]
-- [[concepts/tasks/similarity-search|Similarity search]]
-- [[concepts/tasks/reranking|Reranking]]
-- [[concepts/tasks/object-detection|Object detection]]
-- [[concepts/tasks/segmentation|Segmentation]]
-- [[concepts/tasks/captioning|Captioning]]
-- [[concepts/tasks/question-answering|Question answering]]
-- [[concepts/tasks/sequence-generation|Sequence generation]]
-- [[concepts/tasks/structured-prediction|Structured prediction]]
+| Group | Notes | Common Tasks |
+| --- | --- | --- |
+| Language and symbolic sequence | [Text](/concepts/modalities/text), [Sequence](/concepts/modalities/sequence) | [Question answering](/concepts/tasks/question-answering), [Sequence generation](/concepts/tasks/sequence-generation), [Retrieval](/concepts/tasks/retrieval) |
+| Dense sensory input | [Image](/concepts/modalities/image), [Video](/concepts/modalities/video), [Audio](/concepts/modalities/audio) | [Object detection](/concepts/tasks/object-detection), [Segmentation](/concepts/tasks/segmentation), [Captioning](/concepts/tasks/captioning) |
+| Structured objects | [Tabular](/concepts/modalities/tabular), [Graph](/concepts/modalities/graph), [3D structure](/concepts/modalities/3d-structure) | [Structured prediction](/concepts/tasks/structured-prediction), [Graph prediction](/concepts/tasks/graph-prediction), [Coordinate prediction](/concepts/tasks/coordinate-prediction) |
+| Cross-modal systems | [Modality alignment](/concepts/modalities/modality-alignment), [Missing modality](/concepts/modalities/missing-modality), [Multimodal learning](/concepts/modalities/multimodal-learning) | retrieval, grounding, fusion, reranking |
 
 ## Why It Matters
 
