@@ -33,6 +33,7 @@ $$
 | Geometry | coordinates, frames, invariance, equivariance | [Geometry](/bio/geometry) |
 | Genome | sequence, region, k-mer, variant-level modeling | [Genome](/bio/genome) |
 | Paper intake | object, representation, label, split, leakage, public boundary | [Bio paper intake](/bio/paper-intake) |
+| Post intake | AI/Bio-AI/Math synthesis writing | [AI-Bio-Math post intake](/posts/ai-bio-math-post-intake) |
 
 ## 다루는 객체
 

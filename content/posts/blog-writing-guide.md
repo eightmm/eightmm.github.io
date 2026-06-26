@@ -15,6 +15,8 @@ tags:
 
 한글 글은 완결된 설명을 목표로 하지만, 모든 세부 개념을 글 안에 반복해서 넣지는 않습니다. 세부 개념은 [[concepts/index|Concepts]], 논문은 [[papers/index|Papers]], 연구 축은 [[research/index|Research]], 구현과 운영 경험은 [[projects/index|Projects]]와 [[infra/index|Infra]]로 넘깁니다.
 
+AI, Bio-AI, Math가 함께 나오는 글은 [[posts/ai-bio-math-post-intake|AI-Bio-Math 포스트 인테이크]]로 먼저 중심축을 정합니다.
+
 ## 기본 구조
 
 좋은 post는 아래 흐름을 따릅니다.
@@ -99,6 +101,7 @@ $$
 
 - [[posts/index|Posts]]
 - [[posts/topic-roadmap|Topic roadmap]]
+- [[posts/ai-bio-math-post-intake|AI-Bio-Math 포스트 인테이크]]
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]

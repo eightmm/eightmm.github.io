@@ -201,6 +201,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - Keep table cells short. If a cell needs multiple sentences, split the table or move detail into the linked note.
 - For AI/Bio/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
 - When adding a paper note or Korean post, check whether `content/ai/index.md`, `content/bio/index.md`, or `content/math/index.md` needs one additional route row, but do not duplicate full paper summaries there.
+- For Korean posts that combine AI, Bio-AI, and Math, use `content/posts/ai-bio-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
 
 ## Mathematical Writing
 

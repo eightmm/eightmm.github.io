@@ -37,6 +37,7 @@ $$
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
 | Formula intake | paper equations, objectives, indices, distributions, evidence checks | [Formula intake](/math/formula-intake) |
+| Post intake | formulas inside Korean AI/Bio-AI synthesis posts | [AI-Bio-Math post intake](/posts/ai-bio-math-post-intake) |
 
 ## Formula Checklist
 
