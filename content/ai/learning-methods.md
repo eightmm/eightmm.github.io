@@ -120,6 +120,9 @@ Here $y^+$ is preferred over $y^-$ and $r_\theta$ is a learned or implicit rewar
 - downstream task와 pretraining task 사이에 mismatch가 있는가?
 - representation 평가는 frozen probe, fine-tuning, retrieval 중 무엇으로 했는가?
 - objective가 downstream evaluation과 같은 정보를 요구하는가?
+- positive, negative, mask, context, target view가 downstream 의미를 보존하는가?
+- pretraining corpus와 downstream test set 사이에 duplicate, scaffold, family, source leakage가 없는가?
+- evaluation budget이 linear probe, kNN, full fine-tuning, low-data fine-tuning 중 무엇인가?
 - reward나 preference signal이 실제 목표와 proxy mismatch를 일으키지 않는가?
 
 ## Related

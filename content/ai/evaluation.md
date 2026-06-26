@@ -89,6 +89,7 @@ For any reported result, first narrow the claim with [[concepts/evaluation/claim
 | The model is better than baseline | paired comparison against a relevant baseline | comparison uses different examples or selection rules |
 | The benchmark score supports a broad claim | benchmark claim contract and claim-evidence boundary | leaderboard score is overstated as general superiority |
 | The method explains a design choice | ablation under fixed protocol | ablation changes multiple variables at once |
+| The selected model is best | model-selection record and untouched final test | best seed, threshold, prompt, or checkpoint is selected on test feedback |
 
 ## Metric Families
 
@@ -100,6 +101,7 @@ For any reported result, first narrow the claim with [[concepts/evaluation/claim
 | Ranking | NDCG, MAP, enrichment, top-k success | per-query error, early enrichment, tie policy |
 | Generated sample | validity, diversity, novelty, utility | constraint satisfaction, duplicate rate, failure taxonomy |
 | Coordinates / structure | RMSD, lDDT-style quality, clash/geometry checks | symmetry correction, atom mapping, interaction quality |
+| Calibrated decision | NLL, Brier, ECE, selective risk | reliability diagram, subgroup calibration |
 
 ## 분야별 평가 연결
 

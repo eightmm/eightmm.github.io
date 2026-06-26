@@ -34,8 +34,8 @@ $$
 | Grid / image / voxel | local translation sharing | CNN, U-Net, ViT | resolution, receptive field, augmentation |
 | Sequence | order and long-range context | RNN/LSTM/GRU, Transformer, SSM/Mamba | length scaling, positional encoding, truncation |
 | Set | permutation invariance | Deep Sets, Set Transformer | pooling/readout and element identity |
-| Graph | neighborhood message passing | GNN, Graph Transformer | graph construction and over-smoothing |
-| 3D coordinates | invariance/equivariance | equivariant GNN, tensor-field model | coordinate frame, units, chirality, leakage |
+| Graph | neighborhood message passing or graph-biased attention | GNN, Graph Transformer | graph construction, edge attributes, over-smoothing |
+| 3D coordinates | invariance/equivariance | equivariant GNN, tensor-field model | coordinate frame, units, chirality, leakage, update stability |
 | Multimodal input | cross-modal alignment | encoder-decoder, cross-attention, Perceiver | missing modality, modality leakage, fusion timing |
 
 ## 기본 구성요소
@@ -113,6 +113,7 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 - [[concepts/architectures/graph-construction|Graph construction]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph transformer]]
+- [[concepts/architectures/pooling-readout|Pooling and readout]]
 
 ## Geometry-Aware Models
 
@@ -122,7 +123,9 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
 - [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
+- [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
 - [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
 - [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
@@ -144,6 +147,8 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 | Better representation | Is the readout or pooling rule aligned with the task output? |
 | Better generation | Does the architecture support the sampling path and conditioning interface? |
 | Better structure modeling | Are invariant and equivariant quantities handled separately? |
+| Better graph modeling | Is graph construction part of the method or held fixed across baselines? |
+| Better coordinate generation | Are coordinate update step count, constraints, and geometry validity reported? |
 
 ## 읽을 때 볼 질문
 

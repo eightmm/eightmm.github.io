@@ -66,7 +66,8 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Text / sequence | [Text](/concepts/modalities/text), [Sequence](/concepts/modalities/sequence) | [Transformer](/concepts/architectures/transformer), [State-space model](/concepts/architectures/state-space-model) |
 | Image / video | [Image](/concepts/modalities/image), [Video](/concepts/modalities/video) | [CNN](/concepts/architectures/cnn), [Vision Transformer](/concepts/architectures/vision-transformer) |
 | Graph / set | [Graph](/concepts/modalities/graph) | [GNN](/concepts/architectures/gnn), [Deep Sets](/concepts/architectures/deep-sets) |
-| 3D / geometry | [3D structure](/concepts/modalities/3d-structure), [Geometry](/concepts/math/geometry) | [Geometric deep learning](/concepts/geometric-deep-learning) |
+| Graph with learned structure | [Representation contract](/concepts/modalities/representation-contract) | [Graph construction](/concepts/architectures/graph-construction), [Graph Transformer](/concepts/architectures/graph-transformer) |
+| 3D / geometry | [3D structure](/concepts/modalities/3d-structure), [Geometry](/concepts/math/geometry) | [Geometric deep learning](/concepts/geometric-deep-learning), [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Molecule / protein | [Computational Biology](/molecular-modeling) | [Molecular modeling](/concepts/molecular-modeling), [Protein modeling](/concepts/protein-modeling), [SBDD concepts](/concepts/sbdd) |
 | Agent workflow | [Agents](/agents) | [Core](/agents/core), [Tools](/agents/tools), [Verification](/agents/verification), [Workflows](/agents/workflows) |
 
@@ -82,7 +83,9 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Architecture | 어떤 inductive bias, parameter sharing, complexity를 쓰는가 | [Architectures](/ai/architectures) |
 | Learning signal | label, mask, contrast, preference, reward, denoising, velocity 중 무엇인가 | [Learning Methods](/ai/learning-methods) |
 | Objective | loss, likelihood, score, reward, metric이 어떻게 정의되는가 | [Machine Learning](/ai/machine-learning), [Math](/math) |
+| Selection rule | checkpoint, hyperparameter, threshold, prompt, filter를 어떻게 골랐는가 | [Model selection](/concepts/machine-learning/model-selection) |
 | Evaluation claim | 어떤 split, metric, baseline, uncertainty로 주장을 검증하는가 | [Evaluation](/ai/evaluation) |
+| Uncertainty and calibration | 결과 차이와 probability claim을 얼마나 믿을 수 있는가 | [Confidence interval](/concepts/evaluation/confidence-interval), [Calibration](/concepts/evaluation/calibration) |
 | System boundary | training, inference, serving, reproducibility, tool-use 문제가 있는가 | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
 | Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [AI paper intake](/ai/paper-intake) |
 | Claim pattern | architecture, learning, generation, evaluation, scaling, systems, agent 중 어떤 claim인가 | [AI paper claim patterns](/ai/paper-claim-patterns) |

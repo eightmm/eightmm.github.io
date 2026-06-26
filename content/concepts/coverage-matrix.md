@@ -54,15 +54,18 @@ $$
 | Object | What entity is being modeled? | [Entities](/entities), [Computational biology entities](/molecular-modeling/entities) |
 | Modality | What form is the input or output? | [Modalities](/concepts/modalities) |
 | Representation | How does the raw object become tokens, graph, coordinates, embedding, or features? | [Representation contract](/concepts/modalities/representation-contract), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
+| Graph construction | What nodes, edges, pair features, and inference-available context define the graph? | [Graph construction](/concepts/architectures/graph-construction), [Graph neural networks](/concepts/architectures/gnn), [Graph Transformer](/concepts/architectures/graph-transformer) |
 | Task | What output space and validity rule define success? | [Tasks](/concepts/tasks) |
 | Coordinate contract | What frame, symmetry, mapping, loss, and metric define coordinate claims? | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Data | What example, label, split, and preprocessing contract define the dataset? | [Data](/concepts/data) |
 | Architecture | What inductive bias and complexity does the model use? | [Architectures](/concepts/architectures), [AI architectures](/ai/architectures) |
 | Learning method | What supervision, pretraining, transfer, or preference signal is used? | [Learning methods](/concepts/learning), [AI learning methods](/ai/learning-methods) |
 | Objective-metric link | Does the optimized loss support the reported metric and utility claim? | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| Model selection | Which checkpoint, hyperparameter, threshold, seed, prompt, filter, or decoding setting was selected? | [Model selection](/concepts/machine-learning/model-selection) |
 | Generative model | What distribution, score, velocity, or sampling path is modeled? | [Generative models](/concepts/generative-models), [AI generative models](/ai/generative-models) |
 | Math | Which formula, object type, distribution, or estimator is needed? | [Math](/math), [Math foundations](/concepts/math) |
 | Evaluation | Which metric, baseline, split, uncertainty, and failure mode support the claim? | [Evaluation](/ai/evaluation), [Evaluation concepts](/concepts/evaluation) |
+| Uncertainty and calibration | Is the result larger than uncertainty, and are probabilities meaningful? | [Confidence interval](/concepts/evaluation/confidence-interval), [Calibration](/concepts/evaluation/calibration), [Cross-validation](/concepts/evaluation/cross-validation) |
 | Claim boundary | What exactly does the evidence prove, and where does it stop? | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
 | Systems | Does the claim depend on training, serving, tools, reproducibility, or compute? | [AI systems](/concepts/systems), [Infra](/infra) |
 | Scaling | Does quality depend on data size, model size, compute, memory, latency, or inference budget? | [Scaling claim contract](/concepts/systems/scaling-claim-contract) |

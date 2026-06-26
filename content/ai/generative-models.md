@@ -89,6 +89,16 @@ $$
 
 When reading a paper, first identify the learned quantity before comparing architectures.
 
+## Claim Boundary
+
+| Claim | First Check |
+| --- | --- |
+| better diffusion model | prediction target, sampler, NFE, guidance scale, evaluation axes |
+| better flow model | probability path, time sampling, velocity target, solver budget |
+| better conditional generation | condition source, condition leakage, fidelity-diversity tradeoff |
+| better molecular/protein generation | validity, novelty, diversity, constraint satisfaction, downstream utility |
+| faster sampling | matched quality at matched hardware, NFE, memory, and filtering rule |
+
 ## Molecular Modeling 연결
 
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
