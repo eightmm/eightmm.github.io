@@ -57,6 +57,32 @@ where $X$ is a coordinate set, $R$ is a rotation, and $t$ is a translation.
 | Coordinate set | equivariant up to permutation and rigid motion | ligand pose, atom coordinates, residue coordinates |
 | Graph relation | often permutation equivariant/invariant | contact map, interaction edge, bond graph |
 
+## Structure Representation Contract
+
+Before writing a structure model note, separate the object, coordinate frame, and target:
+
+| Field | Example Values | Why It Matters |
+| --- | --- | --- |
+| Unit | atom, residue, ligand, pocket, chain, complex | defines permutation and indexing rules |
+| Coordinate source | experimental, predicted, docked, generated, relaxed | defines evidence strength and leakage risk |
+| Frame | global frame, protein-centered, ligand-centered, local residue frame | controls invariance and equivariance requirements |
+| Edges | bond, distance cutoff, kNN, residue contact, interaction edge | determines what information is visible |
+| Target | scalar score, contact graph, coordinate update, pose, force | determines metric and symmetry |
+| Alignment policy | none, receptor-aligned, ligand-aligned, symmetry-aware | determines how RMSD or error is computed |
+
+For a protein-ligand complex:
+
+$$
+X
+=
+\left[
+X_{\mathrm{protein}},
+X_{\mathrm{ligand}}
+\right]
+$$
+
+but the two parts often have different constraints: protein atoms may be fixed, side chains may move, and ligand torsions may change.
+
 ## Coordinate Features
 
 | Feature | Formula | Use |
@@ -66,12 +92,35 @@ where $X$ is a coordinate set, $R$ is a rotation, and $t$ is a translation.
 | Centered coordinate | $\tilde{x}_i=x_i-\frac{1}{N}\sum_j x_j$ | translation handling |
 | Pairwise radial basis | $\psi(d_{ij})$ | smooth distance embedding |
 
+Angles and torsions add information that distances alone may hide:
+
+$$
+\cos \theta_{ijk}
+=
+\frac{(x_i-x_j)^\top(x_k-x_j)}
+{\lVert x_i-x_j\rVert_2\lVert x_k-x_j\rVert_2}
+$$
+
+A torsion angle depends on four ordered atoms and is sensitive to stereochemistry and conformer state. This is why molecule cleanup, residue indexing, and atom mapping belong in the geometry contract.
+
 ## Structure Tasks
 
 - [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
 - [[concepts/tasks/graph-prediction|Graph prediction]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
+
+## Evaluation Boundary
+
+| Claim | Metric Family | Required Context |
+| --- | --- | --- |
+| pose accuracy | RMSD, contact recovery, interaction recovery | atom mapping, receptor state, alignment policy |
+| structure prediction | coordinate error, distance/contact accuracy | residue mapping, chain mapping, template policy |
+| affinity or score | regression, ranking, enrichment | assay/source context and split unit |
+| generation | validity, uniqueness, novelty, geometry checks | sampling budget and filtering policy |
+| force or dynamics | vector error, energy consistency, trajectory stability | units, timestep, integrator, reference data |
+
+Do not use a scalar benchmark score to imply geometric validity unless the geometry checks are reported.
 
 ## Checks
 
@@ -80,9 +129,13 @@ where $X$ is a coordinate set, $R$ is a rotation, and $t$ is a translation.
 - Does the coordinate modeling contract match the claimed output and metric?
 - Are edges constructed only from inputs available at inference time?
 - Are chirality, stereochemistry, units, and atom/residue indexing preserved?
+- Is the receptor, ligand, pocket, or full complex the actual modeled unit?
+- Are failed generations, failed dockings, and filtered structures counted in the denominator?
 
 ## Related
 
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[ai/architectures|Architectures]]
 - [[concepts/architectures/gnn|Graph neural networks]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
+- [[concepts/sbdd/interaction-fingerprint|Interaction fingerprint]]
