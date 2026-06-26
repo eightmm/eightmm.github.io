@@ -12,32 +12,32 @@ tags:
 
 | Area | Use For |
 | --- | --- |
-| [[infra/hpc/index|HPC]] | Slurm, jobs, arrays, preemption, checkpointing |
-| [[infra/gpu/index|GPU]] | utilization, memory, bottlenecks, profiling signals |
-| [[infra/inference/index|Inference]] | serving, batching, latency, throughput |
-| [[infra/training/index|Training]] | distributed training, checkpoint state, training runs |
-| [[infra/io/index|Storage and IO]] | storage, dataloading, throughput, cache behavior |
-| [[infra/environments/index|Environments]] | modules, containers, package environments |
-| [[infra/reproducibility/index|Reproducibility]] | run records, artifacts, environment capture |
-| [[infra/server-ops/index|Server operations]] | public runbooks and operational failure patterns |
+| [HPC](/infra/hpc) | Slurm, jobs, arrays, preemption, checkpointing |
+| [GPU](/infra/gpu) | utilization, memory, bottlenecks, profiling signals |
+| [Inference](/infra/inference) | serving, batching, latency, throughput |
+| [Training](/infra/training) | distributed training, checkpoint state, training runs |
+| [Storage and IO](/infra/io) | storage, dataloading, throughput, cache behavior |
+| [Environments](/infra/environments) | modules, containers, package environments |
+| [Reproducibility](/infra/reproducibility) | run records, artifacts, environment capture |
+| [Server operations](/infra/server-ops) | public runbooks and operational failure patterns |
 
 ## Routing
 
 | Question | Go To |
 | --- | --- |
-| GPU memory or utilization issue? | [[infra/gpu/index|GPU]] |
-| Slurm job lifecycle or resource request? | [[infra/hpc/index|HPC]] |
-| Serving capacity or latency planning? | [[infra/inference/index|Inference]] |
-| Multi-GPU training behavior? | [[infra/training/index|Training]], [[concepts/systems/distributed-training|Distributed training]] |
-| Dataloading or storage throughput issue? | [[infra/io/index|Storage and IO]] |
-| Environment, module, or container problem? | [[infra/environments/index|Environments]] |
-| Need a reproducible record? | [[infra/reproducibility/index|Reproducibility]] |
+| GPU memory or utilization issue? | [GPU](/infra/gpu) |
+| Slurm job lifecycle or resource request? | [HPC](/infra/hpc) |
+| Serving capacity or latency planning? | [Inference](/infra/inference) |
+| Multi-GPU training behavior? | [Training](/infra/training), [Distributed training](/concepts/systems/distributed-training) |
+| Dataloading or storage throughput issue? | [Storage and IO](/infra/io) |
+| Environment, module, or container problem? | [Environments](/infra/environments) |
+| Need a reproducible record? | [Reproducibility](/infra/reproducibility) |
 
 ## 관련 입구
 
 | Area | Link |
 | --- | --- |
-| AI systems concepts | [[concepts/systems/index|AI systems]] |
-| Project workflow | [[projects/index|Projects]], [[projects/hpc-research-workflows|HPC research workflows]] |
-| Evaluation boundary | [[concepts/evaluation/index|Evaluation]] |
-| Agent workflow | [[agents/workflows/llm-wiki|LLM Wiki]] |
+| AI systems concepts | [AI systems](/concepts/systems) |
+| Project workflow | [Projects](/projects), [HPC research workflows](/projects/hpc-research-workflows) |
+| Evaluation boundary | [Evaluation](/concepts/evaluation) |
+| Agent workflow | [LLM Wiki](/agents/workflows/llm-wiki) |

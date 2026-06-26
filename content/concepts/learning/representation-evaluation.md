@@ -33,10 +33,10 @@ Different choices of $g_\phi$ answer different questions:
 
 | Mode | Trainable part | Main question |
 | --- | --- | --- |
-| [[concepts/learning/linear-probing|Linear probing]] | Simple head only | Is the feature linearly separable? |
+| [Linear probing](/concepts/learning/linear-probing) | Simple head only | Is the feature linearly separable? |
 | kNN / retrieval | Often none | Are neighborhoods meaningful? |
 | Clustering | None or clustering model | Does unsupervised structure align with labels? |
-| [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]] | Some or all model weights | Does the representation adapt well? |
+| [Fine-tuning protocol](/concepts/learning/fine-tuning-protocol) | Some or all model weights | Does the representation adapt well? |
 | Task model | Readout or decoder | Does it solve the real downstream task? |
 
 For retrieval-style evaluation:

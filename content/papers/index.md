@@ -14,18 +14,18 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 
 | Area | Use For |
 | --- | --- |
-| [[papers/sbdd/index|Structure-based AI papers]] | docking, pose quality, scoring, screening |
-| [[papers/protein-modeling/index|Protein modeling papers]] | protein representation, structure, antibody/protein interaction |
-| [[papers/generative-models/index|Generative model papers]] | diffusion, flow, molecule/protein generation |
+| [Structure-based AI papers](/papers/sbdd) | docking, pose quality, scoring, screening |
+| [Protein modeling papers](/papers/protein-modeling) | protein representation, structure, antibody/protein interaction |
+| [Generative model papers](/papers/generative-models) | diffusion, flow, molecule/protein generation |
 
 ## Active Paper Notes
 
 | Paper Note | Area |
 | --- | --- |
-| [[papers/sbdd/posebusters|PoseBusters]] | structure-based evaluation |
-| [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]] | antibody-antigen binding |
-| [[papers/protein-modeling/meet-equivariant-peptide|MEET]] | equivariant peptide modeling |
-| [[papers/generative-models/molexar|Molexar]] | molecular generation |
+| [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation |
+| [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | antibody-antigen binding |
+| [MEET](/papers/protein-modeling/meet-equivariant-peptide) | equivariant peptide modeling |
+| [Molexar](/papers/generative-models/molexar) | molecular generation |
 
 ## Reading Utilities
 
@@ -33,21 +33,21 @@ These pages are support material for reading papers, not paper buckets. They rem
 
 | Utility | Use For |
 | --- | --- |
-| [[papers/workflows/index|Paper workflows]] | triage, reading state, note format |
-| [[papers/analysis/index|Paper analysis]] | claims, benchmarks, ablations, limitations |
-| [[papers/reproducibility/index|Paper reproducibility]] | artifacts, readiness, plans, results |
+| [Paper workflows](/papers/workflows) | triage, reading state, note format |
+| [Paper analysis](/papers/analysis) | claims, benchmarks, ablations, limitations |
+| [Paper reproducibility](/papers/reproducibility) | artifacts, readiness, plans, results |
 
 ## Cross-Cutting Concepts
 
 | Context | Links |
 | --- | --- |
-| Data and benchmark | [[concepts/data/benchmark|Benchmark]] |
-| Inputs and tasks | [[concepts/modalities/index|Modalities]], [[concepts/tasks/index|Tasks]], [[concepts/modalities/multimodal-learning|Multimodal learning]] |
-| Models and evidence | [[concepts/architectures/index|Architectures]], [[concepts/evaluation/index|Evaluation]] |
+| Data and benchmark | [Benchmark](/concepts/data/benchmark) |
+| Inputs and tasks | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks), [Multimodal learning](/concepts/modalities/multimodal-learning) |
+| Models and evidence | [Architectures](/concepts/architectures), [Evaluation](/concepts/evaluation) |
 
 ## Related
 
 | Area | Link |
 | --- | --- |
-| Research | [[research/index|Research]] |
-| SBDD | [[concepts/sbdd/scoring-function|Scoring function]] |
+| Research | [Research](/research) |
+| SBDD | [Scoring function](/concepts/sbdd/scoring-function) |

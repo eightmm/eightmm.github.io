@@ -24,12 +24,12 @@ where $l$ is a cleaned log candidate.
 
 | Type | Use when | Better destination if mature |
 | --- | --- | --- |
-| Incident | A failure or debugging episode taught a reusable lesson | [[logs/public-incident-note|Public incident note]] or [[infra/index|Infra]] |
-| Experiment | A run tested a question or hypothesis | [[concepts/research-methodology/research-log|Research log]] or [[projects/index|Projects]] |
-| Decision | A design or research direction changed | [[concepts/research-methodology/decision-record|Decision record]] |
-| Milestone | A public project changed state | [[projects/project-milestone-format|Project milestone format]] |
-| Reading | Paper reading produced a reusable insight | [[papers/index|Papers]] or [[concepts/index|Concepts]] |
-| Operations | A workflow or runbook improved | [[infra/index|Infra]] or [[agents/workflows/index|Agent workflows]] |
+| Incident | A failure or debugging episode taught a reusable lesson | [Public incident note](/logs/public-incident-note) or [Infra](/infra) |
+| Experiment | A run tested a question or hypothesis | [Research log](/concepts/research-methodology/research-log) or [Projects](/projects) |
+| Decision | A design or research direction changed | [Decision record](/concepts/research-methodology/decision-record) |
+| Milestone | A public project changed state | [Project milestone format](/projects/project-milestone-format) |
+| Reading | Paper reading produced a reusable insight | [Papers](/papers) or [Concepts](/concepts) |
+| Operations | A workflow or runbook improved | [Infra](/infra) or [Agent workflows](/agents/workflows) |
 
 ## Minimum Fields
 

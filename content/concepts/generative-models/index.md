@@ -23,14 +23,14 @@ Choose a generative family by the object, output validity rule, likelihood need,
 
 | Family | Training signal | Sampling shape | Strength | Common risk |
 | --- | --- | --- | --- | --- |
-| [[concepts/generative-models/autoregressive-model|Autoregressive]] | Next-token likelihood | Sequential | Stable likelihood training | Slow long-horizon sampling |
-| [[concepts/generative-models/vae|VAE]] | ELBO | Latent decode | Structured latent space | Posterior collapse, blurry samples |
-| [[concepts/generative-models/gan|GAN]] | Adversarial game | One-shot generator | Sharp samples | Mode collapse, unstable training |
-| [[concepts/generative-models/normalizing-flow|Normalizing flow]] | Exact likelihood | Invertible transform | Tractable density | Invertibility constraints |
-| [[concepts/generative-models/diffusion-model|Diffusion]] | Denoising/noise prediction | Iterative denoising | Stable high-quality samples | Many sampling steps |
-| [[concepts/generative-models/score-based-model|Score-based]] | Score matching | SDE/ODE sampler | Continuous-time view | Noise-level coverage |
-| [[concepts/generative-models/flow-matching|Flow matching]] | Velocity matching | ODE transport | Direct path learning | Path and symmetry design |
-| [[concepts/generative-models/consistency-model|Consistency]] | Trajectory consistency | One/few step | Fast sampling | Distillation or consistency quality |
+| [Autoregressive](/concepts/generative-models/autoregressive-model) | Next-token likelihood | Sequential | Stable likelihood training | Slow long-horizon sampling |
+| [VAE](/concepts/generative-models/vae) | ELBO | Latent decode | Structured latent space | Posterior collapse, blurry samples |
+| [GAN](/concepts/generative-models/gan) | Adversarial game | One-shot generator | Sharp samples | Mode collapse, unstable training |
+| [Normalizing flow](/concepts/generative-models/normalizing-flow) | Exact likelihood | Invertible transform | Tractable density | Invertibility constraints |
+| [Diffusion](/concepts/generative-models/diffusion-model) | Denoising/noise prediction | Iterative denoising | Stable high-quality samples | Many sampling steps |
+| [Score-based](/concepts/generative-models/score-based-model) | Score matching | SDE/ODE sampler | Continuous-time view | Noise-level coverage |
+| [Flow matching](/concepts/generative-models/flow-matching) | Velocity matching | ODE transport | Direct path learning | Path and symmetry design |
+| [Consistency](/concepts/generative-models/consistency-model) | Trajectory consistency | One/few step | Fast sampling | Distillation or consistency quality |
 
 ## Evaluation Boundary
 

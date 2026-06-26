@@ -35,7 +35,7 @@ so the paper note can say what evidence was checked and what remains unresolved.
 | --- | --- |
 | Paper | Wikilink to the paper note |
 | Target claim | The exact scoped claim tested |
-| Plan | Link to [[papers/reproducibility/reproduction-plan|Reproduction plan]] |
+| Plan | Link to [Reproduction plan](/papers/reproducibility/reproduction-plan) |
 | Run record | Public-safe run id, config summary, seed policy, and environment class |
 | Artifact | Logs, metrics, predictions, checkpoint, or `not released` |
 | Metric | Metric definition, split, aggregation, and tolerance |

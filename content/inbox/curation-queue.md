@@ -22,7 +22,7 @@ $$
 
 | # | Paper | Destination | Status | Blocker | Next Action |
 |---|-------|-------------|--------|---------|-------------|
-| 1 | The Structural Origin of Attention Sink | papers/ (TBD) | inbox | pure-AI, low domain fit | Verify venue status; check if super-neuron analysis connects to [[concepts/architectures/attention|Attention]] or [[concepts/architectures/transformer|Transformer]] notes |
+| 1 | The Structural Origin of Attention Sink | papers/ (TBD) | inbox | pure-AI, low domain fit | Verify venue status; check if super-neuron analysis connects to [Attention](/concepts/architectures/attention) or [Transformer](/concepts/architectures/transformer) notes |
 | 2 | RelayCaching | papers/ (TBD) | inbox | pure-AI, low current fit | Verify speedup claims; skip unless multi-agent LLM systems become an active track |
 
 ## Queue Fields

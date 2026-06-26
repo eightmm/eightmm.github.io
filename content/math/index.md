@@ -26,16 +26,16 @@ $$
 
 | Area | Use For | Start |
 | --- | --- | --- |
-| Foundations | definitions, formulas, reusable checks | [[concepts/math/index|Math foundations]] |
-| Linear algebra | vectors, matrices, embeddings, projections, similarity, SVD | [[math/linear-algebra|Linear algebra]] |
-| Calculus | derivatives, chain rule, Jacobians, Hessians, backpropagation math | [[math/calculus-gradients|Calculus and gradients]] |
-| Probability | random variables, distributions, estimators, uncertainty, hypothesis tests | [[math/probability-statistics|Probability and statistics]] |
-| Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [[math/information-likelihood|Information and likelihood]] |
-| Geometry | groups, frames, invariance, equivariance, coordinate modeling | [[math/geometry-symmetry|Geometry and symmetry]] |
-| Graphs | sets, neighborhoods, permutations, graph modeling | [[math/discrete-graphs|Discrete math and graphs]] |
-| Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows | [[math/dynamical-systems|Dynamical systems]] |
-| Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [[math/numerical-computing|Numerical computing]] |
-| Evaluation | metrics, confidence intervals, calibration, statistical comparison | [[math/evaluation-math|Evaluation math]] |
+| Foundations | definitions, formulas, reusable checks | [Math foundations](/concepts/math) |
+| Linear algebra | vectors, matrices, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra) |
+| Calculus | derivatives, chain rule, Jacobians, Hessians, backpropagation math | [Calculus and gradients](/math/calculus-gradients) |
+| Probability | random variables, distributions, estimators, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
+| Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
+| Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry) |
+| Graphs | sets, neighborhoods, permutations, graph modeling | [Discrete math and graphs](/math/discrete-graphs) |
+| Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows | [Dynamical systems](/math/dynamical-systems) |
+| Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
+| Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
 
 ## Formula Checklist
 
@@ -53,13 +53,13 @@ $$
 
 | Context | Links |
 | --- | --- |
-| Architecture | [[concepts/architectures/linear-layer|Linear layer]], [[concepts/architectures/attention|Attention]], [[concepts/architectures/normalization|Normalization]] |
-| Learning | [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], [[concepts/machine-learning/empirical-risk-minimization|ERM]], [[concepts/machine-learning/loss-function|Loss function]], [[concepts/machine-learning/optimization|Optimization]] |
-| Numerical stability | [[math/numerical-computing|Numerical computing]], [[concepts/architectures/softmax|Softmax]], [[concepts/machine-learning/training-stability|Training stability]], [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]] |
-| Generation | [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/maximum-likelihood|Maximum likelihood]], [[concepts/math/entropy-kl|Entropy and KL]], [[concepts/generative-models/diffusion-model|Diffusion]], [[concepts/generative-models/flow-matching|Flow matching]] |
-| Geometry | [[concepts/geometric-deep-learning/index|Geometric deep learning]], [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]], [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]], [[concepts/geometric-deep-learning/equivariance|Equivariance]] |
-| Graphs and dynamics | [[math/discrete-graphs|Discrete math and graphs]], [[math/dynamical-systems|Dynamical systems]], [[concepts/architectures/gnn|GNN]], [[concepts/generative-models/probability-flow-ode|Probability flow ODE]] |
-| Evaluation | [[concepts/evaluation/metric|Metric]], [[concepts/evaluation/confidence-interval|Confidence interval]], [[concepts/evaluation/statistical-significance|Statistical significance]] |
+| Architecture | [Linear layer](/concepts/architectures/linear-layer), [Attention](/concepts/architectures/attention), [Normalization](/concepts/architectures/normalization) |
+| Learning | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus), [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Optimization](/concepts/machine-learning/optimization) |
+| Numerical stability | [Numerical computing](/math/numerical-computing), [Softmax](/concepts/architectures/softmax), [Training stability](/concepts/machine-learning/training-stability), [Memory-compute tradeoff](/concepts/systems/memory-compute-tradeoff) |
+| Generation | [Probability distribution](/concepts/math/probability-distribution), [Maximum likelihood](/concepts/math/maximum-likelihood), [Entropy and KL](/concepts/math/entropy-kl), [Diffusion](/concepts/generative-models/diffusion-model), [Flow matching](/concepts/generative-models/flow-matching) |
+| Geometry | [Geometric deep learning](/concepts/geometric-deep-learning), [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Equivariance](/concepts/geometric-deep-learning/equivariance) |
+| Graphs and dynamics | [Discrete math and graphs](/math/discrete-graphs), [Dynamical systems](/math/dynamical-systems), [GNN](/concepts/architectures/gnn), [Probability flow ODE](/concepts/generative-models/probability-flow-ode) |
+| Evaluation | [Metric](/concepts/evaluation/metric), [Confidence interval](/concepts/evaluation/confidence-interval), [Statistical significance](/concepts/evaluation/statistical-significance) |
 
 ## Reading Path
 

@@ -25,13 +25,13 @@ $$
 
 | Area | 읽을 내용 | Start |
 | --- | --- | --- |
-| Math | probability, linear algebra, calculus, likelihood, information theory | [[math/index|Math]] |
-| Machine Learning | prediction problem, feature, loss, optimization, validation | [[ai/machine-learning|Machine Learning]] |
-| Architectures | MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE | [[ai/architectures|Architectures]] |
-| Learning Methods | supervised, SSL, contrastive, JEPA, fine-tuning, preference/RL-style objective | [[ai/learning-methods|Learning Methods]] |
-| Generative Models | autoregressive, VAE, GAN, diffusion, score, flow matching, normalizing flow | [[ai/generative-models|Generative Models]] |
-| Evaluation | metric, split, leakage, calibration, OOD, uncertainty, failure analysis | [[ai/evaluation|Evaluation]] |
-| Agents | tool use, memory, planning, verification, orchestration | [[agents/index|Agents]] |
+| Math | probability, linear algebra, calculus, likelihood, information theory | [Math](/math) |
+| Machine Learning | prediction problem, feature, loss, optimization, validation | [Machine Learning](/ai/machine-learning) |
+| Architectures | MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE | [Architectures](/ai/architectures) |
+| Learning Methods | supervised, SSL, contrastive, JEPA, fine-tuning, preference/RL-style objective | [Learning Methods](/ai/learning-methods) |
+| Generative Models | autoregressive, VAE, GAN, diffusion, score, flow matching, normalizing flow | [Generative Models](/ai/generative-models) |
+| Evaluation | metric, split, leakage, calibration, OOD, uncertainty, failure analysis | [Evaluation](/ai/evaluation) |
+| Agents | tool use, memory, planning, verification, orchestration | [Agents](/agents) |
 
 ## 분류 기준
 
@@ -39,15 +39,15 @@ AI note는 아래 질문으로 위치를 정합니다.
 
 | 질문 | 둘 곳 |
 | --- | --- |
-| 필요한 수학 정의인가? | [[math/index|Math]] 또는 [[concepts/math/index|Math foundations]] |
-| 입력과 출력이 무엇인가? | [[concepts/modalities/index|Modalities]], [[concepts/tasks/index|Tasks]] |
-| 예측 문제와 loss의 기본형인가? | [[ai/machine-learning|Machine Learning]] |
-| 모델 내부 구조인가? | [[ai/architectures|Architectures]] |
-| supervision/objective/transfer 방식인가? | [[ai/learning-methods|Learning Methods]] |
-| sample을 만들거나 distribution을 모델링하는가? | [[ai/generative-models|Generative Models]] |
-| 성능 claim을 어떻게 검증하는가? | [[ai/evaluation|Evaluation]] |
-| 실행, serving, reproducibility 문제인가? | [[concepts/systems/index|Systems]] 또는 [[infra/index|Infra]] |
-| LLM이 도구를 쓰고 작업을 끝내는 방식인가? | [[agents/index|Agents]] |
+| 필요한 수학 정의인가? | [Math](/math) 또는 [Math foundations](/concepts/math) |
+| 입력과 출력이 무엇인가? | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
+| 예측 문제와 loss의 기본형인가? | [Machine Learning](/ai/machine-learning) |
+| 모델 내부 구조인가? | [Architectures](/ai/architectures) |
+| supervision/objective/transfer 방식인가? | [Learning Methods](/ai/learning-methods) |
+| sample을 만들거나 distribution을 모델링하는가? | [Generative Models](/ai/generative-models) |
+| 성능 claim을 어떻게 검증하는가? | [Evaluation](/ai/evaluation) |
+| 실행, serving, reproducibility 문제인가? | [Systems](/concepts/systems) 또는 [Infra](/infra) |
+| LLM이 도구를 쓰고 작업을 끝내는 방식인가? | [Agents](/agents) |
 
 ## 기본 읽기 경로
 
@@ -62,12 +62,12 @@ AI note는 아래 질문으로 위치를 정합니다.
 
 | Input | Start | Architecture / Method |
 | --- | --- | --- |
-| Text / sequence | [[concepts/modalities/text|Text]], [[concepts/modalities/sequence|Sequence]] | [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/state-space-model|State-space model]] |
-| Image / video | [[concepts/modalities/image|Image]], [[concepts/modalities/video|Video]] | [[concepts/architectures/cnn|CNN]], [[concepts/architectures/vision-transformer|Vision Transformer]] |
-| Graph / set | [[concepts/modalities/graph|Graph]] | [[concepts/architectures/gnn|GNN]], [[concepts/architectures/deep-sets|Deep Sets]] |
-| 3D / geometry | [[concepts/modalities/3d-structure|3D structure]], [[concepts/math/geometry|Geometry]] | [[concepts/geometric-deep-learning/index|Geometric deep learning]] |
-| Molecule / protein | [[bio-ai/index|Bio-AI]] | [[concepts/molecular-modeling/index|Molecular modeling]], [[concepts/protein-modeling/index|Protein modeling]], [[concepts/sbdd/index|SBDD concepts]] |
-| Agent workflow | [[agents/index|Agents]] | [[agents/core/index|Core]], [[agents/tools/index|Tools]], [[agents/verification/index|Verification]], [[agents/workflows/index|Workflows]] |
+| Text / sequence | [Text](/concepts/modalities/text), [Sequence](/concepts/modalities/sequence) | [Transformer](/concepts/architectures/transformer), [State-space model](/concepts/architectures/state-space-model) |
+| Image / video | [Image](/concepts/modalities/image), [Video](/concepts/modalities/video) | [CNN](/concepts/architectures/cnn), [Vision Transformer](/concepts/architectures/vision-transformer) |
+| Graph / set | [Graph](/concepts/modalities/graph) | [GNN](/concepts/architectures/gnn), [Deep Sets](/concepts/architectures/deep-sets) |
+| 3D / geometry | [3D structure](/concepts/modalities/3d-structure), [Geometry](/concepts/math/geometry) | [Geometric deep learning](/concepts/geometric-deep-learning) |
+| Molecule / protein | [Bio-AI](/bio-ai) | [Molecular modeling](/concepts/molecular-modeling), [Protein modeling](/concepts/protein-modeling), [SBDD concepts](/concepts/sbdd) |
+| Agent workflow | [Agents](/agents) | [Core](/agents/core), [Tools](/agents/tools), [Verification](/agents/verification), [Workflows](/agents/workflows) |
 
 ## Related
 

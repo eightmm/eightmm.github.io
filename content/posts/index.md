@@ -12,10 +12,10 @@ tags:
 
 | Post | Topic |
 | --- | --- |
-| [[posts/2026-06-26-ai-wiki-map|AI Wiki를 어떤 축으로 나눠 볼 것인가]] | AI taxonomy and reading map |
-| [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]] | blog/wiki workflow |
-| [[posts/2026-06-25-structure-based-ai-map|구조 기반 AI를 어떻게 정리할 것인가]] | structure-based AI map |
-| [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]] | note-to-post promotion |
+| [AI Wiki를 어떤 축으로 나눠 볼 것인가](/posts/2026-06-26-ai-wiki-map) | AI taxonomy and reading map |
+| [블로그와 위키를 같이 쓰는 방식](/posts/2026-06-25-blog-and-wiki-workflow) | blog/wiki workflow |
+| [구조 기반 AI를 어떻게 정리할 것인가](/posts/2026-06-25-structure-based-ai-map) | structure-based AI map |
+| [Wiki에서 Post로 승격하는 방식](/posts/wiki-to-post-workflow) | note-to-post promotion |
 
 ## 작성 시스템
 
@@ -27,12 +27,12 @@ tags:
 
 | Topic | Anchor |
 | --- | --- |
-| Flow matching 직관 | [[concepts/generative-models/flow-matching|Flow matching]] |
-| Protein representation 읽는 법 | [[concepts/protein-modeling/protein-representation|Protein representation]] |
-| Pose quality와 binding affinity 분리 | [[concepts/sbdd/pose-quality|Pose quality]], [[concepts/sbdd/binding-affinity|Binding affinity]] |
-| 공개 가능한 infra 운영 노하우 | [[infra/index|Infra]] |
-| Coding agents in research workflow | [[agents/workflows/coding-agents|Coding agents]] |
-| 논문 읽기 흐름 | [[papers/index|Papers]] |
+| Flow matching 직관 | [Flow matching](/concepts/generative-models/flow-matching) |
+| Protein representation 읽는 법 | [Protein representation](/concepts/protein-modeling/protein-representation) |
+| Pose quality와 binding affinity 분리 | [Pose quality](/concepts/sbdd/pose-quality), [Binding affinity](/concepts/sbdd/binding-affinity) |
+| 공개 가능한 infra 운영 노하우 | [Infra](/infra) |
+| Coding agents in research workflow | [Coding agents](/agents/workflows/coding-agents) |
+| 논문 읽기 흐름 | [Papers](/papers) |
 
 ## 연결되는 영역
 

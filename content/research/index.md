@@ -14,19 +14,19 @@ tags:
 
 | Domain | Focus |
 | --- | --- |
-| [[research/structure-based-ai/index|Structure-based AI]] | protein-ligand interaction, docking, pose quality, scoring, virtual screening |
-| [[research/protein-modeling/index|Protein modeling]] | protein representation, structure, sequence-structure relation, evaluation |
+| [Structure-based AI](/research/structure-based-ai) | protein-ligand interaction, docking, pose quality, scoring, virtual screening |
+| [Protein modeling](/research/protein-modeling) | protein representation, structure, sequence-structure relation, evaluation |
 
 ## 연결되는 방법론
 
 | Need | Links |
 | --- | --- |
-| Question and hypothesis | [[concepts/research-methodology/research-question|Research question]], [[concepts/research-methodology/hypothesis|Hypothesis]] |
-| Experiment design | [[concepts/research-methodology/experiment-design|Experiment design]], [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]] |
-| Interpretation | [[concepts/research-methodology/result-interpretation|Result interpretation]], [[concepts/research-methodology/threat-to-validity|Threat to validity]] |
-| Research records | [[concepts/research-methodology/experiment-ledger|Experiment ledger]], [[concepts/research-methodology/decision-record|Decision record]] |
-| Modeling methods | [[concepts/learning/index|Learning methods]], [[concepts/architectures/index|Architectures]], [[ai/generative-models|Generative models]] |
-| Geometry | [[concepts/geometric-deep-learning/index|Geometric deep learning]] |
+| Question and hypothesis | [Research question](/concepts/research-methodology/research-question), [Hypothesis](/concepts/research-methodology/hypothesis) |
+| Experiment design | [Experiment design](/concepts/research-methodology/experiment-design), [Minimum viable experiment](/concepts/research-methodology/minimum-viable-experiment) |
+| Interpretation | [Result interpretation](/concepts/research-methodology/result-interpretation), [Threat to validity](/concepts/research-methodology/threat-to-validity) |
+| Research records | [Experiment ledger](/concepts/research-methodology/experiment-ledger), [Decision record](/concepts/research-methodology/decision-record) |
+| Modeling methods | [Learning methods](/concepts/learning), [Architectures](/concepts/architectures), [Generative models](/ai/generative-models) |
+| Geometry | [Geometric deep learning](/concepts/geometric-deep-learning) |
 
 ## 관련 입구
 

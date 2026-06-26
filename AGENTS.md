@@ -194,6 +194,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - Prefer the most readable structure for the content. Use tables when comparing categories, routes, criteria, risks, or ownership; use bullet lists for short parallel items; use numbered lists for ordered reading paths, procedures, or workflows.
 - Gateway pages should be scannable. Prefer concise introductions, route tables, and grouped link lists over long prose or unstructured link dumps.
 - For public gateway or folder `index.md` pages, default to tables when a section routes readers across multiple areas. Use columns such as `Area`, `Use For`, `Start`, `Risk`, `Status`, or `Next`.
+- In Markdown tables, use normal Markdown links such as `[Math](/math/)` instead of Quartz wikilinks. Quartz wikilinks can render poorly inside table cells.
 - Avoid long public link dumps. If a section has many links, group them by purpose and explain why the group exists.
 - Do not expose internal editorial mechanics on public gateway pages, such as saying a page is a gateway or that linked notes are canonical wiki notes. Put those rules in `AGENTS.md`, workflow notes, or writing guides instead.
 - When a section has more than four similar bullets with descriptions, consider a Markdown table with columns such as `Area`, `Use For`, `Start Here`, `Risk`, or `Next`.

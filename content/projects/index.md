@@ -29,19 +29,19 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 
 | Project | Focus |
 | --- | --- |
-| [[projects/llm-wiki-blog|LLM Wiki blog]] | public knowledge-base structure |
-| [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]] | paper discovery and curation workflow |
-| [[projects/hpc-research-workflows|HPC research workflows]] | reproducible research engineering on shared compute |
+| [LLM Wiki blog](/projects/llm-wiki-blog) | public knowledge-base structure |
+| [Paper brief agent pipeline](/projects/paper-brief-agent-pipeline) | paper discovery and curation workflow |
+| [HPC research workflows](/projects/hpc-research-workflows) | reproducible research engineering on shared compute |
 
 ## Formats
 
 | Need | Format |
 | --- | --- |
-| Project state | [[projects/project-lifecycle|Project lifecycle]], [[projects/project-note-format|Project note format]] |
-| Milestone or release | [[projects/project-milestone-format|Project milestone format]], [[projects/project-artifact-release|Project artifact release]] |
-| Model or interface | [[concepts/systems/model-card|Model card]], [[concepts/systems/inference-contract|Inference contract]] |
-| Research decision | [[concepts/research-methodology/decision-record|Decision record]], [[concepts/research-methodology/experiment-ledger|Experiment ledger]] |
-| Paper reproduction | [[papers/reproducibility/implementation-readiness|Implementation readiness]], [[papers/reproducibility/reproduction-result|Reproduction result]] |
+| Project state | [Project lifecycle](/projects/project-lifecycle), [Project note format](/projects/project-note-format) |
+| Milestone or release | [Project milestone format](/projects/project-milestone-format), [Project artifact release](/projects/project-artifact-release) |
+| Model or interface | [Model card](/concepts/systems/model-card), [Inference contract](/concepts/systems/inference-contract) |
+| Research decision | [Decision record](/concepts/research-methodology/decision-record), [Experiment ledger](/concepts/research-methodology/experiment-ledger) |
+| Paper reproduction | [Implementation readiness](/papers/reproducibility/implementation-readiness), [Reproduction result](/papers/reproducibility/reproduction-result) |
 
 ## Future Candidates
 
@@ -56,8 +56,8 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 
 | Area | Link |
 | --- | --- |
-| Research | [[research/index|Research]], [[concepts/research-methodology/index|Research methodology]] |
-| Systems | [[concepts/systems/run-artifact|Run artifact]], [[infra/hpc/slurm|Slurm]] |
-| Papers | [[papers/index|Papers]] |
-| Logs and inbox | [[logs/index|Public logs]], [[logs/public-log-format|Public log format]], [[inbox/publishing-gate|Publishing gate]] |
-| Agents | [[agents/index|Agents]] |
+| Research | [Research](/research), [Research methodology](/concepts/research-methodology) |
+| Systems | [Run artifact](/concepts/systems/run-artifact), [Slurm](/infra/hpc/slurm) |
+| Papers | [Papers](/papers) |
+| Logs and inbox | [Public logs](/logs), [Public log format](/logs/public-log-format), [Publishing gate](/inbox/publishing-gate) |
+| Agents | [Agents](/agents) |
