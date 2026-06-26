@@ -19,6 +19,7 @@ $$
 
 | Field | Question | Route |
 | --- | --- | --- |
+| Explanation depth | Should the note use name-only, canonical formula, operational form, claim contract, or derivation depth? | [Formula explanation ladder](/math/formula-explanation-ladder) |
 | Object type | Is the quantity a scalar, vector, matrix, tensor, graph, coordinate, distribution, or trajectory? | [Linear algebra](/math/linear-algebra), [Geometry](/math/geometry-symmetry) |
 | Index set | Does the index run over batch, token, node, edge, residue, atom, time, sample, or candidate? | [Discrete math and graphs](/math/discrete-graphs) |
 | Distribution | Is the expectation over data, model samples, noise, policy rollouts, or test population? | [Probability and statistics](/math/probability-statistics) |
@@ -68,6 +69,17 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 | Equivariance | What group acts on the input, and how should the output transform? |
 | Metric | What is averaged, over which examples, after which model-selection rule? |
 
+## Explanation Depth
+
+Use [[math/formula-explanation-ladder|Formula explanation ladder]] before deciding how much math to place in the current note.
+
+| Target | Minimum |
+| --- | --- |
+| Korean post | canonical formula with symbols, or operational form for the main method |
+| Concept note | operational form with shapes, indices, distribution, and checks |
+| Paper note | claim contract connecting objective, estimator, benchmark, and evidence |
+| Math note | derivation or assumptions when the formula itself is the topic |
+
 ## Red Flags
 
 - A metric is treated as a loss without explaining the surrogate.
@@ -81,6 +93,7 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 ## Related
 
 - [[math/index|Math]]
+- [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[ai/paper-intake|AI paper intake]]
 - [[bio/paper-intake|Molecular modeling paper intake]]
 - [[papers/workflows/claim-routing|Claim routing]]

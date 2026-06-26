@@ -46,6 +46,7 @@ tags:
 | AI intake | [AI paper intake](/ai/paper-intake) |
 | Molecular modeling intake | [Molecular modeling paper intake](/bio/paper-intake) or `not applicable` |
 | Formula intake | [Formula intake](/math/formula-intake) |
+| Formula explanation | [Formula explanation ladder](/math/formula-explanation-ladder) |
 | Benchmark intake | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Claim routing | [Claim routing](/papers/workflows/claim-routing) |
 | Readiness gate | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
@@ -71,7 +72,7 @@ State claims as paper claims, not facts.
 
 ## Formula Slot
 
-Rewrite the key equation with symbol definitions.
+Rewrite the key equation with symbol definitions. Use level 3 from [[math/formula-explanation-ladder|Formula explanation ladder]] when the paper's claim depends on the equation.
 
 $$
 \mathcal{J}(\theta)
@@ -86,6 +87,7 @@ $$
 - $q(u)$: `to verify`
 - $\ell_\theta(u)$: `to verify`
 - $\theta$: `to verify`
+- Explanation level: name / canonical formula / operational form / claim contract / derivation
 - Relation to evaluation metric: `to verify`
 
 ## Molecular Modeling Contract
@@ -139,6 +141,7 @@ Use `not applicable` only when the paper is not about molecular modeling.
 - [[papers/workflows/paper-note-format|Paper note format]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
+- [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]

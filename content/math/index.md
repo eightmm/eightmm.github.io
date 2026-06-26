@@ -37,6 +37,7 @@ $$
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
 | Formula intake | paper equations, objectives, indices, distributions, evidence checks | [Formula intake](/math/formula-intake) |
+| Formula explanation | how much equation detail belongs in posts, wiki notes, and paper notes | [Formula explanation ladder](/math/formula-explanation-ladder) |
 | Post intake | formulas inside Korean AI/molecular modeling synthesis posts | [AI-Molecular-Math post intake](/posts/ai-bio-math-post-intake) |
 | Coverage matrix | check whether a topic has object, formula, data, evidence, and public boundary notes | [Coverage matrix](/concepts/coverage-matrix) |
 
@@ -51,6 +52,7 @@ $$
 - Objective: 식이 loss, likelihood, score, reward, metric, constraint 중 무엇인가?
 - Symmetry: permutation, translation, rotation, scale 변환에서 보존돼야 할 양이 무엇인가?
 - Estimation: population quantity와 finite-sample estimate가 구분되어 있는가?
+- Depth: post, concept note, paper note 중 어느 수준까지 풀어써야 하는가?
 
 ## Where It Connects
 
@@ -110,6 +112,7 @@ $$
 | ODE/SDE/flow | state, time, vector field, integration or sampling path | [Dynamical systems](/math/dynamical-systems) |
 | Metric / comparison | point estimate, uncertainty, paired examples, selection rule | [Evaluation math](/math/evaluation-math) |
 | Full paper equation | object, index, distribution, operation, claim | [Formula intake](/math/formula-intake) |
+| Explanation depth | symbol table, operational form, claim contract, derivation level | [Formula explanation ladder](/math/formula-explanation-ladder) |
 
 ## Related
 
@@ -118,4 +121,5 @@ $$
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]
 - [[math/formula-intake|Formula intake]]
+- [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[concepts/coverage-matrix|Coverage matrix]]

@@ -50,6 +50,7 @@ tags:
 | Representation | raw object가 model input으로 어떻게 바뀌는가 | [Representation contract](/concepts/modalities/representation-contract) |
 | Coordinates | 좌표계, symmetry, pose/RMSD claim이 필요한가 | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Math | 어떤 수식, distribution, metric, optimization target이 필요한가 | [Math](/math) |
+| Formula depth | post 안에 둘 수식과 wiki note로 넘길 수식을 어떻게 나눌 것인가 | [Formula explanation ladder](/math/formula-explanation-ladder) |
 | Evidence | 어떤 benchmark, split, metric, baseline을 믿을 수 있는가 | [Coverage matrix](/concepts/coverage-matrix) |
 | Objective | 학습 loss와 reported metric이 같은 claim을 지지하는가 | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Readiness | route, representation, objective, evidence, public boundary가 통과됐는가 | [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
@@ -60,7 +61,7 @@ tags:
 
 ## 필요한 최소 수식
 
-독자가 claim을 이해하는 데 필요한 수식만 둔다.
+독자가 claim을 이해하는 데 필요한 수식만 둔다. 더 긴 derivation이나 benchmark claim contract는 wiki note로 넘긴다.
 
 $$
 \mathcal{J}(\theta)
@@ -114,6 +115,7 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 | Claim routing | multi-axis 주제는 [Claim routing](/papers/workflows/claim-routing)을 통과했다 |
 | Readiness gate | 승격 전 [AI-Molecular-Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate)를 통과했다 |
 | Formula | 필요한 수식과 모든 symbol 설명이 있다 |
+| Formula depth | post는 level 1-2, paper/wiki evidence는 level 3 이상으로 분리했다 |
 | Evidence boundary | split, metric, baseline, leakage, uncertainty 중 필요한 항목이 있다 |
 | Link path | 다음에 읽을 wiki note가 충분히 연결되어 있다 |
 | Public boundary | private infrastructure, internal task, unpublished result, collaborator detail이 없다 |
@@ -133,5 +135,6 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
+- [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
