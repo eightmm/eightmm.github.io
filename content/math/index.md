@@ -58,6 +58,7 @@ $$
 | --- | --- |
 | Architecture | [Linear layer](/concepts/architectures/linear-layer), [Attention](/concepts/architectures/attention), [Normalization](/concepts/architectures/normalization) |
 | Learning | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus), [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Optimization](/concepts/machine-learning/optimization) |
+| Objective and metric | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment), [Metric selection](/concepts/evaluation/metric-selection), [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
 | Numerical stability | [Numerical computing](/math/numerical-computing), [Softmax](/concepts/architectures/softmax), [Training stability](/concepts/machine-learning/training-stability), [Memory-compute tradeoff](/concepts/systems/memory-compute-tradeoff) |
 | Generation | [Probability distribution](/concepts/math/probability-distribution), [Maximum likelihood](/concepts/math/maximum-likelihood), [Entropy and KL](/concepts/math/entropy-kl), [Diffusion](/concepts/generative-models/diffusion-model), [Flow matching](/concepts/generative-models/flow-matching) |
 | Geometry | [Geometric deep learning](/concepts/geometric-deep-learning), [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Equivariance](/concepts/geometric-deep-learning/equivariance) |

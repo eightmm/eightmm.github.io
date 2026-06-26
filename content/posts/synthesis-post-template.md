@@ -49,6 +49,7 @@ tags:
 | Molecular modeling | molecule, protein, ligand, pocket, conformer, complex 중 무엇이 중심인가 | [Molecular Modeling](/bio) |
 | Math | 어떤 수식, distribution, metric, optimization target이 필요한가 | [Math](/math) |
 | Evidence | 어떤 benchmark, split, metric, baseline을 믿을 수 있는가 | [Coverage matrix](/concepts/coverage-matrix) |
+| Objective | 학습 loss와 reported metric이 같은 claim을 지지하는가 | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 
 ## 핵심 개념
 
@@ -79,6 +80,7 @@ $$
 | Claim | 논문이 실제로 주장하는 것은 무엇인가? |
 | Split | 어떤 단위가 train/test 사이에서 분리되는가? |
 | Metric | metric이 task utility를 직접 반영하는가? |
+| Objective | training objective와 selection/test metric이 어긋나지 않는가? |
 | Baseline | 비교 대상이 claim에 충분한가? |
 | Leakage | 평가 시점에 쓰면 안 되는 정보가 들어갔는가? |
 | Artifact | code, data, split, weight, config가 공개되어 있는가? |

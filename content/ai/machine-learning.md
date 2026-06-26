@@ -70,6 +70,7 @@ The decision rule $\hat{y}$ is not the same object as the probability distributi
 - Objective: 무엇을 줄이거나 키울 것인가
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]: observed data에서 평균 손실을 줄이는 기본 원리
 - [[concepts/machine-learning/loss-function|Loss function]]: prediction error를 어떻게 수치화할 것인가
+- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]: training loss, selection metric, test metric, claimed utility가 같은 방향을 보는가
 - [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]], [[concepts/machine-learning/mean-squared-error|mean squared error]], [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]]: task와 probability assumption에 따라 loss가 어떻게 달라지는가
 - [[concepts/machine-learning/training-loop|Training loop]]: forward, loss, backward, update를 어떻게 반복할 것인가
 - [[concepts/machine-learning/optimization|Optimization]]: parameter를 어떻게 업데이트할 것인가
@@ -149,6 +150,7 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - metric이 실제 목표와 맞는가?
 - [[concepts/evaluation/baseline|baseline]]과 비교했을 때 개선이 의미 있는가?
 - [[concepts/evaluation/ablation-study|ablation study]]가 설계 선택을 지지하는가?
+- training objective와 reported metric이 같은 claim을 지지하는가?
 - overfitting, leakage, distribution shift를 확인했는가?
 - generalization claim이 IID인지, OOD인지, deployment claim인지 명확한가?
 
@@ -157,6 +159,7 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[ai/learning-methods|Learning methods]]
 - [[ai/evaluation|Evaluation]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]

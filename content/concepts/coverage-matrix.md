@@ -48,6 +48,7 @@ $$
 | Data | What example, label, split, and preprocessing contract define the dataset? | [Data](/concepts/data) |
 | Architecture | What inductive bias and complexity does the model use? | [Architectures](/concepts/architectures), [AI architectures](/ai/architectures) |
 | Learning method | What supervision, pretraining, transfer, or preference signal is used? | [Learning methods](/concepts/learning), [AI learning methods](/ai/learning-methods) |
+| Objective-metric link | Does the optimized loss support the reported metric and utility claim? | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Generative model | What distribution, score, velocity, or sampling path is modeled? | [Generative models](/concepts/generative-models), [AI generative models](/ai/generative-models) |
 | Math | Which formula, object type, distribution, or estimator is needed? | [Math](/math), [Math foundations](/concepts/math) |
 | Evaluation | Which metric, baseline, split, uncertainty, and failure mode support the claim? | [Evaluation](/ai/evaluation), [Evaluation concepts](/concepts/evaluation) |
@@ -75,6 +76,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One data or benchmark page when a score is central: [[concepts/data/benchmark-intake|Benchmark intake]].
 - One object/modality/task page when the input or output is nontrivial.
 - One architecture or learning-method page when the method is central.
+- One objective-metric alignment check when the training loss and reported metric differ.
 - One evaluation page explaining metric, split, baseline, uncertainty, or failure mode.
 - One claim boundary when the result could be overread: [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
 - One paper note or paper-analysis note when a specific paper claim is being discussed.

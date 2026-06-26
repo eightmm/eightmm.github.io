@@ -23,6 +23,7 @@ $$
 | Index set | Does the index run over batch, token, node, edge, residue, atom, time, sample, or candidate? | [Discrete math and graphs](/math/discrete-graphs) |
 | Distribution | Is the expectation over data, model samples, noise, policy rollouts, or test population? | [Probability and statistics](/math/probability-statistics) |
 | Objective | Is the formula a loss, likelihood, bound, score, reward, constraint, or metric? | [Information and likelihood](/math/information-likelihood) |
+| Objective-metric link | Does the optimized loss support the reported metric and claimed utility? | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Derivative | Is the derivative with respect to parameters, inputs, coordinates, time, or latent variables? | [Calculus and gradients](/math/calculus-gradients) |
 | Symmetry | Should the output be invariant or equivariant under permutation, translation, rotation, or reflection? | [Geometry and symmetry](/math/geometry-symmetry) |
 | Numerics | Does implementation require stable softmax, log-sum-exp, precision control, or conditioning checks? | [Numerical computing](/math/numerical-computing) |
@@ -70,6 +71,7 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 ## Red Flags
 
 - A metric is treated as a loss without explaining the surrogate.
+- A loss is assumed to optimize the reported metric without an alignment argument.
 - An expectation omits the sampling distribution.
 - A graph or set equation does not state permutation behavior.
 - A coordinate model does not state translation or rotation handling.
@@ -82,5 +84,6 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 - [[ai/paper-intake|AI paper intake]]
 - [[bio/paper-intake|Molecular modeling paper intake]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
