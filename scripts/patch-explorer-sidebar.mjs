@@ -55,8 +55,8 @@ const replacements = [
     '  if (node.isFolder && node.data && (!node.children || node.children.length === 0)) {\\n    const clone = fileTemplate.content.cloneNode(true);\\n    const link = clone.querySelector(\\"a\\");\\n    if (link) {\\n      link.href = resolveBasePath(simplifySlug(node.slug));\\n      link.textContent = node.displayName || node.slugSegment;\\n      if (simplifySlug(node.slug) === simplifiedCurrentSlug) {\\n        link.classList.add(\\"active\\", \\"is-active\\");\\n      }\\n    }\\n    container.appendChild(clone);\\n  } else if (node.isFolder) {\\n    const clone = folderTemplate.content.cloneNode(true);',
   ],
   [
-    'if(node.isFolder){let o=F.content.cloneNode(!0)',
-    'if(node.isFolder&&node.data&&(!node.children||node.children.length===0)){let o=D.content.cloneNode(!0),i=o.querySelector(\\"a\\");i&&(i.href=resolveBasePath(simplifySlug(node.slug)),i.textContent=node.displayName||node.slugSegment,simplifySlug(node.slug)===p&&i.classList.add(\\"active\\",\\"is-active\\")),e.appendChild(o)}else if(node.isFolder){let o=F.content.cloneNode(!0)',
+    'if(u.isFolder){let s=n.content.cloneNode(!0),a=s.querySelector(".folder-container")',
+    'if(u.isFolder&&u.data&&(!u.children||u.children.length===0)){let s=d.content.cloneNode(!0),a=s.querySelector("a");a&&(a.href=v(S(u.slug)),a.textContent=u.displayName||u.slugSegment,S(u.slug)===A&&a.classList.add("active","is-active")),e.appendChild(s)}else if(u.isFolder){let s=n.content.cloneNode(!0),a=s.querySelector(".folder-container")',
   ],
   [
     ".explorer-content .folder-outer.open {\\n  visibility: visible;\\n  grid-template-rows: 1fr;\\n}\\n\\n.explorer-content .folder-outer > ul {",
@@ -95,10 +95,12 @@ for (const file of files) {
         from.includes("overflow: hidden") ||
         from.includes("overflow:hidden") ||
         from.includes("folder-outer.open")
+      const optionalLeafAlternative =
+        from.includes("node.isFolder") || from.includes("u.isFolder")
       if (alreadyPatched) {
         continue
       }
-      if (optionalCssAlternative) {
+      if (optionalCssAlternative || optionalLeafAlternative) {
         continue
       }
       throw new Error(`Explorer patch target not found in ${file}: ${from.slice(0, 80)}`)
@@ -111,8 +113,9 @@ for (const file of files) {
   }
 
   if (
-    text.includes("function renderTree") &&
-    !text.includes("node.isFolder && node.data && (!node.children || node.children.length === 0)")
+    text.includes("template-folder") &&
+    !text.includes("node.isFolder && node.data && (!node.children || node.children.length === 0)") &&
+    !text.includes("u.isFolder&&u.data&&(!u.children||u.children.length===0)")
   ) {
     throw new Error(`Explorer leaf-folder link patch was not applied in ${file}`)
   }
