@@ -162,6 +162,7 @@ The site should satisfy both a public blog and an LLM Wiki:
 - Use `[[...]]` wikilinks for internal links. Prefer path-qualified links such as `[[concepts/architectures/transformer|Transformer]]`.
 - Keep pages useful even as stubs: include purpose, key equations or checks if applicable, related links, and `to verify` for missing facts.
 - Prefer broad durable structure over many narrow empty pages.
+- Before treating a wiki note as reusable, check `content/concepts/wiki-note-quality-gate.md` for definition, boundary, formula or rule, contract, checks, links, uncertainty, and public boundary.
 
 ## Paper Brief Workflow
 

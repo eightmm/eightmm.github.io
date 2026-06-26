@@ -28,6 +28,7 @@ $$
 
 | Need | Use | Start |
 | --- | --- | --- |
+| Reusable wiki note | definition, boundary, contract, checks, links, public boundary | [Wiki note quality gate](/concepts/wiki-note-quality-gate) |
 | AI paper claim | architecture, objective, evidence, and system boundary | [AI paper intake](/ai/paper-intake) |
 | Molecular modeling paper claim | object, representation, label, split, leakage | [Molecular modeling paper intake](/bio/paper-intake) |
 | Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
@@ -78,6 +79,7 @@ $$
 Before promoting a paper cluster into a Korean post, check that the bundle has:
 
 - One route page: [[ai/paper-intake|AI paper intake]], [[bio/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]].
+- One wiki-note quality pass before a concept becomes a reusable anchor: [[concepts/wiki-note-quality-gate|Wiki note quality gate]].
 - One data or benchmark page when a score is central: [[concepts/data/benchmark-intake|Benchmark intake]].
 - One topic-map contract when a cluster spans several axes: [[concepts/topic-map-contract|Topic map contract]].
 - One object/modality/task page when the input or output is nontrivial.
@@ -106,6 +108,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 ## Related
 
 - [[concepts/index|Concepts]]
+- [[concepts/wiki-note-quality-gate|Wiki note quality gate]]
 - [[ai/index|AI]]
 - [[bio/index|Molecular Modeling]]
 - [[math/index|Math]]

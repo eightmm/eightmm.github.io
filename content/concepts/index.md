@@ -13,6 +13,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 ## Main Hubs
 
 - [[concepts/coverage-matrix|Coverage matrix]]
+- [[concepts/wiki-note-quality-gate|Wiki note quality gate]]
 - [[concepts/math/index|Math foundations]]
 - [[concepts/machine-learning/index|Machine learning]]
 - [[concepts/data/index|Data]]
@@ -49,7 +50,7 @@ Use this page as a map. Start from a hub when exploring a field, then move into 
 - Protein modeling: [[entities/sequence|Sequence]] -> [[concepts/protein-modeling/protein-domain|Protein domain]] -> [[concepts/protein-modeling/protein-representation|Protein representation]] -> [[concepts/protein-modeling/contact-map|Contact map]] -> [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
 - Genome-level sequence: [[entities/genome|Genome]] -> [[concepts/genome-modeling/genomic-region|Genomic region]] -> [[concepts/genome-modeling/k-mer|K-mer]] -> [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
 - Paper reading: [[papers/workflows/paper-triage|Paper triage]] -> [[papers/workflows/paper-note-format|Paper note format]] -> [[papers/analysis/claim-extraction|Claim extraction]] -> [[papers/analysis/benchmark-card|Benchmark card]] -> [[papers/analysis/ablation-map|Ablation map]] -> [[papers/reproducibility/reproduction-plan|Reproduction plan]] -> [[papers/workflows/reading-status|Reading status]]
-- Coverage check: [[concepts/coverage-matrix|Coverage matrix]] -> [[ai/paper-intake|AI paper intake]] -> [[bio/paper-intake|Molecular modeling paper intake]] -> [[math/formula-intake|Formula intake]] -> [[concepts/data/benchmark-intake|Benchmark intake]] -> [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
+- Coverage check: [[concepts/wiki-note-quality-gate|Wiki note quality gate]] -> [[concepts/coverage-matrix|Coverage matrix]] -> [[ai/paper-intake|AI paper intake]] -> [[bio/paper-intake|Molecular modeling paper intake]] -> [[math/formula-intake|Formula intake]] -> [[concepts/data/benchmark-intake|Benchmark intake]] -> [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
 - LLM Wiki: [[concepts/llm/language-model|Language model]] -> [[concepts/llm/context-window|Context window]] -> [[concepts/llm/token-budget|Token budget]] -> [[concepts/llm/context-packing|Context packing]] -> [[concepts/llm/chunking|Chunking]] -> [[concepts/llm/query-rewriting|Query rewriting]] -> [[concepts/llm/embedding-retrieval|Embedding retrieval]] -> [[concepts/llm/hybrid-retrieval|Hybrid retrieval]] -> [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]] -> [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]] -> [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]
 
 ## Entity Concepts

@@ -69,6 +69,7 @@ An agent should:
 - Classify the raw input.
 - Prefer updating existing pages over creating weak duplicates.
 - Create small stubs only when they are linked and useful.
+- Run [[concepts/wiki-note-quality-gate|Wiki note quality gate]] before treating a concept note as reusable.
 - Use [[papers/workflows/concept-update-contract|Concept update contract]] when a paper candidate contains reusable definitions, formulas, contracts, or evidence boundaries.
 - Add formulas where they clarify objectives, metrics, update rules, or decision criteria.
 - Mark missing facts as `to verify`.
@@ -87,6 +88,7 @@ An agent should:
 ## Related
 
 - [[agents/workflows/llm-wiki|LLM Wiki]]
+- [[concepts/wiki-note-quality-gate|Wiki note quality gate]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[agents/workflows/agent-runbook|Agent runbook]]
