@@ -4,7 +4,17 @@ import * as ExternalPlugin from "./.quartz/plugins"
 ExternalPlugin.Explorer({
   filterFn: (node) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
-    const explorerRoots = ["ai", "bio", "math", "infra", "research", "papers", "agents", "projects", "posts"]
+    const explorerRoots = [
+      "ai",
+      "molecular-modeling",
+      "math",
+      "infra",
+      "research",
+      "papers",
+      "agents",
+      "projects",
+      "posts",
+    ]
     const hiddenExplorerSubtrees = [
       "papers/analysis",
       "papers/reproducibility",
@@ -26,7 +36,17 @@ ExternalPlugin.Explorer({
   },
   sortFn: (a, b) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
-    const explorerRoots = ["ai", "bio", "math", "infra", "research", "papers", "agents", "projects", "posts"]
+    const explorerRoots = [
+      "ai",
+      "molecular-modeling",
+      "math",
+      "infra",
+      "research",
+      "papers",
+      "agents",
+      "projects",
+      "posts",
+    ]
     const aiGroups = [
       "machine-learning",
       "architectures",
@@ -34,12 +54,12 @@ ExternalPlugin.Explorer({
       "generative-models",
       "evaluation",
     ]
-    const bioGroups = [
+    const molecularGroups = [
       "computational-biology",
       "entities",
       "molecules",
       "proteins",
-      "structure-based-ai",
+      "structure-based",
       "docking",
       "data-evaluation",
       "geometry",
@@ -80,9 +100,9 @@ ExternalPlugin.Explorer({
       }
     }
 
-    if (aSegments[0] === "bio" && bSegments[0] === "bio") {
-      const aGroupIndex = bioGroups.indexOf(aSegments[1] ?? "")
-      const bGroupIndex = bioGroups.indexOf(bSegments[1] ?? "")
+    if (aSegments[0] === "molecular-modeling" && bSegments[0] === "molecular-modeling") {
+      const aGroupIndex = molecularGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = molecularGroups.indexOf(bSegments[1] ?? "")
       if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
         return aGroupIndex - bGroupIndex
       }
