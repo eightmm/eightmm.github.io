@@ -37,6 +37,7 @@ $$
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
 | Formula intake | paper equations, objectives, indices, distributions, evidence checks | [Formula intake](/math/formula-intake) |
+| Formula patterns | common loss, likelihood, contrastive, generative, graph, coordinate, and metric formulas | [Formula pattern catalog](/math/formula-patterns) |
 | Formula explanation | how much equation detail belongs in posts, wiki notes, and paper notes | [Formula explanation ladder](/math/formula-explanation-ladder) |
 | Cross-axis contract | formulas used in AI + computational biology paper or post claims | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Post intake | formulas inside Korean AI/computational biology synthesis posts | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
@@ -112,7 +113,7 @@ $$
 | Graph or set equation | node/edge/set unit, permutation behavior, aggregation | [Discrete math and graphs](/math/discrete-graphs) |
 | ODE/SDE/flow | state, time, vector field, integration or sampling path | [Dynamical systems](/math/dynamical-systems) |
 | Metric / comparison | point estimate, uncertainty, paired examples, selection rule | [Evaluation math](/math/evaluation-math) |
-| Full paper equation | object, index, distribution, operation, claim | [Formula intake](/math/formula-intake) |
+| Full paper equation | object, index, distribution, operation, claim | [Formula intake](/math/formula-intake), [Formula pattern catalog](/math/formula-patterns) |
 | Explanation depth | symbol table, operational form, claim contract, derivation level | [Formula explanation ladder](/math/formula-explanation-ladder) |
 
 ## Related
@@ -122,6 +123,7 @@ $$
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]
 - [[math/formula-intake|Formula intake]]
+- [[math/formula-patterns|Formula pattern catalog]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]

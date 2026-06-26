@@ -20,6 +20,7 @@ $$
 | Field | Question | Route |
 | --- | --- | --- |
 | Explanation depth | Should the note use name-only, canonical formula, operational form, claim contract, or derivation depth? | [Formula explanation ladder](/math/formula-explanation-ladder) |
+| Pattern | Does the equation match a known loss, likelihood, contrastive, generative, graph, coordinate, or metric pattern? | [Formula pattern catalog](/math/formula-patterns) |
 | Object type | Is the quantity a scalar, vector, matrix, tensor, graph, coordinate, distribution, or trajectory? | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation), [Geometry](/math/geometry-symmetry) |
 | Index set | Does the index run over batch, token, node, edge, residue, atom, time, sample, or candidate? | [Discrete math and graphs](/math/discrete-graphs) |
 | Distribution | Is the expectation over data, model samples, noise, policy rollouts, or test population? | [Probability and statistics](/math/probability-statistics) |
@@ -72,6 +73,8 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 | Equivariance | What group acts on the input, and how should the output transform? |
 | Metric | What is averaged, over which examples, after which model-selection rule? |
 
+For worked canonical patterns, use [[math/formula-patterns|Formula pattern catalog]].
+
 ## Explanation Depth
 
 Use [[math/formula-explanation-ladder|Formula explanation ladder]] before deciding how much math to place in the current note.
@@ -96,6 +99,7 @@ Use [[math/formula-explanation-ladder|Formula explanation ladder]] before decidi
 ## Related
 
 - [[math/index|Math]]
+- [[math/formula-patterns|Formula pattern catalog]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[ai/paper-intake|AI paper intake]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]

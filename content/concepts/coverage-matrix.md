@@ -33,6 +33,7 @@ $$
 | Computational biology paper claim | object, representation, label, split, leakage | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
 | Computational biology claim pattern | property, activity, docking, generation, protein design, genome sequence modeling | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 | Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
+| Formula pattern | common objective or metric pattern before detailed derivation | [Formula pattern catalog](/math/formula-patterns) |
 | AI + computational biology + Math claim | object, representation, model, objective, evidence, public boundary | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
@@ -89,6 +90,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One object/modality/task page when the input or output is nontrivial.
 - One representation contract when preprocessing or featurization changes the object seen by the model.
 - One tensor-shape pass when a formula depends on batch, token, graph, coordinate, head, or candidate axes.
+- One formula-pattern pass when the paper introduces or relies on an objective or metric: [[math/formula-patterns|Formula pattern catalog]].
 - One coordinate modeling contract when a paper predicts poses, conformers, structures, vectors, forces, or coordinate updates.
 - One architecture or learning-method page when the method is central.
 - One objective-metric alignment check when the training loss and reported metric differ.
