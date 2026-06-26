@@ -32,6 +32,7 @@ $$
 - **Agents**: tool use, memory, planning, verification, orchestration. [Start](/agents)
 - **Paper Intake**: input/output, architecture, objective, evidence, and system boundary. [Start](/ai/paper-intake)
 - **Post Intake**: Korean synthesis posts that combine AI, Bio-AI, and Math. [Start](/posts/ai-bio-math-post-intake)
+- **Coverage Matrix**: check whether a topic has object, data, model, objective, evidence, and public boundary notes. [Start](/concepts/coverage-matrix)
 
 ## 분류 기준
 
@@ -90,3 +91,4 @@ AI note는 아래 질문으로 위치를 정합니다.
 - [[infra/index|Infra]]
 - [[agents/index|Agents]]
 - [[ai/paper-intake|AI paper intake]]
+- [[concepts/coverage-matrix|Coverage matrix]]

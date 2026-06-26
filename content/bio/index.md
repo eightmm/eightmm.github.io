@@ -34,6 +34,7 @@ $$
 | Genome | sequence, region, k-mer, variant-level modeling | [Genome](/bio/genome) |
 | Paper intake | object, representation, label, split, leakage, public boundary | [Bio paper intake](/bio/paper-intake) |
 | Post intake | AI/Bio-AI/Math synthesis writing | [AI-Bio-Math post intake](/posts/ai-bio-math-post-intake) |
+| Coverage matrix | object, data, model, objective, evidence, public boundary | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## 다루는 객체
 
@@ -133,3 +134,4 @@ Bio-AI 쪽 논문은 모델 성능보다 object, label, split, leakage를 먼저
 - [[papers/index|Papers]]
 - [[projects/index|Projects]]
 - [[bio/paper-intake|Bio paper intake]]
+- [[concepts/coverage-matrix|Coverage matrix]]

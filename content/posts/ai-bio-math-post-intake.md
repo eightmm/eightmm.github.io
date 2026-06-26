@@ -31,6 +31,7 @@ $$
 | Required wiki notes | 글 안에서 반복하지 않고 링크할 개념은 무엇인가? | [Concepts](/concepts) |
 | Formula need | 독자 이해에 필요한 최소 수식은 무엇인가? | [Formula intake](/math/formula-intake) |
 | Benchmark boundary | 성능 claim을 어디까지 믿을 수 있는가? | [Benchmark intake](/concepts/data/benchmark-intake) |
+| Coverage check | 연결해야 할 object, data, method, formula, evidence note가 있는가? | [Coverage matrix](/concepts/coverage-matrix) |
 | Public boundary | 공개하면 안 되는 내부 정보가 섞여 있지 않은가? | [Publishing gate](/inbox/publishing-gate) |
 
 ## 중심축별 글 모양
@@ -110,3 +111,4 @@ claim, split, metric, leakage, baseline, uncertainty를 점검.
 - [[bio/paper-intake|Bio-AI paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
+- [[concepts/coverage-matrix|Coverage matrix]]

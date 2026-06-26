@@ -38,6 +38,7 @@ $$
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
 | Formula intake | paper equations, objectives, indices, distributions, evidence checks | [Formula intake](/math/formula-intake) |
 | Post intake | formulas inside Korean AI/Bio-AI synthesis posts | [AI-Bio-Math post intake](/posts/ai-bio-math-post-intake) |
+| Coverage matrix | check whether a topic has object, formula, data, evidence, and public boundary notes | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## Formula Checklist
 
@@ -111,7 +112,8 @@ $$
 ## Related
 
 - [[ai/index|AI]]
-- [[bio/index|Bio]]
+- [[bio/index|Bio-AI]]
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]
 - [[math/formula-intake|Formula intake]]
+- [[concepts/coverage-matrix|Coverage matrix]]
