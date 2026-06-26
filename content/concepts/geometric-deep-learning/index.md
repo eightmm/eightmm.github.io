@@ -21,6 +21,23 @@ $$
 
 Here $\rho(g)$ describes how the output representation should transform.
 
+## Decision Pattern
+
+For a geometric model, decide the contract before choosing the architecture:
+
+$$
+(\text{object}, \text{target}, \text{group}, \text{split})
+\rightarrow
+\text{feature and readout design}
+$$
+
+- Object: molecule, protein, protein-ligand complex, point cloud, graph, or structure.
+- Target: scalar property, ranking, distance, vector field, coordinate update, pose, or generated structure.
+- Group: permutation, translation, rotation, reflection, SO(3), SE(3), or E(3).
+- Split: ligand scaffold, protein family, complex pair, assay/source, or time when relevant.
+
+The group choice should match both the data and the deployment setting. A symmetry enforced by preprocessing is only valid if the same information is available at inference time.
+
 ## Math Background
 
 - [[concepts/math/geometry|Geometry]]
@@ -53,6 +70,14 @@ Here $\rho(g)$ describes how the output representation should transform.
 
 - [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+
+## Public-Safe Checks
+
+- State the coordinate source: experimental, predicted, docked, generated, simulated, or conformer-generated.
+- State whether chirality and stereochemistry are retained.
+- State whether graph construction uses only deployment-available inputs.
+- State whether scalar outputs are invariant and coordinate/vector outputs are equivariant.
+- Avoid private structures, unpublished results, host paths, and internal benchmark names.
 
 ## Related
 
