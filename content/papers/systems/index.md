@@ -33,7 +33,7 @@ Systems paper notes cover infrastructure, training efficiency, inference serving
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
 - [[concepts/machine-learning/batch-size|Batch size]]
-- [[infra/gpu/memory|GPU memory]]
+- [[infra/gpu/index#memory|GPU memory]]
 - [[infra/io/data-loading|Data loading and IO]]
 - [[infra/training/distributed-training|Distributed training]]
 - [[infra/inference/serving|Inference serving]]

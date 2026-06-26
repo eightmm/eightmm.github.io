@@ -51,4 +51,4 @@ Checks:
 - [[concepts/systems/reproducibility|Reproducibility]]
 - [[infra/reproducibility/run-record|Reproducible run record]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
-- [[infra/server-ops/gpu-driver-cuda|GPU driver and CUDA debugging]]
+- [[infra/gpu/index#driver-and-cuda|GPU driver and CUDA debugging]]

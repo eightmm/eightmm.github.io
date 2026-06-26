@@ -32,7 +32,7 @@ $$
 ## Related
 
 - [[infra/gpu/index|GPU]]
-- [[infra/gpu/memory|GPU memory]]
+- [[infra/gpu/index#memory|GPU memory]]
 - [[infra/inference/capacity-planning|Inference capacity planning]]
 - [[infra/training/distributed-training|Distributed training]]
 - [[concepts/evaluation/calibration|Calibration]]

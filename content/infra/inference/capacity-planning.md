@@ -11,7 +11,7 @@ tags:
 
 # Inference Capacity Planning
 
-Inference capacity planning estimates how many requests a model can serve under a latency, throughput, memory, and quality target. It connects [[infra/inference/serving|Inference serving]], [[infra/gpu/memory|GPU memory]], and [[concepts/systems/latency-throughput|Latency and throughput]].
+Inference capacity planning estimates how many requests a model can serve under a latency, throughput, memory, and quality target. It connects [[infra/inference/serving|Inference serving]], [[infra/gpu/index#memory|GPU memory]], and [[concepts/systems/latency-throughput|Latency and throughput]].
 
 A simple capacity constraint is:
 
@@ -59,7 +59,7 @@ where $T_{\mathrm{in}}$ is input context length and $T_{\mathrm{out}}$ is genera
 
 - [[infra/inference/serving|Inference serving]]
 - [[infra/gpu/index|GPU]]
-- [[infra/gpu/memory|GPU memory]]
+- [[infra/gpu/index#memory|GPU memory]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]

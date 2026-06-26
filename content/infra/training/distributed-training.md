@@ -19,7 +19,7 @@ Distributed training splits a model or its data across multiple devices to fit l
 - Watch communication overhead — interconnect bandwidth often caps scaling.
 - Confirm a single-GPU run matches loss curves before scaling out.
 - Checkpoint regularly so a failed node does not lose a long run.
-- Use [[infra/gpu/bottleneck-taxonomy|GPU bottleneck taxonomy]] to separate single-device bottlenecks from communication bottlenecks.
+- Use [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]] to separate single-device bottlenecks from communication bottlenecks.
 
 ## Related
 
@@ -27,8 +27,8 @@ Distributed training splits a model or its data across multiple devices to fit l
 - [[concepts/systems/distributed-training|Distributed training]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[infra/gpu/index|GPU]]
-- [[infra/gpu/bottleneck-taxonomy|GPU bottleneck taxonomy]]
-- [[infra/gpu/memory|GPU memory]]
+- [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]]
+- [[infra/gpu/index#memory|GPU memory]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/reproducibility/run-record|Reproducible run record]]
 - [[infra/hpc/slurm|Slurm]]

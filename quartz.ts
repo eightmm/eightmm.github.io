@@ -5,11 +5,21 @@ ExternalPlugin.Explorer({
   filterFn: (node) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
+    const hiddenExplorerSubtrees = [
+      "papers/analysis",
+      "papers/reproducibility",
+      "papers/workflows",
+      "papers/learning-methods",
+      "papers/systems",
+    ]
     const slugSegments = Array.isArray(node.slugSegments) ? node.slugSegments : []
     const dataSlug = typeof node.data?.slug === "string" ? node.data.slug : ""
     const slug = slugSegments.length > 0 ? slugSegments.join("/") : dataSlug || node.slug || ""
     const slugSegment = node.slugSegment ?? slugSegments.at(-1) ?? ""
     if (slugSegment === "tags") return false
+    if (hiddenExplorerSubtrees.some((prefix) => slug === prefix || slug.startsWith(prefix + "/"))) {
+      return false
+    }
     const segments = slug.split("/")
     const firstSegment = segments[0]
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)

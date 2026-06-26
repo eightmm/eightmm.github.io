@@ -51,10 +51,10 @@ A training job can look like a GPU problem when the true limit is file open late
 - Dataloader and cache behavior go here.
 - Data semantics and split contracts go under [[concepts/data/index|Data]].
 - Filesystem permissions and mounts go under [[infra/server-ops/index|Server operations]].
-- GPU starvation diagnosis links back to [[infra/gpu/bottleneck-taxonomy|GPU bottleneck taxonomy]].
+- GPU starvation diagnosis links back to [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]].
 
 ## Related
 
 - [[concepts/systems/storage-io|Storage and IO]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
-- [[infra/gpu/bottleneck-taxonomy|GPU bottleneck taxonomy]]
+- [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]]

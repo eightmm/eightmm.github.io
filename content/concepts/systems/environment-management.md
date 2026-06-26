@@ -91,4 +91,4 @@ The environment used for final inference or evaluation can differ from the train
 - [[concepts/systems/model-versioning|Model versioning]]
 - [[concepts/data/data-versioning|Data versioning]]
 - [[infra/reproducibility/run-record|Reproducible run record]]
-- [[infra/server-ops/gpu-driver-cuda|GPU driver and CUDA debugging]]
+- [[infra/gpu/index#driver-and-cuda|GPU driver and CUDA debugging]]

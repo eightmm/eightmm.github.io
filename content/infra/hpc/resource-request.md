@@ -121,6 +121,6 @@ This makes failures smaller, improves scheduling flexibility, and reduces the co
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/job-array|Job array]]
-- [[infra/gpu/utilization|GPU utilization]]
+- [[infra/gpu/index#utilization|GPU utilization]]
 - [[infra/io/data-loading|Data loading and IO]]
-- [[infra/gpu/memory|GPU memory]]
+- [[infra/gpu/index#memory|GPU memory]]

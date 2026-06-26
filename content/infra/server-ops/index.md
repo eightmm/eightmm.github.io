@@ -32,7 +32,7 @@ $$
 
 ## Notes
 
-- [[infra/server-ops/gpu-driver-cuda|GPU driver and CUDA debugging]]
+- [[infra/gpu/index#driver-and-cuda|GPU driver and CUDA debugging]]
 - [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
 - [[infra/server-ops/account-management|Account and group management]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
@@ -40,7 +40,7 @@ $$
 - [[infra/server-ops/backup-restore|Backup and restore]]
 - [[infra/server-ops/access-boundary|Access boundary]]
 - [[infra/environments/modules-containers|Environment modules and containers]]
-- [[infra/gpu/utilization|GPU utilization]]
+- [[infra/gpu/index#utilization|GPU utilization]]
 
 ## Related
 

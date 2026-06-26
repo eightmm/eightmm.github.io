@@ -31,7 +31,7 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 - [[concepts/systems/storage-io|Storage and IO]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[infra/gpu/index|GPU]]
-- [[infra/gpu/memory|GPU memory]]
+- [[infra/gpu/index#memory|GPU memory]]
 - [[infra/io/data-loading|Data loading and IO]]
 - [[infra/reproducibility/run-record|Reproducible run record]]
 

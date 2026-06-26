@@ -102,4 +102,4 @@ Otherwise latency and throughput numbers are not comparable.
 - [[concepts/systems/observability|Observability]]
 - [[infra/inference/serving|Inference serving]]
 - [[infra/inference/capacity-planning|Inference capacity planning]]
-- [[infra/gpu/memory|GPU memory]]
+- [[infra/gpu/index#memory|GPU memory]]
