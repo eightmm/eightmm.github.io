@@ -11,6 +11,17 @@ Structure-based drug discovery uses 3D molecular structure to reason about targe
 
 In this wiki, SBDD concepts support [[molecular-modeling/structure-based/index|Structure-based modeling]]. Research pages can later link back when a concrete project or thesis direction needs them.
 
+## Route Map
+
+| Question | Start | Then Check |
+| --- | --- | --- |
+| how are receptor and ligand prepared? | [Receptor and ligand preparation](/concepts/sbdd/receptor-ligand-preparation), [Docking workflow](/concepts/sbdd/docking-workflow) | chemical state, missing atoms, receptor state |
+| how are poses generated? | [Pose generation](/concepts/sbdd/pose-generation), [Pose RMSD](/concepts/sbdd/pose-rmsd) | atom mapping and symmetry |
+| is a predicted pose plausible? | [Pose quality](/concepts/sbdd/pose-quality), [Interaction fingerprint](/concepts/sbdd/interaction-fingerprint) | geometry, contacts, denominator |
+| what score is being optimized or ranked? | [Scoring function](/concepts/sbdd/scoring-function), [Binding affinity](/concepts/sbdd/binding-affinity) | label semantics and assay context |
+| is this a screening claim? | [Virtual screening](/concepts/sbdd/virtual-screening), [Negative set](/concepts/evaluation/negative-set), [Ranking metrics](/concepts/evaluation/ranking-metrics) | candidate pool and early enrichment |
+| is the benchmark clean? | [Protein-ligand split](/concepts/sbdd/protein-ligand-split), [Template leakage](/concepts/sbdd/template-leakage) | protein family, scaffold, complex, assay/source |
+
 ## Core Concepts
 
 - [[concepts/sbdd/pose-generation|Pose generation]]
