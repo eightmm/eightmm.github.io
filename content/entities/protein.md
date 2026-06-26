@@ -100,4 +100,3 @@ where the cluster can be based on sequence identity, domain family, fold, or tar
 - [[concepts/evaluation/protein-family-split|Protein family split]]
 - [[research/protein-modeling/index|Protein modeling]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
-- [[research/protein-modeling/mambafold|MambaFold]]

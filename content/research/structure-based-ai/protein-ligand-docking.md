@@ -74,7 +74,6 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
-- [[research/protein-modeling/mambafold|MambaFold]]
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[agents/workflows/llm-wiki|LLM Wiki]]

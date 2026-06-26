@@ -55,4 +55,3 @@ The target choice changes evaluation. A good contact map does not imply all-atom
 - [[concepts/protein-modeling/residue-indexing|Residue indexing]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
-- [[research/protein-modeling/mambafold|MambaFold]]

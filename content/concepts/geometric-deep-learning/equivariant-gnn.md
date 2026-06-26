@@ -84,7 +84,6 @@ The scalar message stays invariant while the coordinate delta rotates with the i
 
 - [[research/structure-based-ai/index|Structure-based AI]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
-- [[research/protein-modeling/mambafold|MambaFold]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

@@ -103,7 +103,6 @@ $$
 - [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]
 - [[concepts/protein-modeling/residue-indexing|Residue indexing]]
 - [[concepts/protein-modeling/contact-map|Contact map]]
-- [[research/protein-modeling/mambafold|MambaFold]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 
 ## Genome-Level Sequence Modeling
