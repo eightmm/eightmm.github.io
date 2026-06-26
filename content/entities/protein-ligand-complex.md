@@ -25,6 +25,46 @@ where $P$ is the protein or pocket, $L$ is the ligand identity, $X_P$ and $X_L$ 
 - Which representation best preserves geometry and chemistry?
 - Is the task pose generation, pose ranking, affinity prediction, or virtual screening?
 
+## Example Unit
+
+A complex example is usually a pair plus geometry:
+
+$$
+e
+=
+(P, L, X_P, X_L, y, s)
+$$
+
+where $y$ is an optional label and $s$ is the source or protocol. The label may describe pose quality, assay activity, binding affinity, or benchmark membership. These should not be mixed without naming the target.
+
+## Geometry and Label Boundary
+
+For docking and SBDD, geometry and assay evidence are different:
+
+$$
+\text{pose quality}
+\ne
+\text{binding affinity}
+\ne
+\text{virtual-screening rank}
+$$
+
+A pose can be geometrically plausible but biologically weak. A ligand can be active in an assay while a generated pose is wrong. Notes should state which claim is being evaluated.
+
+## Split Policy
+
+Complex-level splits need both sides:
+
+$$
+\operatorname{split\_key}(C)
+=
+(\operatorname{protein\_family}(P),
+\operatorname{ligand\_scaffold}(L),
+\operatorname{source}(C))
+$$
+
+For stronger claims, hold out both protein families and ligand scaffolds. Holding out only row IDs is usually too weak for structure-based generalization.
+
 ## Checks
 
 - Is the binding site defined from a structure, pocket detector, or known ligand?
@@ -34,6 +74,9 @@ where $P$ is the protein or pocket, $L$ is the ligand identity, $X_P$ and $X_L$ 
 - Are ligand scaffolds and protein families both controlled in the split?
 - Is the complex experimental, docked, predicted, generated, or used only as a reference?
 - Does the label come from the complex geometry, an assay, or a curated benchmark?
+- Is the protein structure apo, holo, predicted, or transferred from a template?
+- Are water, metals, cofactors, and protonation states included or removed by protocol?
+- Are invalid poses counted as failures rather than filtered after scoring?
 
 ## Related
 
@@ -47,4 +90,7 @@ where $P$ is the protein or pocket, $L$ is the ligand identity, $X_P$ and $X_L$ 
 - [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/binding-affinity|Binding affinity]]
+- [[concepts/sbdd/docking-workflow|Docking workflow]]
+- [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
