@@ -55,6 +55,7 @@ $a$ is a candidate architecture, $\widehat{R}(a)$ is validation risk, $C(a)$ is 
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/architectures/inductive-bias|Inductive bias]]
 - [[concepts/architectures/computational-complexity|Computational complexity]]
+- [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/evaluation/index|Evaluation]]

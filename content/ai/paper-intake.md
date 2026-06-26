@@ -27,6 +27,7 @@ $$
 | Evidence | Which metric, split, baseline, ablation, and uncertainty support the claim? | [Evaluation](/ai/evaluation) |
 | Benchmark claim | What data, task, split, metric, allowed information, and reporting rule define the score? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | System boundary | Does the contribution depend on data scale, compute, serving, tools, or reproducibility? | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
+| Scaling claim | What quality, data, model size, compute, and runtime variables changed? | [Scaling claim contract](/concepts/systems/scaling-claim-contract) |
 
 ## Claim Shapes
 
@@ -68,6 +69,7 @@ After reading, update the smallest durable note that captures the reusable idea.
 - Evaluation issue: [[ai/evaluation|Evaluation]] or [[concepts/evaluation/index|Evaluation concepts]]
 - Benchmark issue: [[concepts/data/benchmark-intake|Benchmark intake]] or [[papers/analysis/benchmark-card|Benchmark card]]
 - Paper-specific claim: [[papers/analysis/claim-extraction|Claim extraction]] and [[papers/analysis/evidence-table|Evidence table]]
+- Scaling or efficiency claim: [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - Multi-axis paper: [[papers/workflows/claim-routing|Claim routing]]
 
 ## Related

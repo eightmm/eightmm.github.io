@@ -31,6 +31,7 @@ where $\mathcal{D}$ is the dataset, $\mathcal{S}$ is the split, $\mathcal{T}$ is
 | Baseline | simple baseline, previous method, oracle upper bound, or ablation | makes the score interpretable |
 | Uncertainty | seed variance, bootstrap interval, paired comparison, subgroup variance | prevents overreading small differences |
 | Allowed information | pretraining data, templates, retrieval corpus, tools, prompts, featurizers | detects contamination and hidden assistance |
+| Compute budget | data scale, model size, training steps, hardware, precision, inference budget | separates quality claims from resource changes |
 
 ## Score to Claim Map
 
@@ -80,6 +81,7 @@ The claim is weak when $\theta^\*$, $\phi^\*$, thresholds, prompts, filtering, o
 - The dataset version or filtering policy is missing.
 - The split does not match the claimed deployment shift.
 - The baseline uses different data, examples, or allowed information.
+- The proposed method uses a larger compute, data, model-selection, or inference budget without stating it.
 - The primary metric was chosen after seeing many alternatives.
 - Invalid generations or failed predictions are removed without a denominator.
 - Only aggregate performance is shown while subgroup failures are plausible.
@@ -99,4 +101,5 @@ The claim is weak when $\theta^\*$, $\phi^\*$, thresholds, prompts, filtering, o
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/paired-comparison|Paired comparison]]
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
+- [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[molecular-modeling/data-evaluation|Molecular modeling data and evaluation]]

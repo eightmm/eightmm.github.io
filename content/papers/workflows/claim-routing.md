@@ -57,7 +57,7 @@ Score each axis with a short note before creating a new paper page.
 | Molecular modeling | molecule/protein/complex object boundary, docking workflow, conformer policy, label semantics, split, or leakage issue |
 | Math | new estimator, derivation, objective decomposition, metric definition, or uncertainty calculation |
 | Evaluation | new benchmark, split, metric, baseline, ablation, failure taxonomy, or reproducibility evidence |
-| Systems | compute, memory, throughput, serving, reproducibility, artifact, or implementation boundary |
+| Systems | compute, memory, throughput, serving, reproducibility, artifact, scaling evidence, or implementation boundary |
 | Agents | tool contract, planning loop, memory boundary, verifier, handoff, or orchestration protocol |
 
 ## Routing Output
@@ -79,7 +79,7 @@ public artifact status: to verify
 
 | Primary Axis | Minimum Companion Notes |
 | --- | --- |
-| Architecture | architecture concept, complexity or ablation note, evaluation risk |
+| Architecture | architecture concept, complexity or scaling note, ablation note, evaluation risk |
 | Learning method | objective formula, data/signal description, transfer or evaluation protocol |
 | Generative model | probability path or sampling formula, validity metrics, failure examples |
 | Molecular modeling | object contract, preprocessing/split rule, leakage check, task metric |
@@ -94,6 +94,7 @@ public artifact status: to verify
 - [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
+- [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[ai/paper-intake|AI paper intake]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]

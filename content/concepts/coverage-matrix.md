@@ -60,6 +60,7 @@ $$
 | Evaluation | Which metric, baseline, split, uncertainty, and failure mode support the claim? | [Evaluation](/ai/evaluation), [Evaluation concepts](/concepts/evaluation) |
 | Claim boundary | What exactly does the evidence prove, and where does it stop? | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
 | Systems | Does the claim depend on training, serving, tools, reproducibility, or compute? | [AI systems](/concepts/systems), [Infra](/infra) |
+| Scaling | Does quality depend on data size, model size, compute, memory, latency, or inference budget? | [Scaling claim contract](/concepts/systems/scaling-claim-contract) |
 | Agent workflow | Does an LLM use tools, memory, planning, or verification? | [Agents](/agents) |
 
 ## Molecular Modeling Coverage
@@ -89,6 +90,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One architecture or learning-method page when the method is central.
 - One objective-metric alignment check when the training loss and reported metric differ.
 - One evaluation page explaining metric, split, baseline, uncertainty, or failure mode.
+- One scaling claim pass when model size, data size, compute, memory, latency, or throughput is part of the contribution.
 - One claim boundary when the result could be overread: [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
 - One paper note or paper-analysis note when a specific paper claim is being discussed.
 - One claim-routing pass when a paper or post candidate spans multiple axes: [[papers/workflows/claim-routing|Claim routing]].

@@ -61,12 +61,15 @@ Architecture choice is also a systems decision. A model can be statistically rea
 
 Complexity is not the whole story. Constants, kernels, hardware layout, batching, parallelism, and memory bandwidth can dominate in practice.
 
+For paper claims, complexity should be separated from the actual scaling evidence. A lower asymptotic term does not prove better quality per compute unless the budget, implementation, and metric are comparable.
+
 ## Checks
 
 - What variable grows at deployment: sequence length, graph size, image resolution, batch size, or number of candidates?
 - Is the bottleneck arithmetic, activation memory, KV cache, communication, or IO?
 - Does the benchmark hide the real deployment size?
 - Is the asymptotic cost compatible with the intended inference workflow?
+- Is a scaling claim backed by matched data, model size, compute, hardware, and metric?
 
 ## Related
 
@@ -77,3 +80,4 @@ Complexity is not the whole story. Constants, kernels, hardware layout, batching
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
+- [[concepts/systems/scaling-claim-contract|Scaling claim contract]]

@@ -37,6 +37,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[concepts/systems/deployment-strategy|Deployment strategy]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
+- [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[concepts/systems/storage-io|Storage and IO]]
 - [[concepts/systems/observability|Observability]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
@@ -52,6 +53,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - Is the workload shaped for the scheduler: resource request, job size, queue time, and preemption risk?
 - Is the environment and storage path part of the run record?
 - Is the goal model quality, time-to-train, cost, latency, throughput, or reliability?
+- If a paper claims scaling, are quality, data, model size, compute budget, and runtime boundary separated?
 - Is the experiment lifecycle recorded from question to claim?
 - Are run artifacts sufficient for later inspection or metric checking?
 - Can the run be reproduced from a commit, config, seed, dataset version, and environment?
