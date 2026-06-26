@@ -40,36 +40,44 @@ The group choice should match both the data and the deployment setting. A symmet
 
 ## Math Background
 
-- [[concepts/math/geometry|Geometry]]
-- [[concepts/math/symmetry-group|Symmetry group]]
-- [[concepts/math/linear-algebra|Linear algebra]]
+| Need | Start |
+| --- | --- |
+| distance, angle, coordinate basics | [Geometry](/concepts/math/geometry) |
+| group actions and symmetry | [Symmetry group](/concepts/math/symmetry-group) |
+| vectors, matrices, bases, eigenspaces | [Linear algebra](/concepts/math/linear-algebra) |
 
 ## Symmetry
 
-- [[concepts/geometric-deep-learning/invariance|Invariance]]
-- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
-- [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
-- [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
-- [[concepts/geometric-deep-learning/so3|SO(3)]]
-- [[concepts/geometric-deep-learning/se3|SE(3)]]
-- [[concepts/geometric-deep-learning/e3|E(3)]]
+| Question | Start |
+| --- | --- |
+| should the output stay the same after a transform? | [Invariance](/concepts/geometric-deep-learning/invariance), [Invariant feature](/concepts/geometric-deep-learning/invariant-feature) |
+| should the output transform with the input? | [Equivariance](/concepts/geometric-deep-learning/equivariance), [Equivariant feature](/concepts/geometric-deep-learning/equivariant-feature) |
+| rotations only | [SO(3)](/concepts/geometric-deep-learning/so3) |
+| rotations and translations | [SE(3)](/concepts/geometric-deep-learning/se3) |
+| rotations, translations, and reflections | [E(3)](/concepts/geometric-deep-learning/e3) |
 
 ## Coordinates and Distances
 
-- [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
-- [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
-- [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
+| Need | Start | Typical Output |
+| --- | --- | --- |
+| declare coordinate source and frame | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame) | valid input contract |
+| use distances without orientation | [Distance geometry](/concepts/geometric-deep-learning/distance-geometry) | invariant scalar features |
+| predict or refine coordinates | [Coordinate update](/concepts/geometric-deep-learning/coordinate-update) | equivariant vector/coordinate output |
 
 ## Representations
 
-- [[concepts/geometric-deep-learning/spherical-harmonics|Spherical harmonics]]
-- [[concepts/geometric-deep-learning/irreducible-representation|Irreducible representation]]
-- [[concepts/geometric-deep-learning/tensor-field-network|Tensor Field Network]]
+| Need | Start | Use When |
+| --- | --- | --- |
+| angular basis on directions | [Spherical harmonics](/concepts/geometric-deep-learning/spherical-harmonics) | local orientation or angular structure matters |
+| scalar/vector/tensor feature types | [Irreducible representation](/concepts/geometric-deep-learning/irreducible-representation) | feature channels must transform predictably |
+| equivariant message passing with typed channels | [Tensor Field Network](/concepts/geometric-deep-learning/tensor-field-network) | higher-order geometric expressivity is worth the cost |
 
 ## Models and Operations
 
-- [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
-- [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+| Need | Start |
+| --- | --- |
+| choose a geometric model family | [Geometric architecture](/concepts/geometric-deep-learning/geometric-architecture) |
+| graph neural network with symmetry constraints | [Equivariant GNN](/concepts/geometric-deep-learning/equivariant-gnn) |
 
 ## Public-Safe Checks
 
