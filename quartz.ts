@@ -27,6 +27,23 @@ ExternalPlugin.Explorer({
   sortFn: (a, b) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
+    const bioAiGroups = [
+      "entities",
+      "molecules",
+      "proteins",
+      "structure-based-ai",
+      "data-evaluation",
+      "geometry",
+      "genome",
+    ]
+    const mathGroups = [
+      "linear-algebra",
+      "calculus-optimization",
+      "probability-statistics",
+      "information-likelihood",
+      "geometry-symmetry",
+      "evaluation-math",
+    ]
     const agentGroups = ["core", "tools", "workflows", "verification"]
     const aSlugSegments = Array.isArray(a.slugSegments) ? a.slugSegments : []
     const bSlugSegments = Array.isArray(b.slugSegments) ? b.slugSegments : []
@@ -41,6 +58,22 @@ ExternalPlugin.Explorer({
 
     if (aSegments.length === 1 && bSegments.length === 1 && aIndex !== bIndex) {
       return aIndex - bIndex
+    }
+
+    if (aSegments[0] === "bio-ai" && bSegments[0] === "bio-ai") {
+      const aGroupIndex = bioAiGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = bioAiGroups.indexOf(bSegments[1] ?? "")
+      if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
+        return aGroupIndex - bGroupIndex
+      }
+    }
+
+    if (aSegments[0] === "math" && bSegments[0] === "math") {
+      const aGroupIndex = mathGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = mathGroups.indexOf(bSegments[1] ?? "")
+      if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
+        return aGroupIndex - bGroupIndex
+      }
     }
 
     if (aSegments[0] === "agents" && bSegments[0] === "agents") {

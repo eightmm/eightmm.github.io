@@ -20,6 +20,7 @@ $$
 
 ## 다루는 객체
 
+- [[bio-ai/entities|Entities]]
 - [[entities/entity-relation-map|Entity relation map]]
 - [[entities/target|Target]]
 - [[entities/protein|Protein]]
@@ -35,6 +36,7 @@ $$
 
 ## Molecule and Ligand Modeling
 
+- [[bio-ai/molecules|Molecules]]
 - [[concepts/tasks/property-prediction|Property prediction]]
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
@@ -53,6 +55,7 @@ $$
 
 ## Structure-Based AI
 
+- [[bio-ai/structure-based-ai|Structure-based AI gateway]]
 - [[concepts/tasks/interaction-prediction|Interaction prediction]]
 - [[concepts/tasks/localization|Localization]]
 - [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
@@ -75,6 +78,7 @@ $$
 
 ## Data, Labels, and Splits
 
+- [[bio-ai/data-evaluation|Data and evaluation]]
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
@@ -91,6 +95,7 @@ $$
 
 ## Protein and Sequence Modeling
 
+- [[bio-ai/proteins|Proteins]]
 - [[research/protein-modeling/index|Protein modeling]]
 - [[concepts/protein-modeling/index|Protein modeling concepts]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
@@ -109,6 +114,7 @@ $$
 
 유전체는 이 블로그에서 넓은 omics 주제가 아니라 sequence/region/variant 수준의 입력 객체로만 다룹니다.
 
+- [[bio-ai/genome|Genome]]
 - [[concepts/genome-modeling/index|Genome modeling concepts]]
 - [[concepts/genome-modeling/genomic-region|Genomic region]]
 - [[concepts/genome-modeling/k-mer|K-mer]]
@@ -117,6 +123,7 @@ $$
 
 ## Geometry, Structure, and Evaluation
 
+- [[bio-ai/geometry|Geometry]]
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/math/symmetry-group|Symmetry group]]
 - [[concepts/modalities/graph|Graph]]

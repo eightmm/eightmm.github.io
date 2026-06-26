@@ -25,12 +25,12 @@ $$
 ## Core Foundations
 
 - [[concepts/math/index|Math foundations]]: canonical wiki index
-- Linear algebra: [[concepts/math/linear-algebra|Linear algebra]], [[concepts/math/vector-norm-similarity|Vector norm and similarity]], [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]], [[concepts/math/singular-value-decomposition|Singular value decomposition]]
-- Calculus and optimization: [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
-- Probability: [[concepts/math/random-variable|Random variable]], [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/normal-distribution|Normal distribution]], [[concepts/math/expectation|Expectation]], [[concepts/math/bayes-rule|Bayes rule]]
-- Statistics: [[concepts/math/statistical-estimator|Statistical estimator]], [[concepts/math/covariance-correlation|Covariance and correlation]], [[concepts/math/central-limit-theorem|Central limit theorem]], [[concepts/math/hypothesis-testing|Hypothesis testing]], [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
-- Estimation and likelihood: [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]], [[concepts/math/maximum-likelihood|Maximum likelihood]], [[concepts/math/entropy-kl|Entropy and KL divergence]]
-- Geometry and symmetry: [[concepts/math/geometry|Geometry]], [[concepts/math/symmetry-group|Symmetry group]]
+- [[math/linear-algebra|Linear algebra]]: vectors, matrices, embeddings, projections, similarity, SVD
+- [[math/calculus-optimization|Calculus and optimization]]: gradients, Jacobians, Hessians, backpropagation, optimizers
+- [[math/probability-statistics|Probability and statistics]]: random variables, distributions, estimators, uncertainty, hypothesis tests
+- [[math/information-likelihood|Information and likelihood]]: maximum likelihood, entropy, KL, cross-entropy, generative objectives
+- [[math/geometry-symmetry|Geometry and symmetry]]: groups, frames, invariance, equivariance, coordinate modeling
+- [[math/evaluation-math|Evaluation math]]: metrics, confidence intervals, calibration, statistical comparison
 
 ## Formula Checklist
 
