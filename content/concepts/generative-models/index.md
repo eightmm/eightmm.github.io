@@ -32,6 +32,17 @@ Choose a generative family by the object, output validity rule, likelihood need,
 | [Flow matching](/concepts/generative-models/flow-matching) | Velocity matching | ODE transport | Direct path learning | Path and symmetry design |
 | [Consistency](/concepts/generative-models/consistency-model) | Trajectory consistency | One/few step | Fast sampling | Distillation or consistency quality |
 
+## Route Map
+
+| Question | Start | Then Check |
+| --- | --- | --- |
+| do you need exact likelihood? | [Autoregressive model](/concepts/generative-models/autoregressive-model), [Normalizing flow](/concepts/generative-models/normalizing-flow) | factorization, ordering, invertibility |
+| is there a latent variable? | [Latent variable model](/concepts/generative-models/latent-variable-model), [ELBO](/concepts/generative-models/elbo), [VAE](/concepts/generative-models/vae) | reconstruction vs prior sampling |
+| is generation iterative? | [Diffusion model](/concepts/generative-models/diffusion-model), [Score matching](/concepts/generative-models/score-matching), [Flow matching](/concepts/generative-models/flow-matching) | sampler, step count, parameterization |
+| is generation conditional? | [Conditional generation](/concepts/generative-models/conditional-generation), [Guidance](/concepts/generative-models/guidance) | condition leakage and guidance strength |
+| is the object molecular or structural? | [Molecular generation](/concepts/generative-models/molecular-generation), [Protein design](/concepts/generative-models/protein-design) | validity, novelty, split, physical plausibility |
+| how should samples be judged? | [Generation evaluation](/concepts/evaluation/generation-evaluation), [Sampling](/concepts/generative-models/sampling) | attempted vs kept samples |
+
 ## Evaluation Boundary
 
 Generation quality is not one metric. A useful evaluation names:
