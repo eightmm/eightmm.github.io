@@ -38,6 +38,22 @@ const replacements = [
     'l.addEventListener("click",o),s.push(()=>l.removeEventListener("click",o))',
     "l.onclick=o",
   ],
+  [
+    "overflow: hidden;\\n  margin-left: 6px;",
+    "overflow: hidden;\\n  min-height: 0;\\n  margin-left: 6px;",
+  ],
+  [
+    "overflow:hidden;margin-left:6px;",
+    "overflow:hidden;min-height:0;margin-left:6px;",
+  ],
+  [
+    ".explorer-content .folder-outer.open {\\n  visibility: visible;\\n  grid-template-rows: 1fr;\\n}\\n\\n.explorer-content .folder-outer > ul {",
+    ".explorer-content .folder-outer.open {\\n  visibility: visible;\\n  grid-template-rows: 1fr;\\n}\\n\\n.explorer-content .folder-outer:not(.open) {\\n  height: 0;\\n  overflow: hidden;\\n}\\n\\n.explorer-content .folder-outer:not(.open) > ul {\\n  display: none;\\n}\\n\\n.explorer-content .folder-outer > ul {",
+  ],
+  [
+    ".explorer-content .folder-outer.open{visibility:visible;grid-template-rows:1fr}.explorer-content .folder-outer>ul{",
+    ".explorer-content .folder-outer.open{visibility:visible;grid-template-rows:1fr}.explorer-content .folder-outer:not(.open){height:0;overflow:hidden}.explorer-content .folder-outer:not(.open)>ul{display:none}.explorer-content .folder-outer>ul{",
+  ],
 ]
 
 for (const file of files) {
@@ -47,11 +63,18 @@ for (const file of files) {
 
   let text = fs.readFileSync(file, "utf8")
   const alreadyPatched =
-    (text.includes('dataset.collapsed!=="open"') && text.includes("l.onclick=o")) ||
+    (text.includes('dataset.collapsed!=="open"') &&
+      text.includes("l.onclick=o") &&
+      text.includes("min-height") &&
+      text.includes("folder-outer:not")) ||
     (text.includes('explorer.dataset.collapsed !== "open"') &&
-      text.includes("button.onclick = clickHandler")) ||
+      text.includes("button.onclick = clickHandler") &&
+      text.includes("min-height") &&
+      text.includes("folder-outer:not")) ||
     (text.includes('explorer.dataset.collapsed !== \\"open\\"') &&
-      text.includes("button.onclick = clickHandler"))
+      text.includes("button.onclick = clickHandler") &&
+      text.includes("min-height") &&
+      text.includes("folder-outer:not"))
 
   for (const [from, to] of replacements) {
     const count = text.split(from).length - 1

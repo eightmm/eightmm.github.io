@@ -10,6 +10,7 @@ tags:
 
 ## 글
 
+- [[posts/2026-06-26-ai-wiki-map|AI Wiki를 어떤 축으로 나눠 볼 것인가]]
 - [[posts/2026-06-25-blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]]
 - [[posts/2026-06-25-structure-based-ai-map|구조 기반 AI를 어떻게 정리할 것인가]]
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
