@@ -24,6 +24,7 @@ $$
 
 | Area | Use For | Start |
 | --- | --- | --- |
+| Scope and naming | what belongs under Molecular Modeling vs AI, Math, Agents | [Molecular Modeling Scope](/bio/modeling-scope) |
 | Scope and objects | object, measurement, representation, claim boundary | [Computational Biology](/bio/computational-biology) |
 | Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure | [Entities](/bio/entities) |
 | Molecules | standardization, molecular graphs, fingerprints, conformers | [Molecules](/bio/molecules) |
@@ -58,6 +59,7 @@ $$
 | Representation | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) |
 | Tasks | [Property prediction](/concepts/tasks/property-prediction), [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction), [Molecular similarity](/concepts/molecular-modeling/molecular-similarity) |
 | Structure and chemistry details | [Conformer](/concepts/molecular-modeling/conformer), [Tautomer](/concepts/molecular-modeling/tautomer), [Protonation state](/concepts/molecular-modeling/protonation-state), [Stereochemistry](/concepts/molecular-modeling/stereochemistry) |
+| Conformer-dependent modeling | [Conformer](/concepts/molecular-modeling/conformer), [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Search | [Substructure search](/concepts/molecular-modeling/substructure-search) |
 
 ## Structure-Based Modeling
@@ -136,4 +138,5 @@ Molecular modeling 쪽 논문은 모델 성능보다 object, label, split, leaka
 - [[papers/index|Papers]]
 - [[projects/index|Projects]]
 - [[bio/paper-intake|Molecular modeling paper intake]]
+- [[bio/modeling-scope|Molecular modeling scope]]
 - [[concepts/coverage-matrix|Coverage matrix]]

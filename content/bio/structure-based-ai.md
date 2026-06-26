@@ -20,9 +20,21 @@ $$
 
 where $P$ is a protein or pocket, $L$ is a ligand, $X_0$ is optional initial geometry, and $c$ is task context.
 
+## Scope
+
+Structure-based modeling is a domain workflow, not automatically an AI method. Name the note by the strongest claim:
+
+| Claim Center | Put It Under |
+| --- | --- |
+| receptor preparation, ligand preparation, docking, conformer handling, pose quality | [Molecular Modeling](/bio) |
+| Transformer, GNN, diffusion, flow matching, SSL, foundation model architecture | [AI](/ai) |
+| coordinate frames, symmetry, RMSD, likelihood, energy, optimization | [Math](/math) |
+| benchmark split, leakage, metric, baseline, artifact availability | [Evaluation](/ai/evaluation), [Data and evaluation](/bio/data-evaluation) |
+
 ## Core Path
 
 - [[bio/docking|Docking]]
+- [[bio/modeling-scope|Molecular Modeling Scope]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
