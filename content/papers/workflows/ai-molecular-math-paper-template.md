@@ -73,11 +73,14 @@ Select all that apply before summarizing the result.
 | architecture improvement | to verify | fair baseline, ablation, parameter/compute boundary |
 | SSL or pretraining | to verify | pretraining unit, positive/corruption rule, transfer split |
 | generative model | to verify | sampler budget, validity/diversity/novelty/utility, invalid denominator |
+| energy or score model | to verify | energy/score/force definition, sampler or negative process, validity after filtering |
+| constrained generation | to verify | hard constraint vs penalty/projection/repair/filter, invalid-output denominator |
 | property or activity prediction | to verify | label semantics, target/assay context, split unit |
-| protein modeling | to verify | sequence/structure source, MSA/template policy, family split |
+| protein modeling | to verify | sequence/structure source, PLM/MSA/template policy, family split |
 | docking or pose | to verify | receptor/ligand preparation, pose metric, failed docking handling |
 | benchmark result | to verify | allowed information, selection rule, baseline, uncertainty |
 | formula or estimator | to verify | variables, distributions, objective, estimator assumptions |
+| agent or tool workflow | to verify | tool boundary, verifier, memory, success/failure definition |
 
 Evidence level:
 
@@ -94,6 +97,7 @@ evidence_level: mentioned # mentioned | specified | supported | bounded | reprod
 - Learning signal: `to verify`
 - Objective: `to verify`
 - Inference or sampling procedure: `to verify`
+- Constraint or filtering rule: `to verify`
 
 ## Representation Contract
 
@@ -132,6 +136,7 @@ $$
 | Field | Value |
 | --- | --- |
 | Training objective | `to verify` |
+| Objective family | likelihood / contrastive / score / energy / velocity / reward / constraint / metric / to verify |
 | Model-selection metric | `to verify` |
 | Reported metric | `to verify` |
 | Claimed utility | `to verify` |
@@ -168,6 +173,7 @@ Use `not applicable` only when the paper is not about computational biology.
 | Task | `to verify` |
 | Split | `to verify` |
 | Metric | `to verify` |
+| Metric family | classification / regression / ranking / probability / generation / pose / enrichment / to verify |
 | Baseline | `to verify` |
 | Model-selection rule | `to verify` |
 | Uncertainty or seed variation | `to verify` |
@@ -189,6 +195,7 @@ Use `not applicable` only when the paper is not about computational biology.
 - Modality/task note to update: `to verify`
 - Architecture or learning note to update: `to verify`
 - Math note to update: `to verify`
+- Constraint/objective note to update: [[concepts/math/constrained-optimization|Constrained optimization]], [[concepts/generative-models/energy-based-model|Energy-based model]], or `not applicable`
 - Evaluation or benchmark note to update: `to verify`
 - Potential Korean post route: [[posts/ai-molecular-math-post-intake|AI computational biology math post intake]]
 - Promotion readiness: [[papers/workflows/ai-molecular-math-readiness-gate|AI computational biology math readiness gate]]

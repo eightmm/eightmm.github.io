@@ -33,7 +33,7 @@ $$
 | AI claim pattern | architecture, learning, generation, evaluation, scaling, systems, or agent workflow | [AI paper claim patterns](/ai/paper-claim-patterns) |
 | Computational biology paper claim | object, representation, label, split, leakage | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
 | Computational biology claim pattern | property, activity, docking, generation, protein design, genome sequence modeling | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
-| Formula or objective | symbols, distributions, derivatives, metrics | [Formula intake](/math/formula-intake) |
+| Formula or objective | symbols, distributions, derivatives, metrics, constraints | [Formula intake](/math/formula-intake) |
 | Formula pattern | common objective or metric pattern before detailed derivation | [Formula pattern catalog](/math/formula-patterns) |
 | AI + computational biology + Math claim | object, representation, model, objective, evidence, public boundary | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
@@ -60,10 +60,10 @@ $$
 | Data | What example, label, split, and preprocessing contract define the dataset? | [Data](/concepts/data) |
 | Architecture | What inductive bias and complexity does the model use? | [Architectures](/concepts/architectures), [AI architectures](/ai/architectures) |
 | Learning method | What supervision, pretraining, transfer, or preference signal is used? | [Learning methods](/concepts/learning), [AI learning methods](/ai/learning-methods) |
-| Objective-metric link | Does the optimized loss support the reported metric and utility claim? | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| Objective-metric link | Does the optimized loss, reward, score, energy, or constraint support the reported metric and utility claim? | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Model selection | Which checkpoint, hyperparameter, threshold, seed, prompt, filter, or decoding setting was selected? | [Model selection](/concepts/machine-learning/model-selection) |
-| Generative model | What distribution, score, velocity, or sampling path is modeled? | [Generative models](/concepts/generative-models), [AI generative models](/ai/generative-models) |
-| Math | Which formula, object type, distribution, or estimator is needed? | [Math](/math), [Math foundations](/concepts/math) |
+| Generative model | What distribution, score, energy, velocity, or sampling path is modeled? | [Generative models](/concepts/generative-models), [AI generative models](/ai/generative-models) |
+| Math | Which formula, object type, distribution, constraint, or estimator is needed? | [Math](/math), [Math foundations](/concepts/math), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Evaluation | Which metric, baseline, split, uncertainty, and failure mode support the claim? | [Evaluation](/ai/evaluation), [Evaluation concepts](/concepts/evaluation) |
 | Uncertainty and calibration | Is the result larger than uncertainty, and are probabilities meaningful? | [Confidence interval](/concepts/evaluation/confidence-interval), [Calibration](/concepts/evaluation/calibration), [Cross-validation](/concepts/evaluation/cross-validation) |
 | Claim boundary | What exactly does the evidence prove, and where does it stop? | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
@@ -76,7 +76,7 @@ $$
 | Topic | Must Cover | Route |
 | --- | --- | --- |
 | Molecule or ligand model | standardization, identity, chemical state, representation, scaffold split, property or interaction label | [Molecules](/molecular-modeling/molecules), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
-| Protein model | sequence, structure, domains, residue indexing, family split, representation | [Proteins](/molecular-modeling/proteins) |
+| Protein model | sequence, structure, PLM/MSA/template policy, domains, residue indexing, family split, representation | [Proteins](/molecular-modeling/proteins), [Protein language model](/concepts/protein-modeling/protein-language-model) |
 | Protein-ligand complex | protein context, ligand context, pocket, pose, interaction, split on both axes | [Structure-based modeling](/molecular-modeling/structure-based) |
 | Docking or virtual screening | receptor/ligand preparation, pose generation, scoring, filtering, enrichment metric | [Docking](/molecular-modeling/docking) |
 | Geometry-heavy model | coordinate frame, invariant/equivariant target, rotation/translation behavior, leakage risk | [Computational biology geometry](/molecular-modeling/geometry) |
@@ -97,6 +97,8 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One representation contract when preprocessing or featurization changes the object seen by the model.
 - One tensor-shape pass when a formula depends on batch, token, graph, coordinate, head, or candidate axes.
 - One formula-pattern pass when the paper introduces or relies on an objective or metric: [[math/formula-patterns|Formula pattern catalog]].
+- One constraint pass when feasibility, validity, projection, repair, or filtering is central: [[concepts/math/constrained-optimization|Constrained optimization]].
+- One energy/score pass when a method uses energy, force, score matching, or Langevin-style sampling: [[concepts/generative-models/energy-based-model|Energy-based model]].
 - One coordinate modeling contract when a paper predicts poses, conformers, structures, vectors, forces, or coordinate updates.
 - One architecture or learning-method page when the method is central.
 - One objective-metric alignment check when the training loss and reported metric differ.
@@ -121,6 +123,8 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - Does every performance claim have a route to benchmark intake or evaluation protocol?
 - Does every computational biology claim name object, label, split, and leakage risk?
 - Does every formula-heavy claim define symbols and the sampled distribution?
+- Does every constrained or filtered-generation claim count invalid outputs?
+- Does every probability claim distinguish accuracy, ranking, probability metric, and calibration?
 - Is the public boundary clear before adding a post or paper note?
 
 ## Related

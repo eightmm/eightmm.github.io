@@ -40,6 +40,7 @@ $$
 | Representation contract | Raw object, representation, unit, preprocessing, split, and leakage risk are explicit | [Representation contract](/concepts/modalities/representation-contract) |
 | Coordinate contract | Frame, symmetry, atom or residue mapping, coordinate loss, and metric are explicit when 3D claims matter | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Objective-metric alignment | Training loss, selection metric, reported metric, and utility claim are connected | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| Objective family | Likelihood, contrastive, score, energy, velocity, reward, constraint, or metric objective is named | [Formula intake](/math/formula-intake), [Energy-based model](/concepts/generative-models/energy-based-model), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Benchmark claim | Dataset, split, task, metric, baseline, uncertainty, and allowed information support the stated claim | [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) |
 | Claim-evidence boundary | The supported scope is narrower than the headline claim when evidence is limited | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
 | Computational biology intake | Molecule, ligand, protein, pocket, conformer, complex, genome region, assay, split, and leakage fields are handled when relevant | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
@@ -69,11 +70,14 @@ Different mixed AI, computational biology, and Math papers fail in different way
 | Architecture improvement | input representation, block changed, complexity, baseline architecture | fair baseline, ablation, compute or parameter boundary |
 | SSL or pretraining | pretraining unit, corruption/positive pair, transfer protocol | downstream split, linear probe or fine-tune protocol, leakage check |
 | Generative model | sampling distribution, objective, sampler budget, validity definition | validity, diversity, novelty, utility, invalid-sample denominator |
+| Energy or score model | energy, score, force, sampler, and negative-sample or noise process | partition/sampler handling, score-energy interpretation, validity after filtering |
+| Constrained generation | hard constraint, penalty, projection, repair, or filter | invalid-output denominator, deployment-available constraints, constraint ablation |
 | Molecular property/activity | molecule state, target, assay, endpoint, unit, threshold | split unit, assay/source handling, negative construction, calibration if probabilistic |
-| Protein modeling | sequence/structure source, MSA/template policy, residue mapping | family split, template leakage check, structure/source boundary |
+| Protein modeling | sequence/structure source, PLM/MSA/template policy, residue mapping | family split, template leakage check, likelihood-vs-function boundary |
 | Docking or pose | receptor state, ligand state, pocket definition, pose metric | pose quality, failed docking denominator, leakage/template policy |
 | Benchmark paper | task definition, allowed information, metric, selection rule | baseline strength, uncertainty, saturation, failure modes |
 | Formula or estimator | random variables, distributions, objective, estimator | operational form, assumptions, metric relation, numerical budget |
+| Agent or tool workflow | task state, tool boundary, verifier, memory, stopping rule | success/failure definition, evaluator leakage, human review boundary |
 
 If the paper spans multiple claim types, all relevant rows apply.
 
@@ -101,6 +105,8 @@ Do not write a claim as established fact unless it reaches at least `supported`,
 | unclear label semantics | `claim not ready` for computational biology tasks |
 | formula without symbol definitions | `formula intake needed` |
 | metric without baseline or uncertainty | `weak evidence` |
+| probability metric without calibration check | `weak evidence` |
+| constraint without invalid-output accounting | `claim not ready` |
 | private or unpublished detail needed | `do not publish` |
 
 ## Synthesis Post Minimum
@@ -135,6 +141,7 @@ paper_to_wiki_extraction: to verify
 representation_contract: to verify
 coordinate_contract: not applicable
 objective_metric_alignment: to verify
+objective_family: to verify
 benchmark_claim_contract: to verify
 claim_evidence_boundary: to verify
 computational_biology_intake: not applicable

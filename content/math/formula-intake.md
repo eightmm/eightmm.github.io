@@ -25,6 +25,7 @@ $$
 | Index set | Does the index run over batch, token, node, edge, residue, atom, time, sample, or candidate? | [Discrete math and graphs](/math/discrete-graphs) |
 | Distribution | Is the expectation over data, model samples, noise, policy rollouts, or test population? | [Probability and statistics](/math/probability-statistics) |
 | Objective | Is the formula a loss, likelihood, bound, score, reward, constraint, or metric? | [Information and likelihood](/math/information-likelihood) |
+| Constraint | Is the formula a hard feasible set, penalty, barrier, projection, or repair rule? | [Constrained optimization](/concepts/math/constrained-optimization) |
 | Bayesian quantity | Is the formula a prior, likelihood, posterior, MAP estimate, or posterior predictive distribution? | [Bayesian inference](/concepts/math/bayesian-inference) |
 | Objective-metric link | Does the optimized loss support the reported metric and claimed utility? | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Derivative | Is the derivative with respect to parameters, inputs, coordinates, time, or latent variables? | [Calculus and gradients](/math/calculus-gradients) |
@@ -70,6 +71,8 @@ This makes hidden assumptions visible: sampling policy, masking policy, class im
 | Bayesian inference | What is prior, likelihood, posterior, evidence, MAP estimate, or predictive distribution? |
 | Contrastive loss | What is the anchor, positive, negative set, similarity, and temperature? |
 | Diffusion or flow | What is the state, time variable, noise/score/velocity target, and sampling path? |
+| Energy model | What is the energy, score, force, partition term, sampler, or negative process? |
+| Constraint | What is hard, soft, projected, repaired, filtered, and counted as invalid? |
 | Equivariance | What group acts on the input, and how should the output transform? |
 | Metric | What is averaged, over which examples, after which model-selection rule? |
 
@@ -91,6 +94,8 @@ Use [[math/formula-explanation-ladder|Formula explanation ladder]] before decidi
 - A metric is treated as a loss without explaining the surrogate.
 - A loss is assumed to optimize the reported metric without an alignment argument.
 - An expectation omits the sampling distribution.
+- A constraint is written as a penalty but described as guaranteed validity.
+- Invalid generated samples are filtered before reporting without a denominator.
 - A graph or set equation does not state permutation behavior.
 - A coordinate model does not state translation or rotation handling.
 - A benchmark average hides per-target, per-scaffold, or per-source variation.
@@ -107,5 +112,7 @@ Use [[math/formula-explanation-ladder|Formula explanation ladder]] before decidi
 - [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/math/bayesian-inference|Bayesian inference]]
 - [[concepts/machine-learning/second-order-optimization|Second-order optimization]]
+- [[concepts/math/constrained-optimization|Constrained optimization]]
+- [[concepts/generative-models/energy-based-model|Energy-based model]]
 - [[concepts/data/benchmark-intake|Benchmark intake]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]

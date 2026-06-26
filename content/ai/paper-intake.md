@@ -25,6 +25,7 @@ $$
 | Architecture | What inductive bias, parameter sharing, and complexity does the model use? | [Architectures](/ai/architectures) |
 | Learning signal | Is the signal label, mask, contrast, denoising target, preference, reward, or synthetic target? | [Learning Methods](/ai/learning-methods) |
 | Distribution model | Does the method model $p_\theta(x)$, $p_\theta(y\mid x)$, a score, or a vector field? | [Generative Models](/ai/generative-models), [Math](/math) |
+| Energy or constraint | Does the method use an energy, force, constraint, projection, repair, or filter? | [Energy-based model](/concepts/generative-models/energy-based-model), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Evidence | Which metric, split, baseline, ablation, and uncertainty support the claim? | [Evaluation](/ai/evaluation) |
 | Benchmark claim | What data, task, split, metric, allowed information, and reporting rule define the score? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | System boundary | Does the contribution depend on data scale, compute, serving, tools, or reproducibility? | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
@@ -37,6 +38,8 @@ $$
 | Better architecture | matched objective, matched training budget, baseline architecture, ablation, complexity or throughput note |
 | Better learning method | same architecture where possible, pretraining data description, downstream transfer protocol, frozen or fine-tuned evaluation |
 | Better generative model | likelihood or surrogate objective, sampling procedure, validity/diversity/novelty/utility metrics, failure examples |
+| Better energy or score model | energy/score target, sampler or negative process, validity and calibration boundary |
+| Better constrained model | hard/soft constraint, projection/repair/filter rule, invalid-output accounting |
 | Better benchmark result | exact split, model-selection rule, primary metric, uncertainty or seed variation, leakage check |
 | Better agent workflow | task suite, tool boundary, verifier, success/failure definition, human review boundary |
 
@@ -56,6 +59,7 @@ $$
 
 - Distribution: what does the expectation sample from?
 - Target: what is observed, masked, generated, preferred, or rewarded?
+- Constraint: what is hard, penalized, projected, repaired, or filtered?
 - Parameter: which module is optimized?
 - Decision: how does the trained score or probability become an output?
 - Evaluation: is the final metric the same object as the training loss?
@@ -67,6 +71,7 @@ After reading, update the smallest durable note that captures the reusable idea.
 - Architecture idea: [[ai/architectures|Architectures]] or [[concepts/architectures/index|Architecture concepts]]
 - Learning signal: [[ai/learning-methods|Learning Methods]] or [[concepts/learning/index|Learning concepts]]
 - Generative objective: [[ai/generative-models|Generative Models]] or [[concepts/generative-models/index|Generative model concepts]]
+- Energy or constraint objective: [[concepts/generative-models/energy-based-model|Energy-based model]] or [[concepts/math/constrained-optimization|Constrained optimization]]
 - Evaluation issue: [[ai/evaluation|Evaluation]] or [[concepts/evaluation/index|Evaluation concepts]]
 - Benchmark issue: [[concepts/data/benchmark-intake|Benchmark intake]] or [[papers/analysis/benchmark-card|Benchmark card]]
 - Paper-specific claim: [[papers/analysis/claim-extraction|Claim extraction]] and [[papers/analysis/evidence-table|Evidence table]]
