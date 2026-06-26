@@ -35,6 +35,7 @@ $$
 | --- | --- | --- |
 | Source and metadata | Public source, title, authors, year, venue, and links are checked or marked `to verify` | [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | Claim route | Primary and secondary axes are chosen before writing | [Claim routing](/papers/workflows/claim-routing) |
+| Paper to wiki extraction | Paper claims are decomposed into reusable object, method, formula, evidence, and artifact updates | [Paper to wiki extraction](/papers/workflows/paper-to-wiki-extraction) |
 | Cross-axis contract | Object, representation, model, objective, evidence, and public boundary are all accounted for | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Representation contract | Raw object, representation, unit, preprocessing, split, and leakage risk are explicit | [Representation contract](/concepts/modalities/representation-contract) |
 | Coordinate contract | Frame, symmetry, atom or residue mapping, coordinate loss, and metric are explicit when 3D claims matter | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
@@ -87,12 +88,13 @@ source: to verify
 status: inbox
 primary_axis: to verify
 secondary_axes: to verify
+paper_to_wiki_extraction: to verify
 representation_contract: to verify
 coordinate_contract: not applicable
 objective_metric_alignment: to verify
 benchmark_claim_contract: to verify
 claim_evidence_boundary: to verify
-molecular_modeling_intake: not applicable
+computational_biology_intake: not applicable
 formula_intake: to verify
 coverage_matrix: to verify
 post_route: not applicable
@@ -103,6 +105,7 @@ public_boundary: to verify
 
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[papers/workflows/ai-molecular-math-paper-template|AI computational biology math paper template]]
 - [[ai/paper-intake|AI paper intake]]

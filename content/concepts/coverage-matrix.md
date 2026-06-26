@@ -41,6 +41,7 @@ $$
 | Topic map | reader question, primary axis, object boundary, methods, evidence, next path | [Topic map contract](/concepts/topic-map-contract) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | Claim route | primary axis, secondary axes, bucket, concept updates | [Claim routing](/papers/workflows/claim-routing) |
+| Paper to wiki extraction | claim, object, representation, method, formula, data, evidence, artifact updates | [Paper to wiki extraction](/papers/workflows/paper-to-wiki-extraction) |
 | Concept update | reusable definitions, formulas, contracts, evidence boundaries | [Concept update contract](/papers/workflows/concept-update-contract) |
 | Promotion readiness | route, representation, objective, evidence, and public boundary | [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 | Fillable paper note | reusable skeleton for AI/computational biology/Math papers | [AI Computational Biology Math paper template](/papers/workflows/ai-molecular-math-paper-template) |
@@ -100,6 +101,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One claim boundary when the result could be overread: [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
 - One paper note or paper-analysis note when a specific paper claim is being discussed.
 - One claim-routing pass when a paper or post candidate spans multiple axes: [[papers/workflows/claim-routing|Claim routing]].
+- One paper-to-wiki extraction pass before updating several support notes: [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]].
 - One AI claim-pattern pass when the paper's method contribution is central: [[ai/paper-claim-patterns|AI paper claim patterns]].
 - One cross-axis contract when AI, computational biology, and Math all matter: [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]].
 - One concept-update pass when a paper changes reusable definitions, formulas, contracts, or evidence boundaries: [[papers/workflows/concept-update-contract|Concept update contract]].
@@ -127,6 +129,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - [[math/index|Math]]
 - [[papers/index|Papers]]
 - [[concepts/topic-map-contract|Topic map contract]]
+- [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]
 - [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
 - [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]

@@ -33,6 +33,7 @@ $$
 | Formula | [[math/formula-intake|Formula intake]] | 필요한 수식과 모든 symbol이 설명된다 |
 | Evidence | [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]] | benchmark, split, metric, baseline, leakage, uncertainty의 경계가 있다 |
 | Paper source | [[papers/workflows/paper-review-workflow|Paper review workflow]] | 특정 논문 claim은 paper note나 evidence table로 분리된다 |
+| Extraction | [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]] | paper claim이 object, method, formula, evidence update로 나뉜다 |
 | Public boundary | [[inbox/publishing-gate|Publishing gate]] | private server, account, port, path, collaborator, unpublished result가 없다 |
 | Next path | [[posts/post-promotion-gate|Post promotion gate]] | 독자가 다음에 볼 3-7개 note가 있다 |
 
@@ -90,6 +91,7 @@ Use `Computational Biology` as the public umbrella when sequence, structure, mol
 - [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
 - [[posts/post-promotion-gate|Post promotion gate]]
 - [[posts/synthesis-post-template|Synthesis post template]]
+- [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[ai/paper-claim-patterns|AI paper claim patterns]]

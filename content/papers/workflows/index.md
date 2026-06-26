@@ -39,6 +39,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[papers/workflows/reading-status|Reading status]]
@@ -57,6 +58,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Are missing claims, metrics, authors, and artifacts marked `to verify` instead of invented?
 - For AI/Computational Biology/Math papers, was [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]] used?
 - Is the primary claim axis recorded with [[papers/workflows/claim-routing|Claim routing]]?
+- Are paper claims decomposed into object, representation, method, formula, data, evidence, and artifact updates with [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]?
 - Are reusable definitions, formulas, contracts, and evidence boundaries extracted with [[papers/workflows/concept-update-contract|Concept update contract]]?
 - Did multi-axis candidates pass [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]] before promotion?
 - Does the workflow update the relevant concept pages instead of only accumulating paper summaries?

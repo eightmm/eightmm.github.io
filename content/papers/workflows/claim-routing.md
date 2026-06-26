@@ -72,6 +72,7 @@ primary axis: to verify
 secondary axes: to verify
 paper bucket: to verify
 concept updates: to verify
+paper_to_wiki_extraction: to verify
 concept update contract: to verify
 benchmark/evaluation update: to verify
 formula update: to verify
@@ -95,6 +96,7 @@ public artifact status: to verify
 
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]]
+- [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]

@@ -82,16 +82,18 @@ Use this only when the paper actually changes how the concept should be understo
 ## Workflow
 
 1. Run [[papers/workflows/claim-routing|Claim routing]].
-2. Check missing support notes with [[concepts/coverage-matrix|Coverage matrix]].
-3. Decide which facts remain paper-specific.
-4. Update the smallest useful concept page.
-5. Link the concept update back to the paper note or paper-analysis note.
-6. If several concept notes now form a reader-facing path, consider [[posts/synthesis-post-template|Synthesis post template]].
+2. Decompose the claim with [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]].
+3. Check missing support notes with [[concepts/coverage-matrix|Coverage matrix]].
+4. Decide which facts remain paper-specific.
+5. Update the smallest useful concept page.
+6. Link the concept update back to the paper note or paper-analysis note.
+7. If several concept notes now form a reader-facing path, consider [[posts/synthesis-post-template|Synthesis post template]].
 
 ## Related
 
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/claim-routing|Claim routing]]
+- [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
