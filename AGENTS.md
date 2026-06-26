@@ -32,7 +32,7 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
 - `ai/`: Korean gateway pages for broad AI foundations.
-- `bio-ai/`: Korean gateway pages for structure-based and sequence-level bio AI.
+- `bio/`: Korean gateway pages for computational biology focused on structure-based AI, docking, molecule/protein modeling, and sequence-level bio AI.
 - `math/`: Korean gateway pages for mathematical foundations.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
@@ -92,11 +92,11 @@ When adding agent notes, update the nearest subfolder index and `content/agents/
 - Workflows: coding agents, paper briefs, LLM Wiki maintenance, orchestration, handoff, and runbooks.
 - Verification: acceptance criteria, verification loops, evaluation, reflection, human review, and prompt-injection boundaries.
 
-Bio scope should stay focused on structure-based AI, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
+Bio scope should stay focused on computational biology that directly supports structure-based AI, docking, protein modeling, ligand/molecule modeling, protein-ligand interaction, and genome/sequence modeling. Do not open broad omics, transcriptomics, single-cell, pathway biology, clinical omics, or systems biology unless the user explicitly expands the scope.
 
 Chem-bio notes should preserve data semantics: standardize molecules before deduplication and splitting, state tautomer/protonation/stereo choices, keep target and assay context explicit, prefer scaffold or protein-family splits over random splits, and flag template leakage risks in structure-based benchmarks. Do not invent assay metadata, target details, activity values, or benchmark metrics.
 
-Entity notes for Bio-AI should keep the target-assay-label contract explicit when labels are involved. Do not collapse a supervised chem-bio row into only `molecule -> label` if target, assay, endpoint, unit, threshold, censoring, source, or split group matters.
+Entity notes for Bio should keep the target-assay-label contract explicit when labels are involved. Do not collapse a supervised chem-bio row into only `molecule -> label` if target, assay, endpoint, unit, threshold, censoring, source, or split group matters.
 
 For protein-ligand or SBDD benchmark notes, state the example unit and split unit on both sides: ligand scaffold/similarity group, protein sequence or structure family, complex pair, assay/source, and temporal split when relevant. Do not make broad generalization claims from a split that only tests interpolation.
 

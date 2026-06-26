@@ -16,7 +16,7 @@ $$
 \text{representation} + \text{probability model} + \text{objective} + \text{optimization}
 $$
 
-Use these pages to identify the object, distribution, parameter, and estimator behind a formula. Proof-heavy material can be added later only when it clarifies an AI, Bio-AI, or evaluation note.
+Use these pages to identify the object, distribution, parameter, and estimator behind a formula. Proof-heavy material can be added later only when it clarifies an AI, Bio, or evaluation note.
 
 ## Core Notes
 

@@ -1,9 +1,12 @@
 ---
 title: Genome
+aliases:
+  - bio-ai/genome
 tags:
-  - bio-ai
+  - bio
   - genome
 ---
+
 
 # Genome
 
@@ -38,6 +41,6 @@ This section does not try to cover full transcriptomics, proteomics, single-cell
 
 ## Related
 
-- [[bio-ai/index|Bio-AI]]
+- [[bio/index|Bio]]
 - [[ai/learning-methods|Learning methods]]
 - [[concepts/modalities/sequence|Sequence]]

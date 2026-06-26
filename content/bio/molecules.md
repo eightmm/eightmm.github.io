@@ -1,9 +1,12 @@
 ---
 title: Molecules
+aliases:
+  - bio-ai/molecules
 tags:
-  - bio-ai
+  - bio
   - molecules
 ---
+
 
 # Molecules
 
@@ -53,6 +56,6 @@ where $L$ is a molecular object and $c$ can include pH, assay condition, conform
 
 ## Related
 
-- [[bio-ai/index|Bio-AI]]
-- [[bio-ai/structure-based-ai|Structure-based AI]]
+- [[bio/index|Bio]]
+- [[bio/structure-based-ai|Structure-based AI]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

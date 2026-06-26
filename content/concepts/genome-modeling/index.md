@@ -3,12 +3,12 @@ title: Genome Modeling Concepts
 tags:
   - genome
   - sequence
-  - bio-ai
+  - bio
 ---
 
 # Genome Modeling Concepts
 
-Genome modeling concepts in this wiki are limited to sequence-level and variant-level AI. They are included as a boundary topic for Bio-AI, not as a broad omics or transcriptomics section.
+Genome modeling concepts in this wiki are limited to sequence-level and variant-level AI. They are included as a boundary topic for Bio, not as a broad omics or transcriptomics section.
 
 The basic input is a genomic sequence or region:
 
@@ -46,7 +46,7 @@ This section intentionally does not expand into broad cell omics, transcriptomic
 
 ## Related
 
-- [[bio-ai/index|Bio-AI]]
+- [[bio/index|Bio]]
 - [[entities/sequence|Sequence]]
 - [[concepts/modalities/text|Text]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

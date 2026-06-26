@@ -146,9 +146,9 @@ $$
 
 Here $S$ is a similarity matrix between elements. It is not just a formula detail; it defines which tokens, residues, atoms, or retrieved chunks can exchange information.
 
-## Bio-AI Coordinate Matrices
+## Bio Coordinate Matrices
 
-Structure-based Bio-AI often represents coordinates as:
+Structure-based Bio often represents coordinates as:
 
 $$
 X

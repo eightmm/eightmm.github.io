@@ -3,12 +3,12 @@ title: Interaction Prediction
 tags:
   - tasks
   - protein-ligand
-  - bio-ai
+  - bio
 ---
 
 # Interaction Prediction
 
-Interaction prediction estimates whether two or more entities interact, how strongly they interact, or what structured relationship they form. In Bio-AI this often means molecule-target, protein-ligand, protein-protein, residue-residue, or molecule-molecule interactions.
+Interaction prediction estimates whether two or more entities interact, how strongly they interact, or what structured relationship they form. In Bio this often means molecule-target, protein-ligand, protein-protein, residue-residue, or molecule-molecule interactions.
 
 A pairwise interaction model can be written as:
 

@@ -23,9 +23,9 @@ $$
 
 ## Entity
 
-Entity는 모델이 다루는 대상입니다. Bio-AI에서는 [[entities/protein|Protein]], [[entities/ligand|Ligand]], [[entities/molecule|Molecule]], [[entities/pocket|Pocket]], [[entities/protein-ligand-complex|Protein-ligand complex]], [[entities/assay|Assay]], [[entities/dataset|Dataset]]이 먼저 정리되어야 합니다.
+Entity는 모델이 다루는 대상입니다. Bio에서는 [[entities/protein|Protein]], [[entities/ligand|Ligand]], [[entities/molecule|Molecule]], [[entities/pocket|Pocket]], [[entities/protein-ligand-complex|Protein-ligand complex]], [[entities/assay|Assay]], [[entities/dataset|Dataset]]이 먼저 정리되어야 합니다.
 
-같은 graph model을 쓰더라도 molecule graph와 protein contact graph는 의미가 다릅니다. 같은 label이라도 molecule-only property인지, target-conditioned activity인지, assay-conditioned measurement인지에 따라 split과 metric이 달라집니다. 그래서 [[entities/entity-relation-map|Entity relation map]]과 [[entities/target-assay-label|Target-assay-label contract]]는 Bio-AI 글의 출발점입니다.
+같은 graph model을 쓰더라도 molecule graph와 protein contact graph는 의미가 다릅니다. 같은 label이라도 molecule-only property인지, target-conditioned activity인지, assay-conditioned measurement인지에 따라 split과 metric이 달라집니다. 그래서 [[entities/entity-relation-map|Entity relation map]]과 [[entities/target-assay-label|Target-assay-label contract]]는 Bio 글의 출발점입니다.
 
 ## Modality
 
@@ -65,7 +65,7 @@ $$
 
 [[concepts/generative-models/autoregressive-model|Autoregressive model]], [[concepts/generative-models/diffusion-model|Diffusion model]], [[concepts/generative-models/flow-matching|Flow matching]], [[concepts/generative-models/normalizing-flow|Normalizing flow]], [[concepts/generative-models/vae|VAE]], [[concepts/generative-models/gan|GAN]]은 sampling 과정과 학습 target이 다릅니다.
 
-Bio-AI에서는 이 축이 [[concepts/generative-models/molecular-generation|Molecular generation]]과 [[concepts/generative-models/protein-design|Protein design]]으로 이어집니다. 여기서는 validity, novelty, diversity, controllability, task utility를 분리해서 평가해야 합니다.
+Bio에서는 이 축이 [[concepts/generative-models/molecular-generation|Molecular generation]]과 [[concepts/generative-models/protein-design|Protein design]]으로 이어집니다. 여기서는 validity, novelty, diversity, controllability, task utility를 분리해서 평가해야 합니다.
 
 ## Evaluation
 
@@ -95,7 +95,7 @@ $$
 4. [[ai/learning-methods|Learning methods]]에서 supervision과 representation learning을 봅니다.
 5. [[ai/generative-models|Generative models]]에서 sampling과 distribution modeling을 봅니다.
 6. [[ai/evaluation|Evaluation]]에서 split, metric, uncertainty, failure mode를 점검합니다.
-7. [[bio-ai/index|Bio-AI]]에서 protein, molecule, ligand, structure-based AI로 좁힙니다.
+7. [[bio/index|Bio]]에서 protein, molecule, ligand, structure-based AI로 좁힙니다.
 8. [[infra/index|Infra]]와 [[agents/index|Agents]]에서 실제 workflow와 운영을 연결합니다.
 
 목표는 모든 글을 하나의 taxonomy에 억지로 넣는 것이 아닙니다. 글마다 가장 강한 축을 정하고, 나머지 축은 wikilink로 연결하는 것입니다. 그렇게 하면 블로그는 한글 narrative가 되고, wiki는 영어 canonical note가 됩니다.

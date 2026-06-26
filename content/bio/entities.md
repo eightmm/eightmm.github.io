@@ -1,13 +1,16 @@
 ---
 title: Entities
+aliases:
+  - bio-ai/entities
 tags:
-  - bio-ai
+  - bio
   - entities
 ---
 
+
 # Entities
 
-Bio-AI에서 먼저 정해야 하는 것은 모델이 다루는 대상입니다. 같은 단어라도 protein, ligand, target, assay, structure가 어떤 단위로 정의되는지에 따라 split, leakage, evaluation이 달라집니다.
+Bio에서 먼저 정해야 하는 것은 모델이 다루는 대상입니다. 같은 단어라도 protein, ligand, target, assay, structure가 어떤 단위로 정의되는지에 따라 split, leakage, evaluation이 달라집니다.
 
 $$
 x_{\mathrm{bio}}
@@ -45,6 +48,6 @@ $$
 
 ## Related
 
-- [[bio-ai/index|Bio-AI]]
-- [[bio-ai/data-evaluation|Data and evaluation]]
+- [[bio/index|Bio]]
+- [[bio/data-evaluation|Data and evaluation]]
 - [[concepts/evaluation/leakage|Leakage]]

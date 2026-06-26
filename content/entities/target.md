@@ -2,7 +2,7 @@
 title: Target
 tags:
   - entities
-  - bio-ai
+  - bio
 ---
 
 # Target

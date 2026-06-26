@@ -2,7 +2,7 @@
 title: Target-Assay-Label Contract
 tags:
   - entities
-  - bio-ai
+  - bio
   - labels
   - datasets
 ---

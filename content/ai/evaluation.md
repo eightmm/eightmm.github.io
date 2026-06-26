@@ -104,6 +104,6 @@ $$
 ## Related
 
 - [[ai/learning-methods|Learning methods]]
-- [[bio-ai/index|Bio-AI]]
+- [[bio/index|Bio]]
 - [[papers/index|Papers]]
 - [[concepts/modalities/modality-task-map|Modality-task map]]

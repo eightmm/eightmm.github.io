@@ -4,7 +4,7 @@ import * as ExternalPlugin from "./.quartz/plugins"
 ExternalPlugin.Explorer({
   filterFn: (node) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
-    const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
+    const explorerRoots = ["ai", "bio", "math", "infra", "research", "papers", "agents", "projects", "posts"]
     const hiddenExplorerSubtrees = [
       "papers/analysis",
       "papers/reproducibility",
@@ -26,12 +26,14 @@ ExternalPlugin.Explorer({
   },
   sortFn: (a, b) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
-    const explorerRoots = ["ai", "bio-ai", "math", "infra", "research", "papers", "agents", "projects", "posts"]
-    const bioAiGroups = [
+    const explorerRoots = ["ai", "bio", "math", "infra", "research", "papers", "agents", "projects", "posts"]
+    const bioGroups = [
+      "computational-biology",
       "entities",
       "molecules",
       "proteins",
       "structure-based-ai",
+      "docking",
       "data-evaluation",
       "geometry",
       "genome",
@@ -63,9 +65,9 @@ ExternalPlugin.Explorer({
       return aIndex - bIndex
     }
 
-    if (aSegments[0] === "bio-ai" && bSegments[0] === "bio-ai") {
-      const aGroupIndex = bioAiGroups.indexOf(aSegments[1] ?? "")
-      const bGroupIndex = bioAiGroups.indexOf(bSegments[1] ?? "")
+    if (aSegments[0] === "bio" && bSegments[0] === "bio") {
+      const aGroupIndex = bioGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = bioGroups.indexOf(bSegments[1] ?? "")
       if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
         return aGroupIndex - bGroupIndex
       }

@@ -1,13 +1,16 @@
 ---
 title: Structure-Based AI
+aliases:
+  - bio-ai/structure-based-ai
 tags:
-  - bio-ai
+  - bio
   - structure-based-ai
 ---
 
+
 # Structure-Based AI
 
-Structure-based AI uses protein, ligand, pocket, and complex geometry as model input or output. This is the main Bio-AI area for docking, pose generation, scoring, and structure-aware generation.
+Structure-based AI uses protein, ligand, pocket, and complex geometry as model input or output. This is the main Bio area for docking, pose generation, scoring, and structure-aware generation.
 
 $$
 \hat{y}, \hat{X}
@@ -54,6 +57,6 @@ where $P$ is a protein or pocket, $L$ is a ligand, $X_0$ is optional initial geo
 
 ## Related
 
-- [[bio-ai/molecules|Molecules]]
-- [[bio-ai/proteins|Proteins]]
-- [[bio-ai/geometry|Geometry]]
+- [[bio/molecules|Molecules]]
+- [[bio/proteins|Proteins]]
+- [[bio/geometry|Geometry]]

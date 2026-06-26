@@ -6,7 +6,7 @@ tags:
 
 # Posts
 
-연구, AI, Bio-AI, infra, agent workflow를 글로 풀어 쓰는 공간입니다. 개별 글은 읽기 쉬운 경로와 관점을 만드는 데 집중합니다.
+연구, AI, Bio, infra, agent workflow를 글로 풀어 쓰는 공간입니다. 개별 글은 읽기 쉬운 경로와 관점을 만드는 데 집중합니다.
 
 ## 글
 
@@ -37,7 +37,7 @@ tags:
 ## 연결되는 영역
 
 - [[ai/index|AI]]
-- [[bio-ai/index|Bio-AI]]
+- [[bio/index|Bio]]
 - [[research/index|Research]]
 - [[papers/index|Papers]]
 - [[infra/index|Infra]]

@@ -30,7 +30,7 @@ $$
 - Verified: metadata, claims, commands, or source facts are checked or marked `to verify`.
 - Linked: the note connects to relevant concepts, papers, projects, infra, logs, or posts.
 - Useful: the note teaches a reusable concept, records a public decision, or supports a reader path.
-- Scoped: the note fits the site's AI, Bio-AI, Infra, Agents, Papers, Projects, or Research map.
+- Scoped: the note fits the site's AI, Bio, Infra, Agents, Papers, Projects, or Research map.
 - Destination: the note's strongest role matches its target area using [[agents/workflows/content-promotion-workflow|Content promotion workflow]].
 - Paper workflow: reproduction-oriented notes pass [[papers/reproducibility/implementation-readiness|Implementation readiness]] before becoming a plan or result.
 

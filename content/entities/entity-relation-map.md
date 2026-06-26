@@ -2,13 +2,13 @@
 title: Entity Relation Map
 tags:
   - entities
-  - bio-ai
+  - bio
   - structure-based-ai
 ---
 
 # Entity Relation Map
 
-Entity notes define what object a model is operating on. In Bio-AI, the same model family can mean different things depending on whether the unit is a molecule, protein, pocket, complex, assay row, or dataset.
+Entity notes define what object a model is operating on. In Bio, the same model family can mean different things depending on whether the unit is a molecule, protein, pocket, complex, assay row, or dataset.
 
 The central relation for structure-based AI is:
 
@@ -71,7 +71,7 @@ The split unit should match the generalization claim:
 
 ## Related
 
-- [[bio-ai/index|Bio-AI]]
+- [[bio/index|Bio]]
 - [[entities/target|Target]]
 - [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]

@@ -1,13 +1,16 @@
 ---
 title: Geometry
+aliases:
+  - bio-ai/geometry
 tags:
-  - bio-ai
+  - bio
   - geometry
 ---
 
+
 # Geometry
 
-Geometry connects Bio-AI to graph, coordinate, symmetry, and equivariant modeling. Molecules and protein complexes are not only strings or graphs; many tasks depend on distances, angles, frames, and valid coordinate transformations.
+Geometry connects Bio to graph, coordinate, symmetry, and equivariant modeling. Molecules and protein complexes are not only strings or graphs; many tasks depend on distances, angles, frames, and valid coordinate transformations.
 
 $$
 F(RX + t) = R F(X) + t
@@ -51,6 +54,6 @@ This is the basic shape of equivariance for coordinate-valued outputs.
 
 ## Related
 
-- [[bio-ai/structure-based-ai|Structure-based AI]]
+- [[bio/structure-based-ai|Structure-based AI]]
 - [[ai/architectures|Architectures]]
 - [[concepts/architectures/gnn|Graph neural networks]]

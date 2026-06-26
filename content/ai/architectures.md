@@ -138,5 +138,5 @@ sequence, graph, multimodal input을 섞는 공통 패턴입니다.
 - [[ai/learning-methods|Learning methods]]
 - [[ai/generative-models|Generative models]]
 - [[concepts/modalities/index|Modalities]]
-- [[bio-ai/index|Bio-AI]]
+- [[bio/index|Bio]]
 - [[concepts/protein-modeling/index|Protein modeling concepts]]

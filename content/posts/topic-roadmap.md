@@ -52,9 +52,9 @@ tags:
 - [[concepts/llm/token-budget|Token budget]], [[concepts/llm/context-packing|context packing]], [[concepts/llm/tool-calling|tool calling]], [[concepts/llm/prompt-injection-boundary|prompt injection boundary]]를 LLM Wiki 운영 관점에서 묶어 설명하기
 - [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]으로 RAG와 hallucination control을 구분하는 법
 
-## Bio-AI
+## Bio
 
-- [[bio-ai/index|Bio-AI]]를 구조기반/단백질/분자/유전체 입력으로 나눠 보는 이유
+- [[bio/index|Bio]]를 구조기반/단백질/분자/유전체 입력으로 나눠 보는 이유
 - [[entities/target|Target]], [[entities/assay|assay]], [[entities/bioactivity-label|bioactivity label]], [[entities/dataset|dataset]]을 label이 생기는 context로 정리하기
 - [[entities/target-assay-label|Target-assay-label contract]]로 molecule-target-assay-label 관계를 dataset row와 split rule까지 연결해 보는 법
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]], [[concepts/molecular-modeling/tautomer|tautomer]], [[concepts/molecular-modeling/protonation-state|protonation state]]가 split과 docking을 바꾸는 이유

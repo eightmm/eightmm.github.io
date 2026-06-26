@@ -24,7 +24,7 @@ $$
 x \sim p_\theta(x \mid c)
 $$
 
-Bio-AI에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, or partial structure일 수 있습니다.
+Bio에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, or partial structure일 수 있습니다.
 
 ## 핵심 노트
 
@@ -46,7 +46,7 @@ Bio-AI에서는 $c$가 protein sequence, binding pocket, target property, text i
 - [[concepts/generative-models/gan|GAN]]
 - [[concepts/generative-models/consistency-model|Consistency model]]
 
-## Bio-AI 연결
+## Bio 연결
 
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]

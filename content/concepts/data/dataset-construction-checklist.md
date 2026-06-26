@@ -40,7 +40,7 @@ where $\mathcal{R}$ is the source record set, $P_\phi$ is the preprocessing cont
 - Build a [[concepts/data/dataset-card|dataset card]].
 - Attach an [[concepts/evaluation/evaluation-protocol|evaluation protocol]].
 
-## Bio-AI Checks
+## Bio Checks
 
 - Molecules: standardization, tautomer/protonation/stereo policy, scaffold grouping.
 - Proteins: sequence identity, family grouping, structure source, confidence, missing regions.

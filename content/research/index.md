@@ -30,7 +30,7 @@ tags:
 
 ## 관련 입구
 
-- [[bio-ai/index|Bio-AI]]
+- [[bio/index|Bio]]
 - [[entities/index|Entities]]
 - [[papers/index|Papers]]
 - [[concepts/index|Concepts]]

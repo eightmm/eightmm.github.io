@@ -50,4 +50,4 @@ The empirical test score is only an estimate of this target.
 
 - [[math/index|Math]]
 - [[ai/evaluation|Evaluation]]
-- [[bio-ai/data-evaluation|Bio-AI data and evaluation]]
+- [[bio/data-evaluation|Bio data and evaluation]]

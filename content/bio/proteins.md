@@ -1,9 +1,12 @@
 ---
 title: Proteins
+aliases:
+  - bio-ai/proteins
 tags:
-  - bio-ai
+  - bio
   - proteins
 ---
+
 
 # Proteins
 
@@ -50,6 +53,6 @@ where $s_{1:L}$ is the residue sequence, $X$ is optional coordinate information,
 
 ## Related
 
-- [[bio-ai/index|Bio-AI]]
-- [[bio-ai/structure-based-ai|Structure-based AI]]
+- [[bio/index|Bio]]
+- [[bio/structure-based-ai|Structure-based AI]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

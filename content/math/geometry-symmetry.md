@@ -51,5 +51,5 @@ This is the abstract form of equivariance.
 ## Related
 
 - [[math/index|Math]]
-- [[bio-ai/geometry|Bio-AI geometry]]
+- [[bio/geometry|Bio geometry]]
 - [[concepts/architectures/gnn|Graph neural networks]]

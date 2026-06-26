@@ -4,7 +4,7 @@ tags:
   - data
   - labels
   - evaluation
-  - bio-ai
+  - bio
 ---
 
 # Censored Label

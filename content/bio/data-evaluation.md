@@ -1,13 +1,16 @@
 ---
 title: Data and Evaluation
+aliases:
+  - bio-ai/data-evaluation
 tags:
-  - bio-ai
+  - bio
   - evaluation
 ---
 
+
 # Data and Evaluation
 
-Bio-AI evaluation is mostly decided before training: by example definitions, label semantics, split units, leakage controls, and benchmark design. Random splits are often too weak for molecule, protein, and complex-level claims.
+Bio evaluation is mostly decided before training: by example definitions, label semantics, split units, leakage controls, and benchmark design. Random splits are often too weak for molecule, protein, and complex-level claims.
 
 $$
 \hat{R}(f)
@@ -57,6 +60,6 @@ This estimate is only meaningful if the test set matches the generalization clai
 
 ## Related
 
-- [[bio-ai/index|Bio-AI]]
-- [[bio-ai/entities|Entities]]
+- [[bio/index|Bio]]
+- [[bio/entities|Entities]]
 - [[ai/evaluation|Evaluation]]

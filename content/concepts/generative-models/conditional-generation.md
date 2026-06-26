@@ -26,7 +26,7 @@ $c$ can be text, class label, image, sequence, graph, structure, property target
 - Use classifier or classifier-free guidance during sampling.
 - Constrain decoding or generation with validity rules.
 
-## Bio-AI Examples
+## Bio Examples
 
 - Generate a molecule conditioned on target property.
 - Generate a ligand conditioned on a [[entities/pocket|pocket]].

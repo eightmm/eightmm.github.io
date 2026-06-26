@@ -66,13 +66,13 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Image / video | [Image](/concepts/modalities/image), [Video](/concepts/modalities/video) | [CNN](/concepts/architectures/cnn), [Vision Transformer](/concepts/architectures/vision-transformer) |
 | Graph / set | [Graph](/concepts/modalities/graph) | [GNN](/concepts/architectures/gnn), [Deep Sets](/concepts/architectures/deep-sets) |
 | 3D / geometry | [3D structure](/concepts/modalities/3d-structure), [Geometry](/concepts/math/geometry) | [Geometric deep learning](/concepts/geometric-deep-learning) |
-| Molecule / protein | [Bio-AI](/bio-ai) | [Molecular modeling](/concepts/molecular-modeling), [Protein modeling](/concepts/protein-modeling), [SBDD concepts](/concepts/sbdd) |
+| Molecule / protein | [Bio](/bio) | [Molecular modeling](/concepts/molecular-modeling), [Protein modeling](/concepts/protein-modeling), [SBDD concepts](/concepts/sbdd) |
 | Agent workflow | [Agents](/agents) | [Core](/agents/core), [Tools](/agents/tools), [Verification](/agents/verification), [Workflows](/agents/workflows) |
 
 ## Related
 
 - [[concepts/index|Concepts]]
 - [[math/index|Math]]
-- [[bio-ai/index|Bio-AI]]
+- [[bio/index|Bio]]
 - [[infra/index|Infra]]
 - [[agents/index|Agents]]

@@ -2,7 +2,7 @@
 title: Variant Effect Prediction
 tags:
   - genome
-  - bio-ai
+  - bio
   - evaluation
 ---
 
