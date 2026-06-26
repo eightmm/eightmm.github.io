@@ -60,9 +60,9 @@ $$
 
 | Topic | Start |
 | --- | --- |
-| Overview | [Structure-based AI](/bio/structure-based-ai), [Structure-based AI](/research/structure-based-ai), [SBDD concepts](/concepts/sbdd) |
+| Overview | [Structure-based AI](/bio/structure-based-ai), [SBDD concepts](/concepts/sbdd) |
 | Core tasks | [Interaction prediction](/concepts/tasks/interaction-prediction), [Localization](/concepts/tasks/localization), [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) |
-| Docking workflow | [Docking](/bio/docking), [Protein-ligand docking](/research/structure-based-ai/protein-ligand-docking), [Docking workflow](/concepts/sbdd/docking-workflow), [Receptor and ligand preparation](/concepts/sbdd/receptor-ligand-preparation) |
+| Docking workflow | [Docking](/bio/docking), [Docking workflow](/concepts/sbdd/docking-workflow), [Receptor and ligand preparation](/concepts/sbdd/receptor-ligand-preparation) |
 | Pose and interaction | [Pose generation](/concepts/sbdd/pose-generation), [Pose RMSD](/concepts/sbdd/pose-rmsd), [Pose quality](/concepts/sbdd/pose-quality), [Protein-ligand interaction](/concepts/sbdd/protein-ligand-interaction) |
 | Scoring and screening | [Scoring function](/concepts/sbdd/scoring-function), [Binding affinity](/concepts/sbdd/binding-affinity), [Virtual screening](/concepts/sbdd/virtual-screening), [Interaction fingerprint](/concepts/sbdd/interaction-fingerprint) |
 | Benchmark risk | [Template leakage](/concepts/sbdd/template-leakage), [PoseBusters](/papers/sbdd/posebusters) |
@@ -83,7 +83,7 @@ $$
 
 | Topic | Start |
 | --- | --- |
-| Overview | [Proteins](/bio/proteins), [Protein modeling](/research/protein-modeling), [Protein modeling concepts](/concepts/protein-modeling) |
+| Overview | [Proteins](/bio/proteins), [Protein modeling concepts](/concepts/protein-modeling) |
 | Representation | [Protein representation](/concepts/protein-modeling/protein-representation), [Self-supervised learning](/concepts/learning/self-supervised-learning) |
 | Structure | [Protein structure cleaning](/concepts/protein-modeling/protein-structure-cleaning), [Protein structure prediction](/concepts/protein-modeling/protein-structure-prediction), [Contact map](/concepts/protein-modeling/contact-map) |
 | Domain and site | [Protein domain](/concepts/protein-modeling/protein-domain), [Binding site](/concepts/protein-modeling/binding-site), [Pocket representation](/concepts/protein-modeling/pocket-representation) |

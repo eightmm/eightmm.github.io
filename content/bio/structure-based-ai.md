@@ -22,8 +22,7 @@ where $P$ is a protein or pocket, $L$ is a ligand, $X_0$ is optional initial geo
 
 ## Core Path
 
-- [[research/structure-based-ai/index|Structure-based AI]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[bio/docking|Docking]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]

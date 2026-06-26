@@ -80,6 +80,6 @@ The same method can be strong for one claim and weak for another. A low pose RMS
 ## Related
 
 - [[bio/structure-based-ai|Structure-based AI]]
-- [[research/structure-based-ai/protein-ligand-docking|Protein-ligand docking]]
+- [[concepts/sbdd/docking-workflow|Docking workflow]]
 - [[concepts/sbdd/index|SBDD concepts]]
 - [[bio/data-evaluation|Data and evaluation]]
