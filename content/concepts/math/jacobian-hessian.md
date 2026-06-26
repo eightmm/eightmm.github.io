@@ -79,6 +79,70 @@ $$
 
 Vector-Jacobian products are the workhorse of reverse-mode automatic differentiation. Hessian-vector products are useful for curvature diagnostics, second-order methods, and stability analysis.
 
+## Local Sensitivity
+
+The Jacobian maps a small input change to an output change:
+
+$$
+f(x+\Delta x)-f(x)
+\approx
+J_f(x)\Delta x
+$$
+
+This matters for robustness, attribution, normalizing flows, and stability. A large Jacobian norm can indicate high local sensitivity:
+
+$$
+\lVert J_f(x)\rVert
+$$
+
+but the chosen norm and input scaling must be stated.
+
+## Curvature and Optimization
+
+For a scalar loss, Hessian eigenvalues describe local curvature:
+
+$$
+H v_i = \lambda_i v_i
+$$
+
+| Curvature Pattern | Interpretation |
+| --- | --- |
+| $\lambda_i > 0$ | locally convex direction |
+| $\lambda_i < 0$ | saddle or locally concave direction |
+| large $|\lambda_i|$ | sharp or unstable direction |
+| near-zero $\lambda_i$ | flat or underdetermined direction |
+
+Gradient descent is locally stable in a quadratic bowl when the step size is small relative to the largest curvature:
+
+$$
+0 < \eta < \frac{2}{\lambda_{\max}}
+$$
+
+This is an intuition, not a full deep-network guarantee.
+
+## Generative Model Uses
+
+| Model Family | Jacobian/Hessian Role |
+| --- | --- |
+| normalizing flow | log determinant of Jacobian |
+| continuous normalizing flow | divergence or trace of Jacobian |
+| score model | gradient of log density $\nabla_x \log p(x)$ |
+| energy model | force or update from $-\nabla_X E(X)$ |
+| implicit layer | Jacobian inverse or fixed-point sensitivity |
+| second-order optimizer | Hessian or Hessian approximation |
+
+For coordinate-based molecular models, the derivative target can be coordinates rather than parameters.
+
+## Reporting Contract
+
+| Field | Question |
+| --- | --- |
+| Function | What function is differentiated? |
+| Variable | With respect to input, parameter, coordinate, time, or latent? |
+| Product | Full matrix, VJP, JVP, HVP, trace estimate, or determinant? |
+| Approximation | Exact autograd, finite difference, stochastic estimator, or structured formula? |
+| Cost | How many backward/forward passes are required? |
+
 ## Why It Matters
 
 - Backpropagation computes vector-Jacobian products efficiently.
@@ -94,6 +158,8 @@ Vector-Jacobian products are the workhorse of reverse-mode automatic differentia
 - Does the method need a full Jacobian, a vector-Jacobian product, a Jacobian-vector product, or a Hessian-vector product?
 - Is curvature being used for optimization, diagnostics, uncertainty, or stability?
 - Are gradients intentionally stopped through any part of the computation?
+- Are norms, traces, determinants, or eigenvalues estimated with enough numerical detail?
+- Is the derivative evaluated on training data, validation data, generated samples, or OOD inputs?
 
 ## Related
 
@@ -103,4 +169,5 @@ Vector-Jacobian products are the workhorse of reverse-mode automatic differentia
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]
+- [[concepts/generative-models/score-based-model|Score-based model]]
 - [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]

@@ -59,6 +59,76 @@ $$
 
 The variable $t$ should be defined by [[concepts/machine-learning/training-step-accounting|training step accounting]]. In most deep learning code, $t$ is the optimizer step, not the micro-step.
 
+## Schedule Contract
+
+| Field | Question |
+| --- | --- |
+| Step unit | optimizer step, micro-step, sample, token, or epoch? |
+| Warmup | number of steps and maximum LR |
+| Decay | cosine, linear, exponential, step, constant, WSD, or custom |
+| Minimum LR | final learning rate or zero? |
+| Parameter groups | same schedule for all parameters or separate groups? |
+| Resume state | scheduler step saved in checkpoint? |
+
+Record the total training budget with the schedule:
+
+$$
+N_{\mathrm{tokens}}
+=
+N_{\mathrm{steps}}
+\times
+B_{\mathrm{global}}
+\times
+L_{\mathrm{seq}}
+$$
+
+for token models, or the matching sample/object count for non-text data.
+
+## Common Patterns
+
+| Pattern | Formula Sketch | Use |
+| --- | --- | --- |
+| constant | $\eta_t=\eta$ | small or stable runs |
+| linear warmup | $\eta_t=\eta_{\max}t/T_w$ | avoid unstable early updates |
+| cosine decay | smooth decay to $\eta_{\min}$ | common deep learning default |
+| linear decay | $\eta_t=\eta_{\max}(1-t/T)$ | simple finite-budget training |
+| step decay | multiply by factor at milestones | classical training recipes |
+| WSD | warmup, stable plateau, decay | long pretraining-style runs |
+
+Different schedules can change the effective training recipe even when architecture and dataset are unchanged.
+
+## Batch and Accumulation Coupling
+
+If gradient accumulation changes, the number of optimizer steps can change unless explicitly controlled:
+
+$$
+B_{\mathrm{global}}
+=
+B_{\mathrm{micro}}
+\times
+N_{\mathrm{devices}}
+\times
+N_{\mathrm{accum}}
+$$
+
+The scheduler usually steps once per optimizer update:
+
+$$
+t_{\mathrm{sched}} = t_{\mathrm{opt}}
+$$
+
+not once per micro-batch. This distinction matters for reproducibility and paper comparisons.
+
+## Paper Reading Risks
+
+| Risk | Why It Matters |
+| --- | --- |
+| unspecified warmup | early instability or unfair comparison |
+| different total steps | more compute hidden as better method |
+| schedule tuned per baseline | baseline may be under-optimized |
+| missing resume state | resumed runs follow a different LR curve |
+| separate LR groups | backbone, head, embeddings, or adapters learn at different speeds |
+
 ## Checks
 
 - Is warmup needed for large batch, mixed precision, or unstable early training?
@@ -67,6 +137,8 @@ The variable $t$ should be defined by [[concepts/machine-learning/training-step-
 - Does changing accumulation keep the intended number of optimizer steps or consumed samples?
 - Are scheduler state and current step saved in checkpoints?
 - Are comparisons fair when different methods use different schedules?
+- Are reported results tied to compute budget, consumed samples/tokens, and schedule?
+- Are baselines using comparable tuning effort and schedule families?
 
 ## Related
 
