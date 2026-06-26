@@ -73,6 +73,7 @@ $$
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/math/tensor-shape-notation|Tensor shape notation]]
 - [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder architectures]]

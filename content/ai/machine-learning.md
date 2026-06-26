@@ -85,6 +85,7 @@ The decision rule $\hat{y}$ is not the same object as the probability distributi
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]: update 크기를 시간에 따라 어떻게 조절할 것인가
 - [[concepts/machine-learning/training-stability|Training stability]]: loss, gradient norm, learning rate, batch size, checkpoint resume가 안정적으로 맞물리는가
 - [[concepts/machine-learning/training-step-accounting|Training step accounting]]: micro-step, optimizer step, consumed samples/tokens를 어떻게 구분할 것인가
+- [[concepts/machine-learning/model-state-contract|Model state contract]]: weights, optimizer state, scheduler state, random state, data state, config를 어떻게 구분할 것인가
 - [[concepts/machine-learning/weight-decay|Weight decay]]: parameter 크기를 어떻게 제한할 것인가
 - [[concepts/machine-learning/gradient-clipping|Gradient clipping]]: 불안정한 gradient를 어떻게 제한할 것인가
 - [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]: memory limit 안에서 effective batch size를 어떻게 만들 것인가
@@ -177,6 +178,7 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/machine-learning/training-stability|Training stability]]
 - [[concepts/machine-learning/training-step-accounting|Training step accounting]]
+- [[concepts/machine-learning/model-state-contract|Model state contract]]
 - [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
 - [[concepts/machine-learning/gradient-checking|Gradient checking]]
 - [[concepts/machine-learning/loss-landscape|Loss landscape]]

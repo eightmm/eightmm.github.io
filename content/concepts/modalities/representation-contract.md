@@ -29,6 +29,7 @@ where $x_{\mathrm{raw}}$ is the raw object, $\phi$ is preprocessing or featuriza
 | Raw object | What is the entity before preprocessing: text, image, molecule, protein, pocket, complex, graph, or sequence? |
 | Representation | What does the model see: tokens, tensor, graph, fingerprint, conformer, coordinate set, embedding, or fused view? |
 | Unit | What is one token, node, edge, residue, atom, frame, candidate, or example? |
+| Shape and axes | What are the batch, token, node, edge, coordinate, channel, head, or candidate axes? |
 | Featurizer | Is $\phi$ deterministic, learned, stochastic, cached, versioned, or data-dependent? |
 | Invariance | Should the representation preserve order, permutation, translation, rotation, time, units, or metadata? |
 | Missingness | What happens when fields, modalities, coordinates, labels, or alignments are missing? |
@@ -73,6 +74,7 @@ where $c$ is context such as pH, assay, target, crop, alignment, retrieval corpu
 ## Checks
 
 - Is the raw object separate from the model input?
+- Are tensor shapes and axis meanings explicit?
 - Is the representation identical across train, validation, test, and inference where it should be?
 - Are featurizer versions, random seeds, caches, and failure policies recorded?
 - Does the representation preserve the information required by the task?
@@ -85,6 +87,7 @@ where $c$ is context such as pH, assay, target, crop, alignment, retrieval corpu
 
 - [[concepts/modalities/modality-representation|Modality representation]]
 - [[concepts/modalities/modality-task-map|Modality-task map]]
+- [[concepts/math/tensor-shape-notation|Tensor shape notation]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]

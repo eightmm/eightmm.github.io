@@ -101,6 +101,7 @@ This is one reason linear layers are easy to optimize but easy to overuse: they 
 ## Related
 
 - [[concepts/architectures/mlp|MLP]]
+- [[concepts/math/tensor-shape-notation|Tensor shape notation]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/weight-initialization|Weight initialization]]

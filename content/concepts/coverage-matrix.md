@@ -48,7 +48,7 @@ $$
 | --- | --- | --- |
 | Object | What entity is being modeled? | [Entities](/entities), [Molecular modeling entities](/molecular-modeling/entities) |
 | Modality | What form is the input or output? | [Modalities](/concepts/modalities) |
-| Representation | How does the raw object become tokens, graph, coordinates, embedding, or features? | [Representation contract](/concepts/modalities/representation-contract) |
+| Representation | How does the raw object become tokens, graph, coordinates, embedding, or features? | [Representation contract](/concepts/modalities/representation-contract), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Task | What output space and validity rule define success? | [Tasks](/concepts/tasks) |
 | Coordinate contract | What frame, symmetry, mapping, loss, and metric define coordinate claims? | [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Data | What example, label, split, and preprocessing contract define the dataset? | [Data](/concepts/data) |
@@ -84,6 +84,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One topic-map contract when a cluster spans several axes: [[concepts/topic-map-contract|Topic map contract]].
 - One object/modality/task page when the input or output is nontrivial.
 - One representation contract when preprocessing or featurization changes the object seen by the model.
+- One tensor-shape pass when a formula depends on batch, token, graph, coordinate, head, or candidate axes.
 - One coordinate modeling contract when a paper predicts poses, conformers, structures, vectors, forces, or coordinate updates.
 - One architecture or learning-method page when the method is central.
 - One objective-metric alignment check when the training loss and reported metric differ.

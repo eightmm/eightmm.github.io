@@ -20,7 +20,7 @@ $$
 | Field | Question | Route |
 | --- | --- | --- |
 | Explanation depth | Should the note use name-only, canonical formula, operational form, claim contract, or derivation depth? | [Formula explanation ladder](/math/formula-explanation-ladder) |
-| Object type | Is the quantity a scalar, vector, matrix, tensor, graph, coordinate, distribution, or trajectory? | [Linear algebra](/math/linear-algebra), [Geometry](/math/geometry-symmetry) |
+| Object type | Is the quantity a scalar, vector, matrix, tensor, graph, coordinate, distribution, or trajectory? | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation), [Geometry](/math/geometry-symmetry) |
 | Index set | Does the index run over batch, token, node, edge, residue, atom, time, sample, or candidate? | [Discrete math and graphs](/math/discrete-graphs) |
 | Distribution | Is the expectation over data, model samples, noise, policy rollouts, or test population? | [Probability and statistics](/math/probability-statistics) |
 | Objective | Is the formula a loss, likelihood, bound, score, reward, constraint, or metric? | [Information and likelihood](/math/information-likelihood) |

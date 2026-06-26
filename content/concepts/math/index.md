@@ -21,6 +21,7 @@ Use these pages to identify the object, distribution, parameter, and estimator b
 ## Core Notes
 
 - [[concepts/math/linear-algebra|Linear algebra]]
+- [[concepts/math/tensor-shape-notation|Tensor shape notation]]
 - [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
 - [[concepts/math/singular-value-decomposition|Singular value decomposition]]
@@ -47,6 +48,7 @@ Use these pages to identify the object, distribution, parameter, and estimator b
 ## Checks
 
 - What object is the formula about: scalar, vector, matrix, graph, distribution, or function?
+- What does each tensor axis mean, and which axis is reduced, mixed, normalized, or broadcast?
 - Is a derivative with respect to inputs, parameters, coordinates, or time?
 - Is the quantity optimized, estimated, sampled, normalized, or measured?
 - Is a probability statement conditional or marginal?
@@ -62,6 +64,7 @@ When adding or expanding a concept page, prefer formulas that define the quantit
 - Separate population quantities from finite-sample estimates.
 - State the distribution behind each expectation.
 - State whether a matrix/vector shape matters.
+- State tensor shape and axis semantics when the operation depends on batch, token, graph, coordinate, head, or candidate axes.
 - Name the variable being optimized or differentiated.
 - Link the formula to the modeling decision it supports.
 

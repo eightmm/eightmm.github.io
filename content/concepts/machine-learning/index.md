@@ -83,6 +83,7 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
 - [[concepts/machine-learning/training-stability|Training stability]]
 - [[concepts/machine-learning/training-step-accounting|Training step accounting]]
+- [[concepts/machine-learning/model-state-contract|Model state contract]]
 - [[concepts/machine-learning/weight-decay|Weight decay]]
 - [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
 - [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]

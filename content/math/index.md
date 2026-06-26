@@ -27,7 +27,7 @@ $$
 | Area | Use For | Start |
 | --- | --- | --- |
 | Foundations | definitions, formulas, reusable checks | [Math foundations](/concepts/math) |
-| Linear algebra | vectors, matrices, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra) |
+| Linear algebra | vectors, matrices, tensor shapes, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Calculus | derivatives, chain rule, Jacobians, Hessians, backpropagation math | [Calculus and gradients](/math/calculus-gradients) |
 | Probability | random variables, distributions, estimators, Bayesian inference, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
 | Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
@@ -70,7 +70,7 @@ $$
 
 ## Reading Path
 
-1. Start with [[concepts/math/linear-algebra|Linear algebra]] and [[concepts/math/vector-norm-similarity|Vector norm and similarity]] for vectors, matrices, projections, distances, and embedding scores.
+1. Start with [[concepts/math/linear-algebra|Linear algebra]], [[concepts/math/tensor-shape-notation|Tensor shape notation]], and [[concepts/math/vector-norm-similarity|Vector norm and similarity]] for vectors, matrices, axes, projections, distances, and embedding scores.
 2. Use [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]] and [[concepts/math/singular-value-decomposition|Singular value decomposition]] for PCA, low-rank structure, stability, and representation analysis.
 3. Use [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], and [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for gradients, curvature, and backpropagation math.
 4. Use [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], and [[concepts/machine-learning/gradient-descent|gradient descent]] to connect formulas to AI optimization.
@@ -103,7 +103,7 @@ $$
 
 | 수식 종류 | 먼저 확인할 것 | Start |
 | --- | --- | --- |
-| Linear operation | shape, axis, projection, rank, similarity | [Linear algebra](/math/linear-algebra) |
+| Linear operation | shape, axis, projection, rank, similarity | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Gradient or update | objective, parameter, gradient estimate, optimizer state | [Calculus and gradients](/math/calculus-gradients) |
 | Probability / expectation | random variable, conditioning, sampling distribution | [Probability and statistics](/math/probability-statistics) |
 | Likelihood / entropy / KL | modeled distribution, target distribution, bound or approximation | [Information and likelihood](/math/information-likelihood) |
