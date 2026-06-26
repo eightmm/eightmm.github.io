@@ -27,6 +27,7 @@ Choose a generative family by the object, output validity rule, likelihood need,
 | [VAE](/concepts/generative-models/vae) | ELBO | Latent decode | Structured latent space | Posterior collapse, blurry samples |
 | [GAN](/concepts/generative-models/gan) | Adversarial game | One-shot generator | Sharp samples | Mode collapse, unstable training |
 | [Normalizing flow](/concepts/generative-models/normalizing-flow) | Exact likelihood | Invertible transform | Tractable density | Invertibility constraints |
+| [Energy-based model](/concepts/generative-models/energy-based-model) | Energy or contrastive objective | MCMC/Langevin/optimization | Flexible unnormalized density | Partition function and sampling cost |
 | [Diffusion](/concepts/generative-models/diffusion-model) | Denoising/noise prediction | Iterative denoising | Stable high-quality samples | Many sampling steps |
 | [Score-based](/concepts/generative-models/score-based-model) | Score matching | SDE/ODE sampler | Continuous-time view | Noise-level coverage |
 | [Flow matching](/concepts/generative-models/flow-matching) | Velocity matching | ODE transport | Direct path learning | Path and symmetry design |
@@ -37,6 +38,7 @@ Choose a generative family by the object, output validity rule, likelihood need,
 | Question | Start | Then Check |
 | --- | --- | --- |
 | do you need exact likelihood? | [Autoregressive model](/concepts/generative-models/autoregressive-model), [Normalizing flow](/concepts/generative-models/normalizing-flow) | factorization, ordering, invertibility |
+| is density only defined up to normalization? | [Energy-based model](/concepts/generative-models/energy-based-model), [Score matching](/concepts/generative-models/score-matching) | partition function, negative samples, sampler |
 | is there a latent variable? | [Latent variable model](/concepts/generative-models/latent-variable-model), [ELBO](/concepts/generative-models/elbo), [VAE](/concepts/generative-models/vae) | reconstruction vs prior sampling |
 | is generation iterative? | [Diffusion model](/concepts/generative-models/diffusion-model), [Score matching](/concepts/generative-models/score-matching), [Flow matching](/concepts/generative-models/flow-matching) | sampler, step count, parameterization |
 | is generation conditional? | [Conditional generation](/concepts/generative-models/conditional-generation), [Guidance](/concepts/generative-models/guidance) | condition leakage and guidance strength |
@@ -68,6 +70,7 @@ Generation quality is not one metric. A useful evaluation names:
 - [[concepts/generative-models/vae|VAE]]
 - [[concepts/generative-models/gan|GAN]]
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]
+- [[concepts/generative-models/energy-based-model|Energy-based model]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/score-based-model|Score-based model]]
 - [[concepts/generative-models/score-matching|Score matching]]

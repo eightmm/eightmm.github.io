@@ -42,6 +42,7 @@ Molecular modeling에서는 $c$가 protein sequence, binding pocket, target prop
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/rectified-flow|Rectified flow]]
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]
+- [[concepts/generative-models/energy-based-model|Energy-based model]]
 - [[concepts/generative-models/vae|VAE]]
 - [[concepts/generative-models/gan|GAN]]
 - [[concepts/generative-models/consistency-model|Consistency model]]
@@ -56,6 +57,7 @@ Molecular modeling에서는 $c$가 protein sequence, binding pocket, target prop
 | Diffusion / score | denoising score or noise prediction | iterative denoising | [Diffusion model](/concepts/generative-models/diffusion-model), [Score-based model](/concepts/generative-models/score-based-model) |
 | Flow matching | vector field along a probability path | integrate an ODE-like path | [Flow matching](/concepts/generative-models/flow-matching), [Rectified flow](/concepts/generative-models/rectified-flow) |
 | Normalizing flow | invertible change of variables | sample base noise, invert map | [Normalizing flow](/concepts/generative-models/normalizing-flow) |
+| Energy-based | unnormalized energy or compatibility | MCMC, Langevin, or optimization | [Energy-based model](/concepts/generative-models/energy-based-model) |
 | Consistency | direct jump between noisy and clean states | few-step or one-step generation | [Consistency model](/concepts/generative-models/consistency-model) |
 
 ## Objective 기준

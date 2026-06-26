@@ -52,6 +52,26 @@ $$
 
 where $v_\theta$ is the learned or score-derived velocity field.
 
+The ODE can also be read as deterministic transport:
+
+$$
+\frac{dx}{dt}
+=
+v_\theta(x,t)
+$$
+
+where $v_\theta$ may be parameterized directly, as in [[concepts/generative-models/flow-matching|Flow matching]], or derived from a score field:
+
+$$
+v_\theta(x,t)
+=
+f(x,t)
+-
+\frac{1}{2}g(t)^2 s_\theta(x,t)
+$$
+
+This makes the learned object explicit: some papers train a score, others train a velocity, and others train a denoiser that is converted to one of these.
+
 ## Checks
 
 - Which ODE solver, tolerance, and number of function evaluations are used?
@@ -59,6 +79,8 @@ where $v_\theta$ is the learned or score-derived velocity field.
 - Does deterministic sampling reduce diversity for the task?
 - Are coordinates, graphs, or sequences integrated in a representation that preserves validity?
 - Is the comparison fair against stochastic samplers with different compute budgets?
+- Is the model trained as score prediction, noise prediction, denoising, or velocity prediction?
+- Is likelihood estimation claimed, or only deterministic sampling?
 
 ## Related
 
@@ -67,4 +89,5 @@ where $v_\theta$ is the learned or score-derived velocity field.
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]
+- [[concepts/generative-models/energy-based-model|Energy-based model]]
 - [[concepts/generative-models/sampling|Sampling]]

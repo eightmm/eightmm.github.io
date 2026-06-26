@@ -19,6 +19,24 @@ $$
 
 It points toward regions of higher probability under the noisy distribution at time $t$.
 
+For an energy-based density:
+
+$$
+p_\theta(x)
+\propto
+\exp(-E_\theta(x))
+$$
+
+the score is:
+
+$$
+\nabla_x \log p_\theta(x)
+=
+-\nabla_x E_\theta(x)
+$$
+
+This is why score-based generation, Langevin dynamics, and energy minimization share similar gradient geometry.
+
 Noise-conditional score matching trains the model across noise levels:
 
 $$
@@ -52,6 +70,7 @@ Score-based models can sample with a stochastic reverse-time SDE or a determinis
 
 - Provides a continuous, unifying view of diffusion generation.
 - Connects denoising, Langevin dynamics, and SDE/ODE samplers.
+- Connects learned density gradients to [[concepts/generative-models/energy-based-model|Energy-based model]] views.
 - Score estimation quality at all noise levels drives sample quality.
 
 ## Failure Modes
@@ -73,6 +92,7 @@ Score-based models can sample with a stochastic reverse-time SDE or a determinis
 
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/score-matching|Score matching]]
+- [[concepts/generative-models/energy-based-model|Energy-based model]]
 - [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/rectified-flow|Rectified flow]]

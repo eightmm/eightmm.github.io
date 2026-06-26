@@ -20,6 +20,16 @@ $$
 
 where $X$ is the coordinate matrix and $E_{\pi}$ is the energy under protocol $\pi$.
 
+The force convention is:
+
+$$
+F(X)
+=
+-\nabla_X E_\pi(X)
+$$
+
+This links classical minimization to [[concepts/generative-models/energy-based-model|Energy-based model]] and [[concepts/generative-models/score-based-model|Score-based model]] language: all three reason about gradients of scalar or log-density fields.
+
 ## Role in Modeling
 
 Energy minimization can be part of preprocessing, postprocessing, evaluation, or baseline construction. These are different claims:
@@ -54,6 +64,29 @@ $$
 
 where $R$ penalizes movement away from a reference geometry $X_0$.
 
+Second-order or quasi-Newton methods use curvature information:
+
+$$
+X_{t+1}
+=
+X_t
+-
+H_t^{-1}\nabla_X E_\pi(X_t)
+$$
+
+where $H_t$ is the Hessian or an approximation. In practice, convergence criteria, atom constraints, and initialization often matter more than the optimizer name.
+
+## Molecular Scope
+
+| Scope | Meaning | Risk |
+|---|---|---|
+| ligand-only | optimize ligand geometry without receptor | pose may no longer fit the pocket |
+| complex | optimize ligand and local receptor together | protein structure may drift |
+| restrained complex | penalize movement from input geometry | restraint strength changes result |
+| ensemble minimization | optimize across receptor states | state selection affects ranking |
+
+For docking papers, this scope should be reported with the same care as the model architecture.
+
 ## Checks
 
 - Is minimization applied to inputs, outputs, or both?
@@ -74,6 +107,8 @@ where $R$ penalizes movement away from a reference geometry $X_0$.
 ## Related
 
 - [[concepts/molecular-modeling/force-field|Force field]]
+- [[concepts/generative-models/energy-based-model|Energy-based model]]
+- [[concepts/generative-models/score-based-model|Score-based model]]
 - [[concepts/molecular-modeling/conformer|Conformer]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
