@@ -17,27 +17,26 @@ $$
 
 The same training objective can behave very differently depending on whether $\mathcal{F}_{\text{arch}}$ encodes locality, order, graph structure, or symmetry.
 
+## Route Map
+
+| Question | Start | Then Check |
+| --- | --- | --- |
+| what input object is being modeled? | [Modalities](/concepts/modalities), [Architecture selection](/concepts/architectures/architecture-selection) | sequence, graph, grid, set, coordinate, or mixed input |
+| what inductive bias is assumed? | [Inductive bias](/concepts/architectures/inductive-bias), [Parameter sharing](/concepts/architectures/parameter-sharing) | locality, order, permutation, symmetry, sparsity |
+| what mixes information? | [Attention](/concepts/architectures/attention), [Convolution](/concepts/architectures/convolution), [GNN](/concepts/architectures/gnn), [State-space models](/concepts/architectures/state-space-model) | token, pixel, node, coordinate, or state mixing |
+| what transforms channels? | [Linear layer](/concepts/architectures/linear-layer), [Feed-forward network](/concepts/architectures/feed-forward-network), [Activation function](/concepts/architectures/activation-function) | width, expansion, gating, parameter budget |
+| what stabilizes depth? | [Residual connection](/concepts/architectures/residual-connection), [Normalization](/concepts/architectures/normalization), [Normalization placement](/concepts/architectures/normalization-placement), [Weight initialization](/concepts/architectures/weight-initialization) | gradient flow and scale |
+| what maps internal states to outputs? | [Pooling and readout](/concepts/architectures/pooling-readout), [Softmax](/concepts/architectures/softmax) | task output space and metric |
+| what is the cost bottleneck? | [Computational complexity](/concepts/architectures/computational-complexity) | length, graph size, resolution, experts, memory |
+
 ## Basic Blocks
 
-- [[concepts/architectures/inductive-bias|Inductive bias]]
-- [[concepts/architectures/parameter-sharing|Parameter sharing]]
-- [[concepts/architectures/architecture-selection|Architecture selection]]
-- [[concepts/architectures/computational-complexity|Computational complexity]]
-- [[concepts/architectures/linear-layer|Linear layer]]
-- [[concepts/architectures/weight-initialization|Weight initialization]]
-- [[concepts/architectures/activation-function|Activation function]]
-- [[concepts/architectures/feed-forward-network|Feed-forward network]]
-- [[concepts/architectures/normalization|Normalization]]
-- [[concepts/architectures/normalization-placement|Normalization placement]]
-- [[concepts/architectures/residual-connection|Residual connection]]
-- [[concepts/architectures/residual-network|Residual network]]
-- [[concepts/architectures/tokenization|Tokenization]]
-- [[concepts/architectures/embedding|Embedding]]
-- [[concepts/architectures/positional-encoding|Positional encoding]]
-- [[concepts/architectures/softmax|Softmax]]
-- [[concepts/architectures/dropout|Dropout]]
-- [[concepts/architectures/gating|Gating]]
-- [[concepts/architectures/pooling-readout|Pooling and readout]]
+| Group | Notes |
+| --- | --- |
+| Dense transforms | [Linear layer](/concepts/architectures/linear-layer), [Activation function](/concepts/architectures/activation-function), [Feed-forward network](/concepts/architectures/feed-forward-network), [Gating](/concepts/architectures/gating) |
+| Training stability | [Weight initialization](/concepts/architectures/weight-initialization), [Normalization](/concepts/architectures/normalization), [Normalization placement](/concepts/architectures/normalization-placement), [Residual connection](/concepts/architectures/residual-connection), [Dropout](/concepts/architectures/dropout) |
+| Input representation | [Tokenization](/concepts/architectures/tokenization), [Embedding](/concepts/architectures/embedding), [Positional encoding](/concepts/architectures/positional-encoding), [Graph construction](/concepts/architectures/graph-construction) |
+| Readout | [Pooling and readout](/concepts/architectures/pooling-readout), [Softmax](/concepts/architectures/softmax) |
 
 ## Dense and Feed-Forward Models
 

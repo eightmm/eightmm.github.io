@@ -38,6 +38,44 @@ $$
 
 The normalization sits before attention and feed-forward sublayers.
 
+## Gradient Path
+
+In a pre-norm block:
+
+$$
+y = x + F(\operatorname{Norm}(x))
+$$
+
+the residual stream keeps an unnormalized identity path. In a post-norm block:
+
+$$
+y = \operatorname{Norm}(x + F(x))
+$$
+
+the gradient passes through normalization after the residual sum. This can affect depth scaling because normalization changes both the forward activation and the backward Jacobian.
+
+## Common Patterns
+
+| Pattern | Form | Typical Reading |
+| --- | --- | --- |
+| pre-norm | $x+F(\operatorname{Norm}(x))$ | stable for deep sequence models |
+| post-norm | $\operatorname{Norm}(x+F(x))$ | output is normalized after each block |
+| sandwich norm | $\operatorname{Norm}(x+F(\operatorname{Norm}(x)))$ | extra stabilization, extra compute |
+| parallel block | $x+F_1(\operatorname{Norm}(x))+F_2(\operatorname{Norm}(x))$ | attention and FFN share the same residual input |
+| norm-free or scaled | residual scaling without explicit norm | relies on initialization and scale control |
+
+## Comparison Boundary
+
+When comparing architectures, normalization placement is not a minor implementation detail. It changes:
+
+- trainable depth;
+- learning-rate tolerance;
+- activation scale;
+- compatibility with residual scaling;
+- whether the baseline has the same stability budget.
+
+If a paper changes both architecture family and norm placement, do not attribute all gains to the family name.
+
 ## Tradeoffs
 
 - Pre-norm usually improves optimization stability for deep Transformers.
@@ -52,6 +90,8 @@ The normalization sits before attention and feed-forward sublayers.
 - Are residual branches scaled or gated?
 - Is the reported architecture comparable to the baseline after changing norm placement?
 - Does instability appear as depth increases?
+- Is the output before the task head normalized, or only the internal residual stream?
+- Are inference-time normalization statistics identical to training-time behavior?
 
 ## Related
 
