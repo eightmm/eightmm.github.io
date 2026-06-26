@@ -54,6 +54,53 @@ $$
 
 The gap between $R$ and $\hat{R}$ is why sampling, splits, confidence intervals, and distribution shift matter.
 
+## Linearity
+
+Expectation is linear:
+
+$$
+\mathbb{E}[aX+bY]
+=
+a\mathbb{E}[X]
++
+b\mathbb{E}[Y]
+$$
+
+This holds even when $X$ and $Y$ are not independent. Many loss decompositions and metric averages use this property.
+
+## Conditional Expectation
+
+Conditional expectation averages under a conditional distribution:
+
+$$
+\mathbb{E}[Y\mid X=x]
+=
+\int y\,p(y\mid x)\,dy
+$$
+
+For regression with squared error, the optimal prediction is the conditional mean:
+
+$$
+f^\*(x)
+=
+\mathbb{E}[Y\mid X=x]
+$$
+
+This explains why different losses imply different target summaries.
+
+## Weighted Expectations
+
+Sampling or class weighting changes the expectation:
+
+$$
+\mathbb{E}_{q}
+\left[
+w(X,Y)\mathcal{L}(f(X),Y)
+\right]
+$$
+
+If $q$ is the training sampler and deployment follows $p$, the metric should make clear which expectation is being estimated.
+
 ## Why It Matters
 
 - Training objectives average losses over data.
@@ -69,11 +116,17 @@ The gap between $R$ and $\hat{R}$ is why sampling, splits, confidence intervals,
 - Is the average over examples, tokens, classes, tasks, seeds, or folds?
 - Does the reported metric include uncertainty or variance?
 - Is the empirical average weighted by the sampling process?
+- Are macro, micro, per-class, per-token, and per-example averages being mixed?
+- Does the loss target a mean, median, mode, quantile, ranking, or calibrated probability?
+- Is the expectation over data, model samples, seeds, folds, or annotators?
 
 ## Related
 
 - [[concepts/math/probability-distribution|Probability distribution]]
+- [[concepts/math/random-variable|Random variable]]
 - [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]
 - [[concepts/data/sampling-strategy|Sampling strategy]]
+- [[concepts/data/data-distribution|Data distribution]]
 - [[concepts/evaluation/metric|Metric]]
+- [[concepts/evaluation/confidence-interval|Confidence interval]]
 - [[concepts/machine-learning/training-loop|Training loop]]

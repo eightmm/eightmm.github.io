@@ -24,12 +24,52 @@ where $v \ne 0$ is an eigenvector and $\lambda$ is the corresponding eigenvalue.
 - Large absolute eigenvalues indicate directions that are strongly amplified.
 - Negative eigenvalues flip the direction.
 
+If $A$ has eigenvectors that form a basis, the transformation can be decomposed as:
+
+$$
+A
+=
+V\Lambda V^{-1}
+$$
+
+where columns of $V$ are eigenvectors and $\Lambda$ contains eigenvalues. This makes repeated application easy to analyze:
+
+$$
+A^k
+=
+V\Lambda^k V^{-1}
+$$
+
+Eigenvalues with $|\lambda|>1$ grow under repeated application, while values with $|\lambda|<1$ shrink.
+
 ## Why It Matters
 
 - PCA uses eigenvectors of a covariance matrix.
 - Optimization stability is shaped by curvature and [[concepts/math/jacobian-hessian|Hessian]] eigenvalues.
 - Graph methods use eigenvectors of adjacency or Laplacian matrices.
 - Dynamical systems and state-space models often analyze eigenvalues for stability.
+
+## Symmetric Matrices
+
+For a real symmetric matrix $A=A^\top$:
+
+$$
+A
+=
+Q\Lambda Q^\top
+$$
+
+where $Q$ is orthogonal and eigenvalues are real. This case appears in covariance matrices, Hessians, kernels, and graph Laplacians.
+
+For a covariance matrix, large eigenvalues correspond to high-variance directions:
+
+$$
+\Sigma v_i
+=
+\lambda_i v_i
+$$
+
+This is the basis of PCA-style dimensionality reduction.
 
 ## Common Equation
 
@@ -47,6 +87,9 @@ where $I$ is the identity matrix.
 - Is it symmetric? Symmetric matrices have real eigenvalues and orthogonal eigenvectors.
 - Are eigenvalues being used for variance, stability, graph spectra, or curvature?
 - Are repeated or near-zero eigenvalues important for the interpretation?
+- Is the matrix diagonalizable, symmetric, positive semidefinite, or arbitrary?
+- Do large eigenvalues imply explained variance, unstable dynamics, or sharp curvature in this context?
+- Are eigenvectors meaningful, or only the subspace spanned by them?
 
 ## Related
 
@@ -55,4 +98,5 @@ where $I$ is the identity matrix.
 - [[concepts/math/covariance-correlation|Covariance and correlation]]
 - [[concepts/math/singular-value-decomposition|Singular value decomposition]]
 - [[concepts/machine-learning/dimensionality-reduction|Dimensionality reduction]]
+- [[concepts/machine-learning/loss-landscape|Loss landscape]]
 - [[concepts/architectures/state-space-model|State-space model]]

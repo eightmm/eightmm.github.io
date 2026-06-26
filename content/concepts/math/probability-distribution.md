@@ -58,6 +58,38 @@ $$
 
 This is the probability factorization behind autoregressive modeling.
 
+## Independence
+
+Two variables are independent when:
+
+$$
+p(x,y)
+=
+p(x)p(y)
+$$
+
+Conditional independence is:
+
+$$
+p(x,y\mid z)
+=
+p(x\mid z)p(y\mid z)
+$$
+
+Many modeling assumptions are independence assumptions: IID datasets, factorized likelihoods, naive Bayes models, token factorization choices, and some loss decompositions.
+
+## Distribution Over Structured Objects
+
+Distributions can be defined over vectors, sequences, graphs, coordinates, or sets:
+
+$$
+p(y\mid x),
+\qquad
+y\in\mathcal{Y}
+$$
+
+where $\mathcal{Y}$ may be a class set, sequence vocabulary, molecule graph space, coordinate space, or action space. The output space determines whether probabilities are easy to normalize or require approximation.
+
 ## Model vs Data Distribution
 
 Machine learning often compares the data distribution and a model distribution:
@@ -72,6 +104,20 @@ $$
 
 Evaluation asks whether performance under a held-out or deployment distribution supports the intended claim.
 
+## Shift
+
+Distribution shift can be written as:
+
+$$
+p_{\mathrm{train}}(x,y)
+\ne
+p_{\mathrm{test}}(x,y)
+\ne
+p_{\mathrm{deploy}}(x,y)
+$$
+
+The shift may be in $p(x)$, $p(y\mid x)$, label availability, metadata, source mixture, or task definition.
+
 ## Checks
 
 - What random variable does the distribution describe?
@@ -80,6 +126,9 @@ Evaluation asks whether performance under a held-out or deployment distribution 
 - Is the variable discrete, continuous, structured, or mixed?
 - Does the training distribution match the deployment distribution?
 - Is the factorization assumption explicit?
+- Are independence assumptions valid for the example unit and split unit?
+- Is the distribution normalized, implicit, energy-based, or only sampled from?
+- Which distribution is used for training, validation, test, and deployment?
 
 ## Related
 
@@ -90,5 +139,7 @@ Evaluation asks whether performance under a held-out or deployment distribution 
 - [[concepts/math/covariance-correlation|Covariance and correlation]]
 - [[concepts/math/bayes-rule|Bayes rule]]
 - [[concepts/machine-learning/density-estimation|Density estimation]]
+- [[concepts/data/data-distribution|Data distribution]]
+- [[concepts/tasks/task-output-space|Task output space]]
 - [[concepts/generative-models/index|Generative models]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]

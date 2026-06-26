@@ -45,6 +45,56 @@ $$
 C_{ij} = \sum_k A_{ik}B_{kj}
 $$
 
+## Shape Discipline
+
+Most implementation errors are shape errors. A batch of vectors is often represented as:
+
+$$
+X
+\in
+\mathbb{R}^{B\times d}
+$$
+
+and a linear layer applies:
+
+$$
+Y
+=
+XW^\top + \mathbf{1}b^\top
+$$
+
+where $W\in\mathbb{R}^{d_{\mathrm{out}}\times d}$, $Y\in\mathbb{R}^{B\times d_{\mathrm{out}}}$, and $\mathbf{1}\in\mathbb{R}^{B}$ broadcasts the bias.
+
+For sequence models:
+
+$$
+X
+\in
+\mathbb{R}^{B\times T\times d}
+$$
+
+where $B$ is batch size, $T$ is sequence length, and $d$ is feature dimension. The same vector operation may be applied independently over $B$ and $T$.
+
+## Linear Maps and Subspaces
+
+A matrix maps an input vector into an output subspace:
+
+$$
+\operatorname{col}(A)
+=
+\{Az: z\in\mathbb{R}^{n}\}
+$$
+
+The rank of a matrix is the dimension of the information it can transmit:
+
+$$
+\operatorname{rank}(A)
+\le
+\min(m,n)
+$$
+
+Low-rank layers, PCA, embedding compression, and representation collapse all use this idea.
+
 Spectral structure:
 
 - [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]] describes special directions of square matrices.
@@ -63,12 +113,16 @@ Spectral structure:
 - Which dimensions are batch, sequence, feature, head, node, or coordinate axes?
 - Is a transformation linear, affine, normalized, or nonlinear?
 - Is similarity a dot product, cosine similarity, distance, or learned score?
+- Are tensors written in batch-first, sequence-first, or channel-first order?
+- Is the operation preserving rank, reducing dimension, or mixing axes?
+- Are coordinates, features, heads, and tokens being multiplied along the intended axes?
 
 ## Related
 
 - [[concepts/architectures/linear-layer|Linear layer]]
 - [[concepts/architectures/embedding|Embedding]]
 - [[concepts/architectures/attention|Attention]]
+- [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
 - [[concepts/math/singular-value-decomposition|Singular value decomposition]]
