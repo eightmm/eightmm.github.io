@@ -38,10 +38,13 @@ ExternalPlugin.Explorer({
     ]
     const mathGroups = [
       "linear-algebra",
-      "calculus-optimization",
+      "calculus-gradients",
       "probability-statistics",
       "information-likelihood",
       "geometry-symmetry",
+      "discrete-graphs",
+      "dynamical-systems",
+      "numerical-computing",
       "evaluation-math",
     ]
     const agentGroups = ["core", "tools", "workflows", "verification"]

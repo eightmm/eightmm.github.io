@@ -26,10 +26,13 @@ $$
 
 - [[concepts/math/index|Math foundations]]: canonical wiki index
 - [[math/linear-algebra|Linear algebra]]: vectors, matrices, embeddings, projections, similarity, SVD
-- [[math/calculus-optimization|Calculus and optimization]]: gradients, Jacobians, Hessians, backpropagation, optimizers
+- [[math/calculus-gradients|Calculus and gradients]]: derivatives, chain rule, Jacobians, Hessians, backpropagation math
 - [[math/probability-statistics|Probability and statistics]]: random variables, distributions, estimators, uncertainty, hypothesis tests
 - [[math/information-likelihood|Information and likelihood]]: maximum likelihood, entropy, KL, cross-entropy, generative objectives
 - [[math/geometry-symmetry|Geometry and symmetry]]: groups, frames, invariance, equivariance, coordinate modeling
+- [[math/discrete-graphs|Discrete math and graphs]]: graphs, sets, neighborhoods, permutations, graph modeling
+- [[math/dynamical-systems|Dynamical systems]]: discrete updates, ODEs, SDEs, vector fields, generative flows
+- [[math/numerical-computing|Numerical computing]]: floating point, stable softmax, log-sum-exp, conditioning, precision
 - [[math/evaluation-math|Evaluation math]]: metrics, confidence intervals, calibration, statistical comparison
 
 ## Formula Checklist
@@ -48,21 +51,32 @@ $$
 
 - Architecture: [[concepts/architectures/linear-layer|Linear layer]], [[concepts/architectures/attention|Attention]], [[concepts/architectures/normalization|Normalization]]
 - Learning: [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/loss-function|Loss function]], [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]], [[concepts/machine-learning/optimization|Optimization]], [[concepts/learning/reinforcement-learning|Reinforcement learning]]
+- Numerical stability: [[math/numerical-computing|Numerical computing]], [[concepts/architectures/softmax|Softmax]], [[concepts/architectures/normalization|Normalization]], [[concepts/machine-learning/training-stability|Training stability]], [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - Generation: [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/maximum-likelihood|Maximum likelihood]], [[concepts/math/entropy-kl|Entropy and KL divergence]], [[concepts/generative-models/diffusion-model|Diffusion model]], [[concepts/generative-models/flow-matching|Flow matching]], [[concepts/generative-models/normalizing-flow|Normalizing flow]]
 - Geometry: [[concepts/geometric-deep-learning/index|Geometric deep learning]], [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]], [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]], [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- Graphs and dynamics: [[math/discrete-graphs|Discrete math and graphs]], [[math/dynamical-systems|Dynamical systems]], [[concepts/architectures/gnn|Graph neural networks]], [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
 - Evaluation: [[concepts/evaluation/metric|Metric]], [[concepts/evaluation/confidence-interval|Confidence interval]], [[concepts/evaluation/statistical-significance|Statistical significance]]
 
 ## Reading Path
 
 1. Start with [[concepts/math/linear-algebra|Linear algebra]] and [[concepts/math/vector-norm-similarity|Vector norm and similarity]] for vectors, matrices, projections, distances, and embedding scores.
 2. Use [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]] and [[concepts/math/singular-value-decomposition|Singular value decomposition]] for PCA, low-rank structure, stability, and representation analysis.
-3. Use [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], and [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for gradients, curvature, and optimization.
-4. Use [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], and [[concepts/machine-learning/gradient-descent|gradient descent]] to connect formulas to training.
+3. Use [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], and [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for gradients, curvature, and backpropagation math.
+4. Use [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], and [[concepts/machine-learning/gradient-descent|gradient descent]] to connect formulas to AI optimization.
 5. Use [[concepts/math/random-variable|Random variable]], [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/expectation|Expectation]], and [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] for likelihood, loss, sampling, and estimates.
 6. Use [[concepts/math/covariance-correlation|Covariance and correlation]], [[concepts/math/normal-distribution|Normal distribution]], [[concepts/math/central-limit-theorem|Central limit theorem]], [[concepts/math/statistical-estimator|Statistical estimator]], [[concepts/math/hypothesis-testing|Hypothesis testing]], and [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]] when interpreting experiments.
 7. Use [[concepts/math/maximum-likelihood|Maximum likelihood]] and [[concepts/math/entropy-kl|Entropy and KL divergence]] for generative models and representation learning.
 8. Use [[concepts/math/geometry|Geometry]] and [[concepts/math/symmetry-group|Symmetry group]] for graph, structure, molecule, and protein notes.
-9. Use [[concepts/evaluation/confidence-interval|Confidence interval]] and [[concepts/evaluation/statistical-significance|Statistical significance]] when interpreting reported results.
+9. Use [[math/discrete-graphs|Discrete math and graphs]] for graph neural networks, molecular graphs, contact maps, retrieval, and set functions.
+10. Use [[math/dynamical-systems|Dynamical systems]] for diffusion, flow matching, probability-flow ODEs, recurrent models, and iterative refinement.
+11. Use [[math/numerical-computing|Numerical computing]] when formulas involve exponentials, probabilities, mixed precision, reductions, or NaNs.
+12. Use [[concepts/evaluation/confidence-interval|Confidence interval]] and [[concepts/evaluation/statistical-significance|Statistical significance]] when interpreting reported results.
+
+## Boundary
+
+- Math explains objects and formulas: derivatives, probability, likelihood, geometry, metrics, numerical stability.
+- AI explains modeling and training choices: losses, optimizers, schedules, architectures, learning methods.
+- Infra explains resource behavior: GPU memory, distributed training, storage, reproducibility, deployment.
 
 ## AI 연결 예시
 
