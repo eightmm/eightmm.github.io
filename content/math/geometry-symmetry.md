@@ -26,6 +26,29 @@ This is the abstract form of equivariance.
 - [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
 - [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
 
+## Transformation Rules
+
+| Object | Rule | Interpretation |
+| --- | --- | --- |
+| Translation | $x_i' = x_i + t$ | origin should not matter for many structure tasks |
+| Rotation | $x_i' = R x_i$ | orientation should not change scalar labels |
+| Rigid motion | $x_i' = R x_i + t$ | coordinates move together as one body |
+| Permutation | $X' = P X$ | node/residue/atom order should not change the object |
+| Invariant output | $f(g\cdot x)=f(x)$ | scalar target stays the same |
+| Equivariant output | $F(g\cdot x)=\rho(g)F(x)$ | output transforms predictably with input |
+
+For distances:
+
+$$
+d_{ij}
+=
+\lVert x_i-x_j\rVert_2
+=
+\lVert (Rx_i+t)-(Rx_j+t)\rVert_2
+$$
+
+so pairwise distances are invariant to rigid motions.
+
 ## Groups and Coordinates
 
 - [[concepts/geometric-deep-learning/so3|SO(3)]]
@@ -33,6 +56,15 @@ This is the abstract form of equivariance.
 - [[concepts/geometric-deep-learning/e3|E(3)]]
 - [[concepts/geometric-deep-learning/irreducible-representation|Irreducible representation]]
 - [[concepts/geometric-deep-learning/spherical-harmonics|Spherical harmonics]]
+
+## Target Map
+
+| Target | Expected Symmetry | Examples |
+| --- | --- | --- |
+| Class / affinity / energy | invariant | property prediction, binding score |
+| Coordinate update | equivariant | pose generation, structure refinement |
+| Force / vector field | equivariant | molecular dynamics, flow matching in coordinates |
+| Graph relation | permutation equivariant or invariant | contact map, interaction graph |
 
 ## AI Connections
 

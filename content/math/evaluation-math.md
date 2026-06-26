@@ -29,6 +29,50 @@ The empirical test score is only an estimate of this target.
 - [[concepts/evaluation/paired-comparison|Paired comparison]]
 - [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
 
+## Estimate and Uncertainty
+
+For a test set of size $m$, the empirical risk is:
+
+$$
+\hat{R}
+=
+\frac{1}{m}\sum_{j=1}^{m}
+\ell_j
+$$
+
+where $\ell_j=\mathcal{L}(f(x_j),y_j)$ is the per-example loss.
+
+An approximate standard error is:
+
+$$
+\operatorname{SE}(\hat{R})
+\approx
+\frac{s_\ell}{\sqrt{m}}
+$$
+
+where $s_\ell$ is the sample standard deviation of per-example losses. This approximation is weak when examples are dependent, heavily stratified, or selected after model tuning.
+
+## Comparison Map
+
+| Comparison | Preferred Evidence | Risk |
+| --- | --- | --- |
+| Same examples, two models | paired difference and confidence interval | aggregate scores hide per-example dependence |
+| Many seeds | mean, variance, and selection rule | best seed is mistaken for expected performance |
+| Many prompts/checkpoints | held-out selection protocol | repeated trials inflate false discoveries |
+| Many datasets | per-dataset effect size | average score hides failures on important strata |
+| Imbalanced classification | PR-AUC, enrichment, calibrated threshold | ROC-AUC can look good under severe imbalance |
+
+For paired comparison:
+
+$$
+\Delta
+=
+\frac{1}{m}\sum_{j=1}^{m}
+(s_{A,j}-s_{B,j})
+$$
+
+where $s_{A,j}$ and $s_{B,j}$ are scores or losses for two systems on the same example.
+
 ## Probability Quality
 
 - [[concepts/evaluation/calibration|Calibration]]

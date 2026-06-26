@@ -25,6 +25,27 @@ The distribution under the expectation matters as much as the loss itself.
 - [[concepts/math/expectation|Expectation]]
 - [[concepts/math/bayes-rule|Bayes rule]]
 
+## Distribution Map
+
+| Quantity | Meaning | Common AI Use |
+| --- | --- | --- |
+| $p(x)$ | marginal distribution of inputs | data modeling, density estimation |
+| $p(y\mid x)$ | conditional label distribution | classification, regression uncertainty |
+| $p_\theta(y\mid x)$ | model-predicted conditional distribution | probabilistic prediction and calibration |
+| $p_{\mathrm{train}}(x,y)$ | training distribution | empirical risk minimization |
+| $p_{\mathrm{test}}(x,y)$ | evaluation distribution | generalization claim |
+| $q(z\mid x)$ | approximate posterior or encoder distribution | VAE, latent-variable inference |
+
+Bayes rule connects posterior, likelihood, and prior:
+
+$$
+p(y\mid x)
+=
+\frac{p(x\mid y)p(y)}{p(x)}
+$$
+
+This is useful when reading probabilistic classifiers, latent-variable models, and uncertainty notes.
+
 ## Statistics
 
 - [[concepts/math/statistical-estimator|Statistical estimator]]
@@ -33,6 +54,30 @@ The distribution under the expectation matters as much as the loss itself.
 - [[concepts/math/hypothesis-testing|Hypothesis testing]]
 - [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 - [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
+
+## Estimation
+
+A finite dataset gives an estimate of a population quantity:
+
+$$
+\mu = \mathbb{E}_{X\sim p}[h(X)],
+\qquad
+\hat{\mu}
+=
+\frac{1}{n}\sum_{i=1}^{n} h(x_i)
+$$
+
+The error is controlled by sampling noise, bias, dependence between samples, and whether the sample distribution matches the target distribution.
+
+For an estimator $\hat{\theta}$:
+
+$$
+\operatorname{MSE}(\hat{\theta})
+=
+\operatorname{Var}(\hat{\theta})
++
+\operatorname{Bias}(\hat{\theta})^2
+$$
 
 ## AI Connections
 
