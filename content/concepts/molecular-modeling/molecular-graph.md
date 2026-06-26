@@ -37,6 +37,35 @@ $$
 - Does the graph lose conformer or stereochemical information needed by the task?
 - Are graph features generated from the standardized molecule definition?
 
+## Atom and Bond Features
+
+Common atom features include:
+
+- atomic number or element;
+- formal charge;
+- aromaticity;
+- hybridization;
+- degree and valence;
+- explicit or implicit hydrogens;
+- chirality tag;
+- ring membership.
+
+Common bond features include:
+
+- bond order;
+- aromaticity;
+- conjugation;
+- ring membership;
+- stereochemical direction.
+
+The feature set is part of the model contract:
+
+$$
+\phi(M) = (X_V, X_E, A)
+$$
+
+where $A$ is the adjacency or edge index. If $\phi$ changes, cached features and splits may need regeneration.
+
 ## Batching Boundary
 
 For graph mini-batches, node tensors from many molecules are concatenated. A molecule-level readout must respect the batch index:
@@ -49,6 +78,14 @@ $$
 
 Pooling across all nodes without the batch boundary leaks information between examples.
 
+## Failure Modes
+
+- Chiral tags or bond stereo are dropped while the label depends on stereochemistry.
+- Formal charge and hydrogens are inconsistent with the protonation protocol.
+- Global attention or normalization mixes nodes across molecules in a batch.
+- A graph-only model is evaluated on a task requiring 3D conformer information.
+- Features are generated from raw input while labels and splits use standardized identity.
+
 ## Related
 
 - [[concepts/architectures/gnn|Graph neural networks]]
@@ -56,4 +93,5 @@ Pooling across all nodes without the batch boundary leaks information between ex
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
+- [[concepts/molecular-modeling/protonation-state|Protonation state]]
 - [[entities/molecule|Molecule]]

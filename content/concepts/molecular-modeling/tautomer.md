@@ -25,6 +25,31 @@ $$
 
 Tautomer handling changes deduplication, scaffold construction, conformer generation, docking, and property labels. A silent tautomer policy can make two pipelines look comparable when they are not.
 
+## Policy Choices
+
+- Canonicalize: choose one deterministic representative for deduplication and splitting.
+- Preserve: keep supplied tautomer states when the assay or structure supports them.
+- Enumerate: generate a tautomer set and score or aggregate over it.
+- Condition: choose tautomer state jointly with pH, protonation, binding site, or preparation protocol.
+
+If a model uses one representative, the identity key should include the protocol:
+
+$$
+k = H(\operatorname{canon}_{\pi}(m))
+$$
+
+where $\pi$ is the tautomer canonicalization policy.
+
+## Interaction With Protonation
+
+Tautomer and protonation decisions are coupled:
+
+$$
+\text{state}(m) = (\text{tautomer}, \text{protonation}, \text{charge})
+$$
+
+Changing one can change hydrogen bonding, formal charge, conformers, and docking interactions.
+
 ## Checks
 
 - Is tautomer canonicalization applied before splitting?
@@ -33,6 +58,14 @@ Tautomer handling changes deduplication, scaffold construction, conformer genera
 - Are 3D conformers generated after tautomer/protonation decisions?
 - Are labels tied to a molecule definition that matches the model input?
 - Does the featurizer cache key change when the tautomer policy changes?
+
+## Failure Modes
+
+- Equivalent tautomer records appear on both sides of a split.
+- Over-canonicalization removes a tautomer state that the target distinguishes.
+- Docking uses a different tautomer/protonation state than the 2D featurizer.
+- Generated molecules are evaluated before tautomer normalization, inflating novelty.
+- Label aggregation silently averages measurements from different state definitions.
 
 ## Related
 

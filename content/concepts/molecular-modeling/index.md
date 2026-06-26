@@ -9,6 +9,37 @@ tags:
 
 Molecular modeling concepts describe how small molecules become model inputs: strings, graphs, fingerprints, conformers, descriptors, and 3D coordinates.
 
+The modeling object is not just a drawing of atoms. It is a stateful record:
+
+$$
+M =
+(\text{topology}, \text{stereo}, \text{tautomer}, \text{protonation}, \text{conformer}, \text{source})
+$$
+
+Different choices can produce different deduplication keys, split assignments, features, poses, and labels.
+
+## Workflow
+
+Use this order for public ML notes:
+
+$$
+\text{raw record}
+\rightarrow
+\text{standardize}
+\rightarrow
+\text{define identity}
+\rightarrow
+\text{deduplicate}
+\rightarrow
+\text{split}
+\rightarrow
+\text{featurize}
+\rightarrow
+\text{model}
+$$
+
+Do not split or aggregate labels before the molecular identity policy is explicit.
+
 ## Core Concepts
 
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
@@ -36,10 +67,19 @@ Molecular modeling concepts describe how small molecules become model inputs: st
 - Cache features with featurizer version and input hash.
 - Use one molecular featurization contract across train, evaluation, and inference.
 
+## Failure Modes
+
+- Salt, tautomer, charge, or stereo variants leak across train/test as different raw rows.
+- A graph featurizer drops chiral tags or bond stereo while the label distinguishes stereoisomers.
+- 3D models train on crystal/bound conformations but deploy on generated conformers without measuring shift.
+- Similarity or scaffold splits are computed on raw molecules instead of standardized identity.
+- A random split is used for a congeneric series, causing memorization to look like generalization.
+
 ## Related
 
 - [[entities/molecule|Molecule]]
 - [[entities/ligand|Ligand]]
+- [[entities/target-assay-label|Target-assay-label]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

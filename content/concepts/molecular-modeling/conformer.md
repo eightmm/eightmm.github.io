@@ -25,6 +25,26 @@ $$
 \mathcal{C}(M)=\{X^{(1)},\ldots,X^{(K)}\}
 $$
 
+## Generation Contract
+
+A conformer is tied to a protocol:
+
+$$
+X^{(k)}
+\sim
+G_{\pi}(M, s_k)
+$$
+
+where $G_{\pi}$ is the conformer generator, $\pi$ contains settings such as force field, embedding method, pruning, and minimization, and $s_k$ is a seed or stochastic state.
+
+The contract should state:
+
+- molecular identity used for generation;
+- stereochemistry, tautomer, protonation, and charge state;
+- number of conformers and pruning rule;
+- energy minimization or ranking method;
+- coordinate units and software version.
+
 ## Checks
 
 - Was conformer generation seeded and versioned?
@@ -33,6 +53,15 @@ $$
 - Are metrics stable across conformer ensembles?
 - Does the task need ligand-only conformers or protein-bound poses?
 - Is the conformer generation protocol part of the featurization contract?
+
+## Evaluation Boundary
+
+If the model consumes or predicts conformers, evaluation should separate:
+
+- conformer validity: chemically plausible geometry;
+- conformer coverage: whether low-energy or bioactive-like states are represented;
+- pose correctness: placement relative to a protein pocket;
+- property utility: whether conformers improve the downstream prediction.
 
 ## Conformer vs Pose
 
@@ -45,6 +74,14 @@ X_{\mathrm{pose}}(P)
 $$
 
 The pose depends on the protein or pocket context $P$. A model trained on bound poses but evaluated on ligand-only conformers is under a representation shift.
+
+## Failure Modes
+
+- Train structures are experimental or bound poses, while inference uses generated conformers.
+- Only the lowest-energy conformer is used even when the bioactive state differs.
+- Conformer ensembles are generated with a different tautomer/protonation policy than training.
+- Metrics ignore variance across conformers and report one lucky geometry.
+- Coordinates are centered or aligned with deployment-unavailable context.
 
 ## Related
 
