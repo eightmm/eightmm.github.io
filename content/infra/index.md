@@ -6,9 +6,7 @@ tags:
 
 # Infra
 
-서버, GPU, HPC, research engineering 운영 지식을 정리하는 입구입니다. 세부 문서는 일반화된 운영 방법만 남기고, 실제 내부 시스템 정보는 공개하지 않습니다.
-
-운영 글은 문제를 그대로 적기보다 공개 가능한 runbook으로 정제합니다. 증상, 원인 후보, 수집할 evidence, 안전한 조치, 예방책을 남기고 private host, account name, SSH connection detail, internal path, credential, private queue name, user list, firewall detail, unpublished run result는 쓰지 않습니다.
+서버, GPU, HPC, research engineering 운영 지식을 정리하는 입구입니다. 운영 경험은 특정 장비나 내부 환경보다 재사용 가능한 진단 절차와 runbook 형태로 남깁니다.
 
 ## Main Areas
 
@@ -37,8 +35,9 @@ tags:
 
 ## 관련 입구
 
-- [[concepts/systems/index|AI systems]]
-- [[agents/workflows/llm-wiki|LLM Wiki]]
-- [[projects/index|Project index]]
-- [[projects/hpc-research-workflows|HPC research workflows]]
-- [[concepts/evaluation/index|Evaluation]]
+| Area | Link |
+| --- | --- |
+| AI systems concepts | [[concepts/systems/index|AI systems]] |
+| Project workflow | [[projects/index|Projects]], [[projects/hpc-research-workflows|HPC research workflows]] |
+| Evaluation boundary | [[concepts/evaluation/index|Evaluation]] |
+| Agent workflow | [[agents/workflows/llm-wiki|LLM Wiki]] |

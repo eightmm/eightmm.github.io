@@ -43,49 +43,39 @@ Use the category that explains the durable idea, not the product name that happe
 
 ## Core Concepts
 
-- [[agents/core/agent-architecture|Agent architecture]]
-- [[agents/core/agent-operating-contract|Agent operating contract]]
-- [[agents/core/agent-loop|Agent loop]]
-- [[agents/core/agent-environment|Agent environment]]
-- [[agents/core/action-space|Action space]]
-- [[agents/core/agent-state|Agent state]]
-- [[agents/core/context-engineering|Context engineering]]
-- [[concepts/llm/prompting|Prompting]]
-- [[concepts/llm/structured-output|Structured output]]
-- [[agents/tools/tool-use|Tool use]]
-- [[agents/tools/tool-contract|Tool contract]]
-- [[agents/tools/tool-result-handling|Tool result handling]]
-- [[agents/core/planning|Planning]]
-- [[agents/core/task-decomposition|Task decomposition]]
-- [[agents/core/agent-memory|Agent memory]]
-- [[agents/core/memory-boundary|Memory boundary]]
-- [[agents/verification/verification-loop|Verification loop]]
-- [[agents/verification/acceptance-criteria|Acceptance criteria]]
-- [[agents/verification/evidence-ledger|Evidence ledger]]
-- [[agents/verification/completion-audit|Completion audit]]
-- [[agents/verification/reflection-and-critique|Reflection and critique]]
-- [[agents/verification/agent-evaluation|Agent evaluation]]
-- [[agents/verification/human-in-the-loop|Human in the loop]]
-- [[agents/verification/prompt-injection|Prompt injection]]
+| Group | Notes |
+| --- | --- |
+| Core model | [[agents/core/agent-architecture|Agent architecture]], [[agents/core/agent-operating-contract|Agent operating contract]], [[agents/core/agent-loop|Agent loop]] |
+| Environment and state | [[agents/core/agent-environment|Agent environment]], [[agents/core/action-space|Action space]], [[agents/core/agent-state|Agent state]] |
+| Context and memory | [[agents/core/context-engineering|Context engineering]], [[agents/core/agent-memory|Agent memory]], [[agents/core/memory-boundary|Memory boundary]] |
+| Planning | [[agents/core/planning|Planning]], [[agents/core/task-decomposition|Task decomposition]] |
+| LLM interface | [[concepts/llm/prompting|Prompting]], [[concepts/llm/structured-output|Structured output]] |
+| Tools | [[agents/tools/tool-use|Tool use]], [[agents/tools/tool-contract|Tool contract]], [[agents/tools/tool-result-handling|Tool result handling]] |
+| Verification | [[agents/verification/verification-loop|Verification loop]], [[agents/verification/acceptance-criteria|Acceptance criteria]], [[agents/verification/evidence-ledger|Evidence ledger]] |
+| Review and safety | [[agents/verification/completion-audit|Completion audit]], [[agents/verification/reflection-and-critique|Reflection and critique]], [[agents/verification/agent-evaluation|Agent evaluation]], [[agents/verification/human-in-the-loop|Human in the loop]], [[agents/verification/prompt-injection|Prompt injection]] |
 
 ## Workflows
 
-- [[agents/workflows/coding-agents|Coding agents]]
-- [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
-- [[agents/workflows/agent-orchestration|Agent orchestration]]
-- [[agents/workflows/agent-handoff|Agent handoff]]
-- [[agents/workflows/agent-runbook|Agent runbook]]
-- [[agents/workflows/multi-agent-review|Multi-agent review]]
-- [[agents/workflows/llm-wiki|LLM Wiki]]
-- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
-- [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
+| Workflow | Use For |
+| --- | --- |
+| [[agents/workflows/coding-agents|Coding agents]] | implementation and repository work |
+| [[agents/workflows/paper-brief-workflow|Paper brief workflow]] | paper intake and synthesis |
+| [[agents/workflows/agent-orchestration|Agent orchestration]] | multiple agents or tools |
+| [[agents/workflows/agent-handoff|Agent handoff]] | passing state between workers |
+| [[agents/workflows/agent-runbook|Agent runbook]] | repeatable operating procedure |
+| [[agents/workflows/multi-agent-review|Multi-agent review]] | independent verification |
+| [[agents/workflows/llm-wiki|LLM Wiki]] | knowledge-base maintenance |
+| [[agents/workflows/content-promotion-workflow|Content promotion workflow]] | inbox to note/post/project promotion |
+| [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]] | project-level paper workflow |
 
 ## Learning and Feedback
 
-- [[concepts/learning/imitation-learning|Imitation learning]]
-- [[concepts/learning/reinforcement-learning|Reinforcement learning]]
-- [[concepts/learning/reward-modeling|Reward modeling]]
-- [[concepts/learning/preference-optimization|Preference optimization]]
+| Method | Link |
+| --- | --- |
+| Imitation | [[concepts/learning/imitation-learning|Imitation learning]] |
+| Reinforcement | [[concepts/learning/reinforcement-learning|Reinforcement learning]] |
+| Reward modeling | [[concepts/learning/reward-modeling|Reward modeling]] |
+| Preference objective | [[concepts/learning/preference-optimization|Preference optimization]] |
 
 ## Writing Rules
 
@@ -96,9 +86,8 @@ Use the category that explains the durable idea, not the product name that happe
 
 ## Related
 
-- [[agents/workflows/llm-wiki|LLM Wiki]]
-- [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
-- [[concepts/architectures/transformer|Transformer]]
-- [[inbox/index|Inbox]]
-- [[projects/index|Projects]]
-- [[logs/index|Public logs]]
+| Area | Link |
+| --- | --- |
+| Knowledge workflow | [[agents/workflows/llm-wiki|LLM Wiki]], [[inbox/index|Inbox]] |
+| LLM behavior | [[concepts/llm/hallucination-grounding|Hallucination and grounding]], [[concepts/architectures/transformer|Transformer]] |
+| Public work records | [[projects/index|Projects]], [[logs/index|Public logs]] |
