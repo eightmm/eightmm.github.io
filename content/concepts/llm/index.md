@@ -25,6 +25,7 @@ LLM concepts describe language models, context, retrieval, and workflow patterns
 - [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]
 - [[concepts/llm/hallucination-grounding|Hallucination and grounding]]
 - [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]]
+- [[concepts/llm/citation-grounding|Citation grounding]]
 - [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]]
 - [[concepts/llm/embedding-retrieval|Embedding retrieval]]
 - [[concepts/llm/chunking|Chunking]]

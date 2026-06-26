@@ -40,6 +40,67 @@ $$
 \operatorname{mIoU}=\frac{1}{C}\sum_{c=1}^{C}\operatorname{IoU}_c
 $$
 
+## Output Space
+
+Segmentation output is dense:
+
+$$
+f_\theta(x)
+\rightarrow
+\hat{P}
+\in
+[0,1]^{C\times H\times W}
+$$
+
+where $\hat{P}_{c,h,w}$ is the predicted probability for class $c$ at position $(h,w)$. The hard mask is usually:
+
+$$
+\hat{Y}_{h,w}
+=
+\arg\max_c
+\hat{P}_{c,h,w}
+$$
+
+For multi-label masks, each class may instead use an independent threshold.
+
+## Loss Choices
+
+Common losses include pixel cross-entropy:
+
+$$
+\mathcal{L}_{\mathrm{CE}}
+=
+-
+\sum_{h,w}
+\log
+\hat{P}_{Y_{h,w},h,w}
+$$
+
+and Dice-style overlap:
+
+$$
+\operatorname{Dice}
+=
+\frac{
+2|\hat{Y}\cap Y|
+}{
+|\hat{Y}|+|Y|
+}
+$$
+
+The loss should match whether missing boundaries, small objects, foreground coverage, or class balance matters most.
+
+## Failure Boundary
+
+Segmentation errors can come from:
+
+- boundary shift;
+- missing small regions;
+- false positive regions;
+- merged or split instances;
+- label ambiguity from weak masks;
+- resizing or interpolation artifacts.
+
 ## Checks
 
 - Are boundaries or interior regions more important?
@@ -47,11 +108,17 @@ $$
 - Are masks generated manually, automatically, or from weak labels?
 - Does resizing preserve thin structures?
 - For scientific data, does the mask correspond to a physically meaningful region?
+- Are unlabeled pixels ignored, treated as background, or treated as unknown?
+- Is the task semantic, instance, panoptic, or multi-label segmentation?
+- Is metric computed per image, per class, or over the whole dataset?
 
 ## Related
 
 - [[concepts/modalities/image|Image]]
 - [[concepts/modalities/video|Video]]
 - [[concepts/tasks/object-detection|Object detection]]
+- [[concepts/tasks/localization|Localization]]
+- [[concepts/tasks/structured-prediction|Structured prediction]]
+- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/architectures/u-net|U-Net]]
 - [[concepts/evaluation/metric|Metric]]

@@ -33,6 +33,7 @@ This number is only meaningful if the held-out set matches the intended generali
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/evaluation/confusion-matrix|Confusion matrix]]
 - [[concepts/evaluation/threshold-selection|Threshold selection]]
+- [[concepts/evaluation/precision-recall|Precision and recall]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/evaluation/probability-metrics|Probability metrics]]
 - [[concepts/evaluation/proper-scoring-rule|Proper scoring rule]]
