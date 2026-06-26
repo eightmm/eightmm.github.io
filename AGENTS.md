@@ -199,6 +199,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - Do not expose internal editorial mechanics on public gateway pages, such as saying a page is a gateway or that linked notes are canonical wiki notes. Put those rules in `AGENTS.md`, workflow notes, or writing guides instead.
 - When a section has more than four similar bullets with descriptions, consider a Markdown table with columns such as `Area`, `Use For`, `Start Here`, `Risk`, or `Next`.
 - Keep table cells short. If a cell needs multiple sentences, split the table or move detail into the linked note.
+- For AI/Bio/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
 
 ## Mathematical Writing
 

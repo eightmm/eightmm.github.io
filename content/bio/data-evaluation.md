@@ -41,6 +41,16 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/sbdd/template-leakage|Template leakage]]
 - [[concepts/evaluation/assay-harmonization|Assay harmonization]]
 
+## Claim to Split Map
+
+| Claim | Stronger Split | Weak Split Risk |
+| --- | --- | --- |
+| New molecule within known targets | scaffold or chemical-series split | random split can memorize close analogs |
+| New protein target | protein-family or sequence-identity split | random target rows can share homologs |
+| New protein-ligand pair | pair split plus scaffold and protein controls | pair split alone may preserve both ligand and protein neighborhoods |
+| New assay/source | source or temporal split | assay-specific artifacts can leak across rows |
+| New structure template | template-aware structure split | homologous structures can make pose tasks too easy |
+
 ## Evaluation
 
 - [[concepts/evaluation/index|Evaluation]]

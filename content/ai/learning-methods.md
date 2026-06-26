@@ -68,6 +68,49 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 - [[concepts/learning/active-learning|Active learning]]
 - [[concepts/learning/preference-optimization|Preference optimization]]
 
+## 학습 신호 기준
+
+| Method | Signal | Typical Objective | Read |
+| --- | --- | --- | --- |
+| Supervised learning | human or measured label $y$ | prediction loss $\mathcal{L}(f_\theta(x), y)$ | [Supervised learning](/concepts/learning/supervised-learning) |
+| Semi-supervised learning | small labeled set plus unlabeled data | supervised loss plus consistency or pseudo-label term | [Semi-supervised learning](/concepts/learning/semi-supervised-learning) |
+| Self-supervised learning | target derived from the input itself | masked, contrastive, predictive, or reconstruction loss | [Self-supervised learning](/concepts/learning/self-supervised-learning) |
+| Contrastive learning | positive and negative pairs | rank matched pairs above mismatches | [Contrastive learning](/concepts/learning/contrastive-learning) |
+| JEPA-style learning | representation prediction without pixel/token reconstruction | predict latent target from context | [JEPA](/concepts/learning/jepa) |
+| Transfer / fine-tuning | pretrained model plus target task | adapt representation under a new validation rule | [Transfer learning](/concepts/learning/transfer-learning), [Fine-tuning](/concepts/learning/fine-tuning) |
+| Preference optimization | pairwise or listwise preference signal | prefer chosen output over rejected output | [Preference optimization](/concepts/learning/preference-optimization) |
+| Reinforcement learning | reward from environment or evaluator | maximize expected return | [Reinforcement learning](/concepts/learning/reinforcement-learning) |
+
+## Contrastive and Preference Forms
+
+Contrastive learning usually compares a positive pair against a set of negatives:
+
+$$
+\mathcal{L}_{\mathrm{NCE}}
+=
+-\log
+\frac{\exp(\operatorname{sim}(z_i,z_i^+)/\tau)}
+{\exp(\operatorname{sim}(z_i,z_i^+)/\tau)+
+\sum_{j}\exp(\operatorname{sim}(z_i,z_j^-)/\tau)}
+$$
+
+Here $z_i$ is an anchor representation, $z_i^+$ is a positive representation, $z_j^-$ are negatives, and $\tau$ is a temperature.
+
+Preference objectives compare outputs for the same context:
+
+$$
+\max_\theta
+\mathbb{E}_{(x,y^+,y^-)}
+\left[
+\log \sigma
+\left(
+r_\theta(x,y^+) - r_\theta(x,y^-)
+\right)
+\right]
+$$
+
+Here $y^+$ is preferred over $y^-$ and $r_\theta$ is a learned or implicit reward score.
+
 ## 읽을 때 볼 질문
 
 - label이 충분한가, 아니면 pretraining signal이 필요한가?

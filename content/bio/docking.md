@@ -34,6 +34,19 @@ where $P$ is the protein or pocket, $L$ is the ligand, $c$ is context such as po
 | Screen libraries | [Virtual screening](/concepts/sbdd/virtual-screening), [Interaction fingerprint](/concepts/sbdd/interaction-fingerprint) |
 | Check generalization | [Protein-ligand split](/concepts/sbdd/protein-ligand-split), [Template leakage](/concepts/sbdd/template-leakage) |
 
+## Object Contract
+
+Docking examples should state the object boundary before model claims.
+
+| Field | Meaning |
+| --- | --- |
+| Protein or pocket | full receptor, cleaned receptor, predicted pocket, known binding site, or blind search region |
+| Ligand identity | standardized molecule, tautomer/protonation/stereo state, conformer source |
+| Pose target | crystallographic pose, curated reference pose, generated candidate pose, or no pose label |
+| Search space | fixed pocket, flexible side chains, ligand flexibility, constraints, or blind docking |
+| Scoring target | pose ranking, candidate ranking, affinity proxy, enrichment, or downstream selection |
+| Split unit | ligand scaffold, protein family, complex pair, assay/source, or time |
+
 ## Separation of Claims
 
 Do not collapse these claims:
@@ -43,6 +56,18 @@ Do not collapse these claims:
 - scoring: does the method rank poses or candidates well?
 - affinity prediction: does the method estimate binding-related labels?
 - virtual screening: does the method enrich useful candidates early?
+
+The same method can be strong for one claim and weak for another. A low pose RMSD does not automatically prove affinity prediction, and a high enrichment score does not automatically prove chemically valid poses.
+
+## Typical Metrics
+
+| Claim | Typical Metric | Caveat |
+| --- | --- | --- |
+| Pose generation | RMSD to reference pose | symmetry correction and atom mapping matter |
+| Pose plausibility | geometry checks, steric clashes, bond validity, interaction sanity | a plausible pose can still rank poorly |
+| Scoring / ranking | Spearman, Kendall, top-k success, enrichment | score calibration is separate from ranking |
+| Affinity prediction | RMSE, MAE, Pearson/Spearman, calibration diagnostics | assay noise and label semantics dominate |
+| Virtual screening | enrichment factor, BEDROC, ROC-AUC, PR-AUC | active/decoy construction can bias conclusions |
 
 ## Checks
 

@@ -43,6 +43,28 @@ If the object, measurement, representation, or claim is vague, the model result 
 - What split unit supports the claim: scaffold, protein family, complex pair, assay, or time?
 - What metric answers the actual task rather than a convenient proxy?
 
+## Representation Map
+
+| Object | Common Representations | Main Risk |
+| --- | --- | --- |
+| Molecule / ligand | SMILES, molecular graph, fingerprint, conformer ensemble | identity drift from salt, tautomer, protonation, stereo, or standardization choices |
+| Protein | amino-acid sequence, MSA, structure, residue graph, pocket representation | family leakage, residue-index mismatch, missing regions, structure-cleaning artifacts |
+| Protein-ligand complex | pocket-ligand coordinates, interaction graph, distance/contact features | template leakage, ligand-defined pocket leakage, symmetry-incorrect pose comparison |
+| Assay label | endpoint, unit, threshold, censoring, source, target context | mixing incompatible assays or treating weak labels as clean labels |
+| Genome region | sequence window, k-mer counts, variant context, annotation features | coordinate-system mismatch and overbroad omics claims |
+
+## Claim Template
+
+A public Bio claim should be reducible to:
+
+$$
+(\text{object},\ \text{context},\ \text{representation},\ \text{split},\ \text{metric})
+\rightarrow
+\text{claim}
+$$
+
+For example, a docking note should not only say that a model performs well. It should say whether the claim is about pose generation, pose plausibility, ranking, affinity prediction, enrichment, or out-of-family generalization.
+
 ## Boundaries
 
 | Include | Defer |

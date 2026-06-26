@@ -46,6 +46,49 @@ Bio에서는 $c$가 protein sequence, binding pocket, target property, text inst
 - [[concepts/generative-models/gan|GAN]]
 - [[concepts/generative-models/consistency-model|Consistency model]]
 
+## 모델 계열 구분
+
+| Family | Learns | Typical Sampling | Read |
+| --- | --- | --- | --- |
+| Autoregressive | next-token or next-step conditional distribution | sequential decoding | [Autoregressive model](/concepts/generative-models/autoregressive-model) |
+| Latent variable | latent representation and decoder likelihood | sample latent, decode output | [Latent variable model](/concepts/generative-models/latent-variable-model), [VAE](/concepts/generative-models/vae) |
+| Adversarial | generator that fools a discriminator | direct generator pass | [GAN](/concepts/generative-models/gan) |
+| Diffusion / score | denoising score or noise prediction | iterative denoising | [Diffusion model](/concepts/generative-models/diffusion-model), [Score-based model](/concepts/generative-models/score-based-model) |
+| Flow matching | vector field along a probability path | integrate an ODE-like path | [Flow matching](/concepts/generative-models/flow-matching), [Rectified flow](/concepts/generative-models/rectified-flow) |
+| Normalizing flow | invertible change of variables | sample base noise, invert map | [Normalizing flow](/concepts/generative-models/normalizing-flow) |
+| Consistency | direct jump between noisy and clean states | few-step or one-step generation | [Consistency model](/concepts/generative-models/consistency-model) |
+
+## Objective 기준
+
+Likelihood-based models usually optimize a negative log-likelihood:
+
+$$
+\min_\theta
+\mathbb{E}_{x\sim p_{\mathrm{data}}}
+[-\log p_\theta(x)]
+$$
+
+Latent-variable models introduce an unobserved variable $z$ and optimize a tractable lower bound:
+
+$$
+\log p_\theta(x)
+\ge
+\mathbb{E}_{q_\phi(z\mid x)}
+[\log p_\theta(x\mid z)]
+-
+D_{\mathrm{KL}}(q_\phi(z\mid x)\,\|\,p(z))
+$$
+
+Score and flow models often avoid direct likelihood as the main training target. They learn a vector-valued target such as a score, noise, denoised sample, or velocity:
+
+$$
+s_\theta(x_t,t) \approx \nabla_{x_t}\log p_t(x_t),
+\qquad
+v_\theta(x_t,t) \approx u_t(x_t)
+$$
+
+When reading a paper, first identify the learned quantity before comparing architectures.
+
 ## Bio 연결
 
 - [[concepts/generative-models/molecular-generation|Molecular generation]]

@@ -8,7 +8,7 @@ tags:
 
 # Genome
 
-A genome is the complete genetic sequence of an organism or sample. In this wiki, genome notes are limited to sequence modeling and bio-AI context, not broad clinical omics or systems biology.
+A genome is the complete genetic sequence of an organism or sample. In this wiki, genome notes are limited to sequence modeling and Bio context, not broad clinical omics or systems biology.
 
 The local scope is intentionally narrow:
 
