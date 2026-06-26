@@ -21,69 +21,33 @@ $$
 
 This number is only meaningful if the held-out set matches the intended generalization claim.
 
-## Topics
+## Route Map
 
-- [[concepts/data/benchmark|Benchmark]]
-- [[concepts/data/sampling-strategy|Sampling strategy]]
-- [[concepts/tasks/index|Tasks]]
-- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
-- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
-- [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
-- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
-- [[concepts/evaluation/metric|Metric]]
-- [[concepts/evaluation/metric-selection|Metric selection]]
-- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
-- [[concepts/evaluation/confusion-matrix|Confusion matrix]]
-- [[concepts/evaluation/threshold-selection|Threshold selection]]
-- [[concepts/evaluation/precision-recall|Precision and recall]]
-- [[concepts/evaluation/classification-metrics|Classification metrics]]
-- [[concepts/evaluation/probability-metrics|Probability metrics]]
-- [[concepts/evaluation/proper-scoring-rule|Proper scoring rule]]
-- [[concepts/evaluation/brier-score|Brier score]]
-- [[concepts/evaluation/regression-metrics|Regression metrics]]
-- [[concepts/evaluation/ranking-metrics|Ranking metrics]]
-- [[concepts/evaluation/generation-evaluation|Generation evaluation]]
-- [[concepts/math/statistical-estimator|Statistical estimator]]
-- [[concepts/math/central-limit-theorem|Central limit theorem]]
-- [[concepts/math/hypothesis-testing|Hypothesis testing]]
-- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
-- [[concepts/evaluation/baseline|Baseline]]
-- [[concepts/evaluation/ablation-study|Ablation study]]
-- [[concepts/evaluation/confidence-interval|Confidence interval]]
-- [[concepts/evaluation/seed-variance|Seed variance]]
-- [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]]
-- [[concepts/evaluation/statistical-significance|Statistical significance]]
-- [[concepts/evaluation/effect-size|Effect size]]
-- [[concepts/evaluation/paired-comparison|Paired comparison]]
-- [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
-- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
-- [[concepts/evaluation/cross-validation|Cross-validation]]
-- [[concepts/machine-learning/model-selection|Model selection]]
-- [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]
-- [[concepts/machine-learning/early-stopping|Early stopping]]
-- [[concepts/evaluation/leakage|Leakage]]
-- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
-- [[concepts/evaluation/benchmark-saturation|Benchmark saturation]]
-- [[concepts/evaluation/calibration|Calibration]]
-- [[concepts/evaluation/reliability-diagram|Reliability diagram]]
-- [[concepts/evaluation/applicability-domain|Applicability domain]]
-- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
-- [[concepts/evaluation/negative-set|Negative set]]
-- [[concepts/evaluation/activity-cliff|Activity cliff]]
-- [[concepts/evaluation/scaffold-split|Scaffold split]]
-- [[concepts/evaluation/protein-family-split|Protein family split]]
-- [[concepts/evaluation/ood-generalization|OOD generalization]]
-- [[concepts/evaluation/boltzmann-ceiling|Boltzmann ceiling analysis]]
-- [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
-- [[concepts/evaluation/conformal-prediction|Conformal prediction]]
-- [[concepts/evaluation/selective-prediction|Selective prediction]]
-- [[concepts/evaluation/robustness|Robustness]]
-- [[concepts/evaluation/error-analysis|Error analysis]]
-- [[concepts/evaluation/interpretability|Interpretability]]
-- [[papers/analysis/result-table-reading|Result table reading]]
-- [[concepts/learning/representation-evaluation|Representation evaluation]]
-- [[concepts/learning/linear-probing|Linear probing]]
-- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
+| Question | Start | Then Check |
+| --- | --- | --- |
+| what claim does the score support? | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) | task, split, metric, baseline |
+| is the evaluation set valid? | [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Evaluation set design](/concepts/evaluation/evaluation-set-design) | sampling, exclusions, contamination |
+| which metric matches the task? | [Metric](/concepts/evaluation/metric), [Metric selection](/concepts/evaluation/metric-selection) | denominator, threshold, aggregation |
+| classification or detection? | [Confusion matrix](/concepts/evaluation/confusion-matrix), [Precision and recall](/concepts/evaluation/precision-recall), [Classification metrics](/concepts/evaluation/classification-metrics) | prevalence and threshold |
+| probabilistic prediction? | [Probability metrics](/concepts/evaluation/probability-metrics), [Proper scoring rule](/concepts/evaluation/proper-scoring-rule), [Brier score](/concepts/evaluation/brier-score), [Calibration](/concepts/evaluation/calibration) | reliability and NLL |
+| ranking, retrieval, or screening? | [Ranking metrics](/concepts/evaluation/ranking-metrics), [Negative set](/concepts/evaluation/negative-set) | label completeness and candidate pool |
+| regression or structure? | [Regression metrics](/concepts/evaluation/regression-metrics) | units, target scale, censoring, coordinate mapping |
+| generation? | [Generation evaluation](/concepts/evaluation/generation-evaluation) | validity, diversity, novelty, task utility |
+| is the improvement reliable? | [Baseline](/concepts/evaluation/baseline), [Paired comparison](/concepts/evaluation/paired-comparison), [Confidence interval](/concepts/evaluation/confidence-interval) | seed variance and effect size |
+| could there be leakage? | [Leakage](/concepts/evaluation/leakage), [Test-set contamination](/concepts/evaluation/test-set-contamination), [Train/validation/test split](/concepts/evaluation/train-validation-test-split) | example unit and split unit |
+
+## Method Groups
+
+| Group | Notes |
+| --- | --- |
+| Benchmarks | [Benchmark](/concepts/data/benchmark), [Sampling strategy](/concepts/data/sampling-strategy), [Benchmark saturation](/concepts/evaluation/benchmark-saturation) |
+| Statistical evidence | [Statistical estimator](/concepts/math/statistical-estimator), [Central limit theorem](/concepts/math/central-limit-theorem), [Hypothesis testing](/concepts/math/hypothesis-testing), [Bootstrap evaluation](/concepts/evaluation/bootstrap-evaluation) |
+| Model comparison | [Baseline](/concepts/evaluation/baseline), [Ablation study](/concepts/evaluation/ablation-study), [Statistical significance](/concepts/evaluation/statistical-significance), [Multiple comparisons](/concepts/evaluation/multiple-comparisons) |
+| Model selection | [Model selection](/concepts/machine-learning/model-selection), [Hyperparameter tuning](/concepts/machine-learning/hyperparameter-tuning), [Early stopping](/concepts/machine-learning/early-stopping), [Cross-validation](/concepts/evaluation/cross-validation) |
+| Uncertainty | [Uncertainty estimation](/concepts/evaluation/uncertainty-estimation), [Reliability diagram](/concepts/evaluation/reliability-diagram), [Conformal prediction](/concepts/evaluation/conformal-prediction), [Selective prediction](/concepts/evaluation/selective-prediction) |
+| Chem-bio risks | [Applicability domain](/concepts/evaluation/applicability-domain), [Assay harmonization](/concepts/evaluation/assay-harmonization), [Activity cliff](/concepts/evaluation/activity-cliff), [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split), [Boltzmann ceiling analysis](/concepts/evaluation/boltzmann-ceiling) |
+| Diagnosis | [Failure mode taxonomy](/concepts/evaluation/failure-mode-taxonomy), [Error analysis](/concepts/evaluation/error-analysis), [Robustness](/concepts/evaluation/robustness), [Interpretability](/concepts/evaluation/interpretability) |
+| Reading papers | [Result table reading](/papers/analysis/result-table-reading), [Representation evaluation](/concepts/learning/representation-evaluation), [Linear probing](/concepts/learning/linear-probing), [Fine-tuning protocol](/concepts/learning/fine-tuning-protocol) |
 
 ## Related
 

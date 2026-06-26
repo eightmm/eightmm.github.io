@@ -61,6 +61,48 @@ Precision and recall also apply beyond classification:
 - Object detection: precision and recall depend on class, confidence threshold, and IoU matching.
 - Virtual screening: early precision or enrichment may matter more than global recall.
 
+## Prevalence Boundary
+
+Precision depends on class prevalence:
+
+$$
+\operatorname{Precision}
+=
+\frac{\pi\operatorname{TPR}}
+{\pi\operatorname{TPR} + (1-\pi)\operatorname{FPR}}
+$$
+
+where $\pi=P(y=1)$ is prevalence. The same classifier can have very different precision when deployment prevalence differs from the benchmark.
+
+Recall does not depend on the number of true negatives, but it depends on what was labeled as positive and whether positives are complete.
+
+## F Score
+
+The $F_\beta$ score combines precision and recall:
+
+$$
+F_\beta
+=
+(1+\beta^2)
+\frac{\operatorname{Precision}\cdot\operatorname{Recall}}
+{\beta^2\operatorname{Precision}+\operatorname{Recall}}
+$$
+
+$\beta>1$ emphasizes recall, while $\beta<1$ emphasizes precision. Report $\beta$ and the threshold-selection rule.
+
+## Averaging
+
+For multi-class or multi-label tasks:
+
+| Averaging | Meaning |
+| --- | --- |
+| micro | pool TP/FP/FN globally |
+| macro | average class-level metrics equally |
+| weighted | average class-level metrics by support |
+| per-class | report each label separately |
+
+Macro metrics reveal rare-class failures. Micro metrics can hide them.
+
 ## Checks
 
 - What counts as a positive?
@@ -68,6 +110,7 @@ Precision and recall also apply beyond classification:
 - Is the threshold fixed before final evaluation?
 - Is prevalence similar between validation, test, and deployment?
 - Is precision/recall reported per class, macro-averaged, or micro-averaged?
+- Are labels complete enough that missing positives are not counted as false positives?
 
 ## Related
 
