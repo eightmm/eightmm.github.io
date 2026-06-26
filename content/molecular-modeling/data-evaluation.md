@@ -29,6 +29,7 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/data/label-semantics|Label semantics]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
+- [[concepts/molecular-modeling/chemical-state-contract|Chemical state contract]]
 - [[entities/target-assay-label|Target-assay-label contract]]
 - [[entities/bioactivity-label|Bioactivity label]]
 
@@ -75,6 +76,7 @@ For molecular modeling papers, a model score is not enough. Record the modeled o
 | Example unit | molecule, protein, assay record, complex, pose, generated sample, or genomic region |
 | Label semantics | endpoint, direction, unit, threshold, censoring, replicate aggregation, and source |
 | Preprocessing | molecule standardization, protein/structure cleaning, sequence filtering, coordinate source |
+| Chemical state | salt, stereo, tautomer, protonation, charge, conformer, and cache policy |
 | Split unit | scaffold, protein family, complex pair, assay/source, time, or template-aware split |
 | Baseline | fingerprint/tree model, sequence similarity, docking baseline, or task-specific simple model |
 | Metric | primary decision metric plus diagnostics for calibration, uncertainty, or failure modes |

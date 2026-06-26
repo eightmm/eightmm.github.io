@@ -66,7 +66,7 @@ $$
 
 | Topic | Must Cover | Route |
 | --- | --- | --- |
-| Molecule or ligand model | standardization, identity, representation, scaffold split, property or interaction label | [Molecules](/molecular-modeling/molecules) |
+| Molecule or ligand model | standardization, identity, chemical state, representation, scaffold split, property or interaction label | [Molecules](/molecular-modeling/molecules), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
 | Protein model | sequence, structure, domains, residue indexing, family split, representation | [Proteins](/molecular-modeling/proteins) |
 | Protein-ligand complex | protein context, ligand context, pocket, pose, interaction, split on both axes | [Structure-based modeling](/molecular-modeling/structure-based) |
 | Docking or virtual screening | receptor/ligand preparation, pose generation, scoring, filtering, enrichment metric | [Docking](/molecular-modeling/docking) |

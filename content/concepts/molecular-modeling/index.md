@@ -44,6 +44,7 @@ Do not split or aggregate labels before the molecular identity policy is explici
 
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
 - [[concepts/molecular-modeling/molecular-identity|Molecular identity]]
+- [[concepts/molecular-modeling/chemical-state-contract|Chemical state contract]]
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]

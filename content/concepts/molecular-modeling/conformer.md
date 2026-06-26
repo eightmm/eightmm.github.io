@@ -97,6 +97,7 @@ The pose depends on the protein or pocket context $P$. A model trained on bound 
 ## Related
 
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
+- [[concepts/molecular-modeling/chemical-state-contract|Chemical state contract]]
 - [[concepts/molecular-modeling/force-field|Force field]]
 - [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
 - [[molecular-modeling/modeling-scope|Molecular Modeling Scope]]

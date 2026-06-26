@@ -23,6 +23,7 @@ $$
 | --- | --- | --- |
 | Object | Is the example a molecule, ligand, protein, pocket, complex, pose, assay record, or genome region? | [Entities](/molecular-modeling/entities) |
 | Representation | Is it SMILES, graph, fingerprint, sequence, embedding, conformer, coordinate, or complex graph? | [Molecules](/molecular-modeling/molecules), [Proteins](/molecular-modeling/proteins), [Geometry](/molecular-modeling/geometry) |
+| Chemical state | Are salt, stereochemistry, tautomer, protonation, charge, and conformer policy fixed? | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
 | Context | Does prediction depend on target, assay, pocket, receptor state, species, construct, or template? | [Computational Biology](/molecular-modeling/computational-biology) |
 | Label | What endpoint, unit, direction, threshold, censoring, replicate rule, and source define the target? | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 | Split | What unit is held out: scaffold, sequence family, complex pair, assay/source, time, or template? | [Data and Evaluation](/molecular-modeling/data-evaluation) |
@@ -48,6 +49,7 @@ A molecular modeling paper note should record:
 - Example unit: molecule, protein, complex, pose, assay record, or generated sample.
 - Label semantics: endpoint, unit, direction, threshold, censoring, replicate aggregation, and source.
 - Preprocessing: molecule standardization, protein cleaning, coordinate source, protonation, conformer rule.
+- Chemical state: salt policy, stereo, tautomer, protonation, charge, conformer generation, and featurizer cache key.
 - Split unit: scaffold, protein family, complex pair, assay/source, time, or template-aware split.
 - Baseline: fingerprint/tree model, sequence similarity, docking score, or a task-specific simple model.
 - Metric: primary decision metric plus calibration, uncertainty, enrichment, or failure diagnostics.

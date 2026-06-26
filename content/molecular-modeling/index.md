@@ -56,7 +56,7 @@ $$
 | Topic | Start |
 | --- | --- |
 | Overview | [Molecules](/molecular-modeling/molecules), [Molecular modeling concepts](/concepts/molecular-modeling) |
-| Identity and cleanup | [Molecular standardization](/concepts/molecular-modeling/molecular-standardization), [Molecular identity](/concepts/molecular-modeling/molecular-identity) |
+| Identity and cleanup | [Molecular standardization](/concepts/molecular-modeling/molecular-standardization), [Molecular identity](/concepts/molecular-modeling/molecular-identity), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
 | Representation | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) |
 | Tasks | [Property prediction](/concepts/tasks/property-prediction), [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction), [Molecular similarity](/concepts/molecular-modeling/molecular-similarity) |
 | Structure and chemistry details | [Conformer](/concepts/molecular-modeling/conformer), [Tautomer](/concepts/molecular-modeling/tautomer), [Protonation state](/concepts/molecular-modeling/protonation-state), [Stereochemistry](/concepts/molecular-modeling/stereochemistry) |
@@ -84,6 +84,7 @@ $$
 | Example and split units | [Example unit](/concepts/data/example-unit), [Split unit](/concepts/data/split-unit) |
 | Label semantics | [Label semantics](/concepts/data/label-semantics), [Target-assay-label contract](/entities/target-assay-label), [Bioactivity label](/entities/bioactivity-label) |
 | Preprocessing | [Preprocessing contract](/concepts/data/preprocessing-contract) |
+| Chemical state | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract), [Molecular identity](/concepts/molecular-modeling/molecular-identity) |
 | Evaluation protocol | [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Leakage](/concepts/evaluation/leakage) |
 | Molecular Modeling-specific splits | [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split), [Protein-ligand split](/concepts/sbdd/protein-ligand-split) |
 | Assay integration | [Assay harmonization](/concepts/evaluation/assay-harmonization) |
@@ -127,6 +128,7 @@ Molecular modeling 쪽 논문은 모델 성능보다 object, label, split, leaka
 | --- | --- | --- |
 | Modeled object | molecule, protein, ligand, pocket, complex, genome region 중 무엇인가 | [Entities](/molecular-modeling/entities) |
 | Representation | string, graph, fingerprint, embedding, conformer, coordinate, complex graph 중 무엇인가 | [Molecules](/molecular-modeling/molecules), [Proteins](/molecular-modeling/proteins), [Geometry](/molecular-modeling/geometry) |
+| Chemical state | salt, stereo, tautomer, protonation, charge, conformer policy가 명확한가 | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
 | Representation contract | raw object가 model-ready input으로 어떻게 바뀌는가 | [Representation contract](/concepts/modalities/representation-contract) |
 | Label context | target, assay, endpoint, unit, threshold, censoring, source가 명확한가 | [Data and evaluation](/molecular-modeling/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
 | Structure context | apo/holo, predicted/experimental, pocket-defined/blind, ligand-defined 여부가 명확한가 | [Structure-based modeling](/molecular-modeling/structure-based), [Docking](/molecular-modeling/docking) |

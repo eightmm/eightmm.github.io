@@ -91,6 +91,7 @@ the aggregation rule must be explicit: median, mean, keep-by-assay, drop conflic
 ## Related
 
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
+- [[concepts/molecular-modeling/chemical-state-contract|Chemical state contract]]
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
