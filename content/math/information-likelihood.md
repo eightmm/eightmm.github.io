@@ -49,6 +49,17 @@ $$
 
 where $y_k$ is a one-hot or soft target.
 
+## Likelihood Reading Checklist
+
+| Question | Why It Matters | Start |
+| --- | --- | --- |
+| What probability is defined? | $p(x)$, $p(y\mid x)$, $p(x,y)$, $p(x\mid c)$, and unnormalized scores support different claims | [Maximum likelihood](/concepts/math/maximum-likelihood) |
+| What is the support? | probabilities are only meaningful over the modeled vocabulary, class set, coordinate space, or sample space | [Probability distribution](/concepts/math/probability-distribution) |
+| What is averaged? | token, example, graph, atom, residue, pair, or trajectory denominators change the objective | [Loss function](/concepts/machine-learning/loss-function) |
+| Is the likelihood exact? | normalized likelihood, variational bounds, score objectives, and implicit models are not the same evidence | [Density estimation](/concepts/machine-learning/density-estimation) |
+| Does loss match utility? | better likelihood may not imply better ranking, generation, calibration, or domain utility | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| How is probability used? | training loss, model selection, calibration, sampling, and final decision can each require different evidence | [Probabilistic prediction](/concepts/machine-learning/probabilistic-prediction) |
+
 ## Generative Models
 
 - [[concepts/generative-models/latent-variable-model|Latent variable model]]
