@@ -23,31 +23,27 @@ $$
 
 ## 먼저 볼 지도
 
-| Area | 읽을 내용 | Start |
-| --- | --- | --- |
-| Math | probability, linear algebra, calculus, likelihood, information theory | [Math](/math) |
-| Machine Learning | prediction problem, feature, loss, optimization, validation | [Machine Learning](/ai/machine-learning) |
-| Architectures | MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE | [Architectures](/ai/architectures) |
-| Learning Methods | supervised, SSL, contrastive, JEPA, fine-tuning, preference/RL-style objective | [Learning Methods](/ai/learning-methods) |
-| Generative Models | autoregressive, VAE, GAN, diffusion, score, flow matching, normalizing flow | [Generative Models](/ai/generative-models) |
-| Evaluation | metric, split, leakage, calibration, OOD, uncertainty, failure analysis | [Evaluation](/ai/evaluation) |
-| Agents | tool use, memory, planning, verification, orchestration | [Agents](/agents) |
+- **Math**: probability, linear algebra, calculus, likelihood, information theory. [Start](/math)
+- **Machine Learning**: prediction problem, feature, loss, optimization, validation. [Start](/ai/machine-learning)
+- **Architectures**: MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE. [Start](/ai/architectures)
+- **Learning Methods**: supervised learning, self-supervised learning, contrastive learning, JEPA, fine-tuning, preference/RL-style objective. [Start](/ai/learning-methods)
+- **Generative Models**: autoregressive model, VAE, GAN, diffusion, score model, flow matching, normalizing flow. [Start](/ai/generative-models)
+- **Evaluation**: metric, split, leakage, calibration, OOD, uncertainty, failure analysis. [Start](/ai/evaluation)
+- **Agents**: tool use, memory, planning, verification, orchestration. [Start](/agents)
 
 ## 분류 기준
 
 AI note는 아래 질문으로 위치를 정합니다.
 
-| 질문 | 둘 곳 |
-| --- | --- |
-| 필요한 수학 정의인가? | [Math](/math) 또는 [Math foundations](/concepts/math) |
-| 입력과 출력이 무엇인가? | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
-| 예측 문제와 loss의 기본형인가? | [Machine Learning](/ai/machine-learning) |
-| 모델 내부 구조인가? | [Architectures](/ai/architectures) |
-| supervision/objective/transfer 방식인가? | [Learning Methods](/ai/learning-methods) |
-| sample을 만들거나 distribution을 모델링하는가? | [Generative Models](/ai/generative-models) |
-| 성능 claim을 어떻게 검증하는가? | [Evaluation](/ai/evaluation) |
-| 실행, serving, reproducibility 문제인가? | [Systems](/concepts/systems) 또는 [Infra](/infra) |
-| LLM이 도구를 쓰고 작업을 끝내는 방식인가? | [Agents](/agents) |
+- 필요한 수학 정의인가? → [Math](/math), [Math foundations](/concepts/math)
+- 입력과 출력이 무엇인가? → [Modalities](/concepts/modalities), [Tasks](/concepts/tasks)
+- 예측 문제와 loss의 기본형인가? → [Machine Learning](/ai/machine-learning)
+- 모델 내부 구조인가? → [Architectures](/ai/architectures)
+- supervision, objective, transfer 방식인가? → [Learning Methods](/ai/learning-methods)
+- sample을 만들거나 distribution을 모델링하는가? → [Generative Models](/ai/generative-models)
+- 성능 claim을 어떻게 검증하는가? → [Evaluation](/ai/evaluation)
+- 실행, serving, reproducibility 문제인가? → [Systems](/concepts/systems), [Infra](/infra)
+- LLM이 도구를 쓰고 작업을 끝내는 방식인가? → [Agents](/agents)
 
 ## 기본 읽기 경로
 
