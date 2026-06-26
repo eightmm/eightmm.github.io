@@ -79,12 +79,23 @@ for (const file of files) {
   for (const [from, to] of replacements) {
     const count = text.split(from).length - 1
     if (count === 0 && !text.includes(to)) {
+      const optionalCssAlternative =
+        from.includes("overflow: hidden") ||
+        from.includes("overflow:hidden") ||
+        from.includes("folder-outer.open")
       if (alreadyPatched) {
+        continue
+      }
+      if (optionalCssAlternative) {
         continue
       }
       throw new Error(`Explorer patch target not found in ${file}: ${from.slice(0, 80)}`)
     }
     text = text.split(from).join(to)
+  }
+
+  if (text.includes("folder-outer") && !text.includes("folder-outer:not(.open)")) {
+    throw new Error(`Explorer CSS collapse patch was not applied in ${file}`)
   }
 
   fs.writeFileSync(file, text)
