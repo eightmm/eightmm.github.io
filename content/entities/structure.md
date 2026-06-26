@@ -27,6 +27,64 @@ where $a_i$ is atom, residue, or site identity and $x_i$ is its coordinate.
 - Structural representations must distinguish coordinates, frames, distances, and chemical identity.
 - A structure can be represented as coordinates, distances, contact maps, residue graphs, surfaces, grids, or local frames.
 
+## Structure Contract
+
+| Field | Question | Example |
+| --- | --- | --- |
+| Unit | atom, residue, chain, pocket, complex, surface, grid? | protein backbone, ligand atoms |
+| Source | experimental, predicted, template-derived, docked, generated? | X-ray, cryo-EM, predicted structure |
+| Coordinate frame | global, receptor-aligned, ligand-centered, local residue frame? | arbitrary PDB frame |
+| Resolution | all atom, backbone, C-alpha, coarse-grained, surface points? | $C_\alpha$ trace |
+| Chemical state | protonation, tautomer, charge, waters, cofactors, metals? | prepared receptor |
+| Missing data | unresolved residues, missing atoms, alternate locations? | loop gaps, side-chain completion |
+| Allowed information | what was available at inference time? | no test ligand pose |
+
+For coordinate matrices:
+
+$$
+X\in\mathbb{R}^{N\times 3}
+$$
+
+the model should state whether atom/residue order is meaningful, arbitrary, or tied to a public indexing scheme.
+
+## Symmetry Boundary
+
+Rigid motions should not change scalar labels:
+
+$$
+f(XR^\top+\mathbf{1}t^\top)=f(X)
+$$
+
+Coordinate outputs should transform with the input:
+
+$$
+F(XR^\top+\mathbf{1}t^\top)=F(X)R^\top+\mathbf{1}t^\top
+$$
+
+If a paper uses absolute coordinates without explaining the frame, the structure claim is incomplete.
+
+## Source and Evidence
+
+| Structure Source | Claim Strength | Risk |
+| --- | --- | --- |
+| experimental structure | strongest for measured geometry | resolution, missing atoms, construct differences |
+| predicted structure | useful input or hypothesis | model bias and circular evidence |
+| template-derived structure | prior from homolog | template leakage |
+| docked structure | generated pose | scoring and pose quality must be separated |
+| generated structure | model output | validity and physical plausibility required |
+
+Structure source should be recorded before comparing metrics.
+
+## Evaluation Boundary
+
+| Claim | Metric or Check |
+| --- | --- |
+| coordinate accuracy | RMSD, aligned error, distance error |
+| contact prediction | precision/recall over contact map |
+| pose quality | pose RMSD, clash, interaction recovery |
+| geometry validity | bond lengths, angles, chirality, sterics |
+| functional relevance | assay, binding, or downstream task evidence |
+
 ## Checks
 
 - What coordinate frame, atom subset, and resolution are used?
@@ -35,6 +93,8 @@ where $a_i$ is atom, residue, or site identity and $x_i$ is its coordinate.
 - Is the output invariant, equivariant, or a mixture of scalar and coordinate predictions?
 - Is the structure experimental, predicted, relaxed, docked, or generated?
 - Does preprocessing leak a reference ligand, template, or future evaluation context?
+- Are atom/residue mappings and alignment policies specified for coordinate metrics?
+- Are invalid or incomplete structures counted rather than silently removed?
 
 ## Related
 
@@ -47,3 +107,5 @@ where $a_i$ is atom, residue, or site identity and $x_i$ is its coordinate.
 - [[concepts/protein-modeling/contact-map|Contact map]]
 - [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
+- [[concepts/sbdd/pose-quality|Pose quality]]
