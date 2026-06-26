@@ -18,6 +18,7 @@ Inbox notes hold sanitized daily candidates before they become curated paper not
 
 ## Workflow
 
+- [[inbox/paper-candidate-intake|Paper candidate intake]]
 - [[inbox/inbox-triage|Inbox triage]]
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[inbox/curation-queue|Curation queue]]
@@ -55,20 +56,24 @@ source: to verify
 
 ### Paper title
 
-- Source metadata: to verify
-- Track: [[research/index|Research]]
-- Related:
-  - [[concepts/index|Concepts]]
+- Source: to verify
+- Metadata: authors `to verify`; year `to verify`; venue/status `to verify`
+- Why collected: to verify
+- Primary route: paper / concept update / benchmark note / post idea / drop
+- Main axis: architecture / learning method / generative model / molecular modeling / Math / evaluation / systems / agents
+- Candidate claim: to verify
+- Evidence pointer: to verify
+- Related wiki notes:
+  - [Coverage matrix](/concepts/coverage-matrix)
+- Risk: to verify
+- Next action: verify metadata
 - Status: inbox
-- Follow-up:
-  - Verify metadata.
-  - Check relevance.
-  - Check benchmark and leakage issues.
 ```
 
 ## Related
 
 - [[inbox/inbox-triage|Inbox triage]]
+- [[inbox/paper-candidate-intake|Paper candidate intake]]
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]

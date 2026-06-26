@@ -19,20 +19,22 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 ## Flow
 
 1. Daily brief enters [[inbox/index|Inbox]].
-2. Unclear items stay in [[inbox/curation-queue|Curation queue]].
-3. Interesting items pass [[papers/workflows/paper-triage|Paper triage]].
-4. Selected items become [[papers/index|Paper]] stubs with [[papers/workflows/reading-status|reading status]].
-5. Public materials are recorded with [[papers/reproducibility/artifact-availability|Artifact availability]].
-6. Implementation candidates pass [[papers/reproducibility/implementation-readiness|Implementation readiness]].
-7. Reruns or diagnostics get a [[papers/reproducibility/reproduction-plan|Reproduction plan]] and [[papers/reproducibility/reproduction-result|Reproduction result]].
-8. Reusable ideas update [[concepts/index|Concepts]].
-9. Research relevance is linked into [[research/index|Research]].
-10. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
-11. Weekly or monthly synthesis becomes [[posts/index|Posts]].
+2. Each candidate uses [[inbox/paper-candidate-intake|Paper candidate intake]].
+3. Unclear items stay in [[inbox/curation-queue|Curation queue]].
+4. Interesting items pass [[papers/workflows/paper-triage|Paper triage]].
+5. Selected items become [[papers/index|Paper]] stubs with [[papers/workflows/reading-status|reading status]].
+6. Public materials are recorded with [[papers/reproducibility/artifact-availability|Artifact availability]].
+7. Implementation candidates pass [[papers/reproducibility/implementation-readiness|Implementation readiness]].
+8. Reruns or diagnostics get a [[papers/reproducibility/reproduction-plan|Reproduction plan]] and [[papers/reproducibility/reproduction-result|Reproduction result]].
+9. Reusable ideas update [[concepts/index|Concepts]] through [[papers/workflows/concept-update-contract|Concept update contract]].
+10. Research relevance is linked into [[research/index|Research]].
+11. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
+12. Weekly or monthly synthesis becomes [[posts/index|Posts]].
 
 ## Rules
 
 - Do not invent DOI, arXiv IDs, metrics, datasets, or claims.
+- Every candidate needs source, metadata, route, main axis, candidate claim, evidence pointer, risk, next action, and status.
 - Mark missing details as `to verify`.
 - Mark missing code, data, split, config, weight, log, prediction, and environment artifacts as `to verify` instead of assuming they exist.
 - Prefer concept growth over paper log accumulation.
@@ -45,9 +47,11 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 - [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[agents/verification/agent-evaluation|Agent evaluation]]
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]
+- [[inbox/paper-candidate-intake|Paper candidate intake]]
 - [[papers/workflows/paper-note-format|Paper note format]]
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
+- [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]
 - [[papers/reproducibility/artifact-availability|Artifact availability]]

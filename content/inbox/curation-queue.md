@@ -28,6 +28,7 @@ $$
 ## Queue Fields
 
 - Source: where the item came from, marked `to verify` if uncertain.
+- Paper candidate intake: source, metadata, why collected, route, axis, claim, evidence pointer, risk, next action.
 - Destination: paper, concept, project, research, log, or post.
 - Promotion workflow: target destination and reason, following [[agents/workflows/content-promotion-workflow|Content promotion workflow]].
 - Status: `inbox`, `stub`, `reading`, `draft`, `ready`, or `drop`.
@@ -37,6 +38,7 @@ $$
 ## Promotion Rules
 
 - Promote to [[papers/index|Papers]] when the item is paper-specific, metadata is verified, and it passes [[papers/workflows/paper-triage|Paper triage]].
+- Use [[inbox/paper-candidate-intake|Paper candidate intake]] before promoting agent-collected paper candidates.
 - Before reproduction planning, record paper-specific public artifacts with [[papers/reproducibility/artifact-availability|Artifact availability]].
 - Promote to [[concepts/index|Concepts]] when the idea is reusable across papers or projects.
 - Promote to [[projects/index|Projects]] when it describes a public artifact or design decision.
@@ -61,6 +63,7 @@ $$
 ## Related
 
 - [[inbox/index|Inbox]]
+- [[inbox/paper-candidate-intake|Paper candidate intake]]
 - [[inbox/inbox-triage|Inbox triage]]
 - [[inbox/daily-paper-brief-2026-06-26|Daily Paper Brief - 2026-06-26]]
 - [[inbox/publishing-gate|Publishing gate]]

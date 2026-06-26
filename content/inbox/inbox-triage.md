@@ -12,6 +12,7 @@ Inbox triage decides whether a raw candidate becomes a paper note, concept note,
 ## Triage Questions
 
 - Is the source public and verifiable?
+- If it is a paper candidate, does it have [[inbox/paper-candidate-intake|Paper candidate intake]] fields?
 - Is the note a reusable concept, a paper-specific claim, a project record, or a blog idea?
 - Does it contain private or unpublished information that must be removed?
 - Does it need human review before publication?
@@ -35,6 +36,7 @@ For cleaned work records, use [[logs/public-log-taxonomy|Public log taxonomy]] a
 ## Checks
 
 - Do not promote raw agent output without verification.
+- Do not promote paper candidates without source, route, claim, evidence pointer, risk, and next action fields.
 - Do not create a new page when an existing page only needs a short update.
 - Mark unresolved metadata as `to verify`.
 - Pass [[inbox/publishing-gate|Publishing gate]] before public promotion.
@@ -44,6 +46,7 @@ For cleaned work records, use [[logs/public-log-taxonomy|Public log taxonomy]] a
 ## Related
 
 - [[inbox/index|Inbox]]
+- [[inbox/paper-candidate-intake|Paper candidate intake]]
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/publishing-gate|Publishing gate]]
 - [[papers/workflows/reading-status|Reading status]]
