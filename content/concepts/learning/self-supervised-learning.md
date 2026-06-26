@@ -30,11 +30,25 @@ where $\mathcal{A}$ is an [[concepts/learning/augmentation-policy|augmentation p
 
 ## Objective Families
 
-- Masked prediction: hide part of the input and predict the missing target.
-- Contrastive learning: align positive views while separating negatives.
-- Joint-embedding prediction: predict target embeddings from context embeddings.
-- Autoregressive prediction: predict future or next tokens from previous context.
-- Reconstruction or denoising: recover a clean input from a corrupted one.
+| Family | Target | Main Risk |
+| --- | --- | --- |
+| Masked prediction | hidden token, pixel, node, residue, atom, or feature | target may be too local or too easy |
+| Contrastive learning | positive identity among negatives | false negatives and augmentation semantics |
+| Joint-embedding prediction | target representation | collapse prevention and target abstraction |
+| Autoregressive prediction | future or next token/state | teacher-forcing mismatch and context leakage |
+| Reconstruction or denoising | clean input from corrupted input | reconstructing nuisance detail instead of useful abstraction |
+
+## Pretraining Data Boundary
+
+SSL is often limited by data construction rather than architecture. Record:
+
+$$
+\mathcal{D}_{\mathrm{ssl}}
+=
+\{x_i,\ a_i,\ s_i,\ t_i\}_{i=1}^{n}
+$$
+
+where $a_i$ is augmentation or corruption metadata, $s_i$ is source, and $t_i$ is time or split group when relevant. If test-like examples or near-duplicates appear in pretraining, downstream evaluation can overstate generalization.
 
 ## Why It Matters
 
@@ -55,6 +69,18 @@ $$
 
 Common evaluation modes are [[concepts/learning/linear-probing|linear probing]], [[concepts/learning/fine-tuning-protocol|full fine-tuning]], retrieval, clustering quality, and task-specific metrics. These belong to [[concepts/learning/representation-evaluation|representation evaluation]], not to the pretraining objective itself.
 
+## Evaluation Budget
+
+Different evaluation protocols answer different questions:
+
+| Protocol | Tests | Caveat |
+| --- | --- | --- |
+| frozen linear probe | linear separability of frozen representation | weak evaluator may understate useful representation |
+| kNN or retrieval | neighborhood structure | corpus and metric define the claim |
+| full fine-tuning | adaptation performance | mixes pretraining quality with optimization budget |
+| low-data fine-tuning | sample efficiency | needs matched search budget and seeds |
+| OOD or grouped split | transfer beyond pretraining distribution | split must match the biological or deployment claim |
+
 ## Checks
 
 - Is the pretext task aligned with the downstream task?
@@ -63,6 +89,8 @@ Common evaluation modes are [[concepts/learning/linear-probing|linear probing]],
 - Does the objective avoid [[concepts/learning/representation-collapse|representation collapse]]?
 - Are augmentation and masking choices valid for the domain?
 - Are linear probe, fine-tuning, and retrieval protocols kept separate?
+- Are pretraining and evaluation splits deduplicated at the right entity level?
+- Is the adaptation budget fixed before comparing representations?
 
 ## Related
 
@@ -76,6 +104,8 @@ Common evaluation modes are [[concepts/learning/linear-probing|linear probing]],
 - [[concepts/learning/representation-evaluation|Representation evaluation]]
 - [[concepts/learning/linear-probing|Linear probing]]
 - [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
+- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
+- [[concepts/evaluation/test-set-contamination|Test set contamination]]
 - [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]

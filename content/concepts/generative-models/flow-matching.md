@@ -50,12 +50,50 @@ $$
 
 but other paths can be chosen to fit geometry, noise schedules, or conditional constraints.
 
+## Objective Decomposition
+
+For paper notes, record the path, sampling distribution, and target velocity:
+
+$$
+\mathcal{J}(\theta)
+=
+\mathbb{E}_{t\sim p(t),\,x_0\sim p_0,\,x_1\sim p_{\mathrm{data}},\,x_t\sim p_t(\cdot\mid x_0,x_1)}
+\left[
+\left\|v_\theta(x_t,t,c)-u_t(x_t\mid x_0,x_1,c)\right\|_2^2
+\right].
+$$
+
+The notation hides important choices:
+
+| Symbol | Meaning | Check |
+| --- | --- | --- |
+| $p_0$ | base distribution | noise, prior, scaffold, initial coordinates |
+| $p_{\mathrm{data}}$ | target data distribution | train data, standardized objects, coordinate frame |
+| $p(t)$ | time sampling | uniform, biased, schedule-weighted |
+| $p_t$ | probability path | linear, OT-like, diffusion-like, domain-specific |
+| $u_t$ | target velocity | analytic, simulated, estimated, conditional |
+| $c$ | condition | class, text, property, pocket, protein, partial structure |
+
+## Geometry Boundary
+
+For coordinates, the velocity field must transform consistently:
+
+$$
+v_\theta(Rx+t,\tau,c')
+=
+R\,v_\theta(x,\tau,c)
+$$
+
+when rotations and translations should not change the physical meaning. If the model predicts scalar properties instead, the target is usually invariant rather than equivariant.
+
 ## Design Choices
 
 - Probability path: linear, diffusion-like, optimal-transport inspired, or domain-specific.
 - Vector field architecture: MLP, Transformer, GNN, or equivariant network.
 - Conditioning: class, text, property, structure, pocket, or other context.
 - Solver budget: number of function evaluations, step size, and error tolerance.
+- Target parameterization: velocity, score, displacement, coordinate update, or domain-specific field.
+- Symmetry rule: invariant, equivariant, permutation-aware, or frame-dependent.
 
 ## Why It Matters
 
@@ -77,6 +115,8 @@ but other paths can be chosen to fit geometry, noise schedules, or conditional c
 - How does it interact with [[concepts/geometric-deep-learning/equivariant-gnn|equivariant GNN]] architectures?
 - Is the velocity target defined in a valid coordinate frame?
 - Is sample quality reported together with solver budget?
+- Are path choice, time sampling, and target velocity matched across baselines?
+- Does the evaluation separate sample validity, condition satisfaction, diversity, and downstream utility?
 
 ## Related
 
@@ -86,5 +126,8 @@ but other paths can be chosen to fit geometry, noise schedules, or conditional c
 - [[concepts/generative-models/rectified-flow|Rectified flow]]
 - [[concepts/generative-models/score-matching|Score matching]]
 - [[concepts/generative-models/conditional-generation|Conditional generation]]
+- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
+- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
+- [[concepts/evaluation/generation-evaluation|Generation evaluation]]
 - [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
