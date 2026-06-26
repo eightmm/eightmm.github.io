@@ -19,36 +19,27 @@ $$
 
 Training and evaluation are only meaningful when this empirical distribution is aligned with the intended deployment distribution.
 
-## Topics
+## Route Map
 
-- [[entities/dataset|Dataset]]
-- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
-- [[concepts/data/dataset-card|Dataset card]]
-- [[concepts/data/example-unit|Example unit]]
-- [[concepts/data/split-unit|Split unit]]
-- [[concepts/data/dataset-split-contract|Dataset split contract]]
-- [[concepts/data/data-distribution|Data distribution]]
-- [[concepts/data/data-schema|Data schema]]
-- [[concepts/data/preprocessing-contract|Preprocessing contract]]
-- [[concepts/data/data-curation|Data curation]]
-- [[concepts/data/data-versioning|Data versioning]]
-- [[concepts/data/annotation-labeling|Annotation and labeling]]
-- [[concepts/data/label-semantics|Label semantics]]
-- [[concepts/data/label-noise|Label noise]]
-- [[concepts/data/missing-data|Missing data]]
-- [[concepts/data/censored-label|Censored label]]
-- [[concepts/data/weak-label|Weak label]]
-- [[concepts/data/class-imbalance|Class imbalance]]
-- [[concepts/data/dataset-shift|Dataset shift]]
-- [[concepts/data/sampling-strategy|Sampling strategy]]
-- [[concepts/data/sampling-bias|Sampling bias]]
-- [[concepts/data/metadata-provenance|Metadata and provenance]]
-- [[concepts/data/data-lineage|Data lineage]]
-- [[concepts/data/benchmark-intake|Benchmark intake]]
-- [[concepts/data/benchmark|Benchmark]]
-- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
-- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
-- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
+| Need | Start | Then Check |
+| --- | --- | --- |
+| define what one row means | [Example unit](/concepts/data/example-unit) | [Data schema](/concepts/data/data-schema), [Label semantics](/concepts/data/label-semantics) |
+| define what must be held out | [Split unit](/concepts/data/split-unit) | [Dataset split contract](/concepts/data/dataset-split-contract), [Leakage](/concepts/evaluation/leakage) |
+| prepare raw records | [Preprocessing contract](/concepts/data/preprocessing-contract) | [Data preprocessing](/concepts/machine-learning/data-preprocessing), [Data lineage](/concepts/data/data-lineage) |
+| describe a reusable dataset | [Dataset card](/concepts/data/dataset-card) | [Metadata and provenance](/concepts/data/metadata-provenance), [Data versioning](/concepts/data/data-versioning) |
+| build a benchmark | [Benchmark intake](/concepts/data/benchmark-intake) | [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract), [Evaluation set design](/concepts/evaluation/evaluation-set-design) |
+| handle imperfect labels | [Label noise](/concepts/data/label-noise) | [Censored label](/concepts/data/censored-label), [Weak label](/concepts/data/weak-label) |
+| handle distribution problems | [Dataset shift](/concepts/data/dataset-shift) | [Sampling bias](/concepts/data/sampling-bias), [Class imbalance](/concepts/data/class-imbalance) |
+
+## Topic Groups
+
+| Group | Notes |
+| --- | --- |
+| Dataset definition | [Dataset](/entities/dataset), [Dataset construction checklist](/concepts/data/dataset-construction-checklist), [Data distribution](/concepts/data/data-distribution) |
+| Schema and metadata | [Data schema](/concepts/data/data-schema), [Metadata and provenance](/concepts/data/metadata-provenance), [Data lineage](/concepts/data/data-lineage) |
+| Curation and versions | [Data curation](/concepts/data/data-curation), [Data versioning](/concepts/data/data-versioning), [Annotation and labeling](/concepts/data/annotation-labeling) |
+| Sampling | [Sampling strategy](/concepts/data/sampling-strategy), [Sampling bias](/concepts/data/sampling-bias), [Missing data](/concepts/data/missing-data) |
+| Benchmarking | [Benchmark](/concepts/data/benchmark), [Benchmark intake](/concepts/data/benchmark-intake), [Evaluation protocol](/concepts/evaluation/evaluation-protocol) |
 
 ## Checks
 

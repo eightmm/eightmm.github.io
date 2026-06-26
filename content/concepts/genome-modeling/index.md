@@ -24,13 +24,23 @@ $$
 
 where $c$ is optional context such as species, genome assembly, region type, or annotation source.
 
+## Route Map
+
+| Need | Start | Risk |
+| --- | --- | --- |
+| define the object | [Genome](/entities/genome), [Genomic region](/concepts/genome-modeling/genomic-region) | reference assembly and coordinate-system mismatch |
+| tokenize sequence | [K-mer](/concepts/genome-modeling/k-mer) | window overlap and loss of long-range context |
+| predict variant impact | [Variant effect prediction](/concepts/genome-modeling/variant-effect-prediction) | assay/source-dependent labels |
+| use annotations | [Genome annotation](/concepts/genome-modeling/genome-annotation) | annotation version and target leakage |
+| connect to learning | [Self-supervised learning](/concepts/learning/self-supervised-learning), [Sequence](/concepts/modalities/sequence) | pretraining loss may not support downstream claim |
+
 ## Core Concepts
 
-- [[entities/genome|Genome]]
-- [[concepts/genome-modeling/genomic-region|Genomic region]]
-- [[concepts/genome-modeling/k-mer|K-mer]]
-- [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
-- [[concepts/genome-modeling/genome-annotation|Genome annotation]]
+| Group | Notes |
+| --- | --- |
+| Objects | [Genome](/entities/genome), [Sequence](/entities/sequence), [Genomic region](/concepts/genome-modeling/genomic-region) |
+| Representation | [K-mer](/concepts/genome-modeling/k-mer), [Sequence modality](/concepts/modalities/sequence) |
+| Tasks | [Variant effect prediction](/concepts/genome-modeling/variant-effect-prediction), [Genome annotation](/concepts/genome-modeling/genome-annotation) |
 
 ## Checks
 

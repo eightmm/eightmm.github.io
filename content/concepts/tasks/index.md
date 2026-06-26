@@ -17,30 +17,30 @@ $$
 
 The important question is what $y$ means: a class, scalar, ranked list, generated sequence, box, mask, answer, retrieved item, or structured object.
 
+## Route Map
+
+| Need | Start | Typical Metric Boundary |
+| --- | --- | --- |
+| define the full task contract | [Task specification](/concepts/tasks/task-specification) | loss, metric, split, validity rule |
+| choose the output type | [Task output space](/concepts/tasks/task-output-space) | class, scalar, rank, sequence, graph, coordinate |
+| connect input modality to task | [Modality-task map](/concepts/modalities/modality-task-map) | raw input, representation, output, metric |
+| predict labels or values | [Classification](/concepts/machine-learning/classification), [Regression](/concepts/machine-learning/regression) | calibration, threshold, error scale |
+| rank or retrieve items | [Ranking](/concepts/machine-learning/ranking), [Retrieval](/concepts/tasks/retrieval), [Reranking](/concepts/tasks/reranking) | top-k, NDCG, enrichment, recall |
+| generate objects | [Sequence generation](/concepts/tasks/sequence-generation), [Structured prediction](/concepts/tasks/structured-prediction) | validity, diversity, likelihood, downstream score |
+| localize in space | [Localization](/concepts/tasks/localization), [Object detection](/concepts/tasks/object-detection), [Segmentation](/concepts/tasks/segmentation) | IoU, mask quality, localization error |
+| model molecules or proteins | [Property prediction](/concepts/tasks/property-prediction), [Interaction prediction](/concepts/tasks/interaction-prediction) | assay context, split unit, leakage risk |
+| model structure | [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) | geometry validity, invariance, equivariance |
+
 ## Task Families
 
-- [[concepts/tasks/task-specification|Task specification]]
-- [[concepts/tasks/task-output-space|Task output space]]
-- [[concepts/modalities/modality-task-map|Modality-task map]]
-- [[concepts/machine-learning/classification|Classification]]
-- [[concepts/machine-learning/regression|Regression]]
-- [[concepts/machine-learning/ranking|Ranking]]
-- [[concepts/tasks/property-prediction|Property prediction]]
-- [[concepts/tasks/interaction-prediction|Interaction prediction]]
-- [[concepts/tasks/retrieval|Retrieval]]
-- [[concepts/tasks/similarity-search|Similarity search]]
-- [[concepts/tasks/reranking|Reranking]]
-- [[concepts/tasks/object-detection|Object detection]]
-- [[concepts/tasks/localization|Localization]]
-- [[concepts/tasks/segmentation|Segmentation]]
-- [[concepts/tasks/captioning|Captioning]]
-- [[concepts/tasks/question-answering|Question answering]]
-- [[concepts/tasks/sequence-generation|Sequence generation]]
-- [[concepts/tasks/structured-prediction|Structured prediction]]
-- [[concepts/tasks/coordinate-prediction|Coordinate prediction]]
-- [[concepts/tasks/graph-prediction|Graph prediction]]
-- [[concepts/tasks/time-series-forecasting|Time-series forecasting]]
-- [[concepts/tasks/anomaly-detection|Anomaly detection]]
+| Family | Notes |
+| --- | --- |
+| Core ML | [Classification](/concepts/machine-learning/classification), [Regression](/concepts/machine-learning/regression), [Ranking](/concepts/machine-learning/ranking) |
+| Search | [Retrieval](/concepts/tasks/retrieval), [Similarity search](/concepts/tasks/similarity-search), [Reranking](/concepts/tasks/reranking) |
+| Vision and spatial | [Object detection](/concepts/tasks/object-detection), [Localization](/concepts/tasks/localization), [Segmentation](/concepts/tasks/segmentation) |
+| Language | [Captioning](/concepts/tasks/captioning), [Question answering](/concepts/tasks/question-answering), [Sequence generation](/concepts/tasks/sequence-generation) |
+| Structured outputs | [Structured prediction](/concepts/tasks/structured-prediction), [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) |
+| Time and monitoring | [Time-series forecasting](/concepts/tasks/time-series-forecasting), [Anomaly detection](/concepts/tasks/anomaly-detection) |
 
 ## Checks
 

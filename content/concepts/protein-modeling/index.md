@@ -9,19 +9,25 @@ tags:
 
 Protein modeling concepts describe how sequences, evolutionary signals, structures, and geometric constraints become model inputs and outputs.
 
+## Route Map
+
+| Need | Start | Risk |
+| --- | --- | --- |
+| choose a protein representation | [Protein representation](/concepts/protein-modeling/protein-representation) | pooling, tokenization, MSA/template leakage |
+| define protein units and groups | [Protein domain](/concepts/protein-modeling/protein-domain), [Sequence identity clustering](/concepts/protein-modeling/sequence-identity-clustering) | homologs crossing train/test |
+| connect sequence to structure | [Sequence-structure alignment](/concepts/protein-modeling/sequence-structure-alignment), [Residue indexing](/concepts/protein-modeling/residue-indexing) | residue mismatches, missing residues, insertion codes |
+| prepare structures | [Protein structure cleaning](/concepts/protein-modeling/protein-structure-cleaning) | chain selection, alternate locations, unresolved regions |
+| model structure | [Protein structure prediction](/concepts/protein-modeling/protein-structure-prediction), [Contact map](/concepts/protein-modeling/contact-map) | benchmark leakage and coordinate-frame assumptions |
+| model binding context | [Binding site](/concepts/protein-modeling/binding-site), [Pocket representation](/concepts/protein-modeling/pocket-representation) | ligand-defined pockets and apo/holo mismatch |
+
 ## Core Concepts
 
-- [[concepts/protein-modeling/protein-representation|Protein representation]]
-- [[concepts/protein-modeling/protein-domain|Protein domain]]
-- [[concepts/protein-modeling/binding-site|Binding site]]
-- [[concepts/protein-modeling/pocket-representation|Pocket representation]]
-- [[concepts/protein-modeling/protein-structure-cleaning|Protein structure cleaning]]
-- [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
-- [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
-- [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]
-- [[concepts/protein-modeling/residue-indexing|Residue indexing]]
-- [[concepts/protein-modeling/contact-map|Contact map]]
-- [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
+| Group | Notes |
+| --- | --- |
+| Representation | [Protein representation](/concepts/protein-modeling/protein-representation), [Multiple sequence alignment](/concepts/protein-modeling/multiple-sequence-alignment) |
+| Structure | [Protein structure cleaning](/concepts/protein-modeling/protein-structure-cleaning), [Protein structure prediction](/concepts/protein-modeling/protein-structure-prediction), [Contact map](/concepts/protein-modeling/contact-map) |
+| Indexing | [Residue indexing](/concepts/protein-modeling/residue-indexing), [Sequence-structure alignment](/concepts/protein-modeling/sequence-structure-alignment) |
+| Binding | [Binding site](/concepts/protein-modeling/binding-site), [Pocket representation](/concepts/protein-modeling/pocket-representation) |
 
 ## Checks
 

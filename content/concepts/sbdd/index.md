@@ -54,7 +54,6 @@ where $P$ is a protein or pocket and $L$ is a ligand.
 ## Related
 
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
-- [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
 - [[concepts/sbdd/pose-rmsd|Pose RMSD]]

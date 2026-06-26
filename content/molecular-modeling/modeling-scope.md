@@ -25,12 +25,26 @@ where $\mathcal{A}$ can include object, representation, architecture, objective,
 
 | Center | Prefer | Avoid |
 | --- | --- | --- |
-| Protein, ligand, molecule, pocket, complex | Computational Biology / Molecular Modeling | Overbroad bio label |
-| Docking, pose, conformer, virtual screening | Structure-Based Modeling | Calling the task itself AI |
+| Protein, ligand, molecule, pocket, complex, genome sequence | Computational Biology | Overbroad Bio-AI label |
+| Molecule identity, conformer, docking, pose, virtual screening | Molecular Modeling / Structure-Based Modeling | Using Molecular Modeling for every sequence task |
+| Protein sequence, protein structure, protein design | Protein Modeling | Hiding protein-specific assumptions inside generic AI |
+| Genome region, k-mer, variant-level prediction | Genome Sequence Modeling | Opening broad omics unless needed |
 | GNN, Transformer, diffusion, flow matching, SSL | AI | Hiding the method under Molecular Modeling |
 | Symmetry, coordinate frame, likelihood, loss | Math | Treating equations as paper-specific details |
 | Split, metric, leakage, benchmark protocol | Evaluation | Reporting only headline scores |
 | Tool-using LLM workflow | Agents | Mixing agent ops into model architecture notes |
+
+## Scope Layers
+
+| Layer | Meaning | Examples |
+| --- | --- | --- |
+| Computational Biology | public umbrella for modeled biological and chemical objects | proteins, ligands, complexes, genomic regions |
+| Molecular Modeling | molecule and structure-heavy subset | molecular graphs, conformers, docking, scoring |
+| Protein Modeling | protein sequence, structure, domain, site, and design problems | sequence modeling, structure prediction, binding site modeling |
+| Structure-Based Modeling | coordinate and complex-centered modeling | protein-ligand pose, pocket interaction, virtual screening |
+| Genome Sequence Modeling | sequence/region/variant-level genomic inputs only | k-mers, genomic regions, variant effect prediction |
+
+Use the broad name when the object family is mixed. Use the narrower name when the note is clearly about molecules, proteins, structures, or genome sequence.
 
 ## Practical Routes
 
