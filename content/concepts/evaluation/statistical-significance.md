@@ -53,6 +53,39 @@ $$
 - Is the effect size meaningful even if statistically significant?
 - Were many models, seeds, thresholds, or prompts tried before reporting the winner?
 
+## Evaluation Interpretation
+
+| Situation | Better Reading |
+| --- | --- |
+| significant but tiny effect | true under the tested protocol, but maybe not worth deploying or discussing |
+| nonsignificant but wide interval | benchmark may be underpowered; absence of evidence is not evidence of equality |
+| significant after many variants | check multiple comparisons and selection bias |
+| significant aggregate, subgroup failures | narrow the claim and report failure modes |
+| significant on validation set | not final evidence if validation selected the model |
+
+## Test Choice
+
+| Setting | Typical Choice | Watch |
+| --- | --- | --- |
+| same examples, scalar metric | paired bootstrap or paired test | resampling unit must match dependence |
+| classification counts | McNemar-style paired error test or bootstrap | class imbalance and threshold selection |
+| ranking/retrieval | query-level bootstrap | candidate-level resampling is invalid |
+| many random seeds | repeated-run analysis | best seed is not expected performance |
+| many datasets/tasks | per-dataset paired effect | average can hide negative transfer |
+
+## Claim Contract
+
+A statistical significance statement should include:
+
+| Field | Required Detail |
+| --- | --- |
+| null hypothesis | what equality or no-effect claim is being tested |
+| statistic | metric difference, error difference, rank difference, or effect size |
+| unit | example, query, scaffold, target, family, seed, prompt, or dataset |
+| selection boundary | whether model, checkpoint, prompt, threshold, and preprocessing were fixed before final test |
+| multiplicity | number of tested variants, metrics, slices, and baselines |
+| practical threshold | smallest effect that would matter for the claim |
+
 ## Related
 
 - [[concepts/evaluation/confidence-interval|Confidence interval]]
