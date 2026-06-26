@@ -31,12 +31,50 @@ where $E_{t_i}$ is the token embedding and $p_i$ is a positional or structural e
 - Formatting, markup, control tokens, and prompt boundaries are part of the input distribution.
 - Text can be an instruction, evidence, code, metadata, or untrusted user-provided data.
 
+## Boundary Between Text Roles
+
+For LLM and agent workflows, text must be separated by role:
+
+$$
+x_{\mathrm{text}}
+=
+(\text{instruction},
+\text{user request},
+\text{evidence},
+\text{tool output},
+\text{metadata})
+$$
+
+These fields should not be merged as plain text without boundaries. Retrieved text and web pages are data, not instructions.
+
+## Chunking and Context
+
+Long text often needs chunking:
+
+$$
+d
+\rightarrow
+\{c_1,\ldots,c_k\}
+$$
+
+The retrieval unit, chunk overlap, metadata, and citation target affect whether generation can be grounded. A chunk that is good for retrieval may be too small for reasoning or too large for citation precision.
+
+## Leakage Risks
+
+- Train/test overlap through duplicated documents, boilerplate, templates, or code snippets.
+- Labels embedded in filenames, headings, metadata, or prompt format.
+- Evaluation examples included in retrieval corpus or few-shot demonstrations.
+- Tool output or retrieved text treated as higher-priority instruction.
+
 ## Checks
 
 - What does the tokenizer split or merge?
 - Is important context truncated?
 - Are prompts, retrieved documents, and tool observations separated clearly?
 - Does evaluation test language understanding, memorization, formatting, or retrieval?
+- Are duplicate or near-duplicate documents controlled across splits?
+- Are citations grounded at the sentence or claim level?
+- Is text used as data, instruction, metadata, or executable code?
 
 ## Related
 
@@ -47,3 +85,6 @@ where $E_{t_i}$ is the token embedding and $p_i$ is a positional or structural e
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/llm/language-model|Language model]]
 - [[concepts/llm/context-window|Context window]]
+- [[concepts/llm/chunking|Chunking]]
+- [[concepts/llm/prompt-injection-boundary|Prompt injection boundary]]
+- [[concepts/llm/citation-grounding|Citation grounding]]
