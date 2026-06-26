@@ -130,7 +130,7 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 
 ## Related
 
-- [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
+- [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
 - [[posts/wiki-to-post-workflow|Wiki to post workflow]]
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[papers/workflows/claim-routing|Claim routing]]

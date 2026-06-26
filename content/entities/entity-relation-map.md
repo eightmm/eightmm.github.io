@@ -2,8 +2,8 @@
 title: Entity Relation Map
 tags:
   - entities
-  - bio
-  - structure-based-ai
+  - molecular-modeling
+  - structure-based-modeling
 ---
 
 # Entity Relation Map

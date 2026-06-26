@@ -3,7 +3,7 @@ title: Genome Modeling Concepts
 tags:
   - genome
   - sequence
-  - bio
+  - molecular-modeling
 ---
 
 # Genome Modeling Concepts

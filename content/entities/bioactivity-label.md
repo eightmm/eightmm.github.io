@@ -2,7 +2,7 @@
 title: Bioactivity Label
 tags:
   - entities
-  - bio
+  - molecular-modeling
   - labels
 ---
 

@@ -16,13 +16,13 @@ tags:
 | [블로그와 위키를 같이 쓰는 방식](/posts/2026-06-25-blog-and-wiki-workflow) | blog/wiki workflow |
 | [구조 기반 모델링을 어떻게 정리할 것인가](/posts/2026-06-25-structure-based-ai-map) | structure-based modeling map |
 | [Wiki에서 Post로 승격하는 방식](/posts/wiki-to-post-workflow) | note-to-post promotion |
-| [AI-Molecular-Math 포스트 인테이크](/posts/ai-bio-math-post-intake) | AI, molecular modeling, and math synthesis writing |
+| [AI-Molecular-Math 포스트 인테이크](/posts/ai-molecular-math-post-intake) | AI, molecular modeling, and math synthesis writing |
 | [Post promotion gate](/posts/post-promotion-gate) | post readiness checklist |
 
 ## 작성 시스템
 
 - [[posts/blog-writing-guide|블로그 글 작성 가이드]]
-- [[posts/ai-bio-math-post-intake|AI-Molecular-Math 포스트 인테이크]]
+- [[posts/ai-molecular-math-post-intake|AI-Molecular-Math 포스트 인테이크]]
 - [[posts/post-promotion-gate|Post promotion gate]]
 - [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/topic-roadmap|글감 로드맵]]

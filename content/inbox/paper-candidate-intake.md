@@ -63,7 +63,7 @@ Use this block inside daily briefs:
 | Paper note | source is public, metadata is verified, and claims need durable tracking | [Paper triage](/papers/workflows/paper-triage) |
 | Concept update | the reusable idea is more important than the single paper | [Concept update contract](/papers/workflows/concept-update-contract) |
 | Benchmark note | the evaluation protocol is the main value | [Benchmark intake](/concepts/data/benchmark-intake) |
-| Korean post idea | several wiki notes already form a reader-facing path | [AI-Molecular-Math post intake](/posts/ai-bio-math-post-intake) |
+| Korean post idea | several wiki notes already form a reader-facing path | [AI-Molecular-Math post intake](/posts/ai-molecular-math-post-intake) |
 | Curation queue | promising but missing metadata, relevance, or verification | [Curation queue](/inbox/curation-queue) |
 | Drop | duplicate, unverifiable, out of scope, or unsafe for public notes | [Inbox triage](/inbox/inbox-triage) |
 

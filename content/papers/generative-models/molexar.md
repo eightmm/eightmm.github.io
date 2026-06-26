@@ -6,7 +6,7 @@ tags:
   - paper
   - molecular-generation
   - generative-models
-  - structure-based-ai
+  - structure-based-modeling
 status: reading
 source_type: ArXiv
 source_url: https://arxiv.org/abs/2606.25865

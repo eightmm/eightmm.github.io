@@ -4,7 +4,7 @@ aliases:
   - bio/geometry
   - bio-ai/geometry
 tags:
-  - bio
+  - molecular-modeling
   - geometry
 ---
 

@@ -4,7 +4,7 @@ aliases:
   - bio/molecules
   - bio-ai/molecules
 tags:
-  - bio
+  - molecular-modeling
   - molecules
 ---
 

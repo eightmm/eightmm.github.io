@@ -3,7 +3,7 @@ title: Interaction Prediction
 tags:
   - tasks
   - protein-ligand
-  - bio
+  - molecular-modeling
 ---
 
 # Interaction Prediction

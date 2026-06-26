@@ -6,8 +6,8 @@ aliases:
   - molecular-modeling/structure-based-ai
   - research/structure-based-ai
 tags:
-  - bio
-  - structure-based-ai
+  - molecular-modeling
+  - structure-based-modeling
   - drug-discovery
 ---
 

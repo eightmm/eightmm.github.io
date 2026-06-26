@@ -1,5 +1,7 @@
 ---
 title: AI-Molecular-Math Paper Template
+aliases:
+  - papers/workflows/ai-bio-math-paper-template
 unlisted: true
 tags:
   - papers
@@ -133,7 +135,7 @@ Use `not applicable` only when the paper is not about molecular modeling.
 - Architecture or learning note to update: `to verify`
 - Math note to update: `to verify`
 - Evaluation or benchmark note to update: `to verify`
-- Potential Korean post route: [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
+- Potential Korean post route: [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
 - Promotion readiness: [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 
 ## Related

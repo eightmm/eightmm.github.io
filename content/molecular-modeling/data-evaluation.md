@@ -4,7 +4,7 @@ aliases:
   - bio/data-evaluation
   - bio-ai/data-evaluation
 tags:
-  - bio
+  - molecular-modeling
   - evaluation
 ---
 

@@ -2,7 +2,7 @@
 title: Target-Assay-Label Contract
 tags:
   - entities
-  - bio
+  - molecular-modeling
   - labels
   - datasets
 ---

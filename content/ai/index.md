@@ -31,7 +31,7 @@ $$
 - **Evaluation**: metric, split, leakage, calibration, OOD, uncertainty, failure analysis. [Start](/ai/evaluation)
 - **Agents**: tool use, memory, planning, verification, orchestration. [Start](/agents)
 - **Paper Intake**: input/output, architecture, objective, evidence, and system boundary. [Start](/ai/paper-intake)
-- **Post Intake**: Korean synthesis posts that combine AI, molecular modeling, and Math. [Start](/posts/ai-bio-math-post-intake)
+- **Post Intake**: Korean synthesis posts that combine AI, molecular modeling, and Math. [Start](/posts/ai-molecular-math-post-intake)
 - **Coverage Matrix**: check whether a topic has object, data, model, objective, evidence, and public boundary notes. [Start](/concepts/coverage-matrix)
 
 ## 분류 기준

@@ -2,7 +2,7 @@
 title: Structure-Based Modeling Papers
 tags:
   - papers
-  - structure-based-ai
+  - structure-based-modeling
   - sbdd
 ---
 

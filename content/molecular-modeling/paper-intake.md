@@ -3,7 +3,7 @@ title: Molecular Modeling Paper Intake
 aliases:
   - bio/paper-intake
 tags:
-  - bio
+  - molecular-modeling
   - papers
 ---
 

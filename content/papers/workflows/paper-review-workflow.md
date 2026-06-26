@@ -19,7 +19,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 3. Route the paper through [[papers/workflows/claim-routing|Claim routing]], then [[ai/paper-intake|AI paper intake]], [[molecular-modeling/paper-intake|Molecular modeling paper intake]], or [[math/formula-intake|Formula intake]] as needed.
 4. Run [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]] for multi-axis AI, molecular modeling, or Math candidates.
 5. Check missing support notes with [[concepts/coverage-matrix|Coverage matrix]].
-6. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]] or [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]].
+6. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]] or [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]].
 7. Extract claims using [[papers/analysis/claim-extraction|Claim extraction]].
 8. Map claims to evidence using [[papers/analysis/evidence-table|Evidence table]].
 9. Create a [[papers/analysis/benchmark-card|Benchmark card]] for the benchmark when the evaluation protocol matters.
@@ -71,7 +71,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/index|Papers]]
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/reading-status|Reading status]]
-- [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]

@@ -47,6 +47,6 @@ Architecture paper notes cover model families and structural design choices: att
 - [[ai/paper-intake|AI paper intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[papers/workflows/paper-triage|Paper triage]]
-- [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
 - [[papers/analysis/ablation-map|Ablation map]]
 - [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]

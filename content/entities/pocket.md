@@ -3,7 +3,7 @@ title: Pocket
 tags:
   - entities
   - protein
-  - structure-based-ai
+  - structure-based-modeling
 ---
 
 # Pocket

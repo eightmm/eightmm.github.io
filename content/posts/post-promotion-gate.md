@@ -93,7 +93,7 @@ status: draft
 ## Related
 
 - [[posts/wiki-to-post-workflow|Wiki to post workflow]]
-- [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
+- [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
 - [[posts/synthesis-post-template|Synthesis post template]]
 - [[posts/blog-writing-guide|Blog writing guide]]
 - [[concepts/topic-map-contract|Topic map contract]]

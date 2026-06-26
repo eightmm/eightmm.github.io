@@ -3,7 +3,7 @@ title: Computational Biology
 aliases:
   - bio/computational-biology
 tags:
-  - bio
+  - molecular-modeling
   - computational-biology
 ---
 

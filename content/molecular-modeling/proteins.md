@@ -4,7 +4,7 @@ aliases:
   - bio/proteins
   - bio-ai/proteins
 tags:
-  - bio
+  - molecular-modeling
   - proteins
 ---
 

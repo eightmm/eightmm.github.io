@@ -4,9 +4,9 @@ aliases:
   - bio/docking
   - bio-ai/docking
 tags:
-  - bio
+  - molecular-modeling
   - docking
-  - structure-based-ai
+  - structure-based-modeling
 ---
 
 # Docking

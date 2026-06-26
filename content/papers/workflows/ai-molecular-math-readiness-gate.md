@@ -100,11 +100,11 @@ public_boundary: to verify
 
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[papers/workflows/claim-routing|Claim routing]]
-- [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
 - [[ai/paper-intake|AI paper intake]]
 - [[molecular-modeling/paper-intake|Molecular modeling paper intake]]
 - [[math/formula-intake|Formula intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
-- [[posts/ai-bio-math-post-intake|AI-Molecular-Math post intake]]
+- [[posts/ai-molecular-math-post-intake|AI-Molecular-Math post intake]]
 - [[posts/synthesis-post-template|Synthesis post template]]

@@ -2,7 +2,7 @@
 title: Variant Effect Prediction
 tags:
   - genome
-  - bio
+  - molecular-modeling
   - evaluation
 ---
 

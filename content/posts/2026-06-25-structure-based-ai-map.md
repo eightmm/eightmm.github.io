@@ -3,7 +3,7 @@ title: 구조 기반 모델링을 어떻게 정리할 것인가
 date: 2026-06-25
 tags:
   - posts
-  - structure-based-ai
+  - structure-based-modeling
   - docking
 ---
 

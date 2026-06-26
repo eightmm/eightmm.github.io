@@ -2,7 +2,7 @@
 title: Structure-Based Drug Discovery
 tags:
   - sbdd
-  - structure-based-ai
+  - structure-based-modeling
 ---
 
 # Structure-Based Drug Discovery

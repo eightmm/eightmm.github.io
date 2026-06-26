@@ -2,7 +2,7 @@
 title: Target
 tags:
   - entities
-  - bio
+  - molecular-modeling
 ---
 
 # Target

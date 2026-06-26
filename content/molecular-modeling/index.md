@@ -5,7 +5,6 @@ aliases:
   - bio-ai
   - molecular-modeling
 tags:
-  - bio
   - molecular-modeling
 ---
 
@@ -37,7 +36,7 @@ $$
 | Geometry | coordinates, frames, invariance, equivariance | [Geometry](/molecular-modeling/geometry) |
 | Genome | sequence, region, k-mer, variant-level modeling | [Genome](/molecular-modeling/genome) |
 | Paper intake | object, representation, label, split, leakage, public boundary | [Molecular modeling paper intake](/molecular-modeling/paper-intake) |
-| Post intake | AI, molecular modeling, and math synthesis writing | [AI-Molecular-Math post intake](/posts/ai-bio-math-post-intake) |
+| Post intake | AI, molecular modeling, and math synthesis writing | [AI-Molecular-Math post intake](/posts/ai-molecular-math-post-intake) |
 | Coverage matrix | object, data, model, objective, evidence, public boundary | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## 다루는 객체

@@ -3,7 +3,6 @@ title: Molecular Modeling Scope
 aliases:
   - bio/modeling-scope
 tags:
-  - bio
   - molecular-modeling
 ---
 

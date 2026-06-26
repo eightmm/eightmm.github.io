@@ -91,7 +91,7 @@ public artifact status: to verify
 ## Related
 
 - [[papers/workflows/paper-triage|Paper triage]]
-- [[papers/workflows/ai-bio-math-paper-template|AI-Molecular-Math paper template]]
+- [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[ai/paper-intake|AI paper intake]]

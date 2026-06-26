@@ -3,7 +3,7 @@ title: Protein Modeling
 aliases:
   - research/protein-modeling
 tags:
-  - bio
+  - molecular-modeling
   - protein-modeling
 ---
 

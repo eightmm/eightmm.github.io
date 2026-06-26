@@ -1,5 +1,7 @@
 ---
 title: AI-Molecular-Math 포스트 인테이크
+aliases:
+  - posts/ai-bio-math-post-intake
 tags:
   - posts
   - writing
