@@ -49,11 +49,39 @@ For graph-level prediction, sum pooling can preserve extensive quantities while 
 
 ## Common Choices
 
-- Last-token readout for causal sequence models.
-- CLS-token readout for encoder-style Transformers.
-- Mean or sum pooling for sets and graphs.
-- Attention pooling for variable-size objects.
-- Task-specific heads for node-level, edge-level, or graph-level prediction.
+| Choice | Typical Use | Risk |
+| --- | --- | --- |
+| last-token readout | causal sequence models | last position may not summarize bidirectional context |
+| CLS-token readout | encoder-style Transformers | CLS behavior depends on pretraining objective |
+| mean pooling | size-normalized sequence, set, graph embeddings | rare active sites can be diluted |
+| sum pooling | extensive graph properties or counts | larger objects can dominate scale |
+| max pooling | detect presence of strong local signal | ignores frequency and context |
+| attention pooling | variable-size objects with learned importance | attention weights are not automatically explanations |
+| pair readout | interaction, retrieval, matching, protein-ligand scoring | pair construction and negatives define the task |
+| task-specific head | node, edge, graph, coordinate, or ranking output | head capacity can dominate representation claim |
+
+## Output Unit Map
+
+| Output Unit | Readout Boundary |
+| --- | --- |
+| token/node/residue | no global pooling before prediction; output stays equivariant to element order |
+| edge/pair | combine two endpoint states plus edge/pair features |
+| graph/molecule/protein | permutation-invariant pooling over all valid elements |
+| pocket or local site | pool only the local region with a defined mask |
+| protein-ligand complex | separate protein, ligand, and cross-interaction readouts when claim needs attribution |
+| generated coordinates | readout should preserve vector/coordinate equivariance until the coordinate head |
+
+## Extensive vs Intensive Targets
+
+Pooling should match the target scale:
+
+$$
+y_{\mathrm{sum}} \approx \sum_i y_i
+\qquad\text{vs}\qquad
+y_{\mathrm{mean}} \approx \frac{1}{n}\sum_i y_i
+$$
+
+Use sum-like readout for extensive quantities that grow with object size, and mean/normalized readout for size-independent properties. If the target is a binding score, activity label, or class probability, the correct readout depends on how the label was measured.
 
 ## Checks
 
@@ -61,6 +89,9 @@ For graph-level prediction, sum pooling can preserve extensive quantities while 
 - Does pooling preserve important rare sites or dilute them?
 - Are padding tokens excluded from the pool?
 - Is the readout invariant to permutations when it should be?
+- Is the readout fitted, selected, or tuned on validation data only?
+- Does the readout leak future information through masks, pockets, or labels?
+- Is the same readout used for baselines when claiming representation quality?
 
 ## Related
 
@@ -68,4 +99,6 @@ For graph-level prediction, sum pooling can preserve extensive quantities while 
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/embedding|Embedding]]
+- [[concepts/machine-learning/representation-learning|Representation learning]]
+- [[concepts/learning/representation-evaluation|Representation evaluation]]
 - [[concepts/tasks/property-prediction|Property prediction]]
