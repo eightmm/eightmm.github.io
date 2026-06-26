@@ -18,6 +18,14 @@ $$
 
 This is the basic shape of equivariance for coordinate-valued outputs.
 
+For invariant scalar outputs such as affinity or class probability, the usual requirement is:
+
+$$
+f(RX+t) = f(X)
+$$
+
+where $X$ is a coordinate set, $R$ is a rotation, and $t$ is a translation.
+
 ## Math and Geometry
 
 - [[math/geometry-symmetry|Geometry and symmetry]]
@@ -37,6 +45,24 @@ This is the basic shape of equivariance for coordinate-valued outputs.
 - [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/geometric-deep-learning/tensor-field-network|Tensor field network]]
+
+## Target Type Map
+
+| Target | Symmetry Requirement | Examples |
+| --- | --- | --- |
+| Scalar | invariant | energy, affinity, class probability, ranking score |
+| Vector / direction | equivariant | force, displacement, velocity, coordinate update |
+| Coordinate set | equivariant up to permutation and rigid motion | ligand pose, atom coordinates, residue coordinates |
+| Graph relation | often permutation equivariant/invariant | contact map, interaction edge, bond graph |
+
+## Coordinate Features
+
+| Feature | Formula | Use |
+| --- | --- | --- |
+| Distance | $d_{ij}=\lVert x_i-x_j\rVert_2$ | invariant edge feature |
+| Direction | $u_{ij}=(x_j-x_i)/(d_{ij}+\epsilon)$ | equivariant message direction |
+| Centered coordinate | $\tilde{x}_i=x_i-\frac{1}{N}\sum_j x_j$ | translation handling |
+| Pairwise radial basis | $\psi(d_{ij})$ | smooth distance embedding |
 
 ## Structure Tasks
 
