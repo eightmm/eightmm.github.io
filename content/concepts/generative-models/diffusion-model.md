@@ -36,6 +36,8 @@ The model is often trained to predict $\epsilon$, $x_0$, or a related velocity t
 ## Related
 
 - [[concepts/generative-models/score-based-model|Score-based model]]
+- [[concepts/generative-models/score-matching|Score matching]]
+- [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
 - [[concepts/generative-models/sampling|Sampling]]
 - [[concepts/generative-models/guidance|Guidance]]
 - [[concepts/generative-models/flow-matching|Flow matching]]

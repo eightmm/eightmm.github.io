@@ -34,5 +34,7 @@ It points toward regions of higher probability under the noisy distribution at t
 ## Related
 
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
+- [[concepts/generative-models/score-matching|Score matching]]
+- [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/rectified-flow|Rectified flow]]

@@ -20,6 +20,7 @@ Different families choose different training signals: likelihood, reconstruction
 ## Common Concepts
 
 - [[concepts/generative-models/latent-variable-model|Latent variable model]]
+- [[concepts/generative-models/elbo|Evidence lower bound]]
 - [[concepts/generative-models/conditional-generation|Conditional generation]]
 - [[concepts/generative-models/sampling|Sampling]]
 - [[concepts/generative-models/guidance|Guidance]]
@@ -32,6 +33,8 @@ Different families choose different training signals: likelihood, reconstruction
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
 - [[concepts/generative-models/score-based-model|Score-based model]]
+- [[concepts/generative-models/score-matching|Score matching]]
+- [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/rectified-flow|Rectified flow]]
 - [[concepts/generative-models/consistency-model|Consistency model]]

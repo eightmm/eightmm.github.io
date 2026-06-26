@@ -38,6 +38,7 @@ The first term rewards reconstruction; the KL term regularizes the latent distri
 
 - [[concepts/architectures/autoencoder|Autoencoder]]
 - [[concepts/generative-models/latent-variable-model|Latent variable model]]
+- [[concepts/generative-models/elbo|Evidence lower bound]]
 - [[concepts/generative-models/autoregressive-model|Autoregressive model]]
 - [[concepts/generative-models/gan|GAN]]
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]

@@ -36,6 +36,7 @@ The transform must be invertible and have a tractable Jacobian determinant.
 
 ## Related
 
+- [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/vae|VAE]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]

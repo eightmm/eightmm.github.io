@@ -51,6 +51,7 @@ $$
 ## Related
 
 - [[concepts/generative-models/vae|VAE]]
+- [[concepts/generative-models/elbo|Evidence lower bound]]
 - [[concepts/generative-models/conditional-generation|Conditional generation]]
 - [[concepts/generative-models/sampling|Sampling]]
 - [[concepts/math/probability-distribution|Probability distribution]]
