@@ -47,6 +47,18 @@ const replacements = [
     "overflow:hidden;min-height:0;margin-left:6px;",
   ],
   [
+    '  if (node.isFolder) {\\n    const clone = folderTemplate.content.cloneNode(true);',
+    '  if (node.isFolder && node.data && (!node.children || node.children.length === 0)) {\\n    const clone = fileTemplate.content.cloneNode(true);\\n    const link = clone.querySelector(\\"a\\");\\n    if (link) {\\n      link.href = resolveBasePath(simplifySlug(node.slug));\\n      link.textContent = node.displayName || node.slugSegment;\\n      if (simplifySlug(node.slug) === simplifiedCurrentSlug) {\\n        link.classList.add(\\"active\\", \\"is-active\\");\\n      }\\n    }\\n    container.appendChild(clone);\\n  } else if (node.isFolder) {\\n    const clone = folderTemplate.content.cloneNode(true);',
+  ],
+  [
+    '  if (node.isFolder && node.data && (!node.children || node.children.length === 0)) {\\n    const clone = fileTemplate.content.cloneNode(true);\\n    const link = clone.querySelector("a");\\n    if (link) {\\n      link.href = resolveBasePath(simplifySlug(node.slug));\\n      link.textContent = node.displayName || node.slugSegment;\\n      if (simplifySlug(node.slug) === simplifiedCurrentSlug) {\\n        link.classList.add("active", "is-active");\\n      }\\n    }\\n    container.appendChild(clone);\\n  } else if (node.isFolder) {\\n    const clone = folderTemplate.content.cloneNode(true);',
+    '  if (node.isFolder && node.data && (!node.children || node.children.length === 0)) {\\n    const clone = fileTemplate.content.cloneNode(true);\\n    const link = clone.querySelector(\\"a\\");\\n    if (link) {\\n      link.href = resolveBasePath(simplifySlug(node.slug));\\n      link.textContent = node.displayName || node.slugSegment;\\n      if (simplifySlug(node.slug) === simplifiedCurrentSlug) {\\n        link.classList.add(\\"active\\", \\"is-active\\");\\n      }\\n    }\\n    container.appendChild(clone);\\n  } else if (node.isFolder) {\\n    const clone = folderTemplate.content.cloneNode(true);',
+  ],
+  [
+    'if(node.isFolder){let o=F.content.cloneNode(!0)',
+    'if(node.isFolder&&node.data&&(!node.children||node.children.length===0)){let o=D.content.cloneNode(!0),i=o.querySelector(\\"a\\");i&&(i.href=resolveBasePath(simplifySlug(node.slug)),i.textContent=node.displayName||node.slugSegment,simplifySlug(node.slug)===p&&i.classList.add(\\"active\\",\\"is-active\\")),e.appendChild(o)}else if(node.isFolder){let o=F.content.cloneNode(!0)',
+  ],
+  [
     ".explorer-content .folder-outer.open {\\n  visibility: visible;\\n  grid-template-rows: 1fr;\\n}\\n\\n.explorer-content .folder-outer > ul {",
     ".explorer-content .folder-outer.open {\\n  visibility: visible;\\n  grid-template-rows: 1fr;\\n}\\n\\n.explorer-content .folder-outer:not(.open) {\\n  height: 0;\\n  overflow: hidden;\\n}\\n\\n.explorer-content .folder-outer:not(.open) > ul {\\n  display: none;\\n}\\n\\n.explorer-content .folder-outer > ul {",
   ],
@@ -96,6 +108,13 @@ for (const file of files) {
 
   if (text.includes("folder-outer") && !text.includes("folder-outer:not(.open)")) {
     throw new Error(`Explorer CSS collapse patch was not applied in ${file}`)
+  }
+
+  if (
+    text.includes("function renderTree") &&
+    !text.includes("node.isFolder && node.data && (!node.children || node.children.length === 0)")
+  ) {
+    throw new Error(`Explorer leaf-folder link patch was not applied in ${file}`)
   }
 
   fs.writeFileSync(file, text)
