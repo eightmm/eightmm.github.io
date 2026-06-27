@@ -4,7 +4,7 @@ aliases:
   - computational-biology/paper-intake
   - bio/paper-intake
 tags:
-  - molecular-modeling
+  - computational-biology
   - papers
 ---
 

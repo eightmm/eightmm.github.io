@@ -4,7 +4,6 @@ aliases:
   - computational-biology/boundary
   - bio/computational-biology
 tags:
-  - molecular-modeling
   - computational-biology
 ---
 

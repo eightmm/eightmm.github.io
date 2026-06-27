@@ -4,7 +4,7 @@ aliases:
   - computational-biology/docking
   - bio/docking
 tags:
-  - molecular-modeling
+  - computational-biology
   - docking
   - structure-based-modeling
 ---

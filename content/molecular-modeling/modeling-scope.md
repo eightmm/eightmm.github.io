@@ -4,7 +4,7 @@ aliases:
   - computational-biology/modeling-scope
   - bio/modeling-scope
 tags:
-  - molecular-modeling
+  - computational-biology
 ---
 
 # Computational Biology Scope

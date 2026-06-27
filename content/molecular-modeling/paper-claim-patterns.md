@@ -4,7 +4,6 @@ aliases:
   - computational-biology/paper-claim-patterns
   - bio/paper-claim-patterns
 tags:
-  - molecular-modeling
   - computational-biology
   - papers
   - evaluation

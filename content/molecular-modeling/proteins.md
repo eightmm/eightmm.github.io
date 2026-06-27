@@ -4,7 +4,7 @@ aliases:
   - computational-biology/proteins
   - bio/proteins
 tags:
-  - molecular-modeling
+  - computational-biology
   - proteins
 ---
 

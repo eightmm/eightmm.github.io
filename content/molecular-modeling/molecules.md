@@ -4,7 +4,7 @@ aliases:
   - computational-biology/molecules
   - bio/molecules
 tags:
-  - molecular-modeling
+  - computational-biology
   - molecules
 ---
 

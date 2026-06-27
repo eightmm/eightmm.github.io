@@ -6,7 +6,7 @@ aliases:
   - bio
   - molecular-modeling
 tags:
-  - molecular-modeling
+  - computational-biology
 ---
 
 

@@ -4,7 +4,7 @@ aliases:
   - computational-biology/entities
   - bio/entities
 tags:
-  - molecular-modeling
+  - computational-biology
   - entities
 ---
 
