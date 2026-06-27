@@ -3,6 +3,7 @@ title: Formula Intake
 tags:
   - math
   - papers
+unlisted: true
 ---
 
 # Formula Intake

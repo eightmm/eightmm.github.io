@@ -4,6 +4,7 @@ tags:
   - math
   - writing
   - papers
+unlisted: true
 ---
 
 # Formula Explanation Ladder

@@ -4,6 +4,7 @@ tags:
   - math
   - ai
   - papers
+unlisted: true
 ---
 
 # Formula Pattern Catalog

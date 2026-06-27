@@ -4,6 +4,7 @@ tags:
   - ai
   - papers
   - evaluation
+unlisted: true
 ---
 
 # AI Paper Claim Patterns
