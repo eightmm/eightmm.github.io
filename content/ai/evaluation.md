@@ -27,54 +27,17 @@ $$
 
 중요한 점은 $p_{\mathrm{test}}$가 실제로 알고 싶은 deployment distribution을 닮아야 한다는 것입니다.
 
-## 핵심 노트
+## Route Map
 
-- [[concepts/tasks/index|Tasks]]
-- [[concepts/evaluation/index|Evaluation]]
-- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
-- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
-- [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
-- [[concepts/data/benchmark-intake|Benchmark intake]]
-- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
-- [[concepts/evaluation/metric|Metric]]
-- [[concepts/evaluation/metric-selection|Metric selection]]
-- [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
-- [[concepts/evaluation/confusion-matrix|Confusion matrix]]
-- [[concepts/evaluation/threshold-selection|Threshold selection]]
-- [[concepts/evaluation/classification-metrics|Classification metrics]]
-- [[concepts/evaluation/probability-metrics|Probability metrics]]
-- [[concepts/evaluation/proper-scoring-rule|Proper scoring rule]]
-- [[concepts/evaluation/brier-score|Brier score]]
-- [[concepts/evaluation/regression-metrics|Regression metrics]]
-- [[concepts/evaluation/ranking-metrics|Ranking metrics]]
-- [[concepts/evaluation/generation-evaluation|Generation evaluation]]
-- [[concepts/evaluation/confidence-interval|Confidence interval]]
-- [[concepts/evaluation/seed-variance|Seed variance]]
-- [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]]
-- [[concepts/evaluation/statistical-significance|Statistical significance]]
-- [[concepts/evaluation/effect-size|Effect size]]
-- [[concepts/evaluation/paired-comparison|Paired comparison]]
-- [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
-- [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
-- [[concepts/evaluation/cross-validation|Cross-validation]]
-- [[concepts/evaluation/leakage|Leakage]]
-- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
-- [[concepts/evaluation/benchmark-saturation|Benchmark saturation]]
-- [[concepts/evaluation/ood-generalization|OOD generalization]]
-- [[concepts/evaluation/calibration|Calibration]]
-- [[concepts/evaluation/reliability-diagram|Reliability diagram]]
-- [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
-- [[concepts/evaluation/conformal-prediction|Conformal prediction]]
-- [[concepts/evaluation/selective-prediction|Selective prediction]]
-- [[concepts/evaluation/robustness|Robustness]]
-- [[concepts/evaluation/error-analysis|Error analysis]]
-- [[concepts/evaluation/interpretability|Interpretability]]
-- [[papers/analysis/result-table-reading|Result table reading]]
-- [[concepts/evaluation/scaffold-split|Scaffold split]]
-- [[concepts/evaluation/protein-family-split|Protein family split]]
-- [[concepts/learning/representation-evaluation|Representation evaluation]]
-- [[concepts/learning/linear-probing|Linear probing]]
-- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
+| Route | Use For | Start |
+| --- | --- | --- |
+| Task and protocol | what is predicted, what is held out, what decision is being tested | [Tasks](/concepts/tasks), [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Evaluation set design](/concepts/evaluation/evaluation-set-design) |
+| Claim boundary | whether a score supports the stated conclusion | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract), [Benchmark intake](/concepts/data/benchmark-intake) |
+| Metric choice | classification, regression, ranking, generation, coordinate, probability quality | [Metric](/concepts/evaluation/metric), [Metric selection](/concepts/evaluation/metric-selection), [Generation evaluation](/concepts/evaluation/generation-evaluation) |
+| Statistical evidence | confidence intervals, seed variance, bootstrap, paired comparison, multiple comparisons | [Confidence interval](/concepts/evaluation/confidence-interval), [Seed variance](/concepts/evaluation/seed-variance), [Paired comparison](/concepts/evaluation/paired-comparison) |
+| Split and contamination | validation/test separation, pretraining overlap, retrieval contamination, benchmark saturation | [Train/validation/test split](/concepts/evaluation/train-validation-test-split), [Leakage](/concepts/evaluation/leakage), [Test-set contamination](/concepts/evaluation/test-set-contamination) |
+| Reliability and failure | calibration, uncertainty, OOD, robustness, error slicing, interpretability | [Calibration](/concepts/evaluation/calibration), [Uncertainty estimation](/concepts/evaluation/uncertainty-estimation), [Error analysis](/concepts/evaluation/error-analysis) |
+| Domain-specific splits | scaffold, protein-family, structure-source, assay/source, representation transfer | [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split), [Representation evaluation](/concepts/learning/representation-evaluation) |
 
 ## Claim to Evidence Map
 
@@ -103,18 +66,17 @@ For any reported result, first narrow the claim with [[concepts/evaluation/claim
 | Coordinates / structure | RMSD, lDDT-style quality, clash/geometry checks | symmetry correction, atom mapping, interaction quality |
 | Calibrated decision | NLL, Brier, ECE, selective risk | reliability diagram, subgroup calibration |
 
-## 분야별 평가 연결
+## Domain Routes
 
-- Retrieval/QA: [[concepts/tasks/retrieval|Retrieval]], [[concepts/tasks/question-answering|Question answering]]
-- Classification/regression: [[concepts/evaluation/classification-metrics|Classification metrics]], [[concepts/evaluation/regression-metrics|Regression metrics]]
-- Generation: [[concepts/tasks/sequence-generation|Sequence generation]], [[concepts/evaluation/generation-evaluation|Generation evaluation]]
-- Vision: [[concepts/tasks/object-detection|Object detection]], [[concepts/tasks/localization|Localization]], [[concepts/tasks/segmentation|Segmentation]]
-- Molecule: [[concepts/evaluation/scaffold-split|Scaffold split]], [[concepts/sbdd/virtual-screening|Virtual screening]]
-- Protein: [[concepts/evaluation/protein-family-split|Protein family split]], [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
-- Structure: [[concepts/tasks/coordinate-prediction|Coordinate prediction]], [[concepts/tasks/graph-prediction|Graph prediction]], [[concepts/sbdd/pose-quality|Pose quality]], [[papers/sbdd/posebusters|PoseBusters]]
-- Agent: [[agents/verification/agent-evaluation|Agent evaluation]], [[agents/verification/verification-loop|Verification loop]]
-- Ranking: [[concepts/evaluation/ranking-metrics|Ranking metrics]], [[concepts/tasks/retrieval|Retrieval]]
-- Representation learning: [[concepts/learning/representation-evaluation|Representation evaluation]], [[concepts/learning/linear-probing|Linear probing]], [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
+| Domain | Start |
+| --- | --- |
+| Retrieval / QA / ranking | [Retrieval](/concepts/tasks/retrieval), [Question answering](/concepts/tasks/question-answering), [Ranking metrics](/concepts/evaluation/ranking-metrics) |
+| Classification / regression | [Classification metrics](/concepts/evaluation/classification-metrics), [Regression metrics](/concepts/evaluation/regression-metrics) |
+| Generation | [Sequence generation](/concepts/tasks/sequence-generation), [Generation evaluation](/concepts/evaluation/generation-evaluation) |
+| Vision | [Object detection](/concepts/tasks/object-detection), [Localization](/concepts/tasks/localization), [Segmentation](/concepts/tasks/segmentation) |
+| Molecule / protein / structure | [Computational Biology](/molecular-modeling), [Virtual screening](/concepts/sbdd/virtual-screening), [Pose quality](/concepts/sbdd/pose-quality), [PoseBusters](/papers/sbdd/posebusters) |
+| Agents | [Agent evaluation](/agents/verification/agent-evaluation), [Verification loop](/agents/verification/verification-loop) |
+| Representation learning | [Representation evaluation](/concepts/learning/representation-evaluation), [Linear probing](/concepts/learning/linear-probing), [Fine-tuning protocol](/concepts/learning/fine-tuning-protocol) |
 
 ## 읽을 때 볼 질문
 

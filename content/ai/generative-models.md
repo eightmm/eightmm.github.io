@@ -26,26 +26,17 @@ $$
 
 Computational biology에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, or partial structure일 수 있습니다.
 
-## 핵심 노트
+## Route Map
 
-- [[concepts/generative-models/index|Generative models]]
-- [[concepts/generative-models/latent-variable-model|Latent variable model]]
-- [[concepts/generative-models/elbo|Evidence lower bound]]
-- [[concepts/generative-models/conditional-generation|Conditional generation]]
-- [[concepts/generative-models/sampling|Sampling]]
-- [[concepts/generative-models/guidance|Guidance]]
-- [[concepts/generative-models/autoregressive-model|Autoregressive model]]
-- [[concepts/generative-models/diffusion-model|Diffusion model]]
-- [[concepts/generative-models/score-based-model|Score-based model]]
-- [[concepts/generative-models/score-matching|Score matching]]
-- [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
-- [[concepts/generative-models/flow-matching|Flow matching]]
-- [[concepts/generative-models/rectified-flow|Rectified flow]]
-- [[concepts/generative-models/normalizing-flow|Normalizing flow]]
-- [[concepts/generative-models/energy-based-model|Energy-based model]]
-- [[concepts/generative-models/vae|VAE]]
-- [[concepts/generative-models/gan|GAN]]
-- [[concepts/generative-models/consistency-model|Consistency model]]
+| Route | Use For | Start |
+| --- | --- | --- |
+| Distribution modeling | what distribution is represented and how samples are produced | [Generative models](/concepts/generative-models), [Conditional generation](/concepts/generative-models/conditional-generation), [Sampling](/concepts/generative-models/sampling) |
+| Likelihood and latent variables | explicit likelihoods, encoders, decoders, lower bounds | [Latent variable model](/concepts/generative-models/latent-variable-model), [ELBO](/concepts/generative-models/elbo), [VAE](/concepts/generative-models/vae) |
+| Sequential generation | token, sequence, graph, or action generation step by step | [Autoregressive model](/concepts/generative-models/autoregressive-model) |
+| Denoising and score models | iterative corruption/reconstruction, score estimation, probability-flow view | [Diffusion model](/concepts/generative-models/diffusion-model), [Score-based model](/concepts/generative-models/score-based-model), [Probability flow ODE](/concepts/generative-models/probability-flow-ode) |
+| Flow and velocity models | vector fields, rectified paths, invertible transformations | [Flow matching](/concepts/generative-models/flow-matching), [Rectified flow](/concepts/generative-models/rectified-flow), [Normalizing flow](/concepts/generative-models/normalizing-flow) |
+| Energy and adversarial models | compatibility scores, unnormalized densities, generator-discriminator training | [Energy-based model](/concepts/generative-models/energy-based-model), [GAN](/concepts/generative-models/gan) |
+| Control and speed | guidance, conditioning strength, few-step generation, sampler changes | [Guidance](/concepts/generative-models/guidance), [Consistency model](/concepts/generative-models/consistency-model) |
 
 ## 모델 계열 구분
 
@@ -103,9 +94,11 @@ When reading a paper, first identify the learned quantity before comparing archi
 
 ## Computational Biology 연결
 
-- [[concepts/generative-models/molecular-generation|Molecular generation]]
-- [[concepts/generative-models/protein-design|Protein design]]
-- [[ai/generative-models|Generative models]]
+| Context | Start |
+| --- | --- |
+| Molecules | [Molecular generation](/concepts/generative-models/molecular-generation), [Molecules](/molecular-modeling/molecules) |
+| Proteins | [Protein design](/concepts/generative-models/protein-design), [Proteins](/molecular-modeling/proteins) |
+| Structure-conditioned generation | [Structure-based modeling](/molecular-modeling/structure-based), [Geometry](/molecular-modeling/geometry) |
 
 ## 읽을 때 볼 질문
 

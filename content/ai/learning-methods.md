@@ -40,33 +40,16 @@ $$
 
 Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning과 RL-style objective를 분리해서 보는 것이 중요합니다.
 
-## 핵심 노트
+## Route Map
 
-- [[concepts/learning/index|Learning methods]]
-- [[concepts/learning/supervised-learning|Supervised learning]]
-- [[concepts/learning/semi-supervised-learning|Semi-supervised learning]]
-- [[concepts/learning/pretraining|Pretraining]]
-- [[concepts/learning/self-supervised-learning|Self-supervised learning]]
-- [[concepts/learning/masked-modeling|Masked modeling]]
-- [[concepts/learning/augmentation-policy|Augmentation policy]]
-- [[concepts/learning/representation-collapse|Representation collapse]]
-- [[concepts/learning/representation-evaluation|Representation evaluation]]
-- [[concepts/learning/linear-probing|Linear probing]]
-- [[concepts/learning/contrastive-learning|Contrastive learning]]
-- [[concepts/learning/jepa|JEPA]]
-- [[concepts/learning/fine-tuning|Fine-tuning]]
-- [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
-- [[concepts/learning/knowledge-distillation|Knowledge distillation]]
-- [[concepts/learning/instruction-tuning|Instruction tuning]]
-- [[concepts/learning/transfer-learning|Transfer learning]]
-- [[concepts/learning/domain-adaptation|Domain adaptation]]
-- [[concepts/learning/curriculum-learning|Curriculum learning]]
-- [[concepts/learning/reinforcement-learning|Reinforcement learning]]
-- [[concepts/learning/policy-gradient|Policy gradient]]
-- [[concepts/learning/reward-modeling|Reward modeling]]
-- [[concepts/learning/imitation-learning|Imitation learning]]
-- [[concepts/learning/active-learning|Active learning]]
-- [[concepts/learning/preference-optimization|Preference optimization]]
+| Route | Use For | Start |
+| --- | --- | --- |
+| Supervised signals | measured labels, classification, regression, target-conditioned prediction | [Supervised learning](/concepts/learning/supervised-learning), [Semi-supervised learning](/concepts/learning/semi-supervised-learning) |
+| Pretraining signals | large unlabeled corpora, masked objectives, contrastive views, latent prediction | [Pretraining](/concepts/learning/pretraining), [Self-supervised learning](/concepts/learning/self-supervised-learning), [Masked modeling](/concepts/learning/masked-modeling) |
+| Representation checks | collapse, probing, retrieval, transfer behavior | [Representation collapse](/concepts/learning/representation-collapse), [Representation evaluation](/concepts/learning/representation-evaluation), [Linear probing](/concepts/learning/linear-probing) |
+| Contrastive and predictive SSL | positive/negative pairs, view construction, JEPA-style latent prediction | [Contrastive learning](/concepts/learning/contrastive-learning), [JEPA](/concepts/learning/jepa), [Augmentation policy](/concepts/learning/augmentation-policy) |
+| Adaptation | fine-tuning, domain transfer, curriculum, distillation, instruction tuning | [Fine-tuning](/concepts/learning/fine-tuning), [Fine-tuning protocol](/concepts/learning/fine-tuning-protocol), [Transfer learning](/concepts/learning/transfer-learning), [Domain adaptation](/concepts/learning/domain-adaptation) |
+| Feedback and control | preference data, reward models, policy optimization, imitation, active learning | [Preference optimization](/concepts/learning/preference-optimization), [Reinforcement learning](/concepts/learning/reinforcement-learning), [Reward modeling](/concepts/learning/reward-modeling) |
 
 ## 학습 신호 기준
 
@@ -129,5 +112,5 @@ Here $y^+$ is preferred over $y^-$ and $r_\theta$ is a learned or implicit rewar
 
 - [[ai/architectures|Architectures]]
 - [[ai/evaluation|Evaluation]]
-- [[ai/learning-methods|Learning methods]]
+- [[concepts/learning/index|Learning methods]]
 - [[agents/index|Agents]]
