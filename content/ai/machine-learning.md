@@ -51,56 +51,63 @@ $$
 
 The decision rule $\hat{y}$ is not the same object as the probability distribution $p_\theta(y\mid x)$.
 
-## 모델 계열
+## 기본 구성
 
-- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
-- [[concepts/data/example-unit|Example unit]]
-- [[concepts/data/split-unit|Split unit]]
-- [[concepts/data/label-semantics|Label semantics]]
-- [[concepts/machine-learning/data-preprocessing|Data preprocessing]]
-- [[concepts/machine-learning/feature-engineering|Feature engineering]]
-- [[concepts/machine-learning/linear-model|Linear model]]
-- [[concepts/machine-learning/tree-based-model|Tree-based model]]
-- [[concepts/machine-learning/kernel-method|Kernel method]]
-- [[concepts/machine-learning/ensemble-method|Ensemble method]]
-- [[concepts/architectures/mlp|MLP]]
+Machine learning note는 아래 다섯 층을 분리해서 읽습니다.
 
-## 학습의 기본 요소
+| Layer | Question | Start |
+| --- | --- | --- |
+| Data contract | example, label, split, preprocessing이 무엇인가? | [Dataset checklist](/concepts/data/dataset-construction-checklist), [Example unit](/concepts/data/example-unit), [Split unit](/concepts/data/split-unit), [Label semantics](/concepts/data/label-semantics) |
+| Representation | raw input이 feature, token, graph, coordinate, embedding으로 어떻게 바뀌는가? | [Data preprocessing](/concepts/machine-learning/data-preprocessing), [Feature engineering](/concepts/machine-learning/feature-engineering), [Representation learning](/concepts/machine-learning/representation-learning) |
+| Model family | 어떤 함수공간과 inductive bias를 쓰는가? | [Linear model](/concepts/machine-learning/linear-model), [Tree-based model](/concepts/machine-learning/tree-based-model), [Kernel method](/concepts/machine-learning/kernel-method), [Ensemble method](/concepts/machine-learning/ensemble-method), [MLP](/concepts/architectures/mlp) |
+| Objective | 무엇을 줄이거나 키우는가? | [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| Evidence | 학습된 모델이 어떤 범위에서 작동한다고 말할 수 있는가? | [Generalization](/concepts/machine-learning/generalization), [Model selection](/concepts/machine-learning/model-selection), [Evaluation](/ai/evaluation) |
 
-- Objective: 무엇을 줄이거나 키울 것인가
-- [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]]: observed data에서 평균 손실을 줄이는 기본 원리
-- [[concepts/machine-learning/loss-function|Loss function]]: prediction error를 어떻게 수치화할 것인가
-- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]: training loss, selection metric, test metric, claimed utility가 같은 방향을 보는가
-- [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]], [[concepts/machine-learning/mean-squared-error|mean squared error]], [[concepts/machine-learning/negative-log-likelihood|negative log-likelihood]]: task와 probability assumption에 따라 loss가 어떻게 달라지는가
-- [[concepts/machine-learning/training-loop|Training loop]]: forward, loss, backward, update를 어떻게 반복할 것인가
-- [[concepts/machine-learning/optimization|Optimization]]: parameter를 어떻게 업데이트할 것인가
-- [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]: mini-batch로 full gradient를 어떻게 추정할 것인가
-- [[concepts/machine-learning/backpropagation|Backpropagation]]: loss에서 parameter gradient를 어떻게 계산할 것인가
-- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]: computation graph에서 gradient를 어떻게 계산할 것인가
-- [[concepts/machine-learning/gradient-checking|Gradient checking]]: custom loss/layer의 gradient가 맞는지 어떻게 확인할 것인가
-- [[concepts/machine-learning/loss-landscape|Loss landscape]]: loss surface, gradient, curvature를 어떻게 해석할 것인가
-- [[concepts/machine-learning/second-order-optimization|Second-order optimization]]: Hessian, curvature, Newton-style update, curvature diagnostics를 어떻게 읽을 것인가
-- [[concepts/machine-learning/optimizer|Optimizer]]: gradient를 실제 update로 어떻게 바꿀 것인가
-- [[concepts/machine-learning/adam|Adam]]과 [[concepts/machine-learning/adamw|AdamW]]: adaptive moment와 decoupled weight decay를 어떻게 해석할 것인가
-- [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]: update 크기를 시간에 따라 어떻게 조절할 것인가
-- [[concepts/machine-learning/training-stability|Training stability]]: loss, gradient norm, learning rate, batch size, checkpoint resume가 안정적으로 맞물리는가
-- [[concepts/machine-learning/training-step-accounting|Training step accounting]]: micro-step, optimizer step, consumed samples/tokens를 어떻게 구분할 것인가
-- [[concepts/machine-learning/model-state-contract|Model state contract]]: weights, optimizer state, scheduler state, random state, data state, config를 어떻게 구분할 것인가
-- [[concepts/machine-learning/weight-decay|Weight decay]]: parameter 크기를 어떻게 제한할 것인가
-- [[concepts/machine-learning/gradient-clipping|Gradient clipping]]: 불안정한 gradient를 어떻게 제한할 것인가
-- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]: memory limit 안에서 effective batch size를 어떻게 만들 것인가
-- [[concepts/machine-learning/batch-size|Batch size]]: gradient estimate와 memory/throughput을 어떻게 trade-off할 것인가
-- [[concepts/machine-learning/generalization|Generalization]]: train data 밖에서도 성능이 유지된다는 claim을 어떻게 정의할 것인가
-- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]: train/validation/test curve를 어떻게 해석할 것인가
-- [[concepts/machine-learning/model-selection|Model selection]]: 여러 후보 중 최종 모델을 어떤 근거로 고를 것인가
-- [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]: learning rate, weight decay, model size 같은 선택을 어떤 budget 안에서 탐색할 것인가
-- [[concepts/machine-learning/early-stopping|Early stopping]]: validation metric으로 checkpoint를 고를 때 어떤 leakage를 피해야 하는가
-- [[concepts/machine-learning/learning-curve|Learning curve]]: train/validation curve로 optimization, underfit, overfit을 어떻게 구분할 것인가
-- [[concepts/machine-learning/validation-curve|Validation curve]]: hyperparameter 변화에 따른 train/validation 성능을 어떻게 해석할 것인가
-- [[concepts/machine-learning/regularization|Regularization]]: overfitting을 어떻게 줄일 것인가
-- [[concepts/evaluation/train-validation-test-split|Validation split]]: model selection을 어떤 split에서 할 것인가
-- [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]: 질문, 가설, 설계, run, artifact, 분석, claim을 어떻게 연결할 것인가
-- [[concepts/systems/run-artifact|Run artifact]]: config, logs, metrics, predictions, checkpoint, environment를 어떤 수준으로 남길 것인가
+## Loss and Objective
+
+Objective는 모델이 실제로 학습하는 신호입니다. 같은 architecture라도 objective가 달라지면 representation과 failure mode가 달라집니다.
+
+| Objective Family | Use For | Notes |
+| --- | --- | --- |
+| Empirical risk | supervised prediction under observed labels | [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function) |
+| Classification likelihood | class probability prediction | [Cross-entropy loss](/concepts/machine-learning/cross-entropy-loss), [Negative log-likelihood](/concepts/machine-learning/negative-log-likelihood) |
+| Regression error | scalar or vector prediction | [Mean squared error](/concepts/machine-learning/mean-squared-error), [Regression](/concepts/machine-learning/regression) |
+| Ranking objective | ordered candidate list | [Ranking](/concepts/machine-learning/ranking), [Ranking metrics](/concepts/evaluation/ranking-metrics) |
+| Representation objective | embedding useful for transfer, retrieval, or probing | [Representation learning](/concepts/machine-learning/representation-learning), [Self-supervised learning](/concepts/learning/self-supervised-learning) |
+| Alignment check | reported metric differs from training loss | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+
+## Optimization and Training
+
+Training connects the objective to parameter updates. The minimum loop is:
+
+$$
+x_B \rightarrow f_\theta(x_B) \rightarrow \mathcal{L}_B
+\rightarrow \nabla_\theta \mathcal{L}_B
+\rightarrow \theta_{t+1}
+$$
+
+| Topic | Ask | Start |
+| --- | --- | --- |
+| Training loop | forward, loss, backward, update가 어떤 순서로 도는가? | [Training loop](/concepts/machine-learning/training-loop) |
+| Gradient estimate | full gradient가 아니라 어떤 mini-batch estimate를 쓰는가? | [Stochastic gradient](/concepts/machine-learning/stochastic-gradient), [Batch size](/concepts/machine-learning/batch-size) |
+| Gradient computation | autograd와 backprop이 올바른가? | [Backpropagation](/concepts/machine-learning/backpropagation), [Automatic differentiation](/concepts/machine-learning/automatic-differentiation), [Gradient checking](/concepts/machine-learning/gradient-checking) |
+| Update rule | gradient를 parameter update로 어떻게 바꾸는가? | [Optimization](/concepts/machine-learning/optimization), [Optimizer](/concepts/machine-learning/optimizer), [Adam](/concepts/machine-learning/adam), [AdamW](/concepts/machine-learning/adamw) |
+| Stabilization | learning rate, clipping, weight decay, accumulation을 어떻게 쓰는가? | [Learning-rate schedule](/concepts/machine-learning/learning-rate-schedule), [Gradient clipping](/concepts/machine-learning/gradient-clipping), [Weight decay](/concepts/machine-learning/weight-decay), [Gradient accumulation](/concepts/machine-learning/gradient-accumulation) |
+| Diagnostics | loss surface, curvature, instability를 어떻게 읽는가? | [Training stability](/concepts/machine-learning/training-stability), [Loss landscape](/concepts/machine-learning/loss-landscape), [Second-order optimization](/concepts/machine-learning/second-order-optimization) |
+| State tracking | step, checkpoint, optimizer state, data state가 구분되는가? | [Training step accounting](/concepts/machine-learning/training-step-accounting), [Model state contract](/concepts/machine-learning/model-state-contract) |
+
+## Generalization and Selection
+
+성능 claim은 train loss가 아니라 선택 절차와 held-out evidence로 정해집니다.
+
+| Question | Risk | Start |
+| --- | --- | --- |
+| train/validation/test가 분리되어 있는가? | validation decision이 test에 새어 들어갈 수 있음 | [Train/validation/test split](/concepts/evaluation/train-validation-test-split) |
+| 어떤 후보 중 최종 모델을 골랐는가? | best checkpoint나 best seed를 test score처럼 읽을 수 있음 | [Model selection](/concepts/machine-learning/model-selection), [Hyperparameter tuning](/concepts/machine-learning/hyperparameter-tuning) |
+| 언제 멈췄는가? | early stopping이 hidden test tuning이 될 수 있음 | [Early stopping](/concepts/machine-learning/early-stopping) |
+| curve가 무엇을 말하는가? | optimization failure와 overfitting을 혼동할 수 있음 | [Learning curve](/concepts/machine-learning/learning-curve), [Validation curve](/concepts/machine-learning/validation-curve), [Overfitting and underfitting](/concepts/machine-learning/overfitting-underfitting) |
+| 일반화 claim이 무엇인가? | IID, OOD, deployment claim을 섞을 수 있음 | [Generalization](/concepts/machine-learning/generalization), [OOD generalization](/concepts/evaluation/ood-generalization), [Leakage](/concepts/evaluation/leakage) |
+| overfitting을 어떻게 줄였는가? | regularizer가 claim을 바꾸거나 baseline을 불공정하게 만들 수 있음 | [Regularization](/concepts/machine-learning/regularization) |
 
 ## Training State
 
@@ -160,28 +167,14 @@ Classical ML에서는 feature design이 중심이고, deep learning에서는 fea
 
 - [[ai/learning-methods|Learning methods]]
 - [[ai/evaluation|Evaluation]]
-- [[concepts/evaluation/metric|Metric]]
 - [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
-- [[concepts/evaluation/baseline|Baseline]]
-- [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
 - [[concepts/machine-learning/decision-rule|Decision rule]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
 - [[concepts/machine-learning/generalization|Generalization]]
-- [[concepts/machine-learning/overfitting-underfitting|Overfitting and underfitting]]
 - [[concepts/machine-learning/model-selection|Model selection]]
-- [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]
-- [[concepts/machine-learning/early-stopping|Early stopping]]
-- [[concepts/machine-learning/learning-curve|Learning curve]]
-- [[concepts/machine-learning/validation-curve|Validation curve]]
 - [[concepts/evaluation/leakage|Leakage]]
-- [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/machine-learning/training-stability|Training stability]]
-- [[concepts/machine-learning/training-step-accounting|Training step accounting]]
 - [[concepts/machine-learning/model-state-contract|Model state contract]]
-- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
-- [[concepts/machine-learning/gradient-checking|Gradient checking]]
-- [[concepts/machine-learning/loss-landscape|Loss landscape]]
-- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
 - [[concepts/systems/run-artifact|Run artifact]]

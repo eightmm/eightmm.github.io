@@ -46,6 +46,11 @@ ExternalPlugin.Explorer({
     const firstSegment = segments[0]
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)
   },
+  mapFn: (node) => {
+    if (node.slugSegment === "molecular-modeling") {
+      node.displayName = "Computational Biology"
+    }
+  },
   sortFn: (a, b) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = [
