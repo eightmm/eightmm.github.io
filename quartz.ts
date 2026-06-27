@@ -21,10 +21,13 @@ ExternalPlugin.Explorer({
       "molecular-modeling/computational-biology",
       "molecular-modeling/docking",
       "molecular-modeling/geometry",
+      "molecular-modeling/genome",
       "molecular-modeling/modeling-scope",
+      "molecular-modeling/molecules",
       "molecular-modeling/paper-intake",
       "molecular-modeling/paper-claim-patterns",
       "molecular-modeling/protein-modeling",
+      "molecular-modeling/proteins",
       "math/formula-intake",
       "math/formula-patterns",
       "math/formula-explanation-ladder",
@@ -50,6 +53,12 @@ ExternalPlugin.Explorer({
     if (node.slugSegment === "molecular-modeling") {
       node.displayName = "Computational Biology"
     }
+    if (node.slugSegment === "entities") {
+      const slugSegments = Array.isArray(node.slugSegments) ? node.slugSegments : []
+      if (slugSegments.join("/") === "molecular-modeling/entities") {
+        node.displayName = "Objects and Entities"
+      }
+    }
   },
   sortFn: (a, b) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
@@ -73,14 +82,10 @@ ExternalPlugin.Explorer({
     ]
     const molecularGroups = [
       "entities",
-      "proteins",
-      "molecules",
+      "sequence-based",
+      "molecular-ligand",
       "interactions",
-      "protein-modeling",
-      "geometry",
       "structure-based",
-      "docking",
-      "genome",
       "data-evaluation",
     ]
     const mathGroups = [

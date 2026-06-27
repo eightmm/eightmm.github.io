@@ -1,5 +1,5 @@
 ---
-title: Computational Biology Entities
+title: Objects and Entities
 aliases:
   - computational-biology/entities
   - bio/entities
@@ -9,7 +9,7 @@ tags:
 ---
 
 
-# Computational Biology Entities
+# Objects and Entities
 
 Computational biology에서 먼저 정해야 하는 것은 모델이 다루는 대상입니다. 같은 단어라도 protein, ligand, target, assay, structure가 어떤 단위로 정의되는지에 따라 split, leakage, evaluation이 달라집니다.
 
@@ -79,6 +79,8 @@ For example, a row may be molecule-only for property prediction, but target-cond
 ## Related
 
 - [[molecular-modeling/index|Computational Biology]]
+- [[molecular-modeling/sequence-based|Sequence-based modeling]]
+- [[molecular-modeling/molecular-ligand|Molecular and ligand modeling]]
 - [[molecular-modeling/interactions|Interaction modeling]]
 - [[molecular-modeling/data-evaluation|Data and evaluation]]
 - [[entities/target-assay-label|Target-assay-label contract]]

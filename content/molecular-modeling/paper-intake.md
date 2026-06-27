@@ -23,8 +23,8 @@ $$
 
 | Field | Question | Route |
 | --- | --- | --- |
-| Object | Is the example a molecule, ligand, protein, pocket, complex, pose, assay record, or genome region? | [Entities](/molecular-modeling/entities) |
-| Representation | Is it SMILES, graph, fingerprint, sequence, embedding, conformer, coordinate, or complex graph? | [Molecules](/molecular-modeling/molecules), [Proteins](/molecular-modeling/proteins), [Geometry](/molecular-modeling/geometry) |
+| Object | Is the example a molecule, ligand, protein, pocket, complex, pose, assay record, or genome region? | [Objects and Entities](/molecular-modeling/entities) |
+| Representation | Is it SMILES, graph, fingerprint, sequence, embedding, conformer, coordinate, or complex graph? | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand), [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Geometry](/molecular-modeling/geometry) |
 | Protein sequence model | Is it a protein language model, MSA-based model, template-based model, or hybrid? | [Protein language model](/concepts/protein-modeling/protein-language-model), [Multiple sequence alignment](/concepts/protein-modeling/multiple-sequence-alignment) |
 | Chemical state | Are salt, stereochemistry, tautomer, protonation, charge, and conformer policy fixed? | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
 | Context | Does prediction depend on target, assay, pocket, receptor state, species, construct, or template? | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
@@ -77,8 +77,8 @@ If evaluation uses a known ligand pose, ligand-defined pocket, homologous templa
 
 ## Update Targets
 
-- Molecule or ligand issue: [[molecular-modeling/molecules|Molecules]] and [[concepts/molecular-modeling/index|Molecular modeling]]
-- Protein or sequence issue: [[molecular-modeling/proteins|Proteins]] and [[concepts/protein-modeling/index|Protein modeling]]
+- Molecule or ligand issue: [[molecular-modeling/molecular-ligand|Molecular and ligand modeling]] and [[concepts/molecular-modeling/index|Molecular modeling]]
+- Protein or sequence issue: [[molecular-modeling/sequence-based|Sequence-based modeling]] and [[concepts/protein-modeling/index|Protein modeling]]
 - Protein language model issue: [[concepts/protein-modeling/protein-language-model|Protein language model]]
 - Docking or SBDD issue: [[molecular-modeling/docking|Docking]] and [[concepts/sbdd/index|SBDD concepts]]
 - Energy, score, or constraint issue: [[concepts/generative-models/energy-based-model|Energy-based model]], [[concepts/molecular-modeling/energy-minimization|Energy minimization]], or [[concepts/math/constrained-optimization|Constrained optimization]]

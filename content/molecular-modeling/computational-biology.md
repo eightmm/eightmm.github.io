@@ -31,13 +31,13 @@ If the object, measurement, representation, or claim is vague, the model result 
 | Area | Use For |
 | --- | --- |
 | [Computational Biology Scope](/molecular-modeling/modeling-scope) | naming, route choice, and boundary between domain, AI method, Math, and Agents |
-| [Entities](/molecular-modeling/entities) | protein, molecule, ligand, pocket, complex, assay, sequence, structure |
-| [Molecules](/molecular-modeling/molecules) | small-molecule identity, standardization, fingerprints, graphs, conformers |
-| [Proteins](/molecular-modeling/proteins) | sequence, structure, domains, binding sites, representations |
+| [Objects and Entities](/molecular-modeling/entities) | protein, molecule, ligand, pocket, complex, assay, sequence, structure |
+| [Sequence-based modeling](/molecular-modeling/sequence-based) | protein sequence, genome sequence, representation, family or region split |
+| [Molecular and ligand modeling](/molecular-modeling/molecular-ligand) | small-molecule identity, standardization, fingerprints, graphs, conformers |
+| [Interaction modeling](/molecular-modeling/interactions) | target-conditioned activity, affinity, selectivity, pair-level claims |
 | [Structure-based modeling](/molecular-modeling/structure-based) | protein-ligand geometry, pose, interaction, scoring |
 | [Docking](/molecular-modeling/docking) | receptor/ligand preparation, pose generation, pose quality, ranking |
 | [Data and evaluation](/molecular-modeling/data-evaluation) | split units, label semantics, leakage, benchmark contracts |
-| [Genome](/molecular-modeling/genome) | sequence, region, k-mer, variant-effect modeling |
 
 ## Core Questions
 
@@ -74,9 +74,9 @@ For example, a docking note should not only say that a model performs well. It s
 | Include | Defer |
 | --- | --- |
 | structure-based modeling | broad systems biology |
-| molecular modeling | transcriptomics and single-cell analysis |
-| protein modeling | clinical omics |
-| genome sequence / variant-level modeling | pathway biology unless a concrete project needs it |
+| molecular and ligand modeling | transcriptomics and single-cell analysis |
+| sequence-based protein/genome modeling | clinical omics |
+| interaction modeling | pathway biology unless a concrete project needs it |
 | assay-aware labels and splits | private datasets or unpublished results |
 
 ## Related

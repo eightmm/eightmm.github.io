@@ -25,12 +25,11 @@ $$
 
 | Area | Use For | Start |
 | --- | --- | --- |
-| Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure의 단위 정의 | [Entities](/molecular-modeling/entities) |
-| Proteins | sequence, structure, domain, binding site, representation, protein-family split | [Proteins](/molecular-modeling/proteins) |
-| Molecules | molecular identity, standardization, graph, fingerprint, conformer, property prediction | [Molecules](/molecular-modeling/molecules) |
+| Objects and Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure의 단위 정의 | [Objects and Entities](/molecular-modeling/entities) |
+| Sequence-Based Modeling | protein sequence, genome sequence, tokenization, representation, family or region split | [Sequence-Based Modeling](/molecular-modeling/sequence-based) |
+| Molecular and Ligand Modeling | molecular identity, standardization, graph, fingerprint, conformer, property prediction | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand) |
 | Interaction Modeling | target-conditioned activity, affinity, selectivity, protein-ligand pair, assay context | [Interaction Modeling](/molecular-modeling/interactions) |
 | Structure-Based Modeling | pocket, protein-ligand geometry, docking, pose, scoring, virtual screening | [Structure-Based Modeling](/molecular-modeling/structure-based) |
-| Genome-Level Sequence | genome region, k-mer, annotation, variant-effect prediction | [Genome](/molecular-modeling/genome) |
 | Data and Evaluation | label semantics, split unit, leakage, assay harmonization, benchmark traps | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 
 ## Scope Map
@@ -38,8 +37,9 @@ $$
 | Scope | Covers | Keep Separate |
 | --- | --- | --- |
 | Computational biology | protein, molecule, ligand, pocket, complex, structure, genome sequence | broad omics and clinical biology |
-| Molecular modeling | conformer, docking, pose, force field, virtual screening, molecular property | protein sequence-only or genome-only tasks |
-| Protein modeling | sequence, structure, domain, binding site, design, interaction | ligand chemistry and assay semantics |
+| Object vocabulary | protein, molecule, ligand, pocket, complex, assay, sequence, structure | modeling route or evaluation claim |
+| Sequence-based modeling | protein sequence, genome sequence, variant window, token representation | coordinate-first docking or pose claims |
+| Molecular and ligand modeling | chemical identity, conformer, graph, fingerprint, property, generation | target-conditioned interaction claims |
 | Interaction modeling | target-conditioned activity, affinity, selectivity, pair/complex prediction | molecule-only or protein-only property claims |
 | Structure-based modeling | pocket, protein-ligand geometry, pose, scoring, structure-aware generation | architecture definitions |
 | AI method | architecture, objective, learning method, generative model, evaluation method | domain object definitions |
@@ -51,12 +51,12 @@ Computational Biology 논문은 모델 이름보다 먼저 무엇을 모델링�
 
 | Modeled Object | Typical Questions | Start |
 | --- | --- | --- |
-| Molecule / ligand | 어떤 chemical state, graph, fingerprint, conformer를 쓰는가? | [Molecules](/molecular-modeling/molecules), [Molecule](/entities/molecule), [Ligand](/entities/ligand) |
-| Protein / target | sequence-only인가, structure-aware인가, 어떤 family split이 필요한가? | [Proteins](/molecular-modeling/proteins), [Protein](/entities/protein), [Target](/entities/target) |
+| Molecule / ligand | 어떤 chemical state, graph, fingerprint, conformer를 쓰는가? | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand), [Molecule](/entities/molecule), [Ligand](/entities/ligand) |
+| Protein / target | sequence-only인가, structure-aware인가, 어떤 family split이 필요한가? | [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Protein](/entities/protein), [Target](/entities/target) |
 | Interaction / pair | target-conditioned activity, affinity, selectivity, protein-ligand relation인가? | [Interaction Modeling](/molecular-modeling/interactions), [Target-assay-label contract](/entities/target-assay-label) |
 | Pocket / complex | pocket이 known, predicted, ligand-defined, blind 중 무엇인가? | [Structure-Based Modeling](/molecular-modeling/structure-based), [Pocket](/entities/pocket), [Protein-ligand complex](/entities/protein-ligand-complex) |
 | Bioactivity label | target, assay, endpoint, unit, threshold, censoring, source가 보존되는가? | [Data and Evaluation](/molecular-modeling/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
-| Genome region | broad omics가 아니라 sequence/region/variant 입력으로 다루는가? | [Genome](/molecular-modeling/genome), [Genome modeling concepts](/concepts/genome-modeling) |
+| Genome region | broad omics가 아니라 sequence/region/variant 입력으로 다루는가? | [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Genome modeling concepts](/concepts/genome-modeling) |
 
 ## 구조 기반 문제
 
@@ -74,8 +74,8 @@ Structure-based modeling은 별도의 큰 덩어리로 봅니다. Docking은 그
 
 | 먼저 볼 것 | 확인할 내용 | Start |
 | --- | --- | --- |
-| Object | molecule, protein, ligand, pocket, complex, genome region 중 무엇인가 | [Entities](/molecular-modeling/entities) |
-| Representation | string, graph, fingerprint, embedding, conformer, coordinate, complex graph 중 무엇인가 | [Molecules](/molecular-modeling/molecules), [Proteins](/molecular-modeling/proteins), [Geometry](/molecular-modeling/geometry) |
+| Object | molecule, protein, ligand, pocket, complex, genome region 중 무엇인가 | [Objects and Entities](/molecular-modeling/entities) |
+| Representation | string, graph, fingerprint, embedding, conformer, coordinate, complex graph 중 무엇인가 | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand), [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Geometry](/molecular-modeling/geometry) |
 | Chemical state | salt, stereo, tautomer, protonation, charge, conformer policy가 명확한가 | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
 | Label context | target, assay, endpoint, unit, threshold, censoring, source가 명확한가 | [Data and Evaluation](/molecular-modeling/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and Evaluation](/molecular-modeling/data-evaluation) |
