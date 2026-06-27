@@ -30,11 +30,6 @@ $$
 - **Generative Models**: autoregressive model, VAE, GAN, diffusion, score model, flow matching, normalizing flow. [Start](/ai/generative-models)
 - **Evaluation**: metric, split, leakage, calibration, OOD, uncertainty, failure analysis. [Start](/ai/evaluation)
 - **Agents**: tool use, memory, planning, verification, orchestration. [Start](/agents)
-- **Paper Intake**: input/output, architecture, objective, evidence, and system boundary. [Start](/ai/paper-intake)
-- **Paper Claim Patterns**: architecture, learning method, generative model, evaluation, scaling, systems, and agent claim routing. [Start](/ai/paper-claim-patterns)
-- **Post Intake**: Korean synthesis posts that combine AI, computational biology, and Math. [Start](/posts/ai-molecular-math-post-intake)
-- **Cross-Axis Contract**: object, representation, model, objective, evidence, and public boundary for mixed AI + computational biology + Math claims. [Start](/concepts/ai-computational-biology-math-contract)
-- **Coverage Matrix**: check whether a topic has object, data, model, objective, evidence, and public boundary notes. [Start](/concepts/coverage-matrix)
 
 ## 분류 기준
 
@@ -90,6 +85,18 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [AI paper intake](/ai/paper-intake) |
 | Claim pattern | architecture, learning, generation, evaluation, scaling, systems, agent 중 어떤 claim인가 | [AI paper claim patterns](/ai/paper-claim-patterns) |
 | Cross-axis contract | computational biology 대상과 수식이 함께 걸린 AI claim인가 | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
+
+## 운영 문서
+
+이 문서들은 사이드바의 주제 탐색에서는 숨기고, 논문 정리나 포스트 작성 시에만 사용합니다.
+
+| Need | Start |
+| --- | --- |
+| AI paper intake | [AI paper intake](/ai/paper-intake) |
+| AI paper claim routing | [AI paper claim patterns](/ai/paper-claim-patterns) |
+| AI + Computational Biology + Math contract | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
+| Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
+| Korean synthesis post intake | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
 
 ## Related
 

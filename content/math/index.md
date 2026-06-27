@@ -37,12 +37,6 @@ $$
 | Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows, molecular dynamics | [Dynamical systems](/math/dynamical-systems) |
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
-| Formula intake | paper equations, objectives, indices, distributions, evidence checks | [Formula intake](/math/formula-intake) |
-| Formula patterns | common loss, likelihood, contrastive, generative, graph, coordinate, and metric formulas | [Formula pattern catalog](/math/formula-patterns) |
-| Formula explanation | how much equation detail belongs in posts, wiki notes, and paper notes | [Formula explanation ladder](/math/formula-explanation-ladder) |
-| Cross-axis contract | formulas used in AI + computational biology paper or post claims | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
-| Post intake | formulas inside Korean AI/computational biology synthesis posts | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
-| Coverage matrix | check whether a topic has object, formula, data, evidence, and public boundary notes | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## Formula Checklist
 
@@ -71,6 +65,19 @@ $$
 | Graphs and dynamics | [Discrete math and graphs](/math/discrete-graphs), [Dynamical systems](/math/dynamical-systems), [GNN](/concepts/architectures/gnn), [Graph construction](/concepts/architectures/graph-construction), [Probability flow ODE](/concepts/generative-models/probability-flow-ode) |
 | Evaluation | [Metric](/concepts/evaluation/metric), [Confidence interval](/concepts/evaluation/confidence-interval), [Statistical significance](/concepts/evaluation/statistical-significance) |
 | Claim boundary | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark intake](/concepts/data/benchmark-intake), [Evidence table](/papers/analysis/evidence-table) |
+
+## 운영 문서
+
+이 문서들은 수학 주제 자체라기보다 논문 수식과 포스트 작성 절차를 정리하는 도구입니다. 사이드바의 Math 주제 목록에서는 숨기고, 논문/포스트 작업 때 연결해서 씁니다.
+
+| Need | Start |
+| --- | --- |
+| Formula intake | [Formula intake](/math/formula-intake) |
+| Formula pattern catalog | [Formula pattern catalog](/math/formula-patterns) |
+| Formula explanation depth | [Formula explanation ladder](/math/formula-explanation-ladder) |
+| Cross-axis contract | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
+| Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
+| Korean synthesis post intake | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
 
 ## Reading Path
 

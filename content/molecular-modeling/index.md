@@ -29,8 +29,6 @@ $$
 
 | Area | Use For | Start |
 | --- | --- | --- |
-| Scope and naming | what belongs under Computational Biology vs AI, Math, Agents | [Computational Biology Scope](/molecular-modeling/modeling-scope) |
-| Scope and objects | object, measurement, representation, claim boundary | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
 | Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure | [Entities](/molecular-modeling/entities) |
 | Molecules | standardization, molecular graphs, fingerprints, conformers | [Molecules](/molecular-modeling/molecules) |
 | Proteins | sequence, structure, domains, binding sites, representation | [Proteins](/molecular-modeling/proteins) |
@@ -39,11 +37,6 @@ $$
 | Data and evaluation | label semantics, split units, leakage, assay harmonization | [Data and evaluation](/molecular-modeling/data-evaluation) |
 | Geometry | coordinates, frames, invariance, equivariance | [Geometry](/molecular-modeling/geometry) |
 | Genome | sequence, region, k-mer, variant-level modeling | [Genome](/molecular-modeling/genome) |
-| Paper intake | object, representation, label, split, leakage, public boundary | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
-| Paper claim patterns | common paper types and their required evidence | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
-| Cross-axis contract | AI method, computational biology object, Math objective, evidence | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
-| Post intake | AI, computational biology, and math synthesis writing | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
-| Coverage matrix | object, data, model, objective, evidence, public boundary | [Coverage matrix](/concepts/coverage-matrix) |
 
 ## 다루는 객체
 
@@ -117,6 +110,20 @@ $$
 - [[concepts/genome-modeling/k-mer|K-mer]]
 - [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
 - [[concepts/genome-modeling/genome-annotation|Genome annotation]]
+
+## 운영 문서
+
+이 문서들은 주제 탐색용 사이드바에서는 숨기고, 논문 정리와 글 작성 단계에서 사용합니다.
+
+| Need | Start |
+| --- | --- |
+| Scope and naming | [Computational Biology Scope](/molecular-modeling/modeling-scope) |
+| Boundary and object claim | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
+| Paper intake | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
+| Paper claim patterns | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
+| Cross-axis contract | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
+| Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
+| Korean synthesis post intake | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
 
 ## Geometry, Structure, and Evaluation
 

@@ -16,6 +16,15 @@ ExternalPlugin.Explorer({
       "posts",
     ]
     const hiddenExplorerSubtrees = [
+      "ai/paper-intake",
+      "ai/paper-claim-patterns",
+      "molecular-modeling/computational-biology",
+      "molecular-modeling/modeling-scope",
+      "molecular-modeling/paper-intake",
+      "molecular-modeling/paper-claim-patterns",
+      "math/formula-intake",
+      "math/formula-patterns",
+      "math/formula-explanation-ladder",
       "papers/analysis",
       "papers/reproducibility",
       "papers/workflows",
@@ -55,7 +64,6 @@ ExternalPlugin.Explorer({
       "evaluation",
     ]
     const molecularGroups = [
-      "computational-biology",
       "entities",
       "molecules",
       "proteins",
@@ -75,6 +83,9 @@ ExternalPlugin.Explorer({
       "dynamical-systems",
       "numerical-computing",
       "evaluation-math",
+      "formula-patterns",
+      "formula-intake",
+      "formula-explanation-ladder",
     ]
     const agentGroups = ["core", "tools", "workflows", "verification"]
     const aSlugSegments = Array.isArray(a.slugSegments) ? a.slugSegments : []
