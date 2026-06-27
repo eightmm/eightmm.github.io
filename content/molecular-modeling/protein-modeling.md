@@ -6,6 +6,7 @@ aliases:
 tags:
   - computational-biology
   - protein-modeling
+unlisted: true
 ---
 
 # Protein Modeling
@@ -133,4 +134,4 @@ Function, binding, stability, and design claims need downstream labels, structur
 - [[ai/generative-models|Generative models]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
-- [[papers/protein-modeling/meet-equivariant-peptide|MEET]]
+- [[papers/protein-modeling/index|Protein modeling papers]]

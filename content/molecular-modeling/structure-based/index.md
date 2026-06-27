@@ -68,15 +68,15 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 - [[concepts/evaluation/scaffold-split|Scaffold split]] for ligand-side generalization.
 - [[concepts/evaluation/protein-family-split|Protein family split]] for protein-side generalization.
 
-## Recent Papers
+## Paper Route
 
-- [[papers/generative-models/molexar|Molexar]] — unified multimodal molecular foundation model on Fragment-SELFIES
-- [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]] — multi-scale fusion for affinity prediction, cross-pathogen transfer failure
-- [[papers/protein-modeling/meet-equivariant-peptide|MEET]] — memory-efficient equivariant transformer for scalable peptide design
+Specific papers live under [[papers/sbdd/index|Structure-based modeling papers]], [[papers/protein-modeling/index|Protein modeling papers]], and [[papers/generative-models/index|Generative model papers]]. This page stays focused on the reusable route: object, geometry, scoring, split, and evidence.
 
 ## Adjacent Areas
 
 - [[molecular-modeling/protein-modeling|Protein modeling]]
+- [[molecular-modeling/docking|Docking]]
+- [[molecular-modeling/geometry|Geometry]]
 - [[ai/generative-models|Generative models]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/molecular-generation|Molecular generation]]

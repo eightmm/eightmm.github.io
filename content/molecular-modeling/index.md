@@ -13,7 +13,7 @@ tags:
 
 이 영역은 넓은 biology 전체가 아니라 계산 모델링에서 직접 다루는 객체와 workflow에 집중합니다. 주요 대상은 molecule, ligand, protein, pocket, protein-ligand complex, conformer, structure, genome sequence입니다.
 
-`Computational Biology`는 공개 상위 이름입니다. 그 안에서 molecule, conformer, docking, pose, force field, virtual screening처럼 화학/구조 workflow가 중심인 부분을 `Molecular Modeling` 하위 영역으로 봅니다.
+공개 상위 이름은 `Computational Biology`로 둡니다. 그 안에서 molecule, conformer, docking, pose, force field, virtual screening처럼 화학/구조 workflow가 중심인 부분만 `Molecular Modeling` 하위 영역으로 봅니다.
 
 AI 모델은 이 영역의 방법 중 하나입니다. 객체와 평가 조건은 여기서 정하고, GNN, Transformer, diffusion, flow matching, SSL 같은 모델 구조와 학습법은 [[ai/index|AI]]에서 봅니다.
 
@@ -64,7 +64,7 @@ Structure-based modeling은 별도의 큰 덩어리로 봅니다. Docking은 그
 | Question | Route |
 | --- | --- |
 | receptor와 ligand를 어떻게 준비하는가? | [Docking workflow](/concepts/sbdd/docking-workflow), [Receptor and ligand preparation](/concepts/sbdd/receptor-ligand-preparation) |
-| pose를 생성하거나 refine하는가? | [Docking](/molecular-modeling/docking), [Pose generation](/concepts/sbdd/pose-generation) |
+| pose를 생성하거나 refine하는가? | [Protein-ligand docking](/molecular-modeling/structure-based/protein-ligand-docking), [Docking](/molecular-modeling/docking), [Pose generation](/concepts/sbdd/pose-generation) |
 | geometry가 타당한가? | [Geometry](/molecular-modeling/geometry), [Pose quality](/concepts/sbdd/pose-quality), [PoseBusters](/papers/sbdd/posebusters) |
 | score가 pose, affinity, ranking, enrichment 중 무엇을 뜻하는가? | [Scoring function](/concepts/sbdd/scoring-function), [Binding affinity](/concepts/sbdd/binding-affinity), [Virtual screening](/concepts/sbdd/virtual-screening) |
 | train/test가 ligand와 protein 양쪽에서 분리되는가? | [Protein-ligand split](/concepts/sbdd/protein-ligand-split), [Leakage](/concepts/evaluation/leakage) |

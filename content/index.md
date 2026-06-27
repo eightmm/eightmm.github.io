@@ -11,7 +11,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 | Area | Use For |
 | --- | --- |
 | [AI](/ai) | machine learning, architectures, learning methods, generative models, evaluation |
-| [Computational Biology](/molecular-modeling) | molecules, proteins, ligand interaction, structure-based modeling, genome sequence modeling |
+| [Computational Biology](/molecular-modeling) | focused notes on molecules, proteins, ligand interaction, structure-based modeling, and genome-level sequence tasks |
 | [Math](/math) | formulas and mathematical tools needed to read AI notes |
 | [Infra](/infra) | GPU, HPC, training, inference, environments, reproducible runs |
 | [Research](/research) | question-driven synthesis for concrete research directions |
@@ -32,7 +32,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 ## 읽는 경로
 
 - AI 기본기: [[math/index|Math]] -> [[ai/machine-learning|Machine learning]] -> [[ai/architectures|Architectures]] -> [[ai/learning-methods|Learning methods]] -> [[ai/evaluation|Evaluation]]
-- Computational biology: [[molecular-modeling/index|Computational Biology]] -> [[molecular-modeling/structure-based/index|Structure-based modeling]] -> [[molecular-modeling/docking|Docking]] -> [[concepts/sbdd/index|SBDD concepts]]
+- Computational biology: [[molecular-modeling/index|Computational Biology]] -> [[molecular-modeling/structure-based/index|Structure-based modeling]] -> [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]] -> [[concepts/sbdd/index|SBDD concepts]]
 - Protein modeling: [[molecular-modeling/proteins|Proteins]] -> [[concepts/protein-modeling/index|Protein modeling concepts]]
 - Papers: [[papers/index|Papers]] -> [[papers/workflows/paper-review-workflow|Paper review workflow]] -> [[papers/workflows/reading-status|Reading status]]
 - Infra: [[infra/index|Infra]] -> [[infra/hpc/job-lifecycle|HPC job lifecycle]] -> [[infra/reproducibility/run-record|Reproducible run record]]
@@ -43,7 +43,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 
 글은 생각의 흐름을 정리하고, 개념·논문·모델 구조·평가 방법은 서로 연결된 노트로 축적합니다.
 
-예를 들어 docking 글은 [[molecular-modeling/index|Computational Biology]]에서 시작해 [[molecular-modeling/structure-based/index|Structure-based modeling]], [[molecular-modeling/docking|Docking]], [[concepts/sbdd/scoring-function|Scoring function]], [[papers/sbdd/posebusters|PoseBusters]] 같은 내부 노트로 이어집니다.
+예를 들어 docking 글은 [[molecular-modeling/index|Computational Biology]]에서 시작해 [[molecular-modeling/structure-based/index|Structure-based modeling]], [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]], [[concepts/sbdd/scoring-function|Scoring function]], [[papers/sbdd/posebusters|PoseBusters]] 같은 내부 노트로 이어집니다.
 
 작성 방식은 [[posts/blog-writing-guide|블로그 글 작성 가이드]]에 정리하고, 앞으로 풀어낼 글감은 [[posts/topic-roadmap|글감 로드맵]]에서 관리합니다.
 

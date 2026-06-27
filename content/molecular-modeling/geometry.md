@@ -6,6 +6,7 @@ aliases:
 tags:
   - computational-biology
   - geometry
+unlisted: true
 ---
 
 
