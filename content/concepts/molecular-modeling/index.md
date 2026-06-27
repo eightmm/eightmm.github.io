@@ -40,26 +40,17 @@ $$
 
 Do not split or aggregate labels before the molecular identity policy is explicit.
 
-## Core Concepts
+## Route Map
 
-- [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
-- [[concepts/molecular-modeling/molecular-identity|Molecular identity]]
-- [[concepts/molecular-modeling/chemical-state-contract|Chemical state contract]]
-- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
-- [[concepts/molecular-modeling/smiles|SMILES]]
-- [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
-- [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
-- [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]]
-- [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]
-- [[concepts/molecular-modeling/substructure-search|Substructure search]]
-- [[concepts/molecular-modeling/fragment-selfies|Fragment-SELFIES]]
-- [[concepts/molecular-modeling/conformer|Conformer]]
-- [[concepts/molecular-modeling/force-field|Force field]]
-- [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
-- [[concepts/molecular-modeling/molecular-dynamics|Molecular dynamics]]
-- [[concepts/molecular-modeling/tautomer|Tautomer]]
-- [[concepts/molecular-modeling/protonation-state|Protonation state]]
-- [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
+| Question | Start | Risk |
+| --- | --- | --- |
+| What is the molecule identity? | [Molecular identity](/concepts/molecular-modeling/molecular-identity), [Molecular standardization](/concepts/molecular-modeling/molecular-standardization), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) | salts, tautomers, stereo, protonation, charge, source policy |
+| What does the model see? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | featurizer silently changing the object |
+| How is similarity or retrieval defined? | [Molecular similarity](/concepts/molecular-modeling/molecular-similarity), [Substructure search](/concepts/molecular-modeling/substructure-search) | proxy similarity used as domain truth |
+| What prediction task is claimed? | [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction) | label context and split unit missing |
+| Is generation constrained? | [Fragment-SELFIES](/concepts/molecular-modeling/fragment-selfies) | valid strings without useful molecules |
+| Is 3D state involved? | [Conformer](/concepts/molecular-modeling/conformer), [Force field](/concepts/molecular-modeling/force-field), [Energy minimization](/concepts/molecular-modeling/energy-minimization), [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | conformer source and postprocessing dependence |
+| Which chemical variants matter? | [Tautomer](/concepts/molecular-modeling/tautomer), [Protonation state](/concepts/molecular-modeling/protonation-state), [Stereochemistry](/concepts/molecular-modeling/stereochemistry) | train/test leakage through equivalent or near-equivalent raw rows |
 
 ## Geometry and Physics Protocols
 

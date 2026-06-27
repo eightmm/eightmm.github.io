@@ -18,13 +18,14 @@ $$
 
 Use these pages to identify the object, distribution, parameter, and estimator behind a formula. Proof-heavy material can be added later only when it clarifies an AI, Computational Biology, or evaluation note.
 
-## Core Notes
+## Route Map
 
 | Area | Use For | Start |
 | --- | --- | --- |
 | Linear algebra | vectors, matrices, projections, embeddings, rank, similarity | [Linear algebra](/concepts/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation), [Vector norm and similarity](/concepts/math/vector-norm-similarity) |
 | Spectral structure | representation analysis, PCA/SVD, low-rank approximations, stability | [Eigenvalue and eigenvector](/concepts/math/eigenvalue-eigenvector), [Singular value decomposition](/concepts/math/singular-value-decomposition) |
 | Calculus | gradients, Jacobians, Hessians, backpropagation notation | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus), [Jacobian and Hessian](/concepts/math/jacobian-hessian) |
+| Constrained optimization | feasibility, penalties, Lagrangian views, projected updates | [Constrained optimization](/concepts/math/constrained-optimization) |
 | Geometry and symmetry | coordinate sets, rigid motions, equivariance, invariant targets | [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) |
 | Probability | random variables, distributions, expectations, normal assumptions | [Random variable](/concepts/math/random-variable), [Probability distribution](/concepts/math/probability-distribution), [Expectation](/concepts/math/expectation), [Normal distribution](/concepts/math/normal-distribution) |
 | Estimation and statistics | finite-sample estimates, uncertainty, hypothesis checks, bias/variance | [Statistical estimator](/concepts/math/statistical-estimator), [Monte Carlo estimation](/concepts/math/monte-carlo-estimation), [Central limit theorem](/concepts/math/central-limit-theorem), [Hypothesis testing](/concepts/math/hypothesis-testing), [Bias-variance tradeoff](/concepts/math/bias-variance-tradeoff) |

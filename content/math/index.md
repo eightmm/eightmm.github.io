@@ -28,8 +28,7 @@ $$
 | --- | --- | --- |
 | Foundations | definitions, formulas, reusable checks | [Math foundations](/concepts/math) |
 | Linear algebra | vectors, matrices, tensor shapes, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
-| Calculus | derivatives, chain rule, Jacobians, Hessians, backpropagation math | [Calculus and gradients](/math/calculus-gradients) |
-| Constrained optimization | Lagrangian, KKT, penalties, barriers, projection, feasibility | [Constrained optimization](/concepts/math/constrained-optimization) |
+| Calculus and optimization | derivatives, chain rule, Jacobians, Hessians, constraints, backpropagation math | [Calculus and gradients](/math/calculus-gradients), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Probability | random variables, distributions, estimators, Bayesian inference, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
 | Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
 | Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry) |
