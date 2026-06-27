@@ -43,13 +43,15 @@ where $p$ is a candidate paper.
 
 | Bucket | Use For |
 | --- | --- |
-| [Structure-based modeling papers](/papers/sbdd) | docking, conformers, pose, scoring, screening, protein-ligand evaluation |
-| [Protein modeling papers](/papers/protein-modeling) | protein representation, structure, antibody/protein interaction |
 | [Architecture papers](/papers/architectures) | Transformer, GNN, SSM/Mamba, MoE, geometric architecture design |
+| [LLM papers](/papers/llm) | language modeling, context, retrieval, instruction tuning, alignment, tool use |
 | [Generative model papers](/papers/generative-models) | diffusion, flow, molecule/protein generation, sampling objectives |
+| [Computational Biology papers](/papers/computational-biology) | structure-based modeling, protein modeling, molecular generation, domain evaluation |
 | [Learning method papers](/papers/learning-methods) | SSL, contrastive learning, JEPA, fine-tuning, preference/RL-style objectives |
 | [Systems papers](/papers/systems) | training efficiency, inference, tooling, agents, reproducibility |
 | Concept update only | math-heavy or method-definition paper where no paper-specific note is needed |
+
+Narrow support buckets such as [[papers/sbdd/index|Structure-based modeling papers]] and [[papers/protein-modeling/index|Protein modeling papers]] can hold stable domain-specific notes, but the visible sidebar should route readers through [[papers/computational-biology/index|Computational Biology papers]] first.
 
 If a paper spans several buckets, choose the strongest claim as the paper location with [[papers/workflows/claim-routing|Claim routing]] and use [[concepts/coverage-matrix|Coverage matrix]] for cross-links.
 

@@ -10,6 +10,8 @@ tags:
 
 Architecture paper notes cover model families and structural design choices: attention, convolution, recurrence, graph neural networks, state-space models, Mamba-style selective recurrence, mixture of experts, set models, and geometric architectures.
 
+Use this bucket when the paper's durable contribution is a reusable architecture or block. If the same paper is also historically important for LLMs, cross-link it to [[papers/llm/index|LLM papers]] rather than duplicating the note.
+
 ## Reading Axes
 
 - What input structure is assumed: sequence, image, graph, set, 3D coordinate, multimodal context, or agent state?
@@ -47,6 +49,7 @@ Architecture paper notes cover model families and structural design choices: att
 - [[ai/paper-intake|AI paper intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[papers/workflows/paper-triage|Paper triage]]
+- [[papers/llm/index|LLM papers]]
 - [[papers/workflows/ai-molecular-math-paper-template|AI-Molecular-Math paper template]]
 - [[papers/analysis/ablation-map|Ablation map]]
 - [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]

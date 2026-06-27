@@ -35,6 +35,7 @@ Generative model paper notes cover models that sample, transform, denoise, decod
 ## Related
 
 - [[ai/generative-models|Generative models gateway]]
+- [[papers/computational-biology/index|Computational Biology papers]]
 - [[concepts/evaluation/metric|Metric]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]

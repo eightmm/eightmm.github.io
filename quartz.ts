@@ -33,7 +33,9 @@ ExternalPlugin.Explorer({
       "math/formula-patterns",
       "math/formula-explanation-ladder",
       "papers/analysis",
+      "papers/protein-modeling",
       "papers/reproducibility",
+      "papers/sbdd",
       "papers/workflows",
       "papers/learning-methods",
       "papers/systems",
@@ -104,6 +106,12 @@ ExternalPlugin.Explorer({
       "formula-explanation-ladder",
     ]
     const agentGroups = ["core", "tools", "workflows", "verification"]
+    const paperGroups = [
+      "architectures",
+      "llm",
+      "generative-models",
+      "computational-biology",
+    ]
     const aSlugSegments = Array.isArray(a.slugSegments) ? a.slugSegments : []
     const bSlugSegments = Array.isArray(b.slugSegments) ? b.slugSegments : []
     const aDataSlug = typeof a.data?.slug === "string" ? a.data.slug : ""
@@ -146,6 +154,14 @@ ExternalPlugin.Explorer({
     if (aSegments[0] === "agents" && bSegments[0] === "agents") {
       const aGroupIndex = agentGroups.indexOf(aSegments[1] ?? "")
       const bGroupIndex = agentGroups.indexOf(bSegments[1] ?? "")
+      if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
+        return aGroupIndex - bGroupIndex
+      }
+    }
+
+    if (aSegments[0] === "papers" && bSegments[0] === "papers") {
+      const aGroupIndex = paperGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = paperGroups.indexOf(bSegments[1] ?? "")
       if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
         return aGroupIndex - bGroupIndex
       }

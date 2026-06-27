@@ -14,10 +14,10 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 
 | Area | Use For |
 | --- | --- |
-| [Structure-based modeling papers](/papers/sbdd) | docking, conformers, pose quality, scoring, screening |
-| [Protein modeling papers](/papers/protein-modeling) | protein representation, structure, antibody/protein interaction |
 | [Architecture papers](/papers/architectures) | Transformer, GNN, SSM/Mamba, MoE, geometric architecture design |
+| [LLM papers](/papers/llm) | language models, context, retrieval, instruction tuning, alignment, tool use |
 | [Generative model papers](/papers/generative-models) | diffusion, flow, molecule/protein generation |
+| [Computational Biology papers](/papers/computational-biology) | structure-based modeling, protein modeling, molecular generation, domain evaluation |
 | [Learning method papers](/papers/learning-methods) | SSL, contrastive learning, JEPA, fine-tuning, preference/RL-style objectives |
 | [Systems papers](/papers/systems) | training efficiency, inference, tooling, agents, reproducibility |
 
@@ -29,6 +29,17 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 | [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | antibody-antigen binding |
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | equivariant peptide modeling |
 | [Molexar](/papers/generative-models/molexar) | molecular generation |
+
+## Support Buckets
+
+These buckets keep stable URLs for narrower paper clusters, but the sidebar uses broader shelves first.
+
+| Bucket | Parent Shelf |
+| --- | --- |
+| [Structure-based modeling papers](/papers/sbdd) | [Computational Biology papers](/papers/computational-biology) |
+| [Protein modeling papers](/papers/protein-modeling) | [Computational Biology papers](/papers/computational-biology) |
+| [Learning method papers](/papers/learning-methods) | [AI learning methods](/ai/learning-methods) and paper workflow support |
+| [Systems papers](/papers/systems) | [Infra](/infra) and [Agents](/agents) when relevant |
 
 ## Reading Utilities
 
