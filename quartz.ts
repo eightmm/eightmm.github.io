@@ -28,6 +28,7 @@ ExternalPlugin.Explorer({
       "molecular-modeling/paper-claim-patterns",
       "molecular-modeling/protein-modeling",
       "molecular-modeling/proteins",
+      "molecular-modeling/structure-based/protein-ligand-docking",
       "math/formula-intake",
       "math/formula-patterns",
       "math/formula-explanation-ladder",
