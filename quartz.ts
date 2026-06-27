@@ -49,6 +49,9 @@ ExternalPlugin.Explorer({
       return false
     }
     const segments = slug.split("/")
+    if (segments[0] === "infra" && segments.length > 2) {
+      return false
+    }
     const firstSegment = segments[0]
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)
   },
