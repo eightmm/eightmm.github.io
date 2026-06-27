@@ -39,6 +39,9 @@ ExternalPlugin.Explorer({
       "papers/workflows",
       "papers/learning-methods",
       "papers/systems",
+      "infra/training",
+      "infra/inference",
+      "infra/environments",
     ]
     const slugSegments = Array.isArray(node.slugSegments) ? node.slugSegments : []
     const dataSlug = typeof node.data?.slug === "string" ? node.data.slug : ""
@@ -120,9 +123,6 @@ ExternalPlugin.Explorer({
       "hpc",
       "gpu",
       "io",
-      "training",
-      "inference",
-      "environments",
       "reproducibility",
       "server-ops",
     ]

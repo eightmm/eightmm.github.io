@@ -1,14 +1,15 @@
 ---
 title: Inference
+unlisted: true
 tags:
   - infra
   - inference
   - serving
 ---
 
-# Inference
+# Inference Runbooks
 
-Inference infra notes cover how models are served under memory, latency, throughput, and reliability constraints.
+Inference runbooks cover serving operations under memory, latency, throughput, and reliability constraints. The canonical concept entries are [[concepts/systems/inference|Inference]], [[concepts/systems/model-serving|Model serving]], and [[concepts/systems/latency-throughput|Latency and throughput]].
 
 Serving starts from an interface and capacity contract:
 

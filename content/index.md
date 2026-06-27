@@ -13,7 +13,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 | [AI](/ai) | machine learning, architectures, learning methods, generative models, evaluation |
 | [Math](/math) | formulas and mathematical tools needed to read AI notes |
 | [Computational Biology](/molecular-modeling) | focused notes on biological objects, sequence-based modeling, molecular and ligand modeling, interaction modeling, and structure-based workflows |
-| [Infra](/infra) | hardware, GPU, HPC, training, inference, environments, reproducible runs |
+| [Infra](/infra) | hardware, GPU, HPC, storage, reproducibility, server operations |
 | [Research](/research) | question-driven synthesis for concrete research directions |
 | [Papers](/papers) | curated paper notes and reading utilities |
 | [Agents](/agents) | agent concepts, tools, workflows, verification |

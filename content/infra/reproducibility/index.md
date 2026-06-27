@@ -24,12 +24,14 @@ A public note should make the boundary inspectable without leaking private paths
 
 - Run records and artifact manifests.
 - Checkpoint, config, seed, environment, and data-version boundaries.
+- Public-safe module, container, package, and runtime records.
 - Reconciliation after interrupted or long-running jobs.
 - Public notes that distinguish completed, failed, superseded, and inconclusive runs.
 
 ## Notes
 
 - [[infra/reproducibility/run-record|Reproducible run record]]
+- [[infra/environments/modules-containers|Environment modules and containers]]
 
 ## Checks
 
@@ -42,6 +44,7 @@ A public note should make the boundary inspectable without leaking private paths
 ## Where New Notes Go
 
 - General run records go here.
+- Environment capture and module/container notes go here when the point is reproducibility.
 - Paper artifact availability goes under [[papers/reproducibility/index|Paper reproducibility]].
 - Experiment design and evidence interpretation go under [[concepts/research-methodology/index|Research methodology]].
 - Storage-specific artifact problems go under [[infra/io/index|Storage and IO]].
@@ -49,5 +52,6 @@ A public note should make the boundary inspectable without leaking private paths
 ## Related
 
 - [[concepts/systems/reproducibility|Reproducibility]]
+- [[concepts/systems/environment-management|Environment management]]
 - [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/research-methodology/experiment-ledger|Experiment ledger]]

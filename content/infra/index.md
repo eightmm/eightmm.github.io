@@ -6,7 +6,7 @@ tags:
 
 # Infra
 
-서버, 하드웨어, GPU, HPC, research engineering 운영 지식을 정리하는 입구입니다. 운영 경험은 특정 장비나 내부 환경보다 재사용 가능한 진단 절차와 runbook 형태로 남깁니다.
+서버, 하드웨어, GPU, HPC, storage, 운영 절차처럼 실제 실행 환경에 가까운 지식을 정리하는 입구입니다. 모델 학습법이나 serving 개념 자체보다, 장비와 운영 경계에서 반복되는 진단 절차와 runbook을 남깁니다.
 
 ## Main Areas
 
@@ -16,9 +16,6 @@ tags:
 | [HPC](/infra/hpc) | Slurm, jobs, arrays, distributed training, preemption, checkpointing |
 | [GPU](/infra/gpu) | utilization, memory, bottlenecks, profiling signals |
 | [Storage and IO](/infra/io) | storage, dataloading, throughput, cache behavior |
-| [Training](/infra/training) | training loop stability, checkpoint state, single-node checks |
-| [Inference](/infra/inference) | serving, batching, latency, throughput |
-| [Environments](/infra/environments) | modules, containers, package environments |
 | [Reproducibility](/infra/reproducibility) | run records, artifacts, environment capture |
 | [Server operations](/infra/server-ops) | public runbooks and operational failure patterns |
 
@@ -30,10 +27,10 @@ tags:
 | GPU memory or utilization issue? | [GPU](/infra/gpu) |
 | Slurm job lifecycle or resource request? | [HPC](/infra/hpc), [Slurm](/infra/hpc/slurm) |
 | Multi-node or multi-GPU distributed run? | [Distributed training on HPC](/infra/hpc/distributed-training) |
-| Serving capacity or latency planning? | [Inference](/infra/inference) |
+| Serving, batching, latency, or inference contract? | [AI systems](/concepts/systems), [Model serving](/concepts/systems/model-serving), [Latency and throughput](/concepts/systems/latency-throughput) |
 | Dataloading or storage throughput issue? | [Storage and IO](/infra/io) |
-| Environment, module, or container problem? | [Environments](/infra/environments) |
-| Need a reproducible record? | [Reproducibility](/infra/reproducibility) |
+| Environment, module, or container problem? | [Reproducibility](/infra/reproducibility), [Environment management](/concepts/systems/environment-management) |
+| Need a reproducible record? | [Reproducibility](/infra/reproducibility), [Run artifact](/concepts/systems/run-artifact) |
 
 ## 관련 입구
 

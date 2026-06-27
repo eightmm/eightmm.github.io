@@ -1,5 +1,6 @@
 ---
 title: Environments
+unlisted: true
 tags:
   - infra
   - environment

@@ -35,7 +35,7 @@ $$
 | GPU memory and utilization | [GPU](/infra/gpu) |
 | Dataloader and storage stalls | [Storage and IO](/infra/io) |
 | Distributed algorithm concept | [Distributed training concept](/concepts/systems/distributed-training) |
-| Single-node training checks | [Training infra](/infra/training) |
+| Single-node training checks | [Training run](/concepts/systems/training-run), [Distributed training](/concepts/systems/distributed-training) |
 
 ## Launch Contract
 

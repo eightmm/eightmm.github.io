@@ -1,13 +1,14 @@
 ---
 title: Training Infra
+unlisted: true
 tags:
   - infra
   - training
 ---
 
-# Training Infra
+# Training Runbooks
 
-Training infra notes cover operational choices around training loop stability, checkpoints, single-node scaling checks, and run behavior. Cluster-level launch, scheduler allocation, and multi-node execution belong under [[infra/hpc/distributed-training|Distributed training on HPC]].
+Training runbooks cover operational choices around training loop stability, checkpoints, single-node scaling checks, and run behavior. The canonical concept entry is [[concepts/systems/training-run|Training run]]. Cluster-level launch, scheduler allocation, and multi-node execution belong under [[infra/hpc/distributed-training|Distributed training on HPC]].
 
 The operational training loop is broader than the model update:
 
