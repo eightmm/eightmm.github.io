@@ -18,17 +18,16 @@ $$
 
 The empirical test score is only an estimate of this target.
 
-## Core Notes
+## Route Map
 
-- [[concepts/evaluation/metric|Metric]]
-- [[concepts/evaluation/metric-selection|Metric selection]]
-- [[concepts/data/benchmark-intake|Benchmark intake]]
-- [[concepts/evaluation/confidence-interval|Confidence interval]]
-- [[concepts/evaluation/bootstrap-evaluation|Bootstrap evaluation]]
-- [[concepts/evaluation/statistical-significance|Statistical significance]]
-- [[concepts/evaluation/effect-size|Effect size]]
-- [[concepts/evaluation/paired-comparison|Paired comparison]]
-- [[concepts/evaluation/multiple-comparisons|Multiple comparisons]]
+| Route | Use For | Start |
+| --- | --- | --- |
+| Metric definition | what quantity is averaged, ranked, thresholded, or calibrated | [Metric](/concepts/evaluation/metric), [Metric selection](/concepts/evaluation/metric-selection) |
+| Benchmark boundary | what population and claim the benchmark represents | [Benchmark intake](/concepts/data/benchmark-intake), [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
+| Uncertainty | confidence intervals, bootstrap estimates, seed or sampler variance | [Confidence interval](/concepts/evaluation/confidence-interval), [Bootstrap evaluation](/concepts/evaluation/bootstrap-evaluation) |
+| Comparison | effect size, paired tests, multiple-comparison risk | [Effect size](/concepts/evaluation/effect-size), [Paired comparison](/concepts/evaluation/paired-comparison), [Multiple comparisons](/concepts/evaluation/multiple-comparisons) |
+| Probability quality | calibrated probabilities, reliability, proper scoring rules | [Calibration](/concepts/evaluation/calibration), [Brier score](/concepts/evaluation/brier-score), [Probability metrics](/concepts/evaluation/probability-metrics) |
+| Statistical claim | whether a reported difference is larger than noise or selection bias | [Statistical significance](/concepts/evaluation/statistical-significance) |
 
 ## Estimate and Uncertainty
 
@@ -76,12 +75,13 @@ where $s_{A,j}$ and $s_{B,j}$ are scores or losses for two systems on the same e
 
 ## Probability Quality
 
-- [[concepts/evaluation/calibration|Calibration]]
-- [[concepts/evaluation/reliability-diagram|Reliability diagram]]
-- [[concepts/evaluation/brier-score|Brier score]]
-- [[concepts/evaluation/probability-metrics|Probability metrics]]
-- [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
-- [[concepts/evaluation/conformal-prediction|Conformal prediction]]
+Probability-valued outputs need separate checks from accuracy. A classifier can be accurate but badly calibrated, and a low expected loss can still hide unreliable confidence on a shifted domain.
+
+| Question | Start |
+| --- | --- |
+| Do predicted probabilities match empirical frequencies? | [Calibration](/concepts/evaluation/calibration), [Reliability diagram](/concepts/evaluation/reliability-diagram) |
+| Is the probability score proper? | [Brier score](/concepts/evaluation/brier-score), [Probability metrics](/concepts/evaluation/probability-metrics) |
+| Is uncertainty part of the decision? | [Uncertainty estimation](/concepts/evaluation/uncertainty-estimation), [Conformal prediction](/concepts/evaluation/conformal-prediction) |
 
 ## Reporting Checks
 

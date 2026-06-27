@@ -17,16 +17,16 @@ $$
 
 The distribution under the expectation matters as much as the loss itself.
 
-## Probability
+## Route Map
 
-- [[concepts/math/random-variable|Random variable]]
-- [[concepts/math/probability-distribution|Probability distribution]]
-- [[concepts/math/normal-distribution|Normal distribution]]
-- [[concepts/math/expectation|Expectation]]
-- [[concepts/math/bayes-rule|Bayes rule]]
-- [[concepts/math/bayesian-inference|Bayesian inference]]
-- [[concepts/math/entropy-kl|Entropy and KL divergence]]
-- [[concepts/math/maximum-likelihood|Maximum likelihood]]
+| Route | Use For | Start |
+| --- | --- | --- |
+| Random objects | what variable, event, sample space, and distribution are being modeled | [Random variable](/concepts/math/random-variable), [Probability distribution](/concepts/math/probability-distribution) |
+| Expectations | loss, risk, metric, Monte Carlo estimate, sampling average | [Expectation](/concepts/math/expectation), [Monte Carlo estimation](/concepts/math/monte-carlo-estimation) |
+| Common distributions | noise model, uncertainty assumption, approximate sampling law | [Normal distribution](/concepts/math/normal-distribution) |
+| Conditioning and inference | posterior, likelihood, prior, Bayesian update | [Bayes rule](/concepts/math/bayes-rule), [Bayesian inference](/concepts/math/bayesian-inference) |
+| Likelihood and information | NLL, cross-entropy, KL, generative objectives | [Maximum likelihood](/concepts/math/maximum-likelihood), [Entropy and KL divergence](/concepts/math/entropy-kl), [Information and likelihood](/math/information-likelihood) |
+| Statistical evidence | finite-sample estimates, uncertainty, hypothesis tests, bias/variance | [Statistical estimator](/concepts/math/statistical-estimator), [Hypothesis testing](/concepts/math/hypothesis-testing), [Bias-variance tradeoff](/concepts/math/bias-variance-tradeoff) |
 
 ## Distribution Map
 
@@ -110,12 +110,15 @@ In computational biology this can fail through scaffold shift, protein-family sh
 
 ## Statistics
 
-- [[concepts/math/statistical-estimator|Statistical estimator]]
-- [[concepts/math/covariance-correlation|Covariance and correlation]]
-- [[concepts/math/central-limit-theorem|Central limit theorem]]
-- [[concepts/math/hypothesis-testing|Hypothesis testing]]
-- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
-- [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
+Statistics turns finite observations into claims about a population quantity. Correlation, uncertainty, hypothesis tests, and benchmark estimates should be read as estimates with assumptions, not as exact facts.
+
+| Topic | Start |
+| --- | --- |
+| Covariation | [Covariance and correlation](/concepts/math/covariance-correlation) |
+| Asymptotic approximation | [Central limit theorem](/concepts/math/central-limit-theorem) |
+| Evidence against a null | [Hypothesis testing](/concepts/math/hypothesis-testing) |
+| Error decomposition | [Bias-variance tradeoff](/concepts/math/bias-variance-tradeoff) |
+| Sampling estimate | [Monte Carlo estimation](/concepts/math/monte-carlo-estimation) |
 
 ## Estimation
 

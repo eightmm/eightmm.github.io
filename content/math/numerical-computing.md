@@ -12,16 +12,15 @@ Numerical computing is the math of finite-precision computation. AI formulas are
 
 This page belongs in Math because it explains why algebraically equivalent formulas can behave differently on hardware. System-specific tradeoffs connect to [[infra/gpu/index|GPU infra]], [[infra/training/index|Training infra]], and [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]].
 
-## Core Notes
+## Route Map
 
-- [[concepts/architectures/softmax|Softmax]]
-- [[concepts/architectures/normalization|Normalization]]
-- [[concepts/machine-learning/training-stability|Training stability]]
-- [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
-- [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
-- [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
-- [[infra/gpu/index|GPU infra]]
-- [[infra/training/index|Training infra]]
+| Route | Use For | Start |
+| --- | --- | --- |
+| Stable probabilities | softmax, log-sum-exp, likelihoods, attention logits | [Softmax](/concepts/architectures/softmax), [Information and likelihood](/math/information-likelihood) |
+| Stable activations | normalization, residual scaling, exploding or vanishing values | [Normalization](/concepts/architectures/normalization), [Training stability](/concepts/machine-learning/training-stability) |
+| Stable gradients | clipping, accumulation, underflow, optimizer sensitivity | [Gradient clipping](/concepts/machine-learning/gradient-clipping), [Gradient accumulation](/concepts/machine-learning/gradient-accumulation), [Calculus and gradients](/math/calculus-gradients) |
+| Precision and memory | mixed precision, reductions, tensor layout, memory-compute tradeoff | [Memory-compute tradeoff](/concepts/systems/memory-compute-tradeoff), [GPU infra](/infra/gpu), [Training infra](/infra/training) |
+| Debugging boundary | whether a problem is mathematical, numerical, model, optimizer, or system behavior | [Infra](/infra), [Evaluation](/ai/evaluation) |
 
 ## Floating Point
 
