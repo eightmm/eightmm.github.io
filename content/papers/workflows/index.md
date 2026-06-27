@@ -28,6 +28,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 
 - Triage decisions and reading status.
 - Note shape for curated paper notes.
+- Blog-style longform paper reviews for 20-30 minute beginner-friendly reading.
 - Paper bucket routing.
 - Primary claim-axis routing.
 - Review workflow from metadata check to concept updates.
@@ -44,6 +45,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[papers/workflows/reading-status|Reading status]]
 - [[papers/workflows/paper-note-format|Paper note format]]
+- [[papers/workflows/longform-paper-review-guide|Longform paper review guide]]
 - [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]]
 - [[papers/workflows/paper-review-workflow|Paper review workflow]]
 - [[ai/paper-intake|AI paper intake]]
@@ -57,6 +59,7 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - Is the output a paper note, concept update, inbox item, synthesis post, or archive decision?
 - Are missing claims, metrics, authors, and artifacts marked `to verify` instead of invented?
 - For AI/Computational Biology/Math papers, was [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]] used?
+- For public blog-style paper reviews, was [[papers/workflows/longform-paper-review-guide|Longform paper review guide]] used?
 - Is the primary claim axis recorded with [[papers/workflows/claim-routing|Claim routing]]?
 - Are paper claims decomposed into object, representation, method, formula, data, evidence, and artifact updates with [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]?
 - Are reusable definitions, formulas, contracts, and evidence boundaries extracted with [[papers/workflows/concept-update-contract|Concept update contract]]?

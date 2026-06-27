@@ -47,7 +47,7 @@ These pages are support material for reading papers, not paper buckets. They rem
 | Data and benchmark | [Benchmark](/concepts/data/benchmark) |
 | Inputs and tasks | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks), [Multimodal learning](/concepts/modalities/multimodal-learning) |
 | Models and evidence | [Architectures](/concepts/architectures), [Evaluation](/concepts/evaluation), [Coverage matrix](/concepts/coverage-matrix) |
-| Paper creation | [AI-Molecular-Math paper template](/papers/workflows/ai-molecular-math-paper-template), [Paper review workflow](/papers/workflows/paper-review-workflow) |
+| Paper creation | [Longform paper review guide](/papers/workflows/longform-paper-review-guide), [AI-Molecular-Math paper template](/papers/workflows/ai-molecular-math-paper-template), [Paper review workflow](/papers/workflows/paper-review-workflow) |
 
 ## Related
 

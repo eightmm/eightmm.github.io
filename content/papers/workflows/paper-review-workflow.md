@@ -22,7 +22,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 6. Match important equations to [[math/formula-patterns|Formula pattern catalog]] before deciding how much derivation belongs in the note.
 7. Run [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]] and [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]] for multi-axis AI, computational biology, or Math candidates.
 8. Check missing support notes with [[concepts/coverage-matrix|Coverage matrix]].
-9. Write the paper-specific note using [[papers/workflows/paper-note-format|Paper note format]] or [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]].
+9. Choose the writing form: compact wiki note with [[papers/workflows/paper-note-format|Paper note format]], multi-axis technical note with [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]], or beginner-friendly blog-style review with [[papers/workflows/longform-paper-review-guide|Longform paper review guide]].
 10. Extract claims using [[papers/analysis/claim-extraction|Claim extraction]].
 11. Map claims to evidence using [[papers/analysis/evidence-table|Evidence table]].
 12. Create a [[papers/analysis/benchmark-card|Benchmark card]] for the benchmark when the evaluation protocol matters.
@@ -60,6 +60,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - Is the paper worth a curated note, or should it only update an existing concept?
 - Does the paper add a reusable definition, formula, contract, or evidence boundary that belongs in a concept note?
 - Are formulas rewritten with symbol definitions rather than copied blindly?
+- If the note is a public longform review, does it follow [[papers/workflows/longform-paper-review-guide|Longform paper review guide]] and fit a 20-30 minute reading budget?
 - Has the paper been routed through [[papers/workflows/claim-routing|Claim routing]] and the relevant intake page: [[ai/paper-intake|AI]], [[molecular-modeling/paper-intake|Computational Biology]], or [[math/formula-intake|Math]]?
 - Has the paper been decomposed with [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]] before updating several support notes?
 - Has a multi-axis candidate passed [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]] before being promoted?
@@ -75,6 +76,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 - [[papers/index|Papers]]
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/reading-status|Reading status]]
+- [[papers/workflows/longform-paper-review-guide|Longform paper review guide]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
