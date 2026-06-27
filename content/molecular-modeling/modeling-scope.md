@@ -5,6 +5,7 @@ aliases:
   - bio/modeling-scope
 tags:
   - computational-biology
+unlisted: true
 ---
 
 # Computational Biology Scope

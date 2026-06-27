@@ -5,6 +5,7 @@ aliases:
   - bio/computational-biology
 tags:
   - computational-biology
+unlisted: true
 ---
 
 # Computational Biology Boundary
