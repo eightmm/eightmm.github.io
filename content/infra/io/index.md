@@ -36,6 +36,7 @@ A training job can look like a GPU problem when the true limit is file open late
 ## Notes
 
 - [[infra/io/data-loading|Data loading and IO]]
+- [[infra/hardware/storage-network|Storage and network]]
 - [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
 
 ## Checks
@@ -56,5 +57,6 @@ A training job can look like a GPU problem when the true limit is file open late
 ## Related
 
 - [[concepts/systems/storage-io|Storage and IO]]
+- [[infra/hardware/storage-network|Storage and network]]
 - [[concepts/data/preprocessing-contract|Preprocessing contract]]
 - [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]]

@@ -23,6 +23,7 @@ The useful question is which term limits the current workflow.
 
 ## Diagnostic Map
 
+- [[infra/hardware/memory-hierarchy|Memory hierarchy]]
 - [[infra/gpu/index#bottleneck-taxonomy|Bottleneck taxonomy]]
 - [[infra/gpu/index#memory|Memory]]
 - [[infra/gpu/index#utilization|Utilization]]
@@ -158,6 +159,8 @@ Practical checks:
 ## Related
 
 - [[infra/training/distributed-training|Distributed training]]
+- [[infra/hpc/distributed-training|Distributed training on HPC]]
+- [[infra/hardware/memory-hierarchy|Memory hierarchy]]
 - [[infra/inference/serving|Inference serving]]
 - [[infra/hpc/slurm|Slurm]]
 - [[infra/io/data-loading|Data loading and IO]]

@@ -112,6 +112,17 @@ ExternalPlugin.Explorer({
       "generative-models",
       "computational-biology",
     ]
+    const infraGroups = [
+      "hardware",
+      "hpc",
+      "gpu",
+      "io",
+      "training",
+      "inference",
+      "environments",
+      "reproducibility",
+      "server-ops",
+    ]
     const aSlugSegments = Array.isArray(a.slugSegments) ? a.slugSegments : []
     const bSlugSegments = Array.isArray(b.slugSegments) ? b.slugSegments : []
     const aDataSlug = typeof a.data?.slug === "string" ? a.data.slug : ""
@@ -162,6 +173,14 @@ ExternalPlugin.Explorer({
     if (aSegments[0] === "papers" && bSegments[0] === "papers") {
       const aGroupIndex = paperGroups.indexOf(aSegments[1] ?? "")
       const bGroupIndex = paperGroups.indexOf(bSegments[1] ?? "")
+      if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
+        return aGroupIndex - bGroupIndex
+      }
+    }
+
+    if (aSegments[0] === "infra" && bSegments[0] === "infra") {
+      const aGroupIndex = infraGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = infraGroups.indexOf(bSegments[1] ?? "")
       if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
         return aGroupIndex - bGroupIndex
       }

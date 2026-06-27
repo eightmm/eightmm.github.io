@@ -7,7 +7,7 @@ tags:
 
 # HPC
 
-HPC notes collect public workflow patterns for shared compute: scheduling, resource requests, job scripts, job arrays, checkpointing, and recovery.
+HPC notes collect public workflow patterns for shared compute: scheduling, resource requests, Slurm, distributed training, job arrays, checkpointing, and recovery.
 
 These notes should stay generic. Do not publish private cluster names, hostnames, account names, queue names, SSH details, internal paths, or unpublished run results.
 
@@ -17,6 +17,7 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[infra/hpc/resource-request|Resource request]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
+- [[infra/hpc/distributed-training|Distributed training on HPC]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/hpc/job-array|Job array]]
@@ -30,6 +31,8 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/storage-io|Storage and IO]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
+- [[infra/hardware/index|Hardware]]
+- [[infra/hardware/storage-network|Storage and network]]
 - [[infra/gpu/index|GPU]]
 - [[infra/gpu/index#memory|GPU memory]]
 - [[infra/io/data-loading|Data loading and IO]]
@@ -39,6 +42,7 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 
 - Is the workload CPU-bound, GPU-bound, memory-bound, IO-bound, or scheduler-bound?
 - Is the resource request measured from a smoke run?
+- Does distributed training need one node, several nodes, or only larger single-node batches?
 - Can failed or preempted work resume without corrupting outputs?
 - Is every submitted job reconciled before relaunching or reporting completion?
 - Are public notes stripped of private infrastructure details?

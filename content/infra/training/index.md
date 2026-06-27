@@ -7,7 +7,7 @@ tags:
 
 # Training Infra
 
-Training infra notes cover operational choices around multi-device training, checkpoints, scheduling, and run stability.
+Training infra notes cover operational choices around training loop stability, checkpoints, single-node scaling checks, and run behavior. Cluster-level launch, scheduler allocation, and multi-node execution belong under [[infra/hpc/distributed-training|Distributed training on HPC]].
 
 The operational training loop is broader than the model update:
 
@@ -25,7 +25,7 @@ Infra notes here focus on the machinery around that loop: device topology, proce
 
 ## Scope
 
-- Distributed training runbooks and scaling checks.
+- Single-node training runbooks and scaling checks.
 - Effective batch size, gradient synchronization, and checkpoint state from an operational perspective.
 - Failure recovery for long jobs when the failure pattern is generic and public-safe.
 - Links between training systems and [[infra/hpc/index|HPC]] scheduling.
@@ -33,6 +33,7 @@ Infra notes here focus on the machinery around that loop: device topology, proce
 ## Notes
 
 - [[infra/training/distributed-training|Distributed training]]
+- [[infra/hpc/distributed-training|Distributed training on HPC]]
 
 ## Checks
 
@@ -44,7 +45,8 @@ Infra notes here focus on the machinery around that loop: device topology, proce
 
 ## Where New Notes Go
 
-- Multi-GPU launch, scaling, and synchronization go here.
+- Single-node multi-GPU checks and training loop behavior go here.
+- Slurm launch, node layout, scheduler allocation, and multi-node training go under [[infra/hpc/distributed-training|Distributed training on HPC]].
 - Slurm job script shape goes under [[infra/hpc/index|HPC]].
 - GPU memory and utilization diagnosis goes under [[infra/gpu/index|GPU]].
 - Optimizer math stays under [[concepts/machine-learning/optimizer|Optimizer]].

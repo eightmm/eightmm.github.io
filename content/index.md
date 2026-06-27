@@ -13,7 +13,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 | [AI](/ai) | machine learning, architectures, learning methods, generative models, evaluation |
 | [Math](/math) | formulas and mathematical tools needed to read AI notes |
 | [Computational Biology](/molecular-modeling) | focused notes on biological objects, sequence-based modeling, molecular and ligand modeling, interaction modeling, and structure-based workflows |
-| [Infra](/infra) | GPU, HPC, training, inference, environments, reproducible runs |
+| [Infra](/infra) | hardware, GPU, HPC, training, inference, environments, reproducible runs |
 | [Research](/research) | question-driven synthesis for concrete research directions |
 | [Papers](/papers) | curated paper notes and reading utilities |
 | [Agents](/agents) | agent concepts, tools, workflows, verification |
@@ -35,7 +35,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 - Protein sequence route: [[molecular-modeling/sequence-based|Sequence-based modeling]] -> [[molecular-modeling/proteins|Proteins]] -> [[concepts/protein-modeling/index|Protein modeling concepts]]
 - Computational biology: [[molecular-modeling/index|Computational Biology]] -> [[molecular-modeling/entities|Objects and entities]] -> [[molecular-modeling/sequence-based|Sequence-based modeling]] -> [[molecular-modeling/molecular-ligand|Molecular and ligand modeling]] -> [[molecular-modeling/interactions|Interaction modeling]] -> [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - Papers: [[papers/index|Papers]] -> [[papers/workflows/paper-review-workflow|Paper review workflow]] -> [[papers/workflows/reading-status|Reading status]]
-- Infra: [[infra/index|Infra]] -> [[infra/hpc/job-lifecycle|HPC job lifecycle]] -> [[infra/reproducibility/run-record|Reproducible run record]]
+- Infra: [[infra/index|Infra]] -> [[infra/hardware/memory-hierarchy|Memory hierarchy]] -> [[infra/hpc/job-lifecycle|HPC job lifecycle]] -> [[infra/reproducibility/run-record|Reproducible run record]]
 - Agents: [[agents/index|Agents]] -> [[agents/core/agent-loop|Agent loop]] -> [[agents/verification/verification-loop|Verification loop]]
 - Projects: [[projects/index|Projects]] -> [[projects/project-note-format|Project note format]] -> [[projects/llm-wiki-blog|LLM Wiki blog]]
 

@@ -39,6 +39,8 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[concepts/systems/storage-io|Storage and IO]]
+- [[infra/hardware/memory-hierarchy|Memory hierarchy]]
+- [[infra/hardware/storage-network|Storage and network]]
 - [[concepts/systems/observability|Observability]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
 - [[concepts/systems/experiment-tracking|Experiment tracking]]

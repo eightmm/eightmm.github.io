@@ -12,6 +12,8 @@ tags:
 
 Distributed training splits a model or its data across multiple devices to fit larger models or finish faster. The conceptual layer is [[concepts/systems/distributed-training|Distributed training]]; this note focuses on public operational checks.
 
+For scheduler-managed multi-node jobs, use [[infra/hpc/distributed-training|Distributed training on HPC]]. This page remains a compact training-side checklist.
+
 ## Practical Checks
 
 - Start with data parallelism (DDP); reach for model/pipeline parallel only when memory forces it.
@@ -30,6 +32,7 @@ Distributed training splits a model or its data across multiple devices to fit l
 - [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]]
 - [[infra/gpu/index#memory|GPU memory]]
 - [[infra/hpc/checkpointing|Checkpointing]]
+- [[infra/hpc/distributed-training|Distributed training on HPC]]
 - [[infra/reproducibility/run-record|Reproducible run record]]
 - [[infra/hpc/slurm|Slurm]]
 - [[infra/index|Infra]]
