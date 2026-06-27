@@ -3,7 +3,6 @@ title: Molecules
 aliases:
   - computational-biology/molecules
   - bio/molecules
-  - bio-ai/molecules
 tags:
   - molecular-modeling
   - molecules

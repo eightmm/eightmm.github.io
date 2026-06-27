@@ -3,7 +3,6 @@ title: Data and Evaluation
 aliases:
   - computational-biology/data-evaluation
   - bio/data-evaluation
-  - bio-ai/data-evaluation
 tags:
   - molecular-modeling
   - evaluation

@@ -4,7 +4,6 @@ aliases:
   - computational-biology
   - comp-bio
   - bio
-  - bio-ai
   - molecular-modeling
 tags:
   - molecular-modeling

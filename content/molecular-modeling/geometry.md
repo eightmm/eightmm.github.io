@@ -3,7 +3,6 @@ title: Geometry
 aliases:
   - computational-biology/geometry
   - bio/geometry
-  - bio-ai/geometry
 tags:
   - molecular-modeling
   - geometry

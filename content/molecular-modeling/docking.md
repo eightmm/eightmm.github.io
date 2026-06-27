@@ -3,7 +3,6 @@ title: Docking
 aliases:
   - computational-biology/docking
   - bio/docking
-  - bio-ai/docking
 tags:
   - molecular-modeling
   - docking
