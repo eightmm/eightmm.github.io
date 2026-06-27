@@ -75,6 +75,7 @@ ExternalPlugin.Explorer({
       "entities",
       "proteins",
       "molecules",
+      "interactions",
       "protein-modeling",
       "geometry",
       "structure-based",

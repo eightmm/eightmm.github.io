@@ -82,5 +82,6 @@ Here $s_{1:L}$ is the amino-acid sequence, $h_{1:L}$ is a residue-level represen
 ## Related
 
 - [[molecular-modeling/index|Computational Biology]]
+- [[molecular-modeling/interactions|Interaction modeling]]
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]

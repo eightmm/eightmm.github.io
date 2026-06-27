@@ -79,6 +79,7 @@ For example, a row may be molecule-only for property prediction, but target-cond
 ## Related
 
 - [[molecular-modeling/index|Computational Biology]]
+- [[molecular-modeling/interactions|Interaction modeling]]
 - [[molecular-modeling/data-evaluation|Data and evaluation]]
 - [[entities/target-assay-label|Target-assay-label contract]]
 - [[concepts/modalities/representation-contract|Representation contract]]

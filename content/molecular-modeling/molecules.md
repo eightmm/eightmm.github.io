@@ -82,5 +82,6 @@ where $L_{\mathrm{raw}}$ is the input molecule record, $L_{\mathrm{std}}$ is the
 ## Related
 
 - [[molecular-modeling/index|Computational Biology]]
+- [[molecular-modeling/interactions|Interaction modeling]]
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

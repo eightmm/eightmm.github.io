@@ -29,7 +29,7 @@ Do not route a paper only by model name. A Transformer for protein sequences, a 
 | Pattern | Object | Typical Claim | Primary Route |
 | --- | --- | --- | --- |
 | Molecular property prediction | molecule or ligand | better scalar/class prediction | [Molecules](/molecular-modeling/molecules), [Property prediction](/concepts/tasks/property-prediction) |
-| Target-conditioned activity | molecule, target, assay | better bioactivity or affinity prediction | [Data and evaluation](/molecular-modeling/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
+| Target-conditioned activity | molecule, target, assay | better bioactivity or affinity prediction | [Interaction modeling](/molecular-modeling/interactions), [Target-assay-label contract](/entities/target-assay-label) |
 | Protein representation learning | protein sequence or structure | better transfer to downstream protein tasks | [Proteins](/molecular-modeling/proteins), [Self-supervised learning](/concepts/learning/self-supervised-learning) |
 | Protein structure prediction | protein sequence, MSA, template, structure | better coordinates or contact geometry | [Protein modeling concepts](/concepts/protein-modeling), [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Docking or pose generation | protein-ligand complex | better pose, ranking, or enrichment | [Docking](/molecular-modeling/docking), [SBDD concepts](/concepts/sbdd) |
