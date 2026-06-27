@@ -13,7 +13,7 @@ tags:
 
 이 영역은 넓은 biology 전체가 아니라 계산 모델링에서 직접 다루는 객체와 workflow에 집중합니다. 주요 대상은 molecule, ligand, protein, pocket, protein-ligand complex, conformer, structure, genome sequence입니다. Transcriptomics, single-cell, clinical omics, systems biology처럼 범위가 급격히 넓어지는 주제는 실제 연구나 프로젝트 필요가 생길 때 별도로 엽니다.
 
-AI 모델은 이 영역의 방법 중 하나입니다. 객체와 평가 조건은 여기서 정하고, GNN, Transformer, diffusion, flow matching, SSL 같은 모델 구조와 학습법은 [[ai/index|AI]]에서 봅니다.
+AI 모델은 이 영역의 방법 중 하나입니다. 객체와 평가 조건은 여기서 정하고, GNN, Transformer, diffusion, flow matching, SSL 같은 모델 구조와 학습법은 [[ai/index|AI]]에서 봅니다. 수식의 의미는 [[math/index|Math]]에서, 서버와 실행 환경은 [[infra/index|Infra]]에서 봅니다.
 
 $$
 \hat{y}=f_\theta(x_{\mathrm{object}}, x_{\mathrm{context}})
@@ -27,9 +27,9 @@ $$
 | --- | --- | --- |
 | Objects and Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure의 단위 정의 | [Objects and Entities](/molecular-modeling/entities) |
 | Sequence-Based Modeling | protein sequence, genome sequence, tokenization, representation, family or region split | [Sequence-Based Modeling](/molecular-modeling/sequence-based) |
+| Structure-Based Modeling | pocket, protein-ligand geometry, docking, pose, scoring, virtual screening | [Structure-Based Modeling](/molecular-modeling/structure-based) |
 | Molecular and Ligand Modeling | molecular identity, standardization, graph, fingerprint, conformer, property prediction | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand) |
 | Interaction Modeling | target-conditioned activity, affinity, selectivity, protein-ligand pair, assay context | [Interaction Modeling](/molecular-modeling/interactions) |
-| Structure-Based Modeling | pocket, protein-ligand geometry, docking, pose, scoring, virtual screening | [Structure-Based Modeling](/molecular-modeling/structure-based) |
 | Data and Evaluation | label semantics, split unit, leakage, assay harmonization, benchmark traps | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 
 ## Scope Map

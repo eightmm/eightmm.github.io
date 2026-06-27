@@ -21,6 +21,10 @@ Raw daily paper candidates should start in [[inbox/index|Inbox]]. Only selected 
 | [Learning method papers](/papers/learning-methods) | SSL, contrastive learning, JEPA, fine-tuning, preference/RL-style objectives |
 | [Systems papers](/papers/systems) | training efficiency, inference, tooling, agents, reproducibility |
 
+## Essential AI Reading Queue
+
+논문 노트로 바로 만들기 전, 먼저 [[papers/essential-ai-reading|Essential AI reading queue]]에서 큰 축별 후보만 관리합니다. 이 목록은 세부 리뷰가 아니라 앞으로 채울 paper note의 후보 선반입니다.
+
 ## Active Paper Notes
 
 | Paper Note | Area |

@@ -24,7 +24,7 @@ Use these pages to identify the object, distribution, parameter, and estimator b
 | --- | --- | --- |
 | Linear algebra | vectors, matrices, projections, embeddings, rank, similarity | [Linear algebra](/concepts/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation), [Vector norm and similarity](/concepts/math/vector-norm-similarity) |
 | Spectral structure | representation analysis, PCA/SVD, low-rank approximations, stability | [Eigenvalue and eigenvector](/concepts/math/eigenvalue-eigenvector), [Singular value decomposition](/concepts/math/singular-value-decomposition) |
-| Calculus | gradients, Jacobians, Hessians, backpropagation notation | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus), [Jacobian and Hessian](/concepts/math/jacobian-hessian) |
+| Calculus | gradients, chain rule, Jacobians, Hessians, backpropagation notation | [Calculus](/concepts/math/calculus), [Chain rule](/concepts/math/chain-rule), [Matrix calculus](/concepts/math/matrix-calculus), [Jacobian and Hessian](/concepts/math/jacobian-hessian) |
 | Constrained optimization | feasibility, penalties, Lagrangian views, projected updates | [Constrained optimization](/concepts/math/constrained-optimization) |
 | Geometry and symmetry | coordinate sets, rigid motions, equivariance, invariant targets | [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) |
 | Probability | random variables, distributions, expectations, normal assumptions | [Random variable](/concepts/math/random-variable), [Probability distribution](/concepts/math/probability-distribution), [Expectation](/concepts/math/expectation), [Normal distribution](/concepts/math/normal-distribution) |

@@ -10,7 +10,7 @@ tags:
 
 # Calculus and Gradients
 
-Calculus is the math used to describe local change. In AI, it mainly tells us how a loss changes when inputs, parameters, coordinates, or time are perturbed.
+미적분은 local change를 설명하는 수학입니다. AI에서는 loss가 input, parameter, coordinate, time에 대해 어떻게 변하는지를 말할 때 가장 자주 등장합니다.
 
 The core object is the gradient of a scalar loss:
 
@@ -25,13 +25,13 @@ $$
 \right]^\top
 $$
 
-This page is Math-facing. It explains derivatives, chain rules, Jacobians, Hessians, and backpropagation notation. Practical optimizer choices such as AdamW, warmup, clipping, and batch-size scaling live under [[ai/machine-learning|Machine Learning]] and [[concepts/machine-learning/optimization|Optimization]].
+이 페이지는 Math-facing gateway입니다. derivative, chain rule, Jacobian, Hessian, backpropagation notation을 설명합니다. AdamW, warmup, clipping, batch-size scaling 같은 실전 optimizer 선택은 [[ai/machine-learning|Machine Learning]]과 [[concepts/machine-learning/optimization|Optimization]]에서 봅니다.
 
 ## Route Map
 
 | Question | Start | Use For |
 | --- | --- | --- |
-| What is local change? | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus) | derivatives, gradients, tensor notation |
+| What is local change? | [Calculus](/concepts/math/calculus), [Chain rule](/concepts/math/chain-rule), [Matrix calculus](/concepts/math/matrix-calculus) | derivatives, gradients, composition, tensor notation |
 | How do vector outputs change? | [Jacobian and Hessian](/concepts/math/jacobian-hessian) | sensitivity, curvature, normalizing flows, coordinate models |
 | How does a network compute gradients? | [Backpropagation](/concepts/machine-learning/backpropagation), [Automatic differentiation](/concepts/machine-learning/automatic-differentiation) | training loops and differentiable programs |
 | How do constraints enter? | [Constrained optimization](/concepts/math/constrained-optimization) | projected updates, constrained generation, feasibility |
@@ -144,6 +144,8 @@ $$
 \frac{\partial h}{\partial \theta}
 $$
 
+For the canonical note, see [[concepts/math/chain-rule|Chain rule]].
+
 ## Matrix Calculus Patterns
 
 For a linear layer:
@@ -203,6 +205,7 @@ Keep these in AI:
 ## Related
 
 - [[math/index|Math]]
+- [[concepts/math/chain-rule|Chain rule]]
 - [[math/numerical-computing|Numerical computing]]
 - [[ai/machine-learning|Machine Learning]]
 - [[concepts/architectures/linear-layer|Linear layer]]

@@ -6,9 +6,9 @@ tags:
 
 # AI
 
-AI 전반을 정리하는 입구입니다.
+AI 전반을 정리하는 입구입니다. 여기서는 모델이 무엇을 입력받고, 어떤 구조로 계산하며, 어떤 신호로 학습하고, 어떤 근거로 평가되는지를 정리합니다.
 
-여기서 목표는 모델 이름을 많이 나열하는 것이 아니라, AI 문헌과 구현을 읽을 때 반복해서 나오는 축을 안정적으로 분리하는 것입니다.
+목표는 모델 이름을 많이 나열하는 것이 아니라, AI 문헌과 구현을 읽을 때 반복해서 나오는 축을 안정적으로 분리하는 것입니다. 도메인 객체 자체는 [[molecular-modeling/index|계산생물학]]에서, 수식과 확률/기하 언어는 [[math/index|수학]]에서, GPU/HPC 같은 실행 환경은 [[infra/index|Infra]]에서 다룹니다.
 
 $$
 \text{AI system}
@@ -49,6 +49,15 @@ AI note는 아래 질문으로 위치를 정합니다.
 | 성능 claim을 어떻게 검증하는가? | [Evaluation](/ai/evaluation) |
 | 실행, serving, reproducibility 문제인가? | [Systems](/ai/systems), [Infra](/infra) |
 | LLM이 도구를 쓰고 작업을 끝내는 방식인가? | [Agents](/agents) |
+
+## 영역 경계
+
+| Boundary | AI에서 다루는 것 | 다른 곳으로 보내는 것 |
+| --- | --- | --- |
+| Math | loss, optimizer, architecture 식을 모델 관점에서 읽기 | derivative, likelihood, entropy, group action 자체는 [Math](/math) |
+| Computational Biology | protein, molecule, structure 데이터를 모델 입력으로 쓰는 법 | protein, ligand, pocket, assay, split 단위 정의는 [Computational Biology](/molecular-modeling) |
+| Infra | training run, inference contract, serving boundary | GPU memory, Slurm, storage, server operation은 [Infra](/infra) |
+| Papers | claim type과 방법론을 분류하는 기준 | 개별 논문 요약과 reading status는 [Papers](/papers) |
 
 ## 기본 읽기 경로
 

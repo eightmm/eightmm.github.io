@@ -59,13 +59,43 @@ ExternalPlugin.Explorer({
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)
   },
   mapFn: (node) => {
+    const slugSegments = Array.isArray(node.slugSegments) ? node.slugSegments : []
+    const slug = slugSegments.join("/")
+    const displayNames: Record<string, string> = {
+      ai: "AI",
+      "ai/machine-learning": "머신러닝",
+      "ai/architectures": "아키텍처",
+      "ai/learning-methods": "학습 방법",
+      "ai/generative-models": "생성 모델",
+      "ai/evaluation": "평가",
+      "ai/systems": "시스템",
+      math: "수학",
+      "math/linear-algebra": "선형대수",
+      "math/calculus-gradients": "미적분과 그래디언트",
+      "math/probability-statistics": "확률과 통계",
+      "math/information-likelihood": "정보와 가능도",
+      "math/geometry-symmetry": "기하와 대칭성",
+      "math/discrete-graphs": "이산수학과 그래프",
+      "math/dynamical-systems": "동역학",
+      "math/numerical-computing": "수치계산",
+      "math/evaluation-math": "평가 수학",
+      "molecular-modeling": "계산생물학",
+      "molecular-modeling/entities": "대상과 엔티티",
+      "molecular-modeling/sequence-based": "시퀀스 기반",
+      "molecular-modeling/structure-based": "구조 기반",
+      "molecular-modeling/molecular-ligand": "분자와 리간드",
+      "molecular-modeling/interactions": "상호작용",
+      "molecular-modeling/data-evaluation": "데이터와 평가",
+    }
+    if (displayNames[slug]) {
+      node.displayName = displayNames[slug]
+    }
     if (node.slugSegment === "molecular-modeling") {
-      node.displayName = "Computational Biology"
+      node.displayName = "계산생물학"
     }
     if (node.slugSegment === "entities") {
-      const slugSegments = Array.isArray(node.slugSegments) ? node.slugSegments : []
       if (slugSegments.join("/") === "molecular-modeling/entities") {
-        node.displayName = "Objects and Entities"
+        node.displayName = "대상과 엔티티"
       }
     }
   },
@@ -93,9 +123,9 @@ ExternalPlugin.Explorer({
     const molecularGroups = [
       "entities",
       "sequence-based",
+      "structure-based",
       "molecular-ligand",
       "interactions",
-      "structure-based",
       "data-evaluation",
     ]
     const mathGroups = [

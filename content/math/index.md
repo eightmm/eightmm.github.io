@@ -6,7 +6,7 @@ tags:
 
 # Math
 
-수학은 AI, Computational Biology, geometry, generative model, evaluation을 읽기 위한 공통 기반입니다.
+수학은 AI, Computational Biology, geometry, generative model, evaluation을 읽기 위한 공통 기반입니다. 이 섹션은 “수학을 깊게 증명하는 곳”이 아니라, 논문과 구현에서 나오는 식을 해석하기 위한 언어를 정리하는 곳입니다.
 
 공식은 모델을 어렵게 보이게 하려는 장식이 아니라, 어떤 quantity를 예측하고 최적화하고 평가하는지 고정하는 도구입니다.
 
@@ -28,7 +28,7 @@ $$
 | --- | --- | --- |
 | Foundations | definitions, formulas, reusable checks | [Math foundations](/concepts/math) |
 | Linear algebra | vectors, matrices, tensor shapes, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
-| Calculus and optimization | derivatives, chain rule, Jacobians, Hessians, constraints, backpropagation math | [Calculus and gradients](/math/calculus-gradients), [Constrained optimization](/concepts/math/constrained-optimization) |
+| Calculus and optimization | derivatives, chain rule, Jacobians, Hessians, constraints, backpropagation math | [Calculus and gradients](/math/calculus-gradients), [Chain rule](/concepts/math/chain-rule), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Probability | random variables, distributions, estimators, Bayesian inference, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
 | Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
 | Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry) |
@@ -84,7 +84,8 @@ $$
 
 - Math explains objects and formulas: derivatives, probability, likelihood, geometry, metrics, numerical stability.
 - AI explains modeling and training choices: losses, optimizers, schedules, architectures, learning methods.
-- Infra explains resource behavior: GPU memory, distributed training, storage, reproducibility, deployment.
+- Computational Biology explains domain objects and workflows: protein, ligand, pocket, sequence, structure, assay, split.
+- Infra explains resource behavior: GPU memory, Slurm, storage, reproducibility, server operation.
 
 ## AI 연결 예시
 

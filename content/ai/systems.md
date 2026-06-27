@@ -9,6 +9,8 @@ tags:
 
 AI Systems는 모델이 실제 run, artifact, service, workflow가 되는 지점을 다룹니다. 모델 구조나 loss 자체가 아니라, 학습이 어떻게 기록되고, 추론이 어떤 계약으로 실행되며, 결과가 어떻게 재현 가능한 주장으로 남는지를 봅니다.
 
+이 페이지는 Infra가 아닙니다. Infra는 GPU, Slurm, storage, server operation처럼 실행 환경의 제약을 다루고, Systems는 모델 run과 artifact가 어떤 계약으로 관리되는지를 다룹니다.
+
 $$
 \text{AI system}
 =

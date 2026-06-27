@@ -10,7 +10,7 @@ tags:
 
 # Sequence-Based Modeling
 
-Sequence-based modeling treats biological strings as the primary input. In this wiki, the main cases are protein sequences and narrow genome-level sequence tasks. This section does not cover broad omics, transcriptomics, single-cell analysis, or clinical biology unless a later project needs them.
+Sequence-based modeling은 biological string을 primary input으로 다룹니다. 이 wiki의 주 대상은 protein sequence와 좁은 genome-level sequence task입니다. Broad omics, transcriptomics, single-cell analysis, clinical biology는 실제 연구나 프로젝트 필요가 생길 때 별도로 엽니다.
 
 $$
 \hat{y}
@@ -54,6 +54,13 @@ X
 $$
 
 Use this page when the primary input is sequence. Move to [[molecular-modeling/structure-based/index|Structure-based modeling]] when coordinates, pockets, poses, or complexes become first-class objects.
+
+## Boundary
+
+- Sequence-based: sequence token, mutation, region, family split, sequence representation이 claim의 중심입니다.
+- Structure-based: coordinate, pocket, pose, conformer, complex geometry가 claim의 중심입니다.
+- AI: Transformer, SSM, GNN, SSL 같은 architecture나 learning method 자체가 claim의 중심입니다.
+- Math: likelihood, embedding similarity, gradient, geometry 식 자체를 설명합니다.
 
 ## Checks
 

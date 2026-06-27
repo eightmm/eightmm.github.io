@@ -39,6 +39,8 @@ $$
 f'(g(x))g'(x)
 $$
 
+See [[concepts/math/chain-rule|Chain rule]] for composition, vector-Jacobian products, and backpropagation notation.
+
 Second-order information describes curvature. For a scalar loss $\mathcal{L}$, this is captured by the Hessian:
 
 $$
@@ -67,6 +69,7 @@ See [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for vector-valued de
 ## Related
 
 - [[concepts/math/matrix-calculus|Matrix calculus]]
+- [[concepts/math/chain-rule|Chain rule]]
 - [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
 - [[concepts/machine-learning/gradient-descent|Gradient descent]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
