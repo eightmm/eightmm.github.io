@@ -133,7 +133,7 @@ $$
 
 This is useful for simplex constraints, norm balls, valid coordinate sets, and constrained decoding abstractions.
 
-## Common AI and Bio-AI Examples
+## Common AI and Computational Biology Examples
 
 | Setting | Constraint | Typical handling |
 |---|---|---|

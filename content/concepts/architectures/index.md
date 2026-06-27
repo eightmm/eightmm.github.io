@@ -38,55 +38,22 @@ The same training objective can behave very differently depending on whether $\m
 | Input representation | [Tokenization](/concepts/architectures/tokenization), [Embedding](/concepts/architectures/embedding), [Positional encoding](/concepts/architectures/positional-encoding), [Graph construction](/concepts/architectures/graph-construction) |
 | Readout | [Pooling and readout](/concepts/architectures/pooling-readout), [Softmax](/concepts/architectures/softmax) |
 
-## Dense and Feed-Forward Models
+## Model Families
 
-- [[concepts/architectures/mlp|MLP]]
-- [[concepts/architectures/autoencoder|Autoencoder]]
+| Family | Use For | Start |
+| --- | --- | --- |
+| Dense / feed-forward | fixed vectors, tabular features, learned embeddings, bottlenecks | [MLP](/concepts/architectures/mlp), [Autoencoder](/concepts/architectures/autoencoder) |
+| Grid / image / voxel | local spatial structure, image/video, contact maps, spatial grids | [Convolution](/concepts/architectures/convolution), [CNN](/concepts/architectures/cnn), [Residual network](/concepts/architectures/residual-network), [U-Net](/concepts/architectures/u-net), [Vision Transformer](/concepts/architectures/vision-transformer) |
+| Sequence | text, residues, time series, ordered tokens | [RNN](/concepts/architectures/rnn), [LSTM](/concepts/architectures/lstm), [GRU](/concepts/architectures/gru), [Transformer](/concepts/architectures/transformer), [State-space models](/concepts/architectures/state-space-model), [Mamba](/concepts/architectures/mamba) |
+| Attention / encoder-decoder | long-range mixing, conditioning, multimodal fusion | [Attention](/concepts/architectures/attention), [Cross-attention](/concepts/architectures/cross-attention), [Encoder-decoder](/concepts/architectures/encoder-decoder), [Perceiver](/concepts/architectures/perceiver) |
+| Set / graph | unordered sets, molecular graphs, residue graphs, relational objects | [Deep Sets](/concepts/architectures/deep-sets), [Set Transformer](/concepts/architectures/set-transformer), [Graph construction](/concepts/architectures/graph-construction), [GNN](/concepts/architectures/gnn), [Graph Transformer](/concepts/architectures/graph-transformer) |
+| Sparse / routed | conditional compute, expert routing, scaling under budget | [Mixture of Experts](/concepts/architectures/mixture-of-experts) |
 
-## Grid, Image, and Voxel Models
-
-- [[concepts/modalities/image|Image]]
-- [[concepts/modalities/video|Video]]
-- [[concepts/architectures/convolution|Convolution]]
-- [[concepts/architectures/cnn|CNN]]
-- [[concepts/architectures/residual-network|Residual network]]
-- [[concepts/architectures/u-net|U-Net]]
-- [[concepts/architectures/vision-transformer|Vision Transformer]]
-
-## Sequence Models
-
-- [[concepts/modalities/text|Text]]
-- [[concepts/modalities/audio|Audio]]
-- [[concepts/architectures/rnn|RNN]]
-- [[concepts/architectures/lstm|LSTM]]
-- [[concepts/architectures/gru|GRU]]
-- [[concepts/architectures/transformer|Transformer]]
-- [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
-- [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
-- [[concepts/architectures/state-space-model|State-space models]]
-- [[concepts/architectures/mamba|Mamba]] as a selective state-space model
-
-## Attention and Encoder-Decoder Patterns
-
-- [[concepts/modalities/multimodal-learning|Multimodal learning]]
-- [[concepts/architectures/attention|Attention]]
-- [[concepts/architectures/cross-attention|Cross-attention]]
-- [[concepts/architectures/encoder-decoder|Encoder-decoder]]
-- [[concepts/architectures/perceiver|Perceiver]]
-
-## Set, Graph, and Sparse Models
-
-- [[concepts/architectures/deep-sets|Deep Sets]]
-- [[concepts/architectures/set-transformer|Set Transformer]]
-- [[concepts/architectures/graph-construction|Graph construction]]
-- [[concepts/architectures/gnn|Graph neural networks]]
-- [[concepts/architectures/graph-transformer|Graph Transformer]]
-- [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
+Mamba is not a separate top-level family here. It is a selective state-space model, so route it through [State-space models](/concepts/architectures/state-space-model) unless the note is specifically about Mamba internals.
 
 ## Reading Checklist
 
 - What is the input object: vector, sequence, grid, graph, structure, or mixed modality?
-- What [[concepts/architectures/inductive-bias|inductive bias]] is being assumed?
 - Where is [[concepts/architectures/parameter-sharing|parameter sharing]] used, and what symmetry does it encode?
 - What mixes information: dense layers, convolution, recurrence, state update, message passing, or attention?
 - Which blocks mix channels, tokens, spatial neighborhoods, graph neighborhoods, or coordinates?

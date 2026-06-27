@@ -100,7 +100,7 @@ The pose depends on the protein or pocket context $P$. A model trained on bound 
 - [[concepts/molecular-modeling/chemical-state-contract|Chemical state contract]]
 - [[concepts/molecular-modeling/force-field|Force field]]
 - [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
-- [[molecular-modeling/modeling-scope|Molecular Modeling Scope]]
+- [[molecular-modeling/modeling-scope|Computational Biology Scope]]
 - [[molecular-modeling/molecules|Molecules]]
 - [[molecular-modeling/docking|Docking]]
 - [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]

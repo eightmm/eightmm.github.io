@@ -97,7 +97,7 @@ $$
 
 In an $L$-layer message passing GNN, node $i$ can usually receive information from at most its $L$-hop neighborhood.
 
-## Molecular Modeling Connections
+## Computational Biology Connections
 
 - Molecular structure: atoms as nodes, bonds or spatial contacts as edges.
 - Protein modeling: residues as nodes, contact maps or distance cutoffs as edges.

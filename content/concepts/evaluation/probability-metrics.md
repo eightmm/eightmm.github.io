@@ -198,7 +198,7 @@ This evaluates both location and uncertainty. A model with accurate means but un
 
 A model can have good accuracy but poor NLL if it is overconfident on errors. It can also have a strong ranking metric but unreliable probabilities.
 
-## Bio-AI Uses
+## Computational Biology Uses
 
 - Activity screening: probability can represent active/inactive risk only if labels and prevalence are compatible with deployment.
 - Structure prediction confidence: per-residue or per-pair probabilities need masking and aggregation rules.

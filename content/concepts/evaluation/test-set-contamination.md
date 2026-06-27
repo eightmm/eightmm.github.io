@@ -69,7 +69,7 @@ where $\hat{\theta}$ is selected model state, $\hat{\lambda}$ is hyperparameter 
 | validation/test separation | which split selected checkpoints, thresholds, prompts, or filters |
 | leaderboard interaction | number of submissions or public feedback rounds |
 
-For public LLM and Bio-AI benchmarks, a date or database version is often part of the test boundary.
+For public LLM and computational biology benchmarks, a date or database version is often part of the test boundary.
 
 ## Interpretation
 

@@ -146,9 +146,9 @@ $$
 
 Here $S$ is a similarity matrix between elements. It is not just a formula detail; it defines which tokens, residues, atoms, or retrieved chunks can exchange information.
 
-## Molecular Modeling Coordinate Matrices
+## Structure-Based Coordinate Matrices
 
-Structure-based Molecular Modeling often represents coordinates as:
+Structure-based modeling often represents coordinates as:
 
 $$
 X

@@ -233,7 +233,7 @@ $$
 
 where the threshold $\tau_k$ may need to differ by label. Reporting only global accuracy is usually too weak.
 
-## Bio-AI Examples
+## Computational Biology Examples
 
 - Activity classification: define active/inactive labels from assay values before reporting metrics.
 - Virtual screening: AUPRC, enrichment, and recall at fixed false-positive budget often matter more than raw accuracy.

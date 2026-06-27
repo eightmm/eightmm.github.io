@@ -149,6 +149,6 @@ The model family should match the symmetry of the object and target, not only th
 ## Related
 
 - [[math/index|Math]]
-- [[molecular-modeling/geometry|Molecular Modeling geometry]]
+- [[molecular-modeling/geometry|Computational Biology geometry]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]

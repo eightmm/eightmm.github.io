@@ -8,7 +8,7 @@ tags:
 
 # Genome Modeling Concepts
 
-Genome modeling concepts in this wiki are limited to sequence-level and variant-level AI. They are included as a boundary topic for Molecular Modeling, not as a broad omics or transcriptomics section.
+Genome modeling concepts in this wiki are limited to sequence-level and variant-level AI. They are included as a boundary topic for Computational Biology, not as a broad omics or transcriptomics section.
 
 The basic input is a genomic sequence or region:
 

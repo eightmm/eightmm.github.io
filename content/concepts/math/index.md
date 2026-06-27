@@ -16,34 +16,20 @@ $$
 \text{representation} + \text{probability model} + \text{objective} + \text{optimization}
 $$
 
-Use these pages to identify the object, distribution, parameter, and estimator behind a formula. Proof-heavy material can be added later only when it clarifies an AI, Molecular Modeling, or evaluation note.
+Use these pages to identify the object, distribution, parameter, and estimator behind a formula. Proof-heavy material can be added later only when it clarifies an AI, Computational Biology, or evaluation note.
 
 ## Core Notes
 
-- [[concepts/math/linear-algebra|Linear algebra]]
-- [[concepts/math/tensor-shape-notation|Tensor shape notation]]
-- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
-- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
-- [[concepts/math/singular-value-decomposition|Singular value decomposition]]
-- [[concepts/math/calculus|Calculus]]
-- [[concepts/math/matrix-calculus|Matrix calculus]]
-- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
-- [[concepts/math/geometry|Geometry]]
-- [[concepts/math/symmetry-group|Symmetry group]]
-- [[concepts/math/random-variable|Random variable]]
-- [[concepts/math/probability-distribution|Probability distribution]]
-- [[concepts/math/normal-distribution|Normal distribution]]
-- [[concepts/math/expectation|Expectation]]
-- [[concepts/math/covariance-correlation|Covariance and correlation]]
-- [[concepts/math/central-limit-theorem|Central limit theorem]]
-- [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]
-- [[concepts/math/maximum-likelihood|Maximum likelihood]]
-- [[concepts/math/entropy-kl|Entropy and KL divergence]]
-- [[concepts/math/bayes-rule|Bayes rule]]
-- [[concepts/math/bayesian-inference|Bayesian inference]]
-- [[concepts/math/statistical-estimator|Statistical estimator]]
-- [[concepts/math/hypothesis-testing|Hypothesis testing]]
-- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
+| Area | Use For | Start |
+| --- | --- | --- |
+| Linear algebra | vectors, matrices, projections, embeddings, rank, similarity | [Linear algebra](/concepts/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation), [Vector norm and similarity](/concepts/math/vector-norm-similarity) |
+| Spectral structure | representation analysis, PCA/SVD, low-rank approximations, stability | [Eigenvalue and eigenvector](/concepts/math/eigenvalue-eigenvector), [Singular value decomposition](/concepts/math/singular-value-decomposition) |
+| Calculus | gradients, Jacobians, Hessians, backpropagation notation | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus), [Jacobian and Hessian](/concepts/math/jacobian-hessian) |
+| Geometry and symmetry | coordinate sets, rigid motions, equivariance, invariant targets | [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) |
+| Probability | random variables, distributions, expectations, normal assumptions | [Random variable](/concepts/math/random-variable), [Probability distribution](/concepts/math/probability-distribution), [Expectation](/concepts/math/expectation), [Normal distribution](/concepts/math/normal-distribution) |
+| Estimation and statistics | finite-sample estimates, uncertainty, hypothesis checks, bias/variance | [Statistical estimator](/concepts/math/statistical-estimator), [Monte Carlo estimation](/concepts/math/monte-carlo-estimation), [Central limit theorem](/concepts/math/central-limit-theorem), [Hypothesis testing](/concepts/math/hypothesis-testing), [Bias-variance tradeoff](/concepts/math/bias-variance-tradeoff) |
+| Dependence | covariance, correlation, representation diagnostics, label relationships | [Covariance and correlation](/concepts/math/covariance-correlation) |
+| Likelihood and information | MLE, entropy, KL, cross-entropy, Bayesian updates | [Maximum likelihood](/concepts/math/maximum-likelihood), [Entropy and KL divergence](/concepts/math/entropy-kl), [Bayes rule](/concepts/math/bayes-rule), [Bayesian inference](/concepts/math/bayesian-inference) |
 
 ## Checks
 

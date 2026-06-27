@@ -26,7 +26,7 @@ where $\mathcal{A}$ can include object, representation, architecture, objective,
 
 | Center | Prefer | Avoid |
 | --- | --- | --- |
-| Protein, ligand, molecule, pocket, complex, genome sequence | Computational Biology | Overbroad Bio-AI label |
+| Protein, ligand, molecule, pocket, complex, genome sequence | Computational Biology | overbroad biology label |
 | Molecule identity, conformer, docking, pose, virtual screening | Molecular Modeling / Structure-Based Modeling | Using Molecular Modeling for every sequence task |
 | Protein sequence, protein structure, protein design | Protein Modeling | Hiding protein-specific assumptions inside generic AI |
 | Genome region, k-mer, variant-level prediction | Genome Sequence Modeling | Opening broad omics unless needed |

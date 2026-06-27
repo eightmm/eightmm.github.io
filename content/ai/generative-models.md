@@ -24,7 +24,7 @@ $$
 x \sim p_\theta(x \mid c)
 $$
 
-Molecular modeling에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, or partial structure일 수 있습니다.
+Computational biology에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, or partial structure일 수 있습니다.
 
 ## 핵심 노트
 
@@ -101,7 +101,7 @@ When reading a paper, first identify the learned quantity before comparing archi
 | better molecular/protein generation | validity, novelty, diversity, constraint satisfaction, downstream utility |
 | faster sampling | matched quality at matched hardware, NFE, memory, and filtering rule |
 
-## Molecular Modeling 연결
+## Computational Biology 연결
 
 - [[concepts/generative-models/molecular-generation|Molecular generation]]
 - [[concepts/generative-models/protein-design|Protein design]]
