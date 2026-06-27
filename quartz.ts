@@ -39,6 +39,7 @@ ExternalPlugin.Explorer({
       "papers/workflows",
       "papers/learning-methods",
       "papers/systems",
+      "papers/essential-ai-reading",
       "infra/training",
       "infra/inference",
       "infra/environments",
@@ -86,6 +87,13 @@ ExternalPlugin.Explorer({
       "molecular-modeling/molecular-ligand": "분자와 리간드",
       "molecular-modeling/interactions": "상호작용",
       "molecular-modeling/data-evaluation": "데이터와 평가",
+      infra: "인프라",
+      "infra/hardware": "하드웨어",
+      "infra/hpc": "HPC",
+      "infra/gpu": "GPU",
+      "infra/io": "스토리지와 IO",
+      "infra/reproducibility": "재현성",
+      "infra/server-ops": "서버 운영",
     }
     if (displayNames[slug]) {
       node.displayName = displayNames[slug]

@@ -8,6 +8,8 @@ tags:
 
 서버, 하드웨어, GPU, HPC, storage, 운영 절차처럼 실제 실행 환경에 가까운 지식을 정리하는 입구입니다. 모델 학습법이나 serving 개념 자체보다, 장비와 운영 경계에서 반복되는 진단 절차와 runbook을 남깁니다.
 
+Infra는 "모델이 무엇을 하는가"보다 "모델과 데이터가 어떤 실행 환경에서 실패하거나 느려지는가"를 봅니다. Training run, inference contract, model serving 개념은 [[ai/systems|AI Systems]]에서 시작하고, GPU memory, Slurm, shared filesystem, backup, monitoring처럼 장비와 운영 조건이 핵심이면 여기서 다룹니다.
+
 ## Main Areas
 
 | Area | Use For |
@@ -31,6 +33,16 @@ tags:
 | Dataloading or storage throughput issue? | [Storage and IO](/infra/io) |
 | Environment, module, or container problem? | [Reproducibility](/infra/reproducibility), [Environment management](/concepts/systems/environment-management) |
 | Need a reproducible record? | [Reproducibility](/infra/reproducibility), [Run artifact](/concepts/systems/run-artifact) |
+
+## Boundary
+
+| Area | Keep Here | Send Elsewhere |
+| --- | --- | --- |
+| Hardware / GPU | memory hierarchy, VRAM, utilization, driver/runtime symptoms | architecture choice goes to [AI](/ai/architectures) |
+| HPC | Slurm job lifecycle, resource request, preemption, checkpoint survival | training objective and optimizer go to [Machine Learning](/ai/machine-learning) |
+| Storage and IO | filesystem throughput, dataloading stalls, cache behavior | dataset semantics and split design go to [Data concepts](/concepts/data) |
+| Reproducibility | public-safe run record, artifact boundary, environment capture | statistical claim evidence goes to [Evaluation](/ai/evaluation) |
+| Server operations | access boundary, accounts, monitoring, backup, incident notes | agent workflow design goes to [Agents](/agents) |
 
 ## 관련 입구
 
