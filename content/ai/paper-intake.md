@@ -29,7 +29,7 @@ $$
 | Energy or constraint | Does the method use an energy, force, constraint, projection, repair, or filter? | [Energy-based model](/concepts/generative-models/energy-based-model), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Evidence | Which metric, split, baseline, ablation, and uncertainty support the claim? | [Evaluation](/ai/evaluation) |
 | Benchmark claim | What data, task, split, metric, allowed information, and reporting rule define the score? | [Benchmark intake](/concepts/data/benchmark-intake) |
-| System boundary | Does the contribution depend on data scale, compute, serving, tools, or reproducibility? | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
+| System boundary | Does the contribution depend on data scale, compute, serving, tools, or reproducibility? | [Systems](/ai/systems), [Infra](/infra), [Agents](/agents) |
 | Scaling claim | What quality, data, model size, compute, and runtime variables changed? | [Scaling claim contract](/concepts/systems/scaling-claim-contract) |
 
 ## Claim Shapes

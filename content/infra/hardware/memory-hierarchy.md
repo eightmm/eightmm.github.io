@@ -105,5 +105,5 @@ If $t_{\mathrm{compute}}$ is small but the rest is large, adding a faster GPU ma
 - [[infra/hardware/storage-network|Storage and network]]
 - [[infra/gpu/index#memory|GPU memory]]
 - [[infra/io/data-loading|Data loading and IO]]
-- [[infra/inference/capacity-planning|Inference capacity planning]]
+- [[concepts/systems/inference-capacity-planning|Inference capacity planning]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]

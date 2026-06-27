@@ -98,4 +98,4 @@ where $c$ contains constraints such as temperature, max tokens, schemas, stop co
 - [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
-- [[infra/inference/serving|Inference serving]]
+- [[concepts/systems/inference-serving|Inference serving]]

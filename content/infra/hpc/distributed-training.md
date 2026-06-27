@@ -91,6 +91,6 @@ Do not publish private scheduler partitions, account names, hostnames, node name
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
-- [[infra/training/distributed-training|Distributed training]]
+- [[concepts/systems/distributed-training-runbook|Distributed training]]
 - [[infra/hardware/storage-network|Storage and network]]
 - [[infra/gpu/index|GPU]]

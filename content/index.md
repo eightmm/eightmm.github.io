@@ -10,7 +10,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 
 | Area | Use For |
 | --- | --- |
-| [AI](/ai) | machine learning, architectures, learning methods, generative models, evaluation |
+| [AI](/ai) | machine learning, architectures, learning methods, generative models, evaluation, systems |
 | [Math](/math) | formulas and mathematical tools needed to read AI notes |
 | [Computational Biology](/molecular-modeling) | focused notes on biological objects, sequence-based modeling, molecular and ligand modeling, interaction modeling, and structure-based workflows |
 | [Infra](/infra) | hardware, GPU, HPC, storage, reproducibility, server operations |
@@ -31,7 +31,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 
 ## 읽는 경로
 
-- AI 기본기: [[math/index|Math]] -> [[ai/machine-learning|Machine learning]] -> [[ai/architectures|Architectures]] -> [[ai/learning-methods|Learning methods]] -> [[ai/evaluation|Evaluation]]
+- AI 기본기: [[math/index|Math]] -> [[ai/machine-learning|Machine learning]] -> [[ai/architectures|Architectures]] -> [[ai/learning-methods|Learning methods]] -> [[ai/evaluation|Evaluation]] -> [[ai/systems|Systems]]
 - Protein sequence route: [[molecular-modeling/sequence-based|Sequence-based modeling]] -> [[molecular-modeling/proteins|Proteins]] -> [[concepts/protein-modeling/index|Protein modeling concepts]]
 - Computational biology: [[molecular-modeling/index|Computational Biology]] -> [[molecular-modeling/entities|Objects and entities]] -> [[molecular-modeling/sequence-based|Sequence-based modeling]] -> [[molecular-modeling/molecular-ligand|Molecular and ligand modeling]] -> [[molecular-modeling/interactions|Interaction modeling]] -> [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - Papers: [[papers/index|Papers]] -> [[papers/workflows/paper-review-workflow|Paper review workflow]] -> [[papers/workflows/reading-status|Reading status]]

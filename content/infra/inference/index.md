@@ -30,8 +30,8 @@ The serving policy includes batching, cache management, quantization, fallback b
 
 ## Notes
 
-- [[infra/inference/serving|Inference serving]]
-- [[infra/inference/capacity-planning|Inference capacity planning]]
+- [[concepts/systems/inference-serving|Inference serving]]
+- [[concepts/systems/inference-capacity-planning|Inference capacity planning]]
 
 ## Checks
 

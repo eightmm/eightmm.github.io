@@ -158,10 +158,10 @@ Practical checks:
 
 ## Related
 
-- [[infra/training/distributed-training|Distributed training]]
+- [[concepts/systems/distributed-training-runbook|Distributed training]]
 - [[infra/hpc/distributed-training|Distributed training on HPC]]
 - [[infra/hardware/memory-hierarchy|Memory hierarchy]]
-- [[infra/inference/serving|Inference serving]]
+- [[concepts/systems/inference-serving|Inference serving]]
 - [[infra/hpc/slurm|Slurm]]
 - [[infra/io/data-loading|Data loading and IO]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]

@@ -101,7 +101,7 @@ tags:
 - [[infra/hpc/preemption-resume|Preemption and resume]]를 긴 실험의 reliability 문제로 설명하기
 - [[infra/hpc/job-reconciliation|Job reconciliation]]으로 오래 도는 job을 중복 실행하지 않고 닫는 법
 - [[concepts/systems/batch-online-inference|Batch and online inference]]를 throughput/latency 관점에서 나눠 보는 법
-- [[infra/inference/capacity-planning|Inference capacity planning]]으로 context length, concurrency, KV cache, p95 latency를 연결하는 법
+- [[concepts/systems/inference-capacity-planning|Inference capacity planning]]으로 context length, concurrency, KV cache, p95 latency를 연결하는 법
 - [[concepts/systems/model-card|Model card]]와 [[concepts/systems/inference-contract|inference contract]]로 모델 artifact를 공개 가능한 사용 경계까지 설명하는 법
 - [[logs/public-incident-note|Public incident note]]로 운영 실패를 공개 가능한 lesson으로 바꾸는 법
 - [[infra/server-ops/incident-response|Incident response]], [[infra/server-ops/backup-restore|backup and restore]], [[infra/server-ops/access-boundary|access boundary]]를 서버 운영 글의 기본 runbook으로 쓰는 법

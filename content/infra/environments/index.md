@@ -28,7 +28,7 @@ Changing the compiler, CUDA stack, Python package set, container image, or runti
 
 ## Notes
 
-- [[infra/environments/modules-containers|Environment modules and containers]]
+- [[concepts/systems/environment-modules-containers|Environment modules and containers]]
 
 ## Checks
 

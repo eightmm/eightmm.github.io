@@ -80,7 +80,7 @@ If the all-reduce time grows faster than useful compute, adding more GPUs can re
 | Is the issue dataloading? | [Data loading and IO](/infra/io/data-loading) |
 | Is the issue checkpoint save/load? | [Checkpointing](/infra/hpc/checkpointing) |
 | Is the issue distributed communication? | [Distributed training on HPC](/infra/hpc/distributed-training) |
-| Is the issue serving latency? | [Inference capacity planning](/infra/inference/capacity-planning) |
+| Is the issue serving latency? | [Inference capacity planning](/concepts/systems/inference-capacity-planning) |
 | Is the issue a mount or permission problem? | [Storage mounts and permissions](/infra/server-ops/storage-mounts) |
 
 ## Related

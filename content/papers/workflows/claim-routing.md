@@ -32,7 +32,7 @@ where $p$ is a paper or post candidate and $a$ is an axis such as architecture, 
 | Does the claim require AI method, computational biology object, and Math evidence together? | cross-axis contract before writing | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Is the main contribution an equation, estimator, metric, or derivation? | formula intake or math concept update | [Formula intake](/math/formula-intake) |
 | Is the main contribution a benchmark or evaluation protocol? | benchmark card or evaluation concept update | [Benchmark intake](/concepts/data/benchmark-intake) |
-| Is the main contribution training, inference, reproducibility, or tooling? | systems or infra note | [Systems](/concepts/systems) |
+| Is the main contribution training, inference, reproducibility, or tooling? | systems or infra note | [Systems](/ai/systems) |
 | Is the main contribution tool-using LLM workflow behavior? | agent note | [Agents](/agents) |
 
 ## Tie Breakers

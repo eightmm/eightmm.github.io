@@ -104,5 +104,5 @@ If these do not match, the run may load without crashing but continue as a diffe
 - [[infra/hpc/preemption-resume|Preemption and resume]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[infra/reproducibility/run-record|Reproducible run record]]
-- [[infra/training/distributed-training|Distributed training]]
+- [[concepts/systems/distributed-training-runbook|Distributed training]]
 - [[infra/index|Infra]]

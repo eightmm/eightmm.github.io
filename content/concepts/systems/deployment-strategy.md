@@ -57,4 +57,4 @@ where $\alpha$ is the rollout fraction.
 - [[concepts/systems/inference-contract|Inference contract]]
 - [[concepts/systems/observability|Observability]]
 - [[concepts/systems/failure-recovery|Failure recovery]]
-- [[infra/inference/serving|Inference serving]]
+- [[concepts/systems/inference-serving|Inference serving]]

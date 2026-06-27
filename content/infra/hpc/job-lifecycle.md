@@ -59,5 +59,5 @@ If any term is false, the next action is reconciliation, not a fresh launch.
 - [[infra/reproducibility/run-record|Reproducible run record]]
 - [[infra/io/data-loading|Data loading and IO]]
 - [[infra/gpu/index|GPU]]
-- [[infra/training/distributed-training|Distributed training]]
+- [[concepts/systems/distributed-training-runbook|Distributed training]]
 - [[projects/hpc-research-workflows|HPC research workflows]]

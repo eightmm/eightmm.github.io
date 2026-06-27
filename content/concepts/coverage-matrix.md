@@ -67,7 +67,7 @@ $$
 | Evaluation | Which metric, baseline, split, uncertainty, and failure mode support the claim? | [Evaluation](/ai/evaluation), [Evaluation concepts](/concepts/evaluation) |
 | Uncertainty and calibration | Is the result larger than uncertainty, and are probabilities meaningful? | [Confidence interval](/concepts/evaluation/confidence-interval), [Calibration](/concepts/evaluation/calibration), [Cross-validation](/concepts/evaluation/cross-validation) |
 | Claim boundary | What exactly does the evidence prove, and where does it stop? | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
-| Systems | Does the claim depend on training, serving, tools, reproducibility, or compute? | [AI systems](/concepts/systems), [Infra](/infra) |
+| Systems | Does the claim depend on training, serving, tools, reproducibility, or compute? | [AI systems](/ai/systems), [Infra](/infra) |
 | Scaling | Does quality depend on data size, model size, compute, memory, latency, or inference budget? | [Scaling claim contract](/concepts/systems/scaling-claim-contract) |
 | Agent workflow | Does an LLM use tools, memory, planning, or verification? | [Agents](/agents) |
 

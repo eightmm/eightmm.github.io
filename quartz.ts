@@ -88,6 +88,7 @@ ExternalPlugin.Explorer({
       "learning-methods",
       "generative-models",
       "evaluation",
+      "systems",
     ]
     const molecularGroups = [
       "entities",

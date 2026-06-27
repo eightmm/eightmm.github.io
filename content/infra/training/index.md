@@ -33,7 +33,7 @@ Infra notes here focus on the machinery around that loop: device topology, proce
 
 ## Notes
 
-- [[infra/training/distributed-training|Distributed training]]
+- [[concepts/systems/distributed-training-runbook|Distributed training]]
 - [[infra/hpc/distributed-training|Distributed training on HPC]]
 
 ## Checks

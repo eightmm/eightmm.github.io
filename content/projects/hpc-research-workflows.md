@@ -54,6 +54,6 @@ Keep the note generic. Do not include real server names, IPs, account names, SSH
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/hpc/job-lifecycle|HPC job lifecycle]]
 - [[infra/reproducibility/run-record|Reproducible run record]]
-- [[infra/training/distributed-training|Distributed training]]
+- [[concepts/systems/distributed-training-runbook|Distributed training]]
 - [[agents/verification/verification-loop|Verification loop]]
 - [[projects/project-note-format|Project note format]]

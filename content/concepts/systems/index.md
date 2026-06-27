@@ -2,7 +2,6 @@
 title: AI Systems
 tags:
   - systems
-  - infra
   - machine-learning
 ---
 
@@ -24,14 +23,18 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[concepts/systems/inference|Inference]]
 - [[concepts/systems/batch-online-inference|Batch and online inference]]
 - [[concepts/systems/model-serving|Model serving]]
+- [[concepts/systems/inference-serving|Inference serving]]
+- [[concepts/systems/inference-capacity-planning|Inference capacity planning]]
 - [[concepts/systems/deployment-strategy|Deployment strategy]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]
 - [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
 - [[concepts/systems/run-artifact|Run artifact]]
 - [[concepts/systems/distributed-training|Distributed training]]
+- [[concepts/systems/distributed-training-runbook|Distributed training runbook]]
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[concepts/systems/environment-management|Environment management]]
+- [[concepts/systems/environment-modules-containers|Environment modules and containers]]
 - [[concepts/systems/inference-contract|Inference contract]]
 - [[concepts/systems/model-card|Model card]]
 - [[concepts/systems/model-versioning|Model versioning]]
@@ -69,6 +72,7 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 ## Related
 
 - [[ai/index|AI]]
+- [[ai/systems|Systems]]
 - [[infra/index|Infra]]
 - [[papers/systems/index|Systems papers]]
 - [[concepts/evaluation/index|Evaluation]]

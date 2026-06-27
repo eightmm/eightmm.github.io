@@ -31,7 +31,7 @@ A public note should make the boundary inspectable without leaking private paths
 ## Notes
 
 - [[infra/reproducibility/run-record|Reproducible run record]]
-- [[infra/environments/modules-containers|Environment modules and containers]]
+- [[concepts/systems/environment-modules-containers|Environment modules and containers]]
 
 ## Checks
 

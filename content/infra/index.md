@@ -27,7 +27,7 @@ tags:
 | GPU memory or utilization issue? | [GPU](/infra/gpu) |
 | Slurm job lifecycle or resource request? | [HPC](/infra/hpc), [Slurm](/infra/hpc/slurm) |
 | Multi-node or multi-GPU distributed run? | [Distributed training on HPC](/infra/hpc/distributed-training) |
-| Serving, batching, latency, or inference contract? | [AI systems](/concepts/systems), [Model serving](/concepts/systems/model-serving), [Latency and throughput](/concepts/systems/latency-throughput) |
+| Serving, batching, latency, or inference contract? | [AI systems](/ai/systems), [Model serving](/concepts/systems/model-serving), [Latency and throughput](/concepts/systems/latency-throughput) |
 | Dataloading or storage throughput issue? | [Storage and IO](/infra/io) |
 | Environment, module, or container problem? | [Reproducibility](/infra/reproducibility), [Environment management](/concepts/systems/environment-management) |
 | Need a reproducible record? | [Reproducibility](/infra/reproducibility), [Run artifact](/concepts/systems/run-artifact) |
@@ -36,7 +36,7 @@ tags:
 
 | Area | Link |
 | --- | --- |
-| AI systems concepts | [AI systems](/concepts/systems) |
+| AI systems | [Systems](/ai/systems), [AI systems concepts](/concepts/systems) |
 | Project workflow | [Projects](/projects), [HPC research workflows](/projects/hpc-research-workflows) |
 | Evaluation boundary | [Evaluation](/concepts/evaluation) |
 | Agent workflow | [LLM Wiki](/agents/workflows/llm-wiki) |

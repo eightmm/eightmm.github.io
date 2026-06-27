@@ -45,7 +45,7 @@ where $L$ is sequence length, $H$ is the number of attention heads, and $d_{\mat
 
 - [[infra/gpu/index#memory|GPU memory]]
 - [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]]
-- [[infra/training/distributed-training|Distributed training]]
+- [[concepts/systems/distributed-training-runbook|Distributed training]]
 - [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]

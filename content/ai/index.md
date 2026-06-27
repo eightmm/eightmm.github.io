@@ -31,6 +31,7 @@ $$
 | Learning Methods | supervised learning, self-supervised learning, contrastive learning, JEPA, fine-tuning, preference/RL objective | [Learning Methods](/ai/learning-methods) |
 | Generative Models | autoregressive model, VAE, GAN, diffusion, score model, flow matching, normalizing flow | [Generative Models](/ai/generative-models) |
 | Evaluation | metric, split, leakage, calibration, OOD, uncertainty, failure analysis | [Evaluation](/ai/evaluation) |
+| Systems | training runs, inference, serving, environments, artifacts, reproducibility | [Systems](/ai/systems) |
 | Agents | tool use, memory, planning, verification, orchestration | [Agents](/agents) |
 
 ## 분류 기준
@@ -46,7 +47,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 | supervision, objective, transfer 방식인가? | [Learning Methods](/ai/learning-methods) |
 | sample을 만들거나 distribution을 모델링하는가? | [Generative Models](/ai/generative-models) |
 | 성능 claim을 어떻게 검증하는가? | [Evaluation](/ai/evaluation) |
-| 실행, serving, reproducibility 문제인가? | [Systems](/concepts/systems), [Infra](/infra) |
+| 실행, serving, reproducibility 문제인가? | [Systems](/ai/systems), [Infra](/infra) |
 | LLM이 도구를 쓰고 작업을 끝내는 방식인가? | [Agents](/agents) |
 
 ## 기본 읽기 경로
@@ -57,6 +58,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 4. [[ai/learning-methods|Learning Methods]]에서 label, pretraining signal, transfer, preference objective를 분리합니다.
 5. [[ai/generative-models|Generative Models]]에서 likelihood, denoising, score, velocity, sampling 관점을 비교합니다.
 6. [[ai/evaluation|Evaluation]]에서 split, metric, leakage, calibration, failure mode를 확인합니다.
+7. [[ai/systems|Systems]]에서 training run, inference, serving, environment, reproducibility 경계를 봅니다.
 
 ## 입력 대상별 경로
 
@@ -85,7 +87,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Selection rule | checkpoint, hyperparameter, threshold, prompt, filter를 어떻게 골랐는가 | [Model selection](/concepts/machine-learning/model-selection) |
 | Evaluation claim | 어떤 split, metric, baseline, uncertainty로 주장을 검증하는가 | [Evaluation](/ai/evaluation) |
 | Uncertainty and calibration | 결과 차이와 probability claim을 얼마나 믿을 수 있는가 | [Confidence interval](/concepts/evaluation/confidence-interval), [Calibration](/concepts/evaluation/calibration) |
-| System boundary | training, inference, serving, reproducibility, tool-use 문제가 있는가 | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
+| System boundary | training, inference, serving, reproducibility, tool-use 문제가 있는가 | [Systems](/ai/systems), [Infra](/infra), [Agents](/agents) |
 
 ## Related
 

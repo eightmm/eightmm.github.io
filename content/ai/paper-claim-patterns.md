@@ -30,7 +30,7 @@ If the paper also depends on molecules, proteins, structures, or formulas, route
 | Generative-model claim | a distribution model or sampler improves samples | objective, sampler, validity/diversity/utility metrics | [Generative models](/ai/generative-models) |
 | Evaluation claim | a benchmark, metric, split, or protocol changes what can be trusted | dataset card, split rule, metric definition, leakage check | [Evaluation](/ai/evaluation) |
 | Scaling claim | more data, parameters, compute, memory, or inference budget changes performance | scaling variable, controlled baseline, cost boundary | [Scaling claim contract](/concepts/systems/scaling-claim-contract) |
-| Systems claim | implementation, serving, reproducibility, or artifacts make a method practical | runtime evidence, artifact status, reproducibility contract | [Systems](/concepts/systems), [Infra](/infra) |
+| Systems claim | implementation, serving, reproducibility, or artifacts make a method practical | runtime evidence, artifact status, reproducibility contract | [Systems](/ai/systems), [Infra](/infra) |
 | Agent claim | tool use, planning, memory, or verification improves task completion | task suite, tool boundary, verifier, failure definition | [Agents](/agents) |
 
 ## Architecture Claim

@@ -89,6 +89,6 @@ Adding devices helps only when the added parallelism reduces the dominant term m
 - [[concepts/machine-learning/gradient-accumulation|Gradient accumulation]]
 - [[concepts/machine-learning/training-stability|Training stability]]
 - [[concepts/machine-learning/optimizer|Optimizer]]
-- [[infra/training/distributed-training|Distributed training runbook]]
+- [[concepts/systems/distributed-training-runbook|Distributed training runbook]]
 - [[infra/gpu/index#memory|GPU memory]]
 - [[infra/hpc/slurm|Slurm]]
