@@ -43,7 +43,7 @@ $$
 | Bundle Type | Minimum Links |
 | --- | --- |
 | AI method post | architecture, learning method, objective, evaluation risk |
-| Molecular Modeling post | entity/object, representation, preprocessing/split, evaluation risk |
+| Computational Biology post | entity/object, representation, preprocessing/split, evaluation risk |
 | Math-heavy post | formula intake, explanation ladder, objective-metric link, evaluation math |
 | Paper-cluster post | paper notes, claim/evidence table, benchmark contract, concept updates |
 | Project post | project note, design decision, verification, related concepts |

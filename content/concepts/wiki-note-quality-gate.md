@@ -8,7 +8,7 @@ tags:
 
 # Wiki Note Quality Gate
 
-Wiki note quality gate defines the minimum standard for reusable notes in this site. It applies to Concepts, Entities, AI, Molecular Modeling, Math, Papers workflows, Agents, Infra, and Projects when a page is meant to be reused by future posts or paper notes.
+Wiki note quality gate defines the minimum standard for reusable notes in this site. It applies to Concepts, Entities, AI, Computational Biology, Math, Papers workflows, Agents, Infra, and Projects when a page is meant to be reused by future posts or paper notes.
 
 $$
 \text{useful note}

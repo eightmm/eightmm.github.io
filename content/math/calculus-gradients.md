@@ -27,17 +27,15 @@ $$
 
 This page is Math-facing. It explains derivatives, chain rules, Jacobians, Hessians, and backpropagation notation. Practical optimizer choices such as AdamW, warmup, clipping, and batch-size scaling live under [[ai/machine-learning|Machine Learning]] and [[concepts/machine-learning/optimization|Optimization]].
 
-## Core Notes
+## Route Map
 
-- [[concepts/math/calculus|Calculus]]
-- [[concepts/math/matrix-calculus|Matrix calculus]]
-- [[concepts/math/jacobian-hessian|Jacobian and Hessian]]
-- [[concepts/math/constrained-optimization|Constrained optimization]]
-- [[concepts/machine-learning/backpropagation|Backpropagation]]
-- [[concepts/machine-learning/automatic-differentiation|Automatic differentiation]]
-- [[concepts/machine-learning/gradient-checking|Gradient checking]]
-- [[concepts/machine-learning/loss-landscape|Loss landscape]]
-- [[concepts/machine-learning/second-order-optimization|Second-order optimization]]
+| Question | Start | Use For |
+| --- | --- | --- |
+| What is local change? | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus) | derivatives, gradients, tensor notation |
+| How do vector outputs change? | [Jacobian and Hessian](/concepts/math/jacobian-hessian) | sensitivity, curvature, normalizing flows, coordinate models |
+| How does a network compute gradients? | [Backpropagation](/concepts/machine-learning/backpropagation), [Automatic differentiation](/concepts/machine-learning/automatic-differentiation) | training loops and differentiable programs |
+| How do constraints enter? | [Constrained optimization](/concepts/math/constrained-optimization) | projected updates, constrained generation, feasibility |
+| How do we debug gradient behavior? | [Gradient checking](/concepts/machine-learning/gradient-checking), [Loss landscape](/concepts/machine-learning/loss-landscape), [Second-order optimization](/concepts/machine-learning/second-order-optimization) | instability, curvature, implementation checks |
 
 ## Derivative
 

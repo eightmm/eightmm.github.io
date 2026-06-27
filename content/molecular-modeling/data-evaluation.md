@@ -21,27 +21,24 @@ $$
 
 This estimate is only meaningful if the test set matches the generalization claim.
 
-## Data Contracts
+## Data Contract Routes
 
-- [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
-- [[concepts/data/example-unit|Example unit]]
-- [[concepts/data/split-unit|Split unit]]
-- [[concepts/data/label-semantics|Label semantics]]
-- [[concepts/data/preprocessing-contract|Preprocessing contract]]
-- [[concepts/data/metadata-provenance|Metadata and provenance]]
-- [[concepts/molecular-modeling/chemical-state-contract|Chemical state contract]]
-- [[entities/target-assay-label|Target-assay-label contract]]
-- [[entities/bioactivity-label|Bioactivity label]]
+| Question | Start | Watch |
+| --- | --- | --- |
+| What counts as one example? | [Example unit](/concepts/data/example-unit), [Dataset construction checklist](/concepts/data/dataset-construction-checklist) | row IDs that hide molecule, protein, assay, or complex identity |
+| What does the label mean? | [Label semantics](/concepts/data/label-semantics), [Target-assay-label contract](/entities/target-assay-label), [Bioactivity label](/entities/bioactivity-label) | endpoint, unit, censoring, threshold, source mismatch |
+| What preprocessing changes the object? | [Preprocessing contract](/concepts/data/preprocessing-contract), [Metadata and provenance](/concepts/data/metadata-provenance), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) | fitting preprocessing or deduplication on full data |
+| Which split supports the claim? | [Split unit](/concepts/data/split-unit), [Leakage](/concepts/evaluation/leakage), [Test-set contamination](/concepts/evaluation/test-set-contamination) | random rows overstating generalization |
 
-## Splits and Leakage
+## Split and Leakage Routes
 
-- [[concepts/evaluation/leakage|Leakage]]
-- [[concepts/evaluation/test-set-contamination|Test-set contamination]]
-- [[concepts/evaluation/scaffold-split|Scaffold split]]
-- [[concepts/evaluation/protein-family-split|Protein family split]]
-- [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
-- [[concepts/sbdd/template-leakage|Template leakage]]
-- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
+| Split Axis | Start | Use For |
+| --- | --- | --- |
+| Molecule series | [Scaffold split](/concepts/evaluation/scaffold-split) | new-chemistry claims and analog leakage checks |
+| Protein family | [Protein family split](/concepts/evaluation/protein-family-split) | new-target or sequence generalization claims |
+| Protein-ligand pair | [Protein-ligand split](/concepts/sbdd/protein-ligand-split) | interaction and docking generalization |
+| Structure template | [Template leakage](/concepts/sbdd/template-leakage) | structure prediction, docking, pocket tasks |
+| Assay/source | [Assay harmonization](/concepts/evaluation/assay-harmonization) | multi-source activity labels |
 
 ## Claim to Split Map
 
@@ -53,24 +50,16 @@ This estimate is only meaningful if the test set matches the generalization clai
 | New assay/source | source or temporal split | assay-specific artifacts can leak across rows |
 | New structure template | template-aware structure split | homologous structures can make pose tasks too easy |
 
-## Evaluation
+## Evaluation Routes
 
-- [[concepts/evaluation/index|Evaluation]]
-- [[concepts/evaluation/evaluation-protocol|Evaluation protocol]]
-- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
-- [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
-- [[concepts/data/benchmark-intake|Benchmark intake]]
-- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
-- [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
-- [[concepts/evaluation/metric-selection|Metric selection]]
-- [[concepts/evaluation/calibration|Calibration]]
-- [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
-- [[concepts/evaluation/applicability-domain|Applicability domain]]
-- [[concepts/evaluation/negative-set|Negative set]]
-- [[concepts/evaluation/activity-cliff|Activity cliff]]
-- [[concepts/evaluation/assay-harmonization|Assay harmonization]]
-- [[concepts/evaluation/boltzmann-ceiling|Boltzmann ceiling analysis]]
-- [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
+| Need | Start | Check |
+| --- | --- | --- |
+| Protocol boundary | [Evaluation](/concepts/evaluation), [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Evaluation set design](/concepts/evaluation/evaluation-set-design) | train/validation/test roles and final selection rule |
+| Claim support | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract), [Benchmark intake](/concepts/data/benchmark-intake) | what the reported number can actually prove |
+| Metric choice | [Metric selection](/concepts/evaluation/metric-selection), [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) | optimized loss versus reported decision metric |
+| Reliability | [Calibration](/concepts/evaluation/calibration), [Uncertainty estimation](/concepts/evaluation/uncertainty-estimation), [Applicability domain](/concepts/evaluation/applicability-domain) | confidence under distribution shift |
+| Benchmark traps | [Negative set](/concepts/evaluation/negative-set), [Activity cliff](/concepts/evaluation/activity-cliff), [Boltzmann ceiling analysis](/concepts/evaluation/boltzmann-ceiling) | false negatives, cliffs, indistinguishable labels |
+| Repeated paper patterns | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) | property, activity, docking, generation, protein design, genome task |
 
 ## Computational Biology Evidence Package
 

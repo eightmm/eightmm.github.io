@@ -11,9 +11,7 @@ tags:
 
 # Computational Biology
 
-이 영역은 넓은 biology 전체가 아니라 계산 모델링에서 직접 다루는 객체와 workflow에 집중합니다. 주요 대상은 molecule, ligand, protein, pocket, protein-ligand complex, conformer, structure, genome sequence입니다.
-
-공개 상위 이름은 `Computational Biology`로 둡니다. 그 안에서 molecule, conformer, docking, pose, force field, virtual screening처럼 화학/구조 workflow가 중심인 부분만 `Molecular Modeling` 하위 영역으로 봅니다.
+이 영역은 넓은 biology 전체가 아니라 계산 모델링에서 직접 다루는 객체와 workflow에 집중합니다. 주요 대상은 molecule, ligand, protein, pocket, protein-ligand complex, conformer, structure, genome sequence입니다. Transcriptomics, single-cell, clinical omics, systems biology처럼 범위가 급격히 넓어지는 주제는 실제 연구나 프로젝트 필요가 생길 때 별도로 엽니다.
 
 AI 모델은 이 영역의 방법 중 하나입니다. 객체와 평가 조건은 여기서 정하고, GNN, Transformer, diffusion, flow matching, SSL 같은 모델 구조와 학습법은 [[ai/index|AI]]에서 봅니다.
 
@@ -34,16 +32,16 @@ $$
 | Data and Evaluation | label semantics, split unit, leakage, assay harmonization, benchmark traps | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 | Genome-Level Sequence | genome region, k-mer, annotation, variant-effect prediction | [Genome](/molecular-modeling/genome) |
 
-## 이름을 고르는 기준
+## Scope Map
 
-| Name | Use When | Avoid When |
+| Scope | Covers | Keep Separate |
 | --- | --- | --- |
-| Computational Biology | protein, molecule, ligand, pocket, complex, structure, genome sequence가 함께 등장하는 큰 입구가 필요할 때 | transcriptomics, single-cell, clinical omics, systems biology까지 열려는 뜻일 때 |
-| Molecular Modeling | molecule, conformer, docking, pose, force field, virtual screening처럼 화학/구조 workflow가 중심일 때 | protein sequence-only나 genome sequence task까지 모두 부를 때 |
-| Protein Modeling | protein sequence, structure, domain, binding site, design, interaction이 중심일 때 | ligand chemistry나 assay label이 더 중심일 때 |
-| Structure-Based Modeling | pocket, protein-ligand geometry, pose, scoring, structure-aware generation이 중심일 때 | 모델 architecture 자체가 주제일 때 |
-| AI | architecture, objective, learning method, generative model, evaluation method가 중심일 때 | 생물학적 object, assay, split, coordinate protocol이 더 중요할 때 |
-| Math | likelihood, loss, gradient, geometry, symmetry, metric formula를 설명해야 할 때 | 실제 workflow나 model family를 설명할 때 |
+| Computational biology | protein, molecule, ligand, pocket, complex, structure, genome sequence | broad omics and clinical biology |
+| Molecular modeling | conformer, docking, pose, force field, virtual screening, molecular property | protein sequence-only or genome-only tasks |
+| Protein modeling | sequence, structure, domain, binding site, design, interaction | ligand chemistry and assay semantics |
+| Structure-based modeling | pocket, protein-ligand geometry, pose, scoring, structure-aware generation | architecture definitions |
+| AI method | architecture, objective, learning method, generative model, evaluation method | domain object definitions |
+| Math foundation | likelihood, loss, gradient, geometry, symmetry, metric formula | workflow-specific assumptions |
 
 ## 객체에서 시작하기
 

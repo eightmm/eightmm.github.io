@@ -16,15 +16,15 @@ $$
 
 This is the abstract form of equivariance.
 
-## Core Notes
+## Route Map
 
-- [[concepts/math/geometry|Geometry]]
-- [[concepts/math/symmetry-group|Symmetry group]]
-- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
-- [[concepts/geometric-deep-learning/invariance|Invariance]]
-- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
-- [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
-- [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
+| Question | Start | Use For |
+| --- | --- | --- |
+| What is the mathematical object? | [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) | distances, transforms, groups, coordinate rules |
+| What should stay unchanged? | [Invariance](/concepts/geometric-deep-learning/invariance) | scalar labels such as class, energy, affinity |
+| What should transform predictably? | [Equivariance](/concepts/geometric-deep-learning/equivariance) | coordinates, forces, vector fields, pose updates |
+| What frame are coordinates in? | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry) | structure representation and leakage checks |
+| How is this implemented in models? | [Geometric deep learning](/concepts/geometric-deep-learning) | equivariant GNNs and coordinate-aware architectures |
 
 ## Transformation Rules
 

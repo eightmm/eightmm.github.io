@@ -8,7 +8,7 @@ tags:
 
 # Topic Map Contract
 
-Topic map contract defines the minimum structure for a map-style wiki note or Korean post. Use it when a topic spans AI, Molecular Modeling, Math, Papers, Infra, or Agents and needs a reader-facing route rather than one isolated definition.
+Topic map contract defines the minimum structure for a map-style wiki note or Korean post. Use it when a topic spans AI, Computational Biology, Math, Papers, Infra, or Agents and needs a reader-facing route rather than one isolated definition.
 
 $$
 \text{topic map}
@@ -64,7 +64,7 @@ A useful topic map should link at least one note from most relevant groups:
 
 - The map is only a list of links without a reader question.
 - The map hides the primary axis.
-- The map mixes AI, Molecular Modeling, and Math without saying which one owns the explanation.
+- The map mixes AI, Computational Biology, and Math without saying which one owns the explanation.
 - The map contains paper-specific claims without evidence boundary.
 - The map repeats full definitions that should live in concept notes.
 - The map depends on private data, unpublished results, or internal infrastructure context.

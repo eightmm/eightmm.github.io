@@ -15,15 +15,14 @@ $$
 
 This is the basic form behind [[concepts/architectures/linear-layer|linear layers]], many classifiers, and local transformations inside larger architectures.
 
-## Core Notes
+## Route Map
 
-- [[concepts/math/linear-algebra|Linear algebra]]
-- [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
-- [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]
-- [[concepts/math/singular-value-decomposition|Singular value decomposition]]
-- [[concepts/math/covariance-correlation|Covariance and correlation]]
-- [[concepts/architectures/linear-layer|Linear layer]]
-- [[concepts/architectures/embedding|Embedding]]
+| Question | Start | Use For |
+| --- | --- | --- |
+| What is the basic vector/matrix object? | [Linear algebra](/concepts/math/linear-algebra), [Linear layer](/concepts/architectures/linear-layer) | affine transforms, projections, classifiers, feature mixing |
+| How is similarity measured? | [Vector norm and similarity](/concepts/math/vector-norm-similarity), [Embedding](/concepts/architectures/embedding) | retrieval, clustering, representation diagnostics |
+| What directions explain variance or dynamics? | [Eigenvalue and eigenvector](/concepts/math/eigenvalue-eigenvector), [SVD](/concepts/math/singular-value-decomposition) | PCA, low-rank structure, spectral views |
+| How do features vary together? | [Covariance and correlation](/concepts/math/covariance-correlation) | normalization, redundancy, representation analysis |
 
 ## Shape Discipline
 

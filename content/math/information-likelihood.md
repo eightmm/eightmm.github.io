@@ -19,15 +19,14 @@ $$
 
 Maximum likelihood trains a model to assign high probability to observed data under the modeling assumptions.
 
-## Core Notes
+## Route Map
 
-- [[concepts/math/maximum-likelihood|Maximum likelihood]]
-- [[concepts/math/bayesian-inference|Bayesian inference]]
-- [[concepts/math/entropy-kl|Entropy and KL divergence]]
-- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
-- [[concepts/machine-learning/cross-entropy-loss|Cross-entropy loss]]
-- [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
-- [[concepts/evaluation/proper-scoring-rule|Proper scoring rule]]
+| Question | Start | Use For |
+| --- | --- | --- |
+| What probability model is fitted? | [Maximum likelihood](/concepts/math/maximum-likelihood), [Negative log-likelihood](/concepts/machine-learning/negative-log-likelihood) | density estimation and supervised likelihood |
+| How do priors and evidence combine? | [Bayesian inference](/concepts/math/bayesian-inference) | posterior reasoning and uncertainty assumptions |
+| How are distributions compared? | [Entropy and KL divergence](/concepts/math/entropy-kl), [Cross-entropy loss](/concepts/machine-learning/cross-entropy-loss) | classification, variational objectives, representation learning |
+| Are reported probabilities meaningful? | [Probabilistic prediction](/concepts/machine-learning/probabilistic-prediction), [Proper scoring rule](/concepts/evaluation/proper-scoring-rule) | calibration, decision rules, scoring |
 
 ## Core Quantities
 

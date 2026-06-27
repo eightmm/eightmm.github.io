@@ -19,19 +19,15 @@ $$
 
 where $L$ is a molecular object and $c$ can include pH, assay condition, conformer source, or target context.
 
-## Core Notes
+## Route Map
 
-- [[entities/molecule|Molecule]]
-- [[entities/ligand|Ligand]]
-- [[concepts/molecular-modeling/index|Molecular modeling concepts]]
-- [[concepts/molecular-modeling/molecular-identity|Molecular identity]]
-- [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
-- [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
-- [[concepts/molecular-modeling/smiles|SMILES]]
-- [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
-- [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
-- [[concepts/molecular-modeling/molecular-similarity|Molecular similarity]]
-- [[concepts/molecular-modeling/fragment-selfies|Fragment-SELFIES]]
+| Question | Start | Watch |
+| --- | --- | --- |
+| What is the modeled chemical object? | [Molecule](/entities/molecule), [Ligand](/entities/ligand), [Molecular identity](/concepts/molecular-modeling/molecular-identity) | salts, mixtures, stereo, protonation, tautomer policy |
+| How is the molecule normalized? | [Molecular standardization](/concepts/molecular-modeling/molecular-standardization), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) | deduplication before standardization |
+| What does the model actually see? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph) | string augmentation or graph construction changing the object |
+| Is similarity meaningful for the claim? | [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint), [Molecular similarity](/concepts/molecular-modeling/molecular-similarity) | using a cheap proxy as if it were chemical equivalence |
+| Is generation constrained by chemistry? | [Fragment-SELFIES](/concepts/molecular-modeling/fragment-selfies), [Molecular generation](/concepts/generative-models/molecular-generation) | validity without utility or novelty boundary |
 
 ## Representation Choices
 
@@ -57,24 +53,14 @@ $$
 
 where $L_{\mathrm{raw}}$ is the input molecule record, $L_{\mathrm{std}}$ is the standardized chemical object, and $r_L$ is the model representation.
 
-## Structure and Chemistry
+## Structure and Chemistry Routes
 
-- [[concepts/molecular-modeling/conformer|Conformer]]
-- [[concepts/molecular-modeling/stereochemistry|Stereochemistry]]
-- [[concepts/molecular-modeling/protonation-state|Protonation state]]
-- [[concepts/molecular-modeling/tautomer|Tautomer]]
-- [[concepts/molecular-modeling/substructure-search|Substructure search]]
-- [[concepts/molecular-modeling/fragment-selfies|Fragment SELFIES]]
-- [[concepts/molecular-modeling/force-field|Force field]]
-- [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
-- [[concepts/molecular-modeling/molecular-dynamics|Molecular dynamics]]
-
-## Tasks
-
-- [[concepts/tasks/property-prediction|Property prediction]]
-- [[concepts/molecular-modeling/molecular-property-prediction|Molecular property prediction]]
-- [[concepts/tasks/similarity-search|Similarity search]]
-- [[concepts/generative-models/molecular-generation|Molecular generation]]
+| Area | Start | Use For |
+| --- | --- | --- |
+| Conformer state | [Conformer](/concepts/molecular-modeling/conformer), [Stereochemistry](/concepts/molecular-modeling/stereochemistry), [Protonation state](/concepts/molecular-modeling/protonation-state), [Tautomer](/concepts/molecular-modeling/tautomer) | making the chemical state explicit before 3D or assay claims |
+| Substructure and fragments | [Substructure search](/concepts/molecular-modeling/substructure-search), [Fragment-SELFIES](/concepts/molecular-modeling/fragment-selfies) | scaffold editing, filtering, constrained generation |
+| Physics-inspired preparation | [Force field](/concepts/molecular-modeling/force-field), [Energy minimization](/concepts/molecular-modeling/energy-minimization), [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | coordinate refinement, conformer protocols, simulation-derived features |
+| Prediction and retrieval | [Property prediction](/concepts/tasks/property-prediction), [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction), [Similarity search](/concepts/tasks/similarity-search) | supervised endpoints and ranked candidate lists |
 
 ## Task Map
 

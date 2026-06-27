@@ -10,16 +10,15 @@ tags:
 
 Dynamical systems describe how a state changes over time or along a continuous path. In AI, this appears in recurrent models, residual networks, diffusion models, flow matching, probability-flow ODEs, control, reinforcement learning, and molecular dynamics.
 
-## Core Notes
+## Route Map
 
-- [[concepts/generative-models/diffusion-model|Diffusion model]]
-- [[concepts/generative-models/flow-matching|Flow matching]]
-- [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
-- [[concepts/generative-models/rectified-flow|Rectified flow]]
-- [[concepts/architectures/rnn|RNN]]
-- [[concepts/architectures/residual-network|Residual network]]
-- [[concepts/learning/reinforcement-learning|Reinforcement learning]]
-- [[concepts/molecular-modeling/molecular-dynamics|Molecular dynamics]]
+| Question | Start | Use For |
+| --- | --- | --- |
+| Is the state updated step by step? | [RNN](/concepts/architectures/rnn), [Residual network](/concepts/architectures/residual-network) | recurrence, iterative refinement, deep residual blocks |
+| Is the model a continuous flow? | [Flow matching](/concepts/generative-models/flow-matching), [Probability flow ODE](/concepts/generative-models/probability-flow-ode), [Rectified flow](/concepts/generative-models/rectified-flow) | sample transport and velocity fields |
+| Is noise part of the dynamics? | [Diffusion model](/concepts/generative-models/diffusion-model) | stochastic paths and denoising objectives |
+| Is an agent or controller acting over time? | [Reinforcement learning](/concepts/learning/reinforcement-learning) | state, action, reward, policy dynamics |
+| Is the state physical? | [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | coordinate and force evolution |
 
 ## Discrete-Time Dynamics
 

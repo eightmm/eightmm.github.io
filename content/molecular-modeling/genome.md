@@ -19,15 +19,14 @@ x_{\mathrm{genome}}
 \{\text{sequence}, \text{region}, \text{k-mer}, \text{variant}, \text{annotation}\}
 $$
 
-## Core Notes
+## Route Map
 
-- [[entities/genome|Genome]]
-- [[entities/sequence|Sequence]]
-- [[concepts/genome-modeling/index|Genome modeling concepts]]
-- [[concepts/genome-modeling/genomic-region|Genomic region]]
-- [[concepts/genome-modeling/k-mer|K-mer]]
-- [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
-- [[concepts/genome-modeling/genome-annotation|Genome annotation]]
+| Question | Start | Watch |
+| --- | --- | --- |
+| What is the sequence unit? | [Genome](/entities/genome), [Sequence](/entities/sequence), [Genomic region](/concepts/genome-modeling/genomic-region) | reference coordinate mismatch and duplicated windows |
+| How is the sequence represented? | [K-mer](/concepts/genome-modeling/k-mer), [Genome modeling concepts](/concepts/genome-modeling) | window length and context truncation |
+| Is the task variant-centered? | [Variant effect prediction](/concepts/genome-modeling/variant-effect-prediction) | label source, nearby variant leakage, assay scope |
+| Are annotations inputs or targets? | [Genome annotation](/concepts/genome-modeling/genome-annotation) | annotation version and label leakage |
 
 ## Representation Choices
 

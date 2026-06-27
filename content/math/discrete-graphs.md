@@ -10,16 +10,14 @@ tags:
 
 Discrete math is the language for tokens, sets, graphs, trees, masks, indices, neighborhoods, retrieval candidates, and search spaces. It is especially important for [[concepts/architectures/gnn|Graph neural networks]], molecular graphs, protein contact maps, and agent workflows.
 
-## Core Notes
+## Route Map
 
-- [[concepts/modalities/graph|Graph]]
-- [[concepts/architectures/gnn|Graph neural networks]]
-- [[concepts/architectures/graph-construction|Graph construction]]
-- [[concepts/architectures/graph-transformer|Graph Transformer]]
-- [[concepts/architectures/deep-sets|Deep Sets]]
-- [[concepts/architectures/set-transformer|Set Transformer]]
-- [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
-- [[concepts/protein-modeling/contact-map|Contact map]]
+| Question | Start | Use For |
+| --- | --- | --- |
+| What is the graph object? | [Graph](/concepts/modalities/graph), [Graph construction](/concepts/architectures/graph-construction) | nodes, edges, adjacency, features |
+| How does a model use graph structure? | [Graph neural networks](/concepts/architectures/gnn), [Graph Transformer](/concepts/architectures/graph-transformer) | message passing and relation-aware attention |
+| What if the input is an unordered set? | [Deep Sets](/concepts/architectures/deep-sets), [Set Transformer](/concepts/architectures/set-transformer) | permutation-invariant or equivariant processing |
+| Where does this appear in computational biology? | [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Contact map](/concepts/protein-modeling/contact-map) | atoms, residues, bonds, spatial contacts |
 
 ## Graph Objects
 

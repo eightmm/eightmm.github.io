@@ -21,10 +21,12 @@ $$
 
 아키텍처를 볼 때는 "유명한 모델인가"보다 "어떤 입력 구조와 대칭성을 가정하는가"를 먼저 봐야 합니다.
 
-- [[concepts/architectures/inductive-bias|Inductive bias]]: architecture가 어떤 함수 공간을 선호하는가
-- [[concepts/architectures/parameter-sharing|Parameter sharing]]: 같은 parameter를 어디에 반복 적용하는가
-- [[concepts/architectures/architecture-selection|Architecture selection]]: modality, task, data, compute를 기준으로 모델 family를 고르는 법
-- [[concepts/architectures/computational-complexity|Computational complexity]]: sequence length, graph size, image resolution이 커질 때 비용이 어떻게 늘어나는가
+| Criterion | Start | Ask |
+| --- | --- | --- |
+| Inductive bias | [Inductive bias](/concepts/architectures/inductive-bias) | architecture가 어떤 함수 공간을 선호하는가? |
+| Parameter sharing | [Parameter sharing](/concepts/architectures/parameter-sharing) | 같은 parameter를 어디에 반복 적용하는가? |
+| Architecture choice | [Architecture selection](/concepts/architectures/architecture-selection) | modality, task, data, compute에 맞는 family인가? |
+| Scaling cost | [Computational complexity](/concepts/architectures/computational-complexity) | sequence length, graph size, image resolution에 따라 비용이 어떻게 느는가? |
 
 ## Input Structure Map
 
@@ -38,105 +40,34 @@ $$
 | 3D coordinates | invariance/equivariance | equivariant GNN, tensor-field model | coordinate frame, units, chirality, leakage, update stability |
 | Multimodal input | cross-modal alignment | encoder-decoder, cross-attention, Perceiver | missing modality, modality leakage, fusion timing |
 
-## 기본 구성요소
+## Building Block Routes
 
 딥러닝 아키텍처를 읽을 때 먼저 봐야 하는 building block입니다.
 
-- [[concepts/architectures/linear-layer|Linear layer]]
-- [[concepts/architectures/weight-initialization|Weight initialization]]
-- [[concepts/architectures/activation-function|Activation function]]
-- [[concepts/architectures/feed-forward-network|Feed-forward network]]
-- [[concepts/architectures/normalization|Normalization]]
-- [[concepts/architectures/normalization-placement|Normalization placement]]
-- [[concepts/architectures/residual-connection|Residual connection]]
-- [[concepts/architectures/residual-network|Residual network]]
-- [[concepts/architectures/tokenization|Tokenization]]
-- [[concepts/architectures/embedding|Embedding]]
-- [[concepts/architectures/positional-encoding|Positional encoding]]
-- [[concepts/architectures/softmax|Softmax]]
-- [[concepts/architectures/dropout|Dropout]]
-- [[concepts/architectures/gating|Gating]]
-- [[concepts/architectures/pooling-readout|Pooling and readout]]
+| Block | Start | Role |
+| --- | --- | --- |
+| Affine transform | [Linear layer](/concepts/architectures/linear-layer), [Weight initialization](/concepts/architectures/weight-initialization) | feature dimension mixing and stable starting scale |
+| Nonlinearity | [Activation function](/concepts/architectures/activation-function), [Feed-forward network](/concepts/architectures/feed-forward-network) | local nonlinear transformation and channel mixing |
+| Stabilization | [Normalization](/concepts/architectures/normalization), [Normalization placement](/concepts/architectures/normalization-placement), [Residual connection](/concepts/architectures/residual-connection) | gradient flow and deep model stability |
+| Representation interface | [Tokenization](/concepts/architectures/tokenization), [Embedding](/concepts/architectures/embedding), [Positional encoding](/concepts/architectures/positional-encoding) | mapping raw objects into model states |
+| Probability and regularization | [Softmax](/concepts/architectures/softmax), [Dropout](/concepts/architectures/dropout) | normalized scores and train-time noise |
+| Routing and readout | [Gating](/concepts/architectures/gating), [Pooling and readout](/concepts/architectures/pooling-readout) | conditional computation and output aggregation |
 
-## Dense and Feed-Forward
+## Architecture Families
 
-고정 길이 vector나 이미 만들어진 feature를 처리하는 가장 기본적인 계열입니다.
+| Family | Start | Best Fit | Watch |
+| --- | --- | --- | --- |
+| Dense / feed-forward | [MLP](/concepts/architectures/mlp), [Autoencoder](/concepts/architectures/autoencoder) | fixed vectors, tabular features, bottleneck representations | feature scaling and lost structure |
+| Grid / image / voxel | [Image](/concepts/modalities/image), [Video](/concepts/modalities/video), [Convolution](/concepts/architectures/convolution), [CNN](/concepts/architectures/cnn), [U-Net](/concepts/architectures/u-net), [ViT](/concepts/architectures/vision-transformer) | locality, spatial sharing, dense prediction | receptive field, resolution, augmentation |
+| Sequence recurrence | [RNN](/concepts/architectures/rnn), [LSTM](/concepts/architectures/lstm), [GRU](/concepts/architectures/gru) | ordered streams and compact state | long-range memory and parallelism limits |
+| Attention / Transformer | [Attention](/concepts/architectures/attention), [Transformer](/concepts/architectures/transformer), [Encoder-only](/concepts/architectures/encoder-only-transformer), [Decoder-only](/concepts/architectures/decoder-only-transformer), [Encoder-decoder](/concepts/architectures/encoder-decoder) | long-range token interaction and conditional generation | quadratic context cost and position handling |
+| State-space sequence models | [State-space model](/concepts/architectures/state-space-model), [Mamba](/concepts/architectures/mamba) | long sequences with recurrent state and parallel training | task fit, selective state design, comparison to attention |
+| Cross-modal patterns | [Multimodal learning](/concepts/modalities/multimodal-learning), [Cross-attention](/concepts/architectures/cross-attention), [Perceiver](/concepts/architectures/perceiver) | fusing different input types or context sources | modality leakage and fusion timing |
+| Set and graph | [Deep Sets](/concepts/architectures/deep-sets), [Set Transformer](/concepts/architectures/set-transformer), [Graph construction](/concepts/architectures/graph-construction), [GNN](/concepts/architectures/gnn), [Graph Transformer](/concepts/architectures/graph-transformer) | unordered elements, molecules, residues, relations | edge definition, readout, over-smoothing |
+| Geometry-aware | [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group), [Geometric deep learning](/concepts/geometric-deep-learning), [Equivariance](/concepts/geometric-deep-learning/equivariance), [Equivariant GNN](/concepts/geometric-deep-learning/equivariant-gnn) | coordinates, forces, poses, molecular and protein structures | coordinate frame, invariance/equivariance split, chirality |
+| Sparse / routed | [Mixture of experts](/concepts/architectures/mixture-of-experts), [Gating](/concepts/architectures/gating) | conditional compute and large-capacity models | routing collapse, load balance, serving cost |
 
-- [[concepts/architectures/mlp|MLP]]
-- [[concepts/architectures/autoencoder|Autoencoder]]
-
-## Grid, Image, and Voxel Models
-
-locality와 weight sharing이 중요한 입력에 적합합니다. 이미지뿐 아니라 contact map, voxelized structure, spatial grid에도 연결됩니다.
-
-- [[concepts/modalities/image|Image]]
-- [[concepts/modalities/video|Video]]
-- [[concepts/architectures/convolution|Convolution]]
-- [[concepts/architectures/cnn|CNN]]
-- [[concepts/architectures/residual-network|Residual network]]
-- [[concepts/architectures/u-net|U-Net]]
-- [[concepts/architectures/vision-transformer|Vision Transformer]]
-
-## Sequence Models
-
-token, residue, text, time series처럼 순서가 있는 입력을 다룹니다.
-
-- [[concepts/modalities/text|Text]]
-- [[concepts/modalities/audio|Audio]]
-- [[concepts/architectures/rnn|RNN]]
-- [[concepts/architectures/lstm|LSTM]]
-- [[concepts/architectures/gru|GRU]]
-- [[concepts/architectures/transformer|Transformer]]
-- [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
-- [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
-- [[concepts/architectures/state-space-model|State-space model]]
-- [[concepts/architectures/mamba|Mamba]]
-
-Mamba는 별도 대분류가 아니라 [[concepts/architectures/state-space-model|state-space model]] 계열의 selective SSM으로 봅니다.
-
-## Attention and Encoder-Decoder Patterns
-
-sequence, graph, multimodal input을 섞는 공통 패턴입니다.
-
-- [[concepts/modalities/multimodal-learning|Multimodal learning]]
-- [[concepts/architectures/attention|Attention]]
-- [[concepts/architectures/cross-attention|Cross-attention]]
-- [[concepts/architectures/encoder-decoder|Encoder-decoder]]
-- [[concepts/architectures/perceiver|Perceiver]]
-
-## Set and Graph Models
-
-순서가 없거나 관계 구조가 중요한 객체를 다룹니다.
-
-- [[concepts/architectures/deep-sets|Deep Sets]]
-- [[concepts/architectures/set-transformer|Set Transformer]]
-- [[concepts/architectures/graph-construction|Graph construction]]
-- [[concepts/architectures/gnn|Graph neural networks]]
-- [[concepts/architectures/graph-transformer|Graph transformer]]
-- [[concepts/architectures/pooling-readout|Pooling and readout]]
-
-## Geometry-Aware Models
-
-3D coordinate, molecular structure, protein complex처럼 회전과 이동에 대한 대칭성이 중요한 입력을 다룹니다. 순수한 geometry 개념은 [[concepts/math/geometry|Geometry]]와 [[concepts/math/symmetry-group|Symmetry group]]에 두고, AI 쪽에서는 그것을 모델 구조로 구현하는 [[concepts/geometric-deep-learning/index|Geometric deep learning]]을 봅니다.
-
-- [[concepts/math/geometry|Geometry]]
-- [[concepts/math/symmetry-group|Symmetry group]]
-- [[concepts/geometric-deep-learning/index|Geometric deep learning]]
-- [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]]
-- [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
-- [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]]
-- [[concepts/geometric-deep-learning/coordinate-update|Coordinate update]]
-- [[concepts/geometric-deep-learning/geometric-architecture|Geometric architecture]]
-- [[concepts/geometric-deep-learning/equivariance|Equivariance]]
-- [[concepts/geometric-deep-learning/invariant-feature|Invariant feature]]
-- [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
-- [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
-
-## Sparse and Routed Models
-
-모든 parameter를 항상 쓰지 않고 routing이나 sparsity를 활용합니다.
-
-- [[concepts/architectures/mixture-of-experts|Mixture of experts]]
+Mamba는 별도 대분류가 아니라 [state-space model](/concepts/architectures/state-space-model) 계열의 selective SSM으로 읽습니다.
 
 ## Architecture Claim Checklist
 

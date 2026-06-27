@@ -19,16 +19,15 @@ $$
 
 where $s_{1:L}$ is the residue sequence, $X$ is optional coordinate information, and $c$ is context such as family, domain, pocket, mutation, or assay condition.
 
-## Core Notes
+## Route Map
 
-- [[entities/protein|Protein]]
-- [[entities/sequence|Sequence]]
-- [[entities/structure|Structure]]
-- [[concepts/protein-modeling/index|Protein modeling concepts]]
-- [[concepts/protein-modeling/protein-representation|Protein representation]]
-- [[concepts/protein-modeling/protein-domain|Protein domain]]
-- [[concepts/protein-modeling/protein-structure-cleaning|Protein structure cleaning]]
-- [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]]
+| Question | Start | Watch |
+| --- | --- | --- |
+| What is the modeled object? | [Protein](/entities/protein), [Sequence](/entities/sequence), [Structure](/entities/structure) | chain choice, isoform, construct, mutation, missing residues |
+| Is the input sequence-only or structure-aware? | [Protein representation](/concepts/protein-modeling/protein-representation), [Protein structure prediction](/concepts/protein-modeling/protein-structure-prediction) | using predicted or template-derived structure as if it were available in deployment |
+| Which biological unit is preserved? | [Protein domain](/concepts/protein-modeling/protein-domain), [Sequence identity clustering](/concepts/protein-modeling/sequence-identity-clustering) | homolog leakage and domain truncation |
+| Is structure preprocessing part of the method? | [Protein structure cleaning](/concepts/protein-modeling/protein-structure-cleaning), [Residue indexing](/concepts/protein-modeling/residue-indexing) | silent residue renumbering, missing atoms, chain filtering |
+| Is the task about binding context? | [Binding site](/concepts/protein-modeling/binding-site), [Pocket representation](/concepts/protein-modeling/pocket-representation), [Protein-ligand complex](/entities/protein-ligand-complex) | apo/holo distinction and ligand-defined pockets |
 
 ## Representation Choices
 
@@ -56,20 +55,13 @@ $$
 
 Here $s_{1:L}$ is the amino-acid sequence, $h_{1:L}$ is a residue-level representation, $G_P$ is a residue/contact graph, $X_P$ is a coordinate set, and $\hat{y}$ is the task output.
 
-## Sequence and Structure
+## Sequence and Structure Routes
 
-- [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]]
-- [[concepts/protein-modeling/sequence-identity-clustering|Sequence identity clustering]]
-- [[concepts/protein-modeling/residue-indexing|Residue indexing]]
-- [[concepts/protein-modeling/contact-map|Contact map]]
-- [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]]
-
-## Binding Context
-
-- [[concepts/protein-modeling/binding-site|Binding site]]
-- [[concepts/protein-modeling/pocket-representation|Pocket representation]]
-- [[entities/pocket|Pocket]]
-- [[entities/protein-ligand-complex|Protein-ligand complex]]
+| Area | Start | Use For |
+| --- | --- | --- |
+| Evolutionary context | [Multiple sequence alignment](/concepts/protein-modeling/multiple-sequence-alignment), [Sequence identity clustering](/concepts/protein-modeling/sequence-identity-clustering) | homolog control, family split, MSA-dependent methods |
+| Structure graph | [Contact map](/concepts/protein-modeling/contact-map), [Sequence-structure alignment](/concepts/protein-modeling/sequence-structure-alignment) | residue graph construction and coordinate-aware representations |
+| Binding context | [Binding site](/concepts/protein-modeling/binding-site), [Pocket representation](/concepts/protein-modeling/pocket-representation), [Pocket](/entities/pocket) | pocket-level prediction, docking, protein-ligand interaction |
 
 ## Claim Map
 
