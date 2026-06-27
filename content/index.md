@@ -11,8 +11,8 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 | Area | Use For |
 | --- | --- |
 | [AI](/ai) | machine learning, architectures, learning methods, generative models, evaluation |
-| [Computational Biology](/molecular-modeling) | focused notes on molecules, proteins, ligand interaction, structure-based modeling, and genome-level sequence tasks |
 | [Math](/math) | formulas and mathematical tools needed to read AI notes |
+| [Computational Biology](/molecular-modeling) | focused notes on proteins, molecules, ligand interaction, structure-based modeling, and genome-level sequence tasks |
 | [Infra](/infra) | GPU, HPC, training, inference, environments, reproducible runs |
 | [Research](/research) | question-driven synthesis for concrete research directions |
 | [Papers](/papers) | curated paper notes and reading utilities |
@@ -32,8 +32,8 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 ## 읽는 경로
 
 - AI 기본기: [[math/index|Math]] -> [[ai/machine-learning|Machine learning]] -> [[ai/architectures|Architectures]] -> [[ai/learning-methods|Learning methods]] -> [[ai/evaluation|Evaluation]]
-- Computational biology: [[molecular-modeling/index|Computational Biology]] -> [[molecular-modeling/structure-based/index|Structure-based modeling]] -> [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]] -> [[concepts/sbdd/index|SBDD concepts]]
 - Protein modeling: [[molecular-modeling/proteins|Proteins]] -> [[concepts/protein-modeling/index|Protein modeling concepts]]
+- Computational biology: [[molecular-modeling/index|Computational Biology]] -> [[molecular-modeling/proteins|Proteins]] -> [[molecular-modeling/molecules|Molecules]] -> [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - Papers: [[papers/index|Papers]] -> [[papers/workflows/paper-review-workflow|Paper review workflow]] -> [[papers/workflows/reading-status|Reading status]]
 - Infra: [[infra/index|Infra]] -> [[infra/hpc/job-lifecycle|HPC job lifecycle]] -> [[infra/reproducibility/run-record|Reproducible run record]]
 - Agents: [[agents/index|Agents]] -> [[agents/core/agent-loop|Agent loop]] -> [[agents/verification/verification-loop|Verification loop]]
