@@ -23,27 +23,31 @@ $$
 
 ## 먼저 볼 지도
 
-- **Math**: probability, linear algebra, calculus, likelihood, information theory. [Start](/math)
-- **Machine Learning**: prediction problem, feature, loss, optimization, validation. [Start](/ai/machine-learning)
-- **Architectures**: MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE. [Start](/ai/architectures)
-- **Learning Methods**: supervised learning, self-supervised learning, contrastive learning, JEPA, fine-tuning, preference/RL-style objective. [Start](/ai/learning-methods)
-- **Generative Models**: autoregressive model, VAE, GAN, diffusion, score model, flow matching, normalizing flow. [Start](/ai/generative-models)
-- **Evaluation**: metric, split, leakage, calibration, OOD, uncertainty, failure analysis. [Start](/ai/evaluation)
-- **Agents**: tool use, memory, planning, verification, orchestration. [Start](/agents)
+| Area | Use For | Start |
+| --- | --- | --- |
+| Math | probability, linear algebra, calculus, likelihood, information theory | [Math](/math) |
+| Machine Learning | prediction problem, feature, loss, optimization, validation | [Machine Learning](/ai/machine-learning) |
+| Architectures | MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE | [Architectures](/ai/architectures) |
+| Learning Methods | supervised learning, self-supervised learning, contrastive learning, JEPA, fine-tuning, preference/RL objective | [Learning Methods](/ai/learning-methods) |
+| Generative Models | autoregressive model, VAE, GAN, diffusion, score model, flow matching, normalizing flow | [Generative Models](/ai/generative-models) |
+| Evaluation | metric, split, leakage, calibration, OOD, uncertainty, failure analysis | [Evaluation](/ai/evaluation) |
+| Agents | tool use, memory, planning, verification, orchestration | [Agents](/agents) |
 
 ## 분류 기준
 
 AI note는 아래 질문으로 위치를 정합니다.
 
-- 필요한 수학 정의인가? → [Math](/math), [Math foundations](/concepts/math)
-- 입력과 출력이 무엇인가? → [Modalities](/concepts/modalities), [Tasks](/concepts/tasks)
-- 예측 문제와 loss의 기본형인가? → [Machine Learning](/ai/machine-learning)
-- 모델 내부 구조인가? → [Architectures](/ai/architectures)
-- supervision, objective, transfer 방식인가? → [Learning Methods](/ai/learning-methods)
-- sample을 만들거나 distribution을 모델링하는가? → [Generative Models](/ai/generative-models)
-- 성능 claim을 어떻게 검증하는가? → [Evaluation](/ai/evaluation)
-- 실행, serving, reproducibility 문제인가? → [Systems](/concepts/systems), [Infra](/infra)
-- LLM이 도구를 쓰고 작업을 끝내는 방식인가? → [Agents](/agents)
+| Question | Route |
+| --- | --- |
+| 필요한 수학 정의인가? | [Math](/math), [Math foundations](/concepts/math) |
+| 입력과 출력이 무엇인가? | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
+| 예측 문제와 loss의 기본형인가? | [Machine Learning](/ai/machine-learning) |
+| 모델 내부 구조인가? | [Architectures](/ai/architectures) |
+| supervision, objective, transfer 방식인가? | [Learning Methods](/ai/learning-methods) |
+| sample을 만들거나 distribution을 모델링하는가? | [Generative Models](/ai/generative-models) |
+| 성능 claim을 어떻게 검증하는가? | [Evaluation](/ai/evaluation) |
+| 실행, serving, reproducibility 문제인가? | [Systems](/concepts/systems), [Infra](/infra) |
+| LLM이 도구를 쓰고 작업을 끝내는 방식인가? | [Agents](/agents) |
 
 ## 기본 읽기 경로
 
@@ -82,21 +86,6 @@ AI note는 아래 질문으로 위치를 정합니다.
 | Evaluation claim | 어떤 split, metric, baseline, uncertainty로 주장을 검증하는가 | [Evaluation](/ai/evaluation) |
 | Uncertainty and calibration | 결과 차이와 probability claim을 얼마나 믿을 수 있는가 | [Confidence interval](/concepts/evaluation/confidence-interval), [Calibration](/concepts/evaluation/calibration) |
 | System boundary | training, inference, serving, reproducibility, tool-use 문제가 있는가 | [Systems](/concepts/systems), [Infra](/infra), [Agents](/agents) |
-| Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [AI paper intake](/ai/paper-intake) |
-| Claim pattern | architecture, learning, generation, evaluation, scaling, systems, agent 중 어떤 claim인가 | [AI paper claim patterns](/ai/paper-claim-patterns) |
-| Cross-axis contract | computational biology 대상과 수식이 함께 걸린 AI claim인가 | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
-
-## 운영 문서
-
-이 문서들은 사이드바의 주제 탐색에서는 숨기고, 논문 정리나 포스트 작성 시에만 사용합니다.
-
-| Need | Start |
-| --- | --- |
-| AI paper intake | [AI paper intake](/ai/paper-intake) |
-| AI paper claim routing | [AI paper claim patterns](/ai/paper-claim-patterns) |
-| AI + Computational Biology + Math contract | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
-| Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
-| Korean synthesis post intake | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
 
 ## Related
 
@@ -105,7 +94,3 @@ AI note는 아래 질문으로 위치를 정합니다.
 - [[molecular-modeling/index|Computational Biology]]
 - [[infra/index|Infra]]
 - [[agents/index|Agents]]
-- [[ai/paper-intake|AI paper intake]]
-- [[ai/paper-claim-patterns|AI paper claim patterns]]
-- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
-- [[concepts/coverage-matrix|Coverage matrix]]

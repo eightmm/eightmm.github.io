@@ -64,20 +64,7 @@ $$
 | Geometry | [Geometric deep learning](/concepts/geometric-deep-learning), [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Equivariance](/concepts/geometric-deep-learning/equivariance), [Coordinate update](/concepts/geometric-deep-learning/coordinate-update) |
 | Graphs and dynamics | [Discrete math and graphs](/math/discrete-graphs), [Dynamical systems](/math/dynamical-systems), [GNN](/concepts/architectures/gnn), [Graph construction](/concepts/architectures/graph-construction), [Probability flow ODE](/concepts/generative-models/probability-flow-ode) |
 | Evaluation | [Metric](/concepts/evaluation/metric), [Confidence interval](/concepts/evaluation/confidence-interval), [Statistical significance](/concepts/evaluation/statistical-significance) |
-| Claim boundary | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark intake](/concepts/data/benchmark-intake), [Evidence table](/papers/analysis/evidence-table) |
-
-## 운영 문서
-
-이 문서들은 수학 주제 자체라기보다 논문 수식과 포스트 작성 절차를 정리하는 도구입니다. 사이드바의 Math 주제 목록에서는 숨기고, 논문/포스트 작업 때 연결해서 씁니다.
-
-| Need | Start |
-| --- | --- |
-| Formula intake | [Formula intake](/math/formula-intake) |
-| Formula pattern catalog | [Formula pattern catalog](/math/formula-patterns) |
-| Formula explanation depth | [Formula explanation ladder](/math/formula-explanation-ladder) |
-| Cross-axis contract | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
-| Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
-| Korean synthesis post intake | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
+| Claim boundary | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark intake](/concepts/data/benchmark-intake) |
 
 ## Reading Path
 
@@ -123,8 +110,6 @@ $$
 | Graph or set equation | node/edge/set unit, permutation behavior, aggregation | [Discrete math and graphs](/math/discrete-graphs) |
 | ODE/SDE/flow | state, time, vector field, integration or sampling path | [Dynamical systems](/math/dynamical-systems) |
 | Metric / comparison | point estimate, uncertainty, paired examples, selection rule | [Evaluation math](/math/evaluation-math) |
-| Full paper equation | object, index, distribution, operation, claim | [Formula intake](/math/formula-intake), [Formula pattern catalog](/math/formula-patterns) |
-| Explanation depth | symbol table, operational form, claim contract, derivation level | [Formula explanation ladder](/math/formula-explanation-ladder) |
 
 ## Related
 
@@ -132,8 +117,3 @@ $$
 - [[molecular-modeling/index|Computational Biology]]
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]
-- [[math/formula-intake|Formula intake]]
-- [[math/formula-patterns|Formula pattern catalog]]
-- [[math/formula-explanation-ladder|Formula explanation ladder]]
-- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
-- [[concepts/coverage-matrix|Coverage matrix]]

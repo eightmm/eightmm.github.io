@@ -121,20 +121,6 @@ $$
 - [[concepts/genome-modeling/variant-effect-prediction|Variant effect prediction]]
 - [[concepts/genome-modeling/genome-annotation|Genome annotation]]
 
-## 운영 문서
-
-이 문서들은 주제 탐색용 사이드바에서는 숨기고, 논문 정리와 글 작성 단계에서 사용합니다.
-
-| Need | Start |
-| --- | --- |
-| Scope and naming | [Computational Biology Scope](/molecular-modeling/modeling-scope) |
-| Boundary and object claim | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
-| Paper intake | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
-| Paper claim patterns | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
-| Cross-axis contract | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
-| Coverage check | [Coverage matrix](/concepts/coverage-matrix) |
-| Korean synthesis post intake | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake) |
-
 ## Geometry, Structure, and Evaluation
 
 | Topic | Start |
@@ -158,19 +144,11 @@ Computational biology 쪽 논문은 모델 성능보다 object, label, split, le
 | Label context | target, assay, endpoint, unit, threshold, censoring, source가 명확한가 | [Data and evaluation](/molecular-modeling/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
 | Structure context | apo/holo, predicted/experimental, pocket-defined/blind, ligand-defined 여부가 명확한가 | [Structure-based modeling](/molecular-modeling/structure-based), [Docking](/molecular-modeling/docking) |
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and evaluation](/molecular-modeling/data-evaluation) |
-| Benchmark trap | negative set, activity cliff, applicability domain, assay harmonization 문제가 있는가 | [Data and evaluation](/molecular-modeling/data-evaluation), [Coverage matrix](/concepts/coverage-matrix) |
+| Benchmark trap | negative set, activity cliff, applicability domain, assay harmonization 문제가 있는가 | [Data and evaluation](/molecular-modeling/data-evaluation) |
 | Evaluation claim | pose, affinity, ranking, enrichment, property, generation 중 무엇을 주장하는가 | [Docking](/molecular-modeling/docking), [Evaluation](/ai/evaluation) |
-| Public boundary | 내부 데이터나 미공개 결과 없이 일반화 가능한가 | [Computational Biology Boundary](/molecular-modeling/computational-biology) |
-| Intake protocol | 위 항목들을 한 번에 점검할 paper note인가 | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
-| Claim pattern | property, activity, docking, generation, protein design, genome sequence 중 어떤 형태인가 | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) |
 
 ## 관련 입구
 
 - [[ai/index|AI]]
 - [[papers/index|Papers]]
 - [[projects/index|Projects]]
-- [[molecular-modeling/paper-intake|Computational Biology paper intake]]
-- [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
-- [[molecular-modeling/modeling-scope|Computational Biology scope]]
-- [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
-- [[concepts/coverage-matrix|Coverage matrix]]
