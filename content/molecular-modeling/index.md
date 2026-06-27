@@ -26,11 +26,11 @@ $$
 | Area | Use For | Start |
 | --- | --- | --- |
 | Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure의 단위 정의 | [Entities](/molecular-modeling/entities) |
-| Molecules | molecular identity, standardization, graph, fingerprint, conformer, property prediction | [Molecules](/molecular-modeling/molecules) |
 | Proteins | sequence, structure, domain, binding site, representation, protein-family split | [Proteins](/molecular-modeling/proteins) |
+| Molecules | molecular identity, standardization, graph, fingerprint, conformer, property prediction | [Molecules](/molecular-modeling/molecules) |
 | Structure-Based Modeling | pocket, protein-ligand geometry, docking, pose, scoring, virtual screening | [Structure-Based Modeling](/molecular-modeling/structure-based) |
-| Data and Evaluation | label semantics, split unit, leakage, assay harmonization, benchmark traps | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 | Genome-Level Sequence | genome region, k-mer, annotation, variant-effect prediction | [Genome](/molecular-modeling/genome) |
+| Data and Evaluation | label semantics, split unit, leakage, assay harmonization, benchmark traps | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 
 ## Scope Map
 

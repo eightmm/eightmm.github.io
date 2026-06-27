@@ -73,13 +73,13 @@ ExternalPlugin.Explorer({
     ]
     const molecularGroups = [
       "entities",
-      "molecules",
       "proteins",
+      "molecules",
       "protein-modeling",
-      "genome",
       "geometry",
       "structure-based",
       "docking",
+      "genome",
       "data-evaluation",
     ]
     const mathGroups = [
