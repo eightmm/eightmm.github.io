@@ -25,6 +25,17 @@ $$
 
 여기서 $x_{\mathrm{mol}}$은 molecule, protein sequence, structure, conformer, complex일 수 있고, $x_{\mathrm{context}}$는 pocket, target condition, assay context일 수 있습니다.
 
+## 이름을 고르는 기준
+
+| Name | Use When | Avoid When |
+| --- | --- | --- |
+| Computational Biology | protein, molecule, ligand, pocket, complex, structure, genome sequence가 함께 등장하는 큰 입구가 필요할 때 | broad omics, clinical biology, systems biology까지 여는 뜻으로 쓰는 경우 |
+| Molecular Modeling | molecule, conformer, docking, pose, force field, virtual screening처럼 화학/구조 workflow가 중심일 때 | protein sequence-only나 genome sequence task까지 모두 부르는 경우 |
+| Protein Modeling | protein sequence, structure, domain, binding site, design, interaction이 중심일 때 | ligand chemistry나 assay label이 더 중심인 경우 |
+| Structure-Based Modeling | protein-ligand geometry, pocket, pose, interaction, scoring이 중심일 때 | 모델 architecture 자체가 주제인 경우 |
+| AI | GNN, Transformer, diffusion, SSL, objective, architecture, training method가 중심일 때 | 생물학적 object, assay, split, coordinate protocol이 더 중요한 경우 |
+| Math | likelihood, loss, gradient, geometry, symmetry, metric formula를 설명해야 할 때 | 실제 workflow나 model family를 설명하는 경우 |
+
 ## 먼저 볼 지도
 
 | Area | Use For | Start |
@@ -86,7 +97,7 @@ $$
 | Preprocessing | [Preprocessing contract](/concepts/data/preprocessing-contract) |
 | Chemical state | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract), [Molecular identity](/concepts/molecular-modeling/molecular-identity) |
 | Evaluation protocol | [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Leakage](/concepts/evaluation/leakage) |
-| Molecular Modeling-specific splits | [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split), [Protein-ligand split](/concepts/sbdd/protein-ligand-split) |
+| Computational biology-specific splits | [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split), [Protein-ligand split](/concepts/sbdd/protein-ligand-split) |
 | Assay integration | [Assay harmonization](/concepts/evaluation/assay-harmonization) |
 | Benchmark traps | [Negative set](/concepts/evaluation/negative-set), [Activity cliff](/concepts/evaluation/activity-cliff), [Applicability domain](/concepts/evaluation/applicability-domain), [Boltzmann ceiling analysis](/concepts/evaluation/boltzmann-ceiling) |
 

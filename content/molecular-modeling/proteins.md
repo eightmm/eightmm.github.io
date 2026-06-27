@@ -1,6 +1,7 @@
 ---
 title: Proteins
 aliases:
+  - computational-biology/proteins
   - bio/proteins
   - bio-ai/proteins
 tags:

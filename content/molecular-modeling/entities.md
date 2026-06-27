@@ -1,6 +1,7 @@
 ---
 title: Computational Biology Entities
 aliases:
+  - computational-biology/entities
   - bio/entities
   - bio-ai/entities
 tags:

@@ -1,6 +1,7 @@
 ---
 title: Data and Evaluation
 aliases:
+  - computational-biology/data-evaluation
   - bio/data-evaluation
   - bio-ai/data-evaluation
 tags:
@@ -11,7 +12,7 @@ tags:
 
 # Data and Evaluation
 
-Molecular modeling evaluation is mostly decided before training: by example definitions, label semantics, split units, leakage controls, and benchmark design. Random splits are often too weak for molecule, protein, and complex-level claims.
+Computational biology evaluation is mostly decided before training: by example definitions, label semantics, split units, leakage controls, and benchmark design. Random splits are often too weak for molecule, protein, and complex-level claims.
 
 $$
 \hat{R}(f)
@@ -72,9 +73,9 @@ This estimate is only meaningful if the test set matches the generalization clai
 - [[concepts/evaluation/boltzmann-ceiling|Boltzmann ceiling analysis]]
 - [[molecular-modeling/paper-claim-patterns|Computational Biology paper claim patterns]]
 
-## Molecular Modeling Evidence Package
+## Computational Biology Evidence Package
 
-For molecular modeling papers, a model score is not enough. Record the modeled object and the measurement context before the metric.
+For computational biology papers, a model score is not enough. Record the modeled object and the measurement context before the metric.
 
 | Field | Required Detail |
 | --- | --- |

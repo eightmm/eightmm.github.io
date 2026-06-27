@@ -1,5 +1,8 @@
 ---
 title: Computational Biology Paper Claim Patterns
+aliases:
+  - computational-biology/paper-claim-patterns
+  - bio/paper-claim-patterns
 tags:
   - molecular-modeling
   - computational-biology

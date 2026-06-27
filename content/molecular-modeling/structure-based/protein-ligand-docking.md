@@ -1,6 +1,7 @@
 ---
 title: Protein-Ligand Docking
 aliases:
+  - computational-biology/structure-based/protein-ligand-docking
   - research/structure-based-ai/protein-ligand-docking
 tags:
   - docking

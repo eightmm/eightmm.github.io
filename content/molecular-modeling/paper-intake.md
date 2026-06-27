@@ -1,6 +1,7 @@
 ---
 title: Computational Biology Paper Intake
 aliases:
+  - computational-biology/paper-intake
   - bio/paper-intake
 tags:
   - molecular-modeling

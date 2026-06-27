@@ -6,8 +6,8 @@ ExternalPlugin.Explorer({
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = [
       "ai",
-      "molecular-modeling",
       "math",
+      "molecular-modeling",
       "infra",
       "research",
       "papers",
@@ -47,8 +47,8 @@ ExternalPlugin.Explorer({
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = [
       "ai",
-      "molecular-modeling",
       "math",
+      "molecular-modeling",
       "infra",
       "research",
       "papers",
@@ -67,11 +67,12 @@ ExternalPlugin.Explorer({
       "entities",
       "molecules",
       "proteins",
+      "protein-modeling",
+      "genome",
+      "geometry",
       "structure-based",
       "docking",
       "data-evaluation",
-      "geometry",
-      "genome",
     ]
     const mathGroups = [
       "linear-algebra",

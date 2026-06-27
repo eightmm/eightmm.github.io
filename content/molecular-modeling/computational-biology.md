@@ -1,6 +1,7 @@
 ---
 title: Computational Biology Boundary
 aliases:
+  - computational-biology/boundary
   - bio/computational-biology
 tags:
   - molecular-modeling

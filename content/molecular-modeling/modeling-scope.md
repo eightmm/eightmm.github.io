@@ -1,6 +1,7 @@
 ---
 title: Computational Biology Scope
 aliases:
+  - computational-biology/modeling-scope
   - bio/modeling-scope
 tags:
   - molecular-modeling

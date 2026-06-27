@@ -32,7 +32,7 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
 - `ai/`: Korean gateway pages for broad AI foundations.
-- `molecular-modeling/`: Korean gateway pages shown publicly as Computational Biology, focused on molecular modeling, structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling. Keep `Computational Biology` as the public umbrella and reserve `Molecular Modeling` for the molecule/structure/docking-heavy subset. Old `bio/` paths may remain only as aliases.
+- `molecular-modeling/`: Korean gateway pages shown publicly as Computational Biology, focused on molecular modeling, structure-based modeling, docking, conformers, molecule/protein modeling, protein-ligand interaction, and sequence-level genome modeling. Keep `Computational Biology` as the public umbrella and reserve `Molecular Modeling` for the molecule/structure/docking-heavy subset. The stable content path may remain `molecular-modeling/`, but user-facing aliases should include `/computational-biology/...`; old `bio/` paths may remain only as aliases.
 - `math/`: Korean gateway pages for mathematical foundations.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
@@ -208,7 +208,7 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - Do not expose internal editorial mechanics on public gateway pages, such as saying a page is a gateway or that linked notes are canonical wiki notes. Put those rules in `AGENTS.md`, workflow notes, or writing guides instead.
 - When a section has more than four similar bullets with descriptions, consider a Markdown table with columns such as `Area`, `Use For`, `Start Here`, `Risk`, or `Next`.
 - Keep table cells short. If a cell needs multiple sentences, split the table or move detail into the linked note.
-- For AI/Molecular Modeling/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
+- For AI/Computational Biology/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
 - When adding a paper note or Korean post, check whether `content/ai/index.md`, `content/molecular-modeling/index.md`, or `content/math/index.md` needs one additional route row, but do not duplicate full paper summaries there.
 - For Korean posts that combine AI, Computational Biology, and Math, use `content/posts/ai-molecular-math-post-intake.md` before drafting: choose one reader question, one main axis, minimum formulas, benchmark boundary, and wiki links.
 - Before drafting a Korean synthesis post, use `content/posts/wiki-bundle-checklist.md` to confirm that object, representation, method, formula, evidence, paper source, public boundary, and next-path notes exist or are created first.

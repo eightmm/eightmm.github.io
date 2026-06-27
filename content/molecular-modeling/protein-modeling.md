@@ -1,6 +1,7 @@
 ---
 title: Protein Modeling
 aliases:
+  - computational-biology/protein-modeling
   - research/protein-modeling
 tags:
   - molecular-modeling

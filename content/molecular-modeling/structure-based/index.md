@@ -1,6 +1,7 @@
 ---
 title: Structure-Based Modeling
 aliases:
+  - computational-biology/structure-based
   - bio/structure-based-ai
   - bio-ai/structure-based-ai
   - molecular-modeling/structure-based-ai

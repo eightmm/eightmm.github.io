@@ -1,6 +1,7 @@
 ---
 title: Genome
 aliases:
+  - computational-biology/genome
   - bio/genome
   - bio-ai/genome
 tags:
