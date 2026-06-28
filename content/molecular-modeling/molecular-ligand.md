@@ -41,6 +41,17 @@ where $L$ is a standardized molecular object and $c$ can include pH, protonation
 | Property and retrieval | property prediction, similarity search, candidate ranking | [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction) |
 | Generation | valid molecule samples, constrained generation, scaffold editing | [Molecular generation](/concepts/generative-models/molecular-generation) |
 
+## Chemical State Checklist
+
+| State | Ask |
+| --- | --- |
+| Salt / mixture | is the modeled molecule the parent, salt, mixture, or assay record? |
+| Stereochemistry | are unspecified and specified stereocenters handled consistently? |
+| Tautomer | is one canonical tautomer chosen, or are several states possible? |
+| Protonation / charge | is the state compatible with pH, assay, docking, or force field assumptions? |
+| Conformer | is 3D geometry generated, experimental, minimized, or reused from a complex? |
+| Deduplication | are equivalent molecules collapsed before split construction? |
+
 ## Boundary
 
 Use this page for molecule-only or ligand-preparation questions. Use [[molecular-modeling/interactions|Interaction modeling]] when the row is a molecule-target-assay relation. Use [[molecular-modeling/structure-based/index|Structure-based modeling]] when a pocket, pose, coordinate frame, or protein-ligand complex is part of the claim.

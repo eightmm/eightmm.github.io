@@ -36,6 +36,17 @@ where $P$ is the protein or pocket, $L$ is the ligand, $X_0$ is an initial or no
 4. Rank or score candidates.
 5. Evaluate under realistic split and generalization assumptions.
 
+## Structure Workflow Map
+
+| Stage | Question | Common Failure |
+| --- | --- | --- |
+| Receptor preparation | which structure, chain, protonation, missing residues, cofactors? | template or ligand leakage |
+| Ligand preparation | stereo, tautomer, protonation, conformer policy? | inconsistent chemical state |
+| Pocket definition | known, predicted, ligand-defined, blind, or grid-based? | using unavailable information |
+| Pose generation | search, diffusion, refinement, docking, or sampling? | plausible-looking but strained geometry |
+| Scoring | pose score, affinity, ranking, enrichment, or filter? | score meaning is collapsed |
+| Evaluation | RMSD, clash, interaction, affinity, screening, utility? | metric does not match claim |
+
 ## Core Questions
 
 - When should a model use sequence-only representations, and when does it need 3D structure?

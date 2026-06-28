@@ -81,6 +81,19 @@ For computational biology papers, a model score is not enough. Record the modele
 
 For structure-based benchmarks, also state whether the known ligand pose, close analogs, templates, or pocket definition are available at inference time.
 
+## Baseline Ladder
+
+복잡한 모델은 항상 적절한 단순 baseline과 비교해야 합니다.
+
+| Task | Useful Baseline |
+| --- | --- |
+| molecule property | fingerprint + linear/tree model |
+| target-conditioned activity | ligand-only baseline, target-only baseline, nearest-neighbor baseline |
+| protein sequence task | homology, family, or sequence-similarity baseline |
+| docking / pose | classical docking, minimized pose, known conformer baseline |
+| virtual screening | simple similarity, docking score, random/ranked decoy control |
+| generation | validity/diversity filter plus nearest-neighbor analysis |
+
 ## Benchmark Trap Map
 
 | Trap | Ask First | Start |

@@ -63,6 +63,32 @@ Machine learning note는 아래 다섯 층을 분리해서 읽습니다.
 | Objective | 무엇을 줄이거나 키우는가? | [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Evidence | 학습된 모델이 어떤 범위에서 작동한다고 말할 수 있는가? | [Generalization](/concepts/machine-learning/generalization), [Model selection](/concepts/machine-learning/model-selection), [Evaluation](/ai/evaluation) |
 
+## Minimum Mental Model
+
+새 모델을 볼 때는 먼저 아래 식으로 압축합니다.
+
+$$
+\text{dataset}
+\xrightarrow{\phi}
+\text{representation}
+\xrightarrow{f_\theta}
+\text{prediction}
+\xrightarrow{\mathcal{L}}
+\text{update}
+\xrightarrow{\mathrm{metric}}
+\text{claim}
+$$
+
+각 화살표는 별도의 실패 지점입니다.
+
+| Arrow | Common Failure |
+| --- | --- |
+| dataset $\to$ representation | preprocessing leakage, wrong unit, missing metadata |
+| representation $\to$ prediction | architecture mismatch, lost structure, bad inductive bias |
+| prediction $\to$ loss | loss does not match utility |
+| loss $\to$ update | instability, undertraining, overfitting |
+| metric $\to$ claim | weak split, noisy comparison, cherry-picked selection |
+
 ## Loss and Objective
 
 Objective는 모델이 실제로 학습하는 신호입니다. 같은 architecture라도 objective가 달라지면 representation과 failure mode가 달라집니다.

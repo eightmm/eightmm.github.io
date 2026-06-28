@@ -50,6 +50,17 @@ $$
 - Estimation: population quantity와 finite-sample estimate가 구분되어 있는가?
 - Depth: post, concept note, paper note 중 어느 수준까지 풀어써야 하는가?
 
+## Basic Formula Reading Order
+
+AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
+
+1. Type: scalar, vector, matrix, tensor, graph, distribution 중 무엇인가?
+2. Shape: 각 축이 batch, token, node, coordinate, feature, time 중 무엇인가?
+3. Domain: 변수의 가능한 값과 constraint가 무엇인가?
+4. Operation: linear map, normalization, expectation, derivative, sampling, aggregation 중 무엇인가?
+5. Target: loss, metric, likelihood, score, energy, reward, constraint 중 무엇인가?
+6. Estimate: population quantity인지 finite sample estimate인지 구분합니다.
+
 ## Where It Connects
 
 | Context | Links |

@@ -24,6 +24,18 @@ These notes should stay generic. Do not publish private cluster names, hostnames
 - [[infra/hpc/checkpointing|Checkpointing]]
 - [[infra/hpc/preemption-resume|Preemption and resume]]
 
+## Job Lifecycle
+
+HPC note는 job이 어디에서 멈췄는지 먼저 분류합니다.
+
+| Stage | Main Question |
+| --- | --- |
+| Submit | script, account, partition, dependency, array shape가 유효한가? |
+| Pending | resource request가 cluster state와 맞는가? |
+| Running | CPU/GPU/memory/IO가 의도한 대로 쓰이는가? |
+| Checkpoint | walltime, preemption, crash 후 resume 가능한가? |
+| Finish | output, logs, artifacts, exit code가 reconciliation 되었는가? |
+
 ## Related Systems
 
 - [[concepts/systems/training-run|Training run]]

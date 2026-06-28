@@ -92,6 +92,19 @@ When reading a paper, first identify the learned quantity before comparing archi
 | better molecular/protein generation | validity, novelty, diversity, constraint satisfaction, downstream utility |
 | faster sampling | matched quality at matched hardware, NFE, memory, and filtering rule |
 
+## Generation Note Template
+
+생성 모델 노트는 아래 항목이 있어야 비교가 됩니다.
+
+| Field | Write |
+| --- | --- |
+| Sample space | text, sequence, graph, molecule, coordinate, image, action |
+| Conditioning | class, text, pocket, scaffold, sequence, partial structure |
+| Learned target | likelihood, next token, denoising noise, score, velocity, energy |
+| Sampler | ancestral decoding, MCMC, ODE solver, denoising steps, direct generator |
+| Control | guidance, constraints, rejection, filtering, reranking |
+| Evaluation | quality, diversity, novelty, validity, utility, cost |
+
 ## Computational Biology 연결
 
 | Context | Start |

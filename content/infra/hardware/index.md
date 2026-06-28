@@ -57,6 +57,17 @@ Moving data down this ladder usually increases capacity but also increases laten
 | distributed run scales poorly | interconnect bandwidth/latency, batch size, gradient synchronization |
 | inference latency tail is high | batching policy, KV cache pressure, queueing, network, cold load |
 
+## Resource Axes
+
+| Axis | Meaning | Typical Fix Direction |
+| --- | --- | --- |
+| Compute | arithmetic units are the limit | larger batches, fused kernels, better tensor shapes |
+| Capacity | model or batch does not fit | smaller batch/context, checkpointing, sharding |
+| Bandwidth | moving data dominates arithmetic | layout, precision, fusion, cache locality |
+| Latency | many small waits dominate | batching, fewer round trips, local cache |
+| IO | storage cannot feed compute | materialization, streaming format, local scratch |
+| Network | remote transfer or all-reduce dominates | placement, fewer syncs, better sharding |
+
 ## Related
 
 - [[infra/hardware/memory-hierarchy|Memory hierarchy]]

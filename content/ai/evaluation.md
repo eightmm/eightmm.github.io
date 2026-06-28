@@ -107,6 +107,19 @@ $$
 
 If any part is missing, the score should be treated as an incomplete observation rather than a stable conclusion.
 
+## Failure Mode Decomposition
+
+평가에서 낮은 점수나 큰 개선은 바로 모델 품질로 해석하지 않습니다. 먼저 실패 원인을 분해합니다.
+
+| Failure Source | Examples |
+| --- | --- |
+| Data | label noise, duplicate examples, missing metadata, biased negative set |
+| Representation | wrong tokenization, graph construction error, coordinate frame mismatch |
+| Optimization | undertraining, instability, bad learning rate, checkpoint selection |
+| Model | insufficient inductive bias, over-smoothing, context truncation |
+| Metric | wrong threshold, saturated benchmark, unpaired comparison |
+| System | nondeterministic run, failed preprocessing, serving/runtime mismatch |
+
 ## Minimum Evidence Package
 
 When turning a paper into a wiki note or post, record the smallest evidence package that makes the result interpretable.

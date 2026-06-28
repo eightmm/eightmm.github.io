@@ -41,6 +41,18 @@ The distribution under the expectation matters as much as the loss itself.
 | $p(z)$ | prior over latent variables | generative modeling and regularization |
 | $p_\theta(x\mid z)$ | likelihood or decoder distribution | reconstruction and conditional generation |
 
+## Probability Reading Pattern
+
+확률식은 아래 질문으로 읽습니다.
+
+| Question | Example |
+| --- | --- |
+| What is random? | data example, label, latent variable, noise, model sample |
+| What is conditioned on? | $p(y\mid x)$, $p(x\mid c)$, $p(z\mid x)$ |
+| What is learned? | parameterized distribution $p_\theta$ or encoder $q_\phi$ |
+| What is estimated? | expectation, risk, likelihood, metric, posterior |
+| What is the sample source? | train distribution, test distribution, deployment distribution |
+
 Bayes rule connects posterior, likelihood, and prior:
 
 $$

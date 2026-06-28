@@ -30,6 +30,18 @@ $$
 - Explain symptoms, diagnosis, and prevention without exposing private topology.
 - Do not publish live security settings, user lists, credentials, ports, or hostnames.
 
+## Runbook Shape
+
+| Section | Write |
+| --- | --- |
+| Symptom | what the user or job observed |
+| Scope | which generic layer is involved: account, storage, GPU, network, scheduler |
+| Evidence | public-safe command class or log class, not private output |
+| Immediate action | reversible or low-risk fix first |
+| Root cause | what class of misconfiguration or resource failure caused it |
+| Prevention | monitoring, backup, access boundary, documentation, smoke check |
+| Sanitization | what must be removed before publishing |
+
 ## Notes
 
 - [[infra/gpu/index#driver-and-cuda|GPU driver and CUDA debugging]]

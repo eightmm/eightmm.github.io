@@ -33,6 +33,16 @@ A training job can look like a GPU problem when the true limit is file open late
 - Shared storage symptoms written as public runbooks.
 - IO effects on GPU utilization and training reproducibility.
 
+## IO Pattern Map
+
+| Pattern | Symptom | Fix Direction |
+| --- | --- | --- |
+| Many small files | high metadata latency, low throughput | pack files, shard dataset, local cache |
+| Heavy preprocessing | CPU-bound dataloader | precompute features, increase workers carefully |
+| Remote shared storage | bursty stalls | stage to local scratch, reduce random access |
+| Large sequential reads | bandwidth-bound | streaming format, compression tradeoff |
+| Repeated feature extraction | duplicated work | versioned cache key and materialization |
+
 ## Notes
 
 - [[infra/io/data-loading|Data loading and IO]]

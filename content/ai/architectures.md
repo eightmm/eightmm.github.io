@@ -28,6 +28,17 @@ $$
 | Architecture choice | [Architecture selection](/concepts/architectures/architecture-selection) | modality, task, data, compute에 맞는 family인가? |
 | Scaling cost | [Computational complexity](/concepts/architectures/computational-complexity) | sequence length, graph size, image resolution에 따라 비용이 어떻게 느는가? |
 
+## Architecture Reading Order
+
+아키텍처 노트는 아래 순서로 읽으면 산발적인 모델명이 하나의 체계로 들어옵니다.
+
+1. 입력 단위: feature, token, pixel, node, residue, atom, coordinate 중 무엇인가?
+2. 섞는 축: channel, token, node, edge, coordinate, modality 중 무엇을 mix하는가?
+3. 공유 규칙: convolution, recurrence, attention, message passing, equivariant update 중 무엇인가?
+4. 안정화 장치: normalization, residual, gating, initialization이 어디에 놓이는가?
+5. 출력 readout: class, scalar, sequence, graph, coordinate, distribution 중 무엇을 내는가?
+6. 비용: sequence length, graph size, resolution, coordinate updates에 대해 어떻게 scaling되는가?
+
 ## Input Structure Map
 
 | Input Structure | Useful Bias | Typical Architecture | Watch |

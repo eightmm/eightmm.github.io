@@ -45,6 +45,19 @@ $$
 4. [[concepts/systems/reproducibility|Reproducibility]]와 [[concepts/systems/run-artifact|Run artifact]]로 공개 가능한 증거 형식을 맞춥니다.
 5. 실제 GPU/HPC/storage 문제가 되면 [[infra/index|Infra]]로 내려갑니다.
 
+## System Artifact Checklist
+
+AI system note는 모델 이름보다 artifact boundary를 먼저 남깁니다.
+
+| Artifact | Include |
+| --- | --- |
+| Dataset snapshot | source, version, split, preprocessing contract |
+| Model checkpoint | architecture, weights, tokenizer/featurizer, config |
+| Training state | optimizer, scheduler, step, seed, environment |
+| Inference contract | input schema, output schema, batching, limits |
+| Evaluation record | metric, selection rule, baseline, uncertainty |
+| Runtime environment | package versions, container/module, hardware class |
+
 ## Related
 
 - [[ai/index|AI]]

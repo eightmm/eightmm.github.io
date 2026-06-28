@@ -28,6 +28,19 @@ A public note should make the boundary inspectable without leaking private paths
 - Reconciliation after interrupted or long-running jobs.
 - Public notes that distinguish completed, failed, superseded, and inconclusive runs.
 
+## Run Record Minimum
+
+| Field | Public-Safe Version |
+| --- | --- |
+| Question | what the run was trying to answer |
+| Code state | commit hash or public diff summary |
+| Data state | dataset version, split name, preprocessing version |
+| Config | model, objective, important hyperparameters |
+| Environment | package/container/module summary without private paths |
+| Artifact | checkpoint/log/result type, not private absolute path |
+| Verification | build, test, metric, smoke run, or failed check |
+| Status | complete, failed, interrupted, superseded, inconclusive |
+
 ## Notes
 
 - [[infra/reproducibility/run-record|Reproducible run record]]

@@ -148,6 +148,19 @@ Practical checks:
 - Communication: does multi-GPU synchronization dominate scaling?
 - Scheduler: does resource request or walltime shape the run more than code?
 
+## First Measurements
+
+GPU note는 추측보다 작은 측정값에서 시작합니다.
+
+| Measurement | Why |
+| --- | --- |
+| step time | throughput 변화의 기본 단위 |
+| allocated / reserved memory | true capacity pressure와 fragmentation 구분 |
+| GPU utilization | compute work가 있는지 보는 rough signal |
+| dataloader wait | input pipeline starvation 확인 |
+| host CPU and RAM | preprocessing, pin memory, worker pressure 확인 |
+| communication time | distributed scaling 병목 확인 |
+
 ## Practical Checks
 
 - Track memory headroom: model weights, activations, optimizer state, and KV cache.

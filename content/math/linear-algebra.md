@@ -63,6 +63,17 @@ The key question is: which axis is being mixed?
 - Node mixing: graph models mix neighborhoods through edges or adjacency.
 - Coordinate transforms: rotations act on the 3D coordinate axis.
 
+## Common Operations
+
+| Operation | Formula | AI Use |
+| --- | --- | --- |
+| Matrix-vector product | $y=Wx$ | linear layer, classifier, projection |
+| Matrix-matrix product | $Y=XW$ | batched feature mixing |
+| Dot product | $x^\top y$ | similarity, attention score |
+| Norm | $\lVert x\rVert_2$ | distance, normalization, regularization |
+| Outer product | $xy^\top$ | covariance, attention-style pair matrix |
+| Trace | $\operatorname{tr}(A)$ | matrix identities, covariance, loss simplification |
+
 ## Projection
 
 A projection maps an object into a useful subspace. A linear projection is:

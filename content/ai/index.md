@@ -69,6 +69,33 @@ AI note는 아래 질문으로 위치를 정합니다.
 6. [[ai/evaluation|Evaluation]]에서 split, metric, leakage, calibration, failure mode를 확인합니다.
 7. [[ai/systems|Systems]]에서 training run, inference, serving, environment, reproducibility 경계를 봅니다.
 
+## Coverage Priorities
+
+AI 쪽은 너무 빨리 논문명 중심으로 커지기 쉽습니다. 그래서 먼저 아래 층을 안정적으로 채웁니다.
+
+| Priority | Why It Matters | Route |
+| --- | --- | --- |
+| Basic ML grammar | 모든 모델은 data, target, loss, optimization, evaluation으로 환원됩니다. | [Machine Learning](/ai/machine-learning) |
+| Architecture families | 논문 차이는 대부분 어떤 inductive bias를 넣었는지로 설명됩니다. | [Architectures](/ai/architectures) |
+| Learning signal | SSL, contrastive, JEPA, preference, RL은 architecture보다 objective 차이가 핵심일 때가 많습니다. | [Learning Methods](/ai/learning-methods) |
+| Generative process | 생성 모델은 likelihood, denoising, score, velocity, sampler를 구분해야 합니다. | [Generative Models](/ai/generative-models) |
+| Evaluation habit | 모델 주장은 split, metric, selection rule 없이는 안정적인 지식이 아닙니다. | [Evaluation](/ai/evaluation) |
+| System boundary | 좋은 모델도 run, artifact, serving, reproducibility가 없으면 재사용하기 어렵습니다. | [Systems](/ai/systems) |
+
+## Note Template
+
+새 AI note는 가능하면 아래 순서를 따릅니다.
+
+| Field | Write |
+| --- | --- |
+| Problem | 입력 $x$, 출력 $y$, task unit |
+| Representation | token, graph, coordinate, embedding, feature |
+| Model | architecture family와 inductive bias |
+| Objective | loss, likelihood, reward, score, velocity, contrast |
+| Training | data, split, optimizer, selection rule |
+| Evaluation | metric, baseline, uncertainty, failure mode |
+| Boundary | Math, Computational Biology, Infra, Agents 중 어디와 연결되는지 |
+
 ## 입력 대상별 경로
 
 | Input | Start | Architecture / Method |

@@ -39,6 +39,16 @@ where $s_{1:L}$ is a token sequence and $c$ is context such as organism, target 
 | Sequence representation | tokenization, embedding, pooling, sequence length, context window | [Sequence](/concepts/modalities/sequence) |
 | Sequence evaluation | family split, near-duplicate control, label-source boundary | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 
+## Sequence Representation Checklist
+
+| Choice | Why It Matters |
+| --- | --- |
+| Token unit | amino acid, k-mer, BPE-like token, nucleotide, special token |
+| Context length | truncation can remove domains, motifs, or regulatory context |
+| Pooling | CLS, mean pooling, residue pooling, region pooling support different claims |
+| Alignment input | MSA, template, annotation, or family information can leak test context |
+| Mutation policy | wild-type, mutant, delta representation, or paired sequence changes the task |
+
 ## Sequence vs Structure
 
 Sequence-based modeling is not the opposite of structure-based modeling. Many workflows start from sequence and later use predicted or experimental structure:

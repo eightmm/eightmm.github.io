@@ -73,6 +73,18 @@ $$
 
 The fusion method can be concatenation, cross-attention, graph construction, interaction fingerprint, or a structure-aware complex graph.
 
+## Score Semantics
+
+Interaction score는 하나의 숫자처럼 보여도 의미가 다릅니다.
+
+| Score | Meaning | Do Not Confuse With |
+| --- | --- | --- |
+| activity probability | active/inactive decision under assay threshold | binding affinity |
+| affinity value | $K_d$, $K_i$, IC50, $\Delta G$ style measurement | pose quality |
+| docking score | ranking or heuristic energy proxy | calibrated probability |
+| enrichment score | early retrieval success | absolute affinity |
+| selectivity margin | target panel difference | single-target activity |
+
 ## Split and Leakage
 
 Interaction claims need at least one explicit holdout axis.
