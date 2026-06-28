@@ -150,7 +150,7 @@ ExternalPlugin.Explorer({
       "formula-intake",
       "formula-explanation-ladder",
     ]
-    const agentGroups = ["core", "tools", "workflows", "verification"]
+    const agentGroups = ["core", "features", "tools", "workflows", "models", "verification"]
     const paperGroups = [
       "architectures",
       "llm",

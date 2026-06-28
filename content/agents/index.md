@@ -8,36 +8,40 @@ tags:
 
 # Agents
 
-Agent notes collect public explanations of AI agents, coding assistants, research workflows, and tool-use patterns.
+Agents는 LLM이 단순히 답변을 생성하는 것을 넘어, context를 모으고, 도구를 쓰고, 작업 상태를 추적하고, 결과를 검증하는 workflow입니다.
 
-This section should stay practical: what the agent is useful for, where it fails, how to verify its work, and how it fits into research or infrastructure work.
+이 섹션은 일반 사용자가 실제로 접하는 agent 기능을 기준으로 정리합니다. 개인적으로 만든 skill이나 내부 자동화는 나중에 별도 문서로 분리하고, 여기서는 ChatGPT, Claude, Gemini, GitHub Copilot 같은 공개 제품에서 공통적으로 보이는 기능과 개념을 먼저 다룹니다.
 
-The local taxonomy is:
+기본 분류는 다음과 같습니다.
 
 $$
 \text{agent note}
 \rightarrow
-\{\text{core},\ \text{tools},\ \text{workflows},\ \text{verification}\}
+\{\text{core},\ \text{features},\ \text{tools},\ \text{workflows},\ \text{models},\ \text{verification}\}
 $$
 
-Use the category that explains the durable idea, not the product name that happened to expose it.
+제품명보다 오래 남는 개념을 먼저 둡니다. 다만 유명 제품은 사용자가 기능을 이해하는 진입점이므로 [[agents/models/index|Agent model families]]에서 따로 비교합니다.
 
 ## Sections
 
 | Section | Use For |
 | --- | --- |
 | [Agent Core](/agents/core) | architecture, loop, state, memory, planning |
+| [Agent Features](/agents/features) | chat, files, research, coding, memory, canvas, connectors |
 | [Agent Tools](/agents/tools) | tool contracts, side effects, result handling |
 | [Agent Workflows](/agents/workflows) | coding, paper briefs, orchestration, handoff |
+| [Agent Models](/agents/models) | ChatGPT, Claude, Gemini, GitHub Copilot |
 | [Agent Verification](/agents/verification) | acceptance criteria, evidence, audits, evaluation |
 
 ## Routing Guide
 
 | If the note is about... | Put it in |
 | --- | --- |
-| model state, memory, planning, context | [Agent Core](/agents/core) |
+| prompt, context, loop, state, memory, planning, harness | [Agent Core](/agents/core) |
+| user-facing product functions | [Agent Features](/agents/features) |
 | schemas, side effects, permissions, outputs | [Agent Tools](/agents/tools) |
 | repeatable use cases and handoffs | [Agent Workflows](/agents/workflows) |
+| famous model/product families | [Agent Models](/agents/models) |
 | acceptance criteria, evidence, audits, safety checks | [Agent Verification](/agents/verification) |
 | broad reader-facing stories | [Posts](/posts) |
 
@@ -47,12 +51,25 @@ Use the category that explains the durable idea, not the product name that happe
 | --- | --- |
 | Core model | [Agent architecture](/agents/core/agent-architecture), [Agent operating contract](/agents/core/agent-operating-contract), [Agent loop](/agents/core/agent-loop) |
 | Environment and state | [Agent environment](/agents/core/agent-environment), [Action space](/agents/core/action-space), [Agent state](/agents/core/agent-state) |
-| Context and memory | [Context engineering](/agents/core/context-engineering), [Agent memory](/agents/core/agent-memory), [Memory boundary](/agents/core/memory-boundary) |
+| Prompt, context, memory | [Prompt engineering](/agents/core/prompt-engineering), [Context engineering](/agents/core/context-engineering), [Agent memory](/agents/core/agent-memory), [Memory boundary](/agents/core/memory-boundary) |
 | Planning | [Planning](/agents/core/planning), [Task decomposition](/agents/core/task-decomposition) |
+| Harness | [Harness engineering](/agents/core/harness-engineering), [Agent loop](/agents/core/agent-loop), [Tool contract](/agents/tools/tool-contract) |
 | LLM interface | [Prompting](/concepts/llm/prompting), [Structured output](/concepts/llm/structured-output) |
 | Tools | [Tool use](/agents/tools/tool-use), [Tool contract](/agents/tools/tool-contract), [Tool result handling](/agents/tools/tool-result-handling) |
 | Verification | [Verification loop](/agents/verification/verification-loop), [Acceptance criteria](/agents/verification/acceptance-criteria), [Evidence ledger](/agents/verification/evidence-ledger) |
 | Review and safety | [Completion audit](/agents/verification/completion-audit), [Reflection and critique](/agents/verification/reflection-and-critique), [Agent evaluation](/agents/verification/agent-evaluation), [Human in the loop](/agents/verification/human-in-the-loop), [Prompt injection](/agents/verification/prompt-injection) |
+
+## User-Facing Features
+
+| Feature | Use For |
+| --- | --- |
+| [Chat and prompting](/agents/features/chat-and-prompting) | request design, explanation, drafting |
+| [Files and knowledge](/agents/features/files-and-knowledge) | uploaded documents, project knowledge, retrieval |
+| [Research browsing](/agents/features/research-browsing) | search, deep research, citation-based reports |
+| [Coding workspace](/agents/features/coding-workspace) | codebase edits, tests, PR assistance |
+| [Memory and projects](/agents/features/memory-projects) | long-term context and scoped project context |
+| [Artifacts and canvas](/agents/features/artifacts-canvas) | editable documents, apps, code, visual outputs |
+| [Connectors and actions](/agents/features/connectors-actions) | external apps, APIs, browser/computer actions |
 
 ## Workflows
 
@@ -68,6 +85,15 @@ Use the category that explains the durable idea, not the product name that happe
 | [Content promotion workflow](/agents/workflows/content-promotion-workflow) | inbox to note/post/project promotion |
 | [Paper brief agent pipeline](/projects/paper-brief-agent-pipeline) | project-level paper workflow |
 
+## Model Families
+
+| Product | Main Agent Surface |
+| --- | --- |
+| [ChatGPT](/agents/models/chatgpt) | chat, search, deep research, projects, canvas, apps, agent tasks |
+| [Claude](/agents/models/claude) | artifacts, projects, memory, tool use, computer use, Claude Code |
+| [Gemini](/agents/models/gemini) | Google ecosystem, Deep Research, Canvas, Gems, multimodal work |
+| [GitHub Copilot](/agents/models/github-copilot) | IDE completion, chat, code review, coding agent, PR workflow |
+
 ## Learning and Feedback
 
 | Method | Link |
@@ -80,6 +106,7 @@ Use the category that explains the durable idea, not the product name that happe
 ## Writing Rules
 
 - Explain workflows with generic examples.
+- Prefer user-facing features over private custom skills.
 - Keep vendor-specific claims dated or scoped.
 - Do not publish private prompts, private repo details, credentials, internal task names, or unreleased work.
 - Prefer concrete verification habits over broad productivity claims.

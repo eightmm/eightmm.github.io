@@ -7,9 +7,7 @@ tags:
 
 # Agent Verification
 
-Verification notes describe how agent outputs are checked, reviewed, constrained, and kept safe for public workflows.
-
-Verification turns an agent's claim into evidence. The core relation is:
+Agent verification은 agent가 만든 답변, 파일 수정, 보고서, PR, 요약이 실제로 요구사항을 만족하는지 확인하는 절차입니다. Agent가 “끝났다”고 말하는 것과 끝났다는 evidence가 있는 것은 다릅니다.
 
 $$
 \operatorname{verified}(c)
@@ -17,15 +15,15 @@ $$
 \exists E\ \text{such that}\ E \Rightarrow c
 $$
 
-where $c$ is the claim and $E$ is evidence from tests, builds, rendered pages, logs, source inspection, review, or human judgment. A broad claim needs broad evidence; a narrow check only proves the narrow behavior it covers.
+where $c$ is the claim and $E$ is evidence from tests, builds, rendered pages, logs, source inspection, citations, review, or human judgment. 넓은 claim에는 넓은 evidence가 필요하고, 좁은 check는 그 check가 덮는 범위만 증명합니다.
 
 ## Verification Ladder
 
-1. Define [[agents/verification/acceptance-criteria|acceptance criteria]] before judging the output.
-2. Collect evidence in an [[agents/verification/evidence-ledger|evidence ledger]].
-3. Run a [[agents/verification/verification-loop|verification loop]] after each meaningful side effect.
-4. Use [[agents/verification/reflection-and-critique|reflection and critique]] to look for missing checks.
-5. Use [[agents/verification/completion-audit|completion audit]] before claiming a broad task is done.
+1. 결과를 판단하기 전에 [[agents/verification/acceptance-criteria|Acceptance criteria]]를 정합니다.
+2. [[agents/verification/evidence-ledger|Evidence ledger]]에 무엇을 확인했는지 남깁니다.
+3. 의미 있는 side effect 뒤에는 [[agents/verification/verification-loop|Verification loop]]를 실행합니다.
+4. [[agents/verification/reflection-and-critique|Reflection and critique]]로 빠진 failure mode를 찾습니다.
+5. 넓은 목표를 완료했다고 말하기 전에는 [[agents/verification/completion-audit|Completion audit]]를 수행합니다.
 
 ## Notes
 
@@ -40,12 +38,12 @@ where $c$ is the claim and $E$ is evidence from tests, builds, rendered pages, l
 
 ## Checks
 
-- What exact claim is being verified?
-- Is the evidence direct, current, and scoped to that claim?
-- What did each check prove, and what did it not prove?
-- Was any check skipped, impossible, or too narrow?
-- Does the output expose private infrastructure, collaborators, credentials, or unpublished results?
-- Does the final summary separate verified facts from unverified assumptions?
+- 정확히 어떤 claim을 검증하는가?
+- evidence가 직접적이고 최신이며 claim 범위와 맞는가?
+- 각 check가 무엇을 증명했고, 무엇을 증명하지 못했는가?
+- skipped, impossible, too narrow check가 있는가?
+- 출력이 private infrastructure, collaborator, credential, unpublished result를 노출하는가?
+- final summary가 verified fact와 assumption을 분리하는가?
 
 ## Related
 

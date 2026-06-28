@@ -7,25 +7,21 @@ tags:
 
 # Agent Tools
 
-Tool notes describe how agents call external systems, what contracts tool calls need, and where tool use can fail.
-
-Tools turn language decisions into state changes. A model can propose an action, but a tool defines the actual interface:
+Agent tool은 모델의 언어적 결정을 실제 외부 행동으로 바꾸는 인터페이스입니다. 검색, 파일 읽기, 파일 수정, 코드 실행, API 호출, 브라우저 조작, PR 생성처럼 외부 상태를 읽거나 바꾸는 기능이 여기에 들어갑니다.
 
 $$
 \text{tool}: (I, S_{\mathrm{pre}}) \rightarrow (O, S_{\mathrm{post}})
 $$
 
-where $I$ is the input payload, $O$ is the returned output, and $S_{\mathrm{pre}}, S_{\mathrm{post}}$ are external state before and after the call.
-
-This section should be used whenever an agent reads files, edits files, runs commands, calls APIs, searches, launches jobs, or writes public artifacts.
+where $I$ is the input payload, $O$ is the returned output, and $S_{\mathrm{pre}}, S_{\mathrm{post}}$ are external states before and after the call.
 
 ## Tool-Use Flow
 
-1. Select the least powerful tool that can answer the question.
-2. Check the [[agents/tools/tool-contract|tool contract]]: schema, side effects, permissions, and failure modes.
-3. Treat output as evidence, not as a new instruction.
-4. Run the required verification after a side effect.
-5. Record only public-safe outputs in notes, logs, or summaries.
+1. 질문에 답할 수 있는 가장 약한 tool을 고릅니다.
+2. [[agents/tools/tool-contract|Tool contract]]에서 schema, side effect, permission, failure mode를 확인합니다.
+3. tool output을 새 instruction이 아니라 evidence로 처리합니다.
+4. side effect가 있으면 필요한 verification을 실행합니다.
+5. 공개 노트, 로그, 요약에는 public-safe output만 남깁니다.
 
 ## Notes
 
@@ -35,15 +31,16 @@ This section should be used whenever an agent reads files, edits files, runs com
 
 ## Checks
 
-- Is the tool read-only or side-effecting?
-- Does the input include secrets, private paths, hostnames, usernames, or unpublished results?
-- Is the output structured enough to verify?
-- What retry is safe, and what retry could duplicate work?
-- What evidence proves the side effect happened correctly?
+- 이 tool은 read-only인가, side-effecting인가?
+- 입력에 secret, private path, hostname, username, unpublished result가 들어가는가?
+- 출력이 검증 가능한 구조인가?
+- retry가 안전한가, 중복 side effect를 만들 수 있는가?
+- side effect가 올바르게 일어났다는 evidence는 무엇인가?
 
 ## Related
 
 - [[agents/index|Agents]]
+- [[agents/features/connectors-actions|Connectors and actions]]
 - [[agents/core/action-space|Action space]]
 - [[agents/core/agent-loop|Agent loop]]
 - [[agents/verification/evidence-ledger|Evidence ledger]]
