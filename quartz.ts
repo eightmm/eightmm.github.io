@@ -6,12 +6,12 @@ ExternalPlugin.Explorer({
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = [
       "ai",
+      "agents",
       "math",
       "molecular-modeling",
       "infra",
       "research",
       "papers",
-      "agents",
       "projects",
       "posts",
     ]
@@ -111,12 +111,12 @@ ExternalPlugin.Explorer({
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = [
       "ai",
+      "agents",
       "math",
       "molecular-modeling",
       "infra",
       "research",
       "papers",
-      "agents",
       "projects",
       "posts",
     ]

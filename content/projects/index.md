@@ -6,13 +6,23 @@ tags:
 
 # Projects
 
-Project pages describe goals, interfaces, design decisions, verification methods, and public artifacts.
+Project pages describe goals, interfaces, design decisions, verification methods, and public artifacts. 이 영역은 아이디어 자체보다 실제로 만들거나 운영하거나 공개 산출물로 남기는 것에 둡니다.
 
 ## Role
 
 Use this area for artifacts and workflows that are being built, operated, or iterated. A project page should connect a problem to an artifact, design decision, verification method, current status, and next public improvement.
 
-If the page is only a reusable definition, put it under [[concepts/index|Concepts]]. If it is centered on one paper, put it under [[papers/index|Papers]]. If it is an operational lesson without a project artifact, put it under [[infra/index|Infra]] or [[logs/index|Logs]].
+If the page is only a reusable definition, put it under [[concepts/index|Concepts]]. If it is centered on one paper, put it under [[papers/index|Papers]]. If it is an operational lesson without a project artifact, put it under [[infra/index|Infra]] or [[logs/index|Logs]]. If it is mostly a question, hypothesis, or research direction, put it under [[research/index|Research]] first.
+
+## Research와의 차이
+
+| Page Center | Put In |
+| --- | --- |
+| public question, hypothesis, research idea | [[research/index|Research]] |
+| implemented pipeline, tool, artifact, workflow | [[projects/index|Projects]] |
+| paper-specific claim | [[papers/index|Papers]] |
+| reusable concept or formula | [[concepts/index|Concepts]] |
+| operational lesson without an artifact | [[infra/index|Infra]] or [[logs/index|Logs]] |
 
 ## Buckets
 
