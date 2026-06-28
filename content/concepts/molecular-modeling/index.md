@@ -45,7 +45,7 @@ Do not split or aggregate labels before the molecular identity policy is explici
 | Question | Start | Risk |
 | --- | --- | --- |
 | What is the molecule identity? | [Molecular identity](/concepts/molecular-modeling/molecular-identity), [Molecular standardization](/concepts/molecular-modeling/molecular-standardization), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) | salts, tautomers, stereo, protonation, charge, source policy |
-| What does the model see? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | featurizer silently changing the object |
+| What does the model see? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [RDKit](/concepts/molecular-modeling/rdkit), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | featurizer silently changing the object |
 | How is similarity or retrieval defined? | [Molecular similarity](/concepts/molecular-modeling/molecular-similarity), [Substructure search](/concepts/molecular-modeling/substructure-search) | proxy similarity used as domain truth |
 | What prediction task is claimed? | [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction) | label context and split unit missing |
 | Is generation constrained? | [Fragment-SELFIES](/concepts/molecular-modeling/fragment-selfies) | valid strings without useful molecules |
@@ -71,6 +71,7 @@ Do not split or aggregate labels before the molecular identity policy is explici
 - Use scaffold or cluster splits instead of random splits for ligand-side generalization.
 - Cache features with featurizer version and input hash.
 - Use one molecular featurization contract across train, evaluation, and inference.
+- Treat RDKit parsing, sanitization, fingerprinting, descriptor, and conformer settings as part of the method.
 
 ## Failure Modes
 
@@ -86,6 +87,7 @@ Do not split or aggregate labels before the molecular identity policy is explici
 - [[entities/molecule|Molecule]]
 - [[entities/ligand|Ligand]]
 - [[entities/target-assay-label|Target-assay-label]]
+- [[concepts/molecular-modeling/rdkit|RDKit]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

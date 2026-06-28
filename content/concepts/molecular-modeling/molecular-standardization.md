@@ -50,6 +50,12 @@ $$
 
 Splitting on raw records can place equivalent standardized molecules on both sides of the split, creating leakage even when row IDs are disjoint.
 
+## Toolkit Boundary
+
+Toolkits such as [[concepts/molecular-modeling/rdkit|RDKit]] implement parts of standardization, but the chemical policy is still yours. Record whether the protocol removes fragments, uncharges molecules, canonicalizes tautomers, preserves stereochemistry, and how it handles parse failures.
+
+Do not imply that a toolkit default is a scientific standard. It is a reproducibility choice that affects identity, split keys, fingerprints, descriptors, and conformers.
+
 ## Checks
 
 - Is standardization done before deduplication?
@@ -63,6 +69,7 @@ Splitting on raw records can place equivalent standardized molecules on both sid
 ## Related
 
 - [[concepts/molecular-modeling/molecular-featurization-contract|Molecular featurization contract]]
+- [[concepts/molecular-modeling/rdkit|RDKit]]
 - [[concepts/molecular-modeling/molecular-identity|Molecular identity]]
 - [[concepts/molecular-modeling/chemical-state-contract|Chemical state contract]]
 - [[concepts/molecular-modeling/smiles|SMILES]]

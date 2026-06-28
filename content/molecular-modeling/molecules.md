@@ -25,7 +25,7 @@ where $L$ is a molecular object and $c$ can include pH, assay condition, conform
 | --- | --- | --- |
 | What is the modeled chemical object? | [Molecule](/entities/molecule), [Ligand](/entities/ligand), [Molecular identity](/concepts/molecular-modeling/molecular-identity) | salts, mixtures, stereo, protonation, tautomer policy |
 | How is the molecule normalized? | [Molecular standardization](/concepts/molecular-modeling/molecular-standardization), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) | deduplication before standardization |
-| What does the model actually see? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph) | string augmentation or graph construction changing the object |
+| What does the model actually see? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [RDKit](/concepts/molecular-modeling/rdkit), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph) | string augmentation or graph construction changing the object |
 | Is similarity meaningful for the claim? | [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint), [Molecular similarity](/concepts/molecular-modeling/molecular-similarity) | using a cheap proxy as if it were chemical equivalence |
 | Is generation constrained by chemistry? | [Fragment-SELFIES](/concepts/molecular-modeling/fragment-selfies), [Molecular generation](/concepts/generative-models/molecular-generation) | validity without utility or novelty boundary |
 
@@ -52,6 +52,26 @@ r_L
 $$
 
 where $L_{\mathrm{raw}}$ is the input molecule record, $L_{\mathrm{std}}$ is the standardized chemical object, and $r_L$ is the model representation.
+
+## RDKit Protocol Layer
+
+RDKit is often the code layer behind this contract. The important point is not "use RDKit" but "record the exact molecular protocol."
+
+$$
+r_L
+=
+F_{\psi}(\operatorname{RDKitProtocol}(L_{\mathrm{raw}}))
+$$
+
+where $\psi$ includes featurizer settings such as fingerprint radius, bit length, chirality flag, descriptor list, conformer seed, and failure policy.
+
+| RDKit Output | Typical Use | Must Record |
+| --- | --- | --- |
+| canonical SMILES | deduplication, exact identity, sequence model input | standardization and stereo policy |
+| Morgan fingerprint | baseline, similarity, scaffold analysis | radius, bit length, count/binary, chirality |
+| descriptor vector | small-data baseline, interpretable model | descriptor list, NaN policy, scaling |
+| molecular graph | GNN input | atom/bond features, hydrogens, aromaticity, charge, stereo |
+| conformer | 3D model, docking, shape | protonation, seed, force field, minimization, failure rate |
 
 ## Structure and Chemistry Routes
 
@@ -84,4 +104,5 @@ where $L_{\mathrm{raw}}$ is the input molecule record, $L_{\mathrm{std}}$ is the
 - [[molecular-modeling/index|Computational Biology]]
 - [[molecular-modeling/interactions|Interaction modeling]]
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
+- [[concepts/molecular-modeling/rdkit|RDKit]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

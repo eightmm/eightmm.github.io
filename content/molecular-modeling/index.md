@@ -72,6 +72,19 @@ Computational Biology note는 아래 항목을 먼저 채웁니다.
 | Method | classical workflow, ML model, generative model, docking, simulation |
 | Evidence | metric, baseline, leakage check, failure mode |
 
+## Concepts vs Papers
+
+Docking, RDKit, molecular standardization, featurization, conformers, scoring functions, and split policies are reusable concepts. They should live in Computational Biology or Concepts because many papers reuse the same assumptions.
+
+Papers should hold paper-specific claims: what a method proposed, what benchmark it used, what result it reported, and what limitation or reproduction issue matters.
+
+| Put In | When |
+| --- | --- |
+| Computational Biology | object, workflow, route, checklist, domain boundary |
+| Concepts | reusable definition, formula, protocol, failure mode |
+| Papers | specific paper, benchmark result, method claim, reproduction status |
+| Projects | implemented pipeline, code artifact, report generator, experiment workflow |
+
 ## 구조 기반 문제
 
 Structure-based modeling은 별도의 큰 덩어리로 봅니다. Docking은 그 안의 workflow입니다.

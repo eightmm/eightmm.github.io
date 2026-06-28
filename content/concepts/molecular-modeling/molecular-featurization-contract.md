@@ -52,6 +52,18 @@ If either $\tilde{m}$ or $\psi$ changes, cached features are invalid.
 | conformer or coordinates | geometry, docking, 3D generation | conformer source and deployment availability define the claim |
 | learned embedding | retrieval or downstream prediction | frozen vs trainable encoder changes evaluation meaning |
 
+## RDKit Features
+
+Many molecular ML baselines and preprocessing pipelines use [[concepts/molecular-modeling/rdkit|RDKit]]. The featurization contract should make RDKit choices explicit rather than treating them as library defaults.
+
+| Feature | Parameters to Record |
+| --- | --- |
+| Morgan fingerprint | radius, bit length, count/binary, chirality flag |
+| descriptor vector | descriptor names, NaN policy, scaling |
+| molecular graph | atom features, bond features, aromaticity, explicit hydrogens, stereo |
+| conformer | conformer count, seed, force field, minimization, failure policy |
+| scaffold | standardization state and scaffold extraction policy |
+
 ## Leakage Risks
 
 Featurization can leak information even when labels are not directly used:

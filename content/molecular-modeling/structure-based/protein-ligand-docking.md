@@ -21,6 +21,16 @@ $$
 
 Here $P$ is the protein or [[entities/pocket|pocket]], $L$ is the ligand, $X$ is the ligand pose/conformation in the binding site, and $S$ is a scoring function. In learned methods, $S$ may be replaced or complemented by a generative model.
 
+More explicitly, the ligand pose can be written as:
+
+$$
+q=(t,R,\tau),
+\qquad
+X = X(q)
+$$
+
+where $t$ is translation, $R$ is rotation, and $\tau$ is a vector of torsion angles. Classical docking searches over $q$; learned pose generators may sample $q$ or directly predict $X$.
+
 ## What Docking Produces
 
 Docking output is usually a set of candidate ligand poses in a binding site. A pose is not automatically a binding explanation. It has to be checked for geometry, chemistry, protein-ligand contacts, and whether the assumed binding site is meaningful.
@@ -50,6 +60,31 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 4. Rank candidates with a [[concepts/sbdd/scoring-function|scoring function]].
 5. Record uncertainty and failure modes.
 
+## Component Equations
+
+A useful decomposition is:
+
+$$
+\{\hat{X}_k\}_{k=1}^{K}
+\sim
+G_\theta(P,L,c)
+$$
+
+$$
+s_k
+=
+S_\phi(P,L,\hat{X}_k)
+$$
+
+$$
+\hat{X}_{\mathrm{top}}
+=
+\operatorname*{select}_{k}
+(\hat{X}_k,s_k)
+$$
+
+This separates generator $G_\theta$, scoring function $S_\phi$, and selection rule. If a paper changes all three, the improvement cannot be assigned to only one component.
+
 ## Failure Modes
 
 - Plausible-looking pose with invalid ligand geometry.
@@ -57,6 +92,8 @@ Docking output is usually a set of candidate ligand poses in a binding site. A p
 - Correct pocket but wrong ligand orientation.
 - Good RMSD on an easy split but poor generalization to new proteins or scaffolds.
 - Protein treated as rigid when the relevant binding mode requires flexibility.
+- Score convention inversion between docking tool, learned scorer, and benchmark script.
+- Filtering invalid poses before reporting metrics without counting filtered failures.
 
 ## Practical Checks
 

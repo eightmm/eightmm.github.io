@@ -26,7 +26,7 @@ where $L$ is a standardized molecular object and $c$ can include pH, protonation
 | Question | Start | Watch |
 | --- | --- | --- |
 | What chemical object is modeled? | [Molecules](/molecular-modeling/molecules), [Molecule](/entities/molecule), [Ligand](/entities/ligand) | salts, mixtures, stereochemistry, tautomer, protonation |
-| What representation does the model see? | [Molecular graph](/concepts/molecular-modeling/molecular-graph), [SMILES](/concepts/molecular-modeling/smiles), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | equivalent molecules can become different inputs |
+| What representation does the model see? | [RDKit](/concepts/molecular-modeling/rdkit), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [SMILES](/concepts/molecular-modeling/smiles), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | equivalent molecules can become different inputs |
 | Is 3D conformation involved? | [Conformer](/concepts/molecular-modeling/conformer), [Force field](/concepts/molecular-modeling/force-field) | conformer source and minimization protocol can dominate |
 | Is the molecule target-conditioned? | [Interaction Modeling](/molecular-modeling/interactions), [Target-assay-label contract](/entities/target-assay-label) | molecule-only claims do not cover target-specific activity |
 | Is structure or docking central? | [Structure-Based Modeling](/molecular-modeling/structure-based) | pose, pocket, scoring, and geometry require separate checks |
@@ -36,7 +36,7 @@ where $L$ is a standardized molecular object and $c$ can include pH, protonation
 | Area | Use For | Start |
 | --- | --- | --- |
 | Chemical identity | standardization, salt stripping, stereo, tautomer, protonation | [Molecules](/molecular-modeling/molecules) |
-| 2D representation | SMILES, molecular graph, fingerprint, scaffold, similarity | [Molecular graph](/concepts/molecular-modeling/molecular-graph) |
+| 2D representation | SMILES, molecular graph, fingerprint, scaffold, similarity | [RDKit](/concepts/molecular-modeling/rdkit), [Molecular graph](/concepts/molecular-modeling/molecular-graph) |
 | 3D representation | conformer, force field, shape, geometry, docking input | [Conformer](/concepts/molecular-modeling/conformer) |
 | Property and retrieval | property prediction, similarity search, candidate ranking | [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction) |
 | Generation | valid molecule samples, constrained generation, scaffold editing | [Molecular generation](/concepts/generative-models/molecular-generation) |
@@ -51,6 +51,18 @@ where $L$ is a standardized molecular object and $c$ can include pH, protonation
 | Protonation / charge | is the state compatible with pH, assay, docking, or force field assumptions? |
 | Conformer | is 3D geometry generated, experimental, minimized, or reused from a complex? |
 | Deduplication | are equivalent molecules collapsed before split construction? |
+
+## RDKit Boundary
+
+RDKit is usually the implementation layer for molecule parsing, standardization, fingerprints, descriptors, substructure search, and conformers. Treat these settings as method choices, not invisible preprocessing.
+
+| RDKit Use | Record |
+| --- | --- |
+| canonical SMILES | standardization and stereo policy |
+| Morgan fingerprint | radius, bit length, count/binary mode, chirality flag |
+| descriptor vector | descriptor list and missing-value policy |
+| scaffold split | standardized molecule used for scaffold extraction |
+| conformer generation | seed, conformer count, force field, minimization and failure policy |
 
 ## Boundary
 

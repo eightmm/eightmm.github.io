@@ -24,6 +24,16 @@ $$
 
 where $P$ is the protein or pocket, $L$ is the ligand, $c$ is context such as pocket definition or constraints, and $\hat{X}_k$ are candidate ligand poses.
 
+A pose can be parameterized as translation, rotation, and internal torsions:
+
+$$
+q = (t, R, \tau),
+\qquad
+X(q) = R X_L(\tau) + \mathbf{1}t^\top
+$$
+
+where $t\in\mathbb{R}^3$ places the ligand, $R\in SO(3)$ orients it, and $\tau$ controls rotatable bonds. Docking searches over $q$ under a receptor or pocket context.
+
 ## Workflow Map
 
 | Step | Read |
@@ -61,6 +71,27 @@ Do not collapse these claims:
 
 The same method can be strong for one claim and weak for another. A low pose RMSD does not automatically prove affinity prediction, and a high enrichment score does not automatically prove chemically valid poses.
 
+## Search and Scoring
+
+Docking often combines a search distribution and a score:
+
+$$
+q_k \sim Q(q\mid P,L,c),
+\qquad
+s_k = S(P,L,X(q_k))
+$$
+
+The selected pose is usually:
+
+$$
+\hat{q}
+=
+\operatorname*{arg\,min}_{q_k}
+S(P,L,X(q_k))
+$$
+
+or $\operatorname*{arg\,max}$ if the score convention is higher-is-better. This convention must be written explicitly.
+
 ## Typical Metrics
 
 | Claim | Typical Metric | Caveat |
@@ -70,6 +101,10 @@ The same method can be strong for one claim and weak for another. A low pose RMS
 | Scoring / ranking | Spearman, Kendall, top-k success, enrichment | score calibration is separate from ranking |
 | Affinity prediction | RMSE, MAE, Pearson/Spearman, calibration diagnostics | assay noise and label semantics dominate |
 | Virtual screening | enrichment factor, BEDROC, ROC-AUC, PR-AUC | active/decoy construction can bias conclusions |
+
+## What Goes to Papers
+
+Keep this page for reusable docking concepts. Put a page under [[papers/sbdd/index|Structure-based modeling papers]] when the note is about a specific docking method, benchmark, or empirical result. For example, PoseBusters belongs in Papers because it is a specific evaluation paper; pose plausibility checks belong here and in [[concepts/sbdd/pose-quality|Pose quality]].
 
 ## Checks
 
