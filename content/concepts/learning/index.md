@@ -31,6 +31,73 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 | is behavior learned from actions or preferences? | [Reinforcement learning](/concepts/learning/reinforcement-learning), [Preference optimization](/concepts/learning/preference-optimization) | reward source, off-policy data, evaluation loop |
 | is the data distribution changing? | [Domain adaptation](/concepts/learning/domain-adaptation), [Active learning](/concepts/learning/active-learning) | source/target split and sampling policy |
 
+## Learning Contract
+
+Learning method note should state the training signal before discussing architecture.
+
+$$
+\mathcal{J}(\theta)
+=
+\mathbb{E}_{u\sim q}
+\left[
+\mathcal{L}_\theta(u)
+\right]
+$$
+
+where $u$ is the training unit sampled by the method. Depending on the method, $u$ may be a labeled pair, masked view, augmented pair, noisy sample, preference pair, or trajectory.
+
+| Contract part | Ask | Route |
+| --- | --- | --- |
+| training unit | what object is sampled by the objective? | [Example unit](/concepts/data/example-unit), [Task specification](/concepts/tasks/task-specification) |
+| target construction | where does the target or feedback come from? | [Objective taxonomy](/concepts/learning/objective-taxonomy) |
+| loss | what exact quantity is optimized? | [Loss function](/concepts/machine-learning/loss-function) |
+| sampling policy | how are masks, views, negatives, prompts, or trajectories sampled? | [Augmentation policy](/concepts/learning/augmentation-policy), [Sampling strategy](/concepts/data/sampling-strategy) |
+| model selection | which validation signal chooses checkpoint or threshold? | [Evaluation protocol](/concepts/evaluation/evaluation-protocol) |
+| downstream evidence | what metric justifies the learning claim? | [Representation evaluation](/concepts/learning/representation-evaluation), [Metric selection](/concepts/evaluation/metric-selection) |
+
+## Signal Map
+
+| Signal source | Learning family | Main risk |
+| --- | --- | --- |
+| measured labels | supervised or semi-supervised learning | label semantics, noise, censoring |
+| hidden input parts | masked modeling | target too local or leakage through context |
+| augmented views | contrastive, JEPA, invariance learning | augmentation changes semantic identity |
+| corrupted/noisy samples | denoising, diffusion, score, flow objectives | corruption process mismatched to downstream task |
+| teacher outputs | distillation | teacher bias and hidden data access |
+| demonstrations | imitation learning | behavior cloning distribution shift |
+| preferences | reward modeling or preference optimization | preference proxy mismatch |
+| environment reward | reinforcement learning | reward hacking and off-policy bias |
+| newly queried labels | active learning | sampling policy changes data distribution |
+
+## Task vs Objective vs Evidence
+
+These should be recorded separately.
+
+| Axis | Question | Example |
+| --- | --- | --- |
+| task | what behavior is needed? | rank ligands, classify images, predict structure |
+| objective | what training signal is optimized? | cross-entropy, InfoNCE, masked likelihood, reward |
+| architecture | what computation carries the signal? | Transformer, GNN, CNN, SSM |
+| data | what examples and feedback are available? | labels, unlabeled corpus, demonstrations, preferences |
+| evidence | how is success measured? | AUROC, retrieval recall, RMSD, task success |
+
+An SSL pretraining loss can improve a downstream classifier, but the pretraining objective is not the downstream task. A preference objective can improve chat behavior, but it is not the same as agent task completion.
+
+## Evaluation Boundary
+
+Learning-method claims often fail because the evaluation budget changes with the method.
+
+| Claim | Must Hold Fixed |
+| --- | --- |
+| better pretraining | downstream split, probe budget, fine-tuning budget, data access |
+| better representation | frozen encoder, evaluator capacity, task suite, retrieval corpus |
+| better fine-tuning | pretrained checkpoint, target data, search budget, early stopping |
+| better domain adaptation | source/target split, label availability, target-domain leakage |
+| better preference learning | preference data source, reward model, evaluation prompt/task set |
+| better RL method | environment, reward, simulator version, rollout budget |
+
+If the comparison changes architecture, data, objective, and evaluation at once, the note should say the claim is system-level rather than learning-method-specific.
+
 ## Supervision and Transfer
 
 | Method | Use For |
@@ -87,6 +154,18 @@ where $q$ defines how examples and targets are sampled. For papers, this means t
 - loss and metric;
 - augmentation, masking, negative sampling, reward, or preference source;
 - evaluation task used to justify representation or behavior claims.
+
+## Domain Boundaries
+
+| Domain | Extra check |
+| --- | --- |
+| molecules | scaffold leakage, chemical state, negative construction, activity cliffs |
+| proteins | homolog split, family split, MSA/template leakage, residue indexing |
+| structure models | coordinate frame, template use, pocket definition, geometric validity |
+| LLMs | pretraining/test contamination, instruction data, preference source, tool access |
+| agents | trace success, tool side effects, recovery, completion audit |
+
+Move object-specific details to [[molecular-modeling/index|Computational Biology]] when the issue is protein, molecule, ligand, pocket, assay, or structure identity rather than the learning signal itself.
 
 ## Related
 
