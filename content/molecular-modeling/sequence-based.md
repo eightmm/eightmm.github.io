@@ -18,21 +18,21 @@ $$
 f_\theta(s_{1:L}, c)
 $$
 
-where $s_{1:L}$ is a token sequence and $c$ is context such as organism, target family, region, assay, mutation, or annotation source.
+여기서 $s_{1:L}$은 token sequence이고, $c$는 organism, target family, region, assay, mutation, annotation source 같은 context입니다.
 
 ## Route Map
 
 | Question | Start | Watch |
 | --- | --- | --- |
-| What sequence object is modeled? | [Objects and Entities](/molecular-modeling/entities), [Sequence](/entities/sequence) | sequence may be a protein chain, genome window, variant context, or derived token stream |
-| Is it protein sequence modeling? | [Proteins](/molecular-modeling/proteins), [Protein](/entities/protein) | homolog leakage, isoform choice, construct, mutation, truncation |
-| Is it genome-level sequence modeling? | [Genome](/molecular-modeling/genome), [Genome](/entities/genome) | reference coordinate mismatch, duplicated windows, annotation leakage |
-| Is the representation learned or fixed? | [Embedding](/concepts/architectures/embedding), [Tokenization](/concepts/architectures/tokenization) | pooling and token policy can change the claim |
-| What split supports the claim? | [Protein family split](/concepts/evaluation/protein-family-split), [Leakage](/concepts/evaluation/leakage) | random row split can overstate generalization |
+| 어떤 sequence object를 모델링하는가? | [Objects and Entities](/molecular-modeling/entities), [Sequence](/entities/sequence) | sequence가 protein chain, genome window, variant context, derived token stream일 수 있음 |
+| protein sequence modeling인가? | [Proteins](/molecular-modeling/proteins), [Protein](/entities/protein) | homolog leakage, isoform choice, construct, mutation, truncation |
+| genome-level sequence modeling인가? | [Genome](/molecular-modeling/genome), [Genome](/entities/genome) | reference coordinate mismatch, duplicated window, annotation leakage |
+| representation이 learned인가 fixed인가? | [Embedding](/concepts/architectures/embedding), [Tokenization](/concepts/architectures/tokenization) | pooling과 token policy가 claim을 바꿀 수 있음 |
+| 어떤 split이 claim을 지지하는가? | [Protein family split](/concepts/evaluation/protein-family-split), [Leakage](/concepts/evaluation/leakage) | random row split이 generalization을 과장할 수 있음 |
 
 ## Main Subroutes
 
-| Area | Use For | Start |
+| Area | Use for | Start |
 | --- | --- | --- |
 | Protein sequence | protein language models, mutation effect, family-aware representation, sequence-to-function | [Proteins](/molecular-modeling/proteins) |
 | Genome sequence | genome window, k-mer, annotation, variant-effect prediction | [Genome](/molecular-modeling/genome) |
@@ -41,17 +41,17 @@ where $s_{1:L}$ is a token sequence and $c$ is context such as organism, target 
 
 ## Sequence Representation Checklist
 
-| Choice | Why It Matters |
+| Choice | 중요한 이유 |
 | --- | --- |
 | Token unit | amino acid, k-mer, BPE-like token, nucleotide, special token |
-| Context length | truncation can remove domains, motifs, or regulatory context |
-| Pooling | CLS, mean pooling, residue pooling, region pooling support different claims |
-| Alignment input | MSA, template, annotation, or family information can leak test context |
-| Mutation policy | wild-type, mutant, delta representation, or paired sequence changes the task |
+| Context length | truncation이 domain, motif, regulatory context를 제거할 수 있음 |
+| Pooling | CLS, mean pooling, residue pooling, region pooling은 서로 다른 claim을 지지함 |
+| Alignment input | MSA, template, annotation, family information이 test context를 leak할 수 있음 |
+| Mutation policy | wild-type, mutant, delta representation, paired sequence가 task를 바꿈 |
 
 ## Sequence vs Structure
 
-Sequence-based modeling is not the opposite of structure-based modeling. Many workflows start from sequence and later use predicted or experimental structure:
+Sequence-based modeling은 structure-based modeling의 반대가 아닙니다. 많은 workflow는 sequence에서 시작해 나중에 predicted 또는 experimental structure를 사용합니다.
 
 $$
 s_{1:L}
@@ -63,7 +63,7 @@ X
 \hat{y}
 $$
 
-Use this page when the primary input is sequence. Move to [[molecular-modeling/structure-based/index|Structure-based modeling]] when coordinates, pockets, poses, or complexes become first-class objects.
+Primary input이 sequence이면 이 페이지에서 시작합니다. Coordinate, pocket, pose, complex가 first-class object가 되면 [[molecular-modeling/structure-based/index|Structure-based modeling]]으로 이동합니다.
 
 ## Boundary
 
@@ -74,10 +74,10 @@ Use this page when the primary input is sequence. Move to [[molecular-modeling/s
 
 ## Checks
 
-- Is one example a protein chain, sequence window, variant-centered window, or annotated region?
-- Are homologs, near duplicates, and repeated windows separated across train/test?
-- Is the model using structure, templates, MSAs, or annotations that are unavailable at inference time?
-- Is the output a sequence label, residue label, region label, function prediction, or downstream interaction claim?
+- one example이 protein chain, sequence window, variant-centered window, annotated region 중 무엇인가?
+- homolog, near duplicate, repeated window가 train/test 사이에서 분리되어 있는가?
+- model이 inference time에 unavailable한 structure, template, MSA, annotation을 쓰는가?
+- output이 sequence label, residue label, region label, function prediction, downstream interaction claim 중 무엇인가?
 
 ## Related
 

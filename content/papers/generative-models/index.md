@@ -11,12 +11,12 @@ Generative model paper note는 sample, transform, denoise, decode, structured ob
 
 ## Reading Axes
 
-- What distribution is modeled?
-- Is generation autoregressive, diffusion-based, flow-based, energy-based, or latent-variable?
-- What objective is optimized?
-- How are validity, diversity, novelty, and task utility evaluated?
-- Does the model generate text, molecules, proteins, structures, images, or actions?
-- Is the claim about likelihood, sample quality, controllability, efficiency, or downstream utility?
+- 어떤 distribution을 모델링하는가?
+- generation 방식이 autoregressive, diffusion-based, flow-based, energy-based, latent-variable 중 무엇인가?
+- 어떤 objective를 optimize하는가?
+- validity, diversity, novelty, task utility를 어떻게 평가하는가?
+- model이 text, molecule, protein, structure, image, action 중 무엇을 생성하는가?
+- claim이 likelihood, sample quality, controllability, efficiency, downstream utility 중 무엇에 관한 것인가?
 
 ## Concepts
 

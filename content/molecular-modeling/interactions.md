@@ -10,9 +10,9 @@ tags:
 
 # Interaction Modeling
 
-Interaction modeling covers predictions whose unit is not a molecule alone or a protein alone, but a relation between biological and chemical objects. Typical examples are target-conditioned activity, binding affinity, selectivity, protein-ligand interaction, protein-protein interaction, and complex-level prediction.
+Interaction modeling은 molecule 하나나 protein 하나가 아니라 biological object와 chemical object 사이의 relation을 예측 단위로 삼는 문제를 다룹니다. 대표 예시는 target-conditioned activity, binding affinity, selectivity, protein-ligand interaction, protein-protein interaction, complex-level prediction입니다.
 
-The main object is a tuple:
+핵심 object는 아래 tuple입니다.
 
 $$
 u
@@ -20,7 +20,7 @@ u
 (L,\ T,\ A,\ C)
 $$
 
-where $L$ is a ligand or molecule, $T$ is a target or protein, $A$ is an assay or measurement context, and $C$ is optional structure, pocket, species, construct, mutation, or source context.
+여기서 $L$은 ligand 또는 molecule, $T$는 target 또는 protein, $A$는 assay 또는 measurement context, $C$는 optional structure, pocket, species, construct, mutation, source context입니다.
 
 The prediction is:
 
@@ -30,21 +30,21 @@ $$
 f_\theta(r_L,\ r_T,\ r_A,\ r_C)
 $$
 
-where each representation must be defined before the label or metric is trusted.
+각 representation이 정의되어야 label이나 metric을 믿을 수 있습니다.
 
 ## Route Map
 
 | Question | Start | Watch |
 | --- | --- | --- |
-| What objects interact? | [Entities](/molecular-modeling/entities), [Protein](/entities/protein), [Ligand](/entities/ligand), [Target](/entities/target) | target identity may hide isoform, construct, mutation, or species |
-| Is the label assay-conditioned? | [Target-assay-label contract](/entities/target-assay-label), [Bioactivity label](/entities/bioactivity-label), [Assay](/entities/assay) | endpoint, unit, censoring, threshold, and source mismatch |
-| Is the interaction structural? | [Protein-ligand complex](/entities/protein-ligand-complex), [Pocket](/entities/pocket), [Protein-ligand interaction](/concepts/sbdd/protein-ligand-interaction) | ligand-defined pocket or known pose unavailable at inference |
-| Is the output a scalar relation? | [Interaction prediction](/concepts/tasks/interaction-prediction), [Binding affinity](/concepts/sbdd/binding-affinity) | score, probability, affinity, and ranking are different claims |
-| How should the split be constructed? | [Protein-ligand split](/concepts/sbdd/protein-ligand-split), [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split) | holding out only the pair can still leak ligand and protein neighborhoods |
+| 어떤 object들이 interact하는가? | [Entities](/molecular-modeling/entities), [Protein](/entities/protein), [Ligand](/entities/ligand), [Target](/entities/target) | target identity가 isoform, construct, mutation, species를 숨길 수 있음 |
+| label이 assay-conditioned인가? | [Target-assay-label contract](/entities/target-assay-label), [Bioactivity label](/entities/bioactivity-label), [Assay](/entities/assay) | endpoint, unit, censoring, threshold, source mismatch |
+| interaction이 structural한가? | [Protein-ligand complex](/entities/protein-ligand-complex), [Pocket](/entities/pocket), [Protein-ligand interaction](/concepts/sbdd/protein-ligand-interaction) | ligand-defined pocket 또는 known pose가 inference에서 unavailable할 수 있음 |
+| output이 scalar relation인가? | [Interaction prediction](/concepts/tasks/interaction-prediction), [Binding affinity](/concepts/sbdd/binding-affinity) | score, probability, affinity, ranking은 서로 다른 claim |
+| split은 어떻게 구성해야 하는가? | [Protein-ligand split](/concepts/sbdd/protein-ligand-split), [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split) | pair만 hold out해도 ligand/protein neighborhood가 leak될 수 있음 |
 
 ## Interaction Types
 
-| Type | Unit | Typical Output | Main Risk |
+| Type | Unit | Typical output | Main risk |
 | --- | --- | --- | --- |
 | Target-conditioned activity | molecule-target-assay record | active/inactive, pIC50, Ki, Kd, EC50 | assay/source conflict and label direction errors |
 | Binding affinity | protein-ligand pair or complex | $\Delta G$, $K_d$, $K_i$, rank score | units, temperature, and experimental protocol mismatch |
@@ -54,7 +54,7 @@ where each representation must be defined before the label or metric is trusted.
 
 ## Representation Contract
 
-State which representation is used on each side:
+각 side에서 어떤 representation을 쓰는지 명시합니다.
 
 | Side | Examples | Check |
 | --- | --- | --- |
@@ -63,7 +63,7 @@ State which representation is used on each side:
 | Assay | endpoint, organism, construct, units, threshold, source | not collapsed into a generic label |
 | Context | pocket, template, species, mutation, conformer source | available at inference time |
 
-For pair models, the feature map is often:
+Pair model에서 feature map은 보통 아래처럼 씁니다.
 
 $$
 r_{LT}
@@ -71,13 +71,13 @@ r_{LT}
 \phi(r_L,\ r_T,\ r_C)
 $$
 
-The fusion method can be concatenation, cross-attention, graph construction, interaction fingerprint, or a structure-aware complex graph.
+Fusion method는 concatenation, cross-attention, graph construction, interaction fingerprint, structure-aware complex graph 등이 될 수 있습니다.
 
 ## Score Semantics
 
 Interaction score는 하나의 숫자처럼 보여도 의미가 다릅니다.
 
-| Score | Meaning | Do Not Confuse With |
+| Score | Meaning | 혼동하지 말 것 |
 | --- | --- | --- |
 | activity probability | active/inactive decision under assay threshold | binding affinity |
 | affinity value | $K_d$, $K_i$, IC50, $\Delta G$ style measurement | pose quality |
@@ -97,11 +97,11 @@ Interaction claims need at least one explicit holdout axis.
 | New assay/source | assay, source, or campaign split |
 | New structure template | template-aware and homolog-aware structure split |
 
-Do not claim broad interaction generalization from a random row split. A row split can preserve the same ligand series, homologous proteins, related assays, or nearly identical complex templates across train and test.
+Random row split에서 broad interaction generalization을 주장하면 안 됩니다. Row split은 train/test 사이에 같은 ligand series, homologous protein, related assay, 거의 같은 complex template을 남길 수 있습니다.
 
 ## Metrics
 
-| Task | Primary Metric | Diagnostics |
+| Task | Primary metric | Diagnostic |
 | --- | --- | --- |
 | Binary activity | PRC-AUC, enrichment, calibrated threshold metric | ROC-AUC, reliability, class prevalence |
 | Affinity regression | MAE/RMSE in original units, Spearman/Pearson | assay slice error, activity-cliff error |
@@ -110,12 +110,12 @@ Do not claim broad interaction generalization from a random row split. A row spl
 
 ## Checks
 
-- Is one example a molecule, target, assay row, pair, complex, pose, or ranked list?
-- Are target, assay, endpoint, unit, threshold, censoring, and source preserved?
-- Are ligand scaffold, protein family, assay/source, and template leakage checked separately?
-- Is the metric aligned with the decision: activity prediction, affinity regression, screening, pose evaluation, or selectivity?
-- Does the model use a pocket, pose, template, or assay field that would be unavailable at inference time?
-- Is there a cheap baseline such as fingerprint model, sequence-similarity baseline, docking baseline, or nearest-neighbor baseline?
+- one example은 molecule, target, assay row, pair, complex, pose, ranked list 중 무엇인가?
+- target, assay, endpoint, unit, threshold, censoring, source가 보존되는가?
+- ligand scaffold, protein family, assay/source, template leakage를 따로 확인했는가?
+- metric이 activity prediction, affinity regression, screening, pose evaluation, selectivity 중 실제 decision과 맞는가?
+- model이 inference time에 unavailable한 pocket, pose, template, assay field를 쓰는가?
+- fingerprint model, sequence-similarity baseline, docking baseline, nearest-neighbor baseline 같은 cheap baseline이 있는가?
 
 ## Related
 

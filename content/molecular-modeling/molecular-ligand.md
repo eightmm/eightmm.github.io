@@ -11,7 +11,7 @@ tags:
 
 # Molecular and Ligand Modeling
 
-Molecular and ligand modeling covers small-molecule identity, representation, standardization, conformers, property prediction, retrieval, and generation. A ligand is not a different object type from a molecule; it is a molecule in a binding or target context.
+Molecular and ligand modeling은 small-molecule identity, representation, standardization, conformer, property prediction, retrieval, generation을 다룹니다. Ligand는 molecule과 다른 object type이 아니라 binding 또는 target context 안에 있는 molecule입니다.
 
 $$
 r_L
@@ -19,21 +19,21 @@ r_L
 \phi(L, c)
 $$
 
-where $L$ is a standardized molecular object and $c$ can include pH, protonation, tautomer policy, conformer source, assay context, target, or pocket.
+여기서 $L$은 standardized molecular object이고, $c$는 pH, protonation, tautomer policy, conformer source, assay context, target, pocket을 포함할 수 있습니다.
 
 ## Route Map
 
 | Question | Start | Watch |
 | --- | --- | --- |
-| What chemical object is modeled? | [Molecules](/molecular-modeling/molecules), [Molecule](/entities/molecule), [Ligand](/entities/ligand) | salts, mixtures, stereochemistry, tautomer, protonation |
-| What representation does the model see? | [RDKit](/concepts/molecular-modeling/rdkit), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [SMILES](/concepts/molecular-modeling/smiles), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | equivalent molecules can become different inputs |
-| Is 3D conformation involved? | [Conformer](/concepts/molecular-modeling/conformer), [Force field](/concepts/molecular-modeling/force-field) | conformer source and minimization protocol can dominate |
-| Is the molecule target-conditioned? | [Interaction Modeling](/molecular-modeling/interactions), [Target-assay-label contract](/entities/target-assay-label) | molecule-only claims do not cover target-specific activity |
-| Is structure or docking central? | [Structure-Based Modeling](/molecular-modeling/structure-based) | pose, pocket, scoring, and geometry require separate checks |
+| 어떤 chemical object를 모델링하는가? | [Molecules](/molecular-modeling/molecules), [Molecule](/entities/molecule), [Ligand](/entities/ligand) | salt, mixture, stereochemistry, tautomer, protonation |
+| model은 어떤 representation을 보는가? | [RDKit](/concepts/molecular-modeling/rdkit), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [SMILES](/concepts/molecular-modeling/smiles), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | equivalent molecule이 다른 input이 될 수 있음 |
+| 3D conformation이 포함되는가? | [Conformer](/concepts/molecular-modeling/conformer), [Force field](/concepts/molecular-modeling/force-field) | conformer source와 minimization protocol이 지배할 수 있음 |
+| molecule이 target-conditioned인가? | [Interaction Modeling](/molecular-modeling/interactions), [Target-assay-label contract](/entities/target-assay-label) | molecule-only claim은 target-specific activity를 포함하지 않음 |
+| structure 또는 docking이 중심인가? | [Structure-Based Modeling](/molecular-modeling/structure-based) | pose, pocket, scoring, geometry는 별도 check가 필요함 |
 
 ## Main Subroutes
 
-| Area | Use For | Start |
+| Area | Use for | Start |
 | --- | --- | --- |
 | Chemical identity | standardization, salt stripping, stereo, tautomer, protonation | [Molecules](/molecular-modeling/molecules) |
 | 2D representation | SMILES, molecular graph, fingerprint, scaffold, similarity | [RDKit](/concepts/molecular-modeling/rdkit), [Molecular graph](/concepts/molecular-modeling/molecular-graph) |
@@ -45,18 +45,18 @@ where $L$ is a standardized molecular object and $c$ can include pH, protonation
 
 | State | Ask |
 | --- | --- |
-| Salt / mixture | is the modeled molecule the parent, salt, mixture, or assay record? |
-| Stereochemistry | are unspecified and specified stereocenters handled consistently? |
-| Tautomer | is one canonical tautomer chosen, or are several states possible? |
-| Protonation / charge | is the state compatible with pH, assay, docking, or force field assumptions? |
-| Conformer | is 3D geometry generated, experimental, minimized, or reused from a complex? |
-| Deduplication | are equivalent molecules collapsed before split construction? |
+| Salt / mixture | modeled molecule이 parent, salt, mixture, assay record 중 무엇인가? |
+| Stereochemistry | unspecified/specified stereocenter를 일관되게 처리했는가? |
+| Tautomer | canonical tautomer 하나를 택했는가, 여러 state가 가능한가? |
+| Protonation / charge | state가 pH, assay, docking, force field assumption과 compatible한가? |
+| Conformer | 3D geometry가 generated, experimental, minimized, complex reuse 중 무엇인가? |
+| Deduplication | equivalent molecule을 split construction 전에 collapse했는가? |
 
 ## RDKit Boundary
 
-RDKit is usually the implementation layer for molecule parsing, standardization, fingerprints, descriptors, substructure search, and conformers. Treat these settings as method choices, not invisible preprocessing.
+RDKit은 molecule parsing, standardization, fingerprint, descriptor, substructure search, conformer의 implementation layer인 경우가 많습니다. 이 setting은 invisible preprocessing이 아니라 method choice로 다룹니다.
 
-| RDKit Use | Record |
+| RDKit use | Record |
 | --- | --- |
 | canonical SMILES | standardization and stereo policy |
 | Morgan fingerprint | radius, bit length, count/binary mode, chirality flag |
@@ -66,14 +66,14 @@ RDKit is usually the implementation layer for molecule parsing, standardization,
 
 ## Boundary
 
-Use this page for molecule-only or ligand-preparation questions. Use [[molecular-modeling/interactions|Interaction modeling]] when the row is a molecule-target-assay relation. Use [[molecular-modeling/structure-based/index|Structure-based modeling]] when a pocket, pose, coordinate frame, or protein-ligand complex is part of the claim.
+Molecule-only 또는 ligand-preparation question은 이 페이지를 사용합니다. Row가 molecule-target-assay relation이면 [[molecular-modeling/interactions|Interaction modeling]]을 사용합니다. Pocket, pose, coordinate frame, protein-ligand complex가 claim의 일부이면 [[molecular-modeling/structure-based/index|Structure-based modeling]]을 사용합니다.
 
 ## Checks
 
-- Was molecular standardization done before deduplication and splitting?
-- Are stereochemistry, charge, protonation, tautomer, and conformer policy explicit?
-- Is the split scaffold-based, temporal, target-aware, or assay-aware?
-- Does the metric test property prediction, retrieval, generation, docking, or screening?
+- molecular standardization이 deduplication과 splitting 전에 수행되었는가?
+- stereochemistry, charge, protonation, tautomer, conformer policy가 explicit한가?
+- split이 scaffold-based, temporal, target-aware, assay-aware 중 무엇인가?
+- metric이 property prediction, retrieval, generation, docking, screening 중 무엇을 test하는가?
 
 ## Related
 

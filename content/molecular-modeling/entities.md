@@ -21,23 +21,23 @@ $$
 
 ## Core Objects
 
-| Object | Use When | Main Risk |
+| Object | Use when | Main risk |
 | --- | --- | --- |
-| [[entities/target|Target]] | target-conditioned activity, affinity, selectivity, assay context | target identity may hide isoform, construct, mutation, species, or assay source |
-| [[entities/protein|Protein]] | sequence, structure, representation, family split | homolog leakage and residue-index mismatch |
-| [[entities/pocket|Pocket]] | binding site, docking, pose prediction, structure-based generation | pocket may be ligand-defined or unavailable at inference |
-| [[entities/ligand|Ligand]] | target-bound molecule, pose, activity, interaction | ligand state and atom mapping may differ across protocols |
-| [[entities/molecule|Molecule]] | property prediction, molecular generation, similarity, scaffold split | salt, stereo, tautomer, protonation, and duplicate handling |
-| [[entities/protein-ligand-complex|Protein-ligand complex]] | docking, pose quality, interaction prediction, complex graph | pair-level split can leak protein or ligand families |
-| [[entities/sequence|Sequence]] | protein language models, genome region models, motif tasks | sequence context and split unit may not match the biological claim |
-| [[entities/structure|Structure]] | coordinates, conformers, protein structures, complexes | template, frame, and coordinate-source leakage |
-| [[entities/genome|Genome]] | sequence/region/variant-level modeling only | broad omics claims are out of scope unless explicitly added |
+| [[entities/target|Target]] | target-conditioned activity, affinity, selectivity, assay context | target identity가 isoform, construct, mutation, species, assay source를 숨길 수 있음 |
+| [[entities/protein|Protein]] | sequence, structure, representation, family split | homolog leakage와 residue-index mismatch |
+| [[entities/pocket|Pocket]] | binding site, docking, pose prediction, structure-based generation | pocket이 ligand-defined이거나 inference에서 unavailable할 수 있음 |
+| [[entities/ligand|Ligand]] | target-bound molecule, pose, activity, interaction | ligand state와 atom mapping이 protocol마다 달라질 수 있음 |
+| [[entities/molecule|Molecule]] | property prediction, molecular generation, similarity, scaffold split | salt, stereo, tautomer, protonation, duplicate handling |
+| [[entities/protein-ligand-complex|Protein-ligand complex]] | docking, pose quality, interaction prediction, complex graph | pair-level split이 protein 또는 ligand family를 leak할 수 있음 |
+| [[entities/sequence|Sequence]] | protein language model, genome region model, motif task | sequence context와 split unit이 biological claim과 맞지 않을 수 있음 |
+| [[entities/structure|Structure]] | coordinate, conformer, protein structure, complex | template, frame, coordinate-source leakage |
+| [[entities/genome|Genome]] | sequence/region/variant-level modeling only | broad omics claim은 명시적으로 열기 전까지 scope 밖 |
 
-Use [[entities/entity-relation-map|Entity relation map]] when a note has several objects and the relation matters.
+여러 object와 relation이 함께 중요하면 [[entities/entity-relation-map|Entity relation map]]을 사용합니다.
 
 ## Entity Tuple
 
-For a paper note, write the modeled unit as a tuple rather than a single word:
+Paper note에서는 modeled unit을 단일 단어가 아니라 tuple로 적습니다.
 
 $$
 u
@@ -45,18 +45,18 @@ u
 (\text{entity}, \text{context}, \text{measurement}, \text{split group})
 $$
 
-For example, a row may be molecule-only for property prediction, but target-conditioned activity needs molecule, target, assay, endpoint, unit, and source. A protein-ligand pose needs protein structure, pocket rule, ligand state, atom mapping, pose coordinates, and pose source.
+예를 들어 property prediction에서는 row가 molecule-only일 수 있지만, target-conditioned activity에는 molecule, target, assay, endpoint, unit, source가 필요합니다. Protein-ligand pose에는 protein structure, pocket rule, ligand state, atom mapping, pose coordinate, pose source가 필요합니다.
 
 ## Split Implication
 
-| Claim | Hold Out |
+| Claim | Hold out |
 | --- | --- |
-| new molecules generalize | scaffold, chemical series, or time split |
-| new proteins generalize | sequence identity, family, fold, or target split |
-| new protein-ligand pairs generalize | both ligand and protein axes, or an explicit pair-level claim |
-| new structures generalize | template-aware, homolog-aware, or coordinate-source-aware split |
-| new assays generalize | assay/source split or endpoint harmonization check |
-| new genome regions generalize | chromosome, locus, family, or annotation-source split |
+| new molecule generalization | scaffold, chemical series, time split |
+| new protein generalization | sequence identity, family, fold, target split |
+| new protein-ligand pair generalization | ligand/protein 양쪽 axis 또는 explicit pair-level claim |
+| new structure generalization | template-aware, homolog-aware, coordinate-source-aware split |
+| new assay generalization | assay/source split 또는 endpoint harmonization check |
+| new genome region generalization | chromosome, locus, family, annotation-source split |
 
 ## Label Objects
 
@@ -68,13 +68,13 @@ For example, a row may be molecule-only for property prediction, but target-cond
 
 ## Checks
 
-- Is the entity a biological object, chemical object, assay record, or derived feature?
-- Are isoform, construct, mutation, chain, ligand state, and assay context explicit?
-- Is one row an object, a pair, a pose, a measurement, a generated sample, or a candidate list?
-- Are target, assay, endpoint, unit, threshold, censoring, and source preserved when labels are involved?
-- Does the representation use a ligand-defined pocket, known pose, template, homolog, or future annotation unavailable at inference?
-- Is the split unit the same as the biological claim?
-- Does the input include information unavailable at deployment time?
+- entity가 biological object, chemical object, assay record, derived feature 중 무엇인가?
+- isoform, construct, mutation, chain, ligand state, assay context가 explicit한가?
+- one row가 object, pair, pose, measurement, generated sample, candidate list 중 무엇인가?
+- label이 있을 때 target, assay, endpoint, unit, threshold, censoring, source가 보존되는가?
+- representation이 inference에서 unavailable한 ligand-defined pocket, known pose, template, homolog, future annotation을 쓰는가?
+- split unit이 biological claim과 같은가?
+- input에 deployment time에 unavailable한 정보가 포함되는가?
 
 ## Related
 

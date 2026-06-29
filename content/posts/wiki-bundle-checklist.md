@@ -8,7 +8,7 @@ tags:
 
 # Wiki Bundle Checklist
 
-Korean post는 독자가 들어오는 입구이고, English wiki note는 반복해서 참조할 지식 단위입니다. 그래서 post를 먼저 길게 쓰기보다, 아래 bundle이 어느 정도 갖춰졌는지 확인한 뒤 글로 승격합니다.
+Korean post는 독자가 들어오는 입구이고, wiki note는 반복해서 참조할 지식 단위입니다. 그래서 post를 먼저 길게 쓰기보다, 아래 bundle이 어느 정도 갖춰졌는지 확인한 뒤 글로 승격합니다.
 
 $$
 \text{post bundle}
@@ -23,7 +23,7 @@ $$
 
 ## Minimum Bundle
 
-| Part | Required Note | Pass When |
+| Part | Required note | Pass when |
 | --- | --- | --- |
 | Reader question | [[posts/blog-writing-guide|Blog writing guide]] | 글이 한 문장 질문에 답한다 |
 | Route | [[concepts/coverage-matrix|Coverage matrix]] | 중심축이 AI, Computational Biology, Math, Papers, Projects, Infra, Agents 중 하나로 정해진다 |
@@ -39,7 +39,7 @@ $$
 
 ## Post Type Bundles
 
-| Post Type | Bundle Should Include |
+| Post type | Bundle에 포함할 것 |
 | --- | --- |
 | AI architecture map | architecture note, input modality, complexity, inductive bias, evaluation risk |
 | Learning method explainer | objective, data signal, representation, transfer setting, failure mode |
@@ -55,9 +55,9 @@ $$
 
 ## Formula Rule
 
-If an equation makes the topic easier to understand, include it. A post can keep the equation short, but it should not hide the core operation.
+Equation이 topic을 더 이해하기 쉽게 만든다면 포함합니다. Post에서는 equation을 짧게 둘 수 있지만 core operation을 숨기면 안 됩니다.
 
-For example, attention should not be reduced to `Attn(x)`. The useful post-level form is:
+예를 들어 attention을 `Attn(x)`로만 줄이면 부족합니다. Post 수준에서 유용한 형태는 아래와 같습니다.
 
 $$
 Q = XW_Q,\quad K = XW_K,\quad V = XW_V
@@ -69,22 +69,22 @@ $$
 \operatorname{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
 $$
 
-Then define $X$, $Q$, $K$, $V$, $d_k$, and the axis over which softmax is applied. Longer derivations belong in [[math/formula-intake|Formula intake]] or the relevant Math note.
+그 다음 $X$, $Q$, $K$, $V$, $d_k$, softmax가 적용되는 axis를 정의합니다. 더 긴 derivation은 [[math/formula-intake|Formula intake]] 또는 관련 Math note에 둡니다.
 
 ## When To Create Wiki Notes First
 
-Create or update wiki notes before writing a post when:
+아래 경우에는 post를 쓰기 전에 wiki note를 먼저 만들거나 업데이트합니다.
 
-- the post would define the same term for more than one paragraph;
-- the claim depends on a formula that has no symbol table;
-- the result depends on a dataset split, benchmark, or leakage risk;
-- the topic crosses AI, Computational Biology, and Math but has no route page;
-- the post needs more than one paper to make the point;
-- the reader would not know what to read next.
+- post가 같은 term을 한 paragraph 이상 정의해야 할 때.
+- claim이 symbol table이 없는 formula에 의존할 때.
+- result가 dataset split, benchmark, leakage risk에 의존할 때.
+- topic이 AI, Computational Biology, Math를 가로지르지만 route page가 없을 때.
+- post의 핵심 주장을 만들기 위해 paper가 여러 개 필요할 때.
+- reader가 다음에 무엇을 읽어야 할지 알기 어려울 때.
 
 ## Naming Rule
 
-Use `Computational Biology` as the public umbrella when sequence, structure, molecule, ligand, docking, conformer, and genome-level objects can appear together. Use `Molecular Modeling` only for the molecule, conformer, docking, and structure-heavy subset. Use `AI` for model families and learning methods, and `Math` for formulas and abstractions.
+Sequence, structure, molecule, ligand, docking, conformer, genome-level object가 함께 나올 수 있으면 public umbrella로 `Computational Biology`를 씁니다. `Molecular Modeling`은 molecule, conformer, docking, structure-heavy subset에만 씁니다. Model family와 learning method는 `AI`, formula와 abstraction은 `Math`에 둡니다.
 
 ## Related
 

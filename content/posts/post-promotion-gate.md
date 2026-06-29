@@ -8,7 +8,7 @@ tags:
 
 # Post Promotion Gate
 
-Post promotion gate decides whether a cluster of wiki notes is ready to become a Korean reader-facing post. It prevents two failure modes: publishing a shallow post before the wiki is ready, or leaving a mature topic buried as disconnected notes.
+Post promotion gate는 wiki note cluster가 Korean reader-facing post가 될 준비가 되었는지 판단합니다. Wiki가 준비되기 전에 얕은 post를 공개하거나, 이미 mature한 topic을 disconnected note로 묻어 두는 문제를 막기 위한 gate입니다.
 
 $$
 \text{post-ready}
@@ -26,21 +26,21 @@ $$
 
 ## Promotion Fields
 
-| Field | Pass When |
+| Field | Pass when |
 | --- | --- |
-| Reader question | the post answers one clear question |
-| Primary axis | AI, Computational Biology, Math, Paper cluster, Project, Infra, or Agents is central |
-| Topic map | broad posts have an explicit map contract rather than a loose link list |
-| Wiki bundle | required support notes pass [[posts/wiki-bundle-checklist|Wiki bundle checklist]] |
-| Minimum formula | necessary equations are included with symbols, or linked to Math notes |
-| Evidence boundary | paper, benchmark, split, metric, baseline, leakage, and uncertainty claims are scoped |
-| Personal angle | the post adds reading order, interpretation, or practical judgment |
-| Public boundary | private infrastructure, unpublished results, collaborator details, and internal tasks are absent |
-| Next path | the reader has 3-7 useful links to continue |
+| Reader question | post가 clear question 하나에 답합니다 |
+| Primary axis | AI, Computational Biology, Math, Paper cluster, Project, Infra, Agents 중 하나가 중심입니다 |
+| Topic map | broad post가 loose link list가 아니라 explicit map contract를 가집니다 |
+| Wiki bundle | required support note가 [[posts/wiki-bundle-checklist|Wiki bundle checklist]]를 통과합니다 |
+| Minimum formula | 필요한 equation이 symbol과 함께 포함되거나 Math note로 연결됩니다 |
+| Evidence boundary | paper, benchmark, split, metric, baseline, leakage, uncertainty claim의 scope가 정해져 있습니다 |
+| Personal angle | post가 reading order, interpretation, practical judgment를 더합니다 |
+| Public boundary | private infrastructure, unpublished result, collaborator detail, internal task가 없습니다 |
+| Next path | reader가 이어서 볼 3-7개의 useful link를 가집니다 |
 
 ## Wiki Bundle
 
-| Bundle Type | Minimum Links |
+| Bundle type | Minimum links |
 | --- | --- |
 | AI method post | architecture, learning method, objective, evaluation risk |
 | Computational Biology post | entity/object, representation, preprocessing/split, evaluation risk |
@@ -52,19 +52,19 @@ $$
 
 ## Decision Table
 
-| Candidate State | Destination |
+| Candidate state | Destination |
 | --- | --- |
-| one definition or equation | concept note |
-| one paper claim | paper note |
-| unverified source or unclear route | inbox or curation queue |
-| reusable idea from a paper | concept update |
-| several notes with one reader question | Korean post |
+| definition 또는 equation 하나 | concept note |
+| paper claim 하나 | paper note |
+| unverified source 또는 unclear route | inbox 또는 curation queue |
+| paper에서 나온 reusable idea | concept update |
+| reader question 하나로 묶이는 여러 note | Korean post |
 | implementation narrative | project note |
-| public operational lesson | infra or public log |
+| public operational lesson | infra 또는 public log |
 
 ## Draft Contract
 
-Before drafting, fill this:
+Drafting 전에 아래를 채웁니다.
 
 ```yaml
 reader_question: to verify
@@ -82,13 +82,13 @@ status: draft
 
 ## Stop Conditions
 
-- The post would mostly define one term.
-- The post needs private context to make sense.
-- The post has no reusable wiki links.
-- The post is a broad map but does not pass [[concepts/topic-map-contract|Topic map contract]].
-- The post depends on a paper claim whose metadata or evidence is still `to verify`.
-- The post repeats long definitions that should live in Concepts, Papers, Math, or Infra.
-- The post has no next reading path.
+- post가 term 하나를 정의하는 데 대부분을 쓴다.
+- post가 이해되려면 private context가 필요하다.
+- reusable wiki link가 없다.
+- broad map인데 [[concepts/topic-map-contract|Topic map contract]]를 통과하지 않는다.
+- metadata 또는 evidence가 아직 `to verify`인 paper claim에 의존한다.
+- Concepts, Papers, Math, Infra에 있어야 할 긴 definition을 반복한다.
+- next reading path가 없다.
 
 ## Related
 

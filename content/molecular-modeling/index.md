@@ -23,33 +23,33 @@ $$
 
 ## 먼저 볼 지도
 
-| Area | Use For | Start |
+| Area | Use for | Start |
 | --- | --- | --- |
 | Objects and Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure의 단위 정의 | [Objects and Entities](/molecular-modeling/entities) |
-| Sequence-Based Modeling | protein sequence, genome sequence, tokenization, representation, family or region split | [Sequence-Based Modeling](/molecular-modeling/sequence-based) |
+| Sequence-Based Modeling | protein sequence, genome sequence, tokenization, representation, family/region split | [Sequence-Based Modeling](/molecular-modeling/sequence-based) |
 | Structure-Based Modeling | pocket, protein-ligand geometry, docking, pose, scoring, virtual screening | [Structure-Based Modeling](/molecular-modeling/structure-based) |
 | Molecular and Ligand Modeling | molecular identity, standardization, graph, fingerprint, conformer, property prediction | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand) |
 | Interaction Modeling | target-conditioned activity, affinity, selectivity, protein-ligand pair, assay context | [Interaction Modeling](/molecular-modeling/interactions) |
-| Data and Evaluation | label semantics, split unit, leakage, assay harmonization, benchmark traps | [Data and Evaluation](/molecular-modeling/data-evaluation) |
+| Data and Evaluation | label semantics, split unit, leakage, assay harmonization, benchmark trap | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 
 ## Scope Map
 
-| Scope | Covers | Keep Separate |
+| Scope | Covers | 분리할 것 |
 | --- | --- | --- |
-| Computational biology | protein, molecule, ligand, pocket, complex, structure, genome sequence | broad omics and clinical biology |
-| Object vocabulary | protein, molecule, ligand, pocket, complex, assay, sequence, structure | modeling route or evaluation claim |
-| Sequence-based modeling | protein sequence, genome sequence, variant window, token representation | coordinate-first docking or pose claims |
-| Molecular and ligand modeling | chemical identity, conformer, graph, fingerprint, property, generation | target-conditioned interaction claims |
-| Interaction modeling | target-conditioned activity, affinity, selectivity, pair/complex prediction | molecule-only or protein-only property claims |
-| Structure-based modeling | pocket, protein-ligand geometry, pose, scoring, structure-aware generation | architecture definitions |
-| AI method | architecture, objective, learning method, generative model, evaluation method | domain object definitions |
-| Math foundation | likelihood, loss, gradient, geometry, symmetry, metric formula | workflow-specific assumptions |
+| Computational biology | protein, molecule, ligand, pocket, complex, structure, genome sequence | broad omics와 clinical biology |
+| Object vocabulary | protein, molecule, ligand, pocket, complex, assay, sequence, structure | modeling route 또는 evaluation claim |
+| Sequence-based modeling | protein sequence, genome sequence, variant window, token representation | coordinate-first docking 또는 pose claim |
+| Molecular and ligand modeling | chemical identity, conformer, graph, fingerprint, property, generation | target-conditioned interaction claim |
+| Interaction modeling | target-conditioned activity, affinity, selectivity, pair/complex prediction | molecule-only 또는 protein-only property claim |
+| Structure-based modeling | pocket, protein-ligand geometry, pose, scoring, structure-aware generation | architecture definition |
+| AI method | architecture, objective, learning method, generative model, evaluation method | domain object definition |
+| Math foundation | likelihood, loss, gradient, geometry, symmetry, metric formula | workflow-specific assumption |
 
 ## 객체에서 시작하기
 
 Computational Biology 논문은 모델 이름보다 먼저 무엇을 모델링하는지 고정해야 합니다.
 
-| Modeled Object | Typical Questions | Start |
+| Modeled object | Typical question | Start |
 | --- | --- | --- |
 | Molecule / ligand | 어떤 chemical state, graph, fingerprint, conformer를 쓰는가? | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand), [Molecule](/entities/molecule), [Ligand](/entities/ligand) |
 | Protein / target | sequence-only인가, structure-aware인가, 어떤 family split이 필요한가? | [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Protein](/entities/protein), [Target](/entities/target) |
@@ -78,7 +78,7 @@ Docking, RDKit, molecular standardization, featurization, conformer, scoring fun
 
 Papers에는 paper-specific claim을 둡니다. 어떤 method를 제안했는지, 어떤 benchmark를 썼는지, 어떤 result를 보고했는지, 어떤 limitation이나 reproduction issue가 중요한지를 적습니다.
 
-| Put In | When |
+| 둘 곳 | 기준 |
 | --- | --- |
 | Computational Biology | object, workflow, route, checklist, domain boundary |
 | Concepts | reusable definition, formula, protocol, failure mode |

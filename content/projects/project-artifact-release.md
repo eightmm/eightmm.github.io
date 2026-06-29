@@ -8,9 +8,9 @@ tags:
 
 # Project Artifact Release
 
-A project artifact release describes what can be shared publicly from a project and what must remain private. It applies to code, model weights, configs, logs, datasets, generated outputs, diagrams, runbooks, and blog posts.
+Project artifact release는 project에서 무엇을 공개할 수 있고 무엇을 private로 남겨야 하는지 설명합니다. Code, model weight, config, log, dataset, generated output, diagram, runbook, blog post에 적용합니다.
 
-A release decision can be written as:
+Release decision은 아래처럼 쓸 수 있습니다.
 
 $$
 \operatorname{release}(a)
@@ -24,7 +24,7 @@ $$
 \operatorname{verifiable}(a)
 $$
 
-where $a$ is the artifact.
+여기서 $a$는 artifact입니다.
 
 ## Artifact Classes
 
@@ -41,22 +41,22 @@ where $a$ is the artifact.
 
 ## Release Checklist
 
-- Public-safe: no credentials, private paths, hostnames, account names, SSH details, collaborator context, or unpublished sensitive results.
-- License-safe: code, data, figures, and model weights can be redistributed or linked.
-- Reproducible: version, config, environment, and verification are stated.
-- Useful: the artifact helps a reader run, inspect, compare, or understand the project.
-- Bounded: intended use and out-of-scope use are explicit.
+- Public-safe: credential, private path, hostname, account name, SSH detail, collaborator context, unpublished sensitive result가 없습니다.
+- License-safe: code, data, figure, model weight를 redistribute 또는 link할 수 있습니다.
+- Reproducible: version, config, environment, verification이 적혀 있습니다.
+- Useful: reader가 project를 run, inspect, compare, understand하는 데 도움이 됩니다.
+- Bounded: intended use와 out-of-scope use가 explicit합니다.
 
 ## Missing or Private Artifacts
 
-If an artifact cannot be released, state why in public-safe language:
+Artifact를 공개할 수 없다면 public-safe language로 이유를 적습니다.
 
 | Status | Meaning |
 | --- | --- |
-| `not released` | The artifact exists but is not public |
-| `to verify` | Public status is unknown |
-| `not applicable` | The artifact is not needed for this project |
-| `replaced by summary` | Only a sanitized summary is public |
+| `not released` | artifact는 있지만 public이 아님 |
+| `to verify` | public status가 아직 확인되지 않음 |
+| `not applicable` | 이 project에 해당 artifact가 필요하지 않음 |
+| `replaced by summary` | sanitized summary만 public임 |
 
 ## Related
 

@@ -14,12 +14,12 @@ Architecture paper note는 attention, convolution, recurrence, graph neural netw
 
 ## Reading Axes
 
-- What input structure is assumed: sequence, image, graph, set, 3D coordinate, multimodal context, or agent state?
-- What inductive bias changes: locality, permutation behavior, equivariance, recurrence, memory, sparsity, routing, or hierarchy?
-- What complexity changes with sequence length, graph size, atom count, residue count, or token count?
-- Is the contribution a new architecture, a block replacement, a scaling rule, or an efficiency trick?
-- Is the evidence about accuracy, sample quality, transfer, stability, latency, memory, or throughput?
-- Are ablations strong enough to isolate the architecture from objective, data, or compute changes?
+- 어떤 input structure를 가정하는가: sequence, image, graph, set, 3D coordinate, multimodal context, agent state?
+- 어떤 inductive bias가 바뀌는가: locality, permutation behavior, equivariance, recurrence, memory, sparsity, routing, hierarchy?
+- sequence length, graph size, atom count, residue count, token count에 따라 complexity가 어떻게 바뀌는가?
+- contribution이 new architecture, block replacement, scaling rule, efficiency trick 중 무엇인가?
+- evidence가 accuracy, sample quality, transfer, stability, latency, memory, throughput 중 무엇에 관한 것인가?
+- ablation이 objective, data, compute 변화와 architecture 변화를 분리할 만큼 강한가?
 
 ## Concepts
 
@@ -39,10 +39,10 @@ Architecture paper note는 attention, convolution, recurrence, graph neural netw
 
 ## Evaluation Risks
 
-- Architecture gains may come from more parameters, tokens, data, training steps, or tuning budget.
-- A new block may be tested with a different objective or augmentation policy.
-- Throughput gains may depend on hardware, kernel, batch size, sequence length, or sparse implementation.
-- Graph and geometric architectures can leak information through graph construction, coordinate frame choices, or template-derived features.
+- Architecture gain이 parameter, token, data, training step, tuning budget 증가에서 온 것일 수 있습니다.
+- New block이 다른 objective나 augmentation policy와 함께 test되었을 수 있습니다.
+- Throughput gain은 hardware, kernel, batch size, sequence length, sparse implementation에 의존할 수 있습니다.
+- Graph/geometric architecture는 graph construction, coordinate frame choice, template-derived feature를 통해 information을 leak할 수 있습니다.
 
 ## Related
 

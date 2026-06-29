@@ -9,19 +9,19 @@ tags:
 
 Computational Biology paper note는 structure-based modeling, protein modeling, molecular generation, protein-ligand interaction, assay-aware label, domain-specific evaluation을 다룹니다.
 
-이곳은 biology-facing paper를 위한 visible paper shelf입니다. [[papers/sbdd/index|Structure-based modeling papers]]와 [[papers/protein-modeling/index|Protein modeling papers]] 같은 좁은 묶음은 기존 paper URL을 안정적으로 유지하기 위한 support bucket으로 남깁니다.
+이곳은 computational-biology-facing paper를 위한 visible paper shelf입니다. [[papers/sbdd/index|Structure-based modeling papers]]와 [[papers/protein-modeling/index|Protein modeling papers]] 같은 좁은 묶음은 기존 paper URL을 안정적으로 유지하기 위한 support bucket으로 남깁니다.
 
 ## Reading Axes
 
-- What object is modeled: protein, molecule, ligand, pocket, complex, pose, assay record, or sequence region?
-- What route is central: [[molecular-modeling/sequence-based|sequence-based modeling]], [[molecular-modeling/molecular-ligand|molecular and ligand modeling]], [[molecular-modeling/interactions|interaction modeling]], or [[molecular-modeling/structure-based/index|structure-based modeling]]?
-- Is the contribution an AI method, a domain workflow, a benchmark, a dataset, or an evaluation protocol?
-- Are molecule standardization, protein-family split, scaffold split, assay semantics, and leakage risks explicit?
-- Does the paper separate method quality from benchmark artifacts or domain shortcuts?
+- 어떤 object를 모델링하는가: protein, molecule, ligand, pocket, complex, pose, assay record, sequence region?
+- 중심 route가 무엇인가: [[molecular-modeling/sequence-based|sequence-based modeling]], [[molecular-modeling/molecular-ligand|molecular and ligand modeling]], [[molecular-modeling/interactions|interaction modeling]], [[molecular-modeling/structure-based/index|structure-based modeling]]?
+- contribution이 AI method, domain workflow, benchmark, dataset, evaluation protocol 중 무엇인가?
+- molecule standardization, protein-family split, scaffold split, assay semantics, leakage risk가 explicit한가?
+- paper가 method quality를 benchmark artifact나 domain shortcut과 분리하는가?
 
 ## Sub-Buckets
 
-| Bucket | Use For | Notes |
+| Bucket | Use for | Notes |
 | --- | --- | --- |
 | [Structure-based modeling papers](/papers/sbdd) | docking, pose quality, scoring, conformers, virtual screening | [PoseBusters](/papers/sbdd/posebusters) |
 | [Protein modeling papers](/papers/protein-modeling) | protein representation, structure, antibody/protein interaction | [MEET](/papers/protein-modeling/meet-equivariant-peptide), [Multi-scale antibody binding](/papers/protein-modeling/multi-scale-antibody-binding) |
@@ -29,7 +29,7 @@ Computational Biology paper note는 structure-based modeling, protein modeling, 
 
 ## Active Notes
 
-| Paper Note | Main Route | Why It Belongs Here |
+| Paper note | Main route | 여기 두는 이유 |
 | --- | --- | --- |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation | pose plausibility and docking evaluation |
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | protein and geometric modeling | equivariant peptide modeling |

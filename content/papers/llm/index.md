@@ -14,11 +14,11 @@ LLM paper note는 language model, token prediction, scaling, instruction tuning,
 
 ## Reading Axes
 
-- What is modeled: next token, masked token, instruction response, preference, reward, retrieval-augmented answer, or tool call?
-- What changes: architecture, pretraining data, objective, context handling, alignment, retrieval, tool protocol, or evaluation?
-- Is the paper about language modeling itself, a foundation model, an agent workflow, or an application benchmark?
-- What evidence supports the claim: perplexity, downstream task score, human preference, factuality, tool success, latency, or cost?
-- Are benchmark contamination, prompt sensitivity, decoding, and evaluation protocol controlled?
+- 무엇을 모델링하는가: next token, masked token, instruction response, preference, reward, retrieval-augmented answer, tool call?
+- 무엇이 바뀌는가: architecture, pretraining data, objective, context handling, alignment, retrieval, tool protocol, evaluation?
+- paper가 language modeling 자체, foundation model, agent workflow, application benchmark 중 무엇에 관한 것인가?
+- claim을 지지하는 evidence가 perplexity, downstream task score, human preference, factuality, tool success, latency, cost 중 무엇인가?
+- benchmark contamination, prompt sensitivity, decoding, evaluation protocol이 control되어 있는가?
 
 ## Concepts
 

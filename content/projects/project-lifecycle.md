@@ -7,9 +7,9 @@ tags:
 
 # Project Lifecycle
 
-A project lifecycle describes how an idea becomes a public artifact, how the artifact is verified, and when it is mature enough to be linked from posts or research pages.
+Project lifecycle은 idea가 public artifact가 되고, 그 artifact가 검증되며, 언제 post나 research page에서 링크할 만큼 성숙했는지를 설명합니다.
 
-The lifecycle is:
+Lifecycle은 아래 흐름으로 봅니다.
 
 $$
 \text{idea}
@@ -25,22 +25,22 @@ $$
 \text{archived}
 $$
 
-Not every project needs to reach every stage. A useful public project page can stay at `draft` if it clearly states its boundary and missing evidence.
+모든 project가 모든 stage에 도달할 필요는 없습니다. Boundary와 missing evidence가 명확하다면 유용한 public project page는 `draft` 상태로도 남을 수 있습니다.
 
 ## Stages
 
 | Stage | Meaning | Required evidence |
 | --- | --- | --- |
-| `idea` | The problem is worth tracking | Public problem statement |
-| `draft` | The shape is clear | Artifact boundary and design sketch |
-| `artifact` | Something exists | Interface, workflow, or reproducible output |
-| `verified` | Claims are checked | Build, test, benchmark, review, or run artifact |
-| `maintained` | It is useful over time | Versioning, changelog, known limits |
-| `archived` | Kept for reference | Reason, final status, replacement if any |
+| `idea` | 추적할 가치가 있는 problem | public problem statement |
+| `draft` | shape가 명확함 | artifact boundary와 design sketch |
+| `artifact` | 실제 산출물이 있음 | interface, workflow, reproducible output |
+| `verified` | claim이 확인됨 | build, test, benchmark, review, run artifact |
+| `maintained` | 시간이 지나도 유용함 | versioning, changelog, known limit |
+| `archived` | reference로 보관 | reason, final status, replacement |
 
 ## Promotion Rule
 
-A project should be promoted from note to visible project when:
+Project는 아래 조건을 만족할 때 note에서 visible project로 승격합니다.
 
 $$
 \operatorname{promote}(P)
@@ -52,16 +52,16 @@ $$
 \operatorname{verification\_stated}(P)
 $$
 
-where $P$ is the project page.
+여기서 $P$는 project page입니다.
 
 ## Checks
 
-- Is there a public problem independent of private context?
-- Is the artifact a tool, workflow, model, dataset, runbook, or note system?
-- Is the interface clear enough for another person to understand?
-- Are verification results separated from future plans?
-- Are internal paths, hostnames, account names, collaborator details, and unpublished metrics omitted?
-- Is the next public improvement specific?
+- private context 없이 이해되는 public problem이 있는가?
+- artifact가 tool, workflow, model, dataset, runbook, note system 중 무엇인가?
+- interface가 다른 사람이 이해할 만큼 명확한가?
+- verification result와 future plan이 분리되어 있는가?
+- internal path, hostname, account name, collaborator detail, unpublished metric을 생략했는가?
+- next public improvement가 구체적인가?
 
 ## Related
 
