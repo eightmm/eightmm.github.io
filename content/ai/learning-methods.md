@@ -1,8 +1,5 @@
 ---
 title: Learning Methods
-aliases:
-  - research/self-supervised-learning
-  - research/self-supervised-learning/index
 tags:
   - ai
   - learning

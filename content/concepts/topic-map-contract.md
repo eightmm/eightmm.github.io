@@ -33,7 +33,7 @@ $$
 | Method family | Which architectures, learning signals, generative processes, or agent loops matter? |
 | Math anchor | Which formulas, distributions, symmetries, or estimators are necessary? |
 | Evidence boundary | What metric, split, baseline, artifact, or benchmark supports claims? |
-| Link bundle | Which canonical wiki notes should readers follow next? |
+| Link bundle | Which reference notes should readers follow next? |
 | Public boundary | What private context, unpublished result, or internal detail is intentionally absent? |
 
 ## Axis Examples

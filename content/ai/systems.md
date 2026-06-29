@@ -21,7 +21,7 @@ AI system note의 핵심은 “무슨 모델을 썼다”가 아니라 어떤 ar
 
 ## Main Areas
 
-| Area | Use for | Canonical notes |
+| Area | Use for | Key notes |
 | --- | --- | --- |
 | Training | run state, checkpoint, scaling, failure recovery | [Training run](/concepts/systems/training-run), [Checkpoint state](/concepts/systems/checkpoint-state), [Distributed training](/concepts/systems/distributed-training) |
 | Inference | prediction-time execution, batch/online mode, output contract | [Inference](/concepts/systems/inference), [Batch and online inference](/concepts/systems/batch-online-inference), [Inference contract](/concepts/systems/inference-contract) |
