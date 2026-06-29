@@ -49,7 +49,7 @@ Agent task에는 보통 아래 항목이 포함되어야 합니다.
 
 - initial state.
 - user request.
-- available tools and permissions.
+- available tool과 permission.
 - expected artifact.
 - acceptance criteria.
 - verification evidence.

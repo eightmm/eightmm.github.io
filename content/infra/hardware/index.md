@@ -19,12 +19,12 @@ $$
 
 ## Hardware Map
 
-| Area | Use For | Start |
+| Area | Use for | Start |
 | --- | --- | --- |
-| Memory hierarchy | registers, L1/L2/L3 cache, SRAM, DRAM, VRAM, disk, network latency | [Memory hierarchy](/infra/hardware/memory-hierarchy) |
+| Memory hierarchy | register, L1/L2/L3 cache, SRAM, DRAM, VRAM, disk, network latency | [Memory hierarchy](/infra/hardware/memory-hierarchy) |
 | Storage and network | local disk, shared filesystem, object storage, Ethernet, InfiniBand-style interconnect | [Storage and network](/infra/hardware/storage-network) |
 | GPU systems | VRAM, HBM bandwidth, tensor compute, host-device transfer, interconnect | [GPU](/infra/gpu) |
-| HPC execution | scheduler, allocation, Slurm, distributed jobs, checkpoint/restart | [HPC](/infra/hpc) |
+| HPC execution | scheduler, allocation, Slurm, distributed job, checkpoint/restart | [HPC](/infra/hpc) |
 
 ## Performance Ladder
 
@@ -48,25 +48,25 @@ Data를 이 ladder 아래로 내릴수록 capacity는 보통 커지지만 latenc
 
 ## Read This First When
 
-| Symptom | Likely Layer |
+| Symptom | Likely layer |
 | --- | --- |
-| GPU utilization is low | data loading, CPU preprocessing, synchronization, network, or tiny kernels |
-| model does not fit | GPU VRAM, activation memory, optimizer state, KV cache |
-| many workers do not speed up | storage metadata, CPU contention, network, all-reduce, scheduler layout |
-| training stalls every few steps | checkpoint IO, logging, validation, dataloader refill |
-| distributed run scales poorly | interconnect bandwidth/latency, batch size, gradient synchronization |
-| inference latency tail is high | batching policy, KV cache pressure, queueing, network, cold load |
+| GPU utilization이 낮음 | data loading, CPU preprocessing, synchronization, network, tiny kernel |
+| model이 memory에 들어가지 않음 | GPU VRAM, activation memory, optimizer state, KV cache |
+| worker를 늘려도 빨라지지 않음 | storage metadata, CPU contention, network, all-reduce, scheduler layout |
+| training이 몇 step마다 멈춤 | checkpoint IO, logging, validation, dataloader refill |
+| distributed run scaling이 나쁨 | interconnect bandwidth/latency, batch size, gradient synchronization |
+| inference latency tail이 큼 | batching policy, KV cache pressure, queueing, network, cold load |
 
 ## Resource Axes
 
-| Axis | Meaning | Typical Fix Direction |
+| Axis | Meaning | Typical fix direction |
 | --- | --- | --- |
-| Compute | arithmetic units are the limit | larger batches, fused kernels, better tensor shapes |
-| Capacity | model or batch does not fit | smaller batch/context, checkpointing, sharding |
-| Bandwidth | moving data dominates arithmetic | layout, precision, fusion, cache locality |
-| Latency | many small waits dominate | batching, fewer round trips, local cache |
-| IO | storage cannot feed compute | materialization, streaming format, local scratch |
-| Network | remote transfer or all-reduce dominates | placement, fewer syncs, better sharding |
+| Compute | arithmetic unit이 limit | larger batch, fused kernel, 더 좋은 tensor shape |
+| Capacity | model 또는 batch가 들어가지 않음 | smaller batch/context, checkpointing, sharding |
+| Bandwidth | data movement가 arithmetic을 지배 | layout, precision, fusion, cache locality |
+| Latency | 많은 small wait가 지배 | batching, fewer round trip, local cache |
+| IO | storage가 compute를 먹이지 못함 | materialization, streaming format, local scratch |
+| Network | remote transfer 또는 all-reduce가 지배 | placement, fewer sync, better sharding |
 
 ## Related
 

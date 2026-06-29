@@ -25,22 +25,22 @@ $$
 
 ## Public Writing Rules
 
-- Use generic names such as `login-node`, `gpu-node`, and `shared-storage`.
-- Replace exact paths with placeholders such as `/path/to/project`.
-- Explain symptoms, diagnosis, and prevention without exposing private topology.
-- Do not publish live security settings, user lists, credentials, ports, or hostnames.
+- `login-node`, `gpu-node`, `shared-storage` 같은 generic name을 사용합니다.
+- exact path는 `/path/to/project` 같은 placeholder로 바꿉니다.
+- private topology를 노출하지 않고 symptom, diagnosis, prevention을 설명합니다.
+- live security setting, user list, credential, port, hostname을 공개하지 않습니다.
 
 ## Runbook Shape
 
 | Section | Write |
 | --- | --- |
-| Symptom | what the user or job observed |
-| Scope | which generic layer is involved: account, storage, GPU, network, scheduler |
-| Evidence | public-safe command class or log class, not private output |
-| Immediate action | reversible or low-risk fix first |
-| Root cause | what class of misconfiguration or resource failure caused it |
+| Symptom | user 또는 job이 관찰한 것 |
+| Scope | account, storage, GPU, network, scheduler 중 어떤 generic layer가 관련되는가 |
+| Evidence | private output이 아니라 public-safe command class 또는 log class |
+| Immediate action | reversible 또는 low-risk fix를 먼저 |
+| Root cause | 어떤 misconfiguration 또는 resource failure class가 원인인가 |
 | Prevention | monitoring, backup, access boundary, documentation, smoke check |
-| Sanitization | what must be removed before publishing |
+| Sanitization | publishing 전에 제거해야 하는 것 |
 
 ## Notes
 

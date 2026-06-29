@@ -18,18 +18,18 @@ Paper discovery agent는 candidate paper를 모을 수 있지만, public wiki는
 
 ## Flow
 
-1. Daily brief enters [[inbox/index|Inbox]].
-2. Each candidate uses [[inbox/paper-candidate-intake|Paper candidate intake]].
-3. Unclear items stay in [[inbox/curation-queue|Curation queue]].
-4. Interesting items pass [[papers/workflows/paper-triage|Paper triage]].
-5. Selected items become [[papers/index|Paper]] stubs with [[papers/workflows/reading-status|reading status]].
-6. Public materials are recorded with [[papers/reproducibility/artifact-availability|Artifact availability]].
-7. Implementation candidates pass [[papers/reproducibility/implementation-readiness|Implementation readiness]].
-8. Reruns or diagnostics get a [[papers/reproducibility/reproduction-plan|Reproduction plan]] and [[papers/reproducibility/reproduction-result|Reproduction result]].
-9. Reusable ideas update [[concepts/index|Concepts]] through [[papers/workflows/concept-update-contract|Concept update contract]].
-10. Research relevance is linked into [[research/index|Research]].
-11. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
-12. Weekly or monthly synthesis becomes [[posts/index|Posts]].
+1. Daily brief는 [[inbox/index|Inbox]]로 들어갑니다.
+2. 각 candidate는 [[inbox/paper-candidate-intake|Paper candidate intake]] 형식을 사용합니다.
+3. route가 불명확한 item은 [[inbox/curation-queue|Curation queue]]에 남깁니다.
+4. 흥미로운 item은 [[papers/workflows/paper-triage|Paper triage]]를 통과합니다.
+5. 선택된 item은 [[papers/workflows/reading-status|reading status]]가 있는 [[papers/index|Paper]] stub이 됩니다.
+6. Public material은 [[papers/reproducibility/artifact-availability|Artifact availability]]에 기록합니다.
+7. Implementation candidate는 [[papers/reproducibility/implementation-readiness|Implementation readiness]]를 통과해야 합니다.
+8. Rerun 또는 diagnostic은 [[papers/reproducibility/reproduction-plan|Reproduction plan]]과 [[papers/reproducibility/reproduction-result|Reproduction result]]로 남깁니다.
+9. Reusable idea는 [[papers/workflows/concept-update-contract|Concept update contract]]를 통해 [[concepts/index|Concepts]]를 업데이트합니다.
+10. Research relevance는 [[research/index|Research]]에 연결합니다.
+11. Public promotion은 [[inbox/publishing-gate|Publishing gate]]를 통과합니다.
+12. Weekly/monthly synthesis는 [[posts/index|Posts]]가 됩니다.
 
 ## 규칙
 

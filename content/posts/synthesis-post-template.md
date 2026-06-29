@@ -110,7 +110,7 @@ Use [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) when
 
 ## Required Checks
 
-| Check | Pass When |
+| Check | Pass when |
 | --- | --- |
 | Reader question | 글이 한 문장 질문에 답한다 |
 | Primary axis | AI, computational biology, Math, paper cluster, project 중 중심축이 분명하다 |

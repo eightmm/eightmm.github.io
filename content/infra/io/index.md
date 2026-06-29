@@ -28,20 +28,20 @@ $$
 
 ## Scope
 
-- Dataset access patterns and dataloader throughput.
-- Cache design, feature materialization, and storage locality.
-- Shared storage symptoms written as public runbooks.
-- IO effects on GPU utilization and training reproducibility.
+- dataset access pattern과 dataloader throughput.
+- cache design, feature materialization, storage locality.
+- public runbook으로 쓸 수 있는 shared storage symptom.
+- GPU utilization과 training reproducibility에 미치는 IO effect.
 
 ## IO Pattern Map
 
-| Pattern | Symptom | Fix Direction |
+| Pattern | Symptom | Fix direction |
 | --- | --- | --- |
-| Many small files | high metadata latency, low throughput | pack files, shard dataset, local cache |
-| Heavy preprocessing | CPU-bound dataloader | precompute features, increase workers carefully |
-| Remote shared storage | bursty stalls | stage to local scratch, reduce random access |
+| Many small files | metadata latency가 높고 throughput이 낮음 | file packing, dataset sharding, local cache |
+| Heavy preprocessing | CPU-bound dataloader | feature precompute, worker 수를 조심스럽게 증가 |
+| Remote shared storage | bursty stall | local scratch staging, random access 감소 |
 | Large sequential reads | bandwidth-bound | streaming format, compression tradeoff |
-| Repeated feature extraction | duplicated work | versioned cache key and materialization |
+| Repeated feature extraction | duplicated work | versioned cache key와 materialization |
 
 ## Notes
 
@@ -51,18 +51,18 @@ $$
 
 ## Checks
 
-- Is the bottleneck small-file metadata, streaming bandwidth, CPU preprocessing, decompression, or transfer?
-- Does the cache key include preprocessing version, data version, and split?
-- Is preprocessing fit only on training data when labels or statistics are involved?
-- Are private mount paths, hostnames, and storage topology removed?
-- Does the note distinguish a one-off operational incident from a reusable IO pattern?
+- bottleneck이 small-file metadata, streaming bandwidth, CPU preprocessing, decompression, transfer 중 무엇인가?
+- cache key가 preprocessing version, data version, split을 포함하는가?
+- label 또는 statistic이 관련된 preprocessing은 training data에만 fit되는가?
+- private mount path, hostname, storage topology를 제거했는가?
+- note가 one-off operational incident와 reusable IO pattern을 구분하는가?
 
 ## Where New Notes Go
 
-- Dataloader and cache behavior go here.
-- Data semantics and split contracts go under [[concepts/data/index|Data]].
-- Filesystem permissions and mounts go under [[infra/server-ops/index|Server operations]].
-- GPU starvation diagnosis links back to [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]].
+- dataloader와 cache behavior는 여기에 둡니다.
+- data semantics와 split contract는 [[concepts/data/index|Data]]에 둡니다.
+- filesystem permission과 mount는 [[infra/server-ops/index|Server operations]]에 둡니다.
+- GPU starvation diagnosis는 [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]]로 다시 연결합니다.
 
 ## Related
 

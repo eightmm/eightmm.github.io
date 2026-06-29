@@ -28,7 +28,7 @@ HPC note는 shared compute에서 반복되는 scheduling, resource request, Slur
 
 HPC note는 job이 어디에서 멈췄는지 먼저 분류합니다.
 
-| Stage | Main Question |
+| Stage | Main question |
 | --- | --- |
 | Submit | script, account, partition, dependency, array shape가 유효한가? |
 | Pending | resource request가 cluster state와 맞는가? |
@@ -52,12 +52,12 @@ HPC note는 job이 어디에서 멈췄는지 먼저 분류합니다.
 
 ## Checks
 
-- Is the workload CPU-bound, GPU-bound, memory-bound, IO-bound, or scheduler-bound?
-- Is the resource request measured from a smoke run?
-- Does distributed training need one node, several nodes, or only larger single-node batches?
-- Can failed or preempted work resume without corrupting outputs?
-- Is every submitted job reconciled before relaunching or reporting completion?
-- Are public notes stripped of private infrastructure details?
+- workload가 CPU-bound, GPU-bound, memory-bound, IO-bound, scheduler-bound 중 무엇인가?
+- resource request가 smoke run에서 측정된 값인가?
+- distributed training에 one node, several nodes, larger single-node batch 중 무엇이 필요한가?
+- failed 또는 preempted work가 output을 corrupt하지 않고 resume될 수 있는가?
+- relaunch 또는 completion report 전에 submitted job이 모두 reconciled되었는가?
+- public note에서 private infrastructure detail을 제거했는가?
 
 ## Related
 

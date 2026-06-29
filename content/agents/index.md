@@ -27,23 +27,23 @@ $$
 | 섹션 | 용도 |
 | --- | --- |
 | [Agent Core](/agents/core) | architecture, loop, state, memory, planning |
-| [Agent Features](/agents/features) | chat, files, research, coding, memory, canvas, connectors |
-| [Agent Tools](/agents/tools) | tool contracts, side effects, result handling |
-| [Agent Workflows](/agents/workflows) | coding, paper briefs, orchestration, handoff |
+| [Agent Features](/agents/features) | chat, file, research, coding, memory, canvas, connector 기능 |
+| [Agent Tools](/agents/tools) | tool contract, side effect, result handling |
+| [Agent Workflows](/agents/workflows) | coding, paper brief, orchestration, handoff |
 | [Agent Models](/agents/models) | ChatGPT, Claude, Gemini, GitHub Copilot |
-| [Agent Verification](/agents/verification) | acceptance criteria, evidence, audits, evaluation |
+| [Agent Verification](/agents/verification) | acceptance criteria, evidence, audit, evaluation |
 
 ## 분류 기준
 
 | 노트가 다루는 것 | 둘 곳 |
 | --- | --- |
 | prompt, context, loop, state, memory, planning, harness | [Agent Core](/agents/core) |
-| user-facing product functions | [Agent Features](/agents/features) |
-| schemas, side effects, permissions, outputs | [Agent Tools](/agents/tools) |
-| repeatable use cases and handoffs | [Agent Workflows](/agents/workflows) |
-| famous model/product families | [Agent Models](/agents/models) |
-| acceptance criteria, evidence, audits, safety checks | [Agent Verification](/agents/verification) |
-| broad reader-facing stories | [Posts](/posts) |
+| 사용자에게 보이는 product function | [Agent Features](/agents/features) |
+| schema, side effect, permission, output | [Agent Tools](/agents/tools) |
+| 반복 가능한 use case와 handoff | [Agent Workflows](/agents/workflows) |
+| 유명 model/product family | [Agent Models](/agents/models) |
+| acceptance criteria, evidence, audit, safety check | [Agent Verification](/agents/verification) |
+| reader-facing story | [Posts](/posts) |
 
 ## 핵심 개념
 
@@ -64,25 +64,25 @@ $$
 | 기능 | 용도 |
 | --- | --- |
 | [Chat and prompting](/agents/features/chat-and-prompting) | request design, explanation, drafting |
-| [Files and knowledge](/agents/features/files-and-knowledge) | uploaded documents, project knowledge, retrieval |
-| [Research browsing](/agents/features/research-browsing) | search, deep research, citation-based reports |
-| [Coding workspace](/agents/features/coding-workspace) | codebase edits, tests, PR assistance |
-| [Memory and projects](/agents/features/memory-projects) | long-term context and scoped project context |
-| [Artifacts and canvas](/agents/features/artifacts-canvas) | editable documents, apps, code, visual outputs |
-| [Connectors and actions](/agents/features/connectors-actions) | external apps, APIs, browser/computer actions |
+| [Files and knowledge](/agents/features/files-and-knowledge) | uploaded document, project knowledge, retrieval |
+| [Research browsing](/agents/features/research-browsing) | search, deep research, citation-based report |
+| [Coding workspace](/agents/features/coding-workspace) | codebase edit, test, PR assistance |
+| [Memory and projects](/agents/features/memory-projects) | long-term context와 scoped project context |
+| [Artifacts and canvas](/agents/features/artifacts-canvas) | editable document, app, code, visual output |
+| [Connectors and actions](/agents/features/connectors-actions) | external app, API, browser/computer action |
 
 ## Workflows
 
 | Workflow | 용도 |
 | --- | --- |
-| [Coding agents](/agents/workflows/coding-agents) | implementation and repository work |
-| [Paper brief workflow](/agents/workflows/paper-brief-workflow) | paper intake and synthesis |
-| [Agent orchestration](/agents/workflows/agent-orchestration) | multiple agents or tools |
-| [Agent handoff](/agents/workflows/agent-handoff) | passing state between workers |
-| [Agent runbook](/agents/workflows/agent-runbook) | repeatable operating procedure |
+| [Coding agents](/agents/workflows/coding-agents) | implementation과 repository work |
+| [Paper brief workflow](/agents/workflows/paper-brief-workflow) | paper intake와 synthesis |
+| [Agent orchestration](/agents/workflows/agent-orchestration) | 여러 agent 또는 tool 조율 |
+| [Agent handoff](/agents/workflows/agent-handoff) | worker 사이의 state 전달 |
+| [Agent runbook](/agents/workflows/agent-runbook) | 반복 가능한 operating procedure |
 | [Multi-agent review](/agents/workflows/multi-agent-review) | independent verification |
 | [LLM Wiki](/agents/workflows/llm-wiki) | knowledge-base maintenance |
-| [Content promotion workflow](/agents/workflows/content-promotion-workflow) | inbox to note/post/project promotion |
+| [Content promotion workflow](/agents/workflows/content-promotion-workflow) | inbox에서 note/post/project로 promotion |
 | [Paper brief agent pipeline](/projects/paper-brief-agent-pipeline) | project-level paper workflow |
 
 ## Model Families
@@ -105,11 +105,11 @@ $$
 
 ## 작성 규칙
 
-- Explain workflows with generic examples.
-- Prefer user-facing features over private custom skills.
-- Keep vendor-specific claims dated or scoped.
-- Do not publish private prompts, private repo details, credentials, internal task names, or unreleased work.
-- Prefer concrete verification habits over broad productivity claims.
+- workflow는 generic example로 설명합니다.
+- private custom skill보다 user-facing feature를 우선합니다.
+- vendor-specific claim은 date나 scope를 붙입니다.
+- private prompt, private repo detail, credential, internal task name, unreleased work를 공개하지 않습니다.
+- broad productivity claim보다 concrete verification habit를 우선합니다.
 
 ## Related
 

@@ -43,13 +43,13 @@ $$
 
 ## 중심축별 글 모양
 
-| Main Axis | Post Should Explain | Wiki Should Hold |
+| Main axis | Post가 설명할 것 | Wiki에 둘 것 |
 | --- | --- | --- |
-| AI method | architecture, learning signal, objective, evaluation risk를 읽는 순서 | full definitions, equations, variants, checklists |
-| Computational biology object | protein, molecule, ligand, pocket, conformer, complex가 왜 다른 문제인지 | entity contracts, preprocessing, split and leakage details |
-| Math formula | 수식이 어떤 object, distribution, objective, metric을 뜻하는지 | derivations, canonical formulas, symbol tables |
-| Paper cluster | 여러 논문이 같은 질문에 어떻게 다른 답을 주는지 | individual paper claims, evidence tables, benchmark cards |
-| Project or workflow | 어떤 문제를 해결하려 했고 어떤 설계 판단을 했는지 | implementation details, verification logs, artifact contracts |
+| AI method | architecture, learning signal, objective, evaluation risk를 읽는 순서 | full definition, equation, variant, checklist |
+| Computational biology object | protein, molecule, ligand, pocket, conformer, complex가 왜 다른 문제인지 | entity contract, preprocessing, split/leakage detail |
+| Math formula | 수식이 어떤 object, distribution, objective, metric을 뜻하는지 | derivation, canonical formula, symbol table |
+| Paper cluster | 여러 논문이 같은 질문에 어떻게 다른 답을 주는지 | individual paper claim, evidence table, benchmark card |
+| Project or workflow | 어떤 문제를 해결하려 했고 어떤 설계 판단을 했는지 | implementation detail, verification log, artifact contract |
 
 ## 글 안에 넣을 것
 
