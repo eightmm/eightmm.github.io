@@ -25,6 +25,17 @@ $$
 
 where $L$ is sequence length, $H$ is the number of attention heads, and $d_{\mathrm{head}}$ is head dimension.
 
+The tradeoff should be judged by the actual constraint:
+
+$$
+\text{objective}
+=
+\min
+\{\text{peak memory},\ \text{wall time},\ \text{cost},\ \text{latency},\ \text{failure risk}\}
+$$
+
+Optimizing one term can make another worse.
+
 ## Examples
 
 - Activation checkpointing saves memory by recomputing activations.
@@ -33,6 +44,17 @@ where $L$ is sequence length, $H$ is the number of attention heads, and $d_{\mat
 - Caching avoids recomputation but consumes memory.
 - Sharding distributes parameters, optimizer state, or activations across devices.
 
+## Technique Map
+
+| Technique | Saves | Pays With | Watch |
+| --- | --- | --- | --- |
+| Activation checkpointing | activation memory | recomputation | longer step time |
+| Gradient accumulation | batch memory | more micro-steps | optimizer-step accounting |
+| Quantization | parameter/cache memory | accuracy or kernel constraints | calibration and hardware support |
+| KV cache | decode compute | memory capacity | context length and concurrency |
+| Sharding | per-device memory | communication | bandwidth and failure complexity |
+| Caching embeddings/features | repeated compute | storage and stale artifacts | data-version alignment |
+
 ## Checks
 
 - Is the bottleneck capacity, bandwidth, compute, or communication?
@@ -40,12 +62,15 @@ where $L$ is sequence length, $H$ is the number of attention heads, and $d_{\mat
 - Does the technique change numerical behavior or only resource use?
 - Is wall-clock time, cost, or maximum problem size the real constraint?
 - Does a smaller model or shorter context solve the problem more simply?
+- Are comparisons made at fixed quality, fixed latency, fixed cost, or fixed memory?
+- Does the run record state which resource tradeoff was intentionally chosen?
 
 ## Related
 
 - [[infra/gpu/index#memory|GPU memory]]
 - [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]]
 - [[concepts/systems/distributed-training-runbook|Distributed training]]
+- [[concepts/systems/inference-capacity-planning|Inference capacity planning]]
 - [[concepts/machine-learning/batch-size|Batch size]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]

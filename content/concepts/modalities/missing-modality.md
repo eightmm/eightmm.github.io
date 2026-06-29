@@ -28,6 +28,19 @@ $$
 
 where $r$ is the observation mask.
 
+The evaluation distribution must include the missingness pattern:
+
+$$
+R(f)
+=
+\mathbb{E}_{(x,y,r)\sim p}
+\left[
+\mathcal{L}(f(x_{\mathrm{obs}},r),y)
+\right]
+$$
+
+If training assumes $r=\mathbf{1}$ but deployment often has missing modalities, aggregate test scores will overstate reliability.
+
 ## Missingness Patterns
 
 - MCAR: missing completely at random.
@@ -43,6 +56,17 @@ where $r$ is the observation mask.
 - Imputation, with uncertainty tracked separately.
 - Fallback single-modality models.
 
+## Evaluation Matrix
+
+| Case | Evaluate |
+| --- | --- |
+| all modalities present | full-system upper bound |
+| one modality missing | graceful degradation |
+| important modality corrupted | robustness and false confidence |
+| delayed modality | online vs offline behavior |
+| target-correlated missingness | bias and deployment risk |
+| imputed modality | uncertainty and leakage from imputation |
+
 ## Checks
 
 - Which modalities are guaranteed at training, validation, and deployment?
@@ -50,11 +74,15 @@ where $r$ is the observation mask.
 - Does the model know which modality is missing?
 - Are missing-modality cases evaluated separately?
 - Does imputation leak future or target information?
+- Does the model receive an explicit missingness mask?
+- Is fallback behavior defined before deployment?
+- Are metrics reported by missingness pattern, not only in aggregate?
 
 ## Related
 
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[concepts/modalities/modality-alignment|Modality alignment]]
+- [[concepts/data/missing-data|Missing data]]
 - [[concepts/evaluation/robustness|Robustness]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/data/metadata-provenance|Metadata and provenance]]
