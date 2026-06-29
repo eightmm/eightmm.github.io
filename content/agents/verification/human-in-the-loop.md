@@ -24,6 +24,18 @@ $$
 
 Agent는 proposal과 evidence를 inspect하기 쉽게 만들어야 합니다. Ambiguous하거나 high-risk한 choice에 대한 judgment는 human이 책임집니다.
 
+Human-in-the-loop은 agent를 약하게 만드는 장치가 아니라, 책임과 판단을 올바른 위치에 두는 interface입니다. Agent는 반복 작업과 evidence collection을 맡고, human은 value judgment, risk acceptance, publication decision을 맡습니다.
+
+## Review Boundary
+
+| Human이 봐야 하는 것 | 이유 |
+| --- | --- |
+| Public publication | private detail, unpublished claim, tone, audience risk |
+| Security-sensitive change | credential, permission, network exposure risk |
+| Expensive execution | GPU/Slurm/cloud cost와 queue impact |
+| Research claim | evidence strength, novelty, collaborator boundary |
+| Destructive edit | rollback cost와 data loss risk |
+
 ## 좋은 handoff
 
 - agent가 무엇이 바뀌었고 어떻게 verify했는지 적습니다.
@@ -37,6 +49,13 @@ Agent는 proposal과 evidence를 inspect하기 쉽게 만들어야 합니다. Am
 - full agent transcript를 읽지 않아도 artifact를 review할 수 있는가?
 - uncertain claim을 흐리지 않고 표시하는가?
 - publication 전에 public note를 sanitize하는가?
+
+## Bad Pattern
+
+- human에게 full transcript를 읽게 하고 실제 decision summary를 주지 않습니다.
+- agent confidence를 evidence처럼 취급합니다.
+- “나중에 확인”을 남긴 채 public artifact를 publish합니다.
+- approval이 필요한 action을 작은 작업처럼 보이게 쪼갭니다.
 
 ## Related
 
