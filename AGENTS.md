@@ -50,6 +50,17 @@ Keep each top-level section close to its raw object:
 - `agents/` should hold agent-native foundations: agent loop, state, memory, tools, workflows, models, and verification. Do not use `agents/` as a home for general AI, infra, or content-process notes unless the agent workflow itself is the object.
 - `molecular-modeling/` should hold applied Computational Biology routes: protein, molecule, ligand, pocket, complex, sequence, conformer, interaction, structure-based modeling, docking, benchmark, and geometry-for-structure-modeling pages.
 
+Use this ownership test before adding or moving pages:
+
+| Section | Owns | Does not own |
+| --- | --- | --- |
+| `ai/` | model/task/objective/evaluation ideas that remain valid across domains | protein, ligand, assay, docking, pose, pocket, HPC, or agent workflow pages |
+| `math/` | raw definitions and formulas: vector spaces, probability, gradients, estimators, groups, distances, transformations | applied structure-modeling geometry, protein or molecule workflows, paper-specific claims |
+| `agents/` | agent loop, state, memory, planning, tools, verification, orchestration | generic LLM/AI method notes, server operations, paper content unless the workflow is the object |
+| `molecular-modeling/` | Computational Biology routes where biological or chemical objects define the problem | pure math primitives or architecture definitions |
+
+If a page is named `X for structure modeling`, `X for docking`, `X for protein-ligand`, or `X for molecules`, treat it as Computational Biology by default. Link back to the raw Math or AI primitive instead of placing the applied route under `math/` or `ai/`.
+
 If a page title contains a domain object such as protein, ligand, molecule, pocket, pose, docking, structure modeling, assay, or genome sequence, default to `molecular-modeling/` unless the page is only defining a reusable math, AI, or agent primitive. If a page title contains only a primitive such as attention, transformer, gradient, entropy, KL, group action, tool contract, or completion audit, keep it in the corresponding raw section or `concepts/` support area.
 
 Avoid naming Math pages as `... for AI` unless the page is intentionally an AI-facing post. In `math/`, prefer raw names such as `Formula Reading`, `Linear Algebra`, or `Dynamical Systems`; connect them to AI and Computational Biology through route rows and related links.

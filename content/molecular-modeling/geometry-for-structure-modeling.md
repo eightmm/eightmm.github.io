@@ -1,7 +1,8 @@
 ---
 title: Geometry for Structure Modeling
 aliases:
-  - math/geometry-for-structure-modeling
+  - computational-biology/geometry-for-structure-modeling
+  - comp-bio/geometry-for-structure-modeling
 tags:
   - computational-biology
   - geometry

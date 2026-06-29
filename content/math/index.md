@@ -32,7 +32,7 @@ $$
 | Calculus and optimization | derivatives, chain rule, Jacobians, Hessians, constraints, backpropagation math | [Calculus and gradients](/math/calculus-gradients), [Chain rule](/concepts/math/chain-rule), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Probability | random variables, distributions, estimators, Bayesian inference, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
 | Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
-| Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry), [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) |
+| Geometry | distance, angle, frame, transformation, group action, invariance/equivariance | [Geometry and symmetry](/math/geometry-symmetry), [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) |
 | Graphs | sets, neighborhoods, permutations, graph modeling | [Discrete math and graphs](/math/discrete-graphs) |
 | Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows, molecular dynamics | [Dynamical systems](/math/dynamical-systems) |
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
@@ -81,7 +81,7 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 | Selection and uncertainty | [Model selection](/concepts/machine-learning/model-selection), [Confidence interval](/concepts/evaluation/confidence-interval), [Cross-validation](/concepts/evaluation/cross-validation), [Calibration](/concepts/evaluation/calibration) |
 | Numerical stability | [Numerical computing](/math/numerical-computing), [Softmax](/concepts/architectures/softmax), [Training stability](/concepts/machine-learning/training-stability), [Memory-compute tradeoff](/concepts/systems/memory-compute-tradeoff) |
 | Generation | [Probability distribution](/concepts/math/probability-distribution), [Maximum likelihood](/concepts/math/maximum-likelihood), [Entropy and KL](/concepts/math/entropy-kl), [Diffusion](/concepts/generative-models/diffusion-model), [Flow matching](/concepts/generative-models/flow-matching) |
-| Geometry | [Geometric deep learning](/concepts/geometric-deep-learning), [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry), [Equivariance](/concepts/geometric-deep-learning/equivariance), [Coordinate update](/concepts/geometric-deep-learning/coordinate-update) |
+| Geometry | [Geometry and symmetry](/math/geometry-symmetry), [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group), [Equivariance](/concepts/geometric-deep-learning/equivariance) |
 | Graphs and dynamics | [Discrete math and graphs](/math/discrete-graphs), [Dynamical systems](/math/dynamical-systems), [GNN](/concepts/architectures/gnn), [Graph construction](/concepts/architectures/graph-construction), [Probability flow ODE](/concepts/generative-models/probability-flow-ode) |
 | Evaluation | [Metric](/concepts/evaluation/metric), [Confidence interval](/concepts/evaluation/confidence-interval), [Statistical significance](/concepts/evaluation/statistical-significance) |
 | Claim boundary | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark intake](/concepts/data/benchmark-intake) |
