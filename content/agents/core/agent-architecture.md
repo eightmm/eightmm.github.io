@@ -8,33 +8,33 @@ tags:
 
 # Agent Architecture
 
-Agent architecture describes the components that turn a model call into a workflow. A useful agent is not only an LLM; it is a loop with state, tools, memory, policy, and verification.
+Agent architecture는 model call을 workflow로 바꾸는 component를 설명합니다. 유용한 agent는 LLM 하나가 아니라 state, tool, memory, policy, verification을 가진 loop입니다.
 
-A simple agent can be written as:
+간단한 agent는 아래처럼 쓸 수 있습니다.
 
 $$
 a_t = \pi_\theta(s_t, c_t, m_t)
 $$
 
-where $s_t$ is task state, $c_t$ is current context, $m_t$ is retrieved memory, and $a_t$ is the next action.
+여기서 $s_t$는 task state, $c_t$는 current context, $m_t$는 retrieved memory, $a_t$는 next action입니다.
 
-## Components
+## Component
 
-- Model: generates plans, tool calls, edits, or answers.
-- State: tracks goal, constraints, evidence, and progress.
-- Context: selected information visible in the current call.
-- Tools: actions that inspect or change external state.
-- Memory: durable or retrieved information outside the context window.
-- Verifier: checks whether the artifact is correct.
-- Human boundary: defines where approval or judgment is required.
+- Model: plan, tool call, edit, answer를 생성합니다.
+- State: goal, constraint, evidence, progress를 추적합니다.
+- Context: current call에서 보이는 selected information입니다.
+- Tools: external state를 inspect하거나 change하는 action입니다.
+- Memory: context window 밖의 durable 또는 retrieved information입니다.
+- Verifier: artifact가 correct한지 확인합니다.
+- Human boundary: approval 또는 judgment가 필요한 위치를 정의합니다.
 
-## Checks
+## 확인할 것
 
-- What state is explicit rather than hidden in conversation history?
-- Which tools can create side effects?
-- What verifies each side effect?
-- What stops the loop?
-- Which decisions require human review?
+- 어떤 state가 conversation history에 숨어 있지 않고 explicit한가?
+- 어떤 tool이 side effect를 만들 수 있는가?
+- 각 side effect를 무엇으로 verify하는가?
+- 무엇이 loop를 멈추게 하는가?
+- 어떤 decision에 human review가 필요한가?
 
 ## Related
 

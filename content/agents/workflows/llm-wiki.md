@@ -10,28 +10,28 @@ tags:
 
 # LLM Wiki
 
-An LLM Wiki is a public, linked knowledge base that supports retrieval, synthesis, and human review. The core unit is a short Markdown note with explicit links, not a hidden vector index.
+LLM Wiki는 retrieval, synthesis, human review를 돕는 public linked knowledge base입니다. 핵심 단위는 hidden vector index가 아니라 explicit link를 가진 짧은 Markdown note입니다.
 
 ## Goals
 
-- Keep reusable concepts in [[concepts/index|Concepts]].
-- Keep paper-specific claims in [[papers/index|Papers]].
-- Keep uncurated daily candidates in [[inbox/index|Inbox]] until reviewed.
-- Keep active research context in [[research/index|Research]].
-- Keep agent notes in [[agents/index|Agents]] when they describe workflows, tools, and human-AI collaboration.
-- Keep operational notes in [[infra/index|Infra]] without exposing private systems.
-- Keep public project summaries in [[projects/index|Projects]] and cleaned work records in [[logs/index|Public logs]].
+- reusable concept는 [[concepts/index|Concepts]]에 둡니다.
+- paper-specific claim은 [[papers/index|Papers]]에 둡니다.
+- uncurated daily candidate는 review 전까지 [[inbox/index|Inbox]]에 둡니다.
+- active research context는 [[research/index|Research]]에 둡니다.
+- workflow, tool, human-AI collaboration을 설명하는 agent note는 [[agents/index|Agents]]에 둡니다.
+- operational note는 private system을 노출하지 않고 [[infra/index|Infra]]에 둡니다.
+- public project summary는 [[projects/index|Projects]]에, cleaned work record는 [[logs/index|Public logs]]에 둡니다.
 
-## Note shape
+## Note 형태
 
-- One page per topic.
-- Clear boundaries between facts, assumptions, and open questions.
-- Wikilinks for adjacent concepts, papers, and projects.
-- Evidence-grounded claims: supported statements link to sources, concepts, logs, or paper notes; uncertain statements are marked `to verify`.
-- No private endpoints, account names, credentials, unpublished metrics, or internal project identifiers.
-- Korean posts should provide readable entry points; English wiki notes should hold reusable definitions and checks.
-- Reusable notes should pass [[concepts/wiki-note-quality-gate|Wiki note quality gate]] before they become anchors for posts or paper notes.
-- Use [[agents/workflows/content-promotion-workflow|Content promotion workflow]] to decide whether raw material becomes an inbox item, concept note, paper note, project note, infra note, public log, or Korean post.
+- topic 하나에 page 하나를 둡니다.
+- fact, assumption, open question의 boundary를 명확히 합니다.
+- adjacent concept, paper, project로 wikilink를 둡니다.
+- evidence-grounded claim을 씁니다. Support되는 statement는 source, concept, log, paper note로 연결하고, uncertain statement는 `to verify`로 표시합니다.
+- private endpoint, account name, credential, unpublished metric, internal project identifier를 넣지 않습니다.
+- 한국어 post는 읽기 쉬운 entry point를 제공하고, wiki note는 reusable definition과 check를 담습니다.
+- reusable note는 post나 paper note의 anchor가 되기 전에 [[concepts/wiki-note-quality-gate|Wiki note quality gate]]를 통과해야 합니다.
+- raw material이 inbox item, concept note, paper note, project note, infra note, public log, 한국어 post 중 무엇이 될지 [[agents/workflows/content-promotion-workflow|Content promotion workflow]]로 결정합니다.
 
 ## Related
 

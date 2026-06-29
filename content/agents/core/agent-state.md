@@ -8,31 +8,31 @@ tags:
 
 # Agent State
 
-Agent state is the structured information an agent uses to decide what to do next. It should not be treated as whatever happens to remain in the conversation.
+Agent state는 agent가 다음에 무엇을 할지 결정할 때 쓰는 structured information입니다. Conversation에 우연히 남아 있는 모든 것을 state로 취급하면 안 됩니다.
 
-A useful state can be modeled as:
+유용한 state는 아래처럼 모델링할 수 있습니다.
 
 $$
 s_t = (g, C, E_t, P_t, A_t)
 $$
 
-where $g$ is the goal, $C$ is constraints, $E_t$ is accumulated evidence, $P_t$ is the plan, and $A_t$ is the action history.
+여기서 $g$는 goal, $C$는 constraint, $E_t$는 accumulated evidence, $P_t$는 plan, $A_t$는 action history입니다.
 
-## State Types
+## State type
 
-- Goal state: objective, scope, success criteria, and stop conditions.
-- Environment state: files, command outputs, browser state, repository status, or external artifacts.
-- Evidence state: facts gathered from tools or primary sources.
-- Plan state: pending, active, and completed steps.
-- Risk state: approvals, destructive actions, secrets, and public/private boundaries.
+- Goal state: objective, scope, success criteria, stop condition.
+- Environment state: file, command output, browser state, repository status, external artifact.
+- Evidence state: tool 또는 primary source에서 모은 fact.
+- Plan state: pending, active, completed step.
+- Risk state: approval, destructive action, secret, public/private boundary.
 
-## Checks
+## 확인할 것
 
-- Is the goal still the newest user request?
-- Is the current plan based on evidence or stale memory?
-- Are assumptions separated from observed facts?
-- Are private details excluded from durable public notes?
-- Does state survive context changes without becoming misleading?
+- goal이 여전히 newest user request인가?
+- current plan이 evidence에 기반하는가, stale memory에 기반하는가?
+- assumption과 observed fact가 분리되어 있는가?
+- private detail이 durable public note에서 제외되는가?
+- context change 뒤에도 state가 misleading하지 않게 유지되는가?
 
 ## Related
 

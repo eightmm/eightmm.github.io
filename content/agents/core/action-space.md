@@ -7,7 +7,7 @@ tags:
 
 # Action Space
 
-The action space is the set of actions an agent can choose from at a given step. It includes both natural-language actions, such as asking a question, and tool actions, such as reading a file, editing a note, running a command, or opening a pull request.
+Action space는 특정 step에서 agent가 선택할 수 있는 action의 집합입니다. 질문하기 같은 natural-language action과 file 읽기, note 수정, command 실행, pull request 열기 같은 tool action이 모두 포함됩니다.
 
 Formally:
 
@@ -15,27 +15,27 @@ $$
 a_t \in \mathcal{A}(s_t, b_t)
 $$
 
-$a_t$ is the action at step $t$, $\mathcal{A}$ is the available action set, $s_t$ is task state, and $b_t$ is the permission or boundary condition.
+$a_t$는 step $t$의 action, $\mathcal{A}$는 available action set, $s_t$는 task state, $b_t$는 permission 또는 boundary condition입니다.
 
-## Action Classes
+## Action class
 
-- Observe: inspect files, logs, pages, or command output.
-- Transform: edit source, rewrite notes, summarize evidence, or refactor text.
-- Execute: run builds, tests, formatters, deployments, or scripts.
-- Ask: request missing constraints, approval, or domain judgment.
-- Stop: report completion, failure, or blocked state with evidence.
+- Observe: file, log, page, command output을 inspect합니다.
+- Transform: source를 edit하고, note를 rewrite하고, evidence를 summarize하고, text를 refactor합니다.
+- Execute: build, test, formatter, deployment, script를 실행합니다.
+- Ask: missing constraint, approval, domain judgment를 요청합니다.
+- Stop: completion, failure, blocked state를 evidence와 함께 보고합니다.
 
-## Constraints
+## Constraint
 
-Not every possible action should be available at every step. Side-effecting actions need a clear purpose and a verification path. Destructive, expensive, private, or externally visible actions need stronger boundaries.
+모든 possible action이 모든 step에서 available하면 안 됩니다. Side-effecting action에는 clear purpose와 verification path가 필요합니다. Destructive, expensive, private, externally visible action에는 더 강한 boundary가 필요합니다.
 
-## Checks
+## 확인할 것
 
-- Is the next action in the allowed action space?
-- Is a read-only action enough before editing?
-- Does the action have a bounded result?
-- What verifier will inspect the action result?
-- Should the agent ask before taking the action?
+- next action이 allowed action space 안에 있는가?
+- editing 전에 read-only action만으로 충분한가?
+- action이 bounded result를 갖는가?
+- 어떤 verifier가 action result를 inspect할 것인가?
+- action 전에 agent가 물어야 하는가?
 
 ## Related
 

@@ -8,26 +8,26 @@ tags:
 
 # Coding Agents
 
-Coding agents are LLM-based tools that can inspect a codebase, edit files, run commands, and report results. They are most useful when the task has a clear goal, local verification path, and bounded blast radius.
+Coding agent는 codebase를 inspect하고, file을 수정하고, command를 실행하고, 결과를 보고할 수 있는 LLM 기반 tool입니다. Task에 clear goal, local verification path, bounded blast radius가 있을 때 가장 유용합니다.
 
-## Good Uses
+## 잘 맞는 사용처
 
-- Refactor a small module with tests.
-- Draft documentation from existing code.
-- Add narrow features to a known codebase.
-- Run repetitive checks across files.
-- Review implementation risks before a commit.
+- test가 있는 작은 module refactor.
+- existing code를 바탕으로 documentation draft 작성.
+- 알고 있는 codebase에 narrow feature 추가.
+- 여러 file에 걸친 repetitive check 실행.
+- commit 전 implementation risk review.
 
-## Weak Spots
+## 약한 지점
 
-- Vague product direction.
-- Hidden data or environment assumptions.
-- Security-sensitive changes without explicit review.
-- Large dependency, API, schema, or training changes without a written plan.
+- vague product direction.
+- hidden data 또는 environment assumption.
+- explicit review 없는 security-sensitive change.
+- written plan 없는 큰 dependency, API, schema, training change.
 
-## Verification Habit
+## Verification 습관
 
-Every agent-assisted change should end with a concrete check: build, unit test, lint, smoke test, or manual review. The useful question is not whether the agent sounded confident, but whether the artifact is correct.
+Agent가 도운 모든 change는 build, unit test, lint, smoke test, manual review 같은 concrete check로 끝나야 합니다. 중요한 질문은 agent가 confident하게 말했는지가 아니라 artifact가 correct한지입니다.
 
 ## Related
 

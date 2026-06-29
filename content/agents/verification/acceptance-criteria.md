@@ -7,46 +7,46 @@ tags:
 
 # Acceptance Criteria
 
-Acceptance criteria define what must be true before an agent can claim a task is complete. They turn a vague goal into checkable conditions.
+Acceptance criteria는 agent가 task completion을 주장하기 전에 무엇이 true여야 하는지 정의합니다. Vague goal을 checkable condition으로 바꾸는 역할입니다.
 
-For a task goal $G$, define criteria:
+Task goal $G$에 대해 criteria를 아래처럼 정의합니다.
 
 $$
 \mathcal{C}(G) = \{c_1, c_2, \ldots, c_k\}
 $$
 
-Completion requires evidence for every criterion:
+Completion은 모든 criterion에 대한 evidence를 요구합니다.
 
 $$
 \operatorname{done}(G)
 = \bigwedge_{i=1}^{k} \operatorname{verified}(c_i)
 $$
 
-## Good Criteria
+## 좋은 criteria
 
-- Observable: a file, build output, test result, rendered page, or review decision can prove it.
-- Specific: the condition is narrow enough to check.
-- Complete: the set covers correctness, safety, and publication constraints.
-- Current: evidence comes from the current environment, not memory of earlier work.
-- Evidence-linked: every criterion points to an [[agents/verification/evidence-ledger|Evidence ledger]] entry or equivalent check.
-- Public-safe: criteria include privacy and sanitization when artifacts are published.
+- Observable: file, build output, test result, rendered page, review decision으로 증명할 수 있습니다.
+- Specific: condition이 check할 만큼 좁습니다.
+- Complete: correctness, safety, publication constraint를 덮습니다.
+- Current: evidence가 이전 memory가 아니라 current environment에서 나옵니다.
+- Evidence-linked: 모든 criterion이 [[agents/verification/evidence-ledger|Evidence ledger]] entry 또는 equivalent check로 연결됩니다.
+- Public-safe: artifact가 published될 때 privacy와 sanitization을 포함합니다.
 
-## Examples
+## 예시
 
-- A Markdown page exists at the expected path.
-- All internal wikilinks resolve.
-- `npx quartz build` succeeds.
-- Generated public pages do not expose private infrastructure details.
-- A commit was pushed to the expected branch.
+- expected path에 Markdown page가 존재합니다.
+- 모든 internal wikilink가 resolve됩니다.
+- `npx quartz build`가 성공합니다.
+- generated public page가 private infrastructure detail을 노출하지 않습니다.
+- expected branch에 commit이 push되었습니다.
 
-## Checks
+## 확인할 것
 
-- What evidence proves each criterion?
-- Are tests broad enough for the claim being made?
-- Is skipped verification reported explicitly?
-- Are generated files excluded from manual edits?
-- Does the final answer distinguish changed, verified, and not verified items?
-- Does the acceptance set cover commit, push, and public-safety requirements when they apply?
+- 각 criterion을 증명하는 evidence는 무엇인가?
+- test가 claim 범위에 충분히 넓은가?
+- skipped verification을 명시적으로 보고하는가?
+- generated file을 manual edit에서 제외하는가?
+- final answer가 changed, verified, not verified item을 구분하는가?
+- commit, push, public-safety requirement가 적용될 때 acceptance set이 그것을 포함하는가?
 
 ## Related
 

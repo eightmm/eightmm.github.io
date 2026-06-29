@@ -8,13 +8,13 @@ tags:
 
 # Paper Brief Workflow
 
-Paper discovery agents can collect candidate papers, but the public wiki should not treat raw candidates as finished reviews. The useful workflow is ingestion, curation, linking, and synthesis.
+Paper discovery agent는 candidate paper를 모을 수 있지만, public wiki는 raw candidate를 finished review처럼 취급하면 안 됩니다. 유용한 workflow는 ingestion, curation, linking, synthesis입니다.
 
 ## Roles
 
-- Discovery agent: collects candidate papers and creates a daily brief.
-- Wiki editor: converts the brief into sanitized Quartz notes.
-- Human reviewer: decides what becomes a curated paper note or public post.
+- Discovery agent: candidate paper를 모으고 daily brief를 만듭니다.
+- Wiki editor: brief를 sanitized Quartz note로 바꿉니다.
+- Human reviewer: 무엇이 curated paper note 또는 public post가 될지 결정합니다.
 
 ## Flow
 
@@ -31,14 +31,14 @@ Paper discovery agents can collect candidate papers, but the public wiki should 
 11. Public promotion passes [[inbox/publishing-gate|Publishing gate]].
 12. Weekly or monthly synthesis becomes [[posts/index|Posts]].
 
-## Rules
+## 규칙
 
-- Do not invent DOI, arXiv IDs, metrics, datasets, or claims.
-- Every candidate needs source, metadata, route, main axis, candidate claim, evidence pointer, risk, next action, and status.
-- Mark missing details as `to verify`.
-- Mark missing code, data, split, config, weight, log, prediction, and environment artifacts as `to verify` instead of assuming they exist.
-- Prefer concept growth over paper log accumulation.
-- Keep raw or uncertain entries out of polished posts.
+- DOI, arXiv ID, metric, dataset, claim을 지어내지 않습니다.
+- 모든 candidate에는 source, metadata, route, main axis, candidate claim, evidence pointer, risk, next action, status가 필요합니다.
+- missing detail은 `to verify`로 표시합니다.
+- code, data, split, config, weight, log, prediction, environment artifact가 없으면 있다고 가정하지 말고 `to verify`로 표시합니다.
+- paper log를 쌓기보다 concept growth를 우선합니다.
+- raw 또는 uncertain entry는 polished post에 넣지 않습니다.
 
 ## Related
 

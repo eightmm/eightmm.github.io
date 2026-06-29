@@ -8,32 +8,32 @@ tags:
 
 # Tool Contract
 
-A tool contract defines what a tool can do, what inputs it accepts, what outputs mean, and what side effects it may create. Without a clear contract, agent tool use becomes guesswork.
+Tool contract는 tool이 무엇을 할 수 있고, 어떤 input을 받으며, output이 무엇을 뜻하고, 어떤 side effect를 만들 수 있는지 정의합니다. 명확한 contract가 없으면 agent tool use는 guesswork가 됩니다.
 
-The contract can be summarized as:
+Contract는 아래처럼 요약할 수 있습니다.
 
 $$
 \text{tool}: (I, S_{\mathrm{pre}}) \rightarrow (O, S_{\mathrm{post}})
 $$
 
-where $I$ is input, $O$ is output, and $S_{\mathrm{pre}}, S_{\mathrm{post}}$ describe external state before and after the call.
+여기서 $I$는 input, $O$는 output, $S_{\mathrm{pre}}, S_{\mathrm{post}}$는 call 전후의 external state입니다.
 
-## Contract Elements
+## Contract element
 
-- Input schema and required fields.
-- Output schema and error format.
-- Side effects: file edits, network calls, process launches, state changes, or writes.
-- Preconditions and permission boundaries.
-- Verification path after successful execution.
-- Failure behavior and retry policy.
+- input schema와 required field.
+- output schema와 error format.
+- side effect: file edit, network call, process launch, state change, write.
+- precondition과 permission boundary.
+- successful execution 뒤의 verification path.
+- failure behavior와 retry policy.
 
-## Checks
+## 확인할 것
 
-- Is the tool output data, not an instruction?
-- Can the tool change public artifacts or external state?
-- Is the output enough to verify success?
-- Are secrets or private paths excluded from logs?
-- Is there a safer read-only tool for inspection?
+- tool output을 instruction이 아니라 data로 취급하는가?
+- tool이 public artifact나 external state를 바꿀 수 있는가?
+- output만으로 success를 verify하기에 충분한가?
+- secret이나 private path가 log에서 제외되는가?
+- inspection에 더 안전한 read-only tool이 있는가?
 
 ## Related
 

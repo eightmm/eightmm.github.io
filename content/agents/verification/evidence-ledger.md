@@ -8,9 +8,9 @@ tags:
 
 # Evidence Ledger
 
-An evidence ledger records what an agent checked before making a claim. It prevents a final answer from relying on memory, intent, or a passing check that does not cover the actual requirement.
+Evidence ledger는 agent가 claim을 만들기 전에 무엇을 확인했는지 기록합니다. Final answer가 memory, intent, 또는 실제 requirement를 덮지 않는 passing check에 기대지 않게 막습니다.
 
-For a claim $c$, the ledger should store:
+Claim $c$에 대해 ledger는 아래를 저장해야 합니다.
 
 $$
 L(c)
@@ -18,35 +18,35 @@ L(c)
 \{(r_i, e_i, v_i, t_i)\}_{i=1}^{n}
 $$
 
-where $r_i$ is a requirement, $e_i$ is evidence, $v_i$ is the verification method, and $t_i$ is the time or state of the check.
+여기서 $r_i$는 requirement, $e_i$는 evidence, $v_i$는 verification method, $t_i$는 check의 time 또는 state입니다.
 
-## Evidence Types
+## Evidence type
 
-| Evidence | Proves |
+| Evidence | 증명하는 것 |
 | --- | --- |
-| File diff | What changed |
-| Command output | Build, test, lint, or scan result |
-| Rendered page check | Whether generated output links or displays correctly |
-| Source citation | Whether a fact is grounded |
-| Review note | Human or second-agent judgment |
-| Run artifact | Config, log, metric, prediction, or checkpoint |
+| File diff | 무엇이 바뀌었는지 |
+| Command output | build, test, lint, scan result |
+| Rendered page check | generated output이 link/display되는지 |
+| Source citation | fact가 grounded되어 있는지 |
+| Review note | human 또는 second-agent judgment |
+| Run artifact | config, log, metric, prediction, checkpoint |
 
-## Ledger Fields
+## Ledger field
 
-- Requirement: the explicit condition being checked.
-- Evidence source: file, command, rendered output, source document, or reviewer.
-- Coverage: what the evidence proves and what it does not prove.
-- Result: pass, fail, inconclusive, skipped, or blocked.
-- Freshness: whether the evidence comes from the current state.
-- Public boundary: whether evidence can be quoted or must be summarized.
+- Requirement: 확인 중인 explicit condition.
+- Evidence source: file, command, rendered output, source document, reviewer.
+- Coverage: evidence가 무엇을 증명하고 무엇을 증명하지 않는지.
+- Result: pass, fail, inconclusive, skipped, blocked.
+- Freshness: evidence가 current state에서 왔는지.
+- Public boundary: evidence를 quote할 수 있는지, summarize해야 하는지.
 
-## Checks
+## 확인할 것
 
-- Does every completion claim point to evidence?
-- Is the evidence current, direct, and broad enough?
-- Are skipped or impossible checks marked `not verified`?
-- Does a passing build avoid being overused as proof of content accuracy?
-- Are private logs, paths, hostnames, account names, and unpublished results omitted?
+- 모든 completion claim이 evidence를 가리키는가?
+- evidence가 current, direct, broad enough한가?
+- skipped 또는 impossible check를 `not verified`로 표시하는가?
+- passing build를 content accuracy proof로 과도하게 쓰지 않는가?
+- private log, path, hostname, account name, unpublished result를 생략하는가?
 
 ## Related
 
