@@ -13,6 +13,8 @@ tags:
 
 Molecule and ligand modeling covers small-molecule identity, representation, standardization, similarity, and property prediction. The main risk is treating strings or graphs as if they were already chemically normalized objects.
 
+This page owns the chemical object layer. Use [[molecular-modeling/molecular-ligand|Molecular and Ligand Modeling]] when deciding the modeling route, [[molecular-modeling/interactions|Interaction Modeling]] when target or assay context is central, and [[molecular-modeling/structure-based/index|Structure-Based Modeling]] when pose, pocket, or protein-ligand geometry is central.
+
 $$
 r_L = \phi(L, c)
 $$

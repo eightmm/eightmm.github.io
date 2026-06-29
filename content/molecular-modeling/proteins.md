@@ -13,6 +13,8 @@ tags:
 
 Protein modeling은 sequence, structure, domain, binding site, learned representation을 다룹니다. 중요한 구분은 model이 sequence만 보는지, predicted structure를 보는지, experimental structure를 보는지, known complex를 보는지입니다.
 
+This page owns the protein object layer: sequence, chain, construct, domain, structure source, and representation unit. Use [[molecular-modeling/protein-modeling|Protein Modeling]] for broader protein-modeling task maps, [[molecular-modeling/sequence-based|Sequence-Based Modeling]] for sequence-first routes, and [[molecular-modeling/structure-based/index|Structure-Based Modeling]] when pocket, pose, or complex geometry is central.
+
 $$
 r_P = \phi(s_{1:L}, X, c)
 $$

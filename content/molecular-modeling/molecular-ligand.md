@@ -2,7 +2,6 @@
 title: Molecular and Ligand Modeling
 aliases:
   - computational-biology/molecular-ligand
-  - computational-biology/molecules
   - bio/molecular-ligand
 tags:
   - computational-biology
@@ -12,6 +11,8 @@ tags:
 # Molecular and Ligand Modeling
 
 Molecular and ligand modeling은 small-molecule identity, representation, standardization, conformer, property prediction, retrieval, generation을 다룹니다. Ligand는 molecule과 다른 object type이 아니라 binding 또는 target context 안에 있는 molecule입니다.
+
+이 페이지는 molecule 관련 작업을 어디로 보낼지 정하는 route page입니다. Chemical identity 자체는 [[molecular-modeling/molecules|Molecules]]에서 고정하고, target, assay, pocket, pose가 들어오면 [[molecular-modeling/interactions|Interaction Modeling]] 또는 [[molecular-modeling/structure-based/index|Structure-Based Modeling]]으로 이동합니다.
 
 $$
 r_L
@@ -89,6 +90,13 @@ RDKit은 molecule parsing, standardization, fingerprint, descriptor, substructur
 ## Boundary
 
 Molecule-only 또는 ligand-preparation question은 이 페이지를 사용합니다. Row가 molecule-target-assay relation이면 [[molecular-modeling/interactions|Interaction modeling]]을 사용합니다. Pocket, pose, coordinate frame, protein-ligand complex가 claim의 일부이면 [[molecular-modeling/structure-based/index|Structure-based modeling]]을 사용합니다.
+
+| Page | Owns |
+| --- | --- |
+| [Molecules](/molecular-modeling/molecules) | chemical identity, standardization, representation contract |
+| [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand) | route choice across property, retrieval, generation, ligand preparation |
+| [Interaction Modeling](/molecular-modeling/interactions) | target-conditioned activity, affinity, selectivity, assay relation |
+| [Structure-Based Modeling](/molecular-modeling/structure-based) | pocket, pose, docking, protein-ligand geometry |
 
 ## Checks
 
