@@ -10,6 +10,8 @@ tags:
 
 Gemini는 Google ecosystem과 강하게 연결된 multimodal assistant family입니다. Gemini Apps에서는 Deep Research, Canvas, Gems, Drive/Workspace 연동 같은 기능이 agent workflow로 이어집니다.
 
+Gemini를 agent surface로 볼 때는 Google Workspace context, multimodal input/output, research workflow가 어떤 boundary와 evidence를 갖는지 봅니다.
+
 ## 기능 축
 
 | 기능 | Agent 관점 |
@@ -33,6 +35,22 @@ Gemini는 Google ecosystem과 강하게 연결된 multimodal assistant family입
 - Workspace 연결은 편리하지만 private data 경계가 중요합니다.
 - Deep Research는 계획과 출처가 핵심이며, 최종 보고서는 사람이 다시 검토해야 합니다.
 - media generation 기능은 사용량과 이용 가능 범위가 자주 변합니다.
+
+## Workflow Fit
+
+| Workflow | 확인할 것 |
+| --- | --- |
+| Workspace document work | 어떤 Drive/Docs/Gmail context를 썼는가 |
+| Research report | source freshness와 citation coverage |
+| Multimodal analysis | input modality와 output claim의 근거 |
+| Canvas editing | artifact final state와 export boundary |
+| Reusable assistant | Gems 설정이 task boundary를 좁히는가 |
+
+## Risk
+
+- Workspace integration은 편리하지만 private document leakage 위험이 큽니다.
+- multimodal output은 generation quality와 factual grounding을 분리해서 봐야 합니다.
+- 기능 제한과 availability는 자주 바뀌므로 공식 문서를 확인해야 합니다.
 
 ## Official References
 

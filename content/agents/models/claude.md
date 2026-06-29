@@ -10,6 +10,8 @@ tags:
 
 Claude는 long-form reasoning, writing, artifacts, coding, tool use가 강한 agent product family입니다. 사용자-facing 기능과 개발자 tool-use API가 모두 agent workflow와 연결됩니다.
 
+Claude를 agent로 볼 때 핵심은 long context와 artifact/tool workflow를 어떻게 검증 가능한 산출물로 연결하느냐입니다.
+
 ## 기능 축
 
 | 기능 | Agent 관점 |
@@ -35,6 +37,22 @@ Claude는 long-form reasoning, writing, artifacts, coding, tool use가 강한 ag
 - artifact가 conversation과 분리되어도 최종 산출물 검증은 따로 해야 합니다.
 - computer/browser use는 실제 외부 상태를 바꿀 수 있으므로 human gate가 필요합니다.
 - project knowledge retrieval은 근거 문서를 확인해야 합니다.
+
+## Workflow Fit
+
+| Workflow | 확인할 것 |
+| --- | --- |
+| Long-form writing | artifact final state와 요구사항이 맞는가 |
+| Coding | repo diff, command output, review evidence가 있는가 |
+| Tool/API workflow | tool schema와 failure handling이 명확한가 |
+| Computer/browser action | action preview와 human gate가 있는가 |
+| Project knowledge | retrieved source가 실제 답변을 지지하는가 |
+
+## Risk
+
+- artifact가 보기 좋아도 build/test/semantic check는 별도로 필요합니다.
+- 긴 context는 stale or irrelevant context도 같이 끌고 올 수 있습니다.
+- browser/computer action은 read-only와 write action을 엄격히 구분해야 합니다.
 
 ## Official References
 

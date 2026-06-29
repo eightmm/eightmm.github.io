@@ -23,6 +23,8 @@ $$
 \text{review}
 $$
 
+Coding workspace는 chat보다 environment에 가깝습니다. agent는 repository state를 보고, 변경을 만들고, command를 실행하며, git diff와 test output을 evidence로 삼습니다.
+
 ## 일반 기능
 
 | 기능 | 의미 |
@@ -32,6 +34,16 @@ $$
 | Terminal execution | 테스트, lint, build, script 실행 |
 | PR or branch workflow | 변경을 branch/PR 단위로 검토 |
 | Review assistance | 버그, regression, missing test 찾기 |
+
+## Workspace State
+
+| State | 왜 중요한가 |
+| --- | --- |
+| Branch and remote | 어디에 push되는지 결정 |
+| Dirty worktree | 사용자 변경을 덮어쓰지 않기 위해 |
+| Test/build scripts | verification path |
+| Generated files | 직접 수정하면 안 되는 산출물 구분 |
+| Project instructions | style, no-touch area, commit rule |
 
 ## 좋은 요청
 
@@ -46,6 +58,14 @@ $$
 - schema, auth, dependency, infrastructure 변경.
 - secret, credential, private data가 포함된 작업.
 - 검증 경로가 없는 “알아서 개선” 요청.
+
+## Verification Ladder
+
+1. 관련 파일을 읽고 기존 패턴을 확인합니다.
+2. 작은 diff를 만들고 scope creep을 막습니다.
+3. syntax, lint, unit test, build 중 가장 좁은 유용한 check를 실행합니다.
+4. public/deploy workflow가 있다면 remote CI 또는 rendered artifact를 확인합니다.
+5. final report에서 changed, verified, not verified를 분리합니다.
 
 ## Official References
 

@@ -10,6 +10,8 @@ tags:
 
 GitHub Copilot은 IDE와 GitHub workflow에 붙은 coding assistant family입니다. completion, chat, code review, cloud coding agent, PR workflow 같은 기능이 codebase-centered agent 경험을 만듭니다.
 
+Copilot은 general assistant라기보다 repository environment에 강하게 붙은 coding surface입니다. 따라서 모델 답변보다 diff, test, PR review, issue scope가 더 중요한 evidence입니다.
+
 ## 기능 축
 
 | 기능 | Agent 관점 |
@@ -34,6 +36,22 @@ GitHub Copilot은 IDE와 GitHub workflow에 붙은 coding assistant family입니
 - completion은 빠르지만 전체 설계를 보장하지 않습니다.
 - coding agent 결과는 PR diff와 test 결과로 검토해야 합니다.
 - issue description이 애매하면 agent도 잘못된 범위를 구현하기 쉽습니다.
+
+## Workflow Fit
+
+| Workflow | 확인할 것 |
+| --- | --- |
+| IDE completion | local context가 충분한가 |
+| Chat-based code help | 답이 current codebase와 맞는가 |
+| PR review | finding이 file/line/evidence에 묶였는가 |
+| Coding agent task | issue scope, branch, test, PR diff가 명확한가 |
+| Documentation update | docs가 실제 source와 동기화됐는가 |
+
+## Risk
+
+- completion은 빠르지만 cross-file invariant를 놓칠 수 있습니다.
+- coding agent가 생성한 PR도 human review와 CI가 필요합니다.
+- repository secret, internal path, private data를 prompt나 issue에 넣지 않아야 합니다.
 
 ## Official References
 
