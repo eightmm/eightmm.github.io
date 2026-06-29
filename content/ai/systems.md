@@ -17,6 +17,8 @@ $$
 (\text{model}, \text{data}, \text{runtime}, \text{artifact}, \text{operation})
 $$
 
+AI system note의 핵심은 “무슨 모델을 썼다”가 아니라 어떤 artifact가 어떤 contract로 재현되고 실행되는지입니다. 같은 model weight라도 dataset snapshot, tokenizer, preprocessing, precision, batching, serving policy가 달라지면 다른 system입니다.
+
 ## Main Areas
 
 | Area | Use for | Canonical notes |
@@ -27,6 +29,17 @@ $$
 | Environment | module, container, dependency, runtime drift | [Environment management](/concepts/systems/environment-management), [Environment modules and containers](/concepts/systems/environment-modules-containers) |
 | Reproducibility | run record, artifact, versioning, evidence boundary | [Reproducibility](/concepts/systems/reproducibility), [Run artifact](/concepts/systems/run-artifact), [Model versioning](/concepts/systems/model-versioning) |
 | Operations | monitoring, deployment, recovery, resource scheduling | [Deployment strategy](/concepts/systems/deployment-strategy), [Observability](/concepts/systems/observability), [Failure recovery](/concepts/systems/failure-recovery), [Resource scheduling](/concepts/systems/resource-scheduling) |
+
+## Lifecycle
+
+| Stage | System question | Evidence |
+| --- | --- | --- |
+| Data preparation | 어떤 snapshot과 preprocessing contract를 썼는가? | manifest, split, script, checksum |
+| Training | 어떤 run state가 checkpoint를 만들었는가? | config, seed, optimizer, logs |
+| Evaluation | 어떤 metric과 selection rule로 claim을 만들었는가? | eval table, baseline, confidence interval |
+| Inference | input/output contract가 무엇인가? | schema, example, batch policy |
+| Serving | latency, throughput, capacity boundary는 무엇인가? | benchmark, monitoring, rollout record |
+| Reproducibility | 나중에 같은 claim을 재구성할 수 있는가? | run artifact, version tag, environment |
 
 ## Boundary With Infra
 
@@ -57,6 +70,21 @@ AI system note는 모델 이름보다 artifact boundary를 먼저 남깁니다.
 | Inference contract | input schema, output schema, batching, limit |
 | Evaluation record | metric, selection rule, baseline, uncertainty |
 | Runtime environment | package version, container/module, hardware class |
+
+## System Failure Modes
+
+- checkpoint는 남았지만 tokenizer, featurizer, preprocessing rule이 없습니다.
+- evaluation metric은 있지만 split, selection rule, confidence interval이 없습니다.
+- local inference는 되지만 serving batch/precision/timeout 조건이 다릅니다.
+- hardware 문제를 model quality 문제로 오해합니다.
+- deployment는 성공했지만 public claim을 뒷받침하는 run record가 없습니다.
+
+## Checks
+
+- model, data, code, config, environment, hardware class가 분리되어 기록됐는가?
+- training artifact와 inference artifact가 같은 preprocessing contract를 쓰는가?
+- metric claim과 serving requirement가 서로 다른 evidence를 요구한다는 점을 구분했는가?
+- public note에 private path, server name, account, unpublished result가 들어가지 않았는가?
 
 ## Related
 

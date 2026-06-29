@@ -10,6 +10,14 @@ tags:
 
 Dynamical system은 state가 시간 또는 연속 경로를 따라 어떻게 변하는지 설명합니다. 이 페이지는 update rule, vector field, ODE/SDE, flow map 같은 raw mathematical language를 정리합니다. Recurrent model, residual network, diffusion, flow matching, control, molecular dynamics는 이 언어를 쓰는 application입니다.
 
+핵심은 state와 transition을 분리하는 것입니다.
+
+$$
+\text{state}
+\xrightarrow{\text{dynamics}}
+\text{next state or path}
+$$
+
 ## Route Map
 
 | 질문 | 시작점 | 쓰임 |
@@ -19,6 +27,17 @@ Dynamical system은 state가 시간 또는 연속 경로를 따라 어떻게 변
 | noise가 dynamics의 일부인가? | [Diffusion model](/concepts/generative-models/diffusion-model) | stochastic path, denoising objective |
 | agent 또는 controller가 시간에 따라 행동하는가? | [Reinforcement learning](/concepts/learning/reinforcement-learning) | state, action, reward, policy dynamics |
 | state가 물리적 상태인가? | [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | coordinate와 force evolution as an application |
+
+## Quantity Map
+
+| Quantity | Symbol | Meaning |
+| --- | --- | --- |
+| State | $x_t$ or $x(t)$ | system의 현재 값 |
+| Transition | $F(x_t,t)$ | discrete update rule |
+| Vector field | $f(x,t)$ | continuous-time movement direction |
+| Flow map | $\Phi_{s\to t}$ | state를 time $s$에서 $t$로 보냄 |
+| Noise | $dW_t$ | stochastic perturbation |
+| Energy/potential | $E(X)$ | physical dynamics의 scalar field |
 
 ## Discrete-Time Dynamics
 
@@ -44,6 +63,16 @@ $$
 
 $f_\theta$는 vector field입니다. 각 위치에서 이동 방향과 속도를 알려줍니다.
 
+ODE solution은 초기값 $x(0)$와 vector field $f$가 path를 결정한다는 뜻입니다.
+
+$$
+x(t)
+=
+x(0)
++
+\int_0^t f(x(\tau),\tau)\,d\tau
+$$
+
 ## Flow Map
 
 시간 $s$에서 $t$까지 ODE를 풀면 flow map을 정의할 수 있습니다.
@@ -55,6 +84,18 @@ x(t)
 $$
 
 Generative flow는 이 관점을 사용해 simple distribution의 sample을 data distribution으로 이동시킵니다.
+
+## Stability View
+
+작은 perturbation이 시간이 지나며 커지는지 줄어드는지도 중요합니다.
+
+$$
+\delta_{t+1}
+\approx
+J_F(x_t)\delta_t
+$$
+
+여기서 $J_F$는 transition의 Jacobian입니다. 이 관점은 exploding/vanishing gradient, iterative refinement stability, numerical solver sensitivity와 연결됩니다.
 
 ## Stochastic Dynamics
 
