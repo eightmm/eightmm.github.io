@@ -57,5 +57,5 @@ $$
 - [[ai/index|AI]]
 - [[ai/architectures|Architectures]]
 - [[ai/learning-methods|Learning Methods]]
-- [[math/formula-reading-for-ai|Formula Reading for AI]]
+- [[math/formula-reading|Formula Reading]]
 - [[molecular-modeling/representation-routes|Representation Routes]]

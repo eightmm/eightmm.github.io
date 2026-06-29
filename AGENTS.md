@@ -52,6 +52,8 @@ Keep each top-level section close to its raw object:
 
 If a page title contains a domain object such as protein, ligand, molecule, pocket, pose, docking, structure modeling, assay, or genome sequence, default to `molecular-modeling/` unless the page is only defining a reusable math, AI, or agent primitive. If a page title contains only a primitive such as attention, transformer, gradient, entropy, KL, group action, tool contract, or completion audit, keep it in the corresponding raw section or `concepts/` support area.
 
+Avoid naming Math pages as `... for AI` unless the page is intentionally an AI-facing post. In `math/`, prefer raw names such as `Formula Reading`, `Linear Algebra`, or `Dynamical Systems`; connect them to AI and Computational Biology through route rows and related links.
+
 Keep supporting wiki areas available for links, but do not expose every support folder as a main public area unless the user asks:
 
 - `entities/`: Protein, ligand, molecule, protein-ligand complex, sequence, structure, assay, dataset, genome, and other modeled objects. Treat this as a vocabulary layer, not a research category by itself.

@@ -8,7 +8,7 @@ tags:
 
 # Dynamical Systems
 
-Dynamical system은 state가 시간 또는 연속 경로를 따라 어떻게 변하는지 설명합니다. AI에서는 recurrent model, residual network, diffusion model, flow matching, probability-flow ODE, control, reinforcement learning, molecular dynamics에서 반복적으로 등장합니다.
+Dynamical system은 state가 시간 또는 연속 경로를 따라 어떻게 변하는지 설명합니다. 이 페이지는 update rule, vector field, ODE/SDE, flow map 같은 raw mathematical language를 정리합니다. Recurrent model, residual network, diffusion, flow matching, control, molecular dynamics는 이 언어를 쓰는 application입니다.
 
 ## Route Map
 
@@ -18,7 +18,7 @@ Dynamical system은 state가 시간 또는 연속 경로를 따라 어떻게 변
 | model이 continuous flow인가? | [Flow matching](/concepts/generative-models/flow-matching), [Probability flow ODE](/concepts/generative-models/probability-flow-ode), [Rectified flow](/concepts/generative-models/rectified-flow) | sample transport, velocity field |
 | noise가 dynamics의 일부인가? | [Diffusion model](/concepts/generative-models/diffusion-model) | stochastic path, denoising objective |
 | agent 또는 controller가 시간에 따라 행동하는가? | [Reinforcement learning](/concepts/learning/reinforcement-learning) | state, action, reward, policy dynamics |
-| state가 물리적 상태인가? | [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | coordinate와 force evolution |
+| state가 물리적 상태인가? | [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | coordinate와 force evolution as an application |
 
 ## Discrete-Time Dynamics
 
@@ -90,9 +90,9 @@ $$
 
 이 관점은 deep architecture, stability, continuous generative model을 연결해 줍니다.
 
-## Molecular Dynamics View
+## Physical Dynamics Example
 
-Molecular dynamics는 coordinate 위의 physical dynamical system입니다.
+Molecular dynamics는 coordinate 위의 physical dynamical system 예시입니다. 자세한 protocol, force field, simulation artifact, structure workflow는 Computational Biology 쪽에서 다룹니다.
 
 $$
 m_i\frac{d^2x_i}{dt^2}

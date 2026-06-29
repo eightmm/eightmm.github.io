@@ -82,7 +82,7 @@ ExternalPlugin.Explorer({
       "agents/models": "Models",
       "agents/verification": "Verification",
       math: "Math",
-      "math/formula-reading-for-ai": "Formula Reading for AI",
+      "math/formula-reading": "Formula Reading",
       "math/linear-algebra": "Linear Algebra",
       "math/calculus-gradients": "Calculus and Gradients",
       "math/probability-statistics": "Probability and Statistics",
@@ -156,7 +156,7 @@ ExternalPlugin.Explorer({
       "data-evaluation",
     ]
     const mathGroups = [
-      "formula-reading-for-ai",
+      "formula-reading",
       "linear-algebra",
       "calculus-gradients",
       "probability-statistics",

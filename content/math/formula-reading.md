@@ -1,14 +1,15 @@
 ---
-title: Formula Reading for AI
+title: Formula Reading
+aliases:
+  - math/formula-reading-for-ai
 tags:
   - math
   - formula
-  - ai
 ---
 
-# Formula Reading for AI
+# Formula Reading
 
-AI 논문 수식은 notation 자체보다 어떤 object, distribution, objective, estimator, metric을 고정하는지가 중요합니다. 수식이 나오면 먼저 모양을 단순화하고, 그 식이 주장하는 claim을 확인합니다.
+논문 수식은 notation 자체보다 어떤 object, distribution, objective, estimator, metric을 고정하는지가 중요합니다. 수식이 나오면 먼저 모양을 단순화하고, 그 식이 주장하는 claim을 확인합니다.
 
 $$
 \widehat{Q}
@@ -30,7 +31,7 @@ $$
 | Parameter | 미분 대상이 parameter $\theta$, input $x$, coordinate $X$, time $t$ 중 무엇인가? | [Calculus and Gradients](/math/calculus-gradients) |
 | Objective | loss, likelihood, score, reward, energy, constraint 중 무엇인가? | [Information and Likelihood](/math/information-likelihood) |
 | Estimate | population quantity와 finite-sample estimate가 분리되어 있는가? | [Estimator vs metric](/concepts/math/estimator-vs-metric) |
-| Claim | 이 식이 architecture, training, generation, evaluation 중 무엇을 뒷받침하는가? | [Model Reading Map](/ai/model-reading-map) |
+| Claim | 이 식이 architecture, training, generation, evaluation, domain workflow 중 무엇을 뒷받침하는가? | [Model Reading Map](/ai/model-reading-map) |
 
 ## Formula by Claim Type
 

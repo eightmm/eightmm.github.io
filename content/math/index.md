@@ -27,7 +27,7 @@ $$
 | 영역 | 용도 | 시작점 |
 | --- | --- | --- |
 | Foundations | definitions, formulas, reusable checks | [Math foundations](/concepts/math) |
-| Formula reading | paper equations, shapes, distributions, objectives, estimators, metrics | [Formula Reading for AI](/math/formula-reading-for-ai) |
+| Formula reading | paper equations, shapes, distributions, objectives, estimators, metrics | [Formula Reading](/math/formula-reading) |
 | Linear algebra | vectors, matrices, tensor shapes, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Calculus and optimization | derivatives, chain rule, Jacobians, Hessians, constraints, backpropagation math | [Calculus and gradients](/math/calculus-gradients), [Chain rule](/concepts/math/chain-rule), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Probability | random variables, distributions, estimators, Bayesian inference, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
@@ -135,7 +135,7 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 ## Related
 
 - [[ai/index|AI]]
-- [[math/formula-reading-for-ai|Formula Reading for AI]]
+- [[math/formula-reading|Formula Reading]]
 - [[molecular-modeling/index|Computational Biology]]
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]
