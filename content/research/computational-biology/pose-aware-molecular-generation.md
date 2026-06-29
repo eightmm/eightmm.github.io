@@ -25,10 +25,10 @@ Structure condition을 쓰는 generative model은 ligand-only property objective
 
 | 축 | 볼 것 |
 | --- | --- |
-| Object | [[molecular-modeling/entities|Objects and entities]], [[entities/protein-ligand-complex|Protein-ligand complex]] |
-| Generation | [[ai/generative-models|Generative Models]], [[concepts/generative-models/molecular-generation|Molecular generation]] |
-| Geometry | [[math/geometry-symmetry|Geometry and symmetry]], [[concepts/geometric-deep-learning/equivariance|Equivariance]] |
-| Evaluation | [[concepts/sbdd/pose-quality|Pose quality]], [[concepts/sbdd/binding-affinity|Binding affinity]], [[papers/sbdd/posebusters|PoseBusters]] |
+| Object | [Objects and entities](/molecular-modeling/entities), [Protein-ligand complex](/entities/protein-ligand-complex) |
+| Generation | [Generative Models](/ai/generative-models), [Molecular generation](/concepts/generative-models/molecular-generation) |
+| Geometry | [Geometry and symmetry](/math/geometry-symmetry), [Equivariance](/concepts/geometric-deep-learning/equivariance) |
+| Evaluation | [Pose quality](/concepts/sbdd/pose-quality), [Binding affinity](/concepts/sbdd/binding-affinity), [PoseBusters](/papers/sbdd/posebusters) |
 
 ## Evidence Plan
 

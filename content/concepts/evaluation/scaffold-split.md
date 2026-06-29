@@ -62,8 +62,8 @@ The split is only as meaningful as the scaffold definition. Two papers can both 
 | Claim | Better split axis |
 |---|---|
 | new chemotypes for same assay family | scaffold or similarity cluster split |
-| new protein targets | [[concepts/evaluation/protein-family-split|Protein family split]] |
-| new target-ligand pairs | [[concepts/sbdd/protein-ligand-split|Protein-ligand split]] |
+| new protein targets | [Protein family split](/concepts/evaluation/protein-family-split) |
+| new target-ligand pairs | [Protein-ligand split](/concepts/sbdd/protein-ligand-split) |
 | new assay source | assay/source split |
 | deployment over time | temporal split |
 

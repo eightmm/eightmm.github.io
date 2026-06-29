@@ -33,16 +33,16 @@ tags:
 
 | Area | 질문 |
 | --- | --- |
-| [[research/computational-biology/index|Computational Biology Research]] | molecule, protein, pocket, structure-based modeling에서 무엇을 검증할 것인가 |
-| [[research/architectures/index|Architecture Research]] | architecture와 inductive bias가 어떤 task에서 실제로 유리한가 |
+| [Computational Biology Research](/research/computational-biology) | molecule, protein, pocket, structure-based modeling에서 무엇을 검증할 것인가 |
+| [Architecture Research](/research/architectures) | architecture와 inductive bias가 어떤 task에서 실제로 유리한가 |
 
 ## Seed Questions
 
 | Question | Area |
 | --- | --- |
-| [[research/computational-biology/pose-aware-molecular-generation|Pose-aware molecular generation]] | [[research/computational-biology/index|Computational Biology Research]] |
-| [[research/computational-biology/pocket-ligand-representation-alignment|Pocket-ligand representation alignment]] | [[research/computational-biology/index|Computational Biology Research]] |
-| [[research/architectures/geometric-inductive-bias|Geometric inductive bias]] | [[research/architectures/index|Architecture Research]] |
+| [Pose-aware molecular generation](/research/computational-biology/pose-aware-molecular-generation) | [Computational Biology Research](/research/computational-biology) |
+| [Pocket-ligand representation alignment](/research/computational-biology/pocket-ligand-representation-alignment) | [Computational Biology Research](/research/computational-biology) |
+| [Geometric inductive bias](/research/architectures/geometric-inductive-bias) | [Architecture Research](/research/architectures) |
 
 ## Research Note 조건
 

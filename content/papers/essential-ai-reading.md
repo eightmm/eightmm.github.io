@@ -15,43 +15,43 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 
 | Topic | Candidate Papers | Route |
 | --- | --- | --- |
-| Transformer and attention | Attention Is All You Need, BERT, GPT-style decoder-only models | [[papers/architectures/index|Architecture papers]], [[papers/llm/index|LLM papers]] |
-| Vision and convolution | AlexNet, ResNet, U-Net, Vision Transformer | [[papers/architectures/index|Architecture papers]] |
-| Graph and geometry | GCN, GAT, SchNet, EGNN, SE(3)-Transformer, AlphaFold-style structure modules | [[papers/architectures/index|Architecture papers]], [[papers/computational-biology/index|Computational Biology papers]] |
-| Sequence alternatives | S4, Mamba, linear attention variants | [[papers/architectures/index|Architecture papers]] |
-| Conditional compute | Mixture of Experts, Switch Transformer, routed sparse models | [[papers/architectures/index|Architecture papers]], [[papers/systems/index|Systems papers]] |
+| Transformer and attention | Attention Is All You Need, BERT, GPT-style decoder-only models | [Architecture papers](/papers/architectures), [LLM papers](/papers/llm) |
+| Vision and convolution | AlexNet, ResNet, U-Net, Vision Transformer | [Architecture papers](/papers/architectures) |
+| Graph and geometry | GCN, GAT, SchNet, EGNN, SE(3)-Transformer, AlphaFold-style structure modules | [Architecture papers](/papers/architectures), [Computational Biology papers](/papers/computational-biology) |
+| Sequence alternatives | S4, Mamba, linear attention variants | [Architecture papers](/papers/architectures) |
+| Conditional compute | Mixture of Experts, Switch Transformer, routed sparse models | [Architecture papers](/papers/architectures), [Systems papers](/papers/systems) |
 
 ## Learning Methods
 
 | Topic | Candidate Papers | Route |
 | --- | --- | --- |
-| Self-supervised learning | SimCLR, MoCo, BYOL, MAE, DINO, JEPA-style objectives | [[papers/learning-methods/index|Learning method papers]] |
-| Language-model pretraining | GPT, BERT, T5, instruction tuning, RLHF-style alignment | [[papers/llm/index|LLM papers]], [[papers/learning-methods/index|Learning method papers]] |
-| Representation learning | contrastive learning, masked modeling, metric learning, probing papers | [[papers/learning-methods/index|Learning method papers]] |
+| Self-supervised learning | SimCLR, MoCo, BYOL, MAE, DINO, JEPA-style objectives | [Learning method papers](/papers/learning-methods) |
+| Language-model pretraining | GPT, BERT, T5, instruction tuning, RLHF-style alignment | [LLM papers](/papers/llm), [Learning method papers](/papers/learning-methods) |
+| Representation learning | contrastive learning, masked modeling, metric learning, probing papers | [Learning method papers](/papers/learning-methods) |
 
 ## Generative Models
 
 | Topic | Candidate Papers | Route |
 | --- | --- | --- |
-| Diffusion and score models | DDPM, score-based generative modeling, classifier-free guidance | [[papers/generative-models/index|Generative model papers]] |
-| Flow and likelihood models | Normalizing flows, CNF, flow matching, rectified flow | [[papers/generative-models/index|Generative model papers]] |
-| Structured generation | molecular generation, protein design, structure generation | [[papers/generative-models/index|Generative model papers]], [[papers/computational-biology/index|Computational Biology papers]] |
+| Diffusion and score models | DDPM, score-based generative modeling, classifier-free guidance | [Generative model papers](/papers/generative-models) |
+| Flow and likelihood models | Normalizing flows, CNF, flow matching, rectified flow | [Generative model papers](/papers/generative-models) |
+| Structured generation | molecular generation, protein design, structure generation | [Generative model papers](/papers/generative-models), [Computational Biology papers](/papers/computational-biology) |
 
 ## Systems and Evaluation
 
 | Topic | Candidate Papers | Route |
 | --- | --- | --- |
-| Scaling and efficiency | scaling laws, Chinchilla-style compute/data tradeoff, efficient inference | [[papers/systems/index|Systems papers]] |
-| Evaluation and reproducibility | benchmark design, leakage audits, artifact papers | [[papers/reproducibility/index|Paper reproducibility]], [[papers/analysis/index|Paper analysis]] |
-| Agents and tools | tool use, ReAct-style reasoning, retrieval, agent evaluation | [[papers/llm/index|LLM papers]], [[agents/index|Agents]] |
+| Scaling and efficiency | scaling laws, Chinchilla-style compute/data tradeoff, efficient inference | [Systems papers](/papers/systems) |
+| Evaluation and reproducibility | benchmark design, leakage audits, artifact papers | [Paper reproducibility](/papers/reproducibility), [Paper analysis](/papers/analysis) |
+| Agents and tools | tool use, ReAct-style reasoning, retrieval, agent evaluation | [LLM papers](/papers/llm), [Agents](/agents) |
 
 ## Computational Biology
 
 | Topic | Candidate Papers | Route |
 | --- | --- | --- |
-| Protein structure and design | AlphaFold family, RFdiffusion, protein language models | [[papers/computational-biology/index|Computational Biology papers]], [[papers/protein-modeling/index|Protein modeling papers]] |
-| Structure-based modeling | DiffDock-style docking, PoseBusters-style evaluation, docking benchmarks | [[papers/sbdd/index|Structure-based modeling papers]] |
-| Molecular modeling | molecular property prediction, molecular generation, assay-aware evaluation | [[papers/computational-biology/index|Computational Biology papers]] |
+| Protein structure and design | AlphaFold family, RFdiffusion, protein language models | [Computational Biology papers](/papers/computational-biology), [Protein modeling papers](/papers/protein-modeling) |
+| Structure-based modeling | DiffDock-style docking, PoseBusters-style evaluation, docking benchmarks | [Structure-based modeling papers](/papers/sbdd) |
+| Molecular modeling | molecular property prediction, molecular generation, assay-aware evaluation | [Computational Biology papers](/papers/computational-biology) |
 
 ## Promotion Rule
 

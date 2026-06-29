@@ -23,15 +23,15 @@ $$
 
 | Object | Use when | Main risk |
 | --- | --- | --- |
-| [[entities/target|Target]] | target-conditioned activity, affinity, selectivity, assay context | target identity가 isoform, construct, mutation, species, assay source를 숨길 수 있음 |
-| [[entities/protein|Protein]] | sequence, structure, representation, family split | homolog leakage와 residue-index mismatch |
-| [[entities/pocket|Pocket]] | binding site, docking, pose prediction, structure-based generation | pocket이 ligand-defined이거나 inference에서 unavailable할 수 있음 |
-| [[entities/ligand|Ligand]] | target-bound molecule, pose, activity, interaction | ligand state와 atom mapping이 protocol마다 달라질 수 있음 |
-| [[entities/molecule|Molecule]] | property prediction, molecular generation, similarity, scaffold split | salt, stereo, tautomer, protonation, duplicate handling |
-| [[entities/protein-ligand-complex|Protein-ligand complex]] | docking, pose quality, interaction prediction, complex graph | pair-level split이 protein 또는 ligand family를 leak할 수 있음 |
-| [[entities/sequence|Sequence]] | protein language model, genome region model, motif task | sequence context와 split unit이 biological claim과 맞지 않을 수 있음 |
-| [[entities/structure|Structure]] | coordinate, conformer, protein structure, complex | template, frame, coordinate-source leakage |
-| [[entities/genome|Genome]] | sequence/region/variant-level modeling only | broad omics claim은 명시적으로 열기 전까지 scope 밖 |
+| [Target](/entities/target) | target-conditioned activity, affinity, selectivity, assay context | target identity가 isoform, construct, mutation, species, assay source를 숨길 수 있음 |
+| [Protein](/entities/protein) | sequence, structure, representation, family split | homolog leakage와 residue-index mismatch |
+| [Pocket](/entities/pocket) | binding site, docking, pose prediction, structure-based generation | pocket이 ligand-defined이거나 inference에서 unavailable할 수 있음 |
+| [Ligand](/entities/ligand) | target-bound molecule, pose, activity, interaction | ligand state와 atom mapping이 protocol마다 달라질 수 있음 |
+| [Molecule](/entities/molecule) | property prediction, molecular generation, similarity, scaffold split | salt, stereo, tautomer, protonation, duplicate handling |
+| [Protein-ligand complex](/entities/protein-ligand-complex) | docking, pose quality, interaction prediction, complex graph | pair-level split이 protein 또는 ligand family를 leak할 수 있음 |
+| [Sequence](/entities/sequence) | protein language model, genome region model, motif task | sequence context와 split unit이 biological claim과 맞지 않을 수 있음 |
+| [Structure](/entities/structure) | coordinate, conformer, protein structure, complex | template, frame, coordinate-source leakage |
+| [Genome](/entities/genome) | sequence/region/variant-level modeling only | broad omics claim은 명시적으로 열기 전까지 scope 밖 |
 
 여러 object와 relation이 함께 중요하면 [[entities/entity-relation-map|Entity relation map]]을 사용합니다.
 

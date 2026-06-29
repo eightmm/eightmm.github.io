@@ -26,34 +26,34 @@ $$
 
 | 질문 | 볼 곳 |
 | --- | --- |
-| agent가 내부적으로 어떻게 움직이는가? | [[agents/core/index|Core]] |
-| 사용자가 실제로 누르는 기능은 무엇인가? | [[agents/features/index|Features]] |
-| tool call, connector, side effect는 어떻게 다루는가? | [[agents/tools/index|Tools]] |
-| coding, paper brief, LLM Wiki 같은 반복 작업은 어떻게 묶는가? | [[agents/workflows/index|Workflows]] |
-| ChatGPT, Claude, Gemini, Copilot은 어떤 agent surface를 갖는가? | [[agents/models/index|Models]] |
-| agent 결과를 어떻게 검증하고 완료 판단하는가? | [[agents/verification/index|Verification]] |
+| agent가 내부적으로 어떻게 움직이는가? | [Core](/agents/core) |
+| 사용자가 실제로 누르는 기능은 무엇인가? | [Features](/agents/features) |
+| tool call, connector, side effect는 어떻게 다루는가? | [Tools](/agents/tools) |
+| coding, paper brief, LLM Wiki 같은 반복 작업은 어떻게 묶는가? | [Workflows](/agents/workflows) |
+| ChatGPT, Claude, Gemini, Copilot은 어떤 agent surface를 갖는가? | [Models](/agents/models) |
+| agent 결과를 어떻게 검증하고 완료 판단하는가? | [Verification](/agents/verification) |
 
 ## 섹션
 
 | 섹션 | 담는 것 | 대표 노트 |
 | --- | --- | --- |
-| [[agents/core/index|Core]] | architecture, loop, state, memory, planning | [[agents/core/agent-loop|Agent loop]], [[agents/core/context-engineering|Context engineering]] |
-| [[agents/features/index|Features]] | chat, files, research, coding, memory, canvas, connectors | [[agents/features/files-and-knowledge|Files and knowledge]], [[agents/features/coding-workspace|Coding workspace]] |
-| [[agents/tools/index|Tools]] | tool contract, permission, result handling | [[agents/tools/tool-use|Tool use]], [[agents/tools/tool-contract|Tool contract]] |
-| [[agents/workflows/index|Workflows]] | 반복 가능한 작업 절차 | [[agents/workflows/coding-agents|Coding agents]], [[agents/workflows/llm-wiki|LLM Wiki]] |
-| [[agents/models/index|Models]] | 공개 제품군의 agent interface | [[agents/models/chatgpt|ChatGPT]], [[agents/models/claude|Claude]] |
-| [[agents/verification/index|Verification]] | acceptance criteria, evidence, audit, safety | [[agents/verification/verification-loop|Verification loop]], [[agents/verification/completion-audit|Completion audit]] |
+| [Core](/agents/core) | architecture, loop, state, memory, planning | [Agent loop](/agents/core/agent-loop), [Context engineering](/agents/core/context-engineering) |
+| [Features](/agents/features) | chat, files, research, coding, memory, canvas, connectors | [Files and knowledge](/agents/features/files-and-knowledge), [Coding workspace](/agents/features/coding-workspace) |
+| [Tools](/agents/tools) | tool contract, permission, result handling | [Tool use](/agents/tools/tool-use), [Tool contract](/agents/tools/tool-contract) |
+| [Workflows](/agents/workflows) | 반복 가능한 작업 절차 | [Coding agents](/agents/workflows/coding-agents), [LLM Wiki](/agents/workflows/llm-wiki) |
+| [Models](/agents/models) | 공개 제품군의 agent interface | [ChatGPT](/agents/models/chatgpt), [Claude](/agents/models/claude) |
+| [Verification](/agents/verification) | acceptance criteria, evidence, audit, safety | [Verification loop](/agents/verification/verification-loop), [Completion audit](/agents/verification/completion-audit) |
 
 ## 분류 기준
 
 | 내용 | 둘 곳 |
 | --- | --- |
-| prompt, context, memory, planning처럼 agent를 이루는 부품 | [[agents/core/index|Core]] |
-| 사용자가 보는 기능 이름과 사용 패턴 | [[agents/features/index|Features]] |
-| 외부 상태를 읽거나 바꾸는 인터페이스 | [[agents/tools/index|Tools]] |
-| 여러 단계로 반복되는 작업 방식 | [[agents/workflows/index|Workflows]] |
-| 제품별 차이와 interface 비교 | [[agents/models/index|Models]] |
-| 결과가 맞는지 확인하는 기준과 절차 | [[agents/verification/index|Verification]] |
+| prompt, context, memory, planning처럼 agent를 이루는 부품 | [Core](/agents/core) |
+| 사용자가 보는 기능 이름과 사용 패턴 | [Features](/agents/features) |
+| 외부 상태를 읽거나 바꾸는 인터페이스 | [Tools](/agents/tools) |
+| 여러 단계로 반복되는 작업 방식 | [Workflows](/agents/workflows) |
+| 제품별 차이와 interface 비교 | [Models](/agents/models) |
+| 결과가 맞는지 확인하는 기준과 절차 | [Verification](/agents/verification) |
 
 ## 작성 규칙
 

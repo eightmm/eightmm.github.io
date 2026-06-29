@@ -66,10 +66,10 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 
 | Claim | Route | Check |
 | --- | --- | --- |
-| Architecture formula | [[concepts/architectures/linear-layer|Linear layer]], [[concepts/architectures/attention|Attention]] | shape, axis, projection, normalization |
-| Learning objective | [[ai/learning-methods|Learning Methods]], [[concepts/learning/objective-taxonomy|Objective taxonomy]] | label, mask, contrast, likelihood, denoising, reward |
-| Geometry rule | [[math/geometry-for-structure-modeling|Geometry for Structure Modeling]] | invariant target인지 equivariant target인지 |
-| Evaluation metric | [[math/evaluation-math|Evaluation Math]], [[concepts/math/estimator-vs-metric|Estimator vs metric]] | population quantity, finite estimate, selection rule |
+| Architecture formula | [Linear layer](/concepts/architectures/linear-layer), [Attention](/concepts/architectures/attention) | shape, axis, projection, normalization |
+| Learning objective | [Learning Methods](/ai/learning-methods), [Objective taxonomy](/concepts/learning/objective-taxonomy) | label, mask, contrast, likelihood, denoising, reward |
+| Geometry rule | [Geometry for Structure Modeling](/math/geometry-for-structure-modeling) | invariant target인지 equivariant target인지 |
+| Evaluation metric | [Evaluation Math](/math/evaluation-math), [Estimator vs metric](/concepts/math/estimator-vs-metric) | population quantity, finite estimate, selection rule |
 
 ## 연결되는 곳
 

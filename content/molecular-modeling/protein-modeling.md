@@ -25,13 +25,13 @@ where $s$ is a protein sequence, $X_{\mathrm{obs}}$ is optional observed or pred
 
 | Question | Start |
 | --- | --- |
-| What object is being modeled? | [[entities/protein|Protein]], [[entities/sequence|Sequence]], [[entities/structure|Structure]] |
-| How is the protein represented? | [[concepts/protein-modeling/protein-representation|Protein representation]], [[concepts/protein-modeling/protein-language-model|Protein language model]], [[concepts/modalities/sequence|Sequence]], [[concepts/modalities/3d-structure|3D structure]] |
-| Does the method use evolutionary context? | [[concepts/protein-modeling/multiple-sequence-alignment|Multiple sequence alignment]], [[concepts/protein-modeling/protein-domain|Protein domain]] |
-| Does the method predict coordinates or contacts? | [[concepts/protein-modeling/protein-structure-prediction|Protein structure prediction]], [[concepts/protein-modeling/contact-map|Contact map]], [[concepts/tasks/coordinate-prediction|Coordinate prediction]] |
-| Is residue numbering or chain mapping important? | [[concepts/protein-modeling/residue-indexing|Residue indexing]], [[concepts/protein-modeling/sequence-structure-alignment|Sequence-structure alignment]] |
-| Is this linked to binding or docking? | [[molecular-modeling/structure-based/index|Structure-based modeling]], [[entities/protein-ligand-complex|Protein-ligand complex]], [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]] |
-| What split tests transfer? | [[concepts/evaluation/protein-family-split|Protein family split]], [[concepts/evaluation/ood-generalization|OOD generalization]] |
+| What object is being modeled? | [Protein](/entities/protein), [Sequence](/entities/sequence), [Structure](/entities/structure) |
+| How is the protein represented? | [Protein representation](/concepts/protein-modeling/protein-representation), [Protein language model](/concepts/protein-modeling/protein-language-model), [Sequence](/concepts/modalities/sequence), [3D structure](/concepts/modalities/3d-structure) |
+| Does the method use evolutionary context? | [Multiple sequence alignment](/concepts/protein-modeling/multiple-sequence-alignment), [Protein domain](/concepts/protein-modeling/protein-domain) |
+| Does the method predict coordinates or contacts? | [Protein structure prediction](/concepts/protein-modeling/protein-structure-prediction), [Contact map](/concepts/protein-modeling/contact-map), [Coordinate prediction](/concepts/tasks/coordinate-prediction) |
+| Is residue numbering or chain mapping important? | [Residue indexing](/concepts/protein-modeling/residue-indexing), [Sequence-structure alignment](/concepts/protein-modeling/sequence-structure-alignment) |
+| Is this linked to binding or docking? | [Structure-based modeling](/molecular-modeling/structure-based), [Protein-ligand complex](/entities/protein-ligand-complex), [Protein-ligand interaction](/concepts/sbdd/protein-ligand-interaction) |
+| What split tests transfer? | [Protein family split](/concepts/evaluation/protein-family-split), [OOD generalization](/concepts/evaluation/ood-generalization) |
 
 ## Representation Levels
 

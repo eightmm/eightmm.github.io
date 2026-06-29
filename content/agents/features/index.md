@@ -26,13 +26,13 @@ $$
 
 | 기능 | 사용자가 기대하는 일 | 먼저 볼 노트 |
 | --- | --- | --- |
-| Chat and prompting | 질문, 초안, 설명, 변환 | [[agents/features/chat-and-prompting|Chat and prompting]] |
-| Files and knowledge | PDF, 문서, 노트, 프로젝트 지식 활용 | [[agents/features/files-and-knowledge|Files and knowledge]] |
-| Research browsing | 웹 검색, Deep Research, 출처 기반 보고서 | [[agents/features/research-browsing|Research browsing]] |
-| Coding workspace | 코드 읽기, 수정, 테스트, PR 보조 | [[agents/features/coding-workspace|Coding workspace]] |
-| Memory and projects | 장기 맥락, 프로젝트별 맥락, 사용자 선호 | [[agents/features/memory-projects|Memory and projects]] |
-| Artifacts and canvas | 문서, 앱, 코드, 시각화 결과물을 별도 작업면에서 편집 | [[agents/features/artifacts-canvas|Artifacts and canvas]] |
-| Connectors and actions | Drive, Slack, GitHub, 이메일 같은 외부 앱 연결 | [[agents/features/connectors-actions|Connectors and actions]] |
+| Chat and prompting | 질문, 초안, 설명, 변환 | [Chat and prompting](/agents/features/chat-and-prompting) |
+| Files and knowledge | PDF, 문서, 노트, 프로젝트 지식 활용 | [Files and knowledge](/agents/features/files-and-knowledge) |
+| Research browsing | 웹 검색, Deep Research, 출처 기반 보고서 | [Research browsing](/agents/features/research-browsing) |
+| Coding workspace | 코드 읽기, 수정, 테스트, PR 보조 | [Coding workspace](/agents/features/coding-workspace) |
+| Memory and projects | 장기 맥락, 프로젝트별 맥락, 사용자 선호 | [Memory and projects](/agents/features/memory-projects) |
+| Artifacts and canvas | 문서, 앱, 코드, 시각화 결과물을 별도 작업면에서 편집 | [Artifacts and canvas](/agents/features/artifacts-canvas) |
+| Connectors and actions | Drive, Slack, GitHub, 이메일 같은 외부 앱 연결 | [Connectors and actions](/agents/features/connectors-actions) |
 
 ## 작성 기준
 

@@ -29,7 +29,7 @@ $$
 
 | Graph Type | Nodes | Edges | Typical Use |
 | --- | --- | --- | --- |
-| [[concepts/molecular-modeling/molecular-graph|Chemical bond graph]] | atoms | covalent bonds | molecular property prediction, graph pretraining |
+| [Chemical bond graph](/concepts/molecular-modeling/molecular-graph) | atoms | covalent bonds | molecular property prediction, graph pretraining |
 | contact map | residues | distance/contact threshold | protein structure and function modeling |
 | radius graph | atoms, residues, points | $\|x_i-x_j\|_2 \le r$ | local 3D message passing |
 | k-nearest neighbor graph | atoms, residues, embeddings | nearest neighbors by distance or similarity | fixed-degree geometric models |

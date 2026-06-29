@@ -13,7 +13,7 @@ Architecture research는 model structure와 inductive bias가 어떤 task에서 
 
 | 주제 | 질문 | 연결 |
 | --- | --- | --- |
-| [[research/architectures/geometric-inductive-bias|Geometric inductive bias]] | geometry-aware architecture는 언제 Transformer보다 나은가? | [[ai/architectures|Architectures]], [[math/geometry-symmetry|Geometry and symmetry]] |
+| [Geometric inductive bias](/research/architectures/geometric-inductive-bias) | geometry-aware architecture는 언제 Transformer보다 나은가? | [Architectures](/ai/architectures), [Geometry and symmetry](/math/geometry-symmetry) |
 
 ## 경계
 

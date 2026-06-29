@@ -25,10 +25,10 @@ Pocket-ligand alignment may improve retrieval, docking candidate ranking, and af
 
 | Axis | Include | Exclude |
 | --- | --- | --- |
-| Object | [[molecular-modeling/entities|protein, pocket, ligand, complex]] | private targets or unpublished assay details |
+| Object | [protein, pocket, ligand, complex](/molecular-modeling/entities) | private targets or unpublished assay details |
 | Representation | sequence embedding, molecular graph embedding, conformer embedding, pocket embedding | one score treated as a universal representation |
-| Learning | [[ai/learning-methods|contrastive learning]], masked modeling, multi-task pretraining | benchmark-only leaderboard chasing |
-| Architecture | [[ai/architectures|Transformer]], [[concepts/architectures/gnn|GNN]], [[concepts/geometric-deep-learning/equivariance|equivariant model]] | architecture names without input/output contract |
+| Learning | [contrastive learning](/ai/learning-methods), masked modeling, multi-task pretraining | benchmark-only leaderboard chasing |
+| Architecture | [Transformer](/ai/architectures), [GNN](/concepts/architectures/gnn), [equivariant model](/concepts/geometric-deep-learning/equivariance) | architecture names without input/output contract |
 | Evaluation | retrieval, ranking, pose quality, split robustness | single aggregate metric without denominator |
 
 ## Method Axis

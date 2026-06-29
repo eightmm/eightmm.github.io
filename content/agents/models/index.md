@@ -35,10 +35,10 @@ $$
 
 | 제품군 | 먼저 볼 노트 | 강한 사용처 |
 | --- | --- | --- |
-| ChatGPT | [[agents/models/chatgpt|ChatGPT]] | general chat, research, apps, canvas, agent tasks |
-| Claude | [[agents/models/claude|Claude]] | long-form writing, artifacts, coding, tool use |
-| Gemini | [[agents/models/gemini|Gemini]] | Google ecosystem, Deep Research, multimodal work |
-| GitHub Copilot | [[agents/models/github-copilot|GitHub Copilot]] | IDE completion, coding agent, PR/repo workflow |
+| ChatGPT | [ChatGPT](/agents/models/chatgpt) | general chat, research, apps, canvas, agent tasks |
+| Claude | [Claude](/agents/models/claude) | long-form writing, artifacts, coding, tool use |
+| Gemini | [Gemini](/agents/models/gemini) | Google ecosystem, Deep Research, multimodal work |
+| GitHub Copilot | [GitHub Copilot](/agents/models/github-copilot) | IDE completion, coding agent, PR/repo workflow |
 
 ## Related
 

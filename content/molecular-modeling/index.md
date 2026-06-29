@@ -50,10 +50,10 @@ $$
 
 | Need | Start | Contract |
 | --- | --- | --- |
-| 어떤 입력 표현을 고를지 정한다 | [[molecular-modeling/representation-routes|Representation Routes]] | object, preprocessing, source, axes, availability |
-| protein-ligand pair를 모델 입력으로 만든다 | [[concepts/molecular-modeling/protein-ligand-representation-contract|Protein-ligand representation contract]] | protein, ligand, pocket, pose, pair context |
-| pocket이나 binding site를 정의한다 | [[concepts/sbdd/pocket-definition-contract|Pocket definition contract]] | known, predicted, ligand-defined, blind, template-derived |
-| benchmark claim을 읽는다 | [[molecular-modeling/data-evaluation|Data and Evaluation]] | label semantics, split unit, metric, baseline, leakage |
+| 어떤 입력 표현을 고를지 정한다 | [Representation Routes](/molecular-modeling/representation-routes) | object, preprocessing, source, axes, availability |
+| protein-ligand pair를 모델 입력으로 만든다 | [Protein-ligand representation contract](/concepts/molecular-modeling/protein-ligand-representation-contract) | protein, ligand, pocket, pose, pair context |
+| pocket이나 binding site를 정의한다 | [Pocket definition contract](/concepts/sbdd/pocket-definition-contract) | known, predicted, ligand-defined, blind, template-derived |
+| benchmark claim을 읽는다 | [Data and Evaluation](/molecular-modeling/data-evaluation) | label semantics, split unit, metric, baseline, leakage |
 
 ## 객체에서 시작하기
 

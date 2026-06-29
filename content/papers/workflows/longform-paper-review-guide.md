@@ -57,12 +57,12 @@ Use this shape unless the paper strongly suggests a better one.
 | Section | Purpose | Typical Links |
 | --- | --- | --- |
 | One-line summary | state the paper's core contribution in plain language | paper bucket, main concept |
-| Why this paper mattered | explain the problem before the method | [[ai/index|AI]], [[math/index|Math]], [[molecular-modeling/index|Computational Biology]] when relevant |
+| Why this paper mattered | explain the problem before the method | [AI](/ai), [Math](/math), [Computational Biology](/molecular-modeling) when relevant |
 | Background before the paper | define the baseline or older paradigm | architecture, learning, evaluation, modality notes |
 | Paper's main idea | name the key move and what it replaces | concept notes and formulas |
 | Method walkthrough | explain components in dependency order | equations, diagrams, route tables |
-| Experiments and evidence | connect claims to tables, benchmarks, baselines, and ablations | [[papers/analysis/evidence-table|Evidence table]], [[papers/analysis/benchmark-card|Benchmark card]] |
-| What the paper does not prove | limits, assumptions, missing comparisons, leakage or scaling caveats | [[papers/analysis/limitation-taxonomy|Limitation taxonomy]] |
+| Experiments and evidence | connect claims to tables, benchmarks, baselines, and ablations | [Evidence table](/papers/analysis/evidence-table), [Benchmark card](/papers/analysis/benchmark-card) |
+| What the paper does not prove | limits, assumptions, missing comparisons, leakage or scaling caveats | [Limitation taxonomy](/papers/analysis/limitation-taxonomy) |
 | Concept map | list the wiki pages the reader should open next | AI, Math, Computational Biology, Infra, Agents |
 | Takeaways | explain what should remain in memory after reading | related papers or project ideas |
 | Open questions | mark uncertainty, reproduction targets, or follow-up reading | reproducibility and research-method notes |

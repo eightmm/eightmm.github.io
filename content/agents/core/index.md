@@ -40,12 +40,12 @@ $$
 
 | 그룹 | 노트 |
 | --- | --- |
-| Architecture | [[agents/core/agent-architecture|Agent architecture]], [[agents/core/agent-operating-contract|Agent operating contract]] |
-| Loop and state | [[agents/core/agent-loop|Agent loop]], [[agents/core/agent-environment|Agent environment]], [[agents/core/action-space|Action space]], [[agents/core/agent-state|Agent state]] |
-| Prompt and context | [[agents/core/prompt-engineering|Prompt engineering]], [[agents/core/context-engineering|Context engineering]] |
-| Planning | [[agents/core/planning|Planning]], [[agents/core/task-decomposition|Task decomposition]] |
-| Memory | [[agents/core/agent-memory|Agent memory]], [[agents/core/memory-boundary|Memory boundary]] |
-| Harness | [[agents/core/harness-engineering|Harness engineering]] |
+| Architecture | [Agent architecture](/agents/core/agent-architecture), [Agent operating contract](/agents/core/agent-operating-contract) |
+| Loop and state | [Agent loop](/agents/core/agent-loop), [Agent environment](/agents/core/agent-environment), [Action space](/agents/core/action-space), [Agent state](/agents/core/agent-state) |
+| Prompt and context | [Prompt engineering](/agents/core/prompt-engineering), [Context engineering](/agents/core/context-engineering) |
+| Planning | [Planning](/agents/core/planning), [Task decomposition](/agents/core/task-decomposition) |
+| Memory | [Agent memory](/agents/core/agent-memory), [Memory boundary](/agents/core/memory-boundary) |
+| Harness | [Harness engineering](/agents/core/harness-engineering) |
 
 ## Checks
 

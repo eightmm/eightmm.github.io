@@ -24,13 +24,13 @@ $$
 
 | Step | Ask | Route |
 | --- | --- | --- |
-| Type | scalar, vector, matrix, tensor, graph, coordinate, distribution 중 무엇인가? | [[concepts/math/tensor-shape-notation|Tensor shape notation]] |
-| Axis | batch, token, residue, atom, node, head, coordinate, time 축은 무엇인가? | [[math/linear-algebra|Linear Algebra]] |
-| Distribution | expectation이나 sampling이 data, model, noise, policy, test distribution 중 어디서 오나? | [[math/probability-statistics|Probability and Statistics]] |
-| Parameter | 미분 대상이 parameter $\theta$, input $x$, coordinate $X$, time $t$ 중 무엇인가? | [[math/calculus-gradients|Calculus and Gradients]] |
-| Objective | loss, likelihood, score, reward, energy, constraint 중 무엇인가? | [[math/information-likelihood|Information and Likelihood]] |
-| Estimate | population quantity와 finite-sample estimate가 분리되어 있는가? | [[concepts/math/estimator-vs-metric|Estimator vs metric]] |
-| Claim | 이 식이 architecture, training, generation, evaluation 중 무엇을 뒷받침하는가? | [[ai/model-reading-map|Model Reading Map]] |
+| Type | scalar, vector, matrix, tensor, graph, coordinate, distribution 중 무엇인가? | [Tensor shape notation](/concepts/math/tensor-shape-notation) |
+| Axis | batch, token, residue, atom, node, head, coordinate, time 축은 무엇인가? | [Linear Algebra](/math/linear-algebra) |
+| Distribution | expectation이나 sampling이 data, model, noise, policy, test distribution 중 어디서 오나? | [Probability and Statistics](/math/probability-statistics) |
+| Parameter | 미분 대상이 parameter $\theta$, input $x$, coordinate $X$, time $t$ 중 무엇인가? | [Calculus and Gradients](/math/calculus-gradients) |
+| Objective | loss, likelihood, score, reward, energy, constraint 중 무엇인가? | [Information and Likelihood](/math/information-likelihood) |
+| Estimate | population quantity와 finite-sample estimate가 분리되어 있는가? | [Estimator vs metric](/concepts/math/estimator-vs-metric) |
+| Claim | 이 식이 architecture, training, generation, evaluation 중 무엇을 뒷받침하는가? | [Model Reading Map](/ai/model-reading-map) |
 
 ## Formula by Claim Type
 

@@ -25,17 +25,17 @@ $$
 
 | Part | Required note | Pass when |
 | --- | --- | --- |
-| Reader question | [[posts/blog-writing-guide|Blog writing guide]] | 글이 한 문장 질문에 답한다 |
-| Route | [[concepts/coverage-matrix|Coverage matrix]] | 중심축이 AI, Computational Biology, Math, Papers, Projects, Infra, Agents 중 하나로 정해진다 |
-| Object | [[entities/index|Entities]] or [[molecular-modeling/entities|Computational biology entities]] | 무엇을 모델링하는지 명확하다 |
-| Representation | [[concepts/modalities/representation-contract|Representation contract]] | raw object가 token, graph, coordinate, embedding, sample로 바뀌는 과정이 보인다 |
-| Method | [[ai/index|AI]] | architecture, learning method, generative model, evaluation 중 무엇이 핵심인지 분리된다 |
-| Formula | [[math/formula-intake|Formula intake]] | 필요한 수식과 모든 symbol이 설명된다 |
-| Evidence | [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]] | benchmark, split, metric, baseline, leakage, uncertainty의 경계가 있다 |
-| Paper source | [[papers/workflows/paper-review-workflow|Paper review workflow]] | 특정 논문 claim은 paper note나 evidence table로 분리된다 |
-| Extraction | [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]] | paper claim이 object, method, formula, evidence update로 나뉜다 |
-| Public boundary | [[inbox/publishing-gate|Publishing gate]] | private server, account, port, path, collaborator, unpublished result가 없다 |
-| Next path | [[posts/post-promotion-gate|Post promotion gate]] | 독자가 다음에 볼 3-7개 note가 있다 |
+| Reader question | [Blog writing guide](/posts/blog-writing-guide) | 글이 한 문장 질문에 답한다 |
+| Route | [Coverage matrix](/concepts/coverage-matrix) | 중심축이 AI, Computational Biology, Math, Papers, Projects, Infra, Agents 중 하나로 정해진다 |
+| Object | [Entities](/entities) or [Computational biology entities](/molecular-modeling/entities) | 무엇을 모델링하는지 명확하다 |
+| Representation | [Representation contract](/concepts/modalities/representation-contract) | raw object가 token, graph, coordinate, embedding, sample로 바뀌는 과정이 보인다 |
+| Method | [AI](/ai) | architecture, learning method, generative model, evaluation 중 무엇이 핵심인지 분리된다 |
+| Formula | [Formula intake](/math/formula-intake) | 필요한 수식과 모든 symbol이 설명된다 |
+| Evidence | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) | benchmark, split, metric, baseline, leakage, uncertainty의 경계가 있다 |
+| Paper source | [Paper review workflow](/papers/workflows/paper-review-workflow) | 특정 논문 claim은 paper note나 evidence table로 분리된다 |
+| Extraction | [Paper to wiki extraction](/papers/workflows/paper-to-wiki-extraction) | paper claim이 object, method, formula, evidence update로 나뉜다 |
+| Public boundary | [Publishing gate](/inbox/publishing-gate) | private server, account, port, path, collaborator, unpublished result가 없다 |
+| Next path | [Post promotion gate](/posts/post-promotion-gate) | 독자가 다음에 볼 3-7개 note가 있다 |
 
 ## Post Type Bundles
 

@@ -18,11 +18,11 @@ Project page는 목표, interface, 설계 결정, 검증 방법, 공개 artifact
 
 | 페이지 중심 | 둘 곳 |
 | --- | --- |
-| public question, hypothesis, research idea | [[research/index|Research]] |
-| implemented pipeline, tool, artifact, workflow | [[projects/index|Projects]] |
-| paper-specific claim | [[papers/index|Papers]] |
-| reusable concept or formula | [[concepts/index|Concepts]] |
-| operational lesson without an artifact | [[infra/index|Infra]] or [[logs/index|Logs]] |
+| public question, hypothesis, research idea | [Research](/research) |
+| implemented pipeline, tool, artifact, workflow | [Projects](/projects) |
+| paper-specific claim | [Papers](/papers) |
+| reusable concept or formula | [Concepts](/concepts) |
+| operational lesson without an artifact | [Infra](/infra) or [Logs](/logs) |
 
 ## 묶음
 

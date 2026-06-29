@@ -25,16 +25,16 @@ $$
 
 | Pass | Extract | Update |
 | --- | --- | --- |
-| Claim | one sentence claim, supported scope, unsupported scope | [[papers/analysis/claim-extraction|Claim extraction]], [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]] |
-| Object | modeled entity, example unit, output unit, context | [[entities/index|Entities]], [[molecular-modeling/entities|Computational biology entities]] |
-| Representation | token, graph, coordinate, embedding, conformer, feature cache | [[concepts/modalities/representation-contract|Representation contract]] |
-| Method | architecture, learning signal, sampler, inference procedure | [[ai/index|AI]], [[ai/paper-claim-patterns|AI paper claim patterns]] |
-| Formula | objective, likelihood, estimator, metric, update rule | [[math/formula-intake|Formula intake]], [[math/formula-patterns|Formula pattern catalog]] |
-| Data | dataset, preprocessing, split unit, leakage risk, label semantics | [[concepts/data/benchmark-intake|Benchmark intake]], [[molecular-modeling/paper-intake|Computational Biology paper intake]] |
-| Evidence | metric, baseline, ablation, uncertainty, strongest/weakest result | [[papers/analysis/evidence-table|Evidence table]], [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]] |
-| Artifact | code, data, split, weight, config, environment, reproducibility status | [[papers/reproducibility/checklist|Reproducibility checklist]] |
-| Public boundary | private information, unpublished results, collaborator details | [[inbox/publishing-gate|Publishing gate]] |
-| Post route | reader question, next path, minimum support notes | [[posts/wiki-bundle-checklist|Wiki bundle checklist]] |
+| Claim | one sentence claim, supported scope, unsupported scope | [Claim extraction](/papers/analysis/claim-extraction), [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
+| Object | modeled entity, example unit, output unit, context | [Entities](/entities), [Computational biology entities](/molecular-modeling/entities) |
+| Representation | token, graph, coordinate, embedding, conformer, feature cache | [Representation contract](/concepts/modalities/representation-contract) |
+| Method | architecture, learning signal, sampler, inference procedure | [AI](/ai), [AI paper claim patterns](/ai/paper-claim-patterns) |
+| Formula | objective, likelihood, estimator, metric, update rule | [Formula intake](/math/formula-intake), [Formula pattern catalog](/math/formula-patterns) |
+| Data | dataset, preprocessing, split unit, leakage risk, label semantics | [Benchmark intake](/concepts/data/benchmark-intake), [Computational Biology paper intake](/molecular-modeling/paper-intake) |
+| Evidence | metric, baseline, ablation, uncertainty, strongest/weakest result | [Evidence table](/papers/analysis/evidence-table), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) |
+| Artifact | code, data, split, weight, config, environment, reproducibility status | [Reproducibility checklist](/papers/reproducibility/checklist) |
+| Public boundary | private information, unpublished results, collaborator details | [Publishing gate](/inbox/publishing-gate) |
+| Post route | reader question, next path, minimum support notes | [Wiki bundle checklist](/posts/wiki-bundle-checklist) |
 
 ## Claim Decomposition
 

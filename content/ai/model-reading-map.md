@@ -23,13 +23,13 @@ $$
 
 | Step | Ask | Route |
 | --- | --- | --- |
-| 1. Object | 입력 단위가 sample, token, image, graph, molecule, protein, pocket, agent state 중 무엇인가? | [[concepts/modalities/index|Modalities]], [[molecular-modeling/entities|Entities]] |
-| 2. Representation | raw object가 token, embedding, graph, coordinate, conformer, feature로 어떻게 바뀌는가? | [[concepts/modalities/representation-contract|Representation contract]] |
-| 3. Architecture | 어떤 축을 섞고 어떤 inductive bias를 쓰는가? | [[ai/architectures|Architectures]], [[concepts/architectures/architecture-objective-fit|Architecture-objective fit]] |
-| 4. Objective | label, mask, contrast, likelihood, denoising, flow, preference, reward 중 무엇을 최적화하는가? | [[ai/learning-methods|Learning Methods]], [[concepts/learning/objective-taxonomy|Objective taxonomy]] |
-| 5. Training | data source, split, optimizer, schedule, selection rule이 claim과 맞는가? | [[ai/machine-learning|Machine Learning]], [[ai/systems|Systems]] |
-| 6. Evaluation | metric, baseline, uncertainty, leakage check가 주장을 지지하는가? | [[ai/evaluation|Evaluation]] |
-| 7. Runtime | inference cost, serving boundary, reproducibility가 실제 사용 조건과 맞는가? | [[ai/systems|Systems]], [[infra/index|Infra]] |
+| 1. Object | 입력 단위가 sample, token, image, graph, molecule, protein, pocket, agent state 중 무엇인가? | [Modalities](/concepts/modalities), [Entities](/molecular-modeling/entities) |
+| 2. Representation | raw object가 token, embedding, graph, coordinate, conformer, feature로 어떻게 바뀌는가? | [Representation contract](/concepts/modalities/representation-contract) |
+| 3. Architecture | 어떤 축을 섞고 어떤 inductive bias를 쓰는가? | [Architectures](/ai/architectures), [Architecture-objective fit](/concepts/architectures/architecture-objective-fit) |
+| 4. Objective | label, mask, contrast, likelihood, denoising, flow, preference, reward 중 무엇을 최적화하는가? | [Learning Methods](/ai/learning-methods), [Objective taxonomy](/concepts/learning/objective-taxonomy) |
+| 5. Training | data source, split, optimizer, schedule, selection rule이 claim과 맞는가? | [Machine Learning](/ai/machine-learning), [Systems](/ai/systems) |
+| 6. Evaluation | metric, baseline, uncertainty, leakage check가 주장을 지지하는가? | [Evaluation](/ai/evaluation) |
+| 7. Runtime | inference cost, serving boundary, reproducibility가 실제 사용 조건과 맞는가? | [Systems](/ai/systems), [Infra](/infra) |
 
 ## Claim Types
 

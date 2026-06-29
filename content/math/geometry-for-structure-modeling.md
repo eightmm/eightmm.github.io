@@ -22,12 +22,12 @@ $$
 
 | Object | Meaning | Route |
 | --- | --- | --- |
-| Coordinate matrix | atom/residue/point 좌표 $X$ | [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]] |
-| Distance | pairwise geometry invariant | [[concepts/geometric-deep-learning/distance-geometry|Distance geometry]] |
-| Frame | local coordinate basis or global reference | [[concepts/geometric-deep-learning/coordinate-frame|Coordinate frame]] |
-| Group action | rotation, translation, permutation이 object에 작용하는 방식 | [[concepts/math/symmetry-group|Symmetry group]] |
-| Invariance | input이 변해도 output scalar가 보존됨 | [[concepts/geometric-deep-learning/equivariance|Equivariance]] |
-| Equivariance | input transform에 맞춰 output도 transform됨 | [[concepts/geometric-deep-learning/equivariance|Equivariance]] |
+| Coordinate matrix | atom/residue/point 좌표 $X$ | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame) |
+| Distance | pairwise geometry invariant | [Distance geometry](/concepts/geometric-deep-learning/distance-geometry) |
+| Frame | local coordinate basis or global reference | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame) |
+| Group action | rotation, translation, permutation이 object에 작용하는 방식 | [Symmetry group](/concepts/math/symmetry-group) |
+| Invariance | input이 변해도 output scalar가 보존됨 | [Equivariance](/concepts/geometric-deep-learning/equivariance) |
+| Equivariance | input transform에 맞춰 output도 transform됨 | [Equivariance](/concepts/geometric-deep-learning/equivariance) |
 
 ## Structure Claim Map
 
