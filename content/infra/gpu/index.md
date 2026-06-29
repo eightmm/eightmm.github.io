@@ -48,13 +48,13 @@ $$
 
 | 유형 | 증상 | 일반적인 evidence |
 | --- | --- | --- |
-| Capacity | Out-of-memory or tiny batch size | Memory allocation, batch/context sensitivity |
-| Bandwidth | High memory traffic, weak FLOP utilization | Profiler memory bandwidth, tensor shape pattern |
-| Compute | Kernels dominate wall time | High GPU utilization and stable input pipeline |
-| Input pipeline | GPU waits for data | CPU usage, data-loader timing, storage IO |
-| Synchronization | Frequent stalls | Host sync calls, logging, metric aggregation |
-| Communication | Poor multi-GPU scaling | All-reduce time, interconnect saturation |
-| Scheduler | Long wait, preemption, or poor allocation fit | Queue time, walltime, resource request mismatch |
+| Capacity | OOM 또는 너무 작은 batch size | memory allocation, batch/context sensitivity |
+| Bandwidth | 높은 memory traffic, 낮은 FLOP utilization | profiler memory bandwidth, tensor shape pattern |
+| Compute | kernel이 wall time을 지배 | 높은 GPU utilization과 안정적인 input pipeline |
+| Input pipeline | GPU가 data를 기다림 | CPU usage, data-loader timing, storage IO |
+| Synchronization | 잦은 stall | host sync call, logging, metric aggregation |
+| Communication | multi-GPU scaling 저하 | all-reduce time, interconnect saturation |
+| Scheduler | 긴 wait, preemption, allocation mismatch | queue time, walltime, resource request mismatch |
 
 ## Memory
 
@@ -93,7 +93,7 @@ $$
 
 GPU utilization은 증상이지 완전한 진단이 아닙니다. Low utilization은 data loading, CPU preprocessing, synchronization, communication, small batch size, memory stall, 또는 compute-heavy하지 않은 workload에서 나올 수 있습니다.
 
-A simple utilization view is:
+단순한 utilization 관점은 아래와 같습니다.
 
 $$
 u

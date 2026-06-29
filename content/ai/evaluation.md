@@ -29,34 +29,34 @@ $$
 
 ## Route Map
 
-| Route | Use For | Start |
+| Route | Use for | Start |
 | --- | --- | --- |
-| Task and protocol | what is predicted, what is held out, what decision is being tested | [Tasks](/concepts/tasks), [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Evaluation set design](/concepts/evaluation/evaluation-set-design) |
-| Claim boundary | whether a score supports the stated conclusion | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract), [Benchmark intake](/concepts/data/benchmark-intake) |
+| Task and protocol | 무엇을 예측하고, 무엇을 hold out하며, 어떤 decision을 검증하는가 | [Tasks](/concepts/tasks), [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Evaluation set design](/concepts/evaluation/evaluation-set-design) |
+| Claim boundary | score가 stated conclusion을 지지하는가 | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract), [Benchmark intake](/concepts/data/benchmark-intake) |
 | Metric choice | classification, regression, ranking, generation, coordinate, probability quality | [Metric](/concepts/evaluation/metric), [Metric selection](/concepts/evaluation/metric-selection), [Generation evaluation](/concepts/evaluation/generation-evaluation) |
-| Statistical evidence | confidence intervals, seed variance, bootstrap, paired comparison, multiple comparisons | [Confidence interval](/concepts/evaluation/confidence-interval), [Seed variance](/concepts/evaluation/seed-variance), [Paired comparison](/concepts/evaluation/paired-comparison) |
+| Statistical evidence | confidence interval, seed variance, bootstrap, paired comparison, multiple comparison | [Confidence interval](/concepts/evaluation/confidence-interval), [Seed variance](/concepts/evaluation/seed-variance), [Paired comparison](/concepts/evaluation/paired-comparison) |
 | Split and contamination | validation/test separation, pretraining overlap, retrieval contamination, benchmark saturation | [Train/validation/test split](/concepts/evaluation/train-validation-test-split), [Leakage](/concepts/evaluation/leakage), [Test-set contamination](/concepts/evaluation/test-set-contamination) |
 | Reliability and failure | calibration, uncertainty, OOD, robustness, error slicing, interpretability | [Calibration](/concepts/evaluation/calibration), [Uncertainty estimation](/concepts/evaluation/uncertainty-estimation), [Error analysis](/concepts/evaluation/error-analysis) |
 | Domain-specific splits | scaffold, protein-family, structure-source, assay/source, representation transfer | [Scaffold split](/concepts/evaluation/scaffold-split), [Protein family split](/concepts/evaluation/protein-family-split), [Representation evaluation](/concepts/learning/representation-evaluation) |
 
 ## Claim to Evidence Map
 
-For any reported result, first narrow the claim with [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]].
+Reported result를 볼 때는 먼저 [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]로 claim 범위를 좁힙니다.
 
-| Claim | Evidence Needed | Common Failure |
+| Claim | 필요한 evidence | 흔한 실패 |
 | --- | --- | --- |
-| The model fits the training task | train loss and diagnostics | optimization success is mistaken for generalization |
-| The model generalizes IID | held-out validation/test from the same distribution | test set touched during model selection |
-| The model is robust OOD | explicit shifted evaluation set | random split does not test the claimed shift |
-| The model is calibrated | probability quality metric and reliability curve | accurate labels are treated as calibrated probabilities |
-| The model is better than baseline | paired comparison against a relevant baseline | comparison uses different examples or selection rules |
-| The benchmark score supports a broad claim | benchmark claim contract and claim-evidence boundary | leaderboard score is overstated as general superiority |
-| The method explains a design choice | ablation under fixed protocol | ablation changes multiple variables at once |
-| The selected model is best | model-selection record and untouched final test | best seed, threshold, prompt, or checkpoint is selected on test feedback |
+| Model이 training task를 fitting한다 | train loss와 diagnostic | optimization success를 generalization으로 착각함 |
+| Model이 IID로 generalize한다 | 같은 distribution에서 분리한 held-out validation/test | model selection 중 test set을 건드림 |
+| Model이 OOD에 robust하다 | explicit shifted evaluation set | random split이 claimed shift를 검증하지 못함 |
+| Model이 calibrated되어 있다 | probability quality metric과 reliability curve | 정확한 label prediction을 calibrated probability로 착각함 |
+| Model이 baseline보다 좋다 | relevant baseline과의 paired comparison | 서로 다른 example 또는 selection rule로 비교함 |
+| Benchmark score가 broad claim을 지지한다 | benchmark claim contract와 claim-evidence boundary | leaderboard score를 general superiority로 과장함 |
+| Method가 design choice를 설명한다 | fixed protocol 아래 ablation | ablation에서 여러 variable을 동시에 바꿈 |
+| Selected model이 best다 | model-selection record와 untouched final test | best seed, threshold, prompt, checkpoint를 test feedback으로 고름 |
 
 ## Metric Families
 
-| Output Type | Primary Metrics | Diagnostics |
+| Output type | Primary metric | Diagnostic |
 | --- | --- | --- |
 | Class label | accuracy, F1, AUROC, PR-AUC | confusion matrix, threshold sweep, calibration |
 | Probability | NLL, Brier score, ECE | reliability diagram, selective prediction |
@@ -97,7 +97,7 @@ For any reported result, first narrow the claim with [[concepts/evaluation/claim
 
 ## Evidence Record
 
-Good evaluation notes should preserve enough information to reconstruct the claim:
+좋은 evaluation note는 claim을 재구성할 수 있을 만큼 충분한 정보를 보존해야 합니다.
 
 $$
 (\text{task},\ \text{split},\ \text{selection rule},\ \text{metric},\ \text{baseline},\ \text{uncertainty})
@@ -105,13 +105,13 @@ $$
 \text{claim}
 $$
 
-If any part is missing, the score should be treated as an incomplete observation rather than a stable conclusion.
+어떤 항목이라도 빠져 있으면 그 score는 stable conclusion이 아니라 incomplete observation으로 취급합니다.
 
 ## Failure Mode Decomposition
 
 평가에서 낮은 점수나 큰 개선은 바로 모델 품질로 해석하지 않습니다. 먼저 실패 원인을 분해합니다.
 
-| Failure Source | Examples |
+| Failure source | Examples |
 | --- | --- |
 | Data | label noise, duplicate examples, missing metadata, biased negative set |
 | Representation | wrong tokenization, graph construction error, coordinate frame mismatch |
@@ -122,17 +122,17 @@ If any part is missing, the score should be treated as an incomplete observation
 
 ## Minimum Evidence Package
 
-When turning a paper into a wiki note or post, record the smallest evidence package that makes the result interpretable.
+Paper를 wiki note나 post로 바꿀 때는 결과를 해석 가능하게 만드는 최소 evidence package를 기록합니다.
 
-| Field | Why It Matters |
+| Field | 중요한 이유 |
 | --- | --- |
-| Task and output space | prevents comparing classification, ranking, generation, and coordinate prediction as if they were the same claim |
-| Dataset and split | defines the population and generalization boundary |
-| Model-selection rule | separates validation decisions from final test evidence |
-| Baseline | shows whether the method beats a relevant simple alternative |
-| Primary metric | states what success means before looking at secondary diagnostics |
-| Uncertainty or variance | prevents overreading small score differences; use [Seed variance](/concepts/evaluation/seed-variance) when runs differ by initialization, split, prompt, or sampler |
-| Failure modes | turns a score into a reusable lesson |
+| Task and output space | classification, ranking, generation, coordinate prediction을 같은 claim처럼 비교하지 않게 합니다 |
+| Dataset and split | population과 generalization boundary를 정의합니다 |
+| Model-selection rule | validation decision과 final test evidence를 분리합니다 |
+| Baseline | method가 relevant simple alternative를 이기는지 보여줍니다 |
+| Primary metric | secondary diagnostic을 보기 전에 success의 의미를 고정합니다 |
+| Uncertainty or variance | 작은 score difference를 과해석하지 않게 합니다. initialization, split, prompt, sampler가 다르면 [Seed variance](/concepts/evaluation/seed-variance)를 봅니다 |
+| Failure modes | score를 재사용 가능한 lesson으로 바꿉니다 |
 
 If a paper does not provide one of these fields, mark it as `to verify` instead of filling the gap from memory.
 

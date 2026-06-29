@@ -7,28 +7,28 @@ tags:
 
 # Linear Algebra
 
-Linear algebra is the language of vectors, matrices, embeddings, projections, and learned representations.
+Linear algebra는 vector, matrix, embedding, projection, learned representation을 다루는 언어입니다.
 
 $$
 y = Wx + b
 $$
 
-This is the basic form behind [[concepts/architectures/linear-layer|linear layers]], many classifiers, and local transformations inside larger architectures.
+이 식은 [[concepts/architectures/linear-layer|linear layer]], 많은 classifier, 더 큰 architecture 안의 local transformation 뒤에 있는 기본 형태입니다.
 
 ## Route Map
 
-| Question | Start | Use For |
+| Question | Start | Use for |
 | --- | --- | --- |
-| What is the basic vector/matrix object? | [Linear algebra](/concepts/math/linear-algebra), [Linear layer](/concepts/architectures/linear-layer) | affine transforms, projections, classifiers, feature mixing |
-| How is similarity measured? | [Vector norm and similarity](/concepts/math/vector-norm-similarity), [Embedding](/concepts/architectures/embedding) | retrieval, clustering, representation diagnostics |
-| What directions explain variance or dynamics? | [Eigenvalue and eigenvector](/concepts/math/eigenvalue-eigenvector), [SVD](/concepts/math/singular-value-decomposition) | PCA, low-rank structure, spectral views |
-| How do features vary together? | [Covariance and correlation](/concepts/math/covariance-correlation) | normalization, redundancy, representation analysis |
+| 기본 vector/matrix object는 무엇인가? | [Linear algebra](/concepts/math/linear-algebra), [Linear layer](/concepts/architectures/linear-layer) | affine transform, projection, classifier, feature mixing |
+| similarity를 어떻게 측정하는가? | [Vector norm and similarity](/concepts/math/vector-norm-similarity), [Embedding](/concepts/architectures/embedding) | retrieval, clustering, representation diagnostics |
+| 어떤 방향이 variance나 dynamics를 설명하는가? | [Eigenvalue and eigenvector](/concepts/math/eigenvalue-eigenvector), [SVD](/concepts/math/singular-value-decomposition) | PCA, low-rank structure, spectral view |
+| feature들이 함께 어떻게 변하는가? | [Covariance and correlation](/concepts/math/covariance-correlation) | normalization, redundancy, representation analysis |
 
 ## Shape Discipline
 
-Most AI linear algebra is tensor linear algebra. The same operation can mean different things depending on which axis is being mixed.
+AI에서 쓰는 linear algebra는 대부분 tensor linear algebra입니다. 같은 operation도 어떤 axis를 섞는지에 따라 의미가 달라집니다.
 
-Common shapes:
+흔한 shape는 아래와 같습니다.
 
 $$
 X_{\mathrm{batch}}
@@ -54,18 +54,18 @@ X_{\mathrm{coords}}
 \mathbb{R}^{N\times 3}
 $$
 
-where $B$ is batch size, $T$ is sequence length, $N$ is number of nodes, atoms, or residues, and $d$ is feature dimension.
+여기서 $B$는 batch size, $T$는 sequence length, $N$은 node, atom, residue 수, $d$는 feature dimension입니다.
 
-The key question is: which axis is being mixed?
+핵심 질문은 어떤 axis가 섞이는가입니다.
 
-- Feature mixing: linear layers and MLPs mix the $d$ dimension.
-- Token mixing: attention mixes positions through an attention matrix.
-- Node mixing: graph models mix neighborhoods through edges or adjacency.
-- Coordinate transforms: rotations act on the 3D coordinate axis.
+- Feature mixing: linear layer와 MLP는 $d$ dimension을 섞습니다.
+- Token mixing: attention은 attention matrix를 통해 position을 섞습니다.
+- Node mixing: graph model은 edge나 adjacency를 통해 neighborhood를 섞습니다.
+- Coordinate transform: rotation은 3D coordinate axis에 작용합니다.
 
 ## Common Operations
 
-| Operation | Formula | AI Use |
+| Operation | Formula | AI use |
 | --- | --- | --- |
 | Matrix-vector product | $y=Wx$ | linear layer, classifier, projection |
 | Matrix-matrix product | $Y=XW$ | batched feature mixing |
@@ -76,13 +76,13 @@ The key question is: which axis is being mixed?
 
 ## Projection
 
-A projection maps an object into a useful subspace. A linear projection is:
+Projection은 object를 유용한 subspace로 보냅니다. Linear projection은 아래와 같습니다.
 
 $$
 z = xW
 $$
 
-where $W$ changes the representation basis or dimension. In AI, projection appears as:
+여기서 $W$는 representation basis 또는 dimension을 바꿉니다. AI에서 projection은 아래 형태로 자주 등장합니다.
 
 - embedding projection
 - query, key, and value projection in [[concepts/architectures/attention|Attention]]
@@ -90,7 +90,7 @@ where $W$ changes the representation basis or dimension. In AI, projection appea
 - low-dimensional bottlenecks
 - task heads and linear probes
 
-An orthogonal projection onto a subspace with basis matrix $U$ can be written as:
+Basis matrix $U$가 있는 subspace로의 orthogonal projection은 아래처럼 쓸 수 있습니다.
 
 $$
 P_U x
@@ -98,11 +98,11 @@ P_U x
 UU^\top x
 $$
 
-when the columns of $U$ are orthonormal.
+$U$의 column이 orthonormal일 때 성립합니다.
 
 ## Rank and Low-Rank Structure
 
-The rank of a matrix measures how many independent directions it can represent:
+Matrix rank는 해당 matrix가 표현할 수 있는 independent direction 수를 측정합니다.
 
 $$
 \operatorname{rank}(W)
@@ -110,7 +110,7 @@ $$
 \min(d_{\mathrm{in}},d_{\mathrm{out}})
 $$
 
-Low-rank structure appears in:
+Low-rank structure는 아래에서 등장합니다.
 
 - PCA and SVD diagnostics
 - embedding compression
@@ -118,7 +118,7 @@ Low-rank structure appears in:
 - representation collapse checks
 - protein or molecule similarity matrices with redundant structure
 
-A low-rank factorization replaces a large matrix with two smaller matrices:
+Low-rank factorization은 큰 matrix를 두 개의 작은 matrix로 대체합니다.
 
 $$
 W
@@ -132,11 +132,11 @@ B\in\mathbb{R}^{r\times d_{\mathrm{out}}},
 r \ll \min(d_{\mathrm{in}},d_{\mathrm{out}})
 $$
 
-This reduces parameters but also constrains what transformations can be represented.
+이 방식은 parameter를 줄이지만, 표현 가능한 transformation도 제한합니다.
 
 ## Attention as Linear Algebra
 
-Self-attention is mostly matrix multiplication plus softmax:
+Self-attention은 대부분 matrix multiplication과 softmax로 볼 수 있습니다.
 
 $$
 Q=XW_Q,\quad K=XW_K,\quad V=XW_V
@@ -154,11 +154,11 @@ Y
 \operatorname{softmax}(S)V
 $$
 
-Here $S$ is a similarity matrix between elements. It is not just a formula detail; it defines which tokens, residues, atoms, or retrieved chunks can exchange information.
+여기서 $S$는 element 사이의 similarity matrix입니다. 단순한 수식 세부 사항이 아니라 어떤 token, residue, atom, retrieved chunk가 정보를 교환할 수 있는지를 정의합니다.
 
 ## Structure-Based Coordinate Matrices
 
-Structure-based modeling often represents coordinates as:
+Structure-based modeling은 coordinate를 보통 아래처럼 표현합니다.
 
 $$
 X
@@ -181,28 +181,28 @@ X'
 XR^\top + \mathbf{1}t^\top
 $$
 
-where $R\in\mathbb{R}^{3\times 3}$ is a rotation matrix and $t\in\mathbb{R}^{3}$ is a translation vector.
+여기서 $R\in\mathbb{R}^{3\times 3}$는 rotation matrix, $t\in\mathbb{R}^{3}$는 translation vector입니다.
 
-This connects linear algebra to [[math/geometry-symmetry|Geometry and symmetry]], [[concepts/geometric-deep-learning/equivariance|Equivariance]], and structure evaluation.
+이 관점은 linear algebra를 [[math/geometry-symmetry|Geometry and symmetry]], [[concepts/geometric-deep-learning/equivariance|Equivariance]], structure evaluation과 연결합니다.
 
 ## AI Connections
 
-- Embedding similarity uses dot products, cosine similarity, and vector norms.
-- Attention scores use matrix products before softmax.
-- PCA, low-rank structure, and representation diagnostics use eigenvectors and SVD.
-- Linear probes test whether a representation already contains task-relevant information.
-- Coordinate models use matrices for positions, rotations, rigid transforms, and distance geometry.
-- GPU bottlenecks often come from large matrix multiplications and memory layout.
+- Embedding similarity는 dot product, cosine similarity, vector norm을 사용합니다.
+- Attention score는 softmax 전에 matrix product를 사용합니다.
+- PCA, low-rank structure, representation diagnostic은 eigenvector와 SVD를 사용합니다.
+- Linear probe는 representation이 task-relevant information을 이미 담고 있는지 test합니다.
+- Coordinate model은 position, rotation, rigid transform, distance geometry에 matrix를 사용합니다.
+- GPU bottleneck은 큰 matrix multiplication과 memory layout에서 자주 생깁니다.
 
 ## Checks
 
-- What are the shapes of vectors and matrices?
-- Is a transformation mixing features, tokens, nodes, or channels?
-- Is a projection reducing dimension, changing basis, or creating Q/K/V features?
-- Is similarity normalized or scale-sensitive?
-- Is a low-rank approximation a model assumption or only an analysis tool?
-- Does a coordinate transform preserve distances and angles?
-- Is a matrix multiplication compute-bound, memory-bound, or communication-bound?
+- vector와 matrix의 shape가 무엇인가?
+- transformation이 feature, token, node, channel 중 무엇을 섞는가?
+- projection이 dimension reduction, basis change, Q/K/V feature 생성 중 무엇을 하는가?
+- similarity가 normalized되어 있는가, scale-sensitive한가?
+- low-rank approximation이 model assumption인가, analysis tool인가?
+- coordinate transform이 distance와 angle을 보존하는가?
+- matrix multiplication이 compute-bound, memory-bound, communication-bound 중 무엇인가?
 
 ## Related
 

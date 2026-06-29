@@ -7,7 +7,7 @@ tags:
 
 # Evaluation Math
 
-Evaluation math separates model performance claims from noise, leakage, calibration problems, and benchmark artifacts.
+Evaluation math는 model performance claim을 noise, leakage, calibration problem, benchmark artifact와 분리합니다.
 
 $$
 R(f)
@@ -16,22 +16,22 @@ R(f)
 [\mathcal{L}(f(x), y)]
 $$
 
-The empirical test score is only an estimate of this target.
+Empirical test score는 이 target의 estimate일 뿐입니다.
 
 ## Route Map
 
-| Route | Use For | Start |
+| Route | Use for | Start |
 | --- | --- | --- |
-| Metric definition | what quantity is averaged, ranked, thresholded, or calibrated | [Metric](/concepts/evaluation/metric), [Metric selection](/concepts/evaluation/metric-selection) |
-| Benchmark boundary | what population and claim the benchmark represents | [Benchmark intake](/concepts/data/benchmark-intake), [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
-| Uncertainty | confidence intervals, bootstrap estimates, seed or sampler variance | [Confidence interval](/concepts/evaluation/confidence-interval), [Bootstrap evaluation](/concepts/evaluation/bootstrap-evaluation) |
-| Comparison | effect size, paired tests, multiple-comparison risk | [Effect size](/concepts/evaluation/effect-size), [Paired comparison](/concepts/evaluation/paired-comparison), [Multiple comparisons](/concepts/evaluation/multiple-comparisons) |
-| Probability quality | calibrated probabilities, reliability, proper scoring rules | [Calibration](/concepts/evaluation/calibration), [Brier score](/concepts/evaluation/brier-score), [Probability metrics](/concepts/evaluation/probability-metrics) |
-| Statistical claim | whether a reported difference is larger than noise or selection bias | [Statistical significance](/concepts/evaluation/statistical-significance) |
+| Metric definition | 어떤 quantity를 average, rank, threshold, calibrate하는가 | [Metric](/concepts/evaluation/metric), [Metric selection](/concepts/evaluation/metric-selection) |
+| Benchmark boundary | benchmark가 어떤 population과 claim을 대표하는가 | [Benchmark intake](/concepts/data/benchmark-intake), [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary) |
+| Uncertainty | confidence interval, bootstrap estimate, seed/sampler variance | [Confidence interval](/concepts/evaluation/confidence-interval), [Bootstrap evaluation](/concepts/evaluation/bootstrap-evaluation) |
+| Comparison | effect size, paired test, multiple-comparison risk | [Effect size](/concepts/evaluation/effect-size), [Paired comparison](/concepts/evaluation/paired-comparison), [Multiple comparisons](/concepts/evaluation/multiple-comparisons) |
+| Probability quality | calibrated probability, reliability, proper scoring rule | [Calibration](/concepts/evaluation/calibration), [Brier score](/concepts/evaluation/brier-score), [Probability metrics](/concepts/evaluation/probability-metrics) |
+| Statistical claim | reported difference가 noise나 selection bias보다 큰가 | [Statistical significance](/concepts/evaluation/statistical-significance) |
 
 ## Estimate and Uncertainty
 
-For a test set of size $m$, the empirical risk is:
+크기 $m$의 test set에서 empirical risk는 아래와 같습니다.
 
 $$
 \hat{R}
@@ -40,9 +40,9 @@ $$
 \ell_j
 $$
 
-where $\ell_j=\mathcal{L}(f(x_j),y_j)$ is the per-example loss.
+여기서 $\ell_j=\mathcal{L}(f(x_j),y_j)$는 per-example loss입니다.
 
-An approximate standard error is:
+Approximate standard error는 아래와 같습니다.
 
 $$
 \operatorname{SE}(\hat{R})
@@ -50,19 +50,19 @@ $$
 \frac{s_\ell}{\sqrt{m}}
 $$
 
-where $s_\ell$ is the sample standard deviation of per-example losses. This approximation is weak when examples are dependent, heavily stratified, or selected after model tuning.
+여기서 $s_\ell$은 per-example loss의 sample standard deviation입니다. Example이 dependent하거나 heavily stratified되어 있거나 model tuning 이후 선택된 경우 이 approximation은 약해집니다.
 
 ## Comparison Map
 
-| Comparison | Preferred Evidence | Risk |
+| Comparison | Preferred evidence | Risk |
 | --- | --- | --- |
-| Same examples, two models | paired difference and confidence interval | aggregate scores hide per-example dependence |
-| Many seeds | mean, variance, and selection rule | best seed is mistaken for expected performance |
-| Many prompts/checkpoints | held-out selection protocol | repeated trials inflate false discoveries |
-| Many datasets | per-dataset effect size | average score hides failures on important strata |
-| Imbalanced classification | PR-AUC, enrichment, calibrated threshold | ROC-AUC can look good under severe imbalance |
+| 같은 example, 두 model | paired difference와 confidence interval | aggregate score가 per-example dependence를 숨김 |
+| 많은 seed | mean, variance, selection rule | best seed를 expected performance로 착각함 |
+| 많은 prompt/checkpoint | held-out selection protocol | repeated trial이 false discovery를 키움 |
+| 많은 dataset | per-dataset effect size | average score가 중요한 strata의 failure를 숨김 |
+| Imbalanced classification | PR-AUC, enrichment, calibrated threshold | severe imbalance에서 ROC-AUC가 좋아 보일 수 있음 |
 
-For paired comparison:
+Paired comparison에서는:
 
 $$
 \Delta
@@ -71,31 +71,31 @@ $$
 (s_{A,j}-s_{B,j})
 $$
 
-where $s_{A,j}$ and $s_{B,j}$ are scores or losses for two systems on the same example.
+여기서 $s_{A,j}$와 $s_{B,j}$는 같은 example 위 두 system의 score 또는 loss입니다.
 
 ## Probability Quality
 
-Probability-valued outputs need separate checks from accuracy. A classifier can be accurate but badly calibrated, and a low expected loss can still hide unreliable confidence on a shifted domain.
+Probability-valued output은 accuracy와 별도의 check가 필요합니다. Classifier가 accurate하더라도 badly calibrated일 수 있고, 낮은 expected loss도 shifted domain에서 unreliable confidence를 숨길 수 있습니다.
 
 | Question | Start |
 | --- | --- |
-| Do predicted probabilities match empirical frequencies? | [Calibration](/concepts/evaluation/calibration), [Reliability diagram](/concepts/evaluation/reliability-diagram) |
-| Is the probability score proper? | [Brier score](/concepts/evaluation/brier-score), [Probability metrics](/concepts/evaluation/probability-metrics) |
-| Is uncertainty part of the decision? | [Uncertainty estimation](/concepts/evaluation/uncertainty-estimation), [Conformal prediction](/concepts/evaluation/conformal-prediction) |
+| predicted probability가 empirical frequency와 맞는가? | [Calibration](/concepts/evaluation/calibration), [Reliability diagram](/concepts/evaluation/reliability-diagram) |
+| probability score가 proper한가? | [Brier score](/concepts/evaluation/brier-score), [Probability metrics](/concepts/evaluation/probability-metrics) |
+| uncertainty가 decision의 일부인가? | [Uncertainty estimation](/concepts/evaluation/uncertainty-estimation), [Conformal prediction](/concepts/evaluation/conformal-prediction) |
 
 ## Reporting Checks
 
-Use the evaluation formula only after the quantities are pinned down.
+Quantity가 고정된 뒤에만 evaluation formula를 사용합니다.
 
-| Question | Mathematical Object |
+| Question | Mathematical object |
 | --- | --- |
-| What is averaged? | per-example loss, score, binary success, rank statistic, or generated-sample property |
-| Over which set? | test examples, queries, targets, scaffolds, proteins, prompts, seeds, or generated samples |
-| What is random? | data sampling, model initialization, decoding, environment, assay noise, or bootstrap resampling |
-| What is compared? | paired examples, independent aggregates, confidence intervals, or effect sizes |
-| What was selected? | checkpoint, prompt, threshold, hyperparameter, preprocessing rule, or model family |
+| 무엇을 average하는가? | per-example loss, score, binary success, rank statistic, generated-sample property |
+| 어떤 set 위에서 계산하는가? | test example, query, target, scaffold, protein, prompt, seed, generated sample |
+| 무엇이 random인가? | data sampling, model initialization, decoding, environment, assay noise, bootstrap resampling |
+| 무엇을 compare하는가? | paired example, independent aggregate, confidence interval, effect size |
+| 무엇을 select했는가? | checkpoint, prompt, threshold, hyperparameter, preprocessing rule, model family |
 
-For a reported score $S$, a useful paper note should identify:
+Reported score $S$에 대해, 유용한 paper note는 아래를 식별해야 합니다.
 
 $$
 S
@@ -107,15 +107,15 @@ S
 \right)
 $$
 
-where $s_j$ is the per-unit score and the aggregation rule is part of the claim.
+여기서 $s_j$는 per-unit score이고 aggregation rule은 claim의 일부입니다.
 
 ## Checks
 
-- Is the reported score a point estimate or an uncertainty-aware comparison?
-- Is the test set independent from model selection?
-- Are comparisons paired on the same examples?
-- Is the metric aligned with the real decision?
-- Are confidence, calibration, and abstention needed?
+- reported score가 point estimate인가, uncertainty-aware comparison인가?
+- test set이 model selection과 independent한가?
+- comparison이 같은 example 위에서 paired되어 있는가?
+- metric이 real decision과 aligned되어 있는가?
+- confidence, calibration, abstention이 필요한가?
 
 ## Related
 

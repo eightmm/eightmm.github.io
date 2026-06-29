@@ -32,16 +32,16 @@ $$
 
 ## Problem to Loss Map
 
-| Problem | Output | Common Loss | Evaluation |
+| Problem | Output | Common loss | Evaluation |
 | --- | --- | --- | --- |
 | Classification | class probability $p_\theta(y\mid x)$ | cross-entropy / NLL | accuracy, F1, AUROC, PR-AUC, calibration |
-| Regression | scalar or vector $\hat{y}$ | MSE, MAE, Gaussian NLL | RMSE, MAE, $R^2$, rank correlation |
+| Regression | scalar 또는 vector $\hat{y}$ | MSE, MAE, Gaussian NLL | RMSE, MAE, $R^2$, rank correlation |
 | Ranking | ordered candidate list | pairwise/listwise ranking loss | NDCG, MAP, enrichment, top-k success |
 | Density estimation | probability model $p_\theta(x)$ | negative log-likelihood | held-out NLL, sampling quality |
 | Representation learning | embedding $z=f_\theta(x)$ | contrastive, masked, predictive, reconstruction loss | linear probe, retrieval, transfer task |
-| Clustering | cluster assignment or latent grouping | reconstruction, mixture likelihood, contrastive proxy | purity, ARI/NMI, downstream utility |
+| Clustering | cluster assignment 또는 latent grouping | reconstruction, mixture likelihood, contrastive proxy | purity, ARI/NMI, downstream utility |
 
-For probabilistic prediction, the model should expose uncertainty before a hard decision:
+Probabilistic prediction에서는 hard decision을 내리기 전에 uncertainty가 드러나야 합니다.
 
 $$
 p_\theta(y\mid x)
@@ -49,7 +49,7 @@ p_\theta(y\mid x)
 \hat{y}=\arg\max_y p_\theta(y\mid x)
 $$
 
-The decision rule $\hat{y}$ is not the same object as the probability distribution $p_\theta(y\mid x)$.
+Decision rule $\hat{y}$와 probability distribution $p_\theta(y\mid x)$는 같은 대상이 아닙니다.
 
 ## 기본 구성
 
@@ -59,7 +59,7 @@ Machine learning note는 아래 다섯 층을 분리해서 읽습니다.
 | --- | --- | --- |
 | Data contract | example, label, split, preprocessing이 무엇인가? | [Dataset checklist](/concepts/data/dataset-construction-checklist), [Example unit](/concepts/data/example-unit), [Split unit](/concepts/data/split-unit), [Label semantics](/concepts/data/label-semantics) |
 | Representation | raw input이 feature, token, graph, coordinate, embedding으로 어떻게 바뀌는가? | [Data preprocessing](/concepts/machine-learning/data-preprocessing), [Feature engineering](/concepts/machine-learning/feature-engineering), [Representation learning](/concepts/machine-learning/representation-learning) |
-| Model family | 어떤 함수공간과 inductive bias를 쓰는가? | [Linear model](/concepts/machine-learning/linear-model), [Tree-based model](/concepts/machine-learning/tree-based-model), [Kernel method](/concepts/machine-learning/kernel-method), [Ensemble method](/concepts/machine-learning/ensemble-method), [MLP](/concepts/architectures/mlp) |
+| Model family | 어떤 function space와 inductive bias를 쓰는가? | [Linear model](/concepts/machine-learning/linear-model), [Tree-based model](/concepts/machine-learning/tree-based-model), [Kernel method](/concepts/machine-learning/kernel-method), [Ensemble method](/concepts/machine-learning/ensemble-method), [MLP](/concepts/architectures/mlp) |
 | Objective | 무엇을 줄이거나 키우는가? | [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Evidence | 학습된 모델이 어떤 범위에서 작동한다고 말할 수 있는가? | [Generalization](/concepts/machine-learning/generalization), [Model selection](/concepts/machine-learning/model-selection), [Evaluation](/ai/evaluation) |
 
@@ -81,11 +81,11 @@ $$
 
 각 화살표는 별도의 실패 지점입니다.
 
-| Arrow | Common Failure |
+| Arrow | Common failure |
 | --- | --- |
 | dataset $\to$ representation | preprocessing leakage, wrong unit, missing metadata |
 | representation $\to$ prediction | architecture mismatch, lost structure, bad inductive bias |
-| prediction $\to$ loss | loss does not match utility |
+| prediction $\to$ loss | loss가 실제 utility와 맞지 않음 |
 | loss $\to$ update | instability, undertraining, overfitting |
 | metric $\to$ claim | weak split, noisy comparison, cherry-picked selection |
 
@@ -93,18 +93,18 @@ $$
 
 Objective는 모델이 실제로 학습하는 신호입니다. 같은 architecture라도 objective가 달라지면 representation과 failure mode가 달라집니다.
 
-| Objective Family | Use For | Notes |
+| Objective family | Use for | Notes |
 | --- | --- | --- |
-| Empirical risk | supervised prediction under observed labels | [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function) |
+| Empirical risk | observed label이 있는 supervised prediction | [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function) |
 | Classification likelihood | class probability prediction | [Cross-entropy loss](/concepts/machine-learning/cross-entropy-loss), [Negative log-likelihood](/concepts/machine-learning/negative-log-likelihood) |
-| Regression error | scalar or vector prediction | [Mean squared error](/concepts/machine-learning/mean-squared-error), [Regression](/concepts/machine-learning/regression) |
+| Regression error | scalar 또는 vector prediction | [Mean squared error](/concepts/machine-learning/mean-squared-error), [Regression](/concepts/machine-learning/regression) |
 | Ranking objective | ordered candidate list | [Ranking](/concepts/machine-learning/ranking), [Ranking metrics](/concepts/evaluation/ranking-metrics) |
-| Representation objective | embedding useful for transfer, retrieval, or probing | [Representation learning](/concepts/machine-learning/representation-learning), [Self-supervised learning](/concepts/learning/self-supervised-learning) |
-| Alignment check | reported metric differs from training loss | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
+| Representation objective | transfer, retrieval, probing에 유용한 embedding | [Representation learning](/concepts/machine-learning/representation-learning), [Self-supervised learning](/concepts/learning/self-supervised-learning) |
+| Alignment check | reported metric이 training loss와 다른 경우 | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 
 ## Optimization and Training
 
-Training connects the objective to parameter updates. The minimum loop is:
+Training은 objective를 parameter update로 연결합니다. 최소 loop는 아래와 같습니다.
 
 $$
 x_B \rightarrow f_\theta(x_B) \rightarrow \mathcal{L}_B
@@ -137,16 +137,16 @@ $$
 
 ## Training State
 
-Training is not only a loss value. A reproducible training note should identify:
+Training은 loss value 하나로 끝나지 않습니다. Reproducible training note는 아래 state를 식별해야 합니다.
 
 | State | Meaning |
 | --- | --- |
-| Parameters $\theta_t$ | model weights at step $t$ |
-| Optimizer state $m_t$ | momentum, variance estimate, or other update memory |
-| Batch $B_t$ | examples used for one gradient estimate |
-| Gradient $g_t$ | estimated direction from the current loss |
-| Learning rate $\eta_t$ | update scale at step $t$ |
-| Checkpoint | parameters, optimizer state, scheduler state, config, and step count |
+| Parameters $\theta_t$ | step $t$의 model weight |
+| Optimizer state $m_t$ | momentum, variance estimate 같은 update memory |
+| Batch $B_t$ | 한 번의 gradient estimate에 쓰인 example |
+| Gradient $g_t$ | current loss에서 추정한 update direction |
+| Learning rate $\eta_t$ | step $t$의 update scale |
+| Checkpoint | parameter, optimizer state, scheduler state, config, step count |
 
 The generic update is:
 
@@ -158,7 +158,7 @@ $$
 \eta_t\,u(g_t, m_t)
 $$
 
-where $u(g_t,m_t)$ is the optimizer-specific update direction.
+여기서 $u(g_t,m_t)$는 optimizer마다 달라지는 update direction입니다.
 
 일반화 관점에서는 train loss와 test loss를 구분해야 합니다.
 

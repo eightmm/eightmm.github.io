@@ -8,34 +8,34 @@ tags:
 
 # Geometry and Symmetry
 
-Geometry and symmetry explain what should stay the same, and what should transform predictably, when coordinates are moved, rotated, permuted, or re-indexed.
+Geometry와 symmetry는 coordinate가 이동, 회전, permutation, re-indexing될 때 무엇이 그대로 남아야 하고 무엇이 예측 가능하게 변해야 하는지 설명합니다.
 
 $$
 f(g \cdot x) = g \cdot f(x)
 $$
 
-This is the abstract form of equivariance.
+이 식은 equivariance의 추상적인 형태입니다.
 
 ## Route Map
 
-| Question | Start | Use For |
+| Question | Start | Use for |
 | --- | --- | --- |
-| What is the mathematical object? | [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) | distances, transforms, groups, coordinate rules |
-| What should stay unchanged? | [Invariance](/concepts/geometric-deep-learning/invariance) | scalar labels such as class, energy, affinity |
-| What should transform predictably? | [Equivariance](/concepts/geometric-deep-learning/equivariance) | coordinates, forces, vector fields, pose updates |
-| What frame are coordinates in? | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry) | structure representation and leakage checks |
-| How is this implemented in models? | [Geometric deep learning](/concepts/geometric-deep-learning) | equivariant GNNs and coordinate-aware architectures |
+| mathematical object는 무엇인가? | [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) | distance, transform, group, coordinate rule |
+| 무엇이 unchanged여야 하는가? | [Invariance](/concepts/geometric-deep-learning/invariance) | class, energy, affinity 같은 scalar label |
+| 무엇이 predictably transform되어야 하는가? | [Equivariance](/concepts/geometric-deep-learning/equivariance) | coordinate, force, vector field, pose update |
+| coordinate는 어떤 frame에 있는가? | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame), [Distance geometry](/concepts/geometric-deep-learning/distance-geometry) | structure representation과 leakage check |
+| model에서는 어떻게 구현되는가? | [Geometric deep learning](/concepts/geometric-deep-learning) | equivariant GNN과 coordinate-aware architecture |
 
 ## Transformation Rules
 
 | Object | Rule | Interpretation |
 | --- | --- | --- |
-| Translation | $x_i' = x_i + t$ | origin should not matter for many structure tasks |
-| Rotation | $x_i' = R x_i$ | orientation should not change scalar labels |
-| Rigid motion | $x_i' = R x_i + t$ | coordinates move together as one body |
-| Permutation | $X' = P X$ | node/residue/atom order should not change the object |
-| Invariant output | $f(g\cdot x)=f(x)$ | scalar target stays the same |
-| Equivariant output | $F(g\cdot x)=\rho(g)F(x)$ | output transforms predictably with input |
+| Translation | $x_i' = x_i + t$ | 많은 structure task에서 origin은 중요하지 않아야 합니다 |
+| Rotation | $x_i' = R x_i$ | orientation은 scalar label을 바꾸면 안 됩니다 |
+| Rigid motion | $x_i' = R x_i + t$ | coordinate가 하나의 body처럼 함께 움직입니다 |
+| Permutation | $X' = P X$ | node/residue/atom order가 object를 바꾸면 안 됩니다 |
+| Invariant output | $f(g\cdot x)=f(x)$ | scalar target이 그대로 유지됩니다 |
+| Equivariant output | $F(g\cdot x)=\rho(g)F(x)$ | output이 input과 함께 예측 가능하게 변합니다 |
 
 For distances:
 
@@ -47,27 +47,27 @@ d_{ij}
 \lVert (Rx_i+t)-(Rx_j+t)\rVert_2
 $$
 
-so pairwise distances are invariant to rigid motions.
+따라서 pairwise distance는 rigid motion에 invariant합니다.
 
 ## Invariance vs Equivariance
 
-Use invariance when the output should not change under a transformation:
+Transformation 아래에서 output이 바뀌면 안 되면 invariance를 씁니다.
 
 $$
 f(g\cdot x)=f(x)
 $$
 
-Use equivariance when the output should transform in a known way:
+Output이 알려진 방식으로 변해야 하면 equivariance를 씁니다.
 
 $$
 F(g\cdot x)=\rho(g)F(x)
 $$
 
-where $\rho(g)$ is the representation of the transformation on the output space. For scalar labels, $\rho(g)$ is often the identity. For coordinate or vector outputs, $\rho(g)$ can be a rotation matrix or a rigid-motion action.
+여기서 $\rho(g)$는 output space 위 transformation의 representation입니다. Scalar label에서는 $\rho(g)$가 보통 identity입니다. Coordinate나 vector output에서는 $\rho(g)$가 rotation matrix 또는 rigid-motion action일 수 있습니다.
 
 ## Coordinate Sets
 
-For a coordinate matrix:
+Coordinate matrix가 아래와 같을 때:
 
 $$
 X =
@@ -79,19 +79,19 @@ x_N^\top
 \in \mathbb{R}^{N\times 3}
 $$
 
-a rigid motion acts as:
+rigid motion은 아래처럼 작용합니다.
 
 $$
 X' = X R^\top + \mathbf{1}t^\top
 $$
 
-Permutation of atom or residue order acts as:
+Atom 또는 residue order의 permutation은 아래처럼 작용합니다.
 
 $$
 X' = P X
 $$
 
-A coordinate model that predicts updated coordinates should usually satisfy:
+Updated coordinate를 예측하는 coordinate model은 보통 아래 조건을 만족해야 합니다.
 
 $$
 F(PXR^\top+\mathbf{1}t^\top)
@@ -99,7 +99,7 @@ F(PXR^\top+\mathbf{1}t^\top)
 P F(X) R^\top + \mathbf{1}t^\top
 $$
 
-This equation is a compact way to check whether a structure model respects both indexing and geometry.
+이 식은 structure model이 indexing과 geometry를 함께 존중하는지 확인하는 compact한 방법입니다.
 
 ## Groups and Coordinates
 
@@ -111,7 +111,7 @@ This equation is a compact way to check whether a structure model respects both 
 
 ## Target Map
 
-| Target | Expected Symmetry | Examples |
+| Target | Expected symmetry | Examples |
 | --- | --- | --- |
 | Class / affinity / energy | invariant | property prediction, binding score |
 | Coordinate update | equivariant | pose generation, structure refinement |
@@ -127,7 +127,7 @@ This equation is a compact way to check whether a structure model respects both 
 
 ## Model Family Map
 
-| Model Family | Built-In Symmetry | Typical Use |
+| Model family | Built-in symmetry | Typical use |
 | --- | --- | --- |
 | CNN | translation equivariance on grids | images, local spatial patterns |
 | GNN | permutation equivariance over nodes | molecules, residues, relational data |
@@ -135,16 +135,16 @@ This equation is a compact way to check whether a structure model respects both 
 | E(3)/SE(3)-equivariant model | rigid-motion equivariance | coordinate prediction, forces, poses |
 | Set model | permutation invariance/equivariance | unordered objects, pooled representations |
 
-The model family should match the symmetry of the object and target, not only the dataset format.
+Model family는 dataset format만이 아니라 object와 target의 symmetry에 맞아야 합니다.
 
 ## Checks
 
-- Which transformations preserve the label?
-- Which outputs should rotate or translate with the input?
-- Is the coordinate frame arbitrary or physically meaningful?
-- Is the model using absolute coordinates where relative geometry would be safer?
-- Are atom, residue, or node permutations handled explicitly?
-- Does the evaluation metric respect the same symmetry as the model target?
+- 어떤 transformation이 label을 보존하는가?
+- 어떤 output이 input과 함께 rotate 또는 translate되어야 하는가?
+- coordinate frame이 arbitrary한가, physically meaningful한가?
+- relative geometry가 더 안전한데 model이 absolute coordinate를 쓰고 있지는 않은가?
+- atom, residue, node permutation이 explicit하게 처리되는가?
+- evaluation metric이 model target과 같은 symmetry를 존중하는가?
 
 ## Related
 

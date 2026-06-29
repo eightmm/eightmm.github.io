@@ -8,20 +8,20 @@ tags:
 
 # Probability and Statistics
 
-Probability describes uncertainty and data-generating processes. Statistics describes how finite samples estimate unknown quantities.
+Probability는 uncertainty와 data-generating process를 설명합니다. Statistics는 finite sample로 unknown quantity를 추정하는 방법을 설명합니다.
 
 $$
 \mathbb{E}_{(x,y)\sim p_{\mathrm{data}}}
 [\mathcal{L}(f(x), y)]
 $$
 
-The distribution under the expectation matters as much as the loss itself.
+Expectation 아래의 distribution은 loss 자체만큼 중요합니다.
 
 ## Route Map
 
-| Route | Use For | Start |
+| Route | Use for | Start |
 | --- | --- | --- |
-| Random objects | what variable, event, sample space, and distribution are being modeled | [Random variable](/concepts/math/random-variable), [Probability distribution](/concepts/math/probability-distribution) |
+| Random objects | 어떤 variable, event, sample space, distribution을 모델링하는가 | [Random variable](/concepts/math/random-variable), [Probability distribution](/concepts/math/probability-distribution) |
 | Expectations | loss, risk, metric, Monte Carlo estimate, sampling average | [Expectation](/concepts/math/expectation), [Monte Carlo estimation](/concepts/math/monte-carlo-estimation) |
 | Common distributions | noise model, uncertainty assumption, approximate sampling law | [Normal distribution](/concepts/math/normal-distribution) |
 | Conditioning and inference | posterior, likelihood, prior, Bayesian update | [Bayes rule](/concepts/math/bayes-rule), [Bayesian inference](/concepts/math/bayesian-inference) |
@@ -30,16 +30,16 @@ The distribution under the expectation matters as much as the loss itself.
 
 ## Distribution Map
 
-| Quantity | Meaning | Common AI Use |
+| Quantity | Meaning | Common AI use |
 | --- | --- | --- |
-| $p(x)$ | marginal distribution of inputs | data modeling, density estimation |
+| $p(x)$ | input의 marginal distribution | data modeling, density estimation |
 | $p(y\mid x)$ | conditional label distribution | classification, regression uncertainty |
-| $p_\theta(y\mid x)$ | model-predicted conditional distribution | probabilistic prediction and calibration |
+| $p_\theta(y\mid x)$ | model-predicted conditional distribution | probabilistic prediction과 calibration |
 | $p_{\mathrm{train}}(x,y)$ | training distribution | empirical risk minimization |
 | $p_{\mathrm{test}}(x,y)$ | evaluation distribution | generalization claim |
-| $q(z\mid x)$ | approximate posterior or encoder distribution | VAE, latent-variable inference |
-| $p(z)$ | prior over latent variables | generative modeling and regularization |
-| $p_\theta(x\mid z)$ | likelihood or decoder distribution | reconstruction and conditional generation |
+| $q(z\mid x)$ | approximate posterior 또는 encoder distribution | VAE, latent-variable inference |
+| $p(z)$ | latent variable의 prior | generative modeling과 regularization |
+| $p_\theta(x\mid z)$ | likelihood 또는 decoder distribution | reconstruction과 conditional generation |
 
 ## Probability Reading Pattern
 
@@ -47,11 +47,11 @@ The distribution under the expectation matters as much as the loss itself.
 
 | Question | Example |
 | --- | --- |
-| What is random? | data example, label, latent variable, noise, model sample |
-| What is conditioned on? | $p(y\mid x)$, $p(x\mid c)$, $p(z\mid x)$ |
-| What is learned? | parameterized distribution $p_\theta$ or encoder $q_\phi$ |
-| What is estimated? | expectation, risk, likelihood, metric, posterior |
-| What is the sample source? | train distribution, test distribution, deployment distribution |
+| 무엇이 random인가? | data example, label, latent variable, noise, model sample |
+| 무엇에 condition하는가? | $p(y\mid x)$, $p(x\mid c)$, $p(z\mid x)$ |
+| 무엇을 learn하는가? | parameterized distribution $p_\theta$ 또는 encoder $q_\phi$ |
+| 무엇을 estimate하는가? | expectation, risk, likelihood, metric, posterior |
+| sample source는 무엇인가? | train distribution, test distribution, deployment distribution |
 
 Bayes rule connects posterior, likelihood, and prior:
 
@@ -61,17 +61,17 @@ p(y\mid x)
 \frac{p(x\mid y)p(y)}{p(x)}
 $$
 
-This is useful when reading probabilistic classifiers, latent-variable models, and uncertainty notes.
+이 식은 probabilistic classifier, latent-variable model, uncertainty note를 읽을 때 유용합니다.
 
 ## Conditional Modeling
 
-Most supervised AI claims can be written as a conditional distribution:
+대부분의 supervised AI claim은 conditional distribution으로 쓸 수 있습니다.
 
 $$
 p_\theta(y\mid x)
 $$
 
-Training then chooses parameters that make observed labels likely under the model:
+Training은 observed label이 model 아래에서 likely하도록 parameter를 선택합니다.
 
 $$
 \theta^\star
@@ -81,7 +81,7 @@ $$
 \log p_\theta(y_i\mid x_i)
 $$
 
-For classification with logits $z=f_\theta(x)$:
+Logit $z=f_\theta(x)$를 쓰는 classification에서는:
 
 $$
 p_\theta(y=k\mid x)
@@ -89,7 +89,7 @@ p_\theta(y=k\mid x)
 \frac{\exp z_k}{\sum_{j=1}^{K}\exp z_j}
 $$
 
-and the negative log-likelihood for one example is:
+한 example에 대한 negative log-likelihood는 아래와 같습니다.
 
 $$
 \mathcal{L}_{\mathrm{CE}}
@@ -97,11 +97,11 @@ $$
 -\log p_\theta(y\mid x)
 $$
 
-This is why cross-entropy, maximum likelihood, calibration, and uncertainty are one connected topic rather than separate tricks.
+그래서 cross-entropy, maximum likelihood, calibration, uncertainty는 서로 떨어진 trick이 아니라 하나로 연결된 topic입니다.
 
 ## Distribution Shift
 
-Generalization claims depend on which distribution the expectation refers to:
+Generalization claim은 expectation이 어떤 distribution을 가리키는지에 의존합니다.
 
 $$
 R_{\mathrm{deploy}}(\theta)
@@ -110,7 +110,7 @@ R_{\mathrm{deploy}}(\theta)
 \left[\mathcal{L}(f_\theta(x),y)\right]
 $$
 
-The empirical test estimate is only evidence for deployment if:
+Empirical test estimate가 deployment evidence가 되려면 아래가 필요합니다.
 
 $$
 p_{\mathrm{test}}(x,y)
@@ -118,11 +118,11 @@ p_{\mathrm{test}}(x,y)
 p_{\mathrm{deploy}}(x,y)
 $$
 
-In computational biology this can fail through scaffold shift, protein-family shift, assay/source shift, structure-source shift, or negative-set construction.
+Computational biology에서는 scaffold shift, protein-family shift, assay/source shift, structure-source shift, negative-set construction 때문에 이 조건이 깨질 수 있습니다.
 
 ## Statistics
 
-Statistics turns finite observations into claims about a population quantity. Correlation, uncertainty, hypothesis tests, and benchmark estimates should be read as estimates with assumptions, not as exact facts.
+Statistics는 finite observation을 population quantity에 대한 claim으로 바꿉니다. Correlation, uncertainty, hypothesis test, benchmark estimate는 exact fact가 아니라 assumption이 붙은 estimate로 읽어야 합니다.
 
 | Topic | Start |
 | --- | --- |
@@ -144,7 +144,7 @@ $$
 \frac{1}{n}\sum_{i=1}^{n} h(x_i)
 $$
 
-The error is controlled by sampling noise, bias, dependence between samples, and whether the sample distribution matches the target distribution.
+Error는 sampling noise, bias, sample 사이의 dependence, sample distribution과 target distribution의 일치 여부에 의해 좌우됩니다.
 
 For an estimator $\hat{\theta}$:
 
@@ -158,30 +158,30 @@ $$
 
 ## AI Connections
 
-- Probabilistic prediction needs calibrated probabilities, not only scores.
-- Dataset shift changes the distribution under the expected risk.
-- Uncertainty estimation depends on what randomness is being modeled.
-- Bayesian inference separates prior, likelihood, posterior, and posterior predictive claims.
-- Hypothesis testing and confidence intervals help interpret benchmark differences.
+- Probabilistic prediction에는 score만이 아니라 calibrated probability가 필요합니다.
+- Dataset shift는 expected risk 아래의 distribution을 바꿉니다.
+- Uncertainty estimation은 어떤 randomness를 모델링하는지에 의존합니다.
+- Bayesian inference는 prior, likelihood, posterior, posterior predictive claim을 분리합니다.
+- Hypothesis testing과 confidence interval은 benchmark difference 해석을 돕습니다.
 
 ## Computational Biology Connections
 
-| Question | Statistical Object | Common Risk |
+| Question | Statistical object | Common risk |
 | --- | --- | --- |
-| Is an activity label reliable? | noisy observation of an assay endpoint | assay protocol and unit differences |
-| Does a split test transfer? | estimate under a target distribution | scaffold, family, or source leakage |
-| Is a screening score useful? | ranking statistic over a candidate pool | active prevalence and decoy bias |
-| Is uncertainty meaningful? | predictive distribution or interval | calibrated on the wrong domain |
-| Is a generative model valid? | sample distribution $p_\theta(x)$ | validity without utility or novelty |
+| activity label이 reliable한가? | assay endpoint의 noisy observation | assay protocol과 unit difference |
+| split이 transfer를 test하는가? | target distribution 아래의 estimate | scaffold, family, source leakage |
+| screening score가 유용한가? | candidate pool 위의 ranking statistic | active prevalence와 decoy bias |
+| uncertainty가 의미 있는가? | predictive distribution 또는 interval | wrong domain에서 calibration됨 |
+| generative model이 valid한가? | sample distribution $p_\theta(x)$ | utility나 novelty 없는 validity |
 
 ## Checks
 
-- Is the probability conditional or marginal?
-- Is the estimate biased, high-variance, or data-leaking?
-- Is the test distribution the same as the deployment distribution?
-- Are repeated evaluations creating multiple-comparison risk?
-- Is the claim about likelihood, decision quality, ranking, calibration, or downstream utility?
-- Does the reported metric estimate the same expectation the text claims?
+- probability가 conditional인가 marginal인가?
+- estimate가 biased, high-variance, data-leaking 중 어디에 해당하는가?
+- test distribution이 deployment distribution과 같은가?
+- repeated evaluation이 multiple-comparison risk를 만들고 있는가?
+- claim이 likelihood, decision quality, ranking, calibration, downstream utility 중 무엇에 관한 것인가?
+- reported metric이 text가 주장하는 expectation과 같은 대상을 estimate하는가?
 
 ## Related
 
