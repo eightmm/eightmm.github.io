@@ -40,6 +40,39 @@ Predictions can target different levels:
 
 The target choice changes evaluation. A good contact map does not imply all-atom pose quality, and a good backbone does not imply ligand-ready side-chain placement.
 
+## Prediction Levels
+
+| Target | Output | Evidence needed |
+| --- | --- | --- |
+| contact map | binary residue-pair contact | precision/recall by sequence separation |
+| distance map | pairwise distances or bins | distance error and calibration |
+| backbone | $N$, $C_\alpha$, $C$, $O$ coordinates | RMSD/TM-like structural agreement and local geometry |
+| all-atom | backbone plus side chains | rotamer quality, clashes, bond geometry |
+| confidence | per-residue or pairwise uncertainty | calibration against actual error |
+| complex | multimer or protein-ligand/protein-protein arrangement | interface quality, chain mapping, partner leakage checks |
+
+## Coordinate Contract
+
+Coordinate predictions should state what transforms are irrelevant:
+
+$$
+\hat{X}' = R\hat{X}+t,
+\qquad
+X' = RX+t
+$$
+
+Global rotation and translation should not change the structural claim. If the model predicts vectors, forces, or coordinate updates, the output should transform equivariantly; if it predicts confidence or a scalar score, the output should be invariant.
+
+## Downstream Boundary
+
+| Downstream use | Extra requirement |
+| --- | --- |
+| docking | side-chain placement, pocket geometry, missing atoms, protonation states |
+| binder or complex modeling | interface orientation, chain identity, template leakage control |
+| function prediction | active-site residues, cofactors, conformational state |
+| protein design | foldability and sequence-structure compatibility |
+| representation learning | split-aware downstream evaluation, not only structure similarity |
+
 ## Checks
 
 - Is the target backbone, all-atom structure, contact map, distance map, or confidence score?
@@ -47,6 +80,8 @@ The target choice changes evaluation. A good contact map does not imply all-atom
 - Are missing residues, alternate conformations, chain breaks, and ligands handled?
 - Is structure cleaning and residue indexing consistent between train and evaluation?
 - Is downstream use docking, design, function prediction, or representation transfer?
+- Is the confidence estimate calibrated to the reported error?
+- Are monomer, multimer, and ligand-bound claims evaluated separately?
 
 ## Related
 

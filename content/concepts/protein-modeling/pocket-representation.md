@@ -32,12 +32,26 @@ where $X_{\mathcal{P}}$ are coordinates or features and $A_{\mathcal{P}}$ is opt
 
 ## Common Representations
 
-- Residue sequence window around binding residues.
-- Atom-level graph with local coordinates.
-- Residue-level graph or contact map.
-- 3D grid or voxel representation.
-- Surface patch with geometric and chemical features.
-- Learned pocket embedding paired with ligand embedding.
+| Representation | Captures | Main risk |
+| --- | --- | --- |
+| residue sequence window | local sequence context | misses 3D proximity and long-range contacts |
+| residue graph/contact map | residue-level geometry | cutoff and missing residues change graph |
+| atom-level graph | local chemistry and coordinates | atom typing, protonation, and side-chain uncertainty |
+| 3D grid or voxel | spatial density around pocket | resolution, frame, and memory cost |
+| surface patch | shape and chemical surface features | surface generation parameters affect features |
+| learned embedding | compact representation for retrieval or prediction | hard to audit what information is preserved |
+
+## Pocket Source Contract
+
+| Source | Available at deployment? | Claim boundary |
+| --- | --- | --- |
+| known binding site | yes, if site is annotated | tests site-conditioned modeling, not blind site discovery |
+| predicted binding site | yes, if predictor is part of workflow | includes predictor error in the pipeline |
+| ligand-defined pocket | no for unknown binders | useful for retrospective analysis, risky for blind prediction |
+| residue cutoff from reference complex | no for new pairs | can leak the answer if used in evaluation |
+| whole-protein input | yes | shifts burden to model to find relevant region |
+
+If a pocket is defined from a bound test ligand, the task is no longer blind pocket discovery or deployment-like docking.
 
 ## Key Risks
 
@@ -45,6 +59,8 @@ where $X_{\mathcal{P}}$ are coordinates or features and $A_{\mathcal{P}}$ is opt
 - Different cutoffs can change the apparent task.
 - Missing side chains, cofactors, metals, and waters may alter interactions.
 - Whole-protein context can matter even when the model only sees a local pocket.
+- Pocket similarity across train and test can hide target-family leakage.
+- Predicted pockets can fail silently if the benchmark only scores successful extractions.
 
 ## Checks
 
@@ -53,6 +69,8 @@ where $X_{\mathcal{P}}$ are coordinates or features and $A_{\mathcal{P}}$ is opt
 - Does the representation preserve rotation/translation invariance or equivariance?
 - Is the pocket representation available at deployment time?
 - Is pocket similarity controlled across train and test?
+- Are failed pocket detections, empty pockets, and missing structures counted?
+- Does the evaluation separate pocket detection quality from downstream scoring quality?
 
 ## Related
 
