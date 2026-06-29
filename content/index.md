@@ -4,6 +4,8 @@ title: Jaemin's Research Notes
 
 # Jaemin's Research Notes
 
+[GitHub](https://github.com/eightmm) · [eightmm.github.io](https://eightmm.github.io)
+
 AI, computational biology, research infrastructure를 정리하는 개인 연구 블로그입니다. 글, 개념 노트, 논문 메모, 프로젝트 기록을 서로 연결해 장기적으로 다시 찾을 수 있게 만듭니다.
 
 ## Main Areas
