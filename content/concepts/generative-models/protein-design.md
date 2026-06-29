@@ -18,6 +18,20 @@ $$
 
 where $s$ is a sequence, $X$ is a backbone or structural context, and $c$ is a design condition such as binding, fold, or function.
 
+Protein design can also generate coordinates:
+
+$$
+X \sim p_\theta(X \mid c)
+$$
+
+or joint sequence-structure objects:
+
+$$
+(s,X) \sim p_\theta(s,X \mid c)
+$$
+
+The claim changes depending on whether the model generates sequence, backbone, side chains, complex pose, or only ranks candidates.
+
 ## Design Targets
 
 | Target | Generated Object | Evidence Boundary |
@@ -51,6 +65,30 @@ $$
 
 where $X_t$ is a noisy or intermediate structure, $v_\theta$ is a denoising or velocity field, and $c$ is the design condition.
 
+Many workflows add filtering or guidance:
+
+$$
+\tilde{x}\sim p_\theta(x\mid c),
+\qquad
+x^\star
+=
+\arg\max_{\tilde{x}\in \mathcal{C}}
+r_\psi(\tilde{x},c)
+$$
+
+where $r_\psi$ can be a folding model, structure predictor, docking score, energy model, classifier, or human-defined rule. The reported claim must state whether quality comes from the generator, the filter, or both.
+
+## Claim Ladder
+
+| Claim | Evidence needed |
+| --- | --- |
+| sequence is plausible | composition, language-model score, diversity, training similarity |
+| structure is plausible | backbone geometry, clashes, local quality, fold confidence |
+| sequence folds to intended structure | independent structure prediction or experimental structure |
+| binder is plausible | interface geometry, negative controls, target specificity checks |
+| function is plausible | assay-relevant model or experiment, not only fold confidence |
+| experimentally validated | wet-lab evidence with conditions and failure denominator |
+
 ## Evaluation Contract
 
 | Check | Why |
@@ -61,6 +99,8 @@ where $X_t$ is a noisy or intermediate structure, $v_\theta$ is a denoising or v
 | Diversity | many high-scoring designs may be near-duplicates |
 | Experimental status | in-silico validation must not be written as wet-lab success |
 | Negative controls | generated designs should be compared with simple baselines or shuffled conditions |
+| Candidate accounting | attempted, filtered, failed, and retained designs must be counted separately |
+| Split boundary | training similarity, homologs, templates, and target-family leakage must be checked |
 
 ## Why It Matters
 
@@ -75,6 +115,9 @@ where $X_t$ is a noisy or intermediate structure, $v_\theta$ is a denoising or v
 - How are designs validated beyond in-silico metrics?
 - Is the claim about sequence recovery, structure plausibility, binding, function, or experimental validation?
 - Are generated samples filtered by a separate model that owns part of the final claim?
+- Are failed or filtered designs included in the denominator?
+- Is the validation model independent from the generator's training signal?
+- Does the design claim depend on sequence, structure, complex, or experimental evidence?
 
 ## Related
 
