@@ -100,6 +100,58 @@ $$
 
 Public version은 private path나 cluster-specific identifier를 노출하지 않고 이 field를 설명할 수 있습니다.
 
+## Common `sbatch` Options
+
+Use this as a public-safe reference. Replace real partition, node, account, path, and email values with placeholders.
+
+| Option | Meaning | Public note |
+| --- | --- | --- |
+| `--job-name=<name>` / `-J <name>` | human-readable job name | avoid internal project names |
+| `--partition=<partition>` | scheduler partition or queue | use `<partition>` unless policy is public |
+| `--time=<hh:mm:ss>` | wall-time limit | tie to measured smoke-run estimate |
+| `--nodes=<count>` / `-N <count>` | node count | justify multi-node request |
+| `--ntasks-per-node=<count>` | processes per node | match launcher and rank layout |
+| `--cpus-per-task=<cores>` | CPU cores per task | match dataloader/preprocessing needs |
+| `--mem=<limit>` | memory per node | use generic memory class in public notes |
+| `--mem-per-cpu=<memory>` | memory per CPU | do not combine blindly with `--mem` |
+| `--gres=gpu:<count>` | generic GPU request | prefer generic count over private GPU class names |
+| `--nodelist=<node>` / `-w <node>` | specific node selection | avoid publishing node names |
+| `--nodefile=<file>` / `-F <file>` | node list file | avoid private file paths |
+| `--output=<path>` | stdout path | path directory must exist |
+| `--error=<path>` | stderr path | path directory must exist |
+| `--export=<vars>` | environment variables passed to job | never export secrets |
+| `--dependency=<rule>:<job-id>` | job dependency | record why the dependency exists |
+| `--mail-type=<events>` | email notification events | avoid publishing email addresses |
+| `--mail-user=<email>` | notification recipient | omit from public examples |
+| `--begin=<date/time>` | delayed start | use placeholder date/time |
+| `--exclusive` | exclusive node allocation | justify because it reduces sharing |
+
+Dependency patterns:
+
+```bash
+# Run after another job starts
+#SBATCH --dependency=after:<job-id>
+
+# Run only if another job succeeds
+#SBATCH --dependency=afterok:<job-id>
+
+# Run if another job fails
+#SBATCH --dependency=afternotok:<job-id>
+
+# Run after another job finishes in any state
+#SBATCH --dependency=afterany:<job-id>
+```
+
+## Option Grouping
+
+| Group | Options | Main risk |
+| --- | --- | --- |
+| identity | `--job-name`, `--output`, `--error` | leaking project names or private paths |
+| resource | `--nodes`, `--ntasks-per-node`, `--cpus-per-task`, `--mem`, `--gres` | oversized requests increase queue wait |
+| placement | `--partition`, `--nodelist`, `--nodefile`, `--exclusive` | exposing cluster topology or forcing fragile placement |
+| environment | `--export` | leaking secrets or environment-specific assumptions |
+| workflow | `--dependency`, `--begin`, `--mail-type` | hidden ordering assumptions |
+
 ## 확인할 것
 
 - script가 `set -euo pipefail`로 빠르게 실패하는가?
