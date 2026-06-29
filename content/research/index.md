@@ -41,6 +41,7 @@ tags:
 | Question | Area |
 | --- | --- |
 | [[research/computational-biology/pose-aware-molecular-generation|Pose-aware molecular generation]] | [[research/computational-biology/index|Computational Biology Research]] |
+| [[research/computational-biology/pocket-ligand-representation-alignment|Pocket-ligand representation alignment]] | [[research/computational-biology/index|Computational Biology Research]] |
 | [[research/architectures/geometric-inductive-bias|Geometric inductive bias]] | [[research/architectures/index|Architecture Research]] |
 
 ## Research Note 조건
