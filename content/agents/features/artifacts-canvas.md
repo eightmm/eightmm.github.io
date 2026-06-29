@@ -27,12 +27,32 @@ $$
 | 코드/문서 반복 수정 | 변경 이력을 좁게 추적 |
 | 공유가 필요함 | share, publish, export 기능 사용 |
 
+## Mental Model
+
+Artifact는 final answer가 아니라 editable working object입니다. 대화는 intent와 review를 담당하고, artifact는 내용과 구조를 담당합니다.
+
+$$
+A_{t+1}
+=
+\operatorname{Revise}(A_t,\ f_t,\ C_t)
+$$
+
+여기서 $A_t$는 현재 artifact, $f_t$는 user feedback, $C_t$는 관련 context입니다. 좋은 artifact workflow는 전체를 매번 다시 쓰기보다 수정 범위와 검증 범위를 좁힙니다.
+
 ## 사용 예
 
 - 긴 글 초안 작성과 부분 rewrite.
 - 작은 웹 앱이나 UI prototype 생성.
 - 데이터 표, chart, 계산 결과 정리.
 - 문서 구조를 보면서 계속 수정.
+
+## 확인할 것
+
+- artifact와 chat summary 중 어느 쪽이 source of truth인가?
+- 부분 수정이 기존 구조를 깨뜨리지 않았는가?
+- 코드 artifact라면 실행 또는 빌드가 가능한가?
+- 문서 artifact라면 publish 전 private detail이 제거됐는가?
+- export/share가 public artifact를 만드는지 확인했는가?
 
 ## Official References
 

@@ -18,6 +18,8 @@ $$
 
 여기서 node $V$는 step 또는 role이고, edge $E$는 artifact, evidence, decision을 전달합니다.
 
+Orchestration은 agent 수를 늘리는 기술이 아니라, artifact flow와 responsibility를 분리하는 기술입니다. 단일 agent loop로 충분한 작업에 multi-agent를 붙이면 coordination cost만 늘어납니다.
+
 ## Pattern
 
 - Pipeline: 한 step이 다음 step의 input을 만듭니다.
@@ -26,6 +28,22 @@ $$
 - Debate or council: independent agent들이 synthesis 전에 의견을 냅니다.
 - Human gate: human이 high-risk transition을 승인합니다.
 
+## When to Use
+
+| 상황 | orchestration이 유용한 이유 |
+| --- | --- |
+| 많은 후보를 수집해야 함 | parallel discovery가 시간 단축 |
+| 중요한 변경을 검토해야 함 | independent review로 blind spot 감소 |
+| 서로 다른 전문성이 필요함 | coding, research, security, writing 역할 분리 |
+| 긴 workflow를 재사용해야 함 | runbook과 handoff artifact로 반복 가능 |
+
+## When Not to Use
+
+- task가 작고 context가 하나의 agent에 충분히 들어갑니다.
+- shared state가 불명확해서 agent들이 서로 덮어쓸 위험이 큽니다.
+- verifier 없이 의견만 여러 개 모읍니다.
+- delegation 결과를 admit하거나 review할 owner가 없습니다.
+
 ## 확인할 것
 
 - step 사이에 어떤 artifact가 전달되는가?
@@ -33,6 +51,7 @@ $$
 - conflict는 누가 해결하는가?
 - 다른 agent의 confidence를 믿지 않고 각 step을 verify할 수 있는가?
 - orchestration이 single well-scoped agent loop보다 실제 value를 더하는가?
+- delegated output을 current repository나 source state에 다시 맞춰 확인하는가?
 
 ## Related
 
