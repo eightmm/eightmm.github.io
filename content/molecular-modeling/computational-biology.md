@@ -10,7 +10,7 @@ unlisted: true
 
 # Computational Biology Boundary
 
-Computational biology in this site is a focused support layer for AI-driven molecular, protein, structure, and sequence modeling. It is not a broad survey of omics, systems biology, transcriptomics, single-cell analysis, or clinical biology.
+Computational Biology in this site means the object and workflow side of modeling biological and chemical systems. It covers molecular, protein, structure, interaction, and sequence-level modeling, but it does not try to survey all of biology. Broad omics, systems biology, transcriptomics, single-cell analysis, and clinical biology stay out of scope unless a concrete research need appears.
 
 The practical unit is:
 
@@ -30,7 +30,7 @@ If the object, measurement, representation, or claim is vague, the model result 
 
 | Area | Use For |
 | --- | --- |
-| [Computational Biology Scope](/molecular-modeling/modeling-scope) | naming, route choice, and boundary between domain, AI method, Math, and Agents |
+| [Computational Biology Scope](/molecular-modeling/modeling-scope) | route choice and boundary between domain object, AI method, Math, and Agents |
 | [Objects and Entities](/molecular-modeling/entities) | protein, molecule, ligand, pocket, complex, assay, sequence, structure |
 | [Sequence-based modeling](/molecular-modeling/sequence-based) | protein sequence, genome sequence, representation, family or region split |
 | [Molecular and ligand modeling](/molecular-modeling/molecular-ligand) | small-molecule identity, standardization, fingerprints, graphs, conformers |

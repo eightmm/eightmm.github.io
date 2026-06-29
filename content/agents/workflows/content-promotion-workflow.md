@@ -18,7 +18,7 @@ $$
 \rightarrow
 \text{inbox}
 \rightarrow
-\text{canonical wiki note}
+\text{durable wiki note}
 \rightarrow
 \text{synthesis}
 \rightarrow
@@ -79,7 +79,7 @@ Agent는 아래를 해야 합니다.
 
 - destination이 note의 가장 강한 역할과 맞는가?
 - page에 inbound link와 outbound link가 있는가?
-- canonical explanation이 post에 중복되지 않고 wiki에 있는가?
+- reusable explanation이 post에 중복되지 않고 wiki에 있는가?
 - 한국어 post가 context와 reading order를 제공하는가?
 - public promotion 전에 private detail이 제거되었는가?
 - inbox에 남은 item에 explicit next action이 있는가?

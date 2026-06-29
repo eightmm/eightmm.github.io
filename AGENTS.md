@@ -31,10 +31,10 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
-- `agents/`: Agent and workflow notes, grouped as below.
-- `ai/`: Korean gateway pages for broad AI foundations.
-- `math/`: Korean gateway pages for mathematical foundations.
-- `molecular-modeling/`: Korean gateway pages shown publicly as Computational Biology, organized by modeling route rather than by listing every object as a peer. Keep the visible sidebar small: Objects and Entities, Sequence-Based Modeling, Molecular and Ligand Modeling, Interaction Modeling, Structure-Based Modeling, and Data and Evaluation. Keep `Computational Biology` as the public umbrella and reserve `Molecular Modeling` for the molecule/structure/docking-heavy subset. The stable content path may remain `molecular-modeling/`, but user-facing aliases should include `/computational-biology/...`; old `bio/` paths may remain only as aliases.
+- `agents/`: Agent-native foundations and workflow notes, grouped as below.
+- `ai/`: Korean entry pages for broad AI foundations.
+- `math/`: Korean entry pages for mathematical foundations.
+- `molecular-modeling/`: Korean entry pages shown publicly as Computational Biology, organized by modeling route rather than by listing every object as a peer. Keep the visible sidebar small: Objects and Entities, Sequence-Based Modeling, Molecular and Ligand Modeling, Interaction Modeling, Structure-Based Modeling, and Data and Evaluation. Keep `Computational Biology` as the public umbrella and reserve `Molecular Modeling` for the molecule/structure/docking-heavy subset. The stable content path may remain `molecular-modeling/`, but user-facing aliases should include `/computational-biology/...`; old `bio/` paths may remain only as aliases.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
 - `papers/`: Curated paper notes, not raw daily logs.
@@ -43,7 +43,7 @@ Keep the public entry points aligned with `content/index.md` and the Quartz Expl
 
 Public top-level navigation should stay small and stable. Keep Agents first, then AI, Math, Computational Biology, and Infra. Put Research, Papers, Projects, and Posts after Infra so reader-facing and artifact areas do not crowd the core knowledge map. Do not add a new Explorer root for a concept family just because many notes exist. Prefer linking support folders from the nearest gateway page.
 
-Keep each top-level section close to its raw object:
+Keep each top-level section close to its raw object. Do not place an applied page under a foundation section only because it uses that foundation:
 
 - `ai/` should hold AI-native foundations: machine-learning problem framing, model architectures, learning objectives, generative-model families, evaluation, and AI systems. Do not put domain-applied pages there just because they use a model.
 - `math/` should hold math-native foundations: linear algebra, calculus, probability, information theory, geometry, graphs, dynamics, numerics, and evaluation math. Do not put protein, molecule, docking, pose, pocket, or structure-modeling route pages there; link the raw math note and place the applied route under `molecular-modeling/`.
@@ -233,11 +233,11 @@ Before starting a paper reproduction, add or update implementation readiness: ta
 - Keep notes short, linked, and explicit about uncertainty.
 - Avoid marketing copy and broad claims without evidence.
 - Prefer the most readable structure for the content. Use tables when comparing categories, routes, criteria, risks, or ownership; use bullet lists for short parallel items; use numbered lists for ordered reading paths, procedures, or workflows.
-- Gateway pages should be scannable. Prefer concise introductions, route tables, and grouped link lists over long prose or unstructured link dumps.
-- For public gateway or folder `index.md` pages, default to tables when a section routes readers across multiple areas. Use columns such as `Area`, `Use For`, `Start`, `Risk`, `Status`, or `Next`.
+- Entry pages should be scannable. Prefer concise introductions, route tables, and grouped link lists over long prose or unstructured link dumps.
+- For public entry or folder `index.md` pages, default to tables when a section routes readers across multiple areas. Use columns such as `Area`, `Use For`, `Start`, `Risk`, `Status`, or `Next`.
 - In Markdown tables, use normal Markdown links such as `[Math](/math/)` instead of Quartz wikilinks. Quartz wikilinks can render poorly inside table cells.
 - Avoid long public link dumps. If a section has many links, group them by purpose and explain why the group exists.
-- Do not expose internal editorial mechanics on public gateway pages, such as saying a page is a gateway or that linked notes are canonical wiki notes. Put those rules in `AGENTS.md`, workflow notes, or writing guides instead.
+- Do not expose internal editorial mechanics on public pages, such as saying a page is a gateway, compatibility route, support layer, sidebar policy, or that linked notes are canonical wiki notes. Put those rules in `AGENTS.md`, workflow notes, or writing guides instead.
 - When a section has more than four similar bullets with descriptions, consider a Markdown table with columns such as `Area`, `Use For`, `Start Here`, `Risk`, or `Next`.
 - Keep table cells short. If a cell needs multiple sentences, split the table or move detail into the linked note.
 - For AI/Computational Biology/Math pages, prefer a compact comparison table before a long paragraph when the page distinguishes model families, learning signals, metrics, split units, representations, or claim boundaries.
