@@ -55,6 +55,31 @@ $k$ is the chosen evidence threshold, often tied to a confidence interval or sig
 - Build a new benchmark when the old one no longer supports the target claim.
 - Treat saturated benchmarks as smoke tests rather than final evidence.
 
+## Claim Downgrade
+
+When saturation is present, downgrade broad claims:
+
+| Original claim | Safer claim |
+| --- | --- |
+| method is state of the art | method is competitive under this benchmark protocol |
+| model is generally better | model is not worse within measured uncertainty, or improves named subgroup |
+| benchmark proves deployment readiness | benchmark is a smoke test before deployment-style evaluation |
+| small leaderboard gain is meaningful | gain needs paired uncertainty, seeds, and subgroup analysis |
+| higher average proves robustness | robustness requires predefined stress strata |
+
+## Saturation Audit
+
+| Audit item | Evidence |
+| --- | --- |
+| score spread | top-score range compared with confidence intervals |
+| baseline strength | simple or old baselines near top performance |
+| subgroup failures | rare or hard strata hidden by aggregate metric |
+| repeated exposure | public leaderboard, shared prompts, common test examples |
+| metric ceiling | finite resolution, easy labels, or many perfect scores |
+| selection pressure | many seeds, checkpoints, prompts, or submissions tried |
+
+If the benchmark is saturated, keep it as one diagnostic but route the main claim to [[concepts/evaluation/evaluation-set-design|Evaluation set design]], [[concepts/evaluation/ood-generalization|OOD generalization]], or a new benchmark with a clearer target population.
+
 ## Related
 
 - [[concepts/data/benchmark|Benchmark]]

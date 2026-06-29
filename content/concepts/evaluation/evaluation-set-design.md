@@ -40,6 +40,38 @@ $$
 
 $A$ is a subset of interest, such as a rare class, new scaffold, long sequence, low-quality structure, noisy label source, or hard query type. A high average score can hide failure when important subsets have low coverage.
 
+## Claim-to-Set Mapping
+
+| Intended claim | Evaluation set must include |
+| --- | --- |
+| IID interpolation | same source distribution, untouched final test, representative label range |
+| scaffold generalization | held-out scaffold groups and analog-series controls |
+| protein-family generalization | held-out sequence/family clusters and homolog audit |
+| source or assay transfer | source/campaign holdout and label harmonization audit |
+| robustness | predefined corruption, perturbation, missingness, or low-quality strata |
+| generation utility | attempted samples, invalid samples, filtered samples, and kept samples |
+| deployment readiness | examples matching inference-time availability and realistic prevalence |
+
+## Denominator Policy
+
+Evaluation sets should define what counts before metrics are computed:
+
+$$
+\mathcal{D}_{\mathrm{reported}}
+\subseteq
+\mathcal{D}_{\mathrm{attempted}}
+$$
+
+If failed parses, invalid molecules, missing structures, empty pockets, rejected generations, or timed-out jobs are removed, the reported metric no longer describes the attempted workload. Record both the attempted denominator and the scored denominator.
+
+| Removed case | Why it matters |
+| --- | --- |
+| invalid generated sample | changes validity and usefulness claims |
+| failed preprocessing | hides brittleness of the pipeline |
+| missing labels | can change class prevalence or label range |
+| duplicate or near-duplicate | affects memorization and leakage claims |
+| hard subgroup | inflates average performance |
+
 ## Minimum Contract
 
 - Population: what distribution the set is meant to represent.
@@ -58,6 +90,8 @@ $A$ is a subset of interest, such as a rare class, new scaffold, long sequence, 
 - Letting validation decisions consume the final test set.
 - Reporting only aggregate metrics without strata or failure cases.
 - Treating examples as independent when they share source, entity, scaffold, family, annotator, user, prompt, or benchmark origin.
+- Removing failed examples after seeing model outputs.
+- Choosing strata only after noticing where the model performs well.
 
 ## Related
 
