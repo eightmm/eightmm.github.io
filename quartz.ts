@@ -56,6 +56,9 @@ ExternalPlugin.Explorer({
     if (segments[0] === "infra" && segments.length > 2) {
       return false
     }
+    if (segments[0] === "agents" && segments.length > 2) {
+      return false
+    }
     const firstSegment = segments[0]
     return firstSegment !== undefined && explorerRoots.includes(firstSegment)
   },
@@ -70,6 +73,13 @@ ExternalPlugin.Explorer({
       "ai/generative-models": "Generative Models",
       "ai/evaluation": "Evaluation",
       "ai/systems": "Systems",
+      agents: "Agents",
+      "agents/core": "Core",
+      "agents/features": "Features",
+      "agents/tools": "Tools",
+      "agents/workflows": "Workflows",
+      "agents/models": "Models",
+      "agents/verification": "Verification",
       math: "Math",
       "math/linear-algebra": "Linear Algebra",
       "math/calculus-gradients": "Calculus and Gradients",
