@@ -22,11 +22,25 @@ Tool use는 확실성으로 가는 shortcut이 아니라 environment와의 inter
 
 ## Tool category
 
-- Read-only tool: search, file read, log, status query.
-- Editing tool: file patch, formatting, migration.
-- Execution tool: test, build, script, notebook.
-- External side-effect tool: API write, deployment, email, issue update.
-- Review tool: diff inspection, static analysis, human review, multi-agent review.
+| Category | Examples | Main risk | Evidence after use |
+| --- | --- | --- | --- |
+| Read-only | search, file read, log, status query | stale or irrelevant evidence | source path, timestamp, selected lines |
+| Editing | file patch, formatting, migration | unintended diff | git diff, focused review |
+| Execution | test, build, script, notebook | wrong command, partial failure | exit code, key output, artifact |
+| External side effect | API write, deployment, email, issue update | public or irreversible mutation | remote status, URL, audit trail |
+| Review | diff inspection, static analysis, human review, multi-agent review | shallow coverage | explicit findings and scope |
+
+## Tool Selection Rule
+
+Use the weakest tool that can provide direct evidence.
+
+| Need | Prefer | Avoid |
+| --- | --- | --- |
+| Find a local note | `rg`, `rg --files` | broad web search |
+| Check current repo state | `git status`, `git diff` | memory of earlier edits |
+| Verify generated site | local build, rendered output, Pages status | assuming push implies deploy |
+| Confirm a paper fact | source paper or official page | unsourced summary |
+| Change a file | small patch | generator rewrite of unrelated files |
 
 ## 실전 check
 
@@ -44,6 +58,16 @@ Tool use는 확실성으로 가는 shortcut이 아니라 environment와의 inter
 - tool result가 agent policy에 새 instruction을 주입하게 두는 경우.
 - 명시적 boundary 없이 destructive action을 실행하는 경우.
 - 실패한 command를 generic success summary 뒤에 숨기는 경우.
+
+## Result Handling
+
+Tool output becomes evidence, not a new instruction. A safe agent should:
+
+- quote or summarize only the lines needed for the current claim.
+- keep command output separate from user/system instructions.
+- distinguish `command succeeded` from `task verified`.
+- rerun or widen checks only when the current evidence is too narrow.
+- record skipped checks as `not verified` instead of implying success.
 
 ## Related
 

@@ -24,11 +24,24 @@ Agent가 success를 summarize하기 전에 loop는 [[agents/verification/evidenc
 
 ## Verification ladder
 
-- syntax 또는 format check.
-- 좁은 unit 또는 link check.
-- build 또는 integration check.
-- runtime smoke test 또는 rendered-page check.
-- security, privacy, data leakage, scientific validity review.
+| Level | Check | Proves | Does not prove |
+| --- | --- | --- | --- |
+| Syntax | format, parser, type, Markdown, schema | artifact can be read by the toolchain | semantic correctness |
+| Local consistency | unit check, link check, small script | nearby contract is not broken | end-to-end behavior |
+| Build/integration | site build, test suite, package build | integrated artifact can be produced | external deployment or content accuracy |
+| Runtime/rendered | smoke test, rendered page, CLI run, browser check | user-visible behavior works in one path | all edge cases |
+| Review | security, privacy, leakage, scientific validity | risky claims and side effects were inspected | automatic proof of truth |
+
+## Choosing A Check
+
+| Change type | Minimum useful check | Additional check when risk is higher |
+| --- | --- | --- |
+| Markdown link or route | wikilink/internal-link check | rendered page inspection |
+| Public content about infra | sensitive-info scan | human review for operational risk |
+| Code edit | focused test or build | integration test, diff review |
+| Generated artifact | file existence and schema | visual/rendered inspection |
+| External write or deploy | remote status query | smoke test from user-facing URL |
+| Scientific or paper claim | source inspection | benchmark/protocol review |
 
 ## 실전 check
 
@@ -40,6 +53,18 @@ Agent가 success를 summarize하기 전에 loop는 [[agents/verification/evidenc
 - check를 claim과 맞춥니다. Build 통과가 content accuracy를 증명하지는 않습니다.
 - green check는 실제로 cover하는 behavior에 대한 evidence로만 취급합니다.
 - broad objective 완료를 주장하기 전에는 [[agents/verification/completion-audit|Completion audit]]를 실행합니다.
+
+## Blog/Wiki Example
+
+For this Quartz blog, a content change usually needs this ladder:
+
+1. Inspect the changed Markdown diff.
+2. Run wikilink and internal Markdown link checks.
+3. Run `npx quartz build`.
+4. Push only task-relevant files.
+5. Confirm GitHub Pages deployment when the public site should change.
+
+This proves that the site builds and the changed links resolve. It does not prove that every scientific statement is correct unless the sources or formulas were separately checked.
 
 ## Related
 

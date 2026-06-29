@@ -33,12 +33,24 @@ $$
 
 ## Ledger field
 
-- Requirement: 확인 중인 explicit condition.
-- Evidence source: file, command, rendered output, source document, reviewer.
-- Coverage: evidence가 무엇을 증명하고 무엇을 증명하지 않는지.
-- Result: pass, fail, inconclusive, skipped, blocked.
-- Freshness: evidence가 current state에서 왔는지.
-- Public boundary: evidence를 quote할 수 있는지, summarize해야 하는지.
+| Field | Meaning |
+| --- | --- |
+| Requirement | 확인 중인 explicit condition |
+| Evidence source | file, command, rendered output, source document, reviewer |
+| Coverage | evidence가 무엇을 증명하고 무엇을 증명하지 않는지 |
+| Result | pass, fail, inconclusive, skipped, blocked |
+| Freshness | evidence가 current state에서 왔는지 |
+| Public boundary | evidence를 quote할 수 있는지, summarize해야 하는지 |
+
+## Minimal Ledger Pattern
+
+| Requirement | Evidence | Result | Limit |
+| --- | --- | --- | --- |
+| Links resolve | internal link checker output | pass/fail | does not prove content accuracy |
+| Site builds | `npx quartz build` exit code | pass/fail | does not prove remote deploy |
+| Public deploy completed | GitHub Actions run status | pass/fail | does not prove browser cache updated |
+| Sensitive details absent | targeted `rg` scan plus review | pass/fail | only covers searched patterns |
+| Paper claim is grounded | source inspection | pass/fail | only covers inspected claim |
 
 ## 확인할 것
 
