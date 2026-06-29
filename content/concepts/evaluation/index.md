@@ -36,6 +36,101 @@ $$
 | improvement를 믿을 수 있는가? | [Baseline](/concepts/evaluation/baseline), [Paired comparison](/concepts/evaluation/paired-comparison), [Confidence interval](/concepts/evaluation/confidence-interval) | seed variance와 effect size |
 | leakage 가능성이 있는가? | [Leakage](/concepts/evaluation/leakage), [Test-set contamination](/concepts/evaluation/test-set-contamination), [Train/validation/test split](/concepts/evaluation/train-validation-test-split) | example unit과 split unit |
 
+## Evaluation Stack
+
+Evaluation은 metric 하나가 아니라 stack입니다.
+
+$$
+\text{claim}
+\leftarrow
+\text{task}
+\leftarrow
+\text{data and split}
+\leftarrow
+\text{selection rule}
+\leftarrow
+\text{metric}
+\leftarrow
+\text{uncertainty}
+$$
+
+각 층이 빠지면 score는 좁은 observation일 뿐입니다.
+
+| Layer | Defines | Common Failure |
+| --- | --- | --- |
+| Claim | 결과가 무엇을 말할 수 있는가 | benchmark score를 general ability로 과장 |
+| Task | input, output, allowed context | 다른 task를 같은 metric으로 비교 |
+| Data and split | 어떤 population과 holdout을 보는가 | random split으로 OOD claim |
+| Selection rule | checkpoint, threshold, prompt, sampler를 어떻게 고르는가 | test feedback으로 best setting 선택 |
+| Metric | 어떤 error or utility를 숫자로 만드는가 | decision cost와 metric 불일치 |
+| Uncertainty | score 차이가 얼마나 안정적인가 | seed variance 안의 차이를 improvement로 해석 |
+
+## Claim-First Workflow
+
+논문, 프로젝트, benchmark note를 읽을 때는 아래 순서가 가장 안전합니다.
+
+1. Claim을 한 문장으로 줄입니다.
+2. Example unit과 split unit을 고정합니다.
+3. Final test 전에 고른 selection rule을 찾습니다.
+4. Primary metric과 diagnostic metric을 분리합니다.
+5. Baseline이 같은 data, budget, allowed information을 쓰는지 확인합니다.
+6. Confidence interval, seed variance, paired comparison, subgroup variance 중 하나로 안정성을 봅니다.
+
+이 흐름은 [[ai/evaluation|AI Evaluation]]의 domain-neutral 버전입니다. Molecule, protein, docking, assay처럼 object identity가 중요하면 [[molecular-modeling/data-evaluation|Computational Biology data and evaluation]]에서 split과 leakage를 다시 봅니다.
+
+## Metric Is Not Protocol
+
+Metric은 protocol 안에서만 의미가 있습니다.
+
+$$
+\text{reported score}
+=
+M(
+f_{\theta^\*},
+\mathcal{D}_{\mathrm{test}},
+\pi_{\mathrm{eval}}
+)
+$$
+
+$\theta^\*$는 선택된 model/checkpoint/prompt/threshold이고, $\pi_{\mathrm{eval}}$은 preprocessing, filtering, denominator, aggregation, invalid-output policy입니다. 같은 metric 이름이라도 $\pi_{\mathrm{eval}}$이 다르면 같은 evidence가 아닙니다.
+
+| Same metric, different protocol | Why comparison breaks |
+| --- | --- |
+| different denominator | failed examples may be hidden |
+| different threshold rule | validation and test evidence are mixed |
+| different candidate pool | ranking or screening task changes |
+| different preprocessing | feature availability and leakage differ |
+| different split unit | generalization claim changes |
+| different budget | score may reflect data, compute, or search budget |
+
+## Split Unit Before Metric
+
+Evaluation은 먼저 어떤 unit이 train/test를 가르면 안 되는지 정해야 합니다.
+
+| Domain | Example unit | Split unit to consider |
+| --- | --- | --- |
+| image classification | image | source, subject, time, class subgroup |
+| text or LLM task | prompt/task instance | dataset source, template, benchmark, time |
+| retrieval | query-document pair | query, document source, corpus time |
+| molecule property | molecule record | scaffold, assay source, time |
+| protein task | sequence or structure | family, homolog cluster, template/source |
+| docking | protein-ligand complex | ligand scaffold, protein family, complex pair |
+| agent task | task trace | environment, tool set, workflow template |
+
+Wrong split unit makes even a clean metric misleading.
+
+## Common Traps
+
+| Trap | Better Check |
+| --- | --- |
+| aggregate score only | subgroup, strata, and failure mode analysis |
+| best seed only | seed variance and selection rule |
+| leaderboard rank | benchmark saturation and allowed information |
+| random split by default | split unit and claimed deployment shift |
+| invalid samples removed | attempted denominator and failure taxonomy |
+| baseline weaker by construction | simple baseline, matched budget, matched data |
+| many metrics searched | multiple comparisons or preregistered primary metric |
+
 ## 방법 묶음
 
 | 그룹 | 노트 |
