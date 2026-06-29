@@ -39,7 +39,7 @@ AI system note의 핵심은 “무슨 모델을 썼다”가 아니라 어떤 ar
 | Evaluation | 어떤 metric과 selection rule로 claim을 만들었는가? | eval table, baseline, confidence interval |
 | Inference | input/output contract가 무엇인가? | schema, example, batch policy |
 | Serving | latency, throughput, capacity boundary는 무엇인가? | benchmark, monitoring, rollout record |
-| Reproducibility | 나중에 같은 claim을 재구성할 수 있는가? | run artifact, version tag, environment |
+| Reproducibility | 같은 claim을 다시 재구성할 수 있는가? | run artifact, version tag, environment |
 
 ## Boundary With Infra
 

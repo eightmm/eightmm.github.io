@@ -9,7 +9,7 @@ tags:
 
 # Pose-aware Molecular Generation
 
-Status: seed question. 이 페이지는 특정 모델의 성능 claim이 아니라, pose-aware generation을 검증하려면 무엇을 분리해야 하는지 정리합니다.
+This is a research question note, not a performance claim for a specific model. It separates the checks needed to evaluate pose-aware generation.
 
 ## Motivation
 

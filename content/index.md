@@ -17,7 +17,7 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 | [Math](/math) | formulas and mathematical tools needed to read AI notes |
 | [Computational Biology](/molecular-modeling) | focused notes on biological objects, sequence-based modeling, molecular and ligand modeling, interaction modeling, and structure-based workflows |
 | [Infra](/infra) | hardware, GPU, HPC, storage, reproducibility, server operations |
-| [Research](/research) | public seed questions, hypotheses, method comparisons, and synthesis notes |
+| [Research](/research) | public research questions, hypotheses, method comparisons, and synthesis notes |
 | [Projects](/projects) | public artifacts, implementations, design decisions, workflows |
 | [Papers](/papers) | curated paper notes and reading utilities |
 | [Posts](/posts) | reader-facing essays and topic maps |

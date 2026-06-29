@@ -161,7 +161,7 @@ Dependency patterns:
 - time limit에 걸릴 수 있는 job의 resume behavior가 문서화되어 있는가?
 - main command 전에 output, checkpoint, artifact directory를 생성하는가?
 - environment activation과 dependency version이 reproducible한가?
-- private cluster value를 제거한 public note용 generic script인가?
+- 특정 클러스터 값 없이도 public note용 generic script로 이해되는가?
 - completion을 successful process exit만이 아니라 artifact 또는 manifest로 확인하는가?
 
 ## Related

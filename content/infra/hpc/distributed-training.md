@@ -39,7 +39,7 @@ $$
 
 ## Launch Contract
 
-A public distributed training note should state the shape, not private cluster details:
+A public distributed training note should state the shape, not site-specific cluster details:
 
 $$
 \text{world size}

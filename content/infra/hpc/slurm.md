@@ -26,7 +26,7 @@ $$
 
 ## Public Checklist
 
-- Use generic examples instead of private cluster names.
+- Use generic examples instead of site-specific cluster names.
 - Avoid account names, hostnames, SSH connection details, internal paths, and private partitions.
 - Record resource assumptions without exposing project-specific allocations.
 - Keep unpublished metrics and experiment results out of public notes.

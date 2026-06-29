@@ -9,7 +9,7 @@ tags:
 
 # Pocket-ligand Representation Alignment
 
-Status: seed question. 이 페이지는 구현 결과가 아니라, pocket-ligand representation을 비교할 때 필요한 object, split, metric boundary를 정리합니다.
+This is a research question note, not an implementation result. It defines the object, split, and metric boundary needed to compare pocket-ligand representations.
 
 ## Motivation
 

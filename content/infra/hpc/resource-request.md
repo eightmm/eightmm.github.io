@@ -101,7 +101,7 @@ $$
 - 가능하면 CPU-heavy preprocessing과 GPU-heavy training을 분리합니다.
 - final public-safe resource shape를 [[infra/reproducibility/run-record|Reproducible run record]]에 기록합니다.
 - GPU count, batch size, data-loader worker, checkpoint interval을 measured throughput과 일관되게 유지합니다.
-- public writeup에서는 private cluster resource 이름 대신 generic resource class를 설명합니다.
+- public writeup에서는 site-specific resource 이름 대신 generic resource class를 설명합니다.
 
 ## 확인할 것
 
@@ -112,7 +112,7 @@ $$
 - public note에서 cluster-specific value를 제거했는가?
 - request가 smoke run 또는 이전 measured run에서 나온 것인가?
 - wall-time estimate가 validation, checkpointing, cleanup과 compatible한가?
-- private infrastructure를 노출하지 않고 run record에서 request를 재현할 수 있는가?
+- 특정 인프라 세부 정보 없이도 run record에서 request를 이해할 수 있는가?
 
 ## Related
 
