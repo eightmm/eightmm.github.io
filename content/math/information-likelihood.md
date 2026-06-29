@@ -81,6 +81,27 @@ $y_k$는 one-hot target 또는 soft target입니다.
 | Flow matching | probability path 위의 velocity field | path choice와 ODE integration이 sample에 영향 |
 | Adversarial | discriminator feedback을 통한 generator | mode collapse와 unstable training을 확인 |
 
+## Boundary With AI and Domain Notes
+
+Likelihood 식 자체는 Math에 두고, 식이 무엇을 주장하는지는 가까운 domain으로 넘깁니다.
+
+| Main question | Route | Record |
+| --- | --- | --- |
+| $p_\theta(x)$, $p_\theta(y\mid x)$, KL, entropy, ELBO가 무엇인가? | [Math](/math), [Information and Likelihood](/math/information-likelihood) | distribution, support, expectation, approximation |
+| likelihood가 어떤 training signal인가? | [Learning Methods](/ai/learning-methods), [Machine Learning](/ai/machine-learning) | loss, target, masking, conditioning, optimizer relation |
+| likelihood가 sample generation으로 어떻게 이어지는가? | [Generative Models](/ai/generative-models) | factorization, sampler, latent/noise path, denominator |
+| probability score가 decision evidence인가? | [Evaluation](/ai/evaluation), [Evaluation Math](/math/evaluation-math) | calibration, proper score, uncertainty, selection rule |
+| molecule/protein likelihood나 score인가? | [Computational Biology](/molecular-modeling), [Data and Evaluation](/molecular-modeling/data-evaluation) | object unit, chemical/protein state, split, assay or structure context |
+
+## Common Misreads
+
+| Misread | Better reading |
+| --- | --- |
+| lower NLL means better downstream model | check task metric, selection rule, calibration, and domain utility |
+| likelihood is always comparable across models | compare only when support, tokenization, preprocessing, and denominator match |
+| generative likelihood proves sample quality | inspect sampling procedure, filtering, validity, diversity, and failure modes |
+| probabilistic output is calibrated | calibration needs separate evidence such as reliability or proper scoring |
+
 ## Checks
 
 - 어떤 distribution을 modeling하는가?
