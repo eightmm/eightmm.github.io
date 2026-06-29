@@ -78,6 +78,18 @@ Reported result를 볼 때는 먼저 [[concepts/evaluation/claim-evidence-bounda
 | Agents | [Agent evaluation](/agents/verification/agent-evaluation), [Verification loop](/agents/verification/verification-loop) |
 | Representation learning | [Representation evaluation](/concepts/learning/representation-evaluation), [Linear probing](/concepts/learning/linear-probing), [Fine-tuning protocol](/concepts/learning/fine-tuning-protocol) |
 
+## General vs Domain Evaluation
+
+AI evaluation은 metric, split, uncertainty, contamination, selection rule 같은 일반 원칙을 둡니다. Domain page는 그 원칙이 특정 object에서 어떻게 깨지는지를 다룹니다.
+
+| Evaluation question | Put the main note in | Why |
+| --- | --- | --- |
+| metric, confidence interval, calibration, paired comparison이 무엇인가? | [AI Evaluation](/ai/evaluation), [Evaluation concepts](/concepts/evaluation) | domain과 무관하게 재사용됩니다 |
+| split이 scaffold, protein family, assay source, template leakage를 다루는가? | [Computational Biology Data and Evaluation](/molecular-modeling/data-evaluation) | object identity와 measurement context가 claim을 결정합니다 |
+| coordinate metric, pose quality, docking success를 해석하는가? | [Structure-Based Modeling](/molecular-modeling/structure-based), [Pose quality](/concepts/sbdd/pose-quality) | geometry, atom mapping, pocket definition이 필요합니다 |
+| serving latency, throughput, reproducibility claim인가? | [AI Systems](/ai/systems), [Infra](/infra) | model quality가 아니라 runtime contract입니다 |
+| agent가 task를 끝냈다는 claim인가? | [Agent Verification](/agents/verification) | evidence, tool side effect, completion audit가 필요합니다 |
+
 ## 읽을 때 볼 질문
 
 - train/test split이 실제 generalization을 요구하는가?

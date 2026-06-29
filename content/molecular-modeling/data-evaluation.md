@@ -61,6 +61,18 @@ $$
 | Benchmark traps | [Negative set](/concepts/evaluation/negative-set), [Activity cliff](/concepts/evaluation/activity-cliff), [Boltzmann ceiling analysis](/concepts/evaluation/boltzmann-ceiling) | false negative, cliff, indistinguishable label |
 | Repeated paper patterns | [Computational Biology paper claim patterns](/molecular-modeling/paper-claim-patterns) | property, activity, docking, generation, protein design, genome task |
 
+## Boundary With AI Evaluation
+
+General evaluation concepts still matter, but computational biology claims often fail because the biological or chemical unit was underspecified.
+
+| If the main issue is | Use | Record |
+| --- | --- | --- |
+| metric definition, confidence interval, seed variance, calibration | [AI Evaluation](/ai/evaluation) | metric formula, estimator, uncertainty, selection rule |
+| molecule identity, scaffold, tautomer, protonation, stereo | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand) | standardization policy and split unit |
+| protein family, homolog, residue indexing, structure source | [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Protein modeling](/molecular-modeling/protein-modeling) | family split, sequence identity, structure cleaning |
+| protein-ligand pair, assay row, affinity, selectivity | [Interaction Modeling](/molecular-modeling/interactions) | target, assay, endpoint, unit, censoring, source |
+| pose, docking, pocket, template, coordinate quality | [Structure-Based Modeling](/molecular-modeling/structure-based), [Docking](/molecular-modeling/docking) | pocket rule, atom mapping, RMSD/alignment, leakage |
+
 ## Computational Biology Evidence Package
 
 Computational biology paper에서는 model score만으로 부족합니다. Metric보다 먼저 modeled object와 measurement context를 기록해야 합니다.
