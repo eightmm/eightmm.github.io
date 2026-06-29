@@ -10,6 +10,8 @@ tags:
 
 미공개 실험, 내부 과제 정보, 협업 세부 내용은 공개하지 않고, 공개 가능한 질문과 방법론만 남깁니다.
 
+현재 Research 문서는 확정된 thesis page가 아니라 공개 가능한 seed question입니다. 실제 연구 방향이 정해지면 question, hypothesis, evidence plan, project handoff를 다시 좁힙니다.
+
 ## Projects와의 차이
 
 | Area | Use When |
@@ -43,6 +45,8 @@ tags:
 | [Pose-aware molecular generation](/research/computational-biology/pose-aware-molecular-generation) | [Computational Biology Research](/research/computational-biology) |
 | [Pocket-ligand representation alignment](/research/computational-biology/pocket-ligand-representation-alignment) | [Computational Biology Research](/research/computational-biology) |
 | [Geometric inductive bias](/research/architectures/geometric-inductive-bias) | [Architecture Research](/research/architectures) |
+
+Seed question은 아직 결과 claim이 아닙니다. 각각은 공개 논문, 공개 benchmark, 또는 공개 가능한 최소 실험으로 검증될 때만 paper review, project, post로 승격합니다.
 
 ## Research Note 조건
 

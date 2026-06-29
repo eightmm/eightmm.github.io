@@ -9,6 +9,8 @@ tags:
 
 # Pocket-ligand Representation Alignment
 
+Status: seed question. 이 페이지는 구현 결과가 아니라, pocket-ligand representation을 비교할 때 필요한 object, split, metric boundary를 정리합니다.
+
 ## Motivation
 
 Protein-ligand modeling often mixes heterogeneous objects: protein sequence, pocket geometry, ligand graph, ligand conformer, and interaction pattern. A useful representation should preserve what each object contributes while still making cross-object comparison and prediction possible.

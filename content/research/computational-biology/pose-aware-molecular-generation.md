@@ -9,6 +9,8 @@ tags:
 
 # Pose-aware Molecular Generation
 
+Status: seed question. 이 페이지는 특정 모델의 성능 claim이 아니라, pose-aware generation을 검증하려면 무엇을 분리해야 하는지 정리합니다.
+
 ## Motivation
 
 Molecular generation은 validity, novelty, property score만으로는 structure-based task의 품질을 충분히 설명하지 못합니다. Binding pocket 안에서 plausible pose를 만들 수 있는지, pose quality와 binding affinity claim을 분리할 수 있는지가 중요합니다.

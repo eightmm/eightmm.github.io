@@ -8,6 +8,8 @@ tags:
 
 # Geometric Inductive Bias
 
+Status: seed question. 이 페이지는 결과 claim이 아니라, 공개 논문과 공개 benchmark로 검증할 수 있는 비교 질문을 정리합니다.
+
 ## Motivation
 
 Protein, molecule, structure data는 단순 sequence나 unordered token list가 아닙니다. Translation, rotation, permutation 같은 symmetry를 어떻게 처리하는지가 model efficiency와 generalization에 영향을 줍니다.
