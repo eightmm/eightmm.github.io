@@ -26,6 +26,18 @@ $$
 
 where $\epsilon$ may depend on assay, instrument, annotator, batch, or context.
 
+If the irreducible label noise is large, expected performance has a ceiling. A model can be penalized for disagreeing with a noisy observation even when it predicts the latent quantity better:
+
+$$
+\mathbb{E}[(\hat{y}-\tilde{y})^2]
+=
+\mathbb{E}[(\hat{y}-y)^2]
++
+\mathbb{E}[\epsilon^2]
+$$
+
+when $\epsilon$ is zero-mean and independent of $\hat{y}-y$. The second term is measurement noise, not model error.
+
 ## Key Ideas
 
 - Noisy labels can make a good model look wrong or make a memorizing model look strong.
@@ -34,6 +46,16 @@ where $\epsilon$ may depend on assay, instrument, annotator, batch, or context.
 - In scientific data, label semantics matter: activity, affinity, potency, pose quality, and assay outcome are not interchangeable.
 - Missing, weak, and censored labels should be represented explicitly instead of collapsed into ordinary labels.
 
+## Noise Map
+
+| Noise Type | Example | Evaluation Risk |
+| --- | --- | --- |
+| random | independent annotation mistakes | lowers apparent ceiling |
+| systematic | one assay reads high for a target class | model learns protocol artifact |
+| source-specific | databases encode different endpoints | harmonization becomes part of the task |
+| censoring | value known only above or below a threshold | ordinary regression loss is misleading |
+| weak label | proxy label from text, heuristic, or distant supervision | high apparent scale but uncertain semantics |
+
 ## Practical Checks
 
 - Who or what produced the label?
@@ -41,6 +63,8 @@ where $\epsilon$ may depend on assay, instrument, annotator, batch, or context.
 - Are labels harmonized across protocols, assays, annotators, or benchmarks?
 - Is uncertainty or censoring represented explicitly?
 - Does the evaluation metric punish predictions that are within label noise?
+- Is there an estimate of measurement variability or inter-annotator agreement?
+- Are noisy, missing, censored, and weak labels stored as distinct states?
 
 ## Related
 

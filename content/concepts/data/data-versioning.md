@@ -22,12 +22,33 @@ $$
 
 where $H$ is a content hash or another stable identifier.
 
+Data versioning is not only a file checksum. A useful version binds data, labels, splits, and preprocessing:
+
+$$
+V
+=
+(S,F,L,P,\Pi)
+$$
+
+where $S$ is source records, $F$ is filtering and deduplication, $L$ is label construction, $P$ is preprocessing, and $\Pi$ is the split policy.
+
 ## Key Ideas
 
 - Version the raw source, processed dataset, split files, and label definitions.
 - A changed filter or deduplication rule can invalidate previous metrics.
 - Dataset versions should be linked to training runs, paper notes, and public claims.
 - Provenance should explain where data came from and what transformations were applied.
+
+## Version Boundary
+
+| Change | New Version? | Why |
+| --- | --- | --- |
+| raw source changed | yes | example population changed |
+| deduplication or filtering changed | yes | train/test composition changed |
+| label threshold or unit changed | yes | target semantics changed |
+| train/validation/test split changed | yes | evaluation claim changed |
+| deterministic serialization changed only | maybe | content may be identical |
+| cached embedding recomputed with same model and data | record artifact version | representation artifact changed |
 
 ## Practical Checks
 
@@ -36,6 +57,8 @@ where $H$ is a content hash or another stable identifier.
 - Are derived files traceable to raw sources and scripts?
 - Does the run log record dataset version identifiers?
 - Are private or restricted sources excluded from public notes?
+- Does the paper or project claim state which dataset version supports the result?
+- Can old metrics be invalidated when the dataset version changes?
 
 ## Related
 
