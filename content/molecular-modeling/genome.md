@@ -19,6 +19,8 @@ x_{\mathrm{genome}}
 \{\text{sequence}, \text{region}, \text{k-mer}, \text{variant}, \text{annotation}\}
 $$
 
+이 페이지는 현재 블로그 범위에서 genome을 “sequence modeling object”로 다룹니다. Omics-wide analysis나 clinical pipeline이 아니라, AI representation과 연결되는 sequence/window/variant/annotation 문제에 초점을 둡니다.
+
 ## Route Map
 
 | Question | Start | Watch |
@@ -27,6 +29,16 @@ $$
 | How is the sequence represented? | [K-mer](/concepts/genome-modeling/k-mer), [Genome modeling concepts](/concepts/genome-modeling) | window length and context truncation |
 | Is the task variant-centered? | [Variant effect prediction](/concepts/genome-modeling/variant-effect-prediction) | label source, nearby variant leakage, assay scope |
 | Are annotations inputs or targets? | [Genome annotation](/concepts/genome-modeling/genome-annotation) | annotation version and label leakage |
+
+## Unit Choices
+
+| Unit | Meaning | Risk |
+| --- | --- | --- |
+| Whole chromosome | very long reference sequence | usually too broad for model input |
+| Fixed window | sequence slice around coordinate | duplicated or overlapping windows |
+| Region | interval with biological annotation | coordinate system mismatch |
+| Variant-centered window | reference/alternate context | nearby variant and label-source leakage |
+| k-mer stream | tokenized short subsequences | loses long-range relation |
 
 ## Representation Choices
 
@@ -49,6 +61,18 @@ $$
 $$
 
 where $r$ is a genomic region, $x_{a:b}$ is a sequence window, $c$ is optional annotation or organism/source context, and $\hat{y}$ is the prediction target.
+
+## Coordinate Contract
+
+Genome note should record coordinate assumptions explicitly.
+
+| Field | Why |
+| --- | --- |
+| reference genome | coordinates only make sense relative to a reference |
+| strand | reverse-complement handling changes input |
+| interval convention | 0-based/1-based and inclusive/exclusive mismatch breaks labels |
+| window policy | padding, truncation, overlap, center variant |
+| annotation version | label and feature source drift |
 
 ## Boundary
 

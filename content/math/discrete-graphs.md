@@ -10,6 +10,8 @@ tags:
 
 이산수학은 token, set, graph, tree, mask, index, neighborhood, retrieval candidate, search space를 다루는 언어입니다. 특히 [[concepts/architectures/gnn|Graph neural networks]], molecular graph, protein contact map, agent workflow를 이해할 때 중요합니다.
 
+이 페이지는 graph neural network 자체가 아니라 graph를 읽기 위한 raw mathematical language입니다. Model architecture는 [[ai/architectures|Architectures]]와 [[concepts/architectures/gnn|Graph neural networks]]에서 다룹니다.
+
 ## Route Map
 
 | 질문 | 시작점 | 쓰임 |
@@ -18,6 +20,16 @@ tags:
 | model이 graph structure를 어떻게 쓰는가? | [Graph neural networks](/concepts/architectures/gnn), [Graph Transformer](/concepts/architectures/graph-transformer) | message passing, relation-aware attention |
 | 입력이 unordered set이면 무엇이 달라지는가? | [Deep Sets](/concepts/architectures/deep-sets), [Set Transformer](/concepts/architectures/set-transformer) | permutation-invariant 또는 equivariant processing |
 | computational biology에서는 어디에 나타나는가? | [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Contact map](/concepts/protein-modeling/contact-map) | atom, residue, bond, spatial contact |
+
+## Object Type
+
+| Object | Mathematical view | Example |
+| --- | --- | --- |
+| Set | unordered elements | atom set, residue set, candidate set |
+| Sequence | ordered elements | token sequence, protein sequence |
+| Graph | nodes and edges | molecule, contact map, workflow graph |
+| Tree | acyclic hierarchical graph | parse tree, search tree |
+| Hypergraph | edge can connect more than two nodes | reaction, complex relation |
 
 ## Graph Objects
 
@@ -94,6 +106,22 @@ $$
 $$
 
 $L$ layer message passing GNN에서 node $i$는 보통 최대 $L$-hop neighborhood의 정보까지만 받을 수 있습니다.
+
+## Incidence and Degree
+
+Degree는 node가 몇 개의 edge에 연결되는지 나타냅니다.
+
+$$
+d_i = \sum_j A_{ij}
+$$
+
+Degree matrix $D$와 adjacency $A$로 graph Laplacian을 정의할 수 있습니다.
+
+$$
+L = D - A
+$$
+
+Laplacian은 smoothing, spectral graph method, diffusion on graph를 읽을 때 반복적으로 등장합니다.
 
 ## Computational Biology Connections
 
