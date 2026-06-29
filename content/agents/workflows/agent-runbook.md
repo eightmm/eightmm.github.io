@@ -8,9 +8,9 @@ tags:
 
 # Agent Runbook
 
-An agent runbook is a reusable operating procedure for a recurring agent workflow. It turns vague repeated work into a checklist with inputs, steps, checks, and public-output rules.
+Agent runbook은 반복되는 agent workflow를 위한 재사용 가능한 operating procedure입니다. 모호하게 반복되던 작업을 input, step, check, public-output rule이 있는 checklist로 바꿉니다.
 
-A runbook can be viewed as:
+Runbook은 아래처럼 볼 수 있습니다.
 
 $$
 R
@@ -18,35 +18,35 @@ R
 (\mathcal{I}, \mathcal{S}, \mathcal{V}, \mathcal{O})
 $$
 
-where $\mathcal{I}$ is input contract, $\mathcal{S}$ is ordered steps, $\mathcal{V}$ is verification, and $\mathcal{O}$ is output contract.
+여기서 $\mathcal{I}$는 input contract, $\mathcal{S}$는 ordered step, $\mathcal{V}$는 verification, $\mathcal{O}$는 output contract입니다.
 
-## Runbook Sections
+## Runbook section
 
-- Purpose: what workflow this covers.
-- Inputs: required files, prompts, tickets, papers, or data.
-- Preconditions: branch, environment, privacy boundary, and approval needs.
-- Steps: ordered actions with stop conditions.
-- Verification: commands, review gates, and evidence.
-- Output: summary, changed files, open questions, and next action.
-- Sanitization: what must not be published.
+- Purpose: 이 runbook이 다루는 workflow.
+- Inputs: 필요한 file, prompt, ticket, paper, data.
+- Preconditions: branch, environment, privacy boundary, approval need.
+- Steps: stop condition이 있는 ordered action.
+- Verification: command, review gate, evidence.
+- Output: summary, changed file, open question, next action.
+- Sanitization: 공개하면 안 되는 것.
 
-## Useful Runbooks
+## 유용한 runbook
 
-- Daily paper brief ingestion.
-- Blog/wiki note curation.
-- Content promotion from raw input to wiki note, post, project note, or public log.
-- Coding agent patch admission.
-- Multi-agent review.
+- daily paper brief ingestion.
+- blog/wiki note curation.
+- raw input에서 wiki note, post, project note, public log로 가는 content promotion.
+- coding agent patch admission.
+- multi-agent review.
 - HPC failure summary.
-- Public incident or experiment note cleanup.
+- public incident 또는 experiment note cleanup.
 
-## Checks
+## 확인할 것
 
-- Does the runbook prevent repeated ambiguity?
-- Does it include a verification step after edits?
-- Does it state what not to publish?
-- Can a different agent follow it without private context?
-- Does it produce durable wiki improvements rather than one-off chat output?
+- runbook이 반복되는 ambiguity를 줄이는가?
+- edit 이후 verification step이 포함되어 있는가?
+- 공개하면 안 되는 것을 명시하는가?
+- 다른 agent가 private context 없이 따라갈 수 있는가?
+- one-off chat output이 아니라 durable wiki improvement를 만드는가?
 
 ## Related
 

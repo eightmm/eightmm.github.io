@@ -8,9 +8,9 @@ tags:
 
 # Verification Loop
 
-A verification loop closes the gap between "the agent said it's done" and "the artifact is correct." After each change, the agent runs a concrete check and feeds the result back into the next decision.
+Verification loop는 “agent가 끝났다고 말했다”와 “artifact가 실제로 correct하다” 사이의 gap을 닫습니다. 각 change 뒤에 agent는 concrete check를 실행하고, 그 결과를 다음 decision으로 다시 넣습니다.
 
-The loop compares a claim $c$ against evidence $E$:
+이 loop는 claim $c$를 evidence $E$와 비교합니다.
 
 $$
 \operatorname{verified}(c)
@@ -18,28 +18,28 @@ $$
 \exists E\; \text{such that}\; E \Rightarrow c
 $$
 
-If the evidence is missing, too narrow, stale, or indirect, the claim is not verified.
+Evidence가 missing, too narrow, stale, indirect라면 claim은 verified가 아닙니다.
 
-The loop should append evidence to an [[agents/verification/evidence-ledger|Evidence ledger]] before the agent summarizes success.
+Agent가 success를 summarize하기 전에 loop는 [[agents/verification/evidence-ledger|Evidence ledger]]에 evidence를 추가해야 합니다.
 
-## Verification Ladder
+## Verification ladder
 
-- Syntax or format check.
-- Narrow unit or link check.
-- Build or integration check.
-- Runtime smoke test or rendered-page check.
-- Review for security, privacy, data leakage, or scientific validity.
+- syntax 또는 format check.
+- 좁은 unit 또는 link check.
+- build 또는 integration check.
+- runtime smoke test 또는 rendered-page check.
+- security, privacy, data leakage, scientific validity review.
 
-## Practical Checks
+## 실전 check
 
-- End every change with a real check: build, test, lint, or smoke run.
-- Use the narrowest useful check first, then broaden if risk warrants.
-- Treat a failing check as the signal to fix, not to retry the same action.
-- Never report success on a skipped or impossible check — say "not verified."
-- Capture the command and output so the result is reproducible.
-- Match the check to the claim. A build passing does not prove content accuracy.
-- Treat a green check as evidence only for the behavior it actually covers.
-- Run a [[agents/verification/completion-audit|Completion audit]] before claiming a broad objective is done.
+- 모든 change는 build, test, lint, smoke run 같은 real check로 끝냅니다.
+- 가장 좁고 유용한 check를 먼저 쓰고, risk가 크면 넓힙니다.
+- failing check는 같은 action을 retry하라는 신호가 아니라 fix할 signal로 봅니다.
+- skipped 또는 impossible check 위에서 success를 보고하지 않습니다. `not verified`라고 말합니다.
+- result를 재현할 수 있도록 command와 output을 남깁니다.
+- check를 claim과 맞춥니다. Build 통과가 content accuracy를 증명하지는 않습니다.
+- green check는 실제로 cover하는 behavior에 대한 evidence로만 취급합니다.
+- broad objective 완료를 주장하기 전에는 [[agents/verification/completion-audit|Completion audit]]를 실행합니다.
 
 ## Related
 

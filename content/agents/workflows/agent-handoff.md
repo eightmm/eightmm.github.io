@@ -8,9 +8,9 @@ tags:
 
 # Agent Handoff
 
-Agent handoff transfers a task, artifact, or decision from one agent or role to another. A good handoff makes the next agent productive without requiring it to trust hidden context.
+Agent handoff는 task, artifact, decision을 한 agent 또는 role에서 다른 쪽으로 넘기는 과정입니다. 좋은 handoff는 다음 agent가 hidden context를 믿지 않아도 바로 생산적으로 일하게 만듭니다.
 
-A handoff should include:
+Handoff에는 아래가 포함되어야 합니다.
 
 $$
 H
@@ -18,31 +18,31 @@ H
 \{\text{goal},\text{scope},\text{state},\text{artifacts},\text{evidence},\text{risks},\text{next step}\}
 $$
 
-## Handoff Contents
+## Handoff 내용
 
-- Goal: what still needs to be done.
-- Scope: files, topics, or systems that are in bounds.
-- Current state: what changed and what remains.
-- Artifacts: paths, commits, outputs, or drafts.
-- Evidence: checks already run and their results.
-- Risks: known uncertainty, failed checks, or sensitive boundaries.
-- Next step: the smallest useful continuation.
+- Goal: 아직 해야 하는 일.
+- Scope: 범위 안에 있는 file, topic, system.
+- Current state: 무엇이 바뀌었고 무엇이 남았는지.
+- Artifacts: path, commit, output, draft.
+- Evidence: 이미 실행한 check와 결과.
+- Risks: 알려진 uncertainty, failed check, sensitive boundary.
+- Next step: 가장 작은 useful continuation.
 
-## Common Handoff Types
+## 흔한 handoff 유형
 
-- Research handoff: paper candidates and verification status.
-- Coding handoff: patch summary, tests, and risk areas.
-- Review handoff: findings, severity, and evidence.
-- Operations handoff: failure record, last good state, and recovery plan.
-- Wiki handoff: new pages, broken links, stubs, and curation queue.
+- Research handoff: paper candidate와 verification status.
+- Coding handoff: patch summary, test, risk area.
+- Review handoff: finding, severity, evidence.
+- Operations handoff: failure record, last good state, recovery plan.
+- Wiki handoff: new page, broken link, stub, curation queue.
 
-## Checks
+## 확인할 것
 
-- Can the receiver verify the claimed state?
-- Are private details removed or generalized?
-- Are completed and pending steps separated?
-- Are skipped checks clearly marked?
-- Is the next step concrete enough to execute?
+- receiver가 claimed state를 verify할 수 있는가?
+- private detail이 제거되었거나 일반화되었는가?
+- completed step과 pending step이 분리되어 있는가?
+- skipped check가 명확히 표시되어 있는가?
+- next step이 실행할 만큼 구체적인가?
 
 ## Related
 

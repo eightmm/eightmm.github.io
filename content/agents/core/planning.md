@@ -8,32 +8,32 @@ tags:
 
 # Planning
 
-Planning is the step where an agent decomposes a goal into ordered, verifiable subtasks before acting. Good plans bound blast radius, surface assumptions, and make progress checkable.
+Planning은 agent가 행동하기 전에 goal을 순서 있는 verifiable subtask로 분해하는 단계입니다. 좋은 plan은 blast radius를 제한하고, assumption을 드러내며, progress를 checkable하게 만듭니다.
 
-A useful plan maps each step to evidence:
+유용한 plan은 각 step을 evidence에 연결합니다.
 
 $$
 P = \{(s_i, v_i)\}_{i=1}^{k}
 $$
 
-where $s_i$ is a step and $v_i$ is the check that can verify it. A step without a verification path is usually a guess, not a plan.
+여기서 $s_i$는 step이고 $v_i$는 그것을 verify할 수 있는 check입니다. Verification path가 없는 step은 보통 plan이 아니라 guess입니다.
 
-## Plan Shape
+## Plan 형태
 
-- State the current evidence.
-- Name assumptions that could be wrong.
-- Choose a small next action.
-- Attach a verification check to that action.
-- Re-plan when new evidence changes the problem.
+- 현재 evidence를 적습니다.
+- 틀릴 수 있는 assumption을 이름 붙입니다.
+- 작은 next action을 고릅니다.
+- 그 action에 verification check를 붙입니다.
+- 새 evidence가 문제를 바꾸면 re-plan합니다.
 
-## Practical Checks
+## 실전 check
 
-- State the goal, constraints, and success criteria before the first action.
-- Break work into steps that each have a concrete verification.
-- Re-plan when a step fails or new information contradicts the assumptions.
-- Keep the plan visible so drift from the original goal is detectable.
-- Stop and ask when intent is ambiguous rather than guessing.
-- Do not let the plan become a substitute for inspecting files, running checks, or changing the artifact.
+- 첫 action 전에 goal, constraint, success criteria를 적습니다.
+- 각 step이 concrete verification을 갖도록 작업을 나눕니다.
+- step이 실패하거나 새 정보가 assumption과 충돌하면 re-plan합니다.
+- original goal에서 drift가 생기는지 보이도록 plan을 유지합니다.
+- intent가 ambiguous하면 guess하지 말고 멈춰서 묻습니다.
+- plan이 file inspection, check 실행, artifact 변경의 대체물이 되지 않게 합니다.
 
 ## Related
 

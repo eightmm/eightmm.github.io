@@ -8,9 +8,9 @@ tags:
 
 # Multi-Agent Review
 
-Multi-agent review uses more than one agent — often different models or roles — to independently inspect a change before it is accepted. Independent passes catch errors a single agent rationalizes away.
+Multi-agent review는 변경을 받아들이기 전에 둘 이상의 agent, 보통 서로 다른 model이나 role이 독립적으로 검토하는 절차입니다. 독립적인 pass는 한 agent가 합리화하고 지나칠 수 있는 error를 잡아냅니다.
 
-The value comes from conditional independence. If reviewers share the same hidden assumption, agreement is weak evidence:
+가치는 conditional independence에서 나옵니다. Reviewer가 같은 hidden assumption을 공유하면 agreement는 약한 evidence입니다.
 
 $$
 P(\text{correct}\mid r_1,r_2)
@@ -18,35 +18,35 @@ P(\text{correct}\mid r_1,r_2)
 P(\text{correct}\mid r_1)P(\text{correct}\mid r_2)
 $$
 
-unless the reviewers inspected the artifact independently and used different failure hypotheses.
+Reviewer가 artifact를 독립적으로 inspect하고 서로 다른 failure hypothesis를 사용했을 때만 더 강한 근거가 됩니다.
 
-## Useful Roles
+## 유용한 role
 
-- Implementer: makes the smallest scoped change.
-- Reviewer: searches for bugs, missing checks, and regressions.
-- Domain critic: checks scientific, data, or security assumptions.
-- Verifier: runs acceptance checks and records evidence.
-- Editor: turns rough output into public documentation.
+- Implementer: 가장 작고 scope가 맞는 change를 만듭니다.
+- Reviewer: bug, missing check, regression을 찾습니다.
+- Domain critic: scientific, data, security assumption을 확인합니다.
+- Verifier: acceptance check를 실행하고 evidence를 기록합니다.
+- Editor: rough output을 public documentation으로 다듬습니다.
 
-## Practical Checks
+## 실전 check
 
-- Give each reviewer the diff plus the goal, not a summary that hides detail.
-- Prefer adversarial prompts ("try to refute this") over confirmation.
-- Treat agreement across independent models as weak evidence, not proof.
-- Gate high-risk surfaces — APIs, auth, data pipelines, training, deps — behind review.
-- Record verdicts so a decision can be re-examined later.
-- Do not treat reviewer consensus as a substitute for running tests or inspecting sources.
-- Keep private data out of prompts and review artifacts.
+- Reviewer에게 detail을 숨기는 summary가 아니라 diff와 goal을 줍니다.
+- confirmation보다 adversarial prompt, 예를 들어 “이것을 반박해보라”를 선호합니다.
+- 독립 model 간 agreement는 proof가 아니라 weak evidence로 취급합니다.
+- API, auth, data pipeline, training, dependency 같은 high-risk surface는 review 뒤에 둡니다.
+- 나중에 decision을 재검토할 수 있도록 verdict를 기록합니다.
+- reviewer consensus를 test 실행이나 source inspection의 대체물로 취급하지 않습니다.
+- private data는 prompt와 review artifact에 넣지 않습니다.
 
-## Public Wiki Use
+## Public Wiki에서의 사용
 
-For a research blog, multi-agent review is most useful for:
+Research blog에서는 multi-agent review가 아래 작업에 유용합니다.
 
-- Sanitizing public posts.
-- Checking paper-note claims against source metadata.
-- Finding broken links or missing definitions.
-- Reviewing agent-generated Markdown before publication.
-- Separating raw inbox notes from curated wiki pages.
+- public post sanitization.
+- paper-note claim을 source metadata와 대조.
+- broken link나 missing definition 탐색.
+- publication 전 agent-generated Markdown 검토.
+- raw inbox note와 curated wiki page 분리.
 
 ## Related
 

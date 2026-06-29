@@ -8,28 +8,28 @@ tags:
 
 # Agent Operating Contract
 
-An agent operating contract defines what an agent is allowed to do, what evidence it must inspect, when it must stop, and how completion is verified. It turns an open-ended instruction into a bounded workflow.
+Agent operating contract는 agent가 무엇을 할 수 있는지, 어떤 evidence를 inspect해야 하는지, 언제 멈춰야 하는지, completion을 어떻게 verify하는지 정의합니다. Open-ended instruction을 bounded workflow로 바꾸는 역할을 합니다.
 
-A compact contract can be written as:
+간단한 contract는 아래처럼 쓸 수 있습니다.
 
 $$
 C =
 (\mathcal{G}, \mathcal{S}, \mathcal{A}, \mathcal{V}, \mathcal{B})
 $$
 
-where $\mathcal{G}$ is the goal, $\mathcal{S}$ is the observable state, $\mathcal{A}$ is the allowed action space, $\mathcal{V}$ is the verification set, and $\mathcal{B}$ is the boundary or stop condition.
+여기서 $\mathcal{G}$는 goal, $\mathcal{S}$는 observable state, $\mathcal{A}$는 allowed action space, $\mathcal{V}$는 verification set, $\mathcal{B}$는 boundary 또는 stop condition입니다.
 
-## Contract Parts
+## Contract 구성
 
-- Goal: the artifact or decision the agent is trying to produce.
-- State: files, logs, rendered pages, issues, run outputs, or external evidence the agent must inspect.
-- Action space: tools and edits the agent can perform.
-- Verification: commands, reviews, checks, screenshots, or acceptance criteria required before reporting success.
-- Boundaries: private information, destructive actions, high-risk changes, and cases requiring human approval.
+- Goal: agent가 만들 artifact 또는 decision.
+- State: agent가 inspect해야 하는 file, log, rendered page, issue, run output, external evidence.
+- Action space: agent가 수행할 수 있는 tool과 edit.
+- Verification: success를 보고하기 전에 필요한 command, review, check, screenshot, acceptance criteria.
+- Boundaries: private information, destructive action, high-risk change, human approval이 필요한 경우.
 
-## Completion Rule
+## Completion rule
 
-Completion should be evidence-based:
+Completion은 evidence-based여야 합니다.
 
 $$
 \operatorname{done}(g)
@@ -38,28 +38,28 @@ $$
 \operatorname{pass}(v)
 $$
 
-If a required check is skipped, unavailable, or too narrow for the goal, the agent should report the gap instead of claiming completion.
+필수 check가 skipped, unavailable, 또는 goal에 비해 너무 좁다면 agent는 completion을 주장하지 말고 gap을 보고해야 합니다.
 
-For broad goals, the final step should be a [[agents/verification/completion-audit|Completion audit]] backed by an [[agents/verification/evidence-ledger|Evidence ledger]].
+넓은 goal에서는 마지막 단계가 [[agents/verification/evidence-ledger|Evidence ledger]]로 뒷받침되는 [[agents/verification/completion-audit|Completion audit]]이어야 합니다.
 
-## Public Wiki Use
+## Public Wiki에서의 사용
 
-For a public research blog or LLM Wiki, the operating contract should include:
+Public research blog 또는 LLM Wiki에서는 operating contract에 아래가 포함되어야 합니다.
 
-- No private server details, credentials, private paths, collaborator details, or unpublished results.
-- Source-grounded paper metadata.
-- Wikilink integrity.
-- Build verification.
-- Clear distinction between draft, inbox, curated note, and published post.
+- private server detail, credential, private path, collaborator detail, unpublished result 금지.
+- source-grounded paper metadata.
+- wikilink integrity.
+- build verification.
+- draft, inbox, curated note, published post의 명확한 구분.
 
-## Checks
+## 확인할 것
 
-- Is the goal specific enough to verify?
-- Are side effects allowed and reversible?
-- Are private boundaries explicit?
-- Does the verification set match the blast radius?
-- Is the final report tied to evidence rather than model confidence?
-- Is completion audited against the original objective rather than a narrowed subtask?
+- goal이 verify할 만큼 구체적인가?
+- side effect가 허용되고 reversible한가?
+- private boundary가 명시적인가?
+- verification set이 blast radius와 맞는가?
+- final report가 model confidence가 아니라 evidence에 묶여 있는가?
+- completion이 좁힌 subtask가 아니라 original objective 기준으로 audit되는가?
 
 ## Related
 

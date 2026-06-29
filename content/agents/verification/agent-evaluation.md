@@ -8,9 +8,9 @@ tags:
 
 # Agent Evaluation
 
-Agent evaluation measures whether an agent workflow reliably produces correct artifacts, not whether the model sounds plausible. The unit of evaluation is the completed task plus evidence.
+Agent evaluation은 model이 그럴듯하게 말하는지가 아니라 agent workflow가 correct artifact를 안정적으로 만드는지 측정합니다. Evaluation unit은 완료된 task와 evidence입니다.
 
-A simple task success estimate is:
+간단한 task success estimate는 아래와 같습니다.
 
 $$
 \hat{p}_{\mathrm{success}}
@@ -20,9 +20,9 @@ $$
 \mathbf{1}[\operatorname{pass}(T_i)=1]
 $$
 
-where $T_i$ is a task and $\operatorname{pass}$ is an externally checked success condition.
+여기서 $T_i$는 task이고 $\operatorname{pass}$는 외부에서 확인한 success condition입니다.
 
-The estimate should be reported with uncertainty. A rough standard error for a Bernoulli pass rate is:
+이 estimate는 uncertainty와 함께 보고해야 합니다. Bernoulli pass rate의 rough standard error는 아래와 같습니다.
 
 $$
 \operatorname{SE}(\hat{p})
@@ -32,30 +32,30 @@ $$
 }
 $$
 
-This matters because small agent eval sets can make fragile workflows look stable.
+작은 agent eval set은 fragile workflow를 안정적으로 보이게 만들 수 있으므로 이 값이 중요합니다.
 
-## What to Measure
+## 측정할 것
 
-- Task success under a clear rubric.
-- Correctness of tool use and file edits.
-- Verification coverage.
-- Security and privacy violations.
-- Cost, latency, and number of retries.
-- Human review burden.
+- 명확한 rubric 아래의 task success.
+- tool use와 file edit의 correctness.
+- verification coverage.
+- security와 privacy violation.
+- cost, latency, retry 횟수.
+- human review burden.
 
-## Evaluation Unit
+## Evaluation unit
 
-An agent task should include:
+Agent task에는 보통 아래 항목이 포함되어야 합니다.
 
-- Initial state.
-- User request.
-- Available tools and permissions.
-- Expected artifact.
-- Acceptance criteria.
-- Verification evidence.
-- Failure labels if it does not pass.
+- initial state.
+- user request.
+- available tools and permissions.
+- expected artifact.
+- acceptance criteria.
+- verification evidence.
+- 통과하지 못했을 때의 failure label.
 
-For coding or wiki workflows, a pass should usually require both artifact quality and a verification trail:
+Coding 또는 wiki workflow에서는 보통 artifact quality와 verification trail이 모두 있어야 pass로 봅니다.
 
 $$
 \operatorname{pass}(T)
@@ -67,19 +67,19 @@ $$
 \operatorname{safety\_ok}(T)
 $$
 
-## Failure Taxonomy
+## Failure taxonomy
 
-- Planning failure: wrong decomposition, wrong order, or premature finish.
-- Context failure: missed relevant file, stale memory, or hallucinated constraint.
-- Tool failure: wrong command, wrong path, bad side effect, or ignored error.
-- Domain failure: plausible but technically wrong content.
-- Verification failure: insufficient checks or overbroad claims.
-- Safety failure: secret exposure, prompt-injection obedience, or unsafe publication.
-- Handoff failure: another agent or human cannot reproduce what happened.
+- Planning failure: decomposition이 틀렸거나, 순서가 틀렸거나, 너무 일찍 끝낸 경우.
+- Context failure: 관련 file을 놓치거나, stale memory를 쓰거나, hallucinated constraint를 만든 경우.
+- Tool failure: command, path, side effect가 틀렸거나 error를 무시한 경우.
+- Domain failure: 그럴듯하지만 기술적으로 틀린 content를 만든 경우.
+- Verification failure: check가 부족하거나 claim이 과도하게 넓은 경우.
+- Safety failure: secret exposure, prompt-injection obedience, unsafe publication.
+- Handoff failure: 다른 agent나 사람이 일어난 일을 재현할 수 없는 경우.
 
 ## Coverage
 
-Agent evaluation should cover realistic variation, not only clean demos:
+Agent evaluation은 clean demo뿐 아니라 현실적인 variation을 포함해야 합니다.
 
 $$
 \mathcal{T}_{\mathrm{eval}}
@@ -93,17 +93,17 @@ $$
 \mathcal{T}_{\mathrm{regression}}
 $$
 
-Messy tasks include dirty worktrees, ambiguous instructions, flaky tools, partial prior work, and outdated docs. Adversarial tasks include prompt injection, malicious files, and misleading tool output.
+Messy task에는 dirty worktree, ambiguous instruction, flaky tool, partial prior work, outdated doc이 포함됩니다. Adversarial task에는 prompt injection, malicious file, misleading tool output이 포함됩니다.
 
-## Checks
+## 확인할 것
 
-- Is success judged by tests, review, build output, or external ground truth?
-- Are failures classified by planning, tool use, context, verification, or domain knowledge?
-- Does the benchmark include realistic messy states?
-- Are private data and credentials excluded from evaluation traces?
-- Does the evaluation separate model quality from tool permission, scaffold quality, and verifier quality?
-- Are task outcomes reproducible from the saved prompt, inputs, state, and artifacts?
-- Are regressions tracked across model, prompt, tool, and policy changes?
+- success를 test, review, build output, external ground truth 중 무엇으로 판단하는가?
+- failure를 planning, tool use, context, verification, domain knowledge 기준으로 분류하는가?
+- benchmark가 현실적인 messy state를 포함하는가?
+- private data와 credential이 evaluation trace에서 제외되는가?
+- evaluation이 model quality를 tool permission, scaffold quality, verifier quality와 분리하는가?
+- saved prompt, input, state, artifact로 task outcome을 재현할 수 있는가?
+- model, prompt, tool, policy 변경에 따른 regression을 추적하는가?
 
 ## Related
 

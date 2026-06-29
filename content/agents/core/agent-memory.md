@@ -8,9 +8,9 @@ tags:
 
 # Agent Memory
 
-Agent memory is how an agent carries information beyond a single context window — scratch notes, durable facts, prior decisions, and retrieved documents. Without it, every turn starts blind; with too much, context fills with noise.
+Agent memory는 agent가 single context window를 넘어 정보를 유지하는 방식입니다. Scratch note, durable fact, prior decision, retrieved document가 여기에 포함됩니다. Memory가 없으면 매 turn이 blind start가 되고, 너무 많으면 context가 noise로 찹니다.
 
-Memory is not one thing. A useful decomposition is:
+Memory는 하나의 물건이 아닙니다. 유용한 분해는 아래와 같습니다.
 
 $$
 M
@@ -24,11 +24,11 @@ M_{\mathrm{semantic}}
 M_{\mathrm{external}}
 $$
 
-where working memory is task-local state, episodic memory records past runs, semantic memory stores reusable concepts or preferences, and external memory is retrieved from files, docs, databases, or search.
+여기서 working memory는 task-local state, episodic memory는 past run 기록, semantic memory는 reusable concept 또는 preference, external memory는 file, doc, database, search에서 retrieved된 정보입니다.
 
 ## Retrieval View
 
-An agent usually cannot load all memory into the prompt. It retrieves a small subset:
+Agent는 보통 모든 memory를 prompt에 넣을 수 없습니다. 대신 작은 subset을 retrieve합니다.
 
 $$
 R(q,M)
@@ -37,22 +37,22 @@ R(q,M)
 \operatorname{score}(q,m)
 $$
 
-where $q$ is the current task/query and $m$ is a memory record. The scoring function can use lexical matching, embeddings, metadata filters, recency, source authority, or a learned ranker.
+여기서 $q$는 현재 task/query이고 $m$은 memory record입니다. Scoring function은 lexical matching, embedding, metadata filter, recency, source authority, learned ranker를 사용할 수 있습니다.
 
-Good memory is selective. The right question is not "can the agent remember this?" but "should this fact be retrieved for this task?"
+좋은 memory는 selective합니다. 올바른 질문은 “agent가 이것을 기억할 수 있는가?”가 아니라 “이 task에서 이 fact가 retrieve되어야 하는가?”입니다.
 
-## Memory Record
+## Memory record
 
-A durable memory record should usually include:
+Durable memory record에는 보통 아래 항목이 필요합니다.
 
-- Claim: the fact or reusable rule.
-- Scope: where it applies.
-- Source: where it came from.
-- Date or version: when it was true.
-- Sensitivity: public, private, secret, or prohibited.
-- Revalidation rule: when to check again.
+- Claim: fact 또는 reusable rule.
+- Scope: 적용되는 범위.
+- Source: 어디서 온 정보인지.
+- Date or version: 언제 true였는지.
+- Sensitivity: public, private, secret, prohibited 중 무엇인지.
+- Revalidation rule: 언제 다시 확인해야 하는지.
 
-For high-impact actions, recalled memory should be treated as a hypothesis:
+High-impact action에서는 recalled memory를 hypothesis로 취급해야 합니다.
 
 $$
 \operatorname{act}(m)
@@ -60,26 +60,26 @@ $$
 \operatorname{verify}(m)
 $$
 
-The older or more consequential the memory is, the stronger the verification should be.
+Memory가 오래됐거나 결과가 클수록 더 강한 verification이 필요합니다.
 
-## Failure Modes
+## Failure mode
 
-- Stale memory: old facts are treated as current.
-- Over-retrieval: irrelevant notes crowd out task context.
-- Under-retrieval: important constraints are missed.
-- Contaminated memory: injected or wrong content is persisted.
-- Privacy leak: private details are stored or recalled into a public workflow.
-- Preference drift: the agent overgeneralizes a narrow user preference.
+- Stale memory: 오래된 fact를 current fact처럼 취급합니다.
+- Over-retrieval: irrelevant note가 task context를 밀어냅니다.
+- Under-retrieval: 중요한 constraint를 놓칩니다.
+- Contaminated memory: injected content나 잘못된 content가 persist됩니다.
+- Privacy leak: private detail이 저장되거나 public workflow로 recall됩니다.
+- Preference drift: agent가 좁은 user preference를 과도하게 일반화합니다.
 
-## Practical Checks
+## 실전 check
 
-- Separate short-term working state from durable, reusable facts.
-- Store one fact per record with a short description so recall stays selective.
-- Prefer retrieval on demand over loading everything into context.
-- Verify a recalled fact still holds before acting on it.
-- Avoid persisting secrets, private paths, or unpublished results.
-- Track whether a memory is user instruction, project convention, observed fact, or inferred preference.
-- Expire or revalidate memories tied to software versions, URLs, schedules, people, policies, or infrastructure.
+- short-term working state와 durable, reusable fact를 분리합니다.
+- recall이 selective하게 유지되도록 record 하나에는 fact 하나와 짧은 description을 둡니다.
+- 모든 것을 context에 넣기보다 필요할 때 retrieve합니다.
+- recalled fact로 행동하기 전에 여전히 맞는지 verify합니다.
+- secret, private path, unpublished result를 persist하지 않습니다.
+- memory가 user instruction, project convention, observed fact, inferred preference 중 무엇인지 추적합니다.
+- software version, URL, schedule, people, policy, infrastructure에 묶인 memory는 expire 또는 revalidate합니다.
 
 ## Related
 
