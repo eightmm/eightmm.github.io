@@ -65,7 +65,7 @@ When a paper adds a reusable idea, update the concept note with a small section:
 
 | Paper | Adds | Boundary |
 | --- | --- | --- |
-| [Paper title](/papers/index) | reusable idea | claim remains benchmark-specific |
+| [Paper title](/papers) | reusable idea | claim remains benchmark-specific |
 ```
 
 Use this only when the paper actually changes how the concept should be understood. Do not turn every paper into a concept-page citation list.

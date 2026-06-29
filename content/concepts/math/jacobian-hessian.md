@@ -109,7 +109,7 @@ $$
 | --- | --- |
 | $\lambda_i > 0$ | locally convex direction |
 | $\lambda_i < 0$ | saddle or locally concave direction |
-| large $|\lambda_i|$ | sharp or unstable direction |
+| large $\lvert\lambda_i\rvert$ | sharp or unstable direction |
 | near-zero $\lambda_i$ | flat or underdetermined direction |
 
 Gradient descent is locally stable in a quadratic bowl when the step size is small relative to the largest curvature:
