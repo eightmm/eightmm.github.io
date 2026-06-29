@@ -42,6 +42,47 @@ $$
 | 접속 패턴 집계 | sanitized `auth.log` aggregation | [[infra/server-ops/access-boundary|Access boundary]] |
 | NAT 또는 outbound access 설정 | `iptables` pattern | [[infra/server-ops/access-boundary|Access boundary]] |
 
+## Daily Admin Loop
+
+평소 운영 명령은 아래 순서로 정리하면 incident dump가 아니라 재사용 가능한 runbook이 됩니다.
+
+$$
+\text{observe}
+\rightarrow
+\text{classify}
+\rightarrow
+\text{verify}
+\rightarrow
+\text{change}
+\rightarrow
+\text{record}
+$$
+
+| Step | Question | Command class |
+| --- | --- | --- |
+| Observe | 지금 느린가, 실패했는가, quota가 막혔는가? | `squeue`, `sacct`, GPU/IO/network counters |
+| Classify | GPU, disk, network, scheduler, access 중 어디인가? | `nvidia-smi`, `iotop`, `ip -s`, `journalctl`, `sreport` |
+| Verify | 같은 증거가 다른 command에서도 보이는가? | queue + log, GPU mapping + Xid, IO wait + process IO |
+| Change | read-only 확인으로 충분한가, 정책 변경이 필요한가? | `sacctmgr`, firewall/NAT, account changes |
+| Record | 공개 가능한 교훈은 무엇인가? | sanitized symptom, evidence class, prevention |
+
+이 흐름을 지키면 private runbook의 구체적인 값은 내부에 남기고, public note에는 원리와 판단 기준만 남길 수 있습니다.
+
+## Where Each Command Belongs
+
+| Command family | Put under | Public wording |
+| --- | --- | --- |
+| `ip`, `sar`, `ifstat`, `ss`, `netstat` | network/storage diagnosis | interface counters and socket pressure |
+| `iotop` | process IO diagnosis | process class causing disk pressure |
+| RAID controller tools | storage health and incident response | health class, rebuild, degraded array |
+| `nvidia-smi`, Xid log search | GPU diagnosis | mapping logic and fault class |
+| `auth.log` aggregation | access boundary | aggregated access pattern |
+| `sacct`, `squeue`, `sprio`, `sshare` | Slurm inspection | queue/accounting evidence |
+| `sreport` | usage reporting | trend and resource pressure |
+| `sacctmgr add/modify/update` | Slurm policy | placeholder policy shape |
+| `iptables` NAT | access/network boundary | topology-free NAT pattern |
+| `#SBATCH` options | job script reference | resource contract |
+
 ## Host and IO Checks
 
 Network interface counters are useful when storage, distributed training, or remote service calls feel slow. Do not publish real interface names if they reveal topology.

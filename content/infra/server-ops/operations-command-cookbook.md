@@ -34,6 +34,20 @@ $$
 | Job resource request is wrong | `squeue`, `sacct`, script options | [[infra/hpc/slurm-job-script|Slurm Job Script]] |
 | Access pattern looks unusual | aggregated auth-log summary | [[infra/server-ops/access-boundary|Access boundary]] |
 
+## Command Placement
+
+Use this page as the command index, but keep deeper explanations in the domain page.
+
+| Topic | Keep examples here | Explain in |
+| --- | --- | --- |
+| realtime network counters | portable command patterns and placeholders | [[infra/hardware/storage-network|Storage and network]] |
+| process disk IO | `iotop` usage boundary | [[infra/io/data-loading|Data loading and IO]] |
+| disk/RAID health | controller health class, not raw output | [[infra/server-ops/incident-response|Incident response]] |
+| GPU Xid and mapping | sanitized command pattern | [[infra/gpu/index|GPU]] |
+| Slurm accounting | read-only commands and report shape | [[infra/hpc/slurm-accounting-limits|Slurm Accounting and Limits]] |
+| Slurm script options | option table and generic template | [[infra/hpc/slurm-job-script|Slurm Job Script]] |
+| access logs and NAT | aggregation idea and topology-free pattern | [[infra/server-ops/access-boundary|Access boundary]] |
+
 ## Monitoring Commands
 
 | Need | Command pattern | Evidence |
@@ -182,6 +196,14 @@ Public writeups should report the evidence class, not the raw access list:
 
 Private operations notes may keep version-specific parsing commands. Public notes should usually keep only the normalized pattern because log format differs across distributions.
 
+If you need a publishable example, describe the aggregation target rather than the exact private command:
+
+| Private question | Public note |
+| --- | --- |
+| how many accepted SSH logins per minute? | count accepted logins per minute after replacing user and source address |
+| which user logged in most often? | compare account classes, not individual users |
+| which IP appears repeatedly? | classify as internal, known external, or unknown source category |
+
 ## Network NAT Pattern
 
 When documenting internet access for new nodes, avoid real interface names and topology. Use placeholders:
@@ -211,6 +233,31 @@ $$
 - Does raw output include users, IPs, hostnames, mount paths, serial numbers, or cluster topology?
 - Can the output be summarized as an evidence class instead of pasted directly?
 - Is this a one-off incident, or a reusable runbook pattern?
+
+## Private-to-Public Conversion
+
+The useful public artifact is not the raw command transcript. It is the reusable operational pattern.
+
+| Private runbook detail | Public replacement |
+| --- | --- |
+| real user, account, or role name | `<user>`, `<account>`, account class |
+| real cluster, node, or interface | `<cluster>`, `<node>`, `<interface>` |
+| real SSH endpoint, port, or source IP | omit or use `<source-ip>` |
+| real project, task, or path | generic workload class and `/path/to/project` |
+| exact quota or fair-share value | placeholder value or qualitative policy |
+| raw incident output | evidence class and next action |
+
+Good public server-admin notes should read like:
+
+$$
+\text{symptom}
+\rightarrow
+\text{command family}
+\rightarrow
+\text{evidence class}
+\rightarrow
+\text{safe decision}
+$$
 
 ## Related
 
