@@ -56,6 +56,64 @@ This is the main reason MoE is attractive for scaling, but it also makes serving
 | Expert type | usually FFN, but can be modality-specific or task-specific |
 | Serving path | sparse routing can hurt latency even when FLOPs look low |
 
+## Load Balancing
+
+Sparse routing creates a systems problem: the model can have enough total experts while a few experts receive most tokens. A simple routing utilization for expert $m$ is:
+
+$$
+u_m
+= \frac{1}{N}
+\sum_{i=1}^{N}
+\mathbf{1}[m \in S(x_i)]
+$$
+
+Balanced routing wants $u_m$ to be close to $1/M$ for $M$ experts, while still sending each token to useful experts. Many MoE papers add an auxiliary loss that penalizes imbalance:
+
+$$
+\mathcal{L}
+= \mathcal{L}_{\mathrm{task}}
++ \alpha \mathcal{L}_{\mathrm{balance}}
+$$
+
+The exact form varies, so paper notes should record router probability, selected expert frequency, capacity factor, and dropped-token policy separately.
+
+## Capacity and Dropped Tokens
+
+Each expert often has a capacity limit per batch:
+
+$$
+\text{capacity}
+= \left\lceil
+\frac{N \cdot k}{M}
+\cdot c
+\right\rceil
+$$
+
+where $N$ is tokens, $k$ is top-k routing, $M$ is number of experts, and $c$ is the capacity factor. If too many tokens route to one expert, implementations may drop, reroute, or pad tokens. That detail changes both quality and latency.
+
+## MoE Claim Types
+
+| Claim | Evidence Needed |
+| --- | --- |
+| more capacity | total parameters and active parameters reported separately |
+| cheaper compute | activated FLOPs, memory traffic, communication, and wall time |
+| expert specialization | routing distribution and per-task/per-domain behavior |
+| scalable training | expert parallelism, all-to-all overhead, load balance |
+| efficient serving | latency at realistic batch size, cache behavior, and routing overhead |
+
+## Where MoE Fits
+
+MoE is not a replacement for choosing a base architecture. It is usually a routing layer inserted into a Transformer, MLP block, multimodal system, or task-specific model.
+
+| Base context | What MoE changes |
+| --- | --- |
+| Transformer FFN | increases parameter capacity per token with sparse FFN activation |
+| multimodal model | routes by modality, task, or token type |
+| multi-task model | separates capacity across tasks while sharing interface layers |
+| agent system | should be distinguished from explicit tool routing or workflow routing |
+
+If the router chooses external tools, APIs, or actions, the note belongs closer to [[agents/tools/tool-use|tool use]] than to MoE.
+
 ## Practical Checks
 
 - Check routing granularity: token-level, sequence-level, graph-level, modality-level, or task-level.
