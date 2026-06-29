@@ -130,7 +130,7 @@ tags:
 - [[projects/llm-wiki-blog|LLM Wiki blog]]를 한글 post와 영어 wiki note가 연결되는 공개 지식베이스로 운영하는 법
 - [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]으로 wiki cluster를 한글 post로 바꾸는 법
 - [[projects/paper-brief-agent-pipeline|Paper brief agent pipeline]]으로 daily paper candidate를 inbox, paper note, concept update, synthesis post로 승격하는 법
-- [[projects/hpc-research-workflows|HPC research workflows]]를 private cluster 기록이 아니라 reproducible run workflow로 공개하는 법
+- [[projects/hpc-research-workflows|HPC research workflows]]를 특정 환경 기록이 아니라 reproducible run workflow로 공개하는 법
 - [[projects/project-milestone-format|Project milestone format]]으로 큰 작업 사이의 공개 가능한 변경 단위를 남기는 법
 
 ## Writing Queue

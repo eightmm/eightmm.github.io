@@ -62,9 +62,9 @@ Project page는 목표, interface, 설계 결정, 검증 방법, 공개 artifact
 | Research decision | [Decision record](/concepts/research-methodology/decision-record), [Experiment ledger](/concepts/research-methodology/experiment-ledger) |
 | Paper reproduction | [Implementation readiness](/papers/reproducibility/implementation-readiness), [Reproduction result](/papers/reproducibility/reproduction-result) |
 
-## Project Seeds
+## Candidate Projects
 
-아래 항목은 아직 project note가 아닙니다. 구현물, workflow, public artifact boundary가 생기면 Projects로 승격하고, 질문만 남아 있으면 [[research/index|Research]]에 둡니다.
+아래 항목은 구현물이나 workflow로 구체화할 수 있는 방향입니다. 질문만 남아 있으면 [[research/index|Research]]에 두고, 반복해서 쓸 수 있는 artifact가 생기면 project note로 확장합니다.
 
 | Seed | 방향 |
 | --- | --- |

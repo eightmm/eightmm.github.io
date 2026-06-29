@@ -98,4 +98,4 @@ $$
 7. [[molecular-modeling/index|Computational Biology]]에서 protein, molecule, ligand, structure-based modeling로 좁힙니다.
 8. [[infra/index|Infra]]와 [[agents/index|Agents]]에서 실제 workflow와 운영을 연결합니다.
 
-목표는 모든 글을 하나의 taxonomy에 억지로 넣는 것이 아닙니다. 글마다 가장 강한 축을 정하고, 나머지 축은 wikilink로 연결하는 것입니다. 그렇게 하면 블로그는 한글 narrative가 되고, wiki는 영어 canonical note가 됩니다.
+목표는 모든 글을 하나의 taxonomy에 억지로 넣는 것이 아닙니다. 글마다 가장 강한 축을 정하고, 나머지 축은 wikilink로 연결합니다. 그렇게 하면 한글 글은 읽는 경로를 만들고, 영어 wiki note는 반복해서 참조할 수 있는 개념 정의가 됩니다.
