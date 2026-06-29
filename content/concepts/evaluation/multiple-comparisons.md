@@ -37,6 +37,19 @@ The independence assumption is often imperfect, but the direction is the same: m
 - Adjust interpretation when many comparisons were attempted.
 - Treat exploratory ablations as hypothesis generation unless confirmed.
 
+## Comparison Ledger
+
+For public claims, record enough context to distinguish search from evidence:
+
+| Field | Meaning |
+| --- | --- |
+| candidate set | models, prompts, thresholds, seeds, datasets, or metrics tried |
+| selection rule | how the winning variant was chosen |
+| validation budget | how much feedback was used before final testing |
+| final test boundary | which data was untouched until selection finished |
+| negative results | failed or worse variants that affect interpretation |
+| claim type | exploratory, confirmatory, reproduced, or deployment decision |
+
 ## Bonferroni Bound
 
 A conservative threshold divides the target false-positive rate by the number of tests:
@@ -47,6 +60,16 @@ $$
 
 $K$ is the number of planned comparisons. This is simple but can be too conservative when tests are correlated; the important habit is to disclose and separate exploration from confirmation.
 
+For false discovery rate control, the Benjamini-Hochberg rule sorts $p$-values and finds the largest $i$ such that:
+
+$$
+p_{(i)}
+\le
+\frac{i}{K}q
+$$
+
+where $q$ is the target false discovery rate. This is useful when many discoveries are expected, but it does not replace a clean final-test boundary for a single headline claim.
+
 ## Checks
 
 - How many variants, prompts, thresholds, seeds, or metrics were tried?
@@ -54,12 +77,14 @@ $K$ is the number of planned comparisons. This is simple but can be too conserva
 - Are negative and failed runs visible?
 - Is the claim exploratory or confirmatory?
 - Would the result still look meaningful under a stricter threshold or held-out confirmation?
+- Does the paper distinguish model selection evidence from final claim evidence?
 
 ## Related
 
 - [[concepts/evaluation/statistical-significance|Statistical significance]]
 - [[concepts/evaluation/effect-size|Effect size]]
 - [[concepts/evaluation/test-set-contamination|Test-set contamination]]
+- [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[concepts/machine-learning/hyperparameter-tuning|Hyperparameter tuning]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
 - [[concepts/research-methodology/threat-to-validity|Threat to validity]]
