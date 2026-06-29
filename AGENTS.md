@@ -43,6 +43,15 @@ Keep the public entry points aligned with `content/index.md` and the Quartz Expl
 
 Public top-level navigation should stay small and stable. Keep Agents first, then AI, Math, Computational Biology, and Infra. Put Research, Papers, Projects, and Posts after Infra so reader-facing and artifact areas do not crowd the core knowledge map. Do not add a new Explorer root for a concept family just because many notes exist. Prefer linking support folders from the nearest gateway page.
 
+Keep each top-level section close to its raw object:
+
+- `ai/` should hold AI-native foundations: machine-learning problem framing, model architectures, learning objectives, generative-model families, evaluation, and AI systems. Do not put domain-applied pages there just because they use a model.
+- `math/` should hold math-native foundations: linear algebra, calculus, probability, information theory, geometry, graphs, dynamics, numerics, and evaluation math. Do not put protein, molecule, docking, pose, pocket, or structure-modeling route pages there; link the raw math note and place the applied route under `molecular-modeling/`.
+- `agents/` should hold agent-native foundations: agent loop, state, memory, tools, workflows, models, and verification. Do not use `agents/` as a home for general AI, infra, or content-process notes unless the agent workflow itself is the object.
+- `molecular-modeling/` should hold applied Computational Biology routes: protein, molecule, ligand, pocket, complex, sequence, conformer, interaction, structure-based modeling, docking, benchmark, and geometry-for-structure-modeling pages.
+
+If a page title contains a domain object such as protein, ligand, molecule, pocket, pose, docking, structure modeling, assay, or genome sequence, default to `molecular-modeling/` unless the page is only defining a reusable math, AI, or agent primitive. If a page title contains only a primitive such as attention, transformer, gradient, entropy, KL, group action, tool contract, or completion audit, keep it in the corresponding raw section or `concepts/` support area.
+
 Keep supporting wiki areas available for links, but do not expose every support folder as a main public area unless the user asks:
 
 - `entities/`: Protein, ligand, molecule, protein-ligand complex, sequence, structure, assay, dataset, genome, and other modeled objects. Treat this as a vocabulary layer, not a research category by itself.
@@ -64,7 +73,7 @@ Architecture pages should be organized by selection logic, not by popularity:
 - First explain the decision criteria: input object, symmetry, inductive bias, parameter sharing, computational complexity, task, and evaluation risk.
 - Keep model families under `concepts/architectures/`: MLP, CNN, RNN/LSTM/GRU, Transformer variants, GNN/Graph Transformer, Deep Sets/Set Transformer, state-space models, Mamba as a selective state-space model, Perceiver, U-Net, ViT, MoE, and related blocks.
 - Do not make `Mamba`, `LLM`, `SSL`, or any single trend a top-level public area unless the user explicitly asks.
-- Geometry as math belongs under `concepts/math/`; geometric deep learning belongs under `concepts/geometric-deep-learning/`; gateway pages may explain the relationship in Korean.
+- Geometry as math belongs under `concepts/math/` and `math/`; geometric deep learning belongs under `concepts/geometric-deep-learning/`; structure-modeling geometry for protein, ligand, pocket, pose, docking, or complex workflows belongs under `molecular-modeling/`.
 - When adding architecture notes, update `content/ai/architectures.md`, `content/concepts/architectures/index.md`, and `content/concepts/index.md` together.
 
 Geometric notes should keep the math/model boundary explicit:

@@ -29,6 +29,7 @@ $$
 | Representation Routes | sequence, graph, fingerprint, conformer, pocket, complex graph, coordinate input 선택 | [Representation Routes](/molecular-modeling/representation-routes) |
 | Sequence-Based Modeling | protein sequence, genome sequence, tokenization, representation, family/region split | [Sequence-Based Modeling](/molecular-modeling/sequence-based) |
 | Structure-Based Modeling | pocket, protein-ligand geometry, docking, pose, scoring, virtual screening | [Structure-Based Modeling](/molecular-modeling/structure-based) |
+| Geometry for Structure Modeling | coordinate, distance, frame, invariance/equivariance, pose geometry leakage | [Geometry for Structure Modeling](/molecular-modeling/geometry-for-structure-modeling) |
 | Molecular and Ligand Modeling | molecular identity, standardization, graph, fingerprint, conformer, property prediction | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand) |
 | Interaction Modeling | target-conditioned activity, affinity, selectivity, protein-ligand pair, assay context | [Interaction Modeling](/molecular-modeling/interactions) |
 | Data and Evaluation | label semantics, split unit, leakage, assay harmonization, benchmark trap | [Data and Evaluation](/molecular-modeling/data-evaluation) |
@@ -53,6 +54,7 @@ $$
 | 어떤 입력 표현을 고를지 정한다 | [Representation Routes](/molecular-modeling/representation-routes) | object, preprocessing, source, axes, availability |
 | protein-ligand pair를 모델 입력으로 만든다 | [Protein-ligand representation contract](/concepts/molecular-modeling/protein-ligand-representation-contract) | protein, ligand, pocket, pose, pair context |
 | pocket이나 binding site를 정의한다 | [Pocket definition contract](/concepts/sbdd/pocket-definition-contract) | known, predicted, ligand-defined, blind, template-derived |
+| coordinate/frame/pose geometry를 점검한다 | [Geometry for Structure Modeling](/molecular-modeling/geometry-for-structure-modeling) | coordinate source, frame, alignment, atom mapping |
 | benchmark claim을 읽는다 | [Data and Evaluation](/molecular-modeling/data-evaluation) | label semantics, split unit, metric, baseline, leakage |
 
 ## 객체에서 시작하기
@@ -122,6 +124,7 @@ Structure-based modeling은 별도의 큰 덩어리로 봅니다. Docking은 그
 
 - [[ai/index|AI]]
 - [[molecular-modeling/representation-routes|Representation Routes]]
+- [[molecular-modeling/geometry-for-structure-modeling|Geometry for Structure Modeling]]
 - [[math/index|Math]]
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/protein-modeling/index|Protein modeling concepts]]

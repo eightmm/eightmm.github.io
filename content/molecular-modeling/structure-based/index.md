@@ -61,6 +61,7 @@ $$
 - [[entities/pocket|Pocket]]
 - [[entities/ligand|Ligand]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]
+- [[molecular-modeling/geometry-for-structure-modeling|Geometry for Structure Modeling]]
 - [[concepts/sbdd/pocket-definition-contract|Pocket definition contract]]
 - [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]

@@ -32,7 +32,7 @@ $$
 | Calculus and optimization | derivatives, chain rule, Jacobians, Hessians, constraints, backpropagation math | [Calculus and gradients](/math/calculus-gradients), [Chain rule](/concepts/math/chain-rule), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Probability | random variables, distributions, estimators, Bayesian inference, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
 | Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
-| Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry), [Geometry for Structure Modeling](/math/geometry-for-structure-modeling) |
+| Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry), [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) |
 | Graphs | sets, neighborhoods, permutations, graph modeling | [Discrete math and graphs](/math/discrete-graphs) |
 | Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows, molecular dynamics | [Dynamical systems](/math/dynamical-systems) |
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
@@ -68,7 +68,7 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 | --- | --- | --- |
 | Architecture formula | [Linear layer](/concepts/architectures/linear-layer), [Attention](/concepts/architectures/attention) | shape, axis, projection, normalization |
 | Learning objective | [Learning Methods](/ai/learning-methods), [Objective taxonomy](/concepts/learning/objective-taxonomy) | label, mask, contrast, likelihood, denoising, reward |
-| Geometry rule | [Geometry for Structure Modeling](/math/geometry-for-structure-modeling) | invariant target인지 equivariant target인지 |
+| Geometry rule | [Geometry and Symmetry](/math/geometry-symmetry), [Equivariance](/concepts/geometric-deep-learning/equivariance) | invariant target인지 equivariant target인지 |
 | Evaluation metric | [Evaluation Math](/math/evaluation-math), [Estimator vs metric](/concepts/math/estimator-vs-metric) | population quantity, finite estimate, selection rule |
 
 ## 연결되는 곳
@@ -136,7 +136,6 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 
 - [[ai/index|AI]]
 - [[math/formula-reading-for-ai|Formula Reading for AI]]
-- [[math/geometry-for-structure-modeling|Geometry for Structure Modeling]]
 - [[molecular-modeling/index|Computational Biology]]
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]
