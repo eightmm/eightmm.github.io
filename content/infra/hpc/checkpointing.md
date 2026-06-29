@@ -8,9 +8,9 @@ tags:
 
 # Checkpointing
 
-Checkpointing periodically saves training state so a job can resume after preemption, failure, or a wall-clock limit. A checkpoint should restore the run exactly, not just the weights.
+Checkpointing은 preemption, failure, wall-clock limit 이후 job을 resume할 수 있도록 training state를 주기적으로 저장하는 방식입니다. Checkpoint는 weight만이 아니라 run 전체를 정확히 restore해야 합니다.
 
-The checkpoint state can be written as:
+Checkpoint state는 아래처럼 쓸 수 있습니다.
 
 $$
 C_t
@@ -18,11 +18,11 @@ C_t
 (\theta_t,\ o_t,\ s_t,\ k_t,\ r_t,\ e_t)
 $$
 
-where $\theta_t$ is model state, $o_t$ optimizer state, $s_t$ scheduler state, $k_t$ step or epoch, $r_t$ RNG state, and $e_t$ environment/run metadata.
+여기서 $\theta_t$는 model state, $o_t$는 optimizer state, $s_t$는 scheduler state, $k_t$는 step 또는 epoch, $r_t$는 RNG state, $e_t$는 environment/run metadata입니다.
 
-## Resume Contract
+## Resume contract
 
-A resume should satisfy:
+Resume은 아래 조건을 만족해야 합니다.
 
 $$
 \operatorname{resume}(C_t)
@@ -30,11 +30,11 @@ $$
 \text{same training state at step } t
 $$
 
-This means the next batch, learning-rate schedule, gradient-scaler state, distributed rank behavior, and random augmentations should be consistent with the intended run policy.
+즉 next batch, learning-rate schedule, gradient-scaler state, distributed rank behavior, random augmentation이 의도한 run policy와 일관되어야 합니다.
 
 ## Atomic Write
 
-Checkpoint writes should avoid corrupting the latest checkpoint:
+Checkpoint write는 latest checkpoint를 corrupt하지 않아야 합니다.
 
 ```text
 write checkpoint.tmp
@@ -43,24 +43,24 @@ rename checkpoint.tmp -> checkpoint.latest
 write manifest.json
 ```
 
-The exact implementation can vary, but the principle is stable: a crash should leave either the old valid checkpoint or the new valid checkpoint, not a half-written file.
+구체 구현은 달라질 수 있지만 원칙은 안정적입니다. Crash 이후에는 old valid checkpoint 또는 new valid checkpoint 중 하나가 남아야 하며, half-written file이 남으면 안 됩니다.
 
-## Practical Checks
+## 실전 check
 
-- Save model weights, optimizer state, scheduler state, step count, and RNG seeds.
-- Write atomically (temp file then rename) so a crash never corrupts the latest checkpoint.
-- Keep a rolling window plus periodic milestones to bound disk use.
-- Test resume on a small run before trusting it on a long one.
-- Record code commit, environment, and dataset version alongside the checkpoint.
-- During reconciliation, treat a checkpoint as resumable only after compatibility checks pass.
-- Save mixed-precision scaler state when using fp16 training.
-- For distributed training, save enough state to resume world size, sharding, sampler position, and rank-local state.
-- Validate that the loaded checkpoint matches the current config and code expectations.
-- Keep final artifacts separate from transient recovery checkpoints.
+- model weight, optimizer state, scheduler state, step count, RNG seed를 저장합니다.
+- crash가 latest checkpoint를 corrupt하지 않도록 atomic write를 사용합니다.
+- disk 사용량을 제한하기 위해 rolling window와 periodic milestone을 함께 둡니다.
+- 긴 run에 믿고 쓰기 전에 작은 run에서 resume을 test합니다.
+- checkpoint와 함께 code commit, environment, dataset version을 기록합니다.
+- reconciliation 중에는 compatibility check를 통과한 checkpoint만 resumable로 취급합니다.
+- fp16 training을 쓰면 mixed-precision scaler state를 저장합니다.
+- distributed training에서는 world size, sharding, sampler position, rank-local state를 resume할 만큼 충분히 저장합니다.
+- loaded checkpoint가 current config와 code expectation에 맞는지 validate합니다.
+- final artifact와 transient recovery checkpoint를 분리합니다.
 
 ## Cadence
 
-Checkpoint interval trades off overhead and lost work:
+Checkpoint interval은 overhead와 lost work 사이의 tradeoff입니다.
 
 $$
 \operatorname{expected\ lost\ work}
@@ -68,11 +68,11 @@ $$
 \frac{\Delta t_{\mathrm{ckpt}}}{2}
 $$
 
-where $\Delta t_{\mathrm{ckpt}}$ is the time between checkpoints. If checkpoints are too frequent, IO dominates. If they are too rare, preemption or timeout wastes too much compute.
+여기서 $\Delta t_{\mathrm{ckpt}}$는 checkpoint 사이의 시간입니다. Checkpoint가 너무 잦으면 IO가 지배하고, 너무 드물면 preemption이나 timeout 때 compute 낭비가 커집니다.
 
-## Completion Markers
+## Completion marker
 
-For long jobs, a checkpoint is not the same as a completed output. Use an explicit marker or manifest:
+Long job에서 checkpoint는 completed output과 같지 않습니다. Explicit marker 또는 manifest를 사용합니다.
 
 $$
 \text{complete}
@@ -80,11 +80,11 @@ $$
 \text{latest checkpoint exists}
 $$
 
-The manifest should identify the final step, expected shard count, config hash, and artifact type without exposing private paths.
+Manifest는 private path를 노출하지 않고 final step, expected shard count, config hash, artifact type을 식별해야 합니다.
 
-## Compatibility Checks
+## Compatibility check
 
-Before resuming, compare:
+Resume 전에 아래를 비교합니다.
 
 - Config hash.
 - Model architecture version.
@@ -94,7 +94,7 @@ Before resuming, compare:
 - Distributed/sharding policy.
 - Code commit or release identifier.
 
-If these do not match, the run may load without crashing but continue as a different experiment.
+이 값들이 맞지 않으면 run이 crash 없이 load되더라도 다른 experiment로 이어질 수 있습니다.
 
 ## Related
 

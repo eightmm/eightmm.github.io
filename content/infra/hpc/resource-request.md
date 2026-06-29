@@ -8,7 +8,7 @@ tags:
 
 # Resource Request
 
-A resource request describes what a job needs from a shared cluster: CPUs, GPUs, memory, wall time, storage, and sometimes special constraints. It is the contract between the job and the scheduler.
+Resource request는 shared cluster에서 job이 필요로 하는 CPU, GPU, memory, wall time, storage, special constraint를 설명합니다. Job과 scheduler 사이의 contract입니다.
 
 For a job $j$:
 
@@ -16,9 +16,9 @@ $$
 r_j = (c_j, g_j, m_j, \tau_j)
 $$
 
-$c_j$ is CPU count, $g_j$ is GPU count, $m_j$ is memory, and $\tau_j$ is requested wall time.
+$c_j$는 CPU count, $g_j$는 GPU count, $m_j$는 memory, $\tau_j$는 requested wall time입니다.
 
-The scheduler sees this as a placement problem:
+Scheduler는 이를 placement problem으로 봅니다.
 
 $$
 \operatorname{place}(j)
@@ -26,7 +26,7 @@ $$
 r_j \le R_{\mathrm{available}}
 $$
 
-Oversized requests can wait longer even if the job itself is simple. Undersized requests can fail, OOM, or run slowly.
+Oversized request는 job 자체가 단순해도 더 오래 기다릴 수 있습니다. Undersized request는 fail, OOM, slow run으로 이어질 수 있습니다.
 
 ## Generic Slurm Fields
 
@@ -37,11 +37,11 @@ Oversized requests can wait longer even if the job itself is simple. Undersized 
 #SBATCH --time=<hh:mm:ss>
 ```
 
-These are placeholders. Do not publish private partitions, accounts, hostnames, internal paths, or cluster-specific names.
+위 값은 placeholder입니다. Private partition, account, hostname, internal path, cluster-specific name을 공개하지 않습니다.
 
-## Sizing From a Smoke Run
+## Smoke run으로 sizing하기
 
-Measure a small run before requesting a full run:
+Full run을 요청하기 전에 small run을 측정합니다.
 
 $$
 \tau_{\mathrm{full}}
@@ -53,9 +53,9 @@ $$
 \alpha
 $$
 
-where $\alpha>1$ is a safety margin for IO, checkpointing, startup, validation, and variance in throughput.
+여기서 $\alpha>1$은 IO, checkpointing, startup, validation, throughput variance를 위한 safety margin입니다.
 
-Memory can be estimated similarly:
+Memory도 비슷하게 추정할 수 있습니다.
 
 $$
 m_{\mathrm{request}}
@@ -65,23 +65,23 @@ m_{\mathrm{request}}
 \beta
 $$
 
-where $\beta$ is a safety margin. The margin should be justified by observed variability, not used to hide unknown behavior.
+여기서 $\beta$는 safety margin입니다. 이 margin은 observed variability로 정당화해야 하며, unknown behavior를 숨기기 위해 쓰면 안 됩니다.
 
 ## Bottleneck Matching
 
-Resource requests should match the bottleneck:
+Resource request는 bottleneck과 맞아야 합니다.
 
-- CPU-bound: preprocessing, compression, data transforms, some feature extraction.
-- GPU-bound: dense tensor training, inference, docking kernels, geometric models.
-- Memory-bound: large batches, large graphs, high-resolution structures, data joins.
-- IO-bound: many small files, remote storage, checkpoint storms, dataset sharding.
-- Scheduler-bound: too many tiny jobs or oversized monolithic jobs.
+- CPU-bound: preprocessing, compression, data transform, 일부 feature extraction.
+- GPU-bound: dense tensor training, inference, docking kernel, geometric model.
+- Memory-bound: large batch, large graph, high-resolution structure, data join.
+- IO-bound: many small files, remote storage, checkpoint storm, dataset sharding.
+- Scheduler-bound: 너무 많은 tiny job 또는 oversized monolithic job.
 
-Requesting more GPUs does not help if data loading or CPU preprocessing is the bottleneck.
+Data loading이나 CPU preprocessing이 bottleneck이면 GPU를 더 요청해도 도움이 되지 않습니다.
 
 ## Array vs Monolith
 
-For independent shards, prefer job arrays:
+Independent shard에는 job array를 우선합니다.
 
 $$
 W
@@ -91,28 +91,28 @@ W
 W_i \cap W_j = \varnothing
 $$
 
-This makes failures smaller, improves scheduling flexibility, and reduces the cost of rerunning one failed shard.
+이 방식은 failure를 작게 만들고, scheduling flexibility를 높이며, failed shard 하나를 rerun하는 비용을 줄입니다.
 
-## Practical Heuristics
+## 실전 heuristic
 
-- Start with a small smoke run before a full training or screening job.
-- Increase memory only when logs or monitoring show memory pressure.
-- Request wall time based on measured iteration speed, not a guess.
-- Separate CPU-heavy preprocessing from GPU-heavy training when possible.
-- Record the final public-safe resource shape in [[infra/reproducibility/run-record|Reproducible run record]].
-- Keep GPU count, batch size, data-loader workers, and checkpoint interval consistent with measured throughput.
-- For public writeups, describe resource class generically instead of naming private cluster resources.
+- full training 또는 screening job 전에 small smoke run으로 시작합니다.
+- log나 monitoring이 memory pressure를 보여줄 때만 memory를 늘립니다.
+- wall time은 guess가 아니라 measured iteration speed에 기반해 요청합니다.
+- 가능하면 CPU-heavy preprocessing과 GPU-heavy training을 분리합니다.
+- final public-safe resource shape를 [[infra/reproducibility/run-record|Reproducible run record]]에 기록합니다.
+- GPU count, batch size, data-loader worker, checkpoint interval을 measured throughput과 일관되게 유지합니다.
+- public writeup에서는 private cluster resource 이름 대신 generic resource class를 설명합니다.
 
-## Checks
+## 확인할 것
 
-- Does the request match the bottleneck: CPU, GPU, memory, IO, or time?
-- Is the job too large to schedule quickly?
-- Can the workload be split into [[infra/hpc/job-array|job arrays]]?
-- Does the job checkpoint before wall-time limits?
-- Are cluster-specific values removed from public notes?
-- Was the request derived from a smoke run or previous measured run?
-- Is the wall-time estimate compatible with validation, checkpointing, and cleanup?
-- Is the request reproducible from the run record without exposing private infrastructure?
+- request가 CPU, GPU, memory, IO, time 중 bottleneck과 맞는가?
+- job이 빠르게 schedule되기엔 너무 큰가?
+- workload를 [[infra/hpc/job-array|job array]]로 나눌 수 있는가?
+- job이 wall-time limit 전에 checkpoint하는가?
+- public note에서 cluster-specific value를 제거했는가?
+- request가 smoke run 또는 이전 measured run에서 나온 것인가?
+- wall-time estimate가 validation, checkpointing, cleanup과 compatible한가?
+- private infrastructure를 노출하지 않고 run record에서 request를 재현할 수 있는가?
 
 ## Related
 

@@ -31,17 +31,17 @@ If a fact is missing from the provided source, write `to verify` instead of inve
 
 Keep the public entry points aligned with `content/index.md` and the Quartz Explorer:
 
+- `agents/`: Agent and workflow notes, grouped as below.
 - `ai/`: Korean gateway pages for broad AI foundations.
-- `molecular-modeling/`: Korean gateway pages shown publicly as Computational Biology, organized by modeling route rather than by listing every object as a peer. Keep the visible sidebar small: Objects and Entities, Sequence-Based Modeling, Molecular and Ligand Modeling, Interaction Modeling, Structure-Based Modeling, and Data and Evaluation. Keep `Computational Biology` as the public umbrella and reserve `Molecular Modeling` for the molecule/structure/docking-heavy subset. The stable content path may remain `molecular-modeling/`, but user-facing aliases should include `/computational-biology/...`; old `bio/` paths may remain only as aliases.
 - `math/`: Korean gateway pages for mathematical foundations.
+- `molecular-modeling/`: Korean gateway pages shown publicly as Computational Biology, organized by modeling route rather than by listing every object as a peer. Keep the visible sidebar small: Objects and Entities, Sequence-Based Modeling, Molecular and Ligand Modeling, Interaction Modeling, Structure-Based Modeling, and Data and Evaluation. Keep `Computational Biology` as the public umbrella and reserve `Molecular Modeling` for the molecule/structure/docking-heavy subset. The stable content path may remain `molecular-modeling/`, but user-facing aliases should include `/computational-biology/...`; old `bio/` paths may remain only as aliases.
 - `infra/`: Public infrastructure and HPC notes.
 - `research/`: Research-domain synthesis notes, only when the user has described the actual research direction.
 - `papers/`: Curated paper notes, not raw daily logs.
-- `agents/`: Agent and workflow notes, grouped as below.
 - `projects/`: Public project notes, artifacts, workflows, and implementation narratives.
 - `posts/`: Korean narrative blog posts.
 
-Public top-level navigation should stay small and stable. Do not add a new Explorer root for a concept family just because many notes exist. Prefer linking support folders from the nearest gateway page.
+Public top-level navigation should stay small and stable. Keep Agents first, then AI, Math, Computational Biology, and Infra. Put Research, Papers, Projects, and Posts after Infra so reader-facing and artifact areas do not crowd the core knowledge map. Do not add a new Explorer root for a concept family just because many notes exist. Prefer linking support folders from the nearest gateway page.
 
 Keep supporting wiki areas available for links, but do not expose every support folder as a main public area unless the user asks:
 

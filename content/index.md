@@ -10,8 +10,8 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 
 | Area | Use For |
 | --- | --- |
-| [AI](/ai) | machine learning, architectures, learning methods, generative models, evaluation, systems |
 | [Agents](/agents) | LLM agent concepts, product features, tools, workflows, verification |
+| [AI](/ai) | machine learning, architectures, learning methods, generative models, evaluation, systems |
 | [Math](/math) | formulas and mathematical tools needed to read AI notes |
 | [Computational Biology](/molecular-modeling) | focused notes on biological objects, sequence-based modeling, molecular and ligand modeling, interaction modeling, and structure-based workflows |
 | [Infra](/infra) | hardware, GPU, HPC, storage, reproducibility, server operations |

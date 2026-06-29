@@ -8,9 +8,9 @@ tags:
 
 # Slurm Job Script
 
-A Slurm job script should make resource assumptions, environment setup, logs, and failure behavior explicit. Public examples should use placeholders and avoid private partitions, accounts, hostnames, paths, or queue names.
+Slurm job script는 resource assumption, environment setup, log, failure behavior를 explicit하게 만들어야 합니다. Public example은 placeholder를 사용하고 private partition, account, hostname, path, queue name을 피해야 합니다.
 
-The script is the executable contract for a run:
+Script는 run을 위한 executable contract입니다.
 
 $$
 \text{job script}
@@ -26,7 +26,7 @@ $$
 \text{resume policy}
 $$
 
-## Generic Template
+## Generic template
 
 ```bash
 #!/usr/bin/env bash
@@ -47,9 +47,9 @@ mkdir -p logs
 python train.py --config configs/example.yaml
 ```
 
-## Safer Template Shape
+## 더 안전한 template 형태
 
-For longer jobs, make the run directory, config, and checkpoint behavior explicit:
+긴 job에서는 run directory, config, checkpoint behavior를 explicit하게 둡니다.
 
 ```bash
 #!/usr/bin/env bash
@@ -78,39 +78,39 @@ python train.py \
 echo "finished_at=$(date -Is)"
 ```
 
-Use placeholders in public notes. Do not publish private partition names, account names, node names, hostnames, internal paths, SSH details, or project-specific allocations.
+Public note에서는 placeholder를 씁니다. Private partition name, account name, node name, hostname, internal path, SSH detail, project-specific allocation을 공개하지 않습니다.
 
-## Failure Behavior
+## Failure behavior
 
-`set -euo pipefail` catches common script failures:
+`set -euo pipefail`은 흔한 script failure를 잡습니다.
 
-- `-e`: stop on command failure.
-- `-u`: stop on unset variables.
-- `-o pipefail`: fail a pipeline if any command fails.
+- `-e`: command failure에서 멈춥니다.
+- `-u`: unset variable에서 멈춥니다.
+- `-o pipefail`: pipeline 안의 command 하나라도 실패하면 pipeline을 실패로 처리합니다.
 
-This does not replace application-level error handling. Training code still needs explicit checkpoint, resume, and artifact validation logic.
+이 설정은 application-level error handling을 대체하지 않습니다. Training code에는 여전히 explicit checkpoint, resume, artifact validation logic이 필요합니다.
 
-## Log Contract
+## Log contract
 
-Logs should identify:
+Log는 아래를 식별해야 합니다.
 
 $$
 (\text{job id},\ \text{job name},\ \text{config},\ \text{commit},\ \text{start time},\ \text{exit state})
 $$
 
-The public version can describe these fields without exposing private paths or cluster-specific identifiers.
+Public version은 private path나 cluster-specific identifier를 노출하지 않고 이 field를 설명할 수 있습니다.
 
-## Checks
+## 확인할 것
 
-- Does the script fail fast with `set -euo pipefail`?
-- Are logs named with job name and job id?
-- Are CPU, memory, GPU, and wall-time assumptions explicit?
-- Does the command run from the submitted project directory?
-- Is resume behavior documented for jobs that may hit time limits?
-- Are output, checkpoint, and artifact directories created before the main command?
-- Are environment activation and dependency versions reproducible?
-- Is the script generic enough for public notes, with private cluster values removed?
-- Is completion checked with an artifact or manifest, not only a successful process exit?
+- script가 `set -euo pipefail`로 빠르게 실패하는가?
+- log가 job name과 job id로 이름 붙는가?
+- CPU, memory, GPU, wall-time assumption이 explicit한가?
+- command가 submitted project directory에서 실행되는가?
+- time limit에 걸릴 수 있는 job의 resume behavior가 문서화되어 있는가?
+- main command 전에 output, checkpoint, artifact directory를 생성하는가?
+- environment activation과 dependency version이 reproducible한가?
+- private cluster value를 제거한 public note용 generic script인가?
+- completion을 successful process exit만이 아니라 artifact 또는 manifest로 확인하는가?
 
 ## Related
 

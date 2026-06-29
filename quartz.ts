@@ -5,8 +5,8 @@ ExternalPlugin.Explorer({
   filterFn: (node) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = [
-      "ai",
       "agents",
+      "ai",
       "math",
       "molecular-modeling",
       "infra",
@@ -110,8 +110,8 @@ ExternalPlugin.Explorer({
   sortFn: (a, b) => {
     // Explorer serializes callbacks into HTML, so keep required values inside the callback.
     const explorerRoots = [
-      "ai",
       "agents",
+      "ai",
       "math",
       "molecular-modeling",
       "infra",

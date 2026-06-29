@@ -7,21 +7,21 @@ tags:
 
 # Project Note Format
 
-A project note explains a public artifact or workflow as a reusable engineering story. It should be useful without private repository paths, server details, internal task names, or unpublished experimental results.
+Project note는 public artifact나 workflow를 재사용 가능한 engineering story로 설명합니다. Private repository path, server detail, internal task name, unpublished experimental result 없이도 유용해야 합니다.
 
-## Role
+## 역할
 
-Use a project note when the page is about something being built or operated:
+Page가 만들고 있거나 운영 중인 것을 다룰 때 project note를 씁니다.
 
-- A research pipeline.
-- A public tool or template.
-- An agent workflow.
-- A reproducible infrastructure pattern.
-- A blog/wiki maintenance system.
+- research pipeline.
+- public tool 또는 template.
+- agent workflow.
+- reproducible infrastructure pattern.
+- blog/wiki maintenance system.
 
-Use a concept note instead when the page is mainly a reusable definition. Use a paper note when the page is mainly about one paper.
+Page의 중심이 reusable definition이면 concept note를 씁니다. Paper 하나가 중심이면 paper note를 씁니다.
 
-Use [[projects/project-lifecycle|Project lifecycle]] to decide whether the page is an idea, draft, artifact, verified project, maintained project, or archive.
+Page가 idea, draft, artifact, verified project, maintained project, archive 중 어디에 있는지는 [[projects/project-lifecycle|Project lifecycle]]로 판단합니다.
 
 ## Minimal Model
 
@@ -29,64 +29,64 @@ $$
 P = (q, a, d, m, v, b)
 $$
 
-where:
+여기서:
 
-- $q$ is the public problem or question.
-- $a$ is the artifact: code, workflow, note system, pipeline, or runbook.
-- $d$ is the public data or input boundary.
-- $m$ is the method or design.
-- $v$ is the verification evidence.
-- $b$ is the public boundary: what must not be exposed.
+- $q$는 public problem 또는 question입니다.
+- $a$는 code, workflow, note system, pipeline, runbook 같은 artifact입니다.
+- $d$는 public data 또는 input boundary입니다.
+- $m$은 method 또는 design입니다.
+- $v$는 verification evidence입니다.
+- $b$는 공개하면 안 되는 public boundary입니다.
 
-## Suggested Sections
+## 권장 section
 
 ### Problem
 
-State the problem in a way that does not depend on private context.
+Private context에 의존하지 않는 방식으로 problem을 적습니다.
 
 ### Artifact
 
-Describe what exists or what is being built: a pipeline, note system, runbook, agent workflow, or tool.
+이미 존재하는 것 또는 만들고 있는 것을 설명합니다. Pipeline, note system, runbook, agent workflow, tool이 여기에 해당합니다.
 
-For model or inference artifacts, link the public [[concepts/systems/model-card|Model card]] and [[concepts/systems/inference-contract|Inference contract]] when applicable.
+Model 또는 inference artifact라면 필요할 때 public [[concepts/systems/model-card|Model card]]와 [[concepts/systems/inference-contract|Inference contract]]를 연결합니다.
 
-For released or withheld artifacts, use [[projects/project-artifact-release|Project artifact release]].
+Released 또는 withheld artifact는 [[projects/project-artifact-release|Project artifact release]]를 사용합니다.
 
 ### Public Boundary
 
-State what the note intentionally omits:
+Note가 의도적으로 생략하는 것을 적습니다.
 
-- Private paths, hostnames, account names, SSH details, credentials, and user lists.
-- Internal project names or collaborator-specific context.
-- Private datasets, unpublished metrics, and thesis-sensitive results.
+- private path, hostname, account name, SSH detail, credential, user list.
+- internal project name 또는 collaborator-specific context.
+- private dataset, unpublished metric, thesis-sensitive result.
 
 ### Design
 
-Explain the interfaces, constraints, and design decisions. Link to concepts rather than repeating full definitions.
+Interface, constraint, design decision을 설명합니다. 전체 definition을 반복하기보다 concept로 link합니다.
 
 ### Verification
 
-Record public checks:
+Public check를 기록합니다.
 
-- Build or syntax check.
-- Unit, integration, or smoke test.
-- Manual review checklist.
-- Reproducibility check.
-- Known limitation.
+- build 또는 syntax check.
+- unit, integration, smoke test.
+- manual review checklist.
+- reproducibility check.
+- known limitation.
 
 ### Status
 
-Use a small status vocabulary:
+작은 status vocabulary를 씁니다.
 
-- `idea`: useful direction, not implemented.
-- `draft`: structure exists but needs evidence.
-- `active`: being used or iterated.
-- `paused`: useful but not current.
-- `archived`: kept for reference.
+- `idea`: 유용한 방향이지만 아직 구현되지 않음.
+- `draft`: 구조는 있지만 evidence가 더 필요함.
+- `active`: 사용 중이거나 반복 개선 중.
+- `paused`: 유용하지만 현재 진행 중은 아님.
+- `archived`: reference로 보관.
 
 ### Next Work
 
-List the next public improvement, not a private task tracker.
+Private task tracker가 아니라 다음 public improvement를 적습니다.
 
 ## Template
 
@@ -133,17 +133,17 @@ Current state.
 - [[projects/index|Projects]]
 ```
 
-## Promotion Rule
+## Promotion rule
 
-A project note is ready for public linking when:
+Project note는 아래 조건을 만족할 때 public linking에 적합합니다.
 
-- The problem is understandable without private context.
-- The artifact has a clear interface or workflow.
-- Model or inference artifacts have a clear model card or inference contract when applicable.
-- Verification is stated separately from aspiration.
-- Risks and missing evidence are explicit.
-- Related concept, paper, infra, or agent notes are linked.
-- Artifact release status is explicit: `released`, `not released`, `to verify`, `not applicable`, or `replaced by summary`.
+- problem이 private context 없이 이해됩니다.
+- artifact에 clear interface 또는 workflow가 있습니다.
+- model 또는 inference artifact에는 필요할 때 clear model card 또는 inference contract가 있습니다.
+- verification이 aspiration과 분리되어 적혀 있습니다.
+- risk와 missing evidence가 explicit합니다.
+- related concept, paper, infra, agent note가 link되어 있습니다.
+- artifact release status가 `released`, `not released`, `to verify`, `not applicable`, `replaced by summary` 중 하나로 explicit합니다.
 
 ## Related
 
