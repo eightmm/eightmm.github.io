@@ -10,6 +10,20 @@ tags:
 
 Slurm is a workload manager used to submit, schedule, monitor, and cancel jobs on shared compute clusters. This page keeps public, non-sensitive workflow notes only.
 
+Slurm note의 핵심은 command 암기가 아니라 job과 scheduler 사이의 contract를 읽는 것입니다.
+
+$$
+\text{job}
+=
+\text{script}
++ \text{resource request}
++ \text{environment}
++ \text{artifacts}
++ \text{exit evidence}
+$$
+
+공유 cluster에서는 같은 코드도 resource request, queue state, environment, IO path에 따라 전혀 다른 run이 됩니다. 그래서 Slurm 글은 “어떻게 제출했는가”보다 “무엇을 요청했고, 무엇이 실제로 실행됐고, 무엇으로 완료를 확인했는가”를 남깁니다.
+
 ## Public Checklist
 
 - Use generic examples instead of private cluster names.
@@ -19,12 +33,43 @@ Slurm is a workload manager used to submit, schedule, monitor, and cancel jobs o
 
 ## Generic Commands
 
+명령어는 상태를 직접 증명하지 않습니다. 각 command가 어떤 evidence를 주는지 분리해서 봅니다.
+
+| Command | Use for | Does not prove |
+| --- | --- | --- |
+| `sinfo` | cluster resource and partition state at query time | your job will start soon |
+| `squeue` | pending/running/cancelled job state | output correctness |
+| `sbatch job.sbatch` | job submission and job id creation | script will finish successfully |
+| `scancel <job-id>` | cancellation request | artifact cleanup or rollback |
+| `sacct` | historical job accounting when available | application-level success |
+| `tail logs/...` | recent stdout/stderr evidence | complete artifact validity |
+
 ```bash
 sinfo
 squeue
 sbatch job.sbatch
 scancel <job-id>
 ```
+
+## Job State Reading
+
+| State question | Start |
+| --- | --- |
+| What did the script request? | [Resource request](/infra/hpc/resource-request), [Slurm job script](/infra/hpc/slurm-job-script) |
+| Why is the job pending? | [Resource scheduling](/concepts/systems/resource-scheduling) |
+| Did the job run with the expected environment? | [Environments](/infra/environments), [Environment modules and containers](/infra/environments/modules-containers) |
+| Did the job write complete artifacts? | [Reproducible run record](/infra/reproducibility/run-record), [Job reconciliation](/infra/hpc/job-reconciliation) |
+| Can it resume after failure or preemption? | [Checkpointing](/infra/hpc/checkpointing), [Preemption and resume](/infra/hpc/preemption-resume) |
+
+## Common Failure Shapes
+
+| Symptom | First check |
+| --- | --- |
+| Job stays pending | request size, wall time, dependency, scheduler policy |
+| Job starts then fails immediately | shell options, environment activation, missing files, permissions |
+| GPU allocated but idle | data loading, device visibility, process launch, CPU bottleneck |
+| OOM or killed job | memory request, batch size, checkpoint interval, data shape |
+| Output exists but result is suspicious | exit code, manifest, logs, validation, seed/config mismatch |
 
 ## Reproducibility Notes
 
