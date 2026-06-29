@@ -28,6 +28,16 @@ where $u$ is a user, $G(u)$ is the set of groups for that user, and `policy` rec
 - Admin boundary: who can change users, groups, quotas, drivers, or services.
 - Publish boundary: what can leave the private environment and enter public notes.
 
+## Decision Table
+
+| Resource | Main Risk | Public Check |
+| --- | --- | --- |
+| Dataset | Private data leaks into a broader group | State the intended audience and split read/write locations |
+| Checkpoint | Large artifact is overwritten or copied without context | Record owner, run id, and lifecycle stage |
+| Logs | Paths, usernames, prompts, or unpublished metrics leak | Sanitize before linking from public notes |
+| Job queue | Users run under the wrong allocation or priority | Keep scheduler policy generic and link [Resource request](/infra/hpc/resource-request) |
+| Published note | Internal operational detail becomes searchable | Review against [Sanitization checklist](/logs/sanitization-checklist) |
+
 ## Practical Checks
 
 - Is access granted through groups instead of one-off permissions?
@@ -36,6 +46,10 @@ where $u$ is a user, $G(u)$ is the set of groups for that user, and `policy` rec
 - Does public documentation remove usernames, group names, private paths, hostnames, and ports?
 - Is there an offboarding path that removes access without breaking reproducibility?
 - Are public artifacts checked against [[logs/sanitization-checklist|Sanitization checklist]] before publishing?
+
+## Failure Pattern
+
+Most access incidents come from boundary drift: a temporary permission becomes normal, a copied artifact keeps old group ownership, or a public note inherits raw internal details. Treat access as part of the artifact lifecycle, not as a one-time command.
 
 ## Related
 

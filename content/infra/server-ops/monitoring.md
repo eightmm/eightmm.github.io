@@ -24,6 +24,16 @@ $$
 
 For public notes, keep signals generic and remove live dashboard details.
 
+## Signal Map
+
+| Signal | Usually Indicates | First Question |
+| --- | --- | --- |
+| GPU memory high, utilization low | reserved but idle process, data stall, or blocked kernel | Is the process making progress? |
+| CPU high, GPU low | preprocessing or dataloader bottleneck | Is input throughput limiting the step? |
+| Disk near full | failed writes, broken checkpoints, or slow jobs | Which artifact class is growing? |
+| IO wait high | shared storage contention or poor access pattern | Is data streamed from the wrong storage class? |
+| Temperature or power throttling | hardware cooling or power limit | Is performance degraded across jobs? |
+
 ## Practical Checks
 
 - Watch GPU memory and utilization to spot idle reservations and runaway jobs.
@@ -33,6 +43,10 @@ For public notes, keep signals generic and remove live dashboard details.
 - Keep dashboards internal — do not expose hostnames, ports, or live metrics publicly.
 - Separate training metrics from system metrics so model behavior is not confused with resource contention.
 - Save enough context to connect an incident note with [[concepts/systems/observability|Observability]] without exposing private systems.
+
+## Public Boundary
+
+Use qualitative summaries such as `GPU memory pressure`, `storage contention`, or `quota risk`. Do not publish real dashboard URLs, hostnames, ports, process tables, usernames, live utilization, or incident timestamps that identify a private system.
 
 ## Related
 

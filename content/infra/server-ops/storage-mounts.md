@@ -20,6 +20,15 @@ $$
 
 Training code should not treat these classes as interchangeable.
 
+## Storage Classes
+
+| Class | Good For | Risk |
+| --- | --- | --- |
+| Local scratch | temporary features, cache, short-lived intermediates | data loss after cleanup or node failure |
+| Shared project storage | durable configs, manifests, selected outputs | contention and permission drift |
+| Home directory | small personal config and notes | quota pressure and poor sharing semantics |
+| Object/archive storage | large durable artifacts or releases | slower random access and restore delay |
+
 ## Practical Checks
 
 - Confirm the expected path is actually mounted before debugging the program.
@@ -29,6 +38,14 @@ Training code should not treat these classes as interchangeable.
 - Use placeholders such as `/path/to/project` in public notes; never publish real topology.
 - Record whether an artifact is durable, scratch, recomputable, or backed up.
 - Test restore for irreplaceable metadata instead of assuming a copy is usable.
+
+## Debugging Order
+
+1. Confirm the path exists and the expected storage class is mounted.
+2. Check read/write permission at the directory where the job writes outputs.
+3. Check quota, free space, and inode availability before changing code.
+4. Run a small read/write smoke check with a placeholder path.
+5. Record the artifact class in [[infra/reproducibility/run-record|Reproducible run record]].
 
 ## Related
 
