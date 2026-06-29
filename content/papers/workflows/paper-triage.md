@@ -47,8 +47,8 @@ where $p$ is a candidate paper.
 | [LLM papers](/papers/llm) | language modeling, context, retrieval, instruction tuning, alignment, tool use |
 | [Generative model papers](/papers/generative-models) | diffusion, flow, molecule/protein generation, sampling objectives |
 | [Computational Biology papers](/papers/computational-biology) | structure-based modeling, protein modeling, molecular generation, domain evaluation |
-| [Learning method papers](/papers/learning-methods) | SSL, contrastive learning, JEPA, fine-tuning, preference/RL-style objectives |
-| [Systems papers](/papers/systems) | training efficiency, inference, tooling, agents, reproducibility |
+| [Learning method papers](/papers/learning-methods) | use when the strongest claim is the training signal itself; otherwise route through Architecture, LLM, Generative, or Computational Biology papers |
+| [Systems papers](/papers/systems) | use when the strongest claim is runtime, tooling, or reproducibility; otherwise route through the domain paper shelf |
 | Concept update only | math-heavy or method-definition paper where no paper-specific note is needed |
 
 Narrow support buckets such as [[papers/sbdd/index|Structure-based modeling papers]] and [[papers/protein-modeling/index|Protein modeling papers]] can hold stable domain-specific notes, but the visible sidebar should route readers through [[papers/computational-biology/index|Computational Biology papers]] first.
