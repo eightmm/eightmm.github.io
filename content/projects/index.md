@@ -43,6 +43,15 @@ Project page는 목표, interface, 설계 결정, 검증 방법, 공개 artifact
 | [Paper brief agent pipeline](/projects/paper-brief-agent-pipeline) | paper discovery and curation workflow |
 | [HPC research workflows](/projects/hpc-research-workflows) | reproducible research engineering on shared compute |
 
+## 공개 상태
+
+| Status | 의미 |
+| --- | --- |
+| `active` | 실제로 운영하거나 계속 개선 중인 public-safe artifact가 있음 |
+| `draft` | artifact boundary는 있지만 검증이나 공개 범위가 더 필요함 |
+| `idea` | 아직 project page가 아니라 후보 질문 또는 방향 |
+| `archived` | 더 이상 진행하지 않지만 reference로 보관 |
+
 ## 형식
 
 | 필요 | 형식 |
@@ -53,9 +62,11 @@ Project page는 목표, interface, 설계 결정, 검증 방법, 공개 artifact
 | Research decision | [Decision record](/concepts/research-methodology/decision-record), [Experiment ledger](/concepts/research-methodology/experiment-ledger) |
 | Paper reproduction | [Implementation readiness](/papers/reproducibility/implementation-readiness), [Reproduction result](/papers/reproducibility/reproduction-result) |
 
-## 후보
+## Project Seeds
 
-| 후보 | 방향 |
+아래 항목은 아직 project note가 아닙니다. 구현물, workflow, public artifact boundary가 생기면 Projects로 승격하고, 질문만 남아 있으면 [[research/index|Research]]에 둡니다.
+
+| Seed | 방향 |
 | --- | --- |
 | Structure-based screening pipeline | connect SBDD workflow, scoring, and evaluation |
 | Protein-modeling experiment template | standardize representation, split, metric, and run records |

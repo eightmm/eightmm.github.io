@@ -14,6 +14,12 @@ tags:
 
 Artifact는 research compute run을 설계, 제출, 모니터링, 종료하는 재사용 가능한 workflow입니다.
 
+## Status
+
+Lifecycle status: `draft`.
+
+This is a public workflow note, not a released software package. The artifact is the reusable checklist and note structure for safe research compute work.
+
 ## Problem
 
 Research run은 model 자체보다 주변 workflow가 약해서 실패하는 경우가 많습니다. 예를 들면 resource request가 불명확하거나, checkpoint가 없거나, environment가 추적되지 않거나, failure log가 부족한 경우입니다.
@@ -36,6 +42,13 @@ Note는 일반화된 형태로 유지합니다. 실제 server name, IP, account 
 - Generic Slurm/HPC pattern: public.
 - Private cluster topology, account name, job ID, hostname, path, live metric: not released.
 - Unpublished experiment result: public-safe method note로 변환하기 전에는 not released.
+
+| Artifact | Release status |
+| --- | --- |
+| Generic workflow checklist | released |
+| Example run record fields | released |
+| Cluster-specific scripts, hostnames, queues, paths | not released |
+| Private experiment logs or metrics | not released |
 
 ## Checks
 
