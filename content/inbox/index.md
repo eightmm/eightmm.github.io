@@ -7,14 +7,14 @@ tags:
 
 # Inbox
 
-Inbox notes hold sanitized daily candidates before they become curated paper notes, concept notes, research notes, or posts.
+Inbox note는 daily candidate가 curated paper note, concept note, research note, post가 되기 전에 임시로 머무는 public-safe 공간입니다.
 
-## Use For
+## 용도
 
-- Daily paper briefs.
-- Candidate papers not yet read.
-- Short follow-up queues.
-- Notes that need verification before public synthesis.
+- daily paper brief.
+- 아직 읽지 않은 candidate paper.
+- 짧은 follow-up queue.
+- public synthesis 전에 검증이 필요한 note.
 
 ## Workflow
 
@@ -25,12 +25,12 @@ Inbox notes hold sanitized daily candidates before they become curated paper not
 - [[inbox/publishing-gate|Publishing gate]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
 
-## Status Labels
+## 상태 label
 
-- `inbox`: collected but not curated.
-- `stub`: minimal public note.
-- `reading`: selected for closer reading.
-- `draft`: being shaped into a post or synthesis note.
+- `inbox`: 모았지만 아직 curate하지 않음.
+- `stub`: 최소 공개 note.
+- `reading`: 더 읽기로 선택함.
+- `draft`: post 또는 synthesis note로 다듬는 중.
 
 ## Daily Brief Template
 
