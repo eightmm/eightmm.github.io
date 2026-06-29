@@ -80,7 +80,7 @@ $$
 | Protein-ligand complex | protein context, ligand context, pocket, pose, interaction, split on both axes | [Structure-based modeling](/molecular-modeling/structure-based) |
 | Docking or virtual screening | receptor/ligand preparation, pose generation, scoring, filtering, enrichment metric | [Docking](/molecular-modeling/docking) |
 | Geometry-heavy model | coordinate frame, invariant/equivariant target, rotation/translation behavior, leakage risk | [Geometry for Structure Modeling](/molecular-modeling/geometry-for-structure-modeling) |
-| Genome sequence model | region, k-mer, variant, sequence context, split and annotation boundary | [Genome](/molecular-modeling/genome) |
+| Genome sequence model | region, k-mer, variant, sequence context, split and annotation boundary | [Genome Sequence Modeling](/molecular-modeling/genome) |
 | Computational biology benchmark | label semantics, assay/source, split unit, leakage, baseline, metric | [Data and evaluation](/molecular-modeling/data-evaluation) |
 | Benchmark trap | negative construction, activity cliffs, applicability domain, assay harmonization, measurement ceiling | [Negative set](/concepts/evaluation/negative-set), [Activity cliff](/concepts/evaluation/activity-cliff), [Applicability domain](/concepts/evaluation/applicability-domain), [Assay harmonization](/concepts/evaluation/assay-harmonization), [Boltzmann ceiling analysis](/concepts/evaluation/boltzmann-ceiling) |
 

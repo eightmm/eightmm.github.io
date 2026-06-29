@@ -26,7 +26,7 @@ $$
 | --- | --- | --- |
 | 어떤 sequence object를 모델링하는가? | [Objects and Entities](/molecular-modeling/entities), [Sequence](/entities/sequence) | sequence가 protein chain, genome window, variant context, derived token stream일 수 있음 |
 | protein sequence modeling인가? | [Proteins](/molecular-modeling/proteins), [Protein](/entities/protein) | homolog leakage, isoform choice, construct, mutation, truncation |
-| genome-level sequence modeling인가? | [Genome](/molecular-modeling/genome), [Genome](/entities/genome) | reference coordinate mismatch, duplicated window, annotation leakage |
+| genome-level sequence modeling인가? | [Genome Sequence Modeling](/molecular-modeling/genome), [Genome](/entities/genome) | reference coordinate mismatch, duplicated window, annotation leakage |
 | representation이 learned인가 fixed인가? | [Embedding](/concepts/architectures/embedding), [Tokenization](/concepts/architectures/tokenization) | pooling과 token policy가 claim을 바꿀 수 있음 |
 | 어떤 split이 claim을 지지하는가? | [Protein family split](/concepts/evaluation/protein-family-split), [Leakage](/concepts/evaluation/leakage) | random row split이 generalization을 과장할 수 있음 |
 
@@ -35,7 +35,7 @@ $$
 | Area | Use for | Start |
 | --- | --- | --- |
 | Protein sequence | protein language models, mutation effect, family-aware representation, sequence-to-function | [Proteins](/molecular-modeling/proteins) |
-| Genome sequence | genome window, k-mer, annotation, variant-effect prediction | [Genome](/molecular-modeling/genome) |
+| Genome sequence | genome window, k-mer, annotation, variant-effect prediction | [Genome Sequence Modeling](/molecular-modeling/genome) |
 | Sequence representation | tokenization, embedding, pooling, sequence length, context window | [Sequence](/concepts/modalities/sequence) |
 | Sequence evaluation | family split, near-duplicate control, label-source boundary | [Data and Evaluation](/molecular-modeling/data-evaluation) |
 
@@ -84,6 +84,6 @@ Primary input이 sequence이면 이 페이지에서 시작합니다. Coordinate,
 - [[molecular-modeling/index|Computational Biology]]
 - [[molecular-modeling/entities|Objects and entities]]
 - [[molecular-modeling/proteins|Proteins]]
-- [[molecular-modeling/genome|Genome]]
+- [[molecular-modeling/genome|Genome Sequence Modeling]]
 - [[ai/architectures|Architectures]]
 - [[ai/learning-methods|Learning methods]]

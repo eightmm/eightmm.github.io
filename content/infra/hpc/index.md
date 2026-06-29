@@ -14,6 +14,7 @@ HPC note는 shared compute에서 반복되는 scheduling, resource request, Slur
 ## Core Workflow
 
 - [[infra/hpc/slurm|Slurm]]
+- [[infra/hpc/slurm-accounting-limits|Slurm Accounting and Limits]]
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[infra/hpc/resource-request|Resource request]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]
@@ -35,6 +36,7 @@ HPC note는 job이 어디에서 멈췄는지 먼저 분류합니다.
 | Running | CPU/GPU/memory/IO가 의도한 대로 쓰이는가? |
 | Checkpoint | walltime, preemption, crash 후 resume 가능한가? |
 | Finish | output, logs, artifacts, exit code가 reconciliation 되었는가? |
+| Accounting | fair-share, QOS, association, group limits가 정책과 맞는가? |
 
 ## Related Systems
 

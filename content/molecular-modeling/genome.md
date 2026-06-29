@@ -1,7 +1,8 @@
 ---
-title: Genome
+title: Genome Sequence Modeling
 aliases:
   - computational-biology/genome
+  - computational-biology/genome-sequence-modeling
   - bio/genome
 tags:
   - computational-biology
@@ -9,9 +10,11 @@ tags:
 ---
 
 
-# Genome
+# Genome Sequence Modeling
 
 Genome-level note는 이 블로그에서 좁게 유지합니다. 목표는 broad omics coverage가 아니라 representation learning 또는 biological sequence modeling과 연결될 수 있는 sequence, region, k-mer, annotation, variant-effect 개념을 정리하는 것입니다.
+
+This page is the route for genome sequence modeling. The object definition lives in [[entities/genome|Genome]]; this page is about how genome sequence, region, k-mer, annotation, or variant context becomes a modeling problem.
 
 $$
 x_{\mathrm{genome}}
@@ -97,5 +100,6 @@ Genome note는 coordinate assumption을 명시적으로 기록해야 합니다.
 ## Related
 
 - [[molecular-modeling/index|Computational Biology]]
+- [[entities/genome|Genome]]
 - [[ai/learning-methods|Learning methods]]
 - [[concepts/modalities/sequence|Sequence]]

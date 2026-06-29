@@ -56,6 +56,7 @@ scancel <job-id>
 | State question | Start |
 | --- | --- |
 | What did the script request? | [Resource request](/infra/hpc/resource-request), [Slurm job script](/infra/hpc/slurm-job-script) |
+| What limits or accounting policy apply? | [Slurm Accounting and Limits](/infra/hpc/slurm-accounting-limits) |
 | Why is the job pending? | [Resource scheduling](/concepts/systems/resource-scheduling) |
 | Did the job run with the expected environment? | [Environments](/infra/environments), [Environment modules and containers](/infra/environments/modules-containers) |
 | Did the job write complete artifacts? | [Reproducible run record](/infra/reproducibility/run-record), [Job reconciliation](/infra/hpc/job-reconciliation) |
@@ -85,6 +86,7 @@ scancel <job-id>
 
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[infra/hpc/resource-request|Resource request]]
+- [[infra/hpc/slurm-accounting-limits|Slurm Accounting and Limits]]
 - [[infra/hpc/job-array|Job array]]
 - [[infra/hpc/preemption-resume|Preemption and resume]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]

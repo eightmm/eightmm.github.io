@@ -28,6 +28,7 @@ $$
 - [[infra/gpu/index#memory|Memory]]
 - [[infra/gpu/index#utilization|Utilization]]
 - [[infra/gpu/index#driver-and-cuda|Driver and CUDA]]
+- [[infra/server-ops/operations-command-cookbook|Operations Command Cookbook]]
 
 ## Bottleneck taxonomy
 
@@ -133,6 +134,7 @@ $$
 실전 check:
 
 - framework를 의심하기 전에 driver가 GPU를 보는지 확인합니다.
+- GPU Xid나 PCI/UUID mapping은 raw log와 asset inventory를 그대로 공개하지 말고 sanitized command pattern으로만 남깁니다.
 - system toolkit만 보지 말고 framework에 bundled된 CUDA runtime을 확인합니다.
 - driver가 보고하는 CUDA version은 runtime compatibility의 상한으로 봅니다.
 - driver upgrade 뒤에는 test 전에 reboot하거나 kernel module을 reload합니다.
