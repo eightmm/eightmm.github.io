@@ -20,6 +20,8 @@ X' = RX + t,
 R \in SO(3),\; t \in \mathbb{R}^3
 $$
 
+순수 수학으로서의 symmetry와 group action은 [[math/geometry-symmetry|Geometry and Symmetry]]에 둡니다. 이 페이지는 그 언어를 protein, ligand, pocket, complex의 structure modeling claim에 적용하는 gateway입니다.
+
 ## Core Objects
 
 | Object | Meaning | Route |
@@ -30,6 +32,16 @@ $$
 | Group action | rotation, translation, permutation이 object에 작용하는 방식 | [Symmetry group](/concepts/math/symmetry-group) |
 | Invariance | input이 변해도 output scalar가 보존됨 | [Equivariance](/concepts/geometric-deep-learning/equivariance) |
 | Equivariance | input transform에 맞춰 output도 transform됨 | [Equivariance](/concepts/geometric-deep-learning/equivariance) |
+
+## Quantity Type
+
+| Quantity | Transform behavior | Example |
+| --- | --- | --- |
+| Scalar invariant | $s(RX+t)=s(X)$ | affinity, energy, RMSD after alignment |
+| Vector equivariant | $v(RX+t)=Rv(X)$ | force, displacement |
+| Coordinate equivariant | $Y(RX+t)=RY(X)+t$ | generated pose, denoised coordinates |
+| Pair distance | unchanged by rigid motion | contact, distance matrix |
+| Local frame | rotates with structure | residue frame, ligand frame |
 
 ## Structure Claim Map
 
@@ -61,11 +73,19 @@ $$
 g(RX+t)=Rg(X)+t
 $$
 
+Force-like vector:
+
+$$
+F_i(RX+t)=R F_i(X)
+$$
+
 Coordinate update:
 
 $$
 X^{(k+1)} = X^{(k)} + \Delta X_\theta(H^{(k)}, X^{(k)}, E)
 $$
+
+If $\Delta X_\theta$ is coordinate displacement, it must transform equivariantly under rotation. If the model predicts only a scalar score, the score should be invariant to global rigid motion.
 
 ## Leakage Checks
 

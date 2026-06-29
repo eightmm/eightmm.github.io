@@ -21,6 +21,8 @@ $$
 Q = \mathbb{E}_{(x,y)\sim p} q(x,y,f_\theta)
 $$
 
+첫 질문은 “이 수식이 어려운가”가 아니라 “이 수식이 어떤 quantity를 정의하는가”입니다. 정의식, objective, estimator, metric, algorithm update를 구분하면 대부분의 논문 수식은 읽기 쉬워집니다.
+
 ## Reading Order
 
 | Step | Ask | Route |
@@ -32,6 +34,17 @@ $$
 | Objective | loss, likelihood, score, reward, energy, constraint 중 무엇인가? | [Information and Likelihood](/math/information-likelihood) |
 | Estimate | population quantity와 finite-sample estimate가 분리되어 있는가? | [Estimator vs metric](/concepts/math/estimator-vs-metric) |
 | Claim | 이 식이 architecture, training, generation, evaluation, domain workflow 중 무엇을 뒷받침하는가? | [Model Reading Map](/ai/model-reading-map) |
+
+## Formula Type
+
+| Type | 형태 | 읽는 법 |
+| --- | --- | --- |
+| Definition | $z=h_\theta(x)$ | symbol과 shape를 고정 |
+| Objective | $\min_\theta \mathcal{L}(\theta)$ | 무엇을 낮추는지 확인 |
+| Estimator | $\hat{Q}=\frac{1}{n}\sum_i q_i$ | finite sample과 population 구분 |
+| Update | $\theta_{t+1}=\theta_t-\eta\nabla_\theta \mathcal{L}$ | state transition으로 읽기 |
+| Constraint | $g(x)\le 0$ 또는 $x\in\mathcal{S}$ | feasible set 확인 |
+| Metric | $m(\hat{y},y)$ | claim과 metric alignment 확인 |
 
 ## Formula by Claim Type
 
@@ -58,6 +71,20 @@ $$
 | $\hat{y}_i=f_\theta(x_i)$ | model output |
 | $\mathcal{L}_i$ | per-example training loss |
 | $m_i$ | per-example evaluation contribution |
+
+## Shape Check
+
+수식이 맞아 보이는지 빠르게 확인하려면 shape를 씁니다.
+
+$$
+X \in \mathbb{R}^{B \times N \times d},
+\qquad
+W_Q \in \mathbb{R}^{d \times d_h},
+\qquad
+Q = XW_Q \in \mathbb{R}^{B \times N \times d_h}
+$$
+
+행렬곱, sum, expectation, norm의 결과 shape가 claim과 맞지 않으면 notation이 생략되었거나 수식 이해가 틀린 것입니다.
 
 ## Related
 
