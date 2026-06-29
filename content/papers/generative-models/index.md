@@ -34,7 +34,7 @@ Generative model paper note는 sample, transform, denoise, decode, structured ob
 
 ## Related
 
-- [[ai/generative-models|Generative models gateway]]
+- [[ai/generative-models|Generative models]]
 - [[papers/computational-biology/index|Computational Biology papers]]
 - [[concepts/evaluation/metric|Metric]]
 - [[papers/analysis/claim-extraction|Claim extraction]]

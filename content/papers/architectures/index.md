@@ -23,7 +23,7 @@ Architecture paper note는 attention, convolution, recurrence, graph neural netw
 
 ## Concepts
 
-- [[ai/architectures|Architectures gateway]]
+- [[ai/architectures|Architectures]]
 - [[concepts/architectures/index|Architecture concepts]]
 - [[concepts/architectures/architecture-selection|Architecture selection]]
 - [[concepts/architectures/inductive-bias|Inductive bias]]

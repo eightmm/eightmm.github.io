@@ -35,7 +35,7 @@ Learning method paper note는 objective, pretraining signal, transfer, fine-tuni
 
 ## Related
 
-- [[ai/learning-methods|Learning methods gateway]]
+- [[ai/learning-methods|Learning methods]]
 - [[concepts/evaluation/leakage|Leakage]]
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]

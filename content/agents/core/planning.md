@@ -32,7 +32,7 @@ Agent planning의 목적은 길고 멋진 계획을 만드는 것이 아니라, 
 
 | 너무 큼 | 적절함 |
 | --- | --- |
-| “AI 섹션을 개선한다” | “architectures gateway의 누락된 RNN/CNN/SSM 링크를 확인한다” |
+| “AI 섹션을 개선한다” | “architectures page의 누락된 RNN/CNN/SSM 링크를 확인한다” |
 | “빌드 확인” | “`npx quartz build`로 Markdown/link/static generation을 확인한다” |
 | “내용 보강” | “300단어 미만 core note에 definition, route table, failure mode를 추가한다” |
 | “배포 확인” | “GitHub Actions deploy run이 success인지 확인한다” |

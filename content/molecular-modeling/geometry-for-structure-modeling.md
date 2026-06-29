@@ -21,7 +21,7 @@ X' = RX + t,
 R \in SO(3),\; t \in \mathbb{R}^3
 $$
 
-순수 수학으로서의 symmetry와 group action은 [[math/geometry-symmetry|Geometry and Symmetry]]에 둡니다. 이 페이지는 그 언어를 protein, ligand, pocket, complex의 structure modeling claim에 적용하는 gateway입니다.
+순수 수학으로서의 symmetry와 group action은 [[math/geometry-symmetry|Geometry and Symmetry]]에 둡니다. 여기서는 그 언어를 protein, ligand, pocket, complex의 structure modeling claim에 적용합니다.
 
 ## Core Objects
 

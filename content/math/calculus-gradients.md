@@ -25,7 +25,7 @@ $$
 \right]^\top
 $$
 
-이 페이지는 Math-facing gateway입니다. derivative, chain rule, Jacobian, Hessian, backpropagation notation을 설명합니다. AdamW, warmup, clipping, batch-size scaling 같은 실전 optimizer 선택은 [[ai/machine-learning|Machine Learning]]과 [[concepts/machine-learning/optimization|Optimization]]에서 봅니다.
+이 페이지는 derivative, chain rule, Jacobian, Hessian, backpropagation notation을 설명합니다. AdamW, warmup, clipping, batch-size scaling 같은 실전 optimizer 선택은 [[ai/machine-learning|Machine Learning]]과 [[concepts/machine-learning/optimization|Optimization]]에서 봅니다.
 
 ## Route Map
 

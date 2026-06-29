@@ -8,7 +8,7 @@ tags:
 
 # Training Runbooks
 
-Training runbooks cover operational choices around training loop stability, checkpoints, single-node scaling checks, and run behavior. The canonical concept entry is [[concepts/systems/training-run|Training run]]. Cluster-level launch, scheduler allocation, and multi-node execution belong under [[infra/hpc/distributed-training|Distributed training on HPC]].
+Training runbooks cover operational choices around training loop stability, checkpoints, single-node scaling checks, and run behavior. Start with [[concepts/systems/training-run|Training run]] for the reusable systems concept. Cluster-level launch, scheduler allocation, and multi-node execution belong under [[infra/hpc/distributed-training|Distributed training on HPC]].
 
 운영 관점의 training loop는 model update보다 넓습니다.
 

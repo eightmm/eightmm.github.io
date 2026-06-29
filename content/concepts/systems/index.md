@@ -19,55 +19,37 @@ Model은 함수 $f_\theta$만이 아닙니다. 동시에 training process, infer
 
 ## 주제
 
-- [[concepts/systems/training-run|Training run]]
-- [[concepts/systems/inference|Inference]]
-- [[concepts/systems/batch-online-inference|Batch and online inference]]
-- [[concepts/systems/model-serving|Model serving]]
-- [[concepts/systems/inference-serving|Inference serving]]
-- [[concepts/systems/inference-capacity-planning|Inference capacity planning]]
-- [[concepts/systems/deployment-strategy|Deployment strategy]]
-- [[concepts/systems/latency-throughput|Latency and throughput]]
-- [[concepts/systems/experiment-lifecycle|Experiment lifecycle]]
-- [[concepts/systems/run-artifact|Run artifact]]
-- [[concepts/systems/distributed-training|Distributed training]]
-- [[concepts/systems/distributed-training-runbook|Distributed training runbook]]
-- [[concepts/systems/resource-scheduling|Resource scheduling]]
-- [[concepts/systems/checkpoint-state|Checkpoint state]]
-- [[concepts/systems/environment-management|Environment management]]
-- [[concepts/systems/environment-modules-containers|Environment modules and containers]]
-- [[concepts/systems/inference-contract|Inference contract]]
-- [[concepts/systems/model-card|Model card]]
-- [[concepts/systems/model-versioning|Model versioning]]
-- [[concepts/systems/data-validation|Data validation]]
-- [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
-- [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
-- [[concepts/systems/storage-io|Storage and IO]]
-- [[infra/hardware/memory-hierarchy|Memory hierarchy]]
-- [[infra/hardware/storage-network|Storage and network]]
-- [[concepts/systems/observability|Observability]]
-- [[concepts/systems/failure-recovery|Failure recovery]]
-- [[concepts/systems/experiment-tracking|Experiment tracking]]
-- [[concepts/systems/reproducibility|Reproducibility]]
-- [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
-- [[infra/hpc/job-reconciliation|Job reconciliation]]
+| Area | Use for | Start |
+| --- | --- | --- |
+| Training process | training run, checkpoint state, distributed run behavior | [Training run](/concepts/systems/training-run), [Checkpoint state](/concepts/systems/checkpoint-state), [Distributed training](/concepts/systems/distributed-training) |
+| Inference and serving | batch/online inference, serving path, latency, throughput, capacity | [Inference](/concepts/systems/inference), [Model serving](/concepts/systems/model-serving), [Inference serving](/concepts/systems/inference-serving) |
+| Contracts and artifacts | input/output contract, model card, versioning, run artifact | [Inference contract](/concepts/systems/inference-contract), [Model card](/concepts/systems/model-card), [Run artifact](/concepts/systems/run-artifact) |
+| Reproducibility | environment, modules, containers, experiment tracking, public run records | [Environment management](/concepts/systems/environment-management), [Environment modules and containers](/concepts/systems/environment-modules-containers), [Reproducibility](/concepts/systems/reproducibility) |
+| Scaling and resources | scheduling, memory/compute tradeoff, storage IO, scaling claim | [Resource scheduling](/concepts/systems/resource-scheduling), [Memory-compute tradeoff](/concepts/systems/memory-compute-tradeoff), [Scaling claim contract](/concepts/systems/scaling-claim-contract) |
+| Deployment and reliability | deployment strategy, observability, failure recovery, data validation | [Deployment strategy](/concepts/systems/deployment-strategy), [Observability](/concepts/systems/observability), [Failure recovery](/concepts/systems/failure-recovery) |
+| Infra bridge | hardware speed, storage/network, scheduler reconciliation | [Memory hierarchy](/infra/hardware/memory-hierarchy), [Storage and network](/infra/hardware/storage-network), [Job reconciliation](/infra/hpc/job-reconciliation) |
+
+## Systems vs Infra
+
+| 질문 | Systems에서 볼 것 | Infra에서 볼 것 |
+| --- | --- | --- |
+| 모델을 어떻게 실행 단위로 만들까? | [Training run](/concepts/systems/training-run), [Inference](/concepts/systems/inference) | [HPC](/infra/hpc), [GPU](/infra/gpu) |
+| serving capacity를 어떻게 잡을까? | [Inference capacity planning](/concepts/systems/inference-capacity-planning), [Latency and throughput](/concepts/systems/latency-throughput) | [GPU memory](/infra/gpu), [Hardware](/infra/hardware) |
+| 결과를 나중에 검증할 수 있을까? | [Run artifact](/concepts/systems/run-artifact), [Experiment lifecycle](/concepts/systems/experiment-lifecycle) | [Reproducibility](/infra/reproducibility) |
+| environment 문제가 재현성에 영향을 주나? | [Environment management](/concepts/systems/environment-management) | [Server operations](/infra/server-ops), [HPC](/infra/hpc) |
+| bottleneck이 어디인가? | [Memory-compute tradeoff](/concepts/systems/memory-compute-tradeoff), [Storage and IO](/concepts/systems/storage-io) | [GPU](/infra/gpu), [Storage and IO](/infra/io) |
 
 ## 확인할 것
 
-- bottleneck이 data loading, compute, memory, communication, scheduling 중 무엇인가?
-- workload가 single-device, data-parallel, sharded, pipeline, model-parallel training 중 무엇을 요구하는가?
-- scheduler 관점에서 resource request, job size, queue time, preemption risk가 맞게 잡혔는가?
-- environment와 storage path가 run record의 일부인가?
-- 목표가 model quality, time-to-train, cost, latency, throughput, reliability 중 무엇인가?
-- 논문이 scaling을 주장한다면 quality, data, model size, compute budget, runtime boundary가 분리되어 있는가?
-- experiment lifecycle이 question에서 claim까지 기록되는가?
-- run artifact가 나중에 inspection이나 metric check를 하기에 충분한가?
-- commit, config, seed, dataset version, environment로 run을 재현할 수 있는가?
-- workflow가 preemption, partial output, service failure에서 회복 가능한가?
-- terminal run을 log, scheduler state, artifact로 reconcile할 수 있는가?
-- training metric, validation metric, serving metric이 분리되어 있는가?
-- deployment path가 evaluation과 같은 preprocessing과 constraint를 보존하는가?
-- public-facing artifact에 model card와 inference contract가 있는가?
-- output을 하나의 model version, validation boundary, rollout decision으로 추적할 수 있는가?
+| Check | Why |
+| --- | --- |
+| bottleneck이 data loading, compute, memory, communication, scheduling 중 무엇인가? | fix 위치를 code, data, hardware, scheduler 중 하나로 좁힙니다 |
+| workload가 single-device, data-parallel, sharded, pipeline, model-parallel 중 무엇인가? | scaling claim과 resource request가 달라집니다 |
+| 목표가 model quality, time-to-train, cost, latency, throughput, reliability 중 무엇인가? | 같은 system도 최적화 기준이 다르면 설계가 바뀝니다 |
+| run artifact가 commit, config, seed, dataset version, environment를 포함하는가? | 나중에 metric이나 failure를 다시 확인할 수 있습니다 |
+| training metric, validation metric, serving metric이 분리되어 있는가? | offline 성능과 runtime 품질을 혼동하지 않습니다 |
+| deployment path가 evaluation과 같은 preprocessing과 constraint를 보존하는가? | 평가와 실제 실행 사이의 hidden mismatch를 줄입니다 |
+| public-facing artifact에 model card와 inference contract가 있는가? | 사용 범위, input/output, failure format을 명확히 합니다 |
 
 ## Related
 

@@ -10,7 +10,7 @@ tags:
 
 This URL is kept as a compatibility route.
 
-Capacity planning sits between model behavior and hardware limits. The canonical note is [[concepts/systems/inference-capacity-planning|Inference capacity planning]]; infra notes provide the resource mental model.
+Capacity planning sits between model behavior and hardware limits. Start from [[concepts/systems/inference-capacity-planning|Inference capacity planning]] for the reusable systems concept; infra notes provide the resource mental model.
 
 | Question | Go To |
 | --- | --- |

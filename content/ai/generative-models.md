@@ -24,7 +24,7 @@ $$
 x \sim p_\theta(x \mid c)
 $$
 
-조건 $c$는 class label, text instruction, source sequence, partial observation, retrieval result, design constraint처럼 task가 제공하는 context입니다. Domain-specific object는 해당 domain gateway에서 정의하고, 이 페이지는 sample space, objective, sampler, conditioning interface를 다룹니다.
+조건 $c$는 class label, text instruction, source sequence, partial observation, retrieval result, design constraint처럼 task가 제공하는 context입니다. Domain-specific object는 해당 domain page에서 정의하고, 이 페이지는 sample space, objective, sampler, conditioning interface를 다룹니다.
 
 ## Route Map
 

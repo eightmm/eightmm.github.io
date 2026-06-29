@@ -10,7 +10,7 @@ tags:
 
 Agents는 LLM이 답변만 생성하는 것이 아니라, context를 모으고, tool을 쓰고, state를 추적하고, 결과를 검증해서 작업을 끝내는 방식입니다.
 
-이 섹션은 세부 개념을 전부 sidebar에 펼치지 않고, 여섯 개 gateway로만 들어가게 정리합니다. 제품별 기능은 자주 바뀌므로, 먼저 오래 남는 구조와 workflow를 봅니다.
+이 섹션은 세부 개념을 전부 sidebar에 펼치지 않고, 여섯 개 큰 묶음으로 들어가게 정리합니다. 제품별 기능은 자주 바뀌므로, 먼저 오래 남는 구조와 workflow를 봅니다.
 
 $$
 \text{agent}
@@ -58,7 +58,7 @@ $$
 ## 작성 규칙
 
 - 개인 자동화보다 공개 제품에서 공통으로 보이는 pattern을 우선합니다.
-- 세부 개념은 gateway 안에서 링크하고, sidebar에는 큰 묶음만 남깁니다.
+- 세부 개념은 각 묶음 안에서 링크하고, sidebar에는 큰 흐름만 남깁니다.
 - vendor-specific claim은 변동 가능성이 크므로 날짜, 범위, 공식 문서 확인 필요성을 남깁니다.
 - private prompt, private repo detail, credential, internal task name, unpublished work는 공개하지 않습니다.
 - “agent가 잘했다”보다 어떤 evidence로 확인했는지를 남깁니다.

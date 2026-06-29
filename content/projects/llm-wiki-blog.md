@@ -35,7 +35,7 @@ Public site에는 generalized knowledge, reusable writing format, verified publi
 
 ## Status
 
-Active. 주요 작업은 gateway page를 읽기 쉽게 유지하면서 reusable definition, formula, workflow, review criteria를 wiki note로 옮기는 것입니다.
+Active. 주요 작업은 public entry page를 읽기 쉽게 유지하면서 reusable definition, formula, workflow, review criteria를 wiki note로 옮기는 것입니다.
 
 Lifecycle status: `active`.
 
