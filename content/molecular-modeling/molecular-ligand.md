@@ -21,6 +21,8 @@ $$
 
 여기서 $L$은 standardized molecular object이고, $c$는 pH, protonation, tautomer policy, conformer source, assay context, target, pocket을 포함할 수 있습니다.
 
+Molecule note에서는 chemical identity를 먼저 고정하고, ligand note에서는 그 molecule이 어떤 target, pocket, assay, pose context 안에 들어갔는지 고정합니다.
+
 ## Route Map
 
 | Question | Start | Watch |
@@ -40,6 +42,16 @@ $$
 | 3D representation | conformer, force field, shape, geometry, docking input | [Conformer](/concepts/molecular-modeling/conformer) |
 | Property and retrieval | property prediction, similarity search, candidate ranking | [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction) |
 | Generation | valid molecule samples, constrained generation, scaffold editing | [Molecular generation](/concepts/generative-models/molecular-generation) |
+
+## Molecule vs Ligand
+
+| Object | Meaning | Typical question |
+| --- | --- | --- |
+| Molecule | chemical identity after standardization | property, similarity, scaffold, generation |
+| Ligand | molecule in binding/target context | pose, activity, interaction, docking input |
+| Assay compound record | measured sample in an assay source | endpoint, unit, censoring, replicate |
+| Conformer | 3D state of a molecule | shape, strain, docking preparation |
+| Pose | ligand conformer placed in protein/pocket frame | RMSD, clash, interaction, score |
 
 ## Chemical State Checklist
 
@@ -63,6 +75,16 @@ RDKit은 molecule parsing, standardization, fingerprint, descriptor, substructur
 | descriptor vector | descriptor list and missing-value policy |
 | scaffold split | standardized molecule used for scaffold extraction |
 | conformer generation | seed, conformer count, force field, minimization and failure policy |
+
+## Claim Boundary
+
+| Claim | Needs |
+| --- | --- |
+| molecule property prediction | standardized molecule, split, endpoint, metric |
+| ligand activity prediction | target/assay context and label contract |
+| molecular generation | validity, uniqueness, novelty, filter denominator |
+| conformer quality | conformer source, energy/minimization, geometry checks |
+| docking-ready ligand | protonation, tautomer, charge, atom typing, conformer policy |
 
 ## Boundary
 

@@ -19,6 +19,8 @@ x_{\mathrm{bio}}
 \{\text{protein}, \text{ligand}, \text{pocket}, \text{complex}, \text{assay}, \text{genome region}\}
 $$
 
+Entity note의 목적은 용어 정의가 아니라 example unit과 leakage boundary를 고정하는 것입니다. “protein”이라는 단어 하나만으로는 chain, isoform, construct, species, mutation, structure source가 숨겨질 수 있습니다.
+
 ## Core Objects
 
 | Object | Use when | Main risk |
@@ -34,6 +36,17 @@ $$
 | [Genome](/entities/genome) | sequence/region/variant-level modeling only | broad omics claim은 명시적으로 열기 전까지 scope 밖 |
 
 여러 object와 relation이 함께 중요하면 [[entities/entity-relation-map|Entity relation map]]을 사용합니다.
+
+## Relation Map
+
+| Relation | Meaning | Risk |
+| --- | --- | --- |
+| protein-target | biological target identity and assay target | isoform/species/construct collapse |
+| molecule-ligand | same chemical object with binding context | ligand state differs from parent molecule |
+| protein-pocket | binding site or predicted site on structure | ligand-defined pocket leakage |
+| ligand-pose | ligand state plus coordinates in a frame | atom mapping and conformer source ambiguity |
+| target-assay-label | measured endpoint under assay context | unit, censoring, threshold, source mismatch |
+| protein-ligand-complex | pair plus pose/contact/structure context | pair split can leak both axes |
 
 ## Entity Tuple
 
@@ -57,6 +70,16 @@ $$
 | new structure generalization | template-aware, homolog-aware, coordinate-source-aware split |
 | new assay generalization | assay/source split 또는 endpoint harmonization check |
 | new genome region generalization | chromosome, locus, family, annotation-source split |
+
+## Example Unit Questions
+
+| If the row is... | Ask |
+| --- | --- |
+| molecule | is it parent, salt, mixture, tautomer, or standardized record? |
+| activity label | what target, assay, endpoint, unit, censoring, source? |
+| protein | which chain, isoform, construct, mutation, species? |
+| structure | experimental, predicted, apo, holo, template-derived, minimized? |
+| pose | what ligand state, atom mapping, coordinate frame, reference pose? |
 
 ## Label Objects
 
