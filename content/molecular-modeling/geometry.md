@@ -11,7 +11,7 @@ unlisted: true
 
 # Computational Biology Geometry Route
 
-This URL is kept as a compatibility route. The public entry point is [[molecular-modeling/geometry-for-structure-modeling|Geometry for Structure Modeling]].
+For structure-modeling geometry, start from [[molecular-modeling/geometry-for-structure-modeling|Geometry for Structure Modeling]].
 
 Use the geometry notes by layer:
 

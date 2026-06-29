@@ -9,7 +9,7 @@ tags:
 
 # Inference Runbooks
 
-Inference runbooks cover serving operations under memory, latency, throughput, and reliability constraints. Start with [[concepts/systems/inference|Inference]], [[concepts/systems/model-serving|Model serving]], and [[concepts/systems/latency-throughput|Latency and throughput]] for the reusable systems concepts.
+Inference runbooks connect serving concepts to resource and operation constraints. Start with [[concepts/systems/inference|Inference]], [[concepts/systems/model-serving|Model serving]], and [[concepts/systems/latency-throughput|Latency and throughput]] for reusable systems concepts; use infra pages when hardware, GPU memory, IO, or operations are the bottleneck.
 
 Serving은 interface와 capacity contract에서 시작합니다.
 
@@ -41,12 +41,15 @@ The serving policy includes batching, cache management, quantization, fallback b
 - Are p50, p95, and p99 latency treated differently from average latency?
 - Are request logs and examples sanitized before becoming public notes?
 
-## Where New Notes Go
+## Routing
 
-- Serving architecture and batching go here.
-- Model-side output contracts go under [[concepts/systems/inference-contract|Inference contract]].
-- GPU capacity and memory diagnosis go under [[infra/gpu/index|GPU]].
-- General deployment patterns go under [[concepts/systems/deployment-strategy|Deployment strategy]].
+| Question | Go To |
+| --- | --- |
+| What is inference or serving? | [Inference](/concepts/systems/inference), [Model serving](/concepts/systems/model-serving) |
+| How should input/output and errors be exposed? | [Inference contract](/concepts/systems/inference-contract) |
+| Is the issue latency, throughput, batching, or capacity? | [Inference serving](/concepts/systems/inference-serving), [Inference capacity planning](/concepts/systems/inference-capacity-planning) |
+| Is the issue GPU memory or utilization? | [GPU](/infra/gpu) |
+| Is the issue deployment policy? | [Deployment strategy](/concepts/systems/deployment-strategy) |
 
 ## Related
 

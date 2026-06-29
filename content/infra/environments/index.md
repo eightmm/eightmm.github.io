@@ -9,7 +9,7 @@ tags:
 
 # Environments
 
-Environment note는 module, container, dependency boundary, public-safe environment record를 다룹니다.
+Environment notes connect software stacks, dependency boundaries, and public-safe run records. Reusable definitions live under [[concepts/systems/index|AI Systems]]; infra pages focus on scheduler, GPU runtime, storage mount, or server-operation boundaries.
 
 Environment는 run identity의 일부입니다.
 
@@ -37,12 +37,14 @@ Compiler, CUDA stack, Python package set, container image, runtime mount가 바�
 - Is the host-specific part separated from portable user-space dependencies?
 - Are private registry names, mount paths, credentials, and hostnames excluded?
 
-## Where New Notes Go
+## Routing
 
-- Module-versus-container decisions go here.
-- Dependency pinning and environment drift go here.
-- Cluster-specific execution details go under [[infra/hpc/index|HPC]].
-- Incident-style environment failures go under [[infra/server-ops/index|Server operations]] if the note is operational.
+| Question | Go To |
+| --- | --- |
+| What are modules and containers? | [Environment modules and containers](/concepts/systems/environment-modules-containers) |
+| How should a run environment be captured? | [Environment management](/concepts/systems/environment-management), [Reproducibility](/concepts/systems/reproducibility) |
+| Is the issue a scheduler job script or cluster launch? | [HPC](/infra/hpc), [Slurm job script](/infra/hpc/slurm-job-script) |
+| Is the issue an operational failure? | [Server operations](/infra/server-ops), [Incident response](/infra/server-ops/incident-response) |
 
 ## Related
 

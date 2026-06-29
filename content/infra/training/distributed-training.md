@@ -8,8 +8,6 @@ tags:
 
 # Distributed Training
 
-This URL is kept as a compatibility route.
-
 Distributed training has two different homes in this wiki:
 
 | Question | Go To |

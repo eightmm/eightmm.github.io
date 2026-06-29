@@ -8,8 +8,6 @@ tags:
 
 # Environment Modules and Containers
 
-This URL is kept as a compatibility route.
-
 Environment modules and containers are systems concepts when they define reproducibility, and infra concepts when they touch cluster policy, GPU runtime, storage mounts, or server operations.
 
 | Question | Go To |

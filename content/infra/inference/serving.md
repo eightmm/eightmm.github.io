@@ -8,8 +8,6 @@ tags:
 
 # Inference Serving
 
-This URL is kept as a compatibility route.
-
 Serving is mainly an AI systems concept, not an infra category by itself. Start from [[concepts/systems/inference-serving|Inference serving]] and use infra notes only when the bottleneck is hardware or operations.
 
 | Question | Go To |

@@ -8,7 +8,7 @@ tags:
 
 # Training Runbooks
 
-Training runbooks cover operational choices around training loop stability, checkpoints, single-node scaling checks, and run behavior. Start with [[concepts/systems/training-run|Training run]] for the reusable systems concept. Cluster-level launch, scheduler allocation, and multi-node execution belong under [[infra/hpc/distributed-training|Distributed training on HPC]].
+Training runbooks connect training process concepts to resource and operation constraints. Start with [[concepts/systems/training-run|Training run]] for reusable systems concepts. Cluster-level launch, scheduler allocation, and multi-node execution belong under [[infra/hpc/distributed-training|Distributed training on HPC]].
 
 운영 관점의 training loop는 model update보다 넓습니다.
 
@@ -44,13 +44,15 @@ $$
 - Is the bottleneck compute, memory, IO, synchronization, communication, or scheduler wait?
 - Are logs public-safe and free of hostnames, usernames, queue names, and private paths?
 
-## Where New Notes Go
+## Routing
 
-- Single-node multi-GPU checks and training loop behavior go here.
-- Slurm launch, node layout, scheduler allocation, and multi-node training go under [[infra/hpc/distributed-training|Distributed training on HPC]].
-- Slurm job script shape goes under [[infra/hpc/index|HPC]].
-- GPU memory and utilization diagnosis goes under [[infra/gpu/index|GPU]].
-- Optimizer math stays under [[concepts/machine-learning/optimizer|Optimizer]].
+| Question | Go To |
+| --- | --- |
+| What is the reusable training process? | [Training run](/concepts/systems/training-run) |
+| What must be saved to resume? | [Checkpoint state](/concepts/systems/checkpoint-state), [Checkpointing](/infra/hpc/checkpointing) |
+| Is this scheduler-managed multi-node training? | [Distributed training on HPC](/infra/hpc/distributed-training) |
+| Is this GPU memory or utilization diagnosis? | [GPU](/infra/gpu) |
+| Is this optimizer or objective math? | [Optimizer](/concepts/machine-learning/optimizer), [Machine Learning](/ai/machine-learning) |
 
 ## Related
 

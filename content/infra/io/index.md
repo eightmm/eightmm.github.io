@@ -57,12 +57,14 @@ $$
 - private mount path, hostname, storage topology를 제거했는가?
 - note가 one-off operational incident와 reusable IO pattern을 구분하는가?
 
-## Where New Notes Go
+## Routing
 
-- dataloader와 cache behavior는 여기에 둡니다.
-- data semantics와 split contract는 [[concepts/data/index|Data]]에 둡니다.
-- filesystem permission과 mount는 [[infra/server-ops/index|Server operations]]에 둡니다.
-- GPU starvation diagnosis는 [[infra/gpu/index#bottleneck-taxonomy|GPU bottleneck taxonomy]]로 다시 연결합니다.
+| Question | Go To |
+| --- | --- |
+| Is this dataloader throughput, cache behavior, or storage locality? | [Data loading and IO](/infra/io/data-loading), [Storage and IO](/concepts/systems/storage-io) |
+| Is this data semantics, preprocessing, or split policy? | [Data](/concepts/data), [Preprocessing contract](/concepts/data/preprocessing-contract) |
+| Is this filesystem permission or mount behavior? | [Server operations](/infra/server-ops), [Storage mounts and permissions](/infra/server-ops/storage-mounts) |
+| Is the visible symptom low GPU utilization? | [GPU bottleneck taxonomy](/infra/gpu#bottleneck-taxonomy) |
 
 ## Related
 
