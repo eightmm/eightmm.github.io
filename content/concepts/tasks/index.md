@@ -31,6 +31,71 @@ $$
 | model molecules or proteins | [Property prediction](/concepts/tasks/property-prediction), [Interaction prediction](/concepts/tasks/interaction-prediction) | assay context, split unit, leakage risk |
 | model structure | [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) | geometry validity, invariance, equivariance |
 
+## Task Contract
+
+Task는 입력과 출력 이름만이 아니라 decision boundary입니다.
+
+$$
+\mathcal{T}
+=
+(\mathcal{X},\ \mathcal{Y},\ \mathcal{C},\ \mathcal{L},\ M,\ \mathcal{S})
+$$
+
+where $\mathcal{X}$ is input space, $\mathcal{Y}$ is output space, $\mathcal{C}$ is allowed context, $\mathcal{L}$ is training loss, $M$ is evaluation metric, and $\mathcal{S}$ is the split rule.
+
+| Contract part | Ask | Route |
+| --- | --- | --- |
+| input space | what object does the model receive after preprocessing? | [Modalities](/concepts/modalities), [Representation contract](/concepts/modalities/representation-contract) |
+| output space | what counts as a valid prediction? | [Task output space](/concepts/tasks/task-output-space) |
+| allowed context | what information is available at inference time? | [Evaluation protocol](/concepts/evaluation/evaluation-protocol) |
+| loss | what signal is optimized during training? | [Loss function](/concepts/machine-learning/loss-function), [Learning methods](/concepts/learning) |
+| metric | what behavior decides success? | [Metric selection](/concepts/evaluation/metric-selection) |
+| split rule | what unit must be held out? | [Dataset split contract](/concepts/data/dataset-split-contract) |
+
+If two papers use the same model family but different $\mathcal{Y}$, context, metric, or split, they are not solving the same task.
+
+## Output Space Map
+
+| Output type | Typical task | Metric route | Failure to count |
+| --- | --- | --- | --- |
+| class | classification, detection decision | [Classification metrics](/concepts/evaluation/classification-metrics) | threshold and prevalence mismatch |
+| scalar | regression, property prediction | [Regression metrics](/concepts/evaluation/regression-metrics) | unit, censoring, target scale |
+| probability | risk, confidence, uncertainty | [Probability metrics](/concepts/evaluation/probability-metrics), [Calibration](/concepts/evaluation/calibration) | miscalibration |
+| ranked list | retrieval, screening, reranking | [Ranking metrics](/concepts/evaluation/ranking-metrics) | candidate pool mismatch |
+| sequence | text, protein, SMILES, trajectory | [Generation evaluation](/concepts/evaluation/generation-evaluation) | invalid syntax and filtered denominator |
+| set or graph | structured prediction, graph prediction | [Metric selection](/concepts/evaluation/metric-selection) | permutation, matching, graph validity |
+| coordinates | structure, pose, localization | [Pose quality](/concepts/sbdd/pose-quality), [Regression metrics](/concepts/evaluation/regression-metrics) | alignment, symmetry, atom mapping |
+| action or trace | agents, tool workflows | [Agent evaluation](/agents/verification/agent-evaluation) | side effect, recovery, completion evidence |
+
+## Task vs Objective vs Architecture
+
+These are different axes.
+
+| Axis | Example | Common Confusion |
+| --- | --- | --- |
+| task | classify activity, rank candidates, generate molecule, predict coordinates | described as model family |
+| objective | cross-entropy, contrastive loss, denoising score, flow matching | treated as the final task |
+| architecture | CNN, Transformer, GNN, SSM, equivariant model | credited for gains caused by objective or data |
+| modality | sequence, image, graph, 3D structure | used as if it already defines the output |
+| evaluation | AUROC, RMSE, RMSD, NDCG, validity | metric chosen after seeing results |
+
+For example, a Transformer can be used for classification, retrieval, sequence generation, or reranking. A diffusion model can be trained for image generation, molecule generation, structure generation, or denoising representation learning. The task note should pin down the output behavior before architecture or objective claims.
+
+## Generalization Unit
+
+Task specification should name the unit of generalization.
+
+| Task family | Example unit | Split unit risk |
+| --- | --- | --- |
+| property prediction | molecule, material, protein | scaffold, homolog, assay source |
+| interaction prediction | pair or complex | target family, ligand scaffold, pair leakage |
+| retrieval | query-candidate pair | shared document, shared query template, corpus time |
+| generation | sampled object | duplicated training object, invalid filtered output |
+| structure prediction | sequence, complex, residue set | template, homolog, structure source |
+| agent task | task instance and tool trace | repeated workflow template or hidden tool state |
+
+The split unit should be stronger than the claim. If the claim is transfer to new targets, a random row split is usually too weak.
+
 ## Task 묶음
 
 | 묶음 | 노트 |
@@ -41,6 +106,22 @@ $$
 | Language | [Captioning](/concepts/tasks/captioning), [Question answering](/concepts/tasks/question-answering), [Sequence generation](/concepts/tasks/sequence-generation) |
 | Structured outputs | [Structured prediction](/concepts/tasks/structured-prediction), [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) |
 | Time and monitoring | [Time-series forecasting](/concepts/tasks/time-series-forecasting), [Anomaly detection](/concepts/tasks/anomaly-detection) |
+
+## Paper Reading Pattern
+
+When reading a method paper, rewrite the task before reading the model diagram.
+
+| Field | Write |
+| --- | --- |
+| input | raw object and model-ready representation |
+| output | exact prediction type and validity rule |
+| context | what information is allowed at inference |
+| loss | training signal and supervision source |
+| metric | primary metric and diagnostics |
+| split | held-out unit and leakage audit |
+| baseline | simplest relevant task baseline |
+
+This keeps model novelty separate from task definition.
 
 ## 확인할 것
 
