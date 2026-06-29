@@ -24,36 +24,36 @@ $$
 x \sim p_\theta(x \mid c)
 $$
 
-Computational biology에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, or partial structure일 수 있습니다.
+Computational biology에서는 $c$가 protein sequence, binding pocket, target property, text instruction, scaffold, partial structure일 수 있습니다.
 
 ## Route Map
 
-| Route | Use For | Start |
+| Route | Use for | Start |
 | --- | --- | --- |
-| Distribution modeling | what distribution is represented and how samples are produced | [Generative models](/concepts/generative-models), [Conditional generation](/concepts/generative-models/conditional-generation), [Sampling](/concepts/generative-models/sampling) |
-| Likelihood and latent variables | explicit likelihoods, encoders, decoders, lower bounds | [Latent variable model](/concepts/generative-models/latent-variable-model), [ELBO](/concepts/generative-models/elbo), [VAE](/concepts/generative-models/vae) |
-| Sequential generation | token, sequence, graph, or action generation step by step | [Autoregressive model](/concepts/generative-models/autoregressive-model) |
+| Distribution modeling | 어떤 distribution을 표현하고 sample을 어떻게 만드는가 | [Generative models](/concepts/generative-models), [Conditional generation](/concepts/generative-models/conditional-generation), [Sampling](/concepts/generative-models/sampling) |
+| Likelihood and latent variables | explicit likelihood, encoder, decoder, lower bound | [Latent variable model](/concepts/generative-models/latent-variable-model), [ELBO](/concepts/generative-models/elbo), [VAE](/concepts/generative-models/vae) |
+| Sequential generation | token, sequence, graph, action을 step by step 생성 | [Autoregressive model](/concepts/generative-models/autoregressive-model) |
 | Denoising and score models | iterative corruption/reconstruction, score estimation, probability-flow view | [Diffusion model](/concepts/generative-models/diffusion-model), [Score-based model](/concepts/generative-models/score-based-model), [Probability flow ODE](/concepts/generative-models/probability-flow-ode) |
-| Flow and velocity models | vector fields, rectified paths, invertible transformations | [Flow matching](/concepts/generative-models/flow-matching), [Rectified flow](/concepts/generative-models/rectified-flow), [Normalizing flow](/concepts/generative-models/normalizing-flow) |
-| Energy and adversarial models | compatibility scores, unnormalized densities, generator-discriminator training | [Energy-based model](/concepts/generative-models/energy-based-model), [GAN](/concepts/generative-models/gan) |
-| Control and speed | guidance, conditioning strength, few-step generation, sampler changes | [Guidance](/concepts/generative-models/guidance), [Consistency model](/concepts/generative-models/consistency-model) |
+| Flow and velocity models | vector field, rectified path, invertible transformation | [Flow matching](/concepts/generative-models/flow-matching), [Rectified flow](/concepts/generative-models/rectified-flow), [Normalizing flow](/concepts/generative-models/normalizing-flow) |
+| Energy and adversarial models | compatibility score, unnormalized density, generator-discriminator training | [Energy-based model](/concepts/generative-models/energy-based-model), [GAN](/concepts/generative-models/gan) |
+| Control and speed | guidance, conditioning strength, few-step generation, sampler change | [Guidance](/concepts/generative-models/guidance), [Consistency model](/concepts/generative-models/consistency-model) |
 
 ## 모델 계열 구분
 
-| Family | Learns | Typical Sampling | Read |
+| Family | Learns | Typical sampling | Read |
 | --- | --- | --- | --- |
-| Autoregressive | next-token or next-step conditional distribution | sequential decoding | [Autoregressive model](/concepts/generative-models/autoregressive-model) |
-| Latent variable | latent representation and decoder likelihood | sample latent, decode output | [Latent variable model](/concepts/generative-models/latent-variable-model), [VAE](/concepts/generative-models/vae) |
-| Adversarial | generator that fools a discriminator | direct generator pass | [GAN](/concepts/generative-models/gan) |
-| Diffusion / score | denoising score or noise prediction | iterative denoising | [Diffusion model](/concepts/generative-models/diffusion-model), [Score-based model](/concepts/generative-models/score-based-model) |
-| Flow matching | vector field along a probability path | integrate an ODE-like path | [Flow matching](/concepts/generative-models/flow-matching), [Rectified flow](/concepts/generative-models/rectified-flow) |
-| Normalizing flow | invertible change of variables | sample base noise, invert map | [Normalizing flow](/concepts/generative-models/normalizing-flow) |
-| Energy-based | unnormalized energy or compatibility | MCMC, Langevin, or optimization | [Energy-based model](/concepts/generative-models/energy-based-model) |
-| Consistency | direct jump between noisy and clean states | few-step or one-step generation | [Consistency model](/concepts/generative-models/consistency-model) |
+| Autoregressive | next-token 또는 next-step conditional distribution | sequential decoding | [Autoregressive model](/concepts/generative-models/autoregressive-model) |
+| Latent variable | latent representation과 decoder likelihood | latent를 sample한 뒤 output decode | [Latent variable model](/concepts/generative-models/latent-variable-model), [VAE](/concepts/generative-models/vae) |
+| Adversarial | discriminator를 속이는 generator | direct generator pass | [GAN](/concepts/generative-models/gan) |
+| Diffusion / score | denoising score 또는 noise prediction | iterative denoising | [Diffusion model](/concepts/generative-models/diffusion-model), [Score-based model](/concepts/generative-models/score-based-model) |
+| Flow matching | probability path 위 vector field | ODE-like path 적분 | [Flow matching](/concepts/generative-models/flow-matching), [Rectified flow](/concepts/generative-models/rectified-flow) |
+| Normalizing flow | invertible change of variables | base noise를 sample하고 map을 invert | [Normalizing flow](/concepts/generative-models/normalizing-flow) |
+| Energy-based | unnormalized energy 또는 compatibility | MCMC, Langevin, optimization | [Energy-based model](/concepts/generative-models/energy-based-model) |
+| Consistency | noisy state와 clean state 사이 direct jump | few-step 또는 one-step generation | [Consistency model](/concepts/generative-models/consistency-model) |
 
 ## Objective 기준
 
-Likelihood-based models usually optimize a negative log-likelihood:
+Likelihood-based model은 보통 negative log-likelihood를 optimize합니다.
 
 $$
 \min_\theta
@@ -61,7 +61,7 @@ $$
 [-\log p_\theta(x)]
 $$
 
-Latent-variable models introduce an unobserved variable $z$ and optimize a tractable lower bound:
+Latent-variable model은 unobserved variable $z$를 도입하고 tractable lower bound를 optimize합니다.
 
 $$
 \log p_\theta(x)
@@ -72,7 +72,7 @@ $$
 D_{\mathrm{KL}}(q_\phi(z\mid x)\,\|\,p(z))
 $$
 
-Score and flow models often avoid direct likelihood as the main training target. They learn a vector-valued target such as a score, noise, denoised sample, or velocity:
+Score/flow model은 direct likelihood를 main training target으로 쓰지 않는 경우가 많습니다. 대신 score, noise, denoised sample, velocity 같은 vector-valued target을 학습합니다.
 
 $$
 s_\theta(x_t,t) \approx \nabla_{x_t}\log p_t(x_t),
@@ -80,11 +80,11 @@ s_\theta(x_t,t) \approx \nabla_{x_t}\log p_t(x_t),
 v_\theta(x_t,t) \approx u_t(x_t)
 $$
 
-When reading a paper, first identify the learned quantity before comparing architectures.
+Paper를 읽을 때는 architecture를 비교하기 전에 무엇을 학습하는지부터 식별합니다.
 
 ## Claim Boundary
 
-| Claim | First Check |
+| Claim | 먼저 확인할 것 |
 | --- | --- |
 | better diffusion model | prediction target, sampler, NFE, guidance scale, evaluation axes |
 | better flow model | probability path, time sampling, velocity target, solver budget |

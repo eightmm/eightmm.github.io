@@ -8,9 +8,9 @@ tags:
 
 # Memory Boundary
 
-A memory boundary defines what an agent may store, recall, and reuse across tasks. It prevents useful long-term context from becoming a source of stale assumptions, privacy leaks, or task drift.
+Memory boundary는 agent가 task를 넘어서 무엇을 저장, recall, reuse할 수 있는지 정의합니다. 유용한 long-term context가 stale assumption, privacy leak, task drift의 원인이 되지 않도록 막는 역할입니다.
 
-Memory can be divided into:
+Memory는 아래처럼 나눌 수 있습니다.
 
 $$
 M
@@ -22,23 +22,23 @@ M_{\mathrm{durable}}
 M_{\mathrm{external}}
 $$
 
-where working memory is task-local, durable memory persists across sessions, and external memory is retrieved from files, docs, databases, or search.
+여기서 working memory는 task-local이고, durable memory는 session을 넘어 persist되며, external memory는 file, doc, database, search에서 retrieve되는 정보입니다.
 
 ## Boundary Questions
 
-- What is safe to persist?
-- What must remain task-local?
-- What must never be stored?
-- What facts need revalidation before reuse?
-- Who is allowed to update durable memory?
+- 무엇을 persist해도 안전한가?
+- 무엇은 task-local로 남아야 하는가?
+- 무엇은 절대 저장하면 안 되는가?
+- 어떤 fact는 reuse 전에 revalidation이 필요한가?
+- durable memory를 update할 권한은 누구에게 있는가?
 
 ## Public Wiki Rule
 
-For this blog, public durable notes should store general concepts, public workflows, and sanitized guidance. They should not store private infrastructure details, credentials, internal task names, unpublished results, or collaborator-specific information.
+이 블로그의 public durable note에는 general concept, public workflow, sanitized guidance만 저장합니다. Private infrastructure detail, credential, internal task name, unpublished result, collaborator-specific information은 저장하지 않습니다.
 
 ## Stale Memory Failure
 
-An agent can fail by treating old context as current fact:
+Agent는 old context를 current fact처럼 취급해서 실패할 수 있습니다.
 
 $$
 \operatorname{risk}
@@ -50,15 +50,15 @@ $$
 (1-\operatorname{verification}(m))
 $$
 
-This is not a real calibrated metric, but it captures the operational habit: older and higher-impact memories need stronger verification.
+이 식은 실제 calibrated metric이 아니라 운영 습관을 표현한 것입니다. 오래됐고 impact가 큰 memory일수록 더 강한 verification이 필요합니다.
 
 ## Checks
 
-- Is the remembered fact public, current, and relevant?
-- Is the source authoritative enough for the action?
-- Could storing this fact leak private information?
-- Does the task need durable memory, or only a local note?
-- Is there a deletion or correction path for wrong memories?
+- remembered fact가 public, current, relevant한가?
+- source가 action에 충분히 authoritative한가?
+- 이 fact를 저장하면 private information이 leak될 수 있는가?
+- task에 durable memory가 필요한가, local note만 필요한가?
+- wrong memory에 대한 deletion 또는 correction path가 있는가?
 
 ## Related
 

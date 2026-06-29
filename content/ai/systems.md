@@ -19,23 +19,23 @@ $$
 
 ## Main Areas
 
-| Area | Use For | Canonical Notes |
+| Area | Use for | Canonical notes |
 | --- | --- | --- |
 | Training | run state, checkpoint, scaling, failure recovery | [Training run](/concepts/systems/training-run), [Checkpoint state](/concepts/systems/checkpoint-state), [Distributed training](/concepts/systems/distributed-training) |
-| Inference | prediction-time execution, batch/online modes, output contracts | [Inference](/concepts/systems/inference), [Batch and online inference](/concepts/systems/batch-online-inference), [Inference contract](/concepts/systems/inference-contract) |
-| Serving | endpoints, batching, capacity, latency, rollout | [Model serving](/concepts/systems/model-serving), [Inference serving](/concepts/systems/inference-serving), [Inference capacity planning](/concepts/systems/inference-capacity-planning), [Latency and throughput](/concepts/systems/latency-throughput) |
-| Environment | modules, containers, dependencies, runtime drift | [Environment management](/concepts/systems/environment-management), [Environment modules and containers](/concepts/systems/environment-modules-containers) |
-| Reproducibility | run records, artifacts, versioning, evidence boundary | [Reproducibility](/concepts/systems/reproducibility), [Run artifact](/concepts/systems/run-artifact), [Model versioning](/concepts/systems/model-versioning) |
+| Inference | prediction-time execution, batch/online mode, output contract | [Inference](/concepts/systems/inference), [Batch and online inference](/concepts/systems/batch-online-inference), [Inference contract](/concepts/systems/inference-contract) |
+| Serving | endpoint, batching, capacity, latency, rollout | [Model serving](/concepts/systems/model-serving), [Inference serving](/concepts/systems/inference-serving), [Inference capacity planning](/concepts/systems/inference-capacity-planning), [Latency and throughput](/concepts/systems/latency-throughput) |
+| Environment | module, container, dependency, runtime drift | [Environment management](/concepts/systems/environment-management), [Environment modules and containers](/concepts/systems/environment-modules-containers) |
+| Reproducibility | run record, artifact, versioning, evidence boundary | [Reproducibility](/concepts/systems/reproducibility), [Run artifact](/concepts/systems/run-artifact), [Model versioning](/concepts/systems/model-versioning) |
 | Operations | monitoring, deployment, recovery, resource scheduling | [Deployment strategy](/concepts/systems/deployment-strategy), [Observability](/concepts/systems/observability), [Failure recovery](/concepts/systems/failure-recovery), [Resource scheduling](/concepts/systems/resource-scheduling) |
 
 ## Boundary With Infra
 
 | Question | Route |
 | --- | --- |
-| What is the training or inference concept? | [AI Systems](/ai/systems), [Systems concepts](/concepts/systems) |
-| What hardware, GPU, Slurm, storage, or server operation is involved? | [Infra](/infra) |
-| What public record proves a run or artifact is reproducible? | [Reproducibility](/concepts/systems/reproducibility), [Run record](/infra/reproducibility/run-record) |
-| What failed on a cluster or shared machine? | [HPC](/infra/hpc), [GPU](/infra/gpu), [Server operations](/infra/server-ops) |
+| training 또는 inference concept인가? | [AI Systems](/ai/systems), [Systems concepts](/concepts/systems) |
+| hardware, GPU, Slurm, storage, server operation이 관련되는가? | [Infra](/infra) |
+| run 또는 artifact가 reproducible하다는 public record가 필요한가? | [Reproducibility](/concepts/systems/reproducibility), [Run record](/infra/reproducibility/run-record) |
+| cluster 또는 shared machine에서 실패했는가? | [HPC](/infra/hpc), [GPU](/infra/gpu), [Server operations](/infra/server-ops) |
 
 ## Reading Path
 
@@ -52,11 +52,11 @@ AI system note는 모델 이름보다 artifact boundary를 먼저 남깁니다.
 | Artifact | Include |
 | --- | --- |
 | Dataset snapshot | source, version, split, preprocessing contract |
-| Model checkpoint | architecture, weights, tokenizer/featurizer, config |
+| Model checkpoint | architecture, weight, tokenizer/featurizer, config |
 | Training state | optimizer, scheduler, step, seed, environment |
-| Inference contract | input schema, output schema, batching, limits |
+| Inference contract | input schema, output schema, batching, limit |
 | Evaluation record | metric, selection rule, baseline, uncertainty |
-| Runtime environment | package versions, container/module, hardware class |
+| Runtime environment | package version, container/module, hardware class |
 
 ## Related
 

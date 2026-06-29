@@ -42,31 +42,31 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 
 ## Route Map
 
-| Route | Use For | Start |
+| Route | Use for | Start |
 | --- | --- | --- |
-| Supervised signals | measured labels, classification, regression, target-conditioned prediction | [Supervised learning](/concepts/learning/supervised-learning), [Semi-supervised learning](/concepts/learning/semi-supervised-learning) |
-| Pretraining signals | large unlabeled corpora, masked objectives, contrastive views, latent prediction | [Pretraining](/concepts/learning/pretraining), [Self-supervised learning](/concepts/learning/self-supervised-learning), [Masked modeling](/concepts/learning/masked-modeling) |
+| Supervised signals | measured label, classification, regression, target-conditioned prediction | [Supervised learning](/concepts/learning/supervised-learning), [Semi-supervised learning](/concepts/learning/semi-supervised-learning) |
+| Pretraining signals | large unlabeled corpus, masked objective, contrastive view, latent prediction | [Pretraining](/concepts/learning/pretraining), [Self-supervised learning](/concepts/learning/self-supervised-learning), [Masked modeling](/concepts/learning/masked-modeling) |
 | Representation checks | collapse, probing, retrieval, transfer behavior | [Representation collapse](/concepts/learning/representation-collapse), [Representation evaluation](/concepts/learning/representation-evaluation), [Linear probing](/concepts/learning/linear-probing) |
-| Contrastive and predictive SSL | positive/negative pairs, view construction, JEPA-style latent prediction | [Contrastive learning](/concepts/learning/contrastive-learning), [JEPA](/concepts/learning/jepa), [Augmentation policy](/concepts/learning/augmentation-policy) |
+| Contrastive and predictive SSL | positive/negative pair, view construction, JEPA-style latent prediction | [Contrastive learning](/concepts/learning/contrastive-learning), [JEPA](/concepts/learning/jepa), [Augmentation policy](/concepts/learning/augmentation-policy) |
 | Adaptation | fine-tuning, domain transfer, curriculum, distillation, instruction tuning | [Fine-tuning](/concepts/learning/fine-tuning), [Fine-tuning protocol](/concepts/learning/fine-tuning-protocol), [Transfer learning](/concepts/learning/transfer-learning), [Domain adaptation](/concepts/learning/domain-adaptation) |
-| Feedback and control | preference data, reward models, policy optimization, imitation, active learning | [Preference optimization](/concepts/learning/preference-optimization), [Reinforcement learning](/concepts/learning/reinforcement-learning), [Reward modeling](/concepts/learning/reward-modeling) |
+| Feedback and control | preference data, reward model, policy optimization, imitation, active learning | [Preference optimization](/concepts/learning/preference-optimization), [Reinforcement learning](/concepts/learning/reinforcement-learning), [Reward modeling](/concepts/learning/reward-modeling) |
 
 ## 학습 신호 기준
 
-| Method | Signal | Typical Objective | Read |
+| Method | Signal | Typical objective | Read |
 | --- | --- | --- | --- |
-| Supervised learning | human or measured label $y$ | prediction loss $\mathcal{L}(f_\theta(x), y)$ | [Supervised learning](/concepts/learning/supervised-learning) |
-| Semi-supervised learning | small labeled set plus unlabeled data | supervised loss plus consistency or pseudo-label term | [Semi-supervised learning](/concepts/learning/semi-supervised-learning) |
-| Self-supervised learning | target derived from the input itself | masked, contrastive, predictive, or reconstruction loss | [Self-supervised learning](/concepts/learning/self-supervised-learning) |
-| Contrastive learning | positive and negative pairs | rank matched pairs above mismatches | [Contrastive learning](/concepts/learning/contrastive-learning) |
-| JEPA-style learning | representation prediction without pixel/token reconstruction | predict latent target from context | [JEPA](/concepts/learning/jepa) |
-| Transfer / fine-tuning | pretrained model plus target task | adapt representation under a new validation rule | [Transfer learning](/concepts/learning/transfer-learning), [Fine-tuning](/concepts/learning/fine-tuning) |
-| Preference optimization | pairwise or listwise preference signal | prefer chosen output over rejected output | [Preference optimization](/concepts/learning/preference-optimization) |
-| Reinforcement learning | reward from environment or evaluator | maximize expected return | [Reinforcement learning](/concepts/learning/reinforcement-learning) |
+| Supervised learning | human 또는 measured label $y$ | prediction loss $\mathcal{L}(f_\theta(x), y)$ | [Supervised learning](/concepts/learning/supervised-learning) |
+| Semi-supervised learning | small labeled set + unlabeled data | supervised loss + consistency/pseudo-label term | [Semi-supervised learning](/concepts/learning/semi-supervised-learning) |
+| Self-supervised learning | input 자체에서 만든 target | masked, contrastive, predictive, reconstruction loss | [Self-supervised learning](/concepts/learning/self-supervised-learning) |
+| Contrastive learning | positive/negative pair | matched pair를 mismatch보다 높게 rank | [Contrastive learning](/concepts/learning/contrastive-learning) |
+| JEPA-style learning | pixel/token reconstruction 없는 representation prediction | context에서 latent target 예측 | [JEPA](/concepts/learning/jepa) |
+| Transfer / fine-tuning | pretrained model + target task | 새 validation rule 아래 representation adapt | [Transfer learning](/concepts/learning/transfer-learning), [Fine-tuning](/concepts/learning/fine-tuning) |
+| Preference optimization | pairwise/listwise preference signal | rejected output보다 chosen output 선호 | [Preference optimization](/concepts/learning/preference-optimization) |
+| Reinforcement learning | environment/evaluator reward | expected return maximize | [Reinforcement learning](/concepts/learning/reinforcement-learning) |
 
 ## Contrastive and Preference Forms
 
-Contrastive learning usually compares a positive pair against a set of negatives:
+Contrastive learning은 보통 positive pair를 negative set과 비교합니다.
 
 $$
 \mathcal{L}_{\mathrm{NCE}}
@@ -77,9 +77,9 @@ $$
 \sum_{j}\exp(\operatorname{sim}(z_i,z_j^-)/\tau)}
 $$
 
-Here $z_i$ is an anchor representation, $z_i^+$ is a positive representation, $z_j^-$ are negatives, and $\tau$ is a temperature.
+여기서 $z_i$는 anchor representation, $z_i^+$는 positive representation, $z_j^-$는 negative, $\tau$는 temperature입니다.
 
-Preference objectives compare outputs for the same context:
+Preference objective는 같은 context에 대한 output들을 비교합니다.
 
 $$
 \max_\theta
@@ -92,7 +92,7 @@ r_\theta(x,y^+) - r_\theta(x,y^-)
 \right]
 $$
 
-Here $y^+$ is preferred over $y^-$ and $r_\theta$ is a learned or implicit reward score.
+여기서 $y^+$는 $y^-$보다 선호되는 output이고, $r_\theta$는 learned 또는 implicit reward score입니다.
 
 ## 읽을 때 볼 질문
 
