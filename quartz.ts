@@ -97,6 +97,8 @@ ExternalPlugin.Explorer({
       "molecular-modeling/molecular-ligand": "Molecules and Ligands",
       "molecular-modeling/interactions": "Interactions",
       "molecular-modeling/data-evaluation": "Data and Evaluation",
+      "research/computational-biology": "Computational Biology",
+      "research/architectures": "Architectures",
       infra: "Infra",
       "infra/hardware": "Hardware",
       "infra/hpc": "HPC",
@@ -167,6 +169,10 @@ ExternalPlugin.Explorer({
       "generative-models",
       "computational-biology",
     ]
+    const researchGroups = [
+      "computational-biology",
+      "architectures",
+    ]
     const infraGroups = [
       "hardware",
       "hpc",
@@ -225,6 +231,14 @@ ExternalPlugin.Explorer({
     if (aSegments[0] === "papers" && bSegments[0] === "papers") {
       const aGroupIndex = paperGroups.indexOf(aSegments[1] ?? "")
       const bGroupIndex = paperGroups.indexOf(bSegments[1] ?? "")
+      if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
+        return aGroupIndex - bGroupIndex
+      }
+    }
+
+    if (aSegments[0] === "research" && bSegments[0] === "research") {
+      const aGroupIndex = researchGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = researchGroups.indexOf(bSegments[1] ?? "")
       if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
         return aGroupIndex - bGroupIndex
       }

@@ -29,6 +29,20 @@ tags:
 | 논문 읽기 | [Papers](/papers), [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | 공개 가능한 실험 기록 형식 | [Experiment ledger](/concepts/research-methodology/experiment-ledger), [Run record](/infra/reproducibility/run-record) |
 
+## Research Areas
+
+| Area | 질문 |
+| --- | --- |
+| [[research/computational-biology/index|Computational Biology Research]] | molecule, protein, pocket, structure-based modeling에서 무엇을 검증할 것인가 |
+| [[research/architectures/index|Architecture Research]] | architecture와 inductive bias가 어떤 task에서 실제로 유리한가 |
+
+## Seed Questions
+
+| Question | Area |
+| --- | --- |
+| [[research/computational-biology/pose-aware-molecular-generation|Pose-aware molecular generation]] | [[research/computational-biology/index|Computational Biology Research]] |
+| [[research/architectures/geometric-inductive-bias|Geometric inductive bias]] | [[research/architectures/index|Architecture Research]] |
+
 ## Research Note 조건
 
 | Field | Requirement |
