@@ -16,9 +16,27 @@ $$
 h_{\ell+1} = \sigma(W_\ell h_\ell + b_\ell)
 $$
 
-Stacking these affine transforms and nonlinearities gives the full MLP.
+Stacking these affine transforms and nonlinearities gives the full MLP:
 
-In this expression, $W_\ell h_\ell + b_\ell$ is a [[concepts/architectures/linear-layer|linear layer]] and $\sigma$ is an [[concepts/architectures/activation-function|activation function]].
+$$
+f_\theta(x)
+=
+W_L h_{L-1}+b_L,
+\qquad
+h_0=x,
+\qquad
+h_\ell=\sigma_\ell(W_\ell h_{\ell-1}+b_\ell)
+$$
+
+In this expression, $W_\ell \in \mathbb{R}^{d_\ell \times d_{\ell-1}}$, $b_\ell \in \mathbb{R}^{d_\ell}$, and $\sigma_\ell$ is an [[concepts/architectures/activation-function|activation function]]. The final layer may be followed by a task-specific readout such as [[concepts/architectures/softmax|Softmax]] for classification or an identity map for regression.
+
+The parameter count is roughly:
+
+$$
+|\theta|=\sum_{\ell=1}^{L}(d_\ell d_{\ell-1}+d_\ell)
+$$
+
+This is why width and depth change both capacity and memory cost even when the input representation stays fixed.
 
 ## Key Ideas
 
@@ -28,17 +46,29 @@ In this expression, $W_\ell h_\ell + b_\ell$ is a [[concepts/architectures/linea
 - Larger architectures use MLPs as feed-forward blocks, projection heads, readouts, and small adapters.
 - Normalization, residual connections, dropout, and activation choice often matter more than the label "MLP" suggests.
 
+## Where MLPs Appear
+
+| Role | Example |
+| --- | --- |
+| Baseline model | tabular features, fingerprints, pooled embeddings |
+| Projection head | contrastive learning, JEPA-style representation targets |
+| Feed-forward block | Transformer FFN, MLP-Mixer channel mixing |
+| Readout head | graph-level or sequence-level scalar prediction |
+| Adapter | small trainable module on top of frozen embeddings |
+
 ## Practical Checks
 
 - Check what features enter the MLP and whether they leak target information.
 - Compare against simple linear or shallow baselines before attributing gains to architecture depth.
 - Watch input scaling, missing values, and categorical encoding for tabular settings.
 - For representation learning, check whether the MLP head is used only during training or also at evaluation.
+- State whether the claim is about the backbone representation, the MLP head, or the full pipeline.
 
 ## Related
 
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/linear-layer|Linear layer]]
+- [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/normalization|Normalization]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/evaluation/leakage|Leakage]]

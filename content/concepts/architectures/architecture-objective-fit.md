@@ -28,6 +28,35 @@ where $\mathcal{F}_{\mathrm{arch}}$ is the function class, $\mathcal{L}_{\mathrm
 | state-space recurrence | long sequence prediction or filtering | objective may not require long memory |
 | sparse routing | multi-domain or conditional compute | routing balance and serving cost ignored |
 
+## Claim Decomposition
+
+When a paper says "architecture X improves performance", split the claim before accepting it:
+
+| Factor | Question | Evidence |
+| --- | --- | --- |
+| Architecture | What function class or inductive bias changed? | matched objective/data ablation |
+| Objective | Did the loss, pretraining signal, or supervision change? | same architecture with different objective |
+| Representation | Did tokenization, graph construction, conformer generation, or feature extraction change? | frozen representation or preprocessing ablation |
+| Data | Did scale, filtering, split, or label semantics change? | fixed data protocol and leakage check |
+| Compute | Did parameter count, training steps, context length, or search budget change? | compute-matched comparison |
+| Evaluation | Did metric, threshold, benchmark, or selection rule change? | fixed final test boundary |
+
+The useful comparison is rarely:
+
+$$
+\text{architecture A} \;>\; \text{architecture B}
+$$
+
+It is usually:
+
+$$
+(\mathcal{F}_A,\mathcal{L},r,D,E,C)
+\quad\text{vs.}\quad
+(\mathcal{F}_B,\mathcal{L},r,D,E,C)
+$$
+
+where only the architecture family $\mathcal{F}$ should change if the claim is truly architecture-specific.
+
 ## Attribution Checks
 
 - Are data, objective, compute, and evaluation held constant when claiming architecture superiority?
@@ -35,6 +64,7 @@ where $\mathcal{F}_{\mathrm{arch}}$ is the function class, $\mathcal{L}_{\mathrm
 - Does the output require invariant, equivariant, sequential, graph-level, or set-level behavior?
 - Is graph construction, tokenization, pocket extraction, or representation preprocessing part of the method?
 - Are ablations strong enough to separate architecture from objective and data scale?
+- Is the comparison fair under both quality and system constraints such as latency, memory, and throughput?
 
 ## Related
 
@@ -42,3 +72,5 @@ where $\mathcal{F}_{\mathrm{arch}}$ is the function class, $\mathcal{L}_{\mathrm
 - [[concepts/architectures/architecture-selection|Architecture selection]]
 - [[concepts/architectures/inductive-bias|Inductive bias]]
 - [[concepts/learning/objective-taxonomy|Objective taxonomy]]
+- [[concepts/evaluation/ablation-study|Ablation study]]
+- [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
