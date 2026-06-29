@@ -44,6 +44,7 @@ $$
 
 ## Notes
 
+- [[infra/server-ops/admin-usage-patterns|Admin Usage Patterns]]: daily server/HPC admin commands grouped by read-only checks, state-changing policy changes, and sensitive evidence boundaries
 - [[infra/gpu/index#driver-and-cuda|GPU driver and CUDA debugging]]
 - [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
 - [[infra/server-ops/account-management|Account and group management]]

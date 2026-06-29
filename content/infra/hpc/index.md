@@ -15,6 +15,7 @@ HPC note는 shared compute에서 반복되는 scheduling, resource request, Slur
 
 - [[infra/hpc/slurm|Slurm]]
 - [[infra/hpc/slurm-accounting-limits|Slurm Accounting and Limits]]
+- [[infra/server-ops/admin-usage-patterns|Admin Usage Patterns]]
 - [[concepts/systems/resource-scheduling|Resource scheduling]]
 - [[infra/hpc/resource-request|Resource request]]
 - [[infra/hpc/slurm-job-script|Slurm job script]]

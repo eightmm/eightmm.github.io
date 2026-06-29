@@ -8,7 +8,9 @@ tags:
 
 # Operations Command Cookbook
 
-This page collects public-safe command patterns for day-to-day server administration. It should explain what each command is for without publishing real hostnames, usernames, IP addresses, SSH ports, private paths, cluster names, or incident-specific output.
+This page collects public-safe command patterns for day-to-day server administration. For a higher-level grouping of the same material by operational use case, start with [[infra/server-ops/admin-usage-patterns|Admin Usage Patterns]].
+
+It should explain what each command is for without publishing real hostnames, usernames, IP addresses, SSH ports, private paths, cluster names, or incident-specific output.
 
 Use placeholders such as `<user>`, `<account>`, `<cluster>`, `<interface>`, `<node>`, `<job-id>`, and `<date>`.
 
@@ -41,7 +43,7 @@ $$
 | Process disk IO | `sudo iotop -o -a` | cumulative per-process read/write activity |
 | GPU mapping | `nvidia-smi --query-gpu=index,uuid,pci.bus_id,name --format=csv` | index, UUID, PCI bus, and device identity |
 | GPU Xid errors | `grep -i xid /var/log/kern.log` or `journalctl -k | grep -i xid` | driver-level GPU fault class |
-| Storage controller health | `sudo <raid-tool> /c0 show` | disk or controller degradation class |
+| Storage controller health | `sudo <raid-tool> /c<controller-id> show` | disk or controller degradation class |
 
 Do not treat a single command as a complete diagnosis. A useful incident note connects the command to a resource axis:
 
@@ -213,6 +215,7 @@ $$
 ## Related
 
 - [[infra/server-ops/index|Server Operations]]
+- [[infra/server-ops/admin-usage-patterns|Admin Usage Patterns]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
 - [[infra/gpu/index|GPU]]
 - [[infra/hardware/storage-network|Storage and network]]
