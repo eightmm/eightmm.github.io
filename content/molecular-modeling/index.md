@@ -26,6 +26,7 @@ $$
 | Area | Use for | Start |
 | --- | --- | --- |
 | Objects and Entities | protein, molecule, ligand, pocket, complex, assay, sequence, structure의 단위 정의 | [Objects and Entities](/molecular-modeling/entities) |
+| Representation Routes | sequence, graph, fingerprint, conformer, pocket, complex graph, coordinate input 선택 | [Representation Routes](/molecular-modeling/representation-routes) |
 | Sequence-Based Modeling | protein sequence, genome sequence, tokenization, representation, family/region split | [Sequence-Based Modeling](/molecular-modeling/sequence-based) |
 | Structure-Based Modeling | pocket, protein-ligand geometry, docking, pose, scoring, virtual screening | [Structure-Based Modeling](/molecular-modeling/structure-based) |
 | Molecular and Ligand Modeling | molecular identity, standardization, graph, fingerprint, conformer, property prediction | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand) |
@@ -44,6 +45,15 @@ $$
 | Structure-based modeling | pocket, protein-ligand geometry, pose, scoring, structure-aware generation | architecture definition |
 | AI method | architecture, objective, learning method, generative model, evaluation method | domain object definition |
 | Math foundation | likelihood, loss, gradient, geometry, symmetry, metric formula | workflow-specific assumption |
+
+## Representation First
+
+| Need | Start | Contract |
+| --- | --- | --- |
+| 어떤 입력 표현을 고를지 정한다 | [[molecular-modeling/representation-routes|Representation Routes]] | object, preprocessing, source, axes, availability |
+| protein-ligand pair를 모델 입력으로 만든다 | [[concepts/molecular-modeling/protein-ligand-representation-contract|Protein-ligand representation contract]] | protein, ligand, pocket, pose, pair context |
+| pocket이나 binding site를 정의한다 | [[concepts/sbdd/pocket-definition-contract|Pocket definition contract]] | known, predicted, ligand-defined, blind, template-derived |
+| benchmark claim을 읽는다 | [[molecular-modeling/data-evaluation|Data and Evaluation]] | label semantics, split unit, metric, baseline, leakage |
 
 ## 객체에서 시작하기
 
@@ -111,6 +121,7 @@ Structure-based modeling은 별도의 큰 덩어리로 봅니다. Docking은 그
 ## Related
 
 - [[ai/index|AI]]
+- [[molecular-modeling/representation-routes|Representation Routes]]
 - [[math/index|Math]]
 - [[concepts/molecular-modeling/index|Molecular modeling concepts]]
 - [[concepts/protein-modeling/index|Protein modeling concepts]]

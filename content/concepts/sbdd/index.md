@@ -16,6 +16,7 @@ Structure-based drug discovery는 3D molecular structure를 사용해 target-lig
 | Question | Start | Then Check |
 | --- | --- | --- |
 | how are receptor and ligand prepared? | [Receptor and ligand preparation](/concepts/sbdd/receptor-ligand-preparation), [Docking workflow](/concepts/sbdd/docking-workflow) | chemical state, missing atoms, receptor state |
+| how is the pocket defined? | [Pocket definition contract](/concepts/sbdd/pocket-definition-contract) | known, predicted, ligand-defined, blind, template-derived |
 | how are poses generated? | [Pose generation](/concepts/sbdd/pose-generation), [Pose RMSD](/concepts/sbdd/pose-rmsd) | atom mapping and symmetry |
 | is a predicted pose plausible? | [Pose quality](/concepts/sbdd/pose-quality), [Interaction fingerprint](/concepts/sbdd/interaction-fingerprint) | geometry, contacts, denominator |
 | what score is being optimized or ranked? | [Scoring function](/concepts/sbdd/scoring-function), [Binding affinity](/concepts/sbdd/binding-affinity) | label semantics and assay context |
@@ -28,6 +29,7 @@ Structure-based drug discovery는 3D molecular structure를 사용해 target-lig
 - [[concepts/sbdd/pose-rmsd|Pose RMSD]]
 - [[concepts/sbdd/scoring-function|Scoring function]]
 - [[concepts/sbdd/docking-workflow|Docking workflow]]
+- [[concepts/sbdd/pocket-definition-contract|Pocket definition contract]]
 - [[concepts/sbdd/receptor-ligand-preparation|Receptor and ligand preparation]]
 - [[concepts/sbdd/protein-ligand-interaction|Protein-ligand interaction]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
@@ -67,6 +69,7 @@ where $P$ is a protein or pocket and $L$ is a ligand.
 - [[molecular-modeling/structure-based/index|Structure-based modeling]]
 - [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
 - [[concepts/sbdd/pose-generation|Pose generation]]
+- [[concepts/sbdd/pocket-definition-contract|Pocket definition contract]]
 - [[concepts/sbdd/pose-rmsd|Pose RMSD]]
 - [[concepts/sbdd/protein-ligand-split|Protein-ligand split]]
 - [[papers/sbdd/posebusters|PoseBusters]]

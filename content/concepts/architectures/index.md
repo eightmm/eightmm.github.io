@@ -22,6 +22,7 @@ $$
 | Question | Start | Then Check |
 | --- | --- | --- |
 | what input object is being modeled? | [Modalities](/concepts/modalities), [Architecture selection](/concepts/architectures/architecture-selection) | sequence, graph, grid, set, coordinate, or mixed input |
+| is the claim architecture or objective driven? | [Architecture-objective fit](/concepts/architectures/architecture-objective-fit) | data, objective, compute, and evaluation controls |
 | what inductive bias is assumed? | [Inductive bias](/concepts/architectures/inductive-bias), [Parameter sharing](/concepts/architectures/parameter-sharing) | locality, order, permutation, symmetry, sparsity |
 | what mixes information? | [Attention](/concepts/architectures/attention), [Convolution](/concepts/architectures/convolution), [GNN](/concepts/architectures/gnn), [State-space models](/concepts/architectures/state-space-model) | token, pixel, node, coordinate, or state mixing |
 | what transforms channels? | [Linear layer](/concepts/architectures/linear-layer), [Feed-forward network](/concepts/architectures/feed-forward-network), [Activation function](/concepts/architectures/activation-function) | width, expansion, gating, parameter budget |
@@ -68,6 +69,7 @@ Mamba는 여기서 별도의 top-level family로 두지 않습니다. Selective 
 - [[entities/index|Entities]]
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/tasks/index|Tasks]]
+- [[concepts/architectures/architecture-objective-fit|Architecture-objective fit]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]

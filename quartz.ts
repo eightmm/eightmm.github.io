@@ -68,6 +68,7 @@ ExternalPlugin.Explorer({
     const displayNames: Record<string, string> = {
       ai: "AI",
       "ai/machine-learning": "Machine Learning",
+      "ai/model-reading-map": "Model Reading Map",
       "ai/architectures": "Architectures",
       "ai/learning-methods": "Learning Methods",
       "ai/generative-models": "Generative Models",
@@ -81,17 +82,20 @@ ExternalPlugin.Explorer({
       "agents/models": "Models",
       "agents/verification": "Verification",
       math: "Math",
+      "math/formula-reading-for-ai": "Formula Reading for AI",
       "math/linear-algebra": "Linear Algebra",
       "math/calculus-gradients": "Calculus and Gradients",
       "math/probability-statistics": "Probability and Statistics",
       "math/information-likelihood": "Information and Likelihood",
       "math/geometry-symmetry": "Geometry and Symmetry",
+      "math/geometry-for-structure-modeling": "Geometry for Structure Modeling",
       "math/discrete-graphs": "Discrete Math and Graphs",
       "math/dynamical-systems": "Dynamical Systems",
       "math/numerical-computing": "Numerical Computing",
       "math/evaluation-math": "Evaluation Math",
       "molecular-modeling": "Computational Biology",
       "molecular-modeling/entities": "Entities",
+      "molecular-modeling/representation-routes": "Representation Routes",
       "molecular-modeling/sequence-based": "Sequence-based Modeling",
       "molecular-modeling/structure-based": "Structure-based Modeling",
       "molecular-modeling/molecular-ligand": "Molecules and Ligands",
@@ -134,6 +138,7 @@ ExternalPlugin.Explorer({
     ]
     const aiGroups = [
       "machine-learning",
+      "model-reading-map",
       "architectures",
       "learning-methods",
       "generative-models",
@@ -142,6 +147,7 @@ ExternalPlugin.Explorer({
     ]
     const molecularGroups = [
       "entities",
+      "representation-routes",
       "sequence-based",
       "structure-based",
       "molecular-ligand",
@@ -149,11 +155,13 @@ ExternalPlugin.Explorer({
       "data-evaluation",
     ]
     const mathGroups = [
+      "formula-reading-for-ai",
       "linear-algebra",
       "calculus-gradients",
       "probability-statistics",
       "information-likelihood",
       "geometry-symmetry",
+      "geometry-for-structure-modeling",
       "discrete-graphs",
       "dynamical-systems",
       "numerical-computing",

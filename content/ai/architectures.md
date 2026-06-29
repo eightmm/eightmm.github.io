@@ -26,6 +26,7 @@ $$
 | Inductive bias | [Inductive bias](/concepts/architectures/inductive-bias) | architecture가 어떤 함수 공간을 선호하는가? |
 | Parameter sharing | [Parameter sharing](/concepts/architectures/parameter-sharing) | 같은 parameter를 어디에 반복 적용하는가? |
 | Architecture choice | [Architecture selection](/concepts/architectures/architecture-selection) | modality, task, data, compute에 맞는 family인가? |
+| Architecture vs objective | [Architecture-objective fit](/concepts/architectures/architecture-objective-fit) | 성능 차이가 구조 때문인지 학습 신호 때문인지 분리되는가? |
 | Scaling cost | [Computational complexity](/concepts/architectures/computational-complexity) | sequence length, graph size, image resolution에 따라 비용이 어떻게 느는가? |
 
 ## Architecture Reading Order

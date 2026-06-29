@@ -27,11 +27,12 @@ $$
 | 영역 | 용도 | 시작점 |
 | --- | --- | --- |
 | Foundations | definitions, formulas, reusable checks | [Math foundations](/concepts/math) |
+| Formula reading | paper equations, shapes, distributions, objectives, estimators, metrics | [Formula Reading for AI](/math/formula-reading-for-ai) |
 | Linear algebra | vectors, matrices, tensor shapes, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Calculus and optimization | derivatives, chain rule, Jacobians, Hessians, constraints, backpropagation math | [Calculus and gradients](/math/calculus-gradients), [Chain rule](/concepts/math/chain-rule), [Constrained optimization](/concepts/math/constrained-optimization) |
 | Probability | random variables, distributions, estimators, Bayesian inference, uncertainty, hypothesis tests | [Probability and statistics](/math/probability-statistics) |
 | Information | maximum likelihood, entropy, KL, cross-entropy, generative objectives | [Information and likelihood](/math/information-likelihood) |
-| Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry) |
+| Geometry | groups, frames, invariance, equivariance, coordinate modeling | [Geometry and symmetry](/math/geometry-symmetry), [Geometry for Structure Modeling](/math/geometry-for-structure-modeling) |
 | Graphs | sets, neighborhoods, permutations, graph modeling | [Discrete math and graphs](/math/discrete-graphs) |
 | Dynamics | discrete updates, ODEs, SDEs, vector fields, generative flows, molecular dynamics | [Dynamical systems](/math/dynamical-systems) |
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
@@ -60,6 +61,15 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 4. Operation: linear map, normalization, expectation, derivative, sampling, aggregation 중 무엇인가?
 5. Target: loss, metric, likelihood, score, energy, reward, constraint 중 무엇인가?
 6. Estimate: population quantity인지 finite sample estimate인지 구분합니다.
+
+## Formula by Claim Type
+
+| Claim | Route | Check |
+| --- | --- | --- |
+| Architecture formula | [[concepts/architectures/linear-layer|Linear layer]], [[concepts/architectures/attention|Attention]] | shape, axis, projection, normalization |
+| Learning objective | [[ai/learning-methods|Learning Methods]], [[concepts/learning/objective-taxonomy|Objective taxonomy]] | label, mask, contrast, likelihood, denoising, reward |
+| Geometry rule | [[math/geometry-for-structure-modeling|Geometry for Structure Modeling]] | invariant target인지 equivariant target인지 |
+| Evaluation metric | [[math/evaluation-math|Evaluation Math]], [[concepts/math/estimator-vs-metric|Estimator vs metric]] | population quantity, finite estimate, selection rule |
 
 ## 연결되는 곳
 
@@ -125,6 +135,8 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 ## Related
 
 - [[ai/index|AI]]
+- [[math/formula-reading-for-ai|Formula Reading for AI]]
+- [[math/geometry-for-structure-modeling|Geometry for Structure Modeling]]
 - [[molecular-modeling/index|Computational Biology]]
 - [[concepts/index|Concepts]]
 - [[papers/index|Papers]]

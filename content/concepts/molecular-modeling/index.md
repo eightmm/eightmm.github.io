@@ -46,6 +46,7 @@ Molecular identity policy가 명확해지기 전에는 label을 split하거나 a
 | --- | --- | --- |
 | What is the molecule identity? | [Molecular identity](/concepts/molecular-modeling/molecular-identity), [Molecular standardization](/concepts/molecular-modeling/molecular-standardization), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) | salts, tautomers, stereo, protonation, charge, source policy |
 | What does the model see? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [RDKit](/concepts/molecular-modeling/rdkit), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | featurizer silently changing the object |
+| How is protein-ligand input represented? | [Protein-ligand representation contract](/concepts/molecular-modeling/protein-ligand-representation-contract) | pocket, pose, atom mapping, coordinate source, pair context |
 | How is similarity or retrieval defined? | [Molecular similarity](/concepts/molecular-modeling/molecular-similarity), [Substructure search](/concepts/molecular-modeling/substructure-search) | proxy similarity used as domain truth |
 | What prediction task is claimed? | [Molecular property prediction](/concepts/molecular-modeling/molecular-property-prediction) | label context and split unit missing |
 | Is generation constrained? | [Fragment-SELFIES](/concepts/molecular-modeling/fragment-selfies) | valid strings without useful molecules |
@@ -88,6 +89,7 @@ Molecular identity policy가 명확해지기 전에는 label을 split하거나 a
 - [[entities/ligand|Ligand]]
 - [[entities/target-assay-label|Target-assay-label]]
 - [[concepts/molecular-modeling/rdkit|RDKit]]
+- [[concepts/molecular-modeling/protein-ligand-representation-contract|Protein-ligand representation contract]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]

@@ -27,6 +27,7 @@ $$
 | --- | --- | --- |
 | Math | probability, linear algebra, calculus, likelihood, information theory 같은 수학 기반 | [Math](/math) |
 | Machine Learning | prediction problem, feature, loss, optimization, validation | [Machine Learning](/ai/machine-learning) |
+| Model Reading Map | 논문 한 편을 input, representation, architecture, objective, evaluation, runtime으로 분해 | [Model Reading Map](/ai/model-reading-map) |
 | Architectures | MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE 같은 모델 구조 | [Architectures](/ai/architectures) |
 | Learning Methods | supervised learning, self-supervised learning, contrastive learning, JEPA, fine-tuning, preference/RL objective | [Learning Methods](/ai/learning-methods) |
 | Generative Models | autoregressive model, VAE, GAN, diffusion, score model, flow matching, normalizing flow | [Generative Models](/ai/generative-models) |
@@ -42,6 +43,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 | --- | --- |
 | 필요한 수학 정의인가? | [Math](/math), [Math foundations](/concepts/math) |
 | 입력과 출력이 무엇인가? | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
+| 논문 한 편을 어떻게 분해해서 읽을 것인가? | [Model Reading Map](/ai/model-reading-map) |
 | 예측 문제와 loss의 기본형인가? | [Machine Learning](/ai/machine-learning) |
 | 모델 내부 구조인가? | [Architectures](/ai/architectures) |
 | supervision, objective, transfer 방식인가? | [Learning Methods](/ai/learning-methods) |
@@ -117,8 +119,8 @@ AI 쪽은 너무 빨리 논문명 중심으로 커지기 쉽습니다. 그래서
 | Input object | text, image, graph, set, coordinate, molecule, protein, agent state 중 무엇인가 | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
 | Task output | class, scalar, ranking, sequence, graph, coordinate, sample, action 중 무엇인가 | [Task specification](/concepts/tasks/task-specification), [Task output space](/concepts/tasks/task-output-space) |
 | Representation | raw object가 token, graph, coordinate, embedding, conformer로 어떻게 바뀌는가 | [Representation contract](/concepts/modalities/representation-contract) |
-| Architecture | 어떤 inductive bias, parameter sharing, complexity를 쓰는가 | [Architectures](/ai/architectures) |
-| Learning signal | label, mask, contrast, preference, reward, denoising, velocity 중 무엇인가 | [Learning Methods](/ai/learning-methods) |
+| Architecture | 어떤 inductive bias, parameter sharing, complexity를 쓰는가 | [Architectures](/ai/architectures), [Architecture-objective fit](/concepts/architectures/architecture-objective-fit) |
+| Learning signal | label, mask, contrast, preference, reward, denoising, velocity 중 무엇인가 | [Learning Methods](/ai/learning-methods), [Objective taxonomy](/concepts/learning/objective-taxonomy) |
 | Objective | loss, likelihood, score, reward, metric이 어떻게 정의되는가 | [Machine Learning](/ai/machine-learning), [Math](/math) |
 | Selection rule | checkpoint, hyperparameter, threshold, prompt, filter를 어떻게 골랐는가 | [Model selection](/concepts/machine-learning/model-selection) |
 | Evaluation claim | 어떤 split, metric, baseline, uncertainty로 주장을 검증하는가 | [Evaluation](/ai/evaluation) |
@@ -128,6 +130,7 @@ AI 쪽은 너무 빨리 논문명 중심으로 커지기 쉽습니다. 그래서
 ## Related
 
 - [[concepts/index|Concepts]]
+- [[ai/model-reading-map|Model Reading Map]]
 - [[math/index|Math]]
 - [[molecular-modeling/index|Computational Biology]]
 - [[infra/index|Infra]]

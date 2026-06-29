@@ -28,7 +28,7 @@ $$
 | Constrained optimization | feasibility, penalties, Lagrangian views, projected updates | [Constrained optimization](/concepts/math/constrained-optimization) |
 | Geometry and symmetry | coordinate sets, rigid motions, equivariance, invariant targets | [Geometry](/concepts/math/geometry), [Symmetry group](/concepts/math/symmetry-group) |
 | Probability | random variables, distributions, expectations, normal assumptions | [Random variable](/concepts/math/random-variable), [Probability distribution](/concepts/math/probability-distribution), [Expectation](/concepts/math/expectation), [Normal distribution](/concepts/math/normal-distribution) |
-| Estimation and statistics | finite-sample estimates, uncertainty, hypothesis checks, bias/variance | [Statistical estimator](/concepts/math/statistical-estimator), [Monte Carlo estimation](/concepts/math/monte-carlo-estimation), [Central limit theorem](/concepts/math/central-limit-theorem), [Hypothesis testing](/concepts/math/hypothesis-testing), [Bias-variance tradeoff](/concepts/math/bias-variance-tradeoff) |
+| Estimation and statistics | finite-sample estimates, uncertainty, hypothesis checks, bias/variance | [Estimator vs metric](/concepts/math/estimator-vs-metric), [Statistical estimator](/concepts/math/statistical-estimator), [Monte Carlo estimation](/concepts/math/monte-carlo-estimation), [Central limit theorem](/concepts/math/central-limit-theorem), [Hypothesis testing](/concepts/math/hypothesis-testing), [Bias-variance tradeoff](/concepts/math/bias-variance-tradeoff) |
 | Dependence | covariance, correlation, representation diagnostics, label relationships | [Covariance and correlation](/concepts/math/covariance-correlation) |
 | Likelihood and information | MLE, entropy, KL, cross-entropy, Bayesian updates | [Maximum likelihood](/concepts/math/maximum-likelihood), [Entropy and KL divergence](/concepts/math/entropy-kl), [Bayes rule](/concepts/math/bayes-rule), [Bayesian inference](/concepts/math/bayesian-inference) |
 
@@ -78,5 +78,6 @@ $$
 - [[concepts/machine-learning/index|Machine learning]]
 - [[concepts/generative-models/index|Generative models]]
 - [[concepts/evaluation/index|Evaluation]]
+- [[concepts/math/estimator-vs-metric|Estimator vs metric]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]

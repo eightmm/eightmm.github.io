@@ -23,6 +23,7 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 
 | Question | Start | Evidence Boundary |
 | --- | --- | --- |
+| what kind of objective is being optimized? | [Objective taxonomy](/concepts/learning/objective-taxonomy) | objective family, target construction, metric alignment |
 | is the target externally labeled? | [Supervised learning](/concepts/learning/supervised-learning), [Semi-supervised learning](/concepts/learning/semi-supervised-learning) | label semantics, noise, split unit |
 | is the target derived from the input? | [Self-supervised learning](/concepts/learning/self-supervised-learning) | augmentation, masking, collapse, transfer metric |
 | is the model reused on a downstream task? | [Pretraining](/concepts/learning/pretraining), [Transfer learning](/concepts/learning/transfer-learning), [Fine-tuning](/concepts/learning/fine-tuning) | downstream protocol and data split |
@@ -90,6 +91,7 @@ where $q$ defines how examples and targets are sampled. For papers, this means t
 ## Related
 
 - [[concepts/tasks/index|Tasks]]
+- [[concepts/learning/objective-taxonomy|Objective taxonomy]]
 - [[concepts/architectures/index|Architectures]]
 - [[concepts/evaluation/index|Evaluation]]
 - [[agents/index|Agents]]

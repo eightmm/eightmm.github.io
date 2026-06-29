@@ -44,6 +44,7 @@ Agent, tool-use, preference optimization을 읽을 때는 supervised fine-tuning
 
 | Route | Use for | Start |
 | --- | --- | --- |
+| Objective taxonomy | objective family를 supervised, likelihood, contrastive, masked, denoising, flow, preference, RL로 분리 | [Objective taxonomy](/concepts/learning/objective-taxonomy) |
 | Supervised signals | measured label, classification, regression, target-conditioned prediction | [Supervised learning](/concepts/learning/supervised-learning), [Semi-supervised learning](/concepts/learning/semi-supervised-learning) |
 | Pretraining signals | large unlabeled corpus, masked objective, contrastive view, latent prediction | [Pretraining](/concepts/learning/pretraining), [Self-supervised learning](/concepts/learning/self-supervised-learning), [Masked modeling](/concepts/learning/masked-modeling) |
 | Representation checks | collapse, probing, retrieval, transfer behavior | [Representation collapse](/concepts/learning/representation-collapse), [Representation evaluation](/concepts/learning/representation-evaluation), [Linear probing](/concepts/learning/linear-probing) |
