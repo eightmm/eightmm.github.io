@@ -18,9 +18,17 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 | [Computational Biology](/molecular-modeling) | focused notes on biological objects, sequence-based modeling, molecular and ligand modeling, interaction modeling, and structure-based workflows |
 | [Infra](/infra) | hardware, GPU, HPC, storage, reproducibility, server operations |
 | [Research](/research) | public research ideas, questions, hypotheses, and synthesis notes |
-| [Papers](/papers) | curated paper notes and reading utilities |
 | [Projects](/projects) | public artifacts, implementations, design decisions, workflows |
+| [Papers](/papers) | curated paper notes and reading utilities |
 | [Posts](/posts) | reader-facing essays and topic maps |
+
+## Content Groups
+
+| Group | Area | 역할 |
+| --- | --- | --- |
+| Foundation | [AI](/ai), [Math](/math), [Computational Biology](/molecular-modeling), [Infra](/infra), [Agents](/agents) | 전반적인 설명과 오래 남는 개념 |
+| My Work | [Research](/research), [Projects](/projects) | 내 연구 질문, 아이디어, 구현물, 운영한 workflow |
+| Reading and Writing | [Papers](/papers), [Posts](/posts) | 논문 리뷰, 읽기 기록, 외부 독자를 위한 글 |
 
 ## Research와 Projects 구분
 

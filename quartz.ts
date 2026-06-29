@@ -11,8 +11,8 @@ ExternalPlugin.Explorer({
       "molecular-modeling",
       "infra",
       "research",
-      "papers",
       "projects",
+      "papers",
       "posts",
     ]
     const hiddenExplorerSubtrees = [
@@ -126,8 +126,8 @@ ExternalPlugin.Explorer({
       "molecular-modeling",
       "infra",
       "research",
-      "papers",
       "projects",
+      "papers",
       "posts",
     ]
     const aiGroups = [
