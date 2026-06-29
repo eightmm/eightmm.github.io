@@ -14,6 +14,8 @@ $$
 \left[\mathcal{L}_{\mathrm{objective}}(u;\theta)\right]
 $$
 
+The object $u$ depends on the objective. It may be a labeled example $(x,y)$, a masked input $(x_{\mathrm{vis}},x_{\mathrm{mask}})$, paired views $(x_i,x_j)$, a noisy sample $(x_t,t)$, a preference pair $(y^+,y^-)$, or a trajectory $\tau$.
+
 ## Objective Families
 
 | Family | Signal | Typical form | Main question |
@@ -27,6 +29,19 @@ $$
 | flow matching | target velocity field | $\lVert v_\theta(x_t,t)-u_t(x_t)\rVert^2$ | What path and velocity define generation? |
 | preference | chosen/rejected outputs | pairwise logistic objective | Does preference reflect target utility? |
 | reinforcement learning | reward over trajectories | expected return $J(\theta)$ | Is reward aligned and stable? |
+
+## Routing Rule
+
+| If the paper changes... | Route The Claim To |
+| --- | --- |
+| loss formula or target construction | objective / learning method |
+| model block, parameter sharing, or mixing pattern | architecture |
+| tokenization, graph construction, conformer policy, or features | representation |
+| pretraining corpus, filtering, or split | data protocol |
+| metric, benchmark, threshold, or selection rule | evaluation |
+| GPU budget, context length, batch size, or serving path | systems |
+
+Do not treat a method as objective-driven unless the comparison isolates $\mathcal{L}_{\mathrm{objective}}$ from architecture, representation, data, compute, and evaluation changes.
 
 ## Reading Checks
 
@@ -42,3 +57,4 @@ $$
 - [[concepts/machine-learning/loss-function|Loss function]]
 - [[concepts/machine-learning/objective-metric-alignment|Objective-metric alignment]]
 - [[concepts/architectures/architecture-objective-fit|Architecture-objective fit]]
+- [[concepts/evaluation/claim-evidence-boundary|Claim evidence boundary]]
