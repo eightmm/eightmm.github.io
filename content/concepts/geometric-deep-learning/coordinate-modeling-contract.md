@@ -105,4 +105,4 @@ Coordinate metrics need a frame and mapping rule.
 - [[concepts/sbdd/pose-rmsd|Pose RMSD]]
 - [[concepts/sbdd/pose-quality|Pose quality]]
 - [[concepts/sbdd/template-leakage|Template leakage]]
-- [[molecular-modeling/geometry|Molecular modeling geometry]]
+- [[molecular-modeling/geometry-for-structure-modeling|Geometry for Structure Modeling]]

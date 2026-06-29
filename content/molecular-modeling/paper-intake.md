@@ -24,7 +24,7 @@ $$
 | Field | Question | Route |
 | --- | --- | --- |
 | Object | Is the example a molecule, ligand, protein, pocket, complex, pose, assay record, or genome region? | [Objects and Entities](/molecular-modeling/entities) |
-| Representation | Is it SMILES, graph, fingerprint, sequence, embedding, conformer, coordinate, or complex graph? | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand), [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Geometry](/molecular-modeling/geometry) |
+| Representation | Is it SMILES, graph, fingerprint, sequence, embedding, conformer, coordinate, or complex graph? | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand), [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Geometry for Structure Modeling](/molecular-modeling/geometry-for-structure-modeling) |
 | Protein sequence model | Is it a protein language model, MSA-based model, template-based model, or hybrid? | [Protein language model](/concepts/protein-modeling/protein-language-model), [Multiple sequence alignment](/concepts/protein-modeling/multiple-sequence-alignment) |
 | Chemical state | Are salt, stereochemistry, tautomer, protonation, charge, and conformer policy fixed? | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
 | Context | Does prediction depend on target, assay, pocket, receptor state, species, construct, or template? | [Computational Biology Boundary](/molecular-modeling/computational-biology) |

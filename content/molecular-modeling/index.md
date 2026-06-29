@@ -105,7 +105,7 @@ Structure-based modeling은 별도의 큰 덩어리로 봅니다. Docking은 그
 | --- | --- |
 | receptor와 ligand를 어떻게 준비하는가? | [Docking workflow](/concepts/sbdd/docking-workflow), [Receptor and ligand preparation](/concepts/sbdd/receptor-ligand-preparation) |
 | pose를 생성하거나 refine하는가? | [Protein-ligand docking](/molecular-modeling/structure-based/protein-ligand-docking), [Docking](/molecular-modeling/docking), [Pose generation](/concepts/sbdd/pose-generation) |
-| geometry가 타당한가? | [Geometry](/molecular-modeling/geometry), [Pose quality](/concepts/sbdd/pose-quality), [PoseBusters](/papers/sbdd/posebusters) |
+| geometry가 타당한가? | [Geometry for Structure Modeling](/molecular-modeling/geometry-for-structure-modeling), [Pose quality](/concepts/sbdd/pose-quality), [PoseBusters](/papers/sbdd/posebusters) |
 | score가 pose, affinity, ranking, enrichment 중 무엇을 뜻하는가? | [Scoring function](/concepts/sbdd/scoring-function), [Binding affinity](/concepts/sbdd/binding-affinity), [Virtual screening](/concepts/sbdd/virtual-screening) |
 | train/test가 ligand와 protein 양쪽에서 분리되는가? | [Protein-ligand split](/concepts/sbdd/protein-ligand-split), [Leakage](/concepts/evaluation/leakage) |
 
@@ -114,7 +114,7 @@ Structure-based modeling은 별도의 큰 덩어리로 봅니다. Docking은 그
 | 먼저 볼 것 | 확인할 내용 | Start |
 | --- | --- | --- |
 | Object | molecule, protein, ligand, pocket, complex, genome region 중 무엇인가 | [Objects and Entities](/molecular-modeling/entities) |
-| Representation | string, graph, fingerprint, embedding, conformer, coordinate, complex graph 중 무엇인가 | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand), [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Geometry](/molecular-modeling/geometry) |
+| Representation | string, graph, fingerprint, embedding, conformer, coordinate, complex graph 중 무엇인가 | [Molecular and Ligand Modeling](/molecular-modeling/molecular-ligand), [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Geometry for Structure Modeling](/molecular-modeling/geometry-for-structure-modeling) |
 | Chemical state | salt, stereo, tautomer, protonation, charge, conformer policy가 명확한가 | [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) |
 | Label context | target, assay, endpoint, unit, threshold, censoring, source가 명확한가 | [Data and Evaluation](/molecular-modeling/data-evaluation), [Target-assay-label contract](/entities/target-assay-label) |
 | Split unit | scaffold, protein family, complex pair, assay/source, time 중 무엇으로 나누는가 | [Data and Evaluation](/molecular-modeling/data-evaluation) |

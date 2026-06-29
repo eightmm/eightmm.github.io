@@ -113,7 +113,7 @@ Specific paper는 [[papers/sbdd/index|Structure-based modeling papers]], [[paper
 
 - [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[molecular-modeling/docking|Docking]]
-- [[molecular-modeling/geometry|Geometry]]
+- [[molecular-modeling/geometry-for-structure-modeling|Geometry for Structure Modeling]]
 - [[ai/generative-models|Generative models]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/generative-models/molecular-generation|Molecular generation]]

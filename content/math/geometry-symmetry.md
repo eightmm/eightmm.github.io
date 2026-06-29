@@ -149,6 +149,6 @@ Model family는 dataset format만이 아니라 object와 target의 symmetry에 �
 ## Related
 
 - [[math/index|Math]]
-- [[molecular-modeling/geometry|Computational Biology geometry]]
+- [[molecular-modeling/geometry-for-structure-modeling|Geometry for Structure Modeling]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]

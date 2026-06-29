@@ -34,7 +34,7 @@ Do not route a paper only by model name. A Transformer for protein sequences, a 
 | Protein structure prediction | protein sequence, MSA, template, structure | better coordinates or contact geometry | [Protein modeling concepts](/concepts/protein-modeling), [Coordinate modeling contract](/concepts/geometric-deep-learning/coordinate-modeling-contract) |
 | Docking or pose generation | protein-ligand complex | better pose, ranking, or enrichment | [Docking](/molecular-modeling/docking), [SBDD concepts](/concepts/sbdd) |
 | Structure-conditioned generation | pocket, ligand, complex | valid and useful molecules under context | [Generative models](/ai/generative-models), [Structure-based modeling](/molecular-modeling/structure-based) |
-| Conformer generation | molecule, conformer ensemble | plausible low-energy 3D structures | [Conformer](/concepts/molecular-modeling/conformer), [Geometry](/molecular-modeling/geometry) |
+| Conformer generation | molecule, conformer ensemble | plausible low-energy 3D structures | [Conformer](/concepts/molecular-modeling/conformer), [Geometry for Structure Modeling](/molecular-modeling/geometry-for-structure-modeling) |
 | Protein design | sequence, backbone, fold, binder, function | generated designs satisfy structural or functional constraints | [Protein design](/concepts/generative-models/protein-design), [Protein modeling](/molecular-modeling/protein-modeling) |
 | Genome sequence modeling | sequence window, variant, region | better sequence or variant-level prediction | [Sequence-Based Modeling](/molecular-modeling/sequence-based), [Genome modeling concepts](/concepts/genome-modeling) |
 
