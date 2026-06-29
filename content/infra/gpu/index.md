@@ -141,6 +141,48 @@ $$
 - clean environment에서 재현해 host 문제와 project 문제를 분리합니다.
 - private node name이나 project path 대신 error class와 compatibility layer를 기록합니다.
 
+## Device Mapping
+
+GPU index는 재부팅, driver 상태, visibility setting, scheduler allocation에 따라 사람이 기대한 물리 GPU와 다르게 보일 수 있습니다. Slurm GRES, `CUDA_VISIBLE_DEVICES`, `/dev/nvidia*`, PCI bus ID, UUID를 구분해서 봐야 합니다.
+
+```bash
+nvidia-smi --query-gpu=index,uuid,pci.bus_id,name --format=csv
+```
+
+필요하면 private runbook에서 minor number까지 매핑합니다. Public note에는 raw output을 붙이지 않고 mapping logic만 남깁니다.
+
+```bash
+for i in $(nvidia-smi --query-gpu=index --format=csv,noheader); do
+  nvidia-smi -q -i "$i" | awk -v idx="$i" '
+    /Product Name/ {sub(/.*: /,""); name=$0}
+    /GPU UUID/     {sub(/.*: /,""); uuid=$0}
+    /Bus Id/       {sub(/.*: /,""); bus=$0}
+    /Minor Number/ {sub(/.*: /,""); minor=$0}
+    END {printf("index=%s minor=%s dev=/dev/nvidia%s bus=%s uuid=%s name=%s\n", idx, minor, minor, bus, uuid, name)}
+  '
+done
+```
+
+Publish only the conclusion, such as `scheduler-visible GPU mapping was checked`. Do not publish private bus topology, node inventory, serial-like identifiers, or per-node device layout.
+
+## Xid Triage
+
+Xid log entries are not a full root cause by themselves. Treat them as the first classification step.
+
+```bash
+journalctl -k | grep -i xid
+grep -i xid /var/log/kern.log
+```
+
+| Evidence | Next Question |
+| --- | --- |
+| repeated Xid on one device | same physical GPU, same job type, or same time window? |
+| Xid after driver update | driver/runtime compatibility or reboot/module state? |
+| Xid during high utilization | power, thermal, memory pressure, or workload-specific kernel? |
+| Xid across many devices | host, driver, PCIe, power, or scheduler-wide event? |
+
+Public notes should report the class of issue and the diagnostic route, not the raw kernel log.
+
 ## 진단 축
 
 - Capacity: model, activation, optimizer state, cache가 들어가는가?
@@ -178,6 +220,7 @@ GPU note는 추측보다 작은 측정값에서 시작합니다.
 - [[infra/hardware/memory-hierarchy|Memory hierarchy]]
 - [[concepts/systems/inference-serving|Inference serving]]
 - [[infra/hpc/slurm|Slurm]]
+- [[infra/server-ops/operations-command-cookbook|Operations Command Cookbook]]
 - [[infra/io/data-loading|Data loading and IO]]
 - [[concepts/systems/memory-compute-tradeoff|Memory-compute tradeoff]]
 - [[concepts/systems/latency-throughput|Latency and throughput]]

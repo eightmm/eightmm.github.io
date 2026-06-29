@@ -16,7 +16,7 @@ $$
 \text{representation} + \text{probability model} + \text{objective} + \text{optimization}
 $$
 
-이 페이지들은 수식 뒤의 object, distribution, parameter, estimator를 식별하기 위한 입구입니다. 증명 중심 내용은 AI, Computational Biology, evaluation note를 명확하게 만들 때만 나중에 추가합니다.
+이 페이지들은 수식 뒤의 object, distribution, parameter, estimator를 식별하기 위한 입구입니다. 증명 자체보다 AI, Computational Biology, evaluation note를 읽는 데 필요한 정의와 해석을 우선합니다.
 
 ## Route Map
 

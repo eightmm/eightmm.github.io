@@ -30,6 +30,32 @@ Storage and network determine how data enters a training job, how checkpoints su
 | GPU to GPU across nodes | distributed training | all-reduce, bandwidth, latency, rank placement |
 | client to service | inference serving | p95/p99 latency, queueing, payload size |
 
+## Network Evidence
+
+Realtime bandwidth tools should be selected by the operating environment. Public notes should describe the signal, not the private interface name or endpoint.
+
+```bash
+ip -s link show dev <interface>
+sar -n DEV 1
+ifstat <interface>
+```
+
+Use `netstat`/`ss` for socket-level symptoms, not as the only measure of interface bandwidth.
+
+```bash
+ss -s
+netstat -s
+```
+
+Classify the result:
+
+| Signal | Interpretation |
+| --- | --- |
+| high receive/transmit rate | bandwidth pressure or expected transfer |
+| packet drops/errors | interface, driver, cable, switch, or overload class |
+| retransmits | congestion or path-quality issue |
+| many small connections | metadata, service, or client pattern issue |
+
 ## Training Data Path
 
 The data path can be written as:
@@ -69,9 +95,27 @@ If the all-reduce time grows faster than useful compute, adding more GPUs can re
 - Cache hot datasets near the node when reuse is high and policy allows it.
 - Avoid millions of tiny files when a shard format is acceptable.
 - Separate checkpoint staging from long-term artifact storage.
+- Use per-process IO tools to distinguish checkpoint writers, data loaders, copies, and archive extraction.
+- Use controller health tools privately when disk failure is suspected, but publish only the health class.
 - Measure dataloader time separately from GPU compute time.
 - For distributed jobs, record world size, node count, GPU count per node, and interconnect assumption generically.
 - Do not publish private mount paths, hostnames, live topology, device IDs, account names, or exact security controls.
+
+## Storage Health Evidence
+
+Disk performance symptoms and disk health symptoms are different. Slow training can come from storage contention even when hardware is healthy; a degraded array can also be masked until writes fail.
+
+```bash
+sudo iotop -o -a
+sudo <raid-tool> /c<controller-id> show
+```
+
+| Evidence | Means |
+| --- | --- |
+| one process dominates write IO | checkpoint, logging, copy, or extraction bottleneck |
+| many workers read tiny files | metadata contention or dataset layout problem |
+| controller reports degraded array | hardware maintenance issue, not a model bug |
+| rebuild in progress | temporary performance and reliability risk |
 
 ## Checks
 

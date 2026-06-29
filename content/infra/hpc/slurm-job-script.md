@@ -126,6 +126,20 @@ Use this as a public-safe reference. Replace real partition, node, account, path
 | `--begin=<date/time>` | delayed start | use placeholder date/time |
 | `--exclusive` | exclusive node allocation | justify because it reduces sharing |
 
+The options usually answer one of five questions:
+
+$$
+\text{who runs what}
+\rightarrow
+\text{where}
+\rightarrow
+\text{with how much resource}
+\rightarrow
+\text{for how long}
+\rightarrow
+\text{what happens after}
+$$
+
 Dependency patterns:
 
 ```bash
@@ -151,6 +165,28 @@ Dependency patterns:
 | placement | `--partition`, `--nodelist`, `--nodefile`, `--exclusive` | exposing cluster topology or forcing fragile placement |
 | environment | `--export` | leaking secrets or environment-specific assumptions |
 | workflow | `--dependency`, `--begin`, `--mail-type` | hidden ordering assumptions |
+
+## Minimal Option Sets
+
+| Workload | Usually Needs | Avoid Until Needed |
+| --- | --- | --- |
+| CPU preprocessing | `--cpus-per-task`, `--mem`, `--time`, logs | GPU request, node pinning |
+| Single-GPU training | `--gres=gpu:<count>`, CPU/memory, logs, checkpoint dirs | multi-node options |
+| Job array | array option, per-task output path, deterministic shard mapping | manual repeated submission |
+| Multi-node training | nodes, tasks, launcher contract, communication env, checkpointing | private hostnames in script |
+| Long job | time limit, resume behavior, dependency or continuation plan | hidden manual state |
+
+## Public Script Checklist
+
+| Field | Public-safe Example |
+| --- | --- |
+| job name | `example-train`, not an internal project codename |
+| log path | `logs/%x-%j.out`, not a private absolute path |
+| partition/account | `<partition>`, `<account>`, or omitted |
+| node selection | avoid, unless explaining a generic concept |
+| output path | `/path/to/project/artifacts` or relative placeholder |
+| notification email | omit |
+| exported variables | never include tokens, keys, endpoints, or credentials |
 
 ## 확인할 것
 

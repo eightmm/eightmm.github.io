@@ -48,7 +48,7 @@ $$
 - [[infra/server-ops/storage-mounts|Storage mounts and permissions]]
 - [[infra/server-ops/account-management|Account and group management]]
 - [[infra/server-ops/monitoring|Monitoring shared machines]]
-- [[infra/server-ops/operations-command-cookbook|Operations Command Cookbook]]
+- [[infra/server-ops/operations-command-cookbook|Operations Command Cookbook]]: network, disk IO, GPU Xid, auth logs, Slurm inspection, and public-safe command patterns
 - [[infra/server-ops/incident-response|Incident response]]
 - [[infra/server-ops/backup-restore|Backup and restore]]
 - [[infra/server-ops/access-boundary|Access boundary]]

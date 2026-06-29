@@ -53,6 +53,30 @@ Public writeups should convert exact results into safe summaries:
 
 State-changing `sacctmgr` commands should stay in private operations notes unless converted into generic examples.
 
+Use account classes, not real lab roles or usernames, in public documentation.
+
+$$
+\text{account class}
+\rightarrow
+\text{fair-share weight}
+\rightarrow
+\text{per-job limit}
+\rightarrow
+\text{group limit}
+\rightarrow
+\text{submit limit}
+$$
+
+## Example Account Classes
+
+The values below are placeholders. They show the shape of a policy, not a recommended quota.
+
+| Account class | Intended use | Typical constraints |
+| --- | --- | --- |
+| `<small-account>` | short onboarding, tutorial, or smoke-test workloads | low submit count, low concurrent jobs, modest group TRES |
+| `<standard-account>` | regular research workloads | normal fair-share, higher submit count, bounded per-job TRES |
+| `<long-account>` | long walltime or low-priority background runs | stricter submit count, explicit QOS |
+
 ```bash
 sudo sacctmgr modify user where account=<account> \
   set MaxJobs=<n> MaxSubmit=<n> MaxTRES=cpu=<n>,gres/gpu=<n>,node=<n> GrpTRES=cpu=<n>,gres/gpu=<n>
@@ -69,6 +93,45 @@ sudo sacctmgr add user <user> account=<account> cluster=<cluster> \
 sudo sacctmgr update qos set MaxSubmitJobsPerUser=<n> where Name=<qos>
 ```
 
+## User Onboarding Pattern
+
+Adding a user is not only an account database operation. It should connect identity, default account, QOS, and resource policy.
+
+```bash
+sudo sacctmgr add user <user> account=<account> cluster=<cluster> \
+  Fairshare=<n> GrpTRES="cpu=<n>,gres/gpu=<n>" \
+  MaxJobs=<n> MaxTRES="cpu=<n>,gres/gpu=<n>,node=<n>" \
+  MaxSubmitJobs=<n> DefaultAccount=<account> DefaultQOS=<qos> QOS=<qos>
+```
+
+After the change, verify without publishing the raw association table:
+
+```bash
+sacctmgr show association user=<user> format=User,Account,Cluster,QOS,DefaultQOS,Fairshare,MaxJobs,MaxSubmitJobs,MaxTRES,GrpTRES
+sshare -l
+```
+
+## Whole-Cluster Guardrails
+
+Global user limits can protect the scheduler from accidental floods, but they are broad state-changing policy. Keep real values private.
+
+```bash
+sudo sacctmgr modify user set \
+  MaxTRES=cpu=<n>,gres/gpu=<n>,node=<n> \
+  GrpTRES=cpu=<n>,gres/gpu=<n> \
+  MaxSubmit=<n> MaxJobs=<n>
+```
+
+Before applying a global limit, record:
+
+| Check | Why |
+| --- | --- |
+| affected account classes | avoids surprising existing workloads |
+| current queued/running jobs | prevents breaking active usage assumptions |
+| QOS interaction | QOS limits may override or combine with association limits |
+| rollback command | policy changes should be reversible |
+| approval boundary | broad limits affect all users |
+
 ## Limit Design Questions
 
 | Limit | Ask |
@@ -79,6 +142,17 @@ sudo sacctmgr update qos set MaxSubmitJobsPerUser=<n> where Name=<qos>
 | `GrpTRES` | What is the group-level aggregate ceiling? |
 | `Fairshare` | How should long-term priority differ across account classes? |
 | `QOS` | Which job duration, submit, or priority policy applies? |
+
+## Common Mistakes
+
+| Mistake | Result |
+| --- | --- |
+| Publishing real account names | reveals internal organization or project structure |
+| Mixing `MaxSubmit`, `MaxSubmitJobs`, and QOS submit limits without checking precedence | users see confusing pending or submit failures |
+| Setting per-job limits but forgetting group limits | one account can still consume too much aggregate resource |
+| Setting group limits but forgetting per-job limits | one oversized job can dominate an allocation |
+| Changing fair-share without checking historical usage | priority shifts can surprise active users |
+| Copying raw `sacctmgr show association` output into public notes | leaks users, accounts, clusters, partitions, and policy |
 
 ## Public Boundary
 

@@ -48,6 +48,39 @@ $$
 
 This is why larger evaluation sets can reduce metric noise, though they do not fix [[concepts/evaluation/leakage|leakage]] or [[concepts/data/dataset-shift|dataset shift]].
 
+## Confidence Interval Heuristic
+
+When the CLT approximation is reasonable and $\sigma$ is estimated by sample standard deviation $s$, an approximate interval for the mean is:
+
+$$
+\bar{x}_n
+\pm
+z_{\alpha/2}
+\frac{s}{\sqrt{n}}
+$$
+
+This is a finite-sample uncertainty statement about the mean of the sampled population. It is not evidence that the sampled population matches deployment.
+
+## When It Breaks
+
+| Issue | Why CLT intuition can mislead |
+| --- | --- |
+| correlated examples | effective sample size is smaller than $n$ |
+| grouped data | molecules, scaffolds, proteins, prompts, or users are not independent rows |
+| heavy tails | rare extreme errors dominate finite samples |
+| selected metrics | repeated selection invalidates a naive interval |
+| non-average metric | AUROC, top-k enrichment, max score, or filtered generation may need bootstrap or paired methods |
+
+For grouped evaluation, the unit of independence is often the group, not the row:
+
+$$
+n_{\mathrm{eff}}
+\le
+n_{\mathrm{rows}}
+$$
+
+If a test set contains many near-duplicates, the apparent standard error can be much too small.
+
 ## Why It Matters
 
 - It justifies many approximate confidence intervals for averages.
@@ -61,6 +94,8 @@ This is why larger evaluation sets can reduce metric noise, though they do not f
 - Is the sample size large relative to skew, heavy tails, or correlation?
 - Is the reported uncertainty about finite-sample noise, not dataset bias?
 - Is the metric an average, or a nonlinear statistic requiring another method such as bootstrap?
+- Are rows independent, or should uncertainty be grouped by scaffold, protein family, source, prompt, or user?
+- Was the interval computed before or after model selection?
 
 ## Related
 
