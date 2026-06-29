@@ -43,11 +43,40 @@ The object $u$ depends on the objective. It may be a labeled example $(x,y)$, a 
 
 Do not treat a method as objective-driven unless the comparison isolates $\mathcal{L}_{\mathrm{objective}}$ from architecture, representation, data, compute, and evaluation changes.
 
+## Objective-Metric Gap
+
+Training objective and reported metric often differ:
+
+$$
+\theta^\star
+=
+\arg\min_\theta
+\mathbb{E}[\mathcal{L}_{\mathrm{train}}]
+\qquad
+\text{but report}
+\qquad
+M_{\mathrm{eval}}(f_{\theta^\star})
+$$
+
+This gap is not a problem by itself, but it must be stated.
+
+| Training objective | Common reported metric | Main risk |
+| --- | --- | --- |
+| cross-entropy | accuracy, F1, AUROC | probability quality and threshold choice are hidden |
+| contrastive loss | retrieval recall, linear probe accuracy | negative sampling defines the learned geometry |
+| reconstruction loss | downstream accuracy or utility | reconstruction target may not match useful abstraction |
+| denoising/score loss | sample quality, validity, diversity | loss scale is not directly user-facing utility |
+| preference loss | win rate, human preference, task success | preference data may be a proxy for true utility |
+| reward maximization | return, success rate, safety metric | reward hacking and evaluation mismatch |
+
+When reading a paper, record the optimized objective, model-selection metric, final test metric, and claimed utility separately.
+
 ## Reading Checks
 
 - Is the paper contribution the objective, the architecture, the data, or the evaluation protocol?
 - Is the training signal available at inference time, or only during training?
 - Does the objective optimize the same quantity as the reported metric?
+- Was the checkpoint selected by validation loss, validation metric, human preference, or another criterion?
 - Are negative examples, masks, noisy samples, or preferences constructed without test leakage?
 - Does the objective encourage representation collapse, shortcut learning, or proxy optimization?
 
