@@ -22,6 +22,8 @@ $$
 = \bigwedge_{i=1}^{k} \operatorname{verified}(c_i)
 $$
 
+Criteria는 task를 시작하기 전에 완벽할 필요는 없지만, completion을 주장하기 전에는 explicit해야 합니다. 작업 중 scope가 바뀌면 criteria도 같이 갱신해야 합니다.
+
 ## 좋은 criteria
 
 - Observable: file, build output, test result, rendered page, review decision으로 증명할 수 있습니다.
@@ -31,6 +33,16 @@ $$
 - Evidence-linked: 모든 criterion이 [[agents/verification/evidence-ledger|Evidence ledger]] entry 또는 equivalent check로 연결됩니다.
 - Public-safe: artifact가 published될 때 privacy와 sanitization을 포함합니다.
 
+## Criteria Template
+
+| Field | 질문 |
+| --- | --- |
+| Artifact | 무엇이 존재하거나 바뀌어야 하는가? |
+| Behavior | 사용자가 어떤 결과를 확인할 수 있어야 하는가? |
+| Safety | 공개/권한/비용/데이터 경계는 무엇인가? |
+| Verification | 어떤 command, rendered check, review가 증명하는가? |
+| Reporting | final answer에 무엇을 밝혀야 하는가? |
+
 ## 예시
 
 - expected path에 Markdown page가 존재합니다.
@@ -38,6 +50,15 @@ $$
 - `npx quartz build`가 성공합니다.
 - generated public page가 private infrastructure detail을 노출하지 않습니다.
 - expected branch에 commit이 push되었습니다.
+
+## Bad Criteria
+
+| 나쁜 기준 | 문제 |
+| --- | --- |
+| “내용을 좋게 만든다” | observable하지 않음 |
+| “빌드가 된다” | content quality나 route correctness를 다 덮지 않음 |
+| “대충 정리한다” | scope와 stop condition이 없음 |
+| “agent가 확인했다” | evidence source가 약함 |
 
 ## 확인할 것
 

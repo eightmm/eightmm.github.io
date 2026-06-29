@@ -17,6 +17,8 @@ $$
 
 $a_t$는 step $t$의 action, $\mathcal{A}$는 available action set, $s_t$는 task state, $b_t$는 permission 또는 boundary condition입니다.
 
+좋은 agent는 가능한 모든 일을 하려고 하지 않습니다. 현재 state에서 허용된 action만 고르고, action의 side effect와 verifier를 같이 생각합니다.
+
 ## Action class
 
 - Observe: file, log, page, command output을 inspect합니다.
@@ -24,6 +26,16 @@ $a_t$는 step $t$의 action, $\mathcal{A}$는 available action set, $s_t$는 tas
 - Execute: build, test, formatter, deployment, script를 실행합니다.
 - Ask: missing constraint, approval, domain judgment를 요청합니다.
 - Stop: completion, failure, blocked state를 evidence와 함께 보고합니다.
+
+## Action Risk
+
+| Action | 위험도 | 필요한 경계 |
+| --- | --- | --- |
+| Read file | 낮음 | 필요한 범위만 inspect |
+| Edit note | 중간 | diff review, link/build check |
+| Run build/test | 중간 | cost와 duration 확인 |
+| Push/deploy | 높음 | branch, remote, CI status 확인 |
+| Delete/send/charge | 매우 높음 | explicit approval, rollback plan |
 
 ## Constraint
 
@@ -36,6 +48,7 @@ $a_t$는 step $t$의 action, $\mathcal{A}$는 available action set, $s_t$는 tas
 - action이 bounded result를 갖는가?
 - 어떤 verifier가 action result를 inspect할 것인가?
 - action 전에 agent가 물어야 하는가?
+- lower-risk action으로 같은 evidence를 얻을 수 있는가?
 
 ## Related
 

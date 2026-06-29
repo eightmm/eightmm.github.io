@@ -28,6 +28,8 @@ $$
 
 여기서 $(t_i,t_j)\in E$는 $t_j$가 $t_i$에 의존한다는 뜻입니다.
 
+분해의 목적은 일을 작게 보이게 만드는 것이 아니라, 실패했을 때 어디가 틀렸는지 알 수 있게 만드는 것입니다. 좋은 subtask는 독립적으로 inspect, execute, verify할 수 있습니다.
+
 ## 좋은 subtask
 
 - clear artifact가 있습니다.
@@ -35,6 +37,16 @@ $$
 - 작은 context와 tool scope 안에 들어옵니다.
 - discovery, editing, verification을 하나의 opaque step에 섞지 않습니다.
 - failure를 diagnose할 만큼 local하게 만듭니다.
+
+## Split Axis
+
+| 기준 | 쓰는 경우 |
+| --- | --- |
+| Artifact | 여러 파일/페이지/노트가 독립적일 때 |
+| Risk | destructive, public, expensive action을 분리할 때 |
+| Evidence | discovery와 editing의 근거가 다를 때 |
+| Topic | AI, Math, Agents, Computational Biology처럼 route가 다를 때 |
+| Verification | 각 batch가 다른 check를 요구할 때 |
 
 ## Decomposition pattern
 
@@ -51,6 +63,7 @@ $$
 - dependency가 explicit한가?
 - conflict resolution owner가 하나로 정해져 있는가?
 - correctness를 잃지 않고 plan을 줄일 수 있는가?
+- subtask가 original goal에서 drift하지 않는가?
 
 ## Related
 

@@ -17,6 +17,8 @@ $$
 
 $s_t$는 agent의 working state, $a_t$는 selected action, $e_t$는 environment state, $T$는 action과 observation이 만든 transition입니다.
 
+Environment는 agent 밖에 있는 truth source입니다. 대화 안의 말, plan, memory는 environment state를 대체하지 못합니다.
+
 ## Environment type
 
 - Read-only environment: search result, log, documentation, repository file.
@@ -28,6 +30,15 @@ $s_t$는 agent의 working state, $a_t$는 selected action, $e_t$는 environment 
 
 Agent는 text context와 actual external state를 혼동할 때 실패합니다. Conversation에 쓴 plan은 file이 바뀌었거나 build가 통과했거나 deployment가 성공했다는 증거가 아닙니다. Environment는 직접 inspect해야 합니다.
 
+## State Boundary
+
+| Boundary | 예 | 확인 방식 |
+| --- | --- | --- |
+| Local workspace | file, git status, generated output | `rg`, diff, build |
+| Remote service | GitHub Actions, Pages, PR, issue | CLI/API status |
+| Runtime | server, browser, queue job | smoke check, logs |
+| Human state | approval, review decision | explicit response |
+
 ## 확인할 것
 
 - agent가 어떤 external state를 observe할 수 있는가?
@@ -35,6 +46,7 @@ Agent는 text context와 actual external state를 혼동할 때 실패합니다.
 - 어떤 action이 read-only이고 어떤 action이 side-effecting인가?
 - environment가 의도대로 바뀌었음을 어떤 evidence가 증명하는가?
 - generated 또는 out of scope라서 무시해야 할 state는 무엇인가?
+- local success와 remote deployed success를 구분했는가?
 
 ## Related
 

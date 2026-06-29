@@ -20,6 +20,8 @@ $$
 
 여기서 $\mathcal{I}$는 input contract, $\mathcal{S}$는 ordered step, $\mathcal{V}$는 verification, $\mathcal{O}$는 output contract입니다.
 
+Runbook은 agent를 자동화하기 위한 prompt 모음이 아닙니다. 반복 작업에서 매번 빠지는 decision, verification, sanitization을 procedure로 고정하는 문서입니다.
+
 ## Runbook section
 
 - Purpose: 이 runbook이 다루는 workflow.
@@ -29,6 +31,16 @@ $$
 - Verification: command, review gate, evidence.
 - Output: summary, changed file, open question, next action.
 - Sanitization: 공개하면 안 되는 것.
+
+## Runbook Quality
+
+| 기준 | 설명 |
+| --- | --- |
+| Reproducible | 다른 agent가 같은 input으로 따라 할 수 있음 |
+| Bounded | scope와 stop condition이 있음 |
+| Evidence-led | 각 step이 check나 artifact를 남김 |
+| Public-safe | private detail 제거 기준이 있음 |
+| Maintainable | 제품 기능 변화와 개인 환경 의존을 분리함 |
 
 ## 유용한 runbook
 
@@ -47,6 +59,7 @@ $$
 - 공개하면 안 되는 것을 명시하는가?
 - 다른 agent가 private context 없이 따라갈 수 있는가?
 - one-off chat output이 아니라 durable wiki improvement를 만드는가?
+- 실패했을 때 recovery 또는 handoff path가 있는가?
 
 ## Related
 
