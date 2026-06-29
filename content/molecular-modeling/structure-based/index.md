@@ -15,7 +15,7 @@ tags:
 
 Structure-based modeling은 molecular structure를 first-class object로 다룹니다. Classical docking과 conformer workflow뿐 아니라 AI-based pose generation, scoring, structure-aware generation도 포함합니다. 핵심은 모델이 molecule score만 잘 내는지가 아니라 [[entities/protein|protein]] structure, [[entities/ligand|ligand]] geometry, [[entities/protein-ligand-complex|protein-ligand complex]]를 물리적으로 그럴듯한 시스템으로 다룰 수 있는가입니다.
 
-For this wiki, this area is a molecular modeling anchor first. AI methods enter when the strongest claim is about learned representation, generation, scoring, or evaluation.
+이 wiki에서 이 영역은 먼저 molecular modeling anchor입니다. 가장 강한 claim이 learned representation, generation, scoring, evaluation에 있을 때 AI method가 들어옵니다.
 
 Sequence-only input이 중심이면 [[molecular-modeling/sequence-based|Sequence-based modeling]]에서 시작하고, coordinate, pocket, pose, conformer, complex가 중심이면 이 페이지에서 시작합니다.
 

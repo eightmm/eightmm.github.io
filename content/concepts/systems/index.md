@@ -7,17 +7,17 @@ tags:
 
 # AI Systems
 
-AI systems notes describe how models are trained, served, measured, and reproduced. They sit between model concepts and infrastructure operations.
+AI systems note는 model이 어떻게 학습되고, serving되고, 측정되고, 재현되는지 설명합니다. 위치상 model concept과 infrastructure operation 사이에 있습니다.
 
-The core systems question is:
+핵심 systems 질문은 다음과 같습니다.
 
 $$
 \text{quality} = f(\text{data}, \text{model}, \text{compute}, \text{workflow}, \text{evaluation})
 $$
 
-A model is not only a function $f_\theta$; it is also a training process, an inference process, and an operational artifact.
+Model은 함수 $f_\theta$만이 아닙니다. 동시에 training process, inference process, operational artifact입니다.
 
-## Topics
+## 주제
 
 - [[concepts/systems/training-run|Training run]]
 - [[concepts/systems/inference|Inference]]
@@ -51,23 +51,23 @@ A model is not only a function $f_\theta$; it is also a training process, an inf
 - [[concepts/research-methodology/claim-evidence-record|Claim evidence record]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
 
-## Checks
+## 확인할 것
 
-- Is the bottleneck data loading, compute, memory, communication, or scheduling?
-- Does the workload need single-device, data-parallel, sharded, pipeline, or model-parallel training?
-- Is the workload shaped for the scheduler: resource request, job size, queue time, and preemption risk?
-- Is the environment and storage path part of the run record?
-- Is the goal model quality, time-to-train, cost, latency, throughput, or reliability?
-- If a paper claims scaling, are quality, data, model size, compute budget, and runtime boundary separated?
-- Is the experiment lifecycle recorded from question to claim?
-- Are run artifacts sufficient for later inspection or metric checking?
-- Can the run be reproduced from a commit, config, seed, dataset version, and environment?
-- Can the workflow recover from preemption, partial output, or service failure?
-- Can terminal runs be reconciled from logs, scheduler state, and artifacts?
-- Are training metrics, validation metrics, and serving metrics separated?
-- Does the deployment path preserve the same preprocessing and constraints as evaluation?
-- Is there a model card and inference contract for public-facing artifacts?
-- Can an output be traced to one model version, validation boundary, and rollout decision?
+- bottleneck이 data loading, compute, memory, communication, scheduling 중 무엇인가?
+- workload가 single-device, data-parallel, sharded, pipeline, model-parallel training 중 무엇을 요구하는가?
+- scheduler 관점에서 resource request, job size, queue time, preemption risk가 맞게 잡혔는가?
+- environment와 storage path가 run record의 일부인가?
+- 목표가 model quality, time-to-train, cost, latency, throughput, reliability 중 무엇인가?
+- 논문이 scaling을 주장한다면 quality, data, model size, compute budget, runtime boundary가 분리되어 있는가?
+- experiment lifecycle이 question에서 claim까지 기록되는가?
+- run artifact가 나중에 inspection이나 metric check를 하기에 충분한가?
+- commit, config, seed, dataset version, environment로 run을 재현할 수 있는가?
+- workflow가 preemption, partial output, service failure에서 회복 가능한가?
+- terminal run을 log, scheduler state, artifact로 reconcile할 수 있는가?
+- training metric, validation metric, serving metric이 분리되어 있는가?
+- deployment path가 evaluation과 같은 preprocessing과 constraint를 보존하는가?
+- public-facing artifact에 model card와 inference contract가 있는가?
+- output을 하나의 model version, validation boundary, rollout decision으로 추적할 수 있는가?
 
 ## Related
 

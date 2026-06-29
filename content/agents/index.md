@@ -22,9 +22,9 @@ $$
 
 제품명보다 오래 남는 개념을 먼저 둡니다. 다만 유명 제품은 사용자가 기능을 이해하는 진입점이므로 [[agents/models/index|Agent model families]]에서 따로 비교합니다.
 
-## Sections
+## 섹션
 
-| Section | Use For |
+| 섹션 | 용도 |
 | --- | --- |
 | [Agent Core](/agents/core) | architecture, loop, state, memory, planning |
 | [Agent Features](/agents/features) | chat, files, research, coding, memory, canvas, connectors |
@@ -33,9 +33,9 @@ $$
 | [Agent Models](/agents/models) | ChatGPT, Claude, Gemini, GitHub Copilot |
 | [Agent Verification](/agents/verification) | acceptance criteria, evidence, audits, evaluation |
 
-## Routing Guide
+## 분류 기준
 
-| If the note is about... | Put it in |
+| 노트가 다루는 것 | 둘 곳 |
 | --- | --- |
 | prompt, context, loop, state, memory, planning, harness | [Agent Core](/agents/core) |
 | user-facing product functions | [Agent Features](/agents/features) |
@@ -45,9 +45,9 @@ $$
 | acceptance criteria, evidence, audits, safety checks | [Agent Verification](/agents/verification) |
 | broad reader-facing stories | [Posts](/posts) |
 
-## Core Concepts
+## 핵심 개념
 
-| Group | Notes |
+| 그룹 | 노트 |
 | --- | --- |
 | Core model | [Agent architecture](/agents/core/agent-architecture), [Agent operating contract](/agents/core/agent-operating-contract), [Agent loop](/agents/core/agent-loop) |
 | Environment and state | [Agent environment](/agents/core/agent-environment), [Action space](/agents/core/action-space), [Agent state](/agents/core/agent-state) |
@@ -59,9 +59,9 @@ $$
 | Verification | [Verification loop](/agents/verification/verification-loop), [Acceptance criteria](/agents/verification/acceptance-criteria), [Evidence ledger](/agents/verification/evidence-ledger) |
 | Review and safety | [Completion audit](/agents/verification/completion-audit), [Reflection and critique](/agents/verification/reflection-and-critique), [Agent evaluation](/agents/verification/agent-evaluation), [Human in the loop](/agents/verification/human-in-the-loop), [Prompt injection](/agents/verification/prompt-injection) |
 
-## User-Facing Features
+## 사용자-facing 기능
 
-| Feature | Use For |
+| 기능 | 용도 |
 | --- | --- |
 | [Chat and prompting](/agents/features/chat-and-prompting) | request design, explanation, drafting |
 | [Files and knowledge](/agents/features/files-and-knowledge) | uploaded documents, project knowledge, retrieval |
@@ -73,7 +73,7 @@ $$
 
 ## Workflows
 
-| Workflow | Use For |
+| Workflow | 용도 |
 | --- | --- |
 | [Coding agents](/agents/workflows/coding-agents) | implementation and repository work |
 | [Paper brief workflow](/agents/workflows/paper-brief-workflow) | paper intake and synthesis |
@@ -87,7 +87,7 @@ $$
 
 ## Model Families
 
-| Product | Main Agent Surface |
+| 제품 | 주요 agent surface |
 | --- | --- |
 | [ChatGPT](/agents/models/chatgpt) | chat, search, deep research, projects, canvas, apps, agent tasks |
 | [Claude](/agents/models/claude) | artifacts, projects, memory, tool use, computer use, Claude Code |
@@ -96,14 +96,14 @@ $$
 
 ## Learning and Feedback
 
-| Method | Link |
+| 방법 | 링크 |
 | --- | --- |
 | Imitation | [Imitation learning](/concepts/learning/imitation-learning) |
 | Reinforcement | [Reinforcement learning](/concepts/learning/reinforcement-learning) |
 | Reward modeling | [Reward modeling](/concepts/learning/reward-modeling) |
 | Preference objective | [Preference optimization](/concepts/learning/preference-optimization) |
 
-## Writing Rules
+## 작성 규칙
 
 - Explain workflows with generic examples.
 - Prefer user-facing features over private custom skills.
@@ -113,7 +113,7 @@ $$
 
 ## Related
 
-| Area | Link |
+| 영역 | 링크 |
 | --- | --- |
 | Knowledge workflow | [LLM Wiki](/agents/workflows/llm-wiki), [Inbox](/inbox) |
 | LLM behavior | [Hallucination and grounding](/concepts/llm/hallucination-grounding), [Transformer](/concepts/architectures/transformer) |

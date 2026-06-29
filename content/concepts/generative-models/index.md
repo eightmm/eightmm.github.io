@@ -7,9 +7,9 @@ tags:
 
 # Generative Models
 
-Generative model notes describe ways to model and sample data distributions, including sequences, graphs, coordinates, molecules, and proteins.
+Generative model note는 sequence, graph, coordinate, molecule, protein을 포함한 data distribution을 모델링하고 sampling하는 방법을 설명합니다.
 
-The shared goal is to learn a model distribution close to the data distribution:
+공통 목표는 data distribution에 가까운 model distribution을 학습하는 것입니다.
 
 $$
 p_\theta(x) \approx p_{\mathrm{data}}(x)
@@ -47,7 +47,7 @@ Choose a generative family by the object, output validity rule, likelihood need,
 
 ## Evaluation Boundary
 
-Generation quality is not one metric. A useful evaluation names:
+Generation quality는 하나의 metric으로 끝나지 않습니다. 유용한 evaluation은 아래 항목을 명시합니다.
 
 - Validity: does the sample obey the syntax, physics, geometry, or task constraints?
 - Diversity: does the model cover modes rather than repeat a few outputs?

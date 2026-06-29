@@ -8,9 +8,9 @@ tags:
 
 # Architecture Papers
 
-Architecture paper notes cover model families and structural design choices: attention, convolution, recurrence, graph neural networks, state-space models, Mamba-style selective recurrence, mixture of experts, set models, and geometric architectures.
+Architecture paper note는 attention, convolution, recurrence, graph neural network, state-space model, Mamba-style selective recurrence, mixture of experts, set model, geometric architecture 같은 model family와 structural design choice를 다룹니다.
 
-Use this bucket when the paper's durable contribution is a reusable architecture or block. If the same paper is also historically important for LLMs, cross-link it to [[papers/llm/index|LLM papers]] rather than duplicating the note.
+논문의 오래 남는 기여가 재사용 가능한 architecture나 block이면 이 묶음에 둡니다. 같은 논문이 LLM 역사에서도 중요하면 노트를 복제하지 말고 [[papers/llm/index|LLM papers]]로 cross-link합니다.
 
 ## Reading Axes
 

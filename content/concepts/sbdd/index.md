@@ -7,9 +7,9 @@ tags:
 
 # Structure-Based Drug Discovery
 
-Structure-based drug discovery uses 3D molecular structure to reason about target-ligand recognition, pose quality, binding affinity, and candidate prioritization.
+Structure-based drug discovery는 3D molecular structure를 사용해 target-ligand recognition, pose quality, binding affinity, candidate prioritization을 해석합니다.
 
-In this wiki, SBDD concepts support [[molecular-modeling/structure-based/index|Structure-based modeling]]. Research pages can later link back when a concrete project or thesis direction needs them.
+이 wiki에서 SBDD concept는 [[molecular-modeling/structure-based/index|Structure-based modeling]]을 받쳐주는 층입니다. 구체적인 project나 thesis direction이 생기면 Research page가 여기로 다시 연결됩니다.
 
 ## Route Map
 

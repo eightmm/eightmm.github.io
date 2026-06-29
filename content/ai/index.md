@@ -23,22 +23,22 @@ $$
 
 ## 먼저 볼 지도
 
-| Area | Use For | Start |
+| 영역 | 용도 | 시작점 |
 | --- | --- | --- |
-| Math | probability, linear algebra, calculus, likelihood, information theory | [Math](/math) |
+| Math | probability, linear algebra, calculus, likelihood, information theory 같은 수학 기반 | [Math](/math) |
 | Machine Learning | prediction problem, feature, loss, optimization, validation | [Machine Learning](/ai/machine-learning) |
-| Architectures | MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE | [Architectures](/ai/architectures) |
+| Architectures | MLP, CNN, RNN, Transformer, GNN, SSM/Mamba, MoE 같은 모델 구조 | [Architectures](/ai/architectures) |
 | Learning Methods | supervised learning, self-supervised learning, contrastive learning, JEPA, fine-tuning, preference/RL objective | [Learning Methods](/ai/learning-methods) |
 | Generative Models | autoregressive model, VAE, GAN, diffusion, score model, flow matching, normalizing flow | [Generative Models](/ai/generative-models) |
 | Evaluation | metric, split, leakage, calibration, OOD, uncertainty, failure analysis | [Evaluation](/ai/evaluation) |
-| Systems | training runs, inference, serving, environments, artifacts, reproducibility | [Systems](/ai/systems) |
+| Systems | training run, inference, serving, environment, artifact, reproducibility | [Systems](/ai/systems) |
 | Agents | tool use, memory, planning, verification, orchestration | [Agents](/agents) |
 
 ## 분류 기준
 
 AI note는 아래 질문으로 위치를 정합니다.
 
-| Question | Route |
+| 질문 | 이동할 곳 |
 | --- | --- |
 | 필요한 수학 정의인가? | [Math](/math), [Math foundations](/concepts/math) |
 | 입력과 출력이 무엇인가? | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
@@ -52,7 +52,7 @@ AI note는 아래 질문으로 위치를 정합니다.
 
 ## 영역 경계
 
-| Boundary | AI에서 다루는 것 | 다른 곳으로 보내는 것 |
+| 경계 | AI에서 다루는 것 | 다른 곳에서 다루는 것 |
 | --- | --- | --- |
 | Math | loss, optimizer, architecture 식을 모델 관점에서 읽기 | derivative, likelihood, entropy, group action 자체는 [Math](/math) |
 | Computational Biology | protein, molecule, structure 데이터를 모델 입력으로 쓰는 법 | protein, ligand, pocket, assay, split 단위 정의는 [Computational Biology](/molecular-modeling) |
@@ -69,11 +69,11 @@ AI note는 아래 질문으로 위치를 정합니다.
 6. [[ai/evaluation|Evaluation]]에서 split, metric, leakage, calibration, failure mode를 확인합니다.
 7. [[ai/systems|Systems]]에서 training run, inference, serving, environment, reproducibility 경계를 봅니다.
 
-## Coverage Priorities
+## 우선 채울 층
 
 AI 쪽은 너무 빨리 논문명 중심으로 커지기 쉽습니다. 그래서 먼저 아래 층을 안정적으로 채웁니다.
 
-| Priority | Why It Matters | Route |
+| 우선순위 | 중요한 이유 | 이동할 곳 |
 | --- | --- | --- |
 | Basic ML grammar | 모든 모델은 data, target, loss, optimization, evaluation으로 환원됩니다. | [Machine Learning](/ai/machine-learning) |
 | Architecture families | 논문 차이는 대부분 어떤 inductive bias를 넣었는지로 설명됩니다. | [Architectures](/ai/architectures) |
@@ -86,7 +86,7 @@ AI 쪽은 너무 빨리 논문명 중심으로 커지기 쉽습니다. 그래서
 
 새 AI note는 가능하면 아래 순서를 따릅니다.
 
-| Field | Write |
+| 항목 | 적을 내용 |
 | --- | --- |
 | Problem | 입력 $x$, 출력 $y$, task unit |
 | Representation | token, graph, coordinate, embedding, feature |
@@ -98,7 +98,7 @@ AI 쪽은 너무 빨리 논문명 중심으로 커지기 쉽습니다. 그래서
 
 ## 입력 대상별 경로
 
-| Input | Start | Architecture / Method |
+| 입력 | 시작점 | 구조 / 방법 |
 | --- | --- | --- |
 | Text / sequence | [Text](/concepts/modalities/text), [Sequence](/concepts/modalities/sequence) | [Transformer](/concepts/architectures/transformer), [State-space model](/concepts/architectures/state-space-model) |
 | Image / video | [Image](/concepts/modalities/image), [Video](/concepts/modalities/video) | [CNN](/concepts/architectures/cnn), [Vision Transformer](/concepts/architectures/vision-transformer) |
@@ -112,7 +112,7 @@ AI 쪽은 너무 빨리 논문명 중심으로 커지기 쉽습니다. 그래서
 
 새 AI 논문이나 글감을 넣을 때는 모델 이름보다 아래 항목을 먼저 고정합니다.
 
-| 먼저 볼 것 | 확인할 내용 | Start |
+| 먼저 볼 것 | 확인할 내용 | 시작점 |
 | --- | --- | --- |
 | Input object | text, image, graph, set, coordinate, molecule, protein, agent state 중 무엇인가 | [Modalities](/concepts/modalities), [Tasks](/concepts/tasks) |
 | Task output | class, scalar, ranking, sequence, graph, coordinate, sample, action 중 무엇인가 | [Task specification](/concepts/tasks/task-specification), [Task output space](/concepts/tasks/task-output-space) |

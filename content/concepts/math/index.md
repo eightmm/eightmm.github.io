@@ -8,7 +8,7 @@ tags:
 
 # Math Foundations
 
-Math foundation notes collect the minimum reusable definitions needed to read AI papers and implementation notes. The goal is not to build a full math textbook, but to make formulas in architecture, learning, generation, and evaluation notes easier to parse.
+Math foundation note는 AI paper와 implementation note를 읽는 데 필요한 최소한의 재사용 가능한 정의를 모읍니다. 목표는 완전한 수학 교과서를 만드는 것이 아니라 architecture, learning, generation, evaluation note의 수식을 읽기 쉽게 만드는 것입니다.
 
 Most machine learning methods combine:
 
@@ -16,7 +16,7 @@ $$
 \text{representation} + \text{probability model} + \text{objective} + \text{optimization}
 $$
 
-Use these pages to identify the object, distribution, parameter, and estimator behind a formula. Proof-heavy material can be added later only when it clarifies an AI, Computational Biology, or evaluation note.
+이 페이지들은 수식 뒤의 object, distribution, parameter, estimator를 식별하기 위한 입구입니다. 증명 중심 내용은 AI, Computational Biology, evaluation note를 명확하게 만들 때만 나중에 추가합니다.
 
 ## Route Map
 
@@ -45,7 +45,7 @@ Use these pages to identify the object, distribution, parameter, and estimator b
 
 ## Formula Reading Template
 
-When adding or expanding a concept page, prefer formulas that define the quantity directly.
+Concept page를 추가하거나 확장할 때는 quantity를 직접 정의하는 수식을 우선합니다.
 
 - Define symbols before using them.
 - Separate population quantities from finite-sample estimates.
@@ -64,7 +64,7 @@ $$
 \mathcal{L}(f(x_j), y_j)
 $$
 
-This is an empirical estimate of test risk. It is not the same object as the population risk
+이 값은 test risk의 empirical estimate입니다. Population risk 자체와는 다른 object입니다.
 
 $$
 R(f)

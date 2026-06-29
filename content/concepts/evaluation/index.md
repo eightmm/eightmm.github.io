@@ -7,11 +7,11 @@ tags:
 
 # Evaluation
 
-Evaluation notes collect methods for measuring model quality honestly — how to split data, detect leakage, calibrate confidence, and test generalization beyond the training distribution.
+Evaluation note는 model quality를 정직하게 측정하는 방법을 모읍니다. 핵심은 data를 어떻게 나누고, leakage를 어떻게 찾고, confidence를 어떻게 calibrate하고, training distribution 밖 generalization을 어떻게 검증하는가입니다.
 
-The recurring theme: a metric is only as trustworthy as the split and protocol behind it. Most reported gains that fail to reproduce trace back to an evaluation flaw, not a modeling one.
+반복되는 원칙은 단순합니다. Metric은 그 뒤의 split과 protocol만큼만 믿을 수 있습니다. 재현되지 않는 reported gain은 modeling 문제가 아니라 evaluation 결함에서 나오는 경우가 많습니다.
 
-The basic estimate is a held-out risk:
+기본 estimate는 held-out risk입니다.
 
 $$
 \hat{R}(f)
@@ -19,26 +19,26 @@ $$
 \mathcal{L}(f(x_j), y_j)
 $$
 
-This number is only meaningful if the held-out set matches the intended generalization claim.
+이 값은 held-out set이 의도한 generalization claim과 맞을 때만 의미가 있습니다.
 
-## Route Map
+## 이동 지도
 
-| Question | Start | Then Check |
+| 질문 | 시작점 | 이어서 확인할 것 |
 | --- | --- | --- |
-| what claim does the score support? | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) | task, split, metric, baseline |
-| is the evaluation set valid? | [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Evaluation set design](/concepts/evaluation/evaluation-set-design) | sampling, exclusions, contamination |
-| which metric matches the task? | [Metric](/concepts/evaluation/metric), [Metric selection](/concepts/evaluation/metric-selection) | denominator, threshold, aggregation |
-| classification or detection? | [Confusion matrix](/concepts/evaluation/confusion-matrix), [Precision and recall](/concepts/evaluation/precision-recall), [Classification metrics](/concepts/evaluation/classification-metrics) | prevalence and threshold |
-| probabilistic prediction? | [Probability metrics](/concepts/evaluation/probability-metrics), [Proper scoring rule](/concepts/evaluation/proper-scoring-rule), [Brier score](/concepts/evaluation/brier-score), [Calibration](/concepts/evaluation/calibration) | reliability and NLL |
-| ranking, retrieval, or screening? | [Ranking metrics](/concepts/evaluation/ranking-metrics), [Negative set](/concepts/evaluation/negative-set) | label completeness and candidate pool |
-| regression or structure? | [Regression metrics](/concepts/evaluation/regression-metrics) | units, target scale, censoring, coordinate mapping |
-| generation? | [Generation evaluation](/concepts/evaluation/generation-evaluation) | validity, diversity, novelty, task utility |
-| is the improvement reliable? | [Baseline](/concepts/evaluation/baseline), [Paired comparison](/concepts/evaluation/paired-comparison), [Confidence interval](/concepts/evaluation/confidence-interval) | seed variance and effect size |
-| could there be leakage? | [Leakage](/concepts/evaluation/leakage), [Test-set contamination](/concepts/evaluation/test-set-contamination), [Train/validation/test split](/concepts/evaluation/train-validation-test-split) | example unit and split unit |
+| score가 어떤 claim을 support하는가? | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) | task, split, metric, baseline |
+| evaluation set이 유효한가? | [Evaluation protocol](/concepts/evaluation/evaluation-protocol), [Evaluation set design](/concepts/evaluation/evaluation-set-design) | sampling, exclusion, contamination |
+| task에 맞는 metric은 무엇인가? | [Metric](/concepts/evaluation/metric), [Metric selection](/concepts/evaluation/metric-selection) | denominator, threshold, aggregation |
+| classification 또는 detection인가? | [Confusion matrix](/concepts/evaluation/confusion-matrix), [Precision and recall](/concepts/evaluation/precision-recall), [Classification metrics](/concepts/evaluation/classification-metrics) | prevalence와 threshold |
+| probabilistic prediction인가? | [Probability metrics](/concepts/evaluation/probability-metrics), [Proper scoring rule](/concepts/evaluation/proper-scoring-rule), [Brier score](/concepts/evaluation/brier-score), [Calibration](/concepts/evaluation/calibration) | reliability와 NLL |
+| ranking, retrieval, screening 중 무엇인가? | [Ranking metrics](/concepts/evaluation/ranking-metrics), [Negative set](/concepts/evaluation/negative-set) | label completeness와 candidate pool |
+| regression 또는 structure인가? | [Regression metrics](/concepts/evaluation/regression-metrics) | unit, target scale, censoring, coordinate mapping |
+| generation인가? | [Generation evaluation](/concepts/evaluation/generation-evaluation) | validity, diversity, novelty, task utility |
+| improvement를 믿을 수 있는가? | [Baseline](/concepts/evaluation/baseline), [Paired comparison](/concepts/evaluation/paired-comparison), [Confidence interval](/concepts/evaluation/confidence-interval) | seed variance와 effect size |
+| leakage 가능성이 있는가? | [Leakage](/concepts/evaluation/leakage), [Test-set contamination](/concepts/evaluation/test-set-contamination), [Train/validation/test split](/concepts/evaluation/train-validation-test-split) | example unit과 split unit |
 
-## Method Groups
+## 방법 묶음
 
-| Group | Notes |
+| 그룹 | 노트 |
 | --- | --- |
 | Benchmarks | [Benchmark](/concepts/data/benchmark), [Sampling strategy](/concepts/data/sampling-strategy), [Benchmark saturation](/concepts/evaluation/benchmark-saturation) |
 | Statistical evidence | [Statistical estimator](/concepts/math/statistical-estimator), [Central limit theorem](/concepts/math/central-limit-theorem), [Hypothesis testing](/concepts/math/hypothesis-testing), [Bootstrap evaluation](/concepts/evaluation/bootstrap-evaluation) |

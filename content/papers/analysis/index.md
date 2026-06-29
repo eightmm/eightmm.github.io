@@ -9,9 +9,9 @@ tags:
 
 # Paper Analysis
 
-Paper analysis notes extract claims, evidence, benchmarks, ablations, limitations, and comparison axes from papers.
+Paper analysis note는 논문에서 claim, evidence, benchmark, ablation, limitation, comparison axis를 추출합니다.
 
-The analysis layer turns prose into checkable structure:
+Analysis layer는 논문 문장을 확인 가능한 구조로 바꿉니다.
 
 $$
 \text{claim}
@@ -23,16 +23,16 @@ $$
 \text{limitation}
 $$
 
-This keeps a paper note from becoming only a summary of the abstract.
+이렇게 해야 paper note가 abstract 요약만 모아둔 페이지가 되지 않습니다.
 
 ## Scope
 
-- Claim extraction and evidence tables.
-- Benchmark cards, split interpretation, and metric selection.
-- Ablation maps for component claims.
-- Limitation taxonomy and paper comparison matrices.
+- claim extraction과 evidence table.
+- benchmark card, split interpretation, metric selection.
+- component claim을 위한 ablation map.
+- limitation taxonomy와 paper comparison matrix.
 
-## Notes
+## 노트
 
 - [[papers/analysis/claim-extraction|Claim extraction]]
 - [[papers/analysis/evidence-table|Evidence table]]
@@ -42,20 +42,20 @@ This keeps a paper note from becoming only a summary of the abstract.
 - [[papers/analysis/limitation-taxonomy|Limitation taxonomy]]
 - [[papers/analysis/paper-comparison-matrix|Paper comparison matrix]]
 
-## Checks
+## 확인할 것
 
-- Does each important claim name method, task, benchmark, metric, protocol, and baseline?
-- Does each evidence item state the scope it actually supports?
-- Are ablations tied to components rather than treated as generic performance numbers?
-- Are limitations classified as data, split, metric, baseline, ablation, generalization, reproducibility, efficiency, or domain limits?
-- Are cross-paper comparisons made on the same task and evaluation boundary?
+- 중요한 claim마다 method, task, benchmark, metric, protocol, baseline이 명시되는가?
+- 각 evidence item이 실제로 support하는 scope를 적는가?
+- ablation을 단순 performance number가 아니라 component와 연결하는가?
+- limitation을 data, split, metric, baseline, ablation, generalization, reproducibility, efficiency, domain limit로 분류하는가?
+- paper 간 비교가 같은 task와 evaluation boundary 위에서 이뤄지는가?
 
-## Where New Notes Go
+## 새 노트 위치
 
-- Analysis templates and claim structures go here.
-- Reproduction planning goes under [[papers/reproducibility/index|Paper reproducibility]].
-- General evaluation concepts go under [[concepts/evaluation/index|Evaluation]].
-- Research-method claims for your own work go under [[concepts/research-methodology/index|Research methodology]].
+- analysis template과 claim structure는 여기에 둡니다.
+- reproduction planning은 [[papers/reproducibility/index|Paper reproducibility]]에 둡니다.
+- 일반 evaluation concept는 [[concepts/evaluation/index|Evaluation]]에 둡니다.
+- 내 연구 방법론 claim은 [[concepts/research-methodology/index|Research methodology]]에 둡니다.
 
 ## Related
 

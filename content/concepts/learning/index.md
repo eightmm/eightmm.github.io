@@ -7,9 +7,9 @@ tags:
 
 # Learning Methods
 
-Learning method notes describe training objectives and representation-learning strategies, independent of a single architecture.
+Learning method note는 특정 architecture와 독립적인 training objective와 representation-learning strategy를 설명합니다.
 
-Most learning methods can be described by what target signal $t(x)$ they construct and what loss they optimize:
+대부분의 learning method는 어떤 target signal $t(x)$를 만들고 어떤 loss를 최적화하는지로 설명할 수 있습니다.
 
 $$
 \min_\theta
@@ -67,7 +67,7 @@ For supervised learning, $t(x)$ is a human or assay label. For self-supervised l
 
 ## Objective Lens
 
-A learning method note should make the training signal explicit:
+Learning method note는 training signal을 명시해야 합니다.
 
 $$
 \theta^\star

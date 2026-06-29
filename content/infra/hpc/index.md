@@ -7,9 +7,9 @@ tags:
 
 # HPC
 
-HPC notes collect public workflow patterns for shared compute: scheduling, resource requests, Slurm, distributed training, job arrays, checkpointing, and recovery.
+HPC note는 shared compute에서 반복되는 scheduling, resource request, Slurm, distributed training, job array, checkpointing, recovery workflow를 public-safe하게 정리합니다.
 
-These notes should stay generic. Do not publish private cluster names, hostnames, account names, queue names, SSH details, internal paths, or unpublished run results.
+이 노트들은 generic하게 유지해야 합니다. Private cluster name, hostname, account name, queue name, SSH detail, internal path, unpublished run result는 공개하지 않습니다.
 
 ## Core Workflow
 

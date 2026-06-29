@@ -6,9 +6,9 @@ tags:
 
 # Machine Learning
 
-Machine learning studies algorithms that improve predictions or decisions from data. In this wiki, it is the base layer under architectures, learning objectives, generative models, and evaluation.
+Machine learning은 data로부터 prediction이나 decision을 개선하는 algorithm을 다룹니다. 이 wiki에서는 architecture, learning objective, generative model, evaluation의 기반층입니다.
 
-The standard supervised learning setup is empirical risk minimization:
+표준 supervised learning 설정은 empirical risk minimization으로 쓸 수 있습니다.
 
 $$
 \hat{\theta}
@@ -17,20 +17,20 @@ $$
 \mathcal{L}(f_\theta(x_i), y_i)
 $$
 
-Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i,y_i)\}_{i=1}^n$ is the training set.
+여기서 $f_\theta$는 model, $\mathcal{L}$은 loss, $\mathcal{D}=\{(x_i,y_i)\}_{i=1}^n$는 training set입니다.
 
-## Core Pieces
+## 핵심 구성
 
-- Data: examples, labels, features, splits, and sampling process.
-- Model: a function class that maps inputs to predictions or representations.
-- Objective: the quantity optimized during training.
-- Optimization: the procedure used to update model parameters.
-- Evaluation: the procedure used to estimate generalization.
-- Generalization: the held-out or deployment behavior being claimed.
+- Data: example, label, feature, split, sampling process.
+- Model: input을 prediction 또는 representation으로 바꾸는 function class.
+- Objective: training 중 최적화하는 quantity.
+- Optimization: model parameter를 업데이트하는 절차.
+- Evaluation: generalization을 추정하는 절차.
+- Generalization: claim의 대상이 되는 held-out 또는 deployment behavior.
 
-## Route Map
+## 이동 지도
 
-| Question | Start | Then Check |
+| 질문 | 시작점 | 이어서 확인할 것 |
 | --- | --- | --- |
 | what is one training example? | [Data](/concepts/data), [Data preprocessing](/concepts/machine-learning/data-preprocessing) | [Example unit](/concepts/data/example-unit), [Split unit](/concepts/data/split-unit) |
 | what does the model output? | [Probabilistic prediction](/concepts/machine-learning/probabilistic-prediction), [Decision rule](/concepts/machine-learning/decision-rule) | [Task output space](/concepts/tasks/task-output-space) |
@@ -41,9 +41,9 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 | how is generalization estimated? | [Generalization](/concepts/machine-learning/generalization), [Model selection](/concepts/machine-learning/model-selection) | [Train/validation/test split](/concepts/evaluation/train-validation-test-split), [Leakage](/concepts/evaluation/leakage) |
 | why did training fail? | [Training stability](/concepts/machine-learning/training-stability), [Loss landscape](/concepts/machine-learning/loss-landscape) | gradients, optimizer state, data scale |
 
-## Foundations
+## 기반
 
-| Group | Notes |
+| 그룹 | 노트 |
 | --- | --- |
 | Probability and estimators | [Random variable](/concepts/math/random-variable), [Statistical estimator](/concepts/math/statistical-estimator), [Maximum likelihood](/concepts/math/maximum-likelihood) |
 | Data and features | [Data preprocessing](/concepts/machine-learning/data-preprocessing), [Feature engineering](/concepts/machine-learning/feature-engineering), [Dataset shift](/concepts/data/dataset-shift) |
@@ -51,9 +51,9 @@ Here $f_\theta$ is the model, $\mathcal{L}$ is the loss, and $\mathcal{D}=\{(x_i
 | Classical models | [Linear model](/concepts/machine-learning/linear-model), [Tree-based model](/concepts/machine-learning/tree-based-model), [Kernel method](/concepts/machine-learning/kernel-method), [Ensemble method](/concepts/machine-learning/ensemble-method) |
 | Representations | [Representation learning](/concepts/machine-learning/representation-learning), [Dimensionality reduction](/concepts/machine-learning/dimensionality-reduction), [MLP](/concepts/architectures/mlp) |
 
-## Training and Selection
+## Training과 Selection
 
-| Group | Notes |
+| 그룹 | 노트 |
 | --- | --- |
 | Objective | [Empirical risk minimization](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Losses | [Cross-entropy loss](/concepts/machine-learning/cross-entropy-loss), [Mean squared error](/concepts/machine-learning/mean-squared-error), [Negative log-likelihood](/concepts/machine-learning/negative-log-likelihood) |

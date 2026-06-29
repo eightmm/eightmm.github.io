@@ -22,9 +22,9 @@ $$
 
 이 블로그에서 Math는 독립적인 수학 교과서가 아니라, AI 문서의 수식을 읽기 위한 최소 공통 언어입니다. 더 깊은 증명보다 "이 식이 어떤 object, distribution, optimization target을 말하는가"를 우선합니다.
 
-## Core Foundations
+## 핵심 기반
 
-| Area | Use For | Start |
+| 영역 | 용도 | 시작점 |
 | --- | --- | --- |
 | Foundations | definitions, formulas, reusable checks | [Math foundations](/concepts/math) |
 | Linear algebra | vectors, matrices, tensor shapes, embeddings, projections, similarity, SVD | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
@@ -37,7 +37,7 @@ $$
 | Numerics | floating point, stable softmax, log-sum-exp, conditioning, precision | [Numerical computing](/math/numerical-computing) |
 | Evaluation | metrics, confidence intervals, calibration, statistical comparison | [Evaluation math](/math/evaluation-math) |
 
-## Formula Checklist
+## 수식 체크리스트
 
 수식이 나오면 먼저 아래를 확인합니다.
 
@@ -50,7 +50,7 @@ $$
 - Estimation: population quantity와 finite-sample estimate가 구분되어 있는가?
 - Depth: post, concept note, paper note 중 어느 수준까지 풀어써야 하는가?
 
-## Basic Formula Reading Order
+## 기본 수식 읽기 순서
 
 AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 
@@ -61,9 +61,9 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 5. Target: loss, metric, likelihood, score, energy, reward, constraint 중 무엇인가?
 6. Estimate: population quantity인지 finite sample estimate인지 구분합니다.
 
-## Where It Connects
+## 연결되는 곳
 
-| Context | Links |
+| 맥락 | 링크 |
 | --- | --- |
 | Architecture | [Linear layer](/concepts/architectures/linear-layer), [Attention](/concepts/architectures/attention), [Normalization](/concepts/architectures/normalization) |
 | Learning | [Calculus](/concepts/math/calculus), [Matrix calculus](/concepts/math/matrix-calculus), [Constrained optimization](/concepts/math/constrained-optimization), [ERM](/concepts/machine-learning/empirical-risk-minimization), [Loss function](/concepts/machine-learning/loss-function), [Optimization](/concepts/machine-learning/optimization) |
@@ -76,27 +76,27 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 | Evaluation | [Metric](/concepts/evaluation/metric), [Confidence interval](/concepts/evaluation/confidence-interval), [Statistical significance](/concepts/evaluation/statistical-significance) |
 | Claim boundary | [Claim-evidence boundary](/concepts/evaluation/claim-evidence-boundary), [Benchmark intake](/concepts/data/benchmark-intake) |
 
-## Reading Path
+## 읽기 경로
 
-1. Start with [[concepts/math/linear-algebra|Linear algebra]], [[concepts/math/tensor-shape-notation|Tensor shape notation]], and [[concepts/math/vector-norm-similarity|Vector norm and similarity]] for vectors, matrices, axes, projections, distances, and embedding scores.
-2. Use [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]] and [[concepts/math/singular-value-decomposition|Singular value decomposition]] for PCA, low-rank structure, stability, and representation analysis.
-3. Use [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], and [[concepts/math/jacobian-hessian|Jacobian and Hessian]] for gradients, curvature, and backpropagation math.
-4. Use [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], and [[concepts/machine-learning/gradient-descent|gradient descent]] to connect formulas to AI optimization.
-5. Use [[concepts/math/random-variable|Random variable]], [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/expectation|Expectation]], and [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]] for likelihood, loss, sampling, and estimates.
-6. Use [[concepts/math/covariance-correlation|Covariance and correlation]], [[concepts/math/normal-distribution|Normal distribution]], [[concepts/math/central-limit-theorem|Central limit theorem]], [[concepts/math/statistical-estimator|Statistical estimator]], [[concepts/math/bayesian-inference|Bayesian inference]], [[concepts/math/hypothesis-testing|Hypothesis testing]], and [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]] when interpreting experiments.
-7. Use [[concepts/math/maximum-likelihood|Maximum likelihood]] and [[concepts/math/entropy-kl|Entropy and KL divergence]] for generative models and representation learning.
-8. Use [[concepts/math/geometry|Geometry]] and [[concepts/math/symmetry-group|Symmetry group]] for graph, structure, molecule, and protein notes.
-9. Use [[math/discrete-graphs|Discrete math and graphs]] for graph neural networks, molecular graphs, contact maps, retrieval, and set functions.
-10. Use [[math/dynamical-systems|Dynamical systems]] for diffusion, flow matching, probability-flow ODEs, recurrent models, molecular dynamics, and iterative refinement.
-11. Use [[math/numerical-computing|Numerical computing]] when formulas involve exponentials, probabilities, mixed precision, reductions, or NaNs.
-12. Use [[concepts/evaluation/confidence-interval|Confidence interval]] and [[concepts/evaluation/statistical-significance|Statistical significance]] when interpreting reported results.
+1. vector, matrix, axis, projection, distance, embedding score를 읽으려면 [[concepts/math/linear-algebra|Linear algebra]], [[concepts/math/tensor-shape-notation|Tensor shape notation]], [[concepts/math/vector-norm-similarity|Vector norm and similarity]]에서 시작합니다.
+2. PCA, low-rank structure, stability, representation analysis에는 [[concepts/math/eigenvalue-eigenvector|Eigenvalue and eigenvector]]와 [[concepts/math/singular-value-decomposition|Singular value decomposition]]를 봅니다.
+3. gradient, curvature, backpropagation math에는 [[concepts/math/calculus|Calculus]], [[concepts/math/matrix-calculus|Matrix calculus]], [[concepts/math/jacobian-hessian|Jacobian and Hessian]]를 봅니다.
+4. 수식을 AI optimization과 연결할 때는 [[concepts/machine-learning/empirical-risk-minimization|Empirical risk minimization]], [[concepts/machine-learning/stochastic-gradient|stochastic gradient]], [[concepts/machine-learning/gradient-descent|gradient descent]]를 봅니다.
+5. likelihood, loss, sampling, estimate에는 [[concepts/math/random-variable|Random variable]], [[concepts/math/probability-distribution|Probability distribution]], [[concepts/math/expectation|Expectation]], [[concepts/math/monte-carlo-estimation|Monte Carlo estimation]]를 봅니다.
+6. 실험 결과 해석에는 [[concepts/math/covariance-correlation|Covariance and correlation]], [[concepts/math/normal-distribution|Normal distribution]], [[concepts/math/central-limit-theorem|Central limit theorem]], [[concepts/math/statistical-estimator|Statistical estimator]], [[concepts/math/bayesian-inference|Bayesian inference]], [[concepts/math/hypothesis-testing|Hypothesis testing]], [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]를 봅니다.
+7. generative model과 representation learning에는 [[concepts/math/maximum-likelihood|Maximum likelihood]]와 [[concepts/math/entropy-kl|Entropy and KL divergence]]를 봅니다.
+8. graph, structure, molecule, protein note에는 [[concepts/math/geometry|Geometry]]와 [[concepts/math/symmetry-group|Symmetry group]]를 봅니다.
+9. graph neural network, molecular graph, contact map, retrieval, set function에는 [[math/discrete-graphs|Discrete math and graphs]]를 봅니다.
+10. diffusion, flow matching, probability-flow ODE, recurrent model, molecular dynamics, iterative refinement에는 [[math/dynamical-systems|Dynamical systems]]를 봅니다.
+11. exponential, probability, mixed precision, reduction, NaN이 나오면 [[math/numerical-computing|Numerical computing]]을 봅니다.
+12. 보고된 결과를 해석할 때는 [[concepts/evaluation/confidence-interval|Confidence interval]]과 [[concepts/evaluation/statistical-significance|Statistical significance]]를 봅니다.
 
-## Boundary
+## 경계
 
-- Math explains objects and formulas: derivatives, probability, likelihood, geometry, metrics, numerical stability.
-- AI explains modeling and training choices: losses, optimizers, schedules, architectures, learning methods.
-- Computational Biology explains domain objects and workflows: protein, ligand, pocket, sequence, structure, assay, split.
-- Infra explains resource behavior: GPU memory, Slurm, storage, reproducibility, server operation.
+- Math는 derivative, probability, likelihood, geometry, metric, numerical stability처럼 object와 formula를 설명합니다.
+- AI는 loss, optimizer, schedule, architecture, learning method처럼 modeling과 training 선택을 설명합니다.
+- Computational Biology는 protein, ligand, pocket, sequence, structure, assay, split처럼 domain object와 workflow를 설명합니다.
+- Infra는 GPU memory, Slurm, storage, reproducibility, server operation처럼 resource behavior를 설명합니다.
 
 ## AI 연결 예시
 
@@ -110,7 +110,7 @@ AI 수식은 아래 순서로 읽으면 대부분 정리됩니다.
 
 새 논문의 수식은 멋있어 보이는 notation보다 어떤 양을 정의하는지 먼저 봅니다.
 
-| 수식 종류 | 먼저 확인할 것 | Start |
+| 수식 종류 | 먼저 확인할 것 | 시작점 |
 | --- | --- | --- |
 | Linear operation | shape, axis, projection, rank, similarity | [Linear algebra](/math/linear-algebra), [Tensor shape notation](/concepts/math/tensor-shape-notation) |
 | Gradient or update | objective, parameter, gradient estimate, optimizer state | [Calculus and gradients](/math/calculus-gradients) |

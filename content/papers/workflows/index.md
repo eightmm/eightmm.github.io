@@ -8,9 +8,9 @@ tags:
 
 # Paper Workflows
 
-Paper workflow notes define how raw paper candidates become durable public notes.
+Paper workflow note는 raw paper candidate가 오래 남길 수 있는 공개 노트로 바뀌는 절차를 정의합니다.
 
-A paper should move through explicit states:
+Paper는 명시적인 상태를 거쳐 이동해야 합니다.
 
 $$
 \text{candidate}
@@ -22,21 +22,21 @@ $$
 \text{verified or archived}
 $$
 
-The workflow is designed to prevent rough daily briefs from looking like finished paper reviews.
+이 workflow의 목적은 거친 daily brief가 완성된 paper review처럼 보이지 않게 하는 것입니다.
 
 ## Scope
 
-- Triage decisions and reading status.
-- Note shape for curated paper notes.
-- Blog-style longform paper reviews for 20-30 minute beginner-friendly reading.
-- Paper bucket routing.
-- Primary claim-axis routing.
-- Review workflow from metadata check to concept updates.
-- Domain intake through AI, Computational Biology, and Math foundations.
-- Readiness checks before promoting multi-axis notes or synthesis posts.
-- Agent-assisted paper briefs after human-readable sanitization.
+- triage decision과 reading status.
+- 선별된 paper note의 기본 형태.
+- 20-30분짜리 beginner-friendly longform paper review.
+- paper bucket routing.
+- primary claim axis routing.
+- metadata check에서 concept update까지 이어지는 review workflow.
+- AI, Computational Biology, Math foundations를 통한 domain intake.
+- multi-axis note나 synthesis post로 승격하기 전 readiness check.
+- 사람이 읽을 수 있게 sanitize한 뒤 쓰는 agent-assisted paper brief.
 
-## Notes
+## 노트
 
 - [[papers/workflows/paper-triage|Paper triage]]
 - [[papers/workflows/claim-routing|Claim routing]]
@@ -52,26 +52,26 @@ The workflow is designed to prevent rough daily briefs from looking like finishe
 - [[molecular-modeling/paper-intake|Computational Biology paper intake]]
 - [[math/formula-intake|Formula intake]]
 
-## Checks
+## 확인할 것
 
-- Is the paper source public and metadata verified?
-- Is the note status visible and honest?
-- Is the output a paper note, concept update, inbox item, synthesis post, or archive decision?
-- Are missing claims, metrics, authors, and artifacts marked `to verify` instead of invented?
-- For AI/Computational Biology/Math papers, was [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]] used?
-- For public blog-style paper reviews, was [[papers/workflows/longform-paper-review-guide|Longform paper review guide]] used?
-- Is the primary claim axis recorded with [[papers/workflows/claim-routing|Claim routing]]?
-- Are paper claims decomposed into object, representation, method, formula, data, evidence, and artifact updates with [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]?
-- Are reusable definitions, formulas, contracts, and evidence boundaries extracted with [[papers/workflows/concept-update-contract|Concept update contract]]?
-- Did multi-axis candidates pass [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]] before promotion?
-- Does the workflow update the relevant concept pages instead of only accumulating paper summaries?
+- paper source가 public이고 metadata가 검증되었는가?
+- note status가 보이고 정직하게 표시되는가?
+- output이 paper note, concept update, inbox item, synthesis post, archive decision 중 무엇인가?
+- 빠진 claim, metric, author, artifact를 지어내지 않고 `to verify`로 표시했는가?
+- AI/Computational Biology/Math paper에는 [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]]을 썼는가?
+- 공개 blog-style paper review에는 [[papers/workflows/longform-paper-review-guide|Longform paper review guide]]를 썼는가?
+- primary claim axis가 [[papers/workflows/claim-routing|Claim routing]]에 따라 기록되었는가?
+- paper claim이 [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]에 따라 object, representation, method, formula, data, evidence, artifact update로 분해되었는가?
+- 재사용 가능한 definition, formula, contract, evidence boundary가 [[papers/workflows/concept-update-contract|Concept update contract]]로 추출되었는가?
+- multi-axis candidate가 승격 전에 [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]를 통과했는가?
+- workflow가 paper summary만 쌓지 않고 관련 concept page를 업데이트하는가?
 
-## Where New Notes Go
+## 새 노트 위치
 
-- Process and status notes go here.
-- Claim, evidence, benchmark, and comparison notes go under [[papers/analysis/index|Paper analysis]].
-- Artifact and reproduction notes go under [[papers/reproducibility/index|Paper reproducibility]].
-- Raw candidates stay in [[inbox/index|Inbox]].
+- process와 status note는 여기에 둡니다.
+- claim, evidence, benchmark, comparison note는 [[papers/analysis/index|Paper analysis]]에 둡니다.
+- artifact와 reproduction note는 [[papers/reproducibility/index|Paper reproducibility]]에 둡니다.
+- raw candidate는 [[inbox/index|Inbox]]에 남깁니다.
 
 ## Related
 

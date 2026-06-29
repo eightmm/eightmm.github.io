@@ -22,7 +22,7 @@ $$
 
 ## 비교 축
 
-| Axis | 볼 것 |
+| 축 | 볼 것 |
 | --- | --- |
 | Reasoning | 긴 계획, 복잡한 지시, self-check 능력 |
 | Context | 긴 문서, 프로젝트, retrieval 처리 |
@@ -31,9 +31,9 @@ $$
 | Memory | user memory, project memory, chat history |
 | Verification | citations, tests, diff, audit, human review |
 
-## Product Notes
+## 제품 노트
 
-| Product family | 먼저 볼 노트 | 강한 사용처 |
+| 제품군 | 먼저 볼 노트 | 강한 사용처 |
 | --- | --- | --- |
 | ChatGPT | [[agents/models/chatgpt|ChatGPT]] | general chat, research, apps, canvas, agent tasks |
 | Claude | [[agents/models/claude|Claude]] | long-form writing, artifacts, coding, tool use |

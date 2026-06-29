@@ -7,7 +7,7 @@ tags:
 
 # Protein Modeling Concepts
 
-Protein modeling concepts describe how sequences, evolutionary signals, structures, and geometric constraints become model inputs and outputs.
+Protein modeling concept는 sequence, evolutionary signal, structure, geometric constraint가 model input과 output으로 바뀌는 과정을 설명합니다.
 
 ## Route Map
 

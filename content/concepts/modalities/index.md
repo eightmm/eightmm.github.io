@@ -7,9 +7,9 @@ tags:
 
 # Modalities
 
-A modality is a type of input or output signal with its own structure, noise pattern, and inductive bias. Text, images, video, audio, molecules, proteins, graphs, and 3D structures often require different representations even when the downstream task is written as the same prediction problem.
+Modality는 고유한 structure, noise pattern, inductive bias를 가진 input 또는 output signal의 종류입니다. Text, image, video, audio, molecule, protein, graph, 3D structure는 downstream task가 같은 prediction problem처럼 쓰여도 서로 다른 representation을 요구하는 경우가 많습니다.
 
-A model input can be viewed as a collection of modality-specific views:
+Model input은 modality-specific view의 묶음으로 볼 수 있습니다.
 
 $$
 x = \{x^{(m)}\}_{m \in \mathcal{M}}

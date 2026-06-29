@@ -9,15 +9,15 @@ tags:
 
 # Environments
 
-Environment notes cover modules, containers, dependency boundaries, and public-safe environment records.
+Environment note는 module, container, dependency boundary, public-safe environment record를 다룹니다.
 
-The environment is part of the run identity:
+Environment는 run identity의 일부입니다.
 
 $$
 R = (\text{code}, \text{data}, \text{config}, \text{environment}, \text{seed})
 $$
 
-Changing the compiler, CUDA stack, Python package set, container image, or runtime mount can change the result even when the model code is unchanged.
+Compiler, CUDA stack, Python package set, container image, runtime mount가 바뀌면 model code가 그대로여도 결과가 달라질 수 있습니다.
 
 ## Scope
 

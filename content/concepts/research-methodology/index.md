@@ -8,9 +8,9 @@ tags:
 
 # Research Methodology
 
-Research methodology notes define how to turn ideas into testable claims, run small experiments, interpret results, and keep public notes honest.
+Research methodology note는 아이디어를 testable claim으로 바꾸고, 작은 experiment를 실행하고, result를 해석하고, public note를 정직하게 유지하는 방법을 정의합니다.
 
-The core loop is:
+핵심 loop는 아래와 같습니다.
 
 $$
 \text{question}
@@ -21,7 +21,7 @@ $$
 \rightarrow \text{revision}
 $$
 
-## Core Notes
+## 핵심 노트
 
 - [[concepts/research-methodology/research-question|Research question]]
 - [[concepts/research-methodology/hypothesis|Hypothesis]]
@@ -37,20 +37,20 @@ $$
 - [[concepts/research-methodology/literature-synthesis|Literature synthesis]]
 - [[concepts/research-methodology/decision-record|Decision record]]
 
-## Checks
+## 확인할 것
 
-- What observation would change the conclusion?
-- Is the hypothesis falsifiable?
-- Is there a baseline or ablation?
-- Is the first experiment the smallest one that can change the decision?
-- Is only one variable changed?
-- What threat to validity could weaken the conclusion?
-- Is the result recorded whether it succeeds, fails, or surprises?
-- Is the run connected to artifacts, metrics, and a reproducible record?
-- Is any public claim tied to a claim evidence record?
-- Are negative and inconclusive results preserved as reusable lessons?
-- Are paper claims synthesized into research questions rather than copied summaries?
-- Is the public note separated from private implementation details and unpublished results?
+- 어떤 observation이 conclusion을 바꿀 수 있는가?
+- hypothesis가 falsifiable한가?
+- baseline 또는 ablation이 있는가?
+- 첫 experiment가 decision을 바꿀 수 있는 가장 작은 실험인가?
+- 한 번에 하나의 variable만 바꾸는가?
+- 어떤 threat to validity가 conclusion을 약하게 만들 수 있는가?
+- 성공, 실패, 예상 밖 결과와 상관없이 result를 기록하는가?
+- run이 artifact, metric, reproducible record와 연결되어 있는가?
+- public claim이 claim evidence record와 연결되어 있는가?
+- negative 또는 inconclusive result를 reusable lesson으로 보존하는가?
+- paper claim을 복사 요약하지 않고 research question으로 synthesize하는가?
+- public note가 private implementation detail과 unpublished result에서 분리되어 있는가?
 
 ## Related
 

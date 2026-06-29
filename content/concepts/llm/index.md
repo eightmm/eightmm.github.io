@@ -7,7 +7,7 @@ tags:
 
 # LLM Concepts
 
-LLM concepts describe language models, context, retrieval, and workflow patterns that support agents and wiki-style knowledge bases.
+LLM concept는 agent와 wiki-style knowledge base를 지탱하는 language model, context, retrieval, workflow pattern을 설명합니다.
 
 ## Core Concepts
 

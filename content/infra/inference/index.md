@@ -11,7 +11,7 @@ tags:
 
 Inference runbooks cover serving operations under memory, latency, throughput, and reliability constraints. The canonical concept entries are [[concepts/systems/inference|Inference]], [[concepts/systems/model-serving|Model serving]], and [[concepts/systems/latency-throughput|Latency and throughput]].
 
-Serving starts from an interface and capacity contract:
+Serving은 interface와 capacity contract에서 시작합니다.
 
 $$
 (\text{input schema}, \text{output schema}, \text{latency target}, \text{throughput target}, \text{memory budget})

@@ -8,7 +8,7 @@ tags:
 
 # Structure-Based Modeling Papers
 
-Structure-based modeling paper notes cover docking, conformers, pose generation, scoring, virtual screening, molecular generation, protein-ligand evaluation, and structure-aware learning.
+Structure-based modeling paper note는 docking, conformer, pose generation, scoring, virtual screening, molecular generation, protein-ligand evaluation, structure-aware learning을 다룹니다.
 
 ## Reading Axes
 

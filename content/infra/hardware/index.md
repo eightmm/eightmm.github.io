@@ -7,9 +7,9 @@ tags:
 
 # Hardware
 
-Hardware notes explain the physical resource ladder behind AI systems: CPU registers and caches, SRAM, RAM, GPU VRAM, storage, and network. The goal is not to memorize exact vendor numbers, but to know which layer is likely limiting a workload.
+Hardware note는 AI system 뒤의 physical resource ladder를 설명합니다. CPU register/cache, SRAM, RAM, GPU VRAM, storage, network가 여기에 들어갑니다. 목표는 vendor별 숫자를 외우는 것이 아니라 어떤 layer가 workload를 제한하는지 판단하는 것입니다.
 
-Most infra problems can be reduced to one question:
+대부분의 infra 문제는 하나의 질문으로 줄일 수 있습니다.
 
 $$
 \text{bottleneck}
@@ -28,7 +28,7 @@ $$
 
 ## Performance Ladder
 
-The useful mental model is a ladder from fastest/smallest to slowest/largest:
+유용한 mental model은 가장 빠르고 작은 층에서 가장 느리고 큰 층으로 내려가는 ladder입니다.
 
 $$
 \text{register}
@@ -44,7 +44,7 @@ $$
 \text{remote service}
 $$
 
-Moving data down this ladder usually increases capacity but also increases latency. Training and inference performance depend on keeping the hot working set near the compute units.
+Data를 이 ladder 아래로 내릴수록 capacity는 보통 커지지만 latency도 커집니다. Training과 inference performance는 hot working set을 compute unit 가까이에 유지할 수 있는지에 크게 좌우됩니다.
 
 ## Read This First When
 

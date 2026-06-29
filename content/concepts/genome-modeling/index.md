@@ -8,9 +8,9 @@ tags:
 
 # Genome Modeling Concepts
 
-Genome modeling concepts in this wiki are limited to sequence-level and variant-level AI. They are included as a boundary topic for Computational Biology, not as a broad omics or transcriptomics section.
+이 wiki의 genome modeling concept는 sequence-level과 variant-level AI로 제한합니다. Broad omics나 transcriptomics 섹션이 아니라 Computational Biology의 boundary topic으로 둡니다.
 
-The basic input is a genomic sequence or region:
+기본 input은 genomic sequence 또는 region입니다.
 
 $$
 x = (b_1,\ldots,b_L), \qquad b_i \in \{A,C,G,T,N\}
@@ -52,7 +52,7 @@ where $c$ is optional context such as species, genome assembly, region type, or 
 
 ## Boundary
 
-This section intentionally does not expand into broad cell omics, transcriptomics, or clinical genomics. Those topics should only be added if they become directly useful for the blog's research direction.
+이 섹션은 의도적으로 broad cell omics, transcriptomics, clinical genomics로 확장하지 않습니다. 그런 주제는 블로그의 research direction에 직접 필요해질 때만 추가합니다.
 
 ## Related
 

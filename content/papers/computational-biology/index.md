@@ -7,9 +7,9 @@ tags:
 
 # Computational Biology Papers
 
-Computational Biology paper notes cover structure-based modeling, protein modeling, molecular generation, protein-ligand interaction, assay-aware labels, and domain-specific evaluation.
+Computational Biology paper note는 structure-based modeling, protein modeling, molecular generation, protein-ligand interaction, assay-aware label, domain-specific evaluation을 다룹니다.
 
-This is the visible paper shelf for biology-facing papers. Narrower buckets such as [[papers/sbdd/index|Structure-based modeling papers]] and [[papers/protein-modeling/index|Protein modeling papers]] remain as support buckets so existing paper URLs stay stable.
+이곳은 biology-facing paper를 위한 visible paper shelf입니다. [[papers/sbdd/index|Structure-based modeling papers]]와 [[papers/protein-modeling/index|Protein modeling papers]] 같은 좁은 묶음은 기존 paper URL을 안정적으로 유지하기 위한 support bucket으로 남깁니다.
 
 ## Reading Axes
 

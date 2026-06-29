@@ -6,17 +6,17 @@ tags:
 
 # Projects
 
-Project pages describe goals, interfaces, design decisions, verification methods, and public artifacts. 이 영역은 아이디어 자체보다 실제로 만들거나 운영하거나 공개 산출물로 남기는 것에 둡니다.
+Project page는 목표, interface, 설계 결정, 검증 방법, 공개 artifact를 설명합니다. 이 영역은 아이디어 자체보다 실제로 만들거나 운영하거나 공개 산출물로 남기는 것에 둡니다.
 
-## Role
+## 역할
 
-Use this area for artifacts and workflows that are being built, operated, or iterated. A project page should connect a problem to an artifact, design decision, verification method, current status, and next public improvement.
+이 영역은 만들고 있거나, 운영 중이거나, 반복 개선 중인 artifact와 workflow를 둡니다. Project page는 문제를 artifact, 설계 결정, 검증 방법, 현재 상태, 다음 공개 개선점으로 연결해야 합니다.
 
-If the page is only a reusable definition, put it under [[concepts/index|Concepts]]. If it is centered on one paper, put it under [[papers/index|Papers]]. If it is an operational lesson without a project artifact, put it under [[infra/index|Infra]] or [[logs/index|Logs]]. If it is mostly a question, hypothesis, or research direction, put it under [[research/index|Research]] first.
+재사용 가능한 정의만 있으면 [[concepts/index|Concepts]]에 둡니다. 특정 논문 하나가 중심이면 [[papers/index|Papers]]에 둡니다. project artifact 없이 운영 경험만 정리한 글이면 [[infra/index|Infra]] 또는 [[logs/index|Logs]]에 둡니다. 질문, 가설, 연구 방향이 중심이면 먼저 [[research/index|Research]]에 둡니다.
 
 ## Research와의 차이
 
-| Page Center | Put In |
+| 페이지 중심 | 둘 곳 |
 | --- | --- |
 | public question, hypothesis, research idea | [[research/index|Research]] |
 | implemented pipeline, tool, artifact, workflow | [[projects/index|Projects]] |
@@ -24,9 +24,9 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 | reusable concept or formula | [[concepts/index|Concepts]] |
 | operational lesson without an artifact | [[infra/index|Infra]] or [[logs/index|Logs]] |
 
-## Buckets
+## 묶음
 
-| Bucket | Use For |
+| 묶음 | 용도 |
 | --- | --- |
 | Research systems | pipelines, experiment workflows, reproducible artifacts |
 | Structure-based modeling | docking, scoring, pose quality, screening workflows |
@@ -37,15 +37,15 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 
 ## Project Notes
 
-| Project | Focus |
+| 프로젝트 | 초점 |
 | --- | --- |
 | [LLM Wiki blog](/projects/llm-wiki-blog) | public knowledge-base structure |
 | [Paper brief agent pipeline](/projects/paper-brief-agent-pipeline) | paper discovery and curation workflow |
 | [HPC research workflows](/projects/hpc-research-workflows) | reproducible research engineering on shared compute |
 
-## Formats
+## 형식
 
-| Need | Format |
+| 필요 | 형식 |
 | --- | --- |
 | Project state | [Project lifecycle](/projects/project-lifecycle), [Project note format](/projects/project-note-format) |
 | Milestone or release | [Project milestone format](/projects/project-milestone-format), [Project artifact release](/projects/project-artifact-release) |
@@ -53,9 +53,9 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 | Research decision | [Decision record](/concepts/research-methodology/decision-record), [Experiment ledger](/concepts/research-methodology/experiment-ledger) |
 | Paper reproduction | [Implementation readiness](/papers/reproducibility/implementation-readiness), [Reproduction result](/papers/reproducibility/reproduction-result) |
 
-## Future Candidates
+## 후보
 
-| Candidate | Direction |
+| 후보 | 방향 |
 | --- | --- |
 | Structure-based screening pipeline | connect SBDD workflow, scoring, and evaluation |
 | Protein-modeling experiment template | standardize representation, split, metric, and run records |
@@ -64,7 +64,7 @@ If the page is only a reusable definition, put it under [[concepts/index|Concept
 
 ## Related
 
-| Area | Link |
+| 영역 | 링크 |
 | --- | --- |
 | Research | [Research](/research), [Research methodology](/concepts/research-methodology) |
 | Systems | [Run artifact](/concepts/systems/run-artifact), [Slurm](/infra/hpc/slurm) |

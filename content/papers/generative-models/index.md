@@ -7,7 +7,7 @@ tags:
 
 # Generative Model Papers
 
-Generative model paper notes cover models that sample, transform, denoise, decode, or generate structured objects.
+Generative model paper note는 sample, transform, denoise, decode, structured object generation을 다루는 논문을 모읍니다.
 
 ## Reading Axes
 

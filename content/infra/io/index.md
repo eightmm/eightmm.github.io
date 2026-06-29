@@ -8,9 +8,9 @@ tags:
 
 # Storage and IO
 
-Storage and IO notes cover the path between datasets, preprocessing, shared storage, local cache, and accelerator input pipelines.
+Storage and IO note는 dataset, preprocessing, shared storage, local cache, accelerator input pipeline 사이의 경로를 다룹니다.
 
-The data path is part of system performance:
+Data path는 system performance의 일부입니다.
 
 $$
 \text{dataset}
@@ -24,7 +24,7 @@ $$
 \text{device}
 $$
 
-A training job can look like a GPU problem when the true limit is file open latency, preprocessing CPU time, decompression, shared storage bandwidth, or host-to-device transfer.
+실제 limit이 file open latency, preprocessing CPU time, decompression, shared storage bandwidth, host-to-device transfer인데도 training job이 GPU 문제처럼 보일 수 있습니다.
 
 ## Scope
 

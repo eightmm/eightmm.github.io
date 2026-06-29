@@ -24,7 +24,7 @@ $$
 
 ## 기능 분류
 
-| Feature | 사용자가 기대하는 일 | 먼저 볼 노트 |
+| 기능 | 사용자가 기대하는 일 | 먼저 볼 노트 |
 | --- | --- | --- |
 | Chat and prompting | 질문, 초안, 설명, 변환 | [[agents/features/chat-and-prompting|Chat and prompting]] |
 | Files and knowledge | PDF, 문서, 노트, 프로젝트 지식 활용 | [[agents/features/files-and-knowledge|Files and knowledge]] |

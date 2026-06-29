@@ -7,7 +7,7 @@ tags:
 
 # Data
 
-Data notes describe how examples, labels, metadata, splits, and benchmarks are constructed before any model is trained. In applied AI, the dataset often defines the real problem more strongly than the architecture.
+Data note는 모델을 학습하기 전에 example, label, metadata, split, benchmark가 어떻게 만들어지는지 설명합니다. Applied AI에서는 architecture보다 dataset이 실제 문제를 더 강하게 정의하는 경우가 많습니다.
 
 A dataset induces an empirical distribution:
 
@@ -17,11 +17,11 @@ $$
 \delta(x=x_i,y=y_i)
 $$
 
-Training and evaluation are only meaningful when this empirical distribution is aligned with the intended deployment distribution.
+Training과 evaluation은 이 empirical distribution이 의도한 deployment distribution과 맞을 때만 의미가 있습니다.
 
-## Route Map
+## 이동 지도
 
-| Need | Start | Then Check |
+| 필요 | 시작점 | 이어서 확인할 것 |
 | --- | --- | --- |
 | define what one row means | [Example unit](/concepts/data/example-unit) | [Data schema](/concepts/data/data-schema), [Label semantics](/concepts/data/label-semantics) |
 | define what must be held out | [Split unit](/concepts/data/split-unit) | [Dataset split contract](/concepts/data/dataset-split-contract), [Leakage](/concepts/evaluation/leakage) |
@@ -31,9 +31,9 @@ Training and evaluation are only meaningful when this empirical distribution is 
 | handle imperfect labels | [Label noise](/concepts/data/label-noise) | [Censored label](/concepts/data/censored-label), [Weak label](/concepts/data/weak-label) |
 | handle distribution problems | [Dataset shift](/concepts/data/dataset-shift) | [Sampling bias](/concepts/data/sampling-bias), [Class imbalance](/concepts/data/class-imbalance) |
 
-## Topic Groups
+## 주제 묶음
 
-| Group | Notes |
+| 그룹 | 노트 |
 | --- | --- |
 | Dataset definition | [Dataset](/entities/dataset), [Dataset construction checklist](/concepts/data/dataset-construction-checklist), [Data distribution](/concepts/data/data-distribution) |
 | Schema and metadata | [Data schema](/concepts/data/data-schema), [Metadata and provenance](/concepts/data/metadata-provenance), [Data lineage](/concepts/data/data-lineage) |
@@ -41,25 +41,25 @@ Training and evaluation are only meaningful when this empirical distribution is 
 | Sampling | [Sampling strategy](/concepts/data/sampling-strategy), [Sampling bias](/concepts/data/sampling-bias), [Missing data](/concepts/data/missing-data) |
 | Benchmarking | [Benchmark](/concepts/data/benchmark), [Benchmark intake](/concepts/data/benchmark-intake), [Evaluation protocol](/concepts/evaluation/evaluation-protocol) |
 
-## Checks
+## 확인할 것
 
-- What is one example?
-- What is the split unit?
-- What distribution should the dataset represent?
-- What schema defines the fields, units, identifiers, and relationships?
-- What produces the target label?
-- What exactly does the label mean?
-- Are missing, censored, and weak labels represented explicitly?
-- What metadata explains batch, source, protocol, time, species, target, or structure context?
-- What examples are missing because of collection bias?
-- Is the class or label distribution imbalanced?
-- Does sampling bias make validation easier than deployment?
-- What shift exists between train, validation, test, and deployment?
-- Does the split match the intended generalization claim?
-- Can another person reconstruct the dataset version and filtering policy?
-- Are labels noisy, censored, inconsistent, or protocol-dependent?
+- 하나의 example은 무엇인가?
+- split unit은 무엇인가?
+- dataset은 어떤 distribution을 대표해야 하는가?
+- field, unit, identifier, relationship을 정의하는 schema가 있는가?
+- target label은 무엇에서 만들어지는가?
+- label이 정확히 무엇을 의미하는가?
+- missing, censored, weak label이 명시적으로 표현되는가?
+- batch, source, protocol, time, species, target, structure context를 설명하는 metadata가 있는가?
+- collection bias 때문에 빠진 example은 무엇인가?
+- class 또는 label distribution이 imbalanced한가?
+- sampling bias가 validation을 deployment보다 쉽게 만들지 않는가?
+- train, validation, test, deployment 사이에 어떤 shift가 있는가?
+- split이 의도한 generalization claim과 맞는가?
+- 다른 사람이 dataset version과 filtering policy를 재구성할 수 있는가?
+- label이 noisy, censored, inconsistent, protocol-dependent하지 않은가?
 
-## Construction Path
+## 구성 경로
 
 1. Define [[concepts/data/example-unit|example unit]] and [[concepts/data/split-unit|split unit]].
 2. Write the [[concepts/data/data-schema|data schema]] and [[concepts/data/label-semantics|label semantics]].

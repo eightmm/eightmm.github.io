@@ -7,7 +7,7 @@ tags:
 
 # Protein Modeling Papers
 
-Protein modeling paper notes cover structure prediction, sequence models, protein representation learning, MSA usage, and sequence-structure evaluation.
+Protein modeling paper note는 structure prediction, sequence model, protein representation learning, MSA usage, sequence-structure evaluation을 다룹니다.
 
 ## Reading Axes
 

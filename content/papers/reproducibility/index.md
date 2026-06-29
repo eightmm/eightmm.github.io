@@ -8,9 +8,9 @@ tags:
 
 # Paper Reproducibility
 
-Paper reproducibility notes decide whether a paper has enough public material to rerun, reimplement, or compare a scoped claim.
+Paper reproducibility note는 특정 paper claim을 rerun, reimplement, compare할 만큼 public material이 충분한지 판단합니다.
 
-Reproduction should be scoped to a claim, not to an entire paper:
+Reproduction은 paper 전체가 아니라 claim 하나에 scope를 맞춰야 합니다.
 
 $$
 \operatorname{ready}(p,c)
@@ -24,16 +24,16 @@ $$
 \operatorname{verifiable}(c)
 $$
 
-where $p$ is the paper and $c$ is the claim to check.
+여기서 $p$는 paper이고 $c$는 확인할 claim입니다.
 
 ## Scope
 
-- Public artifact availability.
-- Reproducibility checklists and implementation readiness.
-- Minimum reproduction plans and reproduction-result records.
-- Public-safe evidence for reruns, reimplementations, and diagnostic checks.
+- public artifact availability.
+- reproducibility checklist와 implementation readiness.
+- minimum reproduction plan과 reproduction-result record.
+- rerun, reimplementation, diagnostic check를 위한 public-safe evidence.
 
-## Notes
+## 노트
 
 - [[papers/reproducibility/artifact-availability|Artifact availability]]
 - [[papers/reproducibility/checklist|Reproducibility checklist]]
@@ -41,20 +41,20 @@ where $p$ is the paper and $c$ is the claim to check.
 - [[papers/reproducibility/reproduction-plan|Reproduction plan]]
 - [[papers/reproducibility/reproduction-result|Reproduction result]]
 
-## Checks
+## 확인할 것
 
-- Are code, data, splits, config, weights, logs, predictions, and environment checked separately?
-- Is the target claim narrow enough to test with public artifacts?
-- Is the minimum viable experiment defined before spending compute?
-- Does the result state success, contradiction, inconclusive outcome, or diagnostic-only value?
-- Are private datasets, private paths, unpublished metrics, and collaborator details excluded?
+- code, data, split, config, weight, log, prediction, environment를 분리해서 확인했는가?
+- target claim이 public artifact로 test할 수 있을 만큼 좁은가?
+- compute를 쓰기 전에 minimum viable experiment가 정의되었는가?
+- result가 success, contradiction, inconclusive outcome, diagnostic-only value 중 무엇인지 적는가?
+- private dataset, private path, unpublished metric, collaborator detail을 제외했는가?
 
-## Where New Notes Go
+## 새 노트 위치
 
-- Paper-specific artifact and reproduction notes go here.
-- General experiment design goes under [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]].
-- Run artifact structure goes under [[concepts/systems/run-artifact|Run artifact]].
-- Public operational run records go under [[infra/reproducibility/index|Reproducibility infra]].
+- paper-specific artifact와 reproduction note는 여기에 둡니다.
+- 일반 experiment design은 [[concepts/research-methodology/minimum-viable-experiment|Minimum viable experiment]]에 둡니다.
+- run artifact structure는 [[concepts/systems/run-artifact|Run artifact]]에 둡니다.
+- public operational run record는 [[infra/reproducibility/index|Reproducibility infra]]에 둡니다.
 
 ## Related
 

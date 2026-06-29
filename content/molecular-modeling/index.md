@@ -74,9 +74,9 @@ Computational Biology note는 아래 항목을 먼저 채웁니다.
 
 ## Concepts vs Papers
 
-Docking, RDKit, molecular standardization, featurization, conformers, scoring functions, and split policies are reusable concepts. They should live in Computational Biology or Concepts because many papers reuse the same assumptions.
+Docking, RDKit, molecular standardization, featurization, conformer, scoring function, split policy는 재사용 가능한 concept입니다. 여러 paper가 같은 assumption을 반복해서 쓰므로 Computational Biology 또는 Concepts에 둡니다.
 
-Papers should hold paper-specific claims: what a method proposed, what benchmark it used, what result it reported, and what limitation or reproduction issue matters.
+Papers에는 paper-specific claim을 둡니다. 어떤 method를 제안했는지, 어떤 benchmark를 썼는지, 어떤 result를 보고했는지, 어떤 limitation이나 reproduction issue가 중요한지를 적습니다.
 
 | Put In | When |
 | --- | --- |

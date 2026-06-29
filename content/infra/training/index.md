@@ -10,7 +10,7 @@ tags:
 
 Training runbooks cover operational choices around training loop stability, checkpoints, single-node scaling checks, and run behavior. The canonical concept entry is [[concepts/systems/training-run|Training run]]. Cluster-level launch, scheduler allocation, and multi-node execution belong under [[infra/hpc/distributed-training|Distributed training on HPC]].
 
-The operational training loop is broader than the model update:
+운영 관점의 training loop는 model update보다 넓습니다.
 
 $$
 \text{train step}
@@ -22,7 +22,7 @@ $$
 \text{resume or select}
 $$
 
-Infra notes here focus on the machinery around that loop: device topology, process launch, synchronization, checkpoint survival, and stability evidence.
+여기 있는 infra note는 device topology, process launch, synchronization, checkpoint survival, stability evidence처럼 이 loop 주변의 machinery에 집중합니다.
 
 ## Scope
 

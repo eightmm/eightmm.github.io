@@ -7,7 +7,7 @@ tags:
 
 # Learning Method Papers
 
-Learning method paper notes focus on objectives, pretraining signals, transfer, fine-tuning, active learning, reinforcement learning, preference optimization, and representation learning.
+Learning method paper note는 objective, pretraining signal, transfer, fine-tuning, active learning, reinforcement learning, preference optimization, representation learning을 중심으로 봅니다.
 
 ## Reading Axes
 

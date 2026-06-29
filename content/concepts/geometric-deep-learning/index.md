@@ -7,11 +7,11 @@ tags:
 
 # Geometric Deep Learning
 
-Geometric deep learning is the AI layer built on top of [[concepts/math/geometry|geometry]] and [[concepts/math/symmetry-group|symmetry groups]]. It studies models that respect structure such as graphs, coordinates, transformations, and manifolds.
+Geometric deep learning은 [[concepts/math/geometry|geometry]]와 [[concepts/math/symmetry-group|symmetry group]] 위에 세우는 AI layer입니다. Graph, coordinate, transformation, manifold 같은 구조를 존중하는 model을 다룹니다.
 
-This section should not be a pure math textbook. Use it as the bridge from math foundations to neural architectures for proteins, molecules, 3D structures, vision, and graph-structured data.
+이 섹션은 순수 수학 교과서가 아니라 math foundation에서 protein, molecule, 3D structure, vision, graph-structured data용 neural architecture로 넘어가는 다리입니다.
 
-The core question is how a model behaves under a transformation group $G$:
+핵심 질문은 model이 transformation group $G$ 아래에서 어떻게 행동해야 하는가입니다.
 
 $$
 f(g\cdot x) = \rho(g) f(x),
@@ -19,11 +19,11 @@ f(g\cdot x) = \rho(g) f(x),
 g\in G
 $$
 
-Here $\rho(g)$ describes how the output representation should transform.
+여기서 $\rho(g)$는 output representation이 어떻게 변환되어야 하는지 설명합니다.
 
-## Decision Pattern
+## 결정 패턴
 
-For a geometric model, decide the contract before choosing the architecture:
+Geometric model에서는 architecture를 고르기 전에 contract를 먼저 정합니다.
 
 $$
 (\text{object}, \text{target}, \text{group}, \text{split})
@@ -31,16 +31,16 @@ $$
 \text{feature and readout design}
 $$
 
-- Object: molecule, protein, protein-ligand complex, point cloud, graph, or structure.
-- Target: scalar property, ranking, distance, vector field, coordinate update, pose, or generated structure.
-- Group: permutation, translation, rotation, reflection, SO(3), SE(3), or E(3).
-- Split: ligand scaffold, protein family, complex pair, assay/source, or time when relevant.
+- Object: molecule, protein, protein-ligand complex, point cloud, graph, structure.
+- Target: scalar property, ranking, distance, vector field, coordinate update, pose, generated structure.
+- Group: permutation, translation, rotation, reflection, SO(3), SE(3), E(3).
+- Split: 필요하면 ligand scaffold, protein family, complex pair, assay/source, time.
 
-The group choice should match both the data and the deployment setting. A symmetry enforced by preprocessing is only valid if the same information is available at inference time.
+Group 선택은 data와 deployment setting에 모두 맞아야 합니다. Preprocessing으로 강제한 symmetry는 inference time에도 같은 정보가 있을 때만 유효합니다.
 
-## Math Background
+## 수학 배경
 
-| Need | Start |
+| 필요 | 시작점 |
 | --- | --- |
 | distance, angle, coordinate basics | [Geometry](/concepts/math/geometry) |
 | group actions and symmetry | [Symmetry group](/concepts/math/symmetry-group) |
@@ -48,7 +48,7 @@ The group choice should match both the data and the deployment setting. A symmet
 
 ## Symmetry
 
-| Question | Start |
+| 질문 | 시작점 |
 | --- | --- |
 | should the output stay the same after a transform? | [Invariance](/concepts/geometric-deep-learning/invariance), [Invariant feature](/concepts/geometric-deep-learning/invariant-feature) |
 | should the output transform with the input? | [Equivariance](/concepts/geometric-deep-learning/equivariance), [Equivariant feature](/concepts/geometric-deep-learning/equivariant-feature) |
@@ -56,9 +56,9 @@ The group choice should match both the data and the deployment setting. A symmet
 | rotations and translations | [SE(3)](/concepts/geometric-deep-learning/se3) |
 | rotations, translations, and reflections | [E(3)](/concepts/geometric-deep-learning/e3) |
 
-## Coordinates and Distances
+## Coordinate와 Distance
 
-| Need | Start | Typical Output |
+| 필요 | 시작점 | 일반적인 output |
 | --- | --- | --- |
 | declare coordinate source and frame | [Coordinate frame](/concepts/geometric-deep-learning/coordinate-frame) | valid input contract |
 | use distances without orientation | [Distance geometry](/concepts/geometric-deep-learning/distance-geometry) | invariant scalar features |
@@ -66,26 +66,26 @@ The group choice should match both the data and the deployment setting. A symmet
 
 ## Representations
 
-| Need | Start | Use When |
+| 필요 | 시작점 | 쓸 때 |
 | --- | --- | --- |
 | angular basis on directions | [Spherical harmonics](/concepts/geometric-deep-learning/spherical-harmonics) | local orientation or angular structure matters |
 | scalar/vector/tensor feature types | [Irreducible representation](/concepts/geometric-deep-learning/irreducible-representation) | feature channels must transform predictably |
 | equivariant message passing with typed channels | [Tensor Field Network](/concepts/geometric-deep-learning/tensor-field-network) | higher-order geometric expressivity is worth the cost |
 
-## Models and Operations
+## Model과 Operation
 
-| Need | Start |
+| 필요 | 시작점 |
 | --- | --- |
 | choose a geometric model family | [Geometric architecture](/concepts/geometric-deep-learning/geometric-architecture) |
 | graph neural network with symmetry constraints | [Equivariant GNN](/concepts/geometric-deep-learning/equivariant-gnn) |
 
-## Public-Safe Checks
+## 공개 가능한 check
 
-- State the coordinate source: experimental, predicted, docked, generated, simulated, or conformer-generated.
-- State whether chirality and stereochemistry are retained.
-- State whether graph construction uses only deployment-available inputs.
-- State whether scalar outputs are invariant and coordinate/vector outputs are equivariant.
-- Avoid private structures, unpublished results, host paths, and internal benchmark names.
+- coordinate source가 experimental, predicted, docked, generated, simulated, conformer-generated 중 무엇인지 적습니다.
+- chirality와 stereochemistry를 보존하는지 적습니다.
+- graph construction이 deployment에서 사용할 수 있는 input만 쓰는지 적습니다.
+- scalar output은 invariant인지, coordinate/vector output은 equivariant인지 적습니다.
+- private structure, unpublished result, host path, internal benchmark name은 쓰지 않습니다.
 
 ## Related
 

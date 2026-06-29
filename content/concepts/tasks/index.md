@@ -7,19 +7,19 @@ tags:
 
 # Tasks
 
-A task defines what the model must output and how success is measured. Architecture describes how information flows; modality describes the input signal; task describes the target behavior.
+Task는 model이 무엇을 출력해야 하고 성공을 어떻게 측정할지 정의합니다. Architecture는 정보가 흐르는 방식을, modality는 input signal을, task는 target behavior를 설명합니다.
 
-The same input can support many tasks:
+같은 input도 여러 task를 가질 수 있습니다.
 
 $$
 \hat{y} = f_\theta(x), \qquad \theta^\star = \arg\min_\theta \mathcal{L}(f_\theta(x), y)
 $$
 
-The important question is what $y$ means: a class, scalar, ranked list, generated sequence, box, mask, answer, retrieved item, or structured object.
+중요한 질문은 $y$가 무엇을 뜻하는가입니다. $y$는 class, scalar, ranked list, generated sequence, box, mask, answer, retrieved item, structured object일 수 있습니다.
 
-## Route Map
+## 이동 지도
 
-| Need | Start | Typical Metric Boundary |
+| 필요 | 시작점 | 일반적인 metric 경계 |
 | --- | --- | --- |
 | define the full task contract | [Task specification](/concepts/tasks/task-specification) | loss, metric, split, validity rule |
 | choose the output type | [Task output space](/concepts/tasks/task-output-space) | class, scalar, rank, sequence, graph, coordinate |
@@ -31,9 +31,9 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 | model molecules or proteins | [Property prediction](/concepts/tasks/property-prediction), [Interaction prediction](/concepts/tasks/interaction-prediction) | assay context, split unit, leakage risk |
 | model structure | [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) | geometry validity, invariance, equivariance |
 
-## Task Families
+## Task 묶음
 
-| Family | Notes |
+| 묶음 | 노트 |
 | --- | --- |
 | Core ML | [Classification](/concepts/machine-learning/classification), [Regression](/concepts/machine-learning/regression), [Ranking](/concepts/machine-learning/ranking) |
 | Search | [Retrieval](/concepts/tasks/retrieval), [Similarity search](/concepts/tasks/similarity-search), [Reranking](/concepts/tasks/reranking) |
@@ -42,21 +42,21 @@ The important question is what $y$ means: a class, scalar, ranked list, generate
 | Structured outputs | [Structured prediction](/concepts/tasks/structured-prediction), [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) |
 | Time and monitoring | [Time-series forecasting](/concepts/tasks/time-series-forecasting), [Anomaly detection](/concepts/tasks/anomaly-detection) |
 
-## Checks
+## 확인할 것
 
-- What is the output space?
-- What [[concepts/tasks/task-output-space|task output space]] constrains valid predictions?
-- What is the task specification: input, output, validity, loss, metric, and split?
-- What modality-task map connects raw input, representation, output space, and metric?
-- What is the [[concepts/data/example-unit|example unit]]?
-- What [[concepts/data/split-unit|split unit]] tests the intended generalization?
-- Is the model predicting, ranking, retrieving, generating, localizing, or segmenting?
-- Is retrieval a final output, a similarity-search stage, or a reranking pipeline?
-- Is the task entity-level, pairwise, context-conditioned, or structured?
-- Is the output independent, sequential, structured, ranked, spatial, or temporal?
-- Does the metric match the user-facing behavior?
-- Does the data split prevent leakage for this task?
-- Are outputs constrained to valid objects, syntax, molecules, structures, or actions?
+- output space는 무엇인가?
+- 어떤 [[concepts/tasks/task-output-space|task output space]]가 valid prediction을 제한하는가?
+- input, output, validity, loss, metric, split을 포함한 task specification이 있는가?
+- raw input, representation, output space, metric을 연결하는 modality-task map이 있는가?
+- [[concepts/data/example-unit|example unit]]은 무엇인가?
+- 어떤 [[concepts/data/split-unit|split unit]]이 의도한 generalization을 검증하는가?
+- model은 predicting, ranking, retrieving, generating, localizing, segmenting 중 무엇을 하는가?
+- retrieval은 최종 output인가, similarity-search stage인가, reranking pipeline인가?
+- task는 entity-level, pairwise, context-conditioned, structured 중 무엇인가?
+- output은 independent, sequential, structured, ranked, spatial, temporal 중 무엇인가?
+- metric이 user-facing behavior와 맞는가?
+- data split이 이 task의 leakage를 막는가?
+- output이 valid object, syntax, molecule, structure, action으로 제한되는가?
 
 ## Related
 

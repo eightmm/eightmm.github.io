@@ -8,7 +8,7 @@ tags:
 
 # Systems Papers
 
-Systems paper notes cover infrastructure, training efficiency, inference serving, distributed execution, agent tooling, and reproducibility.
+Systems paper note는 infrastructure, training efficiency, inference serving, distributed execution, agent tooling, reproducibility를 다룹니다.
 
 ## Reading Axes
 

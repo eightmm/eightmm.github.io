@@ -7,15 +7,15 @@ tags:
 
 # Architectures
 
-Architecture notes describe model families used across molecular AI, protein modeling, agents, and implementation reading. Use these pages as quick checks for what a paper is mixing, what inductive bias it assumes, and where evaluation can go wrong.
+Architecture note는 molecular AI, protein modeling, agent, 구현 읽기에서 쓰는 model family를 설명합니다. 논문이 무엇을 섞고 있는지, 어떤 inductive bias를 가정하는지, evaluation이 어디서 흔들릴 수 있는지 빠르게 확인하는 용도입니다.
 
-An architecture defines the function class searched during training:
+Architecture는 training 중 탐색하는 function class를 정의합니다.
 
 $$
 f_\theta \in \mathcal{F}_{\text{arch}}
 $$
 
-The same training objective can behave very differently depending on whether $\mathcal{F}_{\text{arch}}$ encodes locality, order, graph structure, or symmetry.
+같은 training objective라도 $\mathcal{F}_{\text{arch}}$가 locality, order, graph structure, symmetry 중 무엇을 encode하는지에 따라 전혀 다르게 동작할 수 있습니다.
 
 ## Route Map
 
@@ -50,7 +50,7 @@ The same training objective can behave very differently depending on whether $\m
 | Geometry-aware | coordinates, forces, poses, protein and molecule structures | [Geometric deep learning](/concepts/geometric-deep-learning), [Equivariant GNN](/concepts/geometric-deep-learning/equivariant-gnn), [Tensor Field Network](/concepts/geometric-deep-learning/tensor-field-network) |
 | Sparse / routed | conditional compute, expert routing, scaling under budget | [Mixture of Experts](/concepts/architectures/mixture-of-experts) |
 
-Mamba is not a separate top-level family here. It is a selective state-space model, so route it through [State-space models](/concepts/architectures/state-space-model) unless the note is specifically about Mamba internals.
+Mamba는 여기서 별도의 top-level family로 두지 않습니다. Selective state-space model이므로, Mamba 내부 구조 자체를 다루는 노트가 아니라면 [State-space models](/concepts/architectures/state-space-model) 경로로 둡니다.
 
 ## Reading Checklist
 

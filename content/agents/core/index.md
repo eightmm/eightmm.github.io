@@ -15,7 +15,7 @@ $$
 a_t = \pi_\theta(o_t, s_t, c_t, m_t)
 $$
 
-where $o_t$ is the current observation, $s_t$ is explicit task state, $c_t$ is selected context, $m_t$ is retrieved memory, and $a_t$ is an action such as answering, planning, calling a tool, editing a file, or asking for human input.
+여기서 $o_t$는 현재 observation, $s_t$는 명시적 task state, $c_t$는 선택된 context, $m_t$는 검색된 memory, $a_t$는 답변, 계획, tool call, 파일 수정, human input 요청 같은 action입니다.
 
 중요한 것은 무엇을 명시적으로 관리하느냐입니다.
 
@@ -27,7 +27,7 @@ $$
 
 이 부품들이 암묵적으로 섞이면 agent는 동작하더라도 디버깅과 검증이 어려워집니다.
 
-## Reading Path
+## 읽기 경로
 
 1. [[agents/core/agent-architecture|Agent architecture]]에서 전체 부품을 봅니다.
 2. [[agents/core/agent-loop|Agent loop]]에서 observe-plan-act-verify 반복을 봅니다.
@@ -38,7 +38,7 @@ $$
 
 ## Notes
 
-| Group | Notes |
+| 그룹 | 노트 |
 | --- | --- |
 | Architecture | [[agents/core/agent-architecture|Agent architecture]], [[agents/core/agent-operating-contract|Agent operating contract]] |
 | Loop and state | [[agents/core/agent-loop|Agent loop]], [[agents/core/agent-environment|Agent environment]], [[agents/core/action-space|Action space]], [[agents/core/agent-state|Agent state]] |

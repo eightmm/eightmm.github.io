@@ -7,16 +7,16 @@ tags:
 
 # Public Logs
 
-Logs are cleaned work records. They should capture what was learned, not private operational details.
+Log는 정리된 work record입니다. Private operational detail이 아니라 무엇을 배웠는지를 남겨야 합니다.
 
-## Use For
+## 용도
 
-- Public debugging writeups.
-- Reproducible experiment summaries after results are safe to share.
-- Project milestones and design decisions.
-- Short notes that may later become [[posts/index|Posts]].
+- 공개 가능한 debugging writeup.
+- 결과 공유가 안전해진 뒤의 reproducible experiment summary.
+- project milestone과 design decision.
+- 나중에 [[posts/index|Posts]]로 확장될 수 있는 짧은 note.
 
-## Formats
+## 형식
 
 - [[logs/public-log-taxonomy|Public log taxonomy]]
 - [[logs/public-log-format|Public log format]]
@@ -24,11 +24,11 @@ Logs are cleaned work records. They should capture what was learned, not private
 - [[logs/public-incident-note|Public incident note]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
 
-## Do Not Include
+## 포함하지 말 것
 
-- Server IPs, ports, usernames, private paths, credentials, or node names.
-- Internal project names, collaborator details, or private datasets.
-- Unpublished experiment results or thesis-sensitive claims.
+- server IP, port, username, private path, credential, node name.
+- internal project name, collaborator detail, private dataset.
+- unpublished experiment result 또는 thesis-sensitive claim.
 
 ## Related
 

@@ -7,9 +7,9 @@ tags:
 
 # Server Operations
 
-Server operation notes cover general troubleshooting patterns for Linux servers, GPU drivers, storage, accounts, networking, and monitoring.
+Server operation note는 Linux server, GPU driver, storage, account, networking, monitoring의 일반적인 troubleshooting pattern을 다룹니다.
 
-The public version should read like a sanitized runbook:
+공개 버전은 sanitize된 runbook처럼 읽혀야 합니다.
 
 $$
 \text{symptom}

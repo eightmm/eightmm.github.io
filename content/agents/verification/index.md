@@ -15,9 +15,9 @@ $$
 \exists E\ \text{such that}\ E \Rightarrow c
 $$
 
-where $c$ is the claim and $E$ is evidence from tests, builds, rendered pages, logs, source inspection, citations, review, or human judgment. 넓은 claim에는 넓은 evidence가 필요하고, 좁은 check는 그 check가 덮는 범위만 증명합니다.
+여기서 $c$는 claim이고 $E$는 test, build, rendered page, log, source inspection, citation, review, human judgment에서 나온 evidence입니다. 넓은 claim에는 넓은 evidence가 필요하고, 좁은 check는 그 check가 덮는 범위만 증명합니다.
 
-## Verification Ladder
+## Verification 단계
 
 1. 결과를 판단하기 전에 [[agents/verification/acceptance-criteria|Acceptance criteria]]를 정합니다.
 2. [[agents/verification/evidence-ledger|Evidence ledger]]에 무엇을 확인했는지 남깁니다.

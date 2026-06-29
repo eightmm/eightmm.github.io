@@ -7,20 +7,20 @@ tags:
 
 # Molecular Modeling Concepts
 
-Molecular modeling concepts describe how small molecules become model inputs: strings, graphs, fingerprints, conformers, descriptors, 3D coordinates, and physics-based geometry protocols.
+Molecular modeling concept는 small molecule이 string, graph, fingerprint, conformer, descriptor, 3D coordinate, physics-based geometry protocol 같은 model input으로 바뀌는 과정을 설명합니다.
 
-The modeling object is not just a drawing of atoms. It is a stateful record:
+Modeling object는 단순한 atom 그림이 아니라 stateful record입니다.
 
 $$
 M =
 (\text{topology}, \text{stereo}, \text{tautomer}, \text{protonation}, \text{conformer}, \text{source})
 $$
 
-Different choices can produce different deduplication keys, split assignments, features, poses, and labels.
+선택이 달라지면 deduplication key, split assignment, feature, pose, label이 달라질 수 있습니다.
 
 ## Workflow
 
-Use this order for public ML notes:
+공개 ML note에서는 아래 순서를 우선합니다.
 
 $$
 \text{raw record}
@@ -38,11 +38,11 @@ $$
 \text{model}
 $$
 
-Do not split or aggregate labels before the molecular identity policy is explicit.
+Molecular identity policy가 명확해지기 전에는 label을 split하거나 aggregate하지 않습니다.
 
-## Route Map
+## 이동 지도
 
-| Question | Start | Risk |
+| 질문 | 시작점 | 위험 |
 | --- | --- | --- |
 | What is the molecule identity? | [Molecular identity](/concepts/molecular-modeling/molecular-identity), [Molecular standardization](/concepts/molecular-modeling/molecular-standardization), [Chemical state contract](/concepts/molecular-modeling/chemical-state-contract) | salts, tautomers, stereo, protonation, charge, source policy |
 | What does the model see? | [Molecular featurization contract](/concepts/molecular-modeling/molecular-featurization-contract), [RDKit](/concepts/molecular-modeling/rdkit), [SMILES](/concepts/molecular-modeling/smiles), [Molecular graph](/concepts/molecular-modeling/molecular-graph), [Molecular fingerprint](/concepts/molecular-modeling/molecular-fingerprint) | featurizer silently changing the object |
@@ -52,35 +52,35 @@ Do not split or aggregate labels before the molecular identity policy is explici
 | Is 3D state involved? | [Conformer](/concepts/molecular-modeling/conformer), [Force field](/concepts/molecular-modeling/force-field), [Energy minimization](/concepts/molecular-modeling/energy-minimization), [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | conformer source and postprocessing dependence |
 | Which chemical variants matter? | [Tautomer](/concepts/molecular-modeling/tautomer), [Protonation state](/concepts/molecular-modeling/protonation-state), [Stereochemistry](/concepts/molecular-modeling/stereochemistry) | train/test leakage through equivalent or near-equivalent raw rows |
 
-## Geometry and Physics Protocols
+## Geometry와 Physics Protocol
 
-| Concept | Use For | Main Risk |
+| 개념 | 용도 | 주요 위험 |
 | --- | --- | --- |
 | [Conformer](/concepts/molecular-modeling/conformer) | ligand 3D geometry and conformer ensembles | training and inference may use different conformer sources |
 | [Force field](/concepts/molecular-modeling/force-field) | geometry energy, minimization, MD, clash checks | energy is model-dependent, not an absolute truth |
 | [Energy minimization](/concepts/molecular-modeling/energy-minimization) | relaxing conformers or poses | postprocessing can hide invalid model outputs |
 | [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | trajectories and flexible structure analysis | frame leakage and protocol dependence can dominate |
 
-## Data Checks
+## Data check
 
-- Standardize molecules before deduplication and splitting.
-- Define molecular identity before deduplication, label aggregation, and split assignment.
-- Decide whether to preserve or flatten stereochemistry.
-- Record tautomer, salt, charge, protonation, and conformer protocols.
-- Record force-field, minimization, and molecular-dynamics protocols when coordinates are generated or refined.
-- Use scaffold or cluster splits instead of random splits for ligand-side generalization.
-- Cache features with featurizer version and input hash.
-- Use one molecular featurization contract across train, evaluation, and inference.
-- Treat RDKit parsing, sanitization, fingerprinting, descriptor, and conformer settings as part of the method.
+- deduplication과 split 전에 molecule을 standardize합니다.
+- deduplication, label aggregation, split assignment 전에 molecular identity를 정의합니다.
+- stereochemistry를 보존할지 flatten할지 정합니다.
+- tautomer, salt, charge, protonation, conformer protocol을 기록합니다.
+- coordinate를 생성하거나 refine하면 force-field, minimization, molecular-dynamics protocol을 기록합니다.
+- ligand-side generalization에는 random split보다 scaffold 또는 cluster split을 씁니다.
+- feature는 featurizer version과 input hash로 cache합니다.
+- train, evaluation, inference에서 하나의 molecular featurization contract를 씁니다.
+- RDKit parsing, sanitization, fingerprinting, descriptor, conformer setting은 method의 일부로 취급합니다.
 
-## Failure Modes
+## Failure mode
 
-- Salt, tautomer, charge, or stereo variants leak across train/test as different raw rows.
-- A graph featurizer drops chiral tags or bond stereo while the label distinguishes stereoisomers.
-- 3D models train on crystal/bound conformations but deploy on generated conformers without measuring shift.
-- Postprocessing with energy minimization changes model outputs but is reported as if it were the raw model.
-- Similarity or scaffold splits are computed on raw molecules instead of standardized identity.
-- A random split is used for a congeneric series, causing memorization to look like generalization.
+- salt, tautomer, charge, stereo variant가 서로 다른 raw row로 train/test에 새어 들어갑니다.
+- label은 stereoisomer를 구분하지만 graph featurizer가 chiral tag나 bond stereo를 버립니다.
+- 3D model이 crystal/bound conformation에서 학습하고 generated conformer에서 deploy되지만 shift를 측정하지 않습니다.
+- energy minimization postprocessing이 model output을 바꾸는데 raw model 결과처럼 보고됩니다.
+- similarity 또는 scaffold split이 standardized identity가 아니라 raw molecule에서 계산됩니다.
+- congeneric series에 random split을 써서 memorization이 generalization처럼 보입니다.
 
 ## Related
 

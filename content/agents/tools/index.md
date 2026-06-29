@@ -13,9 +13,9 @@ $$
 \text{tool}: (I, S_{\mathrm{pre}}) \rightarrow (O, S_{\mathrm{post}})
 $$
 
-where $I$ is the input payload, $O$ is the returned output, and $S_{\mathrm{pre}}, S_{\mathrm{post}}$ are external states before and after the call.
+여기서 $I$는 입력 payload, $O$는 반환 output, $S_{\mathrm{pre}}, S_{\mathrm{post}}$는 호출 전후의 외부 상태입니다.
 
-## Tool-Use Flow
+## Tool 사용 흐름
 
 1. 질문에 답할 수 있는 가장 약한 tool을 고릅니다.
 2. [[agents/tools/tool-contract|Tool contract]]에서 schema, side effect, permission, failure mode를 확인합니다.

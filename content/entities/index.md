@@ -6,9 +6,9 @@ tags:
 
 # Entities
 
-Entity notes define the objects that appear across molecular AI and protein modeling.
+Entity note는 molecular AI와 protein modeling 전반에 등장하는 object를 정의합니다.
 
-Entities are not research areas by themselves. They are the objects that a task, representation, model, label, split, and metric operate on.
+Entity 자체는 research area가 아닙니다. Task, representation, model, label, split, metric이 작동하는 대상입니다.
 
 The basic pattern is:
 
@@ -22,7 +22,7 @@ $$
 
 where $e$ is an entity, $c$ is context such as target, assay, pocket, source, or time, $\phi$ is a representation function, and $\hat{y}$ is the model output.
 
-For Molecular Modeling, the same entity can play different roles:
+Molecular Modeling에서는 같은 entity도 서로 다른 역할을 할 수 있습니다.
 
 | Entity | Common role | Typical risk |
 | --- | --- | --- |
