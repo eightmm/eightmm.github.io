@@ -42,9 +42,9 @@ tags:
 예를 들어 구조 기반 모델링을 읽는다면:
 
 1. [[molecular-modeling/index|Computational Biology]]
-2. [[molecular-modeling/structure-based/index|Structure-based modeling]]
-3. [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand docking]]
-4. [[concepts/sbdd/index|Structure-based drug discovery]]
+2. [[molecular-modeling/structure-based/index|구조 기반 모델링]]
+3. [[molecular-modeling/structure-based/protein-ligand-docking|단백질-리간드 도킹]]
+4. [[concepts/sbdd/index|구조 기반 신약 개발]]
 5. [[papers/sbdd/posebusters|PoseBusters]]
 
 ## 작성 원칙

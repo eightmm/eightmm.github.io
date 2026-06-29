@@ -58,11 +58,11 @@ tags:
 
 현재 첫 경로는 이렇게 잡습니다.
 
-1. [[molecular-modeling/structure-based/index|Structure-Based Modeling]]
+1. [[molecular-modeling/structure-based/index|구조 기반 모델링]]
 2. [[molecular-modeling/structure-based/protein-ligand-docking|Protein-ligand Docking]]
-3. [[concepts/sbdd/index|Structure-Based Drug Discovery]]
-4. [[concepts/sbdd/pose-quality|Pose Quality]]
-5. [[concepts/sbdd/binding-affinity|Binding Affinity]]
+3. [[concepts/sbdd/index|구조 기반 신약 개발]]
+4. [[concepts/sbdd/pose-quality|포즈 품질]]
+5. [[concepts/sbdd/binding-affinity|결합 친화도]]
 6. [[papers/sbdd/posebusters|PoseBusters]]
 
 이 정도면 전체 분야를 처음부터 완벽하게 정리하려고 하기보다, 실제로 읽고 쓰면서 확장하기에 충분한 시작점입니다.

@@ -14,7 +14,7 @@ $$
 a_t = T_k(x_t), \qquad o_t = \operatorname{observe}(T_k, x_t)
 $$
 
-where $T_k$ is an external tool or connector and $o_t$ is the returned observation.
+여기서 $T_k$는 external tool 또는 connector이고, $o_t$는 반환된 observation입니다.
 
 ## 읽기와 쓰기 구분
 

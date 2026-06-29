@@ -28,16 +28,16 @@ $$
 
 ## Artifact Classes
 
-| Artifact | Public release field |
+| Artifact | 공개 시 적을 항목 |
 | --- | --- |
 | Code | repository, license, entry point, dependency boundary |
-| Config | sanitized options, defaults, environment class |
-| Model | model card, checkpoint status, intended use, limits |
-| Inference workflow | input schema, output schema, errors, runtime envelope |
+| Config | sanitized option, default, environment class |
+| Model | model card, checkpoint status, intended use, limit |
+| Inference workflow | input schema, output schema, error, runtime envelope |
 | Dataset | public source, license, preprocessing, split contract |
 | Run output | metric definition, split, aggregation, public-safe summary |
-| Runbook | generic steps, checks, public boundary |
-| Diagram | self-drawn or licensed image, no private topology |
+| Runbook | generic step, check, public boundary |
+| Diagram | 직접 그렸거나 license가 있는 image, private topology 없음 |
 
 ## Release Checklist
 
@@ -51,7 +51,7 @@ $$
 
 Artifact를 공개할 수 없다면 public-safe language로 이유를 적습니다.
 
-| Status | Meaning |
+| Status | 의미 |
 | --- | --- |
 | `not released` | artifact는 있지만 public이 아님 |
 | `to verify` | public status가 아직 확인되지 않음 |

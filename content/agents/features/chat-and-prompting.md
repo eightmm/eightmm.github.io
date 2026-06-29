@@ -13,7 +13,7 @@ $$
 y_t \sim p_\theta(y \mid I, C_t, x_t)
 $$
 
-where $I$ is instruction, $C_t$ is current context, and $x_t$ is the user request.
+여기서 $I$는 instruction, $C_t$는 current context, $x_t$는 user request입니다.
 
 ## 좋은 프롬프트의 형태
 

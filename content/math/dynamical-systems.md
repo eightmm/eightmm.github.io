@@ -8,21 +8,21 @@ tags:
 
 # Dynamical Systems
 
-Dynamical systems describe how a state changes over time or along a continuous path. In AI, this appears in recurrent models, residual networks, diffusion models, flow matching, probability-flow ODEs, control, reinforcement learning, and molecular dynamics.
+Dynamical system은 state가 시간 또는 연속 경로를 따라 어떻게 변하는지 설명합니다. AI에서는 recurrent model, residual network, diffusion model, flow matching, probability-flow ODE, control, reinforcement learning, molecular dynamics에서 반복적으로 등장합니다.
 
 ## Route Map
 
-| Question | Start | Use For |
+| 질문 | 시작점 | 쓰임 |
 | --- | --- | --- |
-| Is the state updated step by step? | [RNN](/concepts/architectures/rnn), [Residual network](/concepts/architectures/residual-network) | recurrence, iterative refinement, deep residual blocks |
-| Is the model a continuous flow? | [Flow matching](/concepts/generative-models/flow-matching), [Probability flow ODE](/concepts/generative-models/probability-flow-ode), [Rectified flow](/concepts/generative-models/rectified-flow) | sample transport and velocity fields |
-| Is noise part of the dynamics? | [Diffusion model](/concepts/generative-models/diffusion-model) | stochastic paths and denoising objectives |
-| Is an agent or controller acting over time? | [Reinforcement learning](/concepts/learning/reinforcement-learning) | state, action, reward, policy dynamics |
-| Is the state physical? | [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | coordinate and force evolution |
+| state가 step-by-step으로 update되는가? | [RNN](/concepts/architectures/rnn), [Residual network](/concepts/architectures/residual-network) | recurrence, iterative refinement, deep residual block |
+| model이 continuous flow인가? | [Flow matching](/concepts/generative-models/flow-matching), [Probability flow ODE](/concepts/generative-models/probability-flow-ode), [Rectified flow](/concepts/generative-models/rectified-flow) | sample transport, velocity field |
+| noise가 dynamics의 일부인가? | [Diffusion model](/concepts/generative-models/diffusion-model) | stochastic path, denoising objective |
+| agent 또는 controller가 시간에 따라 행동하는가? | [Reinforcement learning](/concepts/learning/reinforcement-learning) | state, action, reward, policy dynamics |
+| state가 물리적 상태인가? | [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | coordinate와 force evolution |
 
 ## Discrete-Time Dynamics
 
-A discrete-time system updates state step by step:
+Discrete-time system은 state를 step 단위로 update합니다.
 
 $$
 x_{t+1}
@@ -30,11 +30,11 @@ x_{t+1}
 F_\theta(x_t,t)
 $$
 
-This view covers recurrent networks, iterative refinement, optimization steps, and some agent state transitions.
+이 관점은 recurrent network, iterative refinement, optimization step, 일부 agent state transition을 설명합니다.
 
 ## Continuous-Time Dynamics
 
-A continuous-time system is often written as an ODE:
+Continuous-time system은 보통 ODE로 씁니다.
 
 $$
 \frac{dx(t)}{dt}
@@ -42,11 +42,11 @@ $$
 f_\theta(x(t),t)
 $$
 
-The function $f_\theta$ is a vector field. It tells the direction and speed of movement at each point.
+$f_\theta$는 vector field입니다. 각 위치에서 이동 방향과 속도를 알려줍니다.
 
 ## Flow Map
 
-Solving the ODE from time $s$ to time $t$ defines a flow map:
+시간 $s$에서 $t$까지 ODE를 풀면 flow map을 정의할 수 있습니다.
 
 $$
 x(t)
@@ -54,11 +54,11 @@ x(t)
 \Phi_{s\to t}(x(s))
 $$
 
-Generative flows use this idea to move samples from a simple distribution to a data distribution.
+Generative flow는 이 관점을 사용해 simple distribution의 sample을 data distribution으로 이동시킵니다.
 
 ## Stochastic Dynamics
 
-Diffusion-style models often include noise. A simplified stochastic differential equation has the form:
+Diffusion 계열 model은 보통 noise를 포함합니다. 단순화한 stochastic differential equation은 다음과 같습니다.
 
 $$
 dx
@@ -68,7 +68,7 @@ f(x,t)\,dt
 g(t)\,dW_t
 $$
 
-where $W_t$ is Brownian motion. The drift $f$ controls deterministic movement, and the diffusion term $g(t)$ controls noise scale.
+$W_t$는 Brownian motion입니다. Drift $f$는 deterministic movement를, diffusion term $g(t)$는 noise scale을 조절합니다.
 
 ## Residual Networks as Dynamics
 
@@ -80,7 +80,7 @@ h_{l+1}
 h_l + F_\theta(h_l)
 $$
 
-can be read as a discrete approximation to continuous dynamics:
+이는 continuous dynamics의 discrete approximation으로 읽을 수 있습니다.
 
 $$
 \frac{dh(t)}{dt}
@@ -88,11 +88,11 @@ $$
 F_\theta(h(t))
 $$
 
-This perspective helps connect deep architectures, stability, and continuous generative models.
+이 관점은 deep architecture, stability, continuous generative model을 연결해 줍니다.
 
 ## Molecular Dynamics View
 
-Molecular dynamics is a physical dynamical system over coordinates:
+Molecular dynamics는 coordinate 위의 physical dynamical system입니다.
 
 $$
 m_i\frac{d^2x_i}{dt^2}
@@ -100,16 +100,16 @@ m_i\frac{d^2x_i}{dt^2}
 -\nabla_{x_i}E(X)
 $$
 
-The state can include position and velocity. For AI notes, the important distinction is whether dynamics are simulated by a fixed physical model, learned by a neural model, or used only as post hoc analysis.
+State에는 position과 velocity가 포함될 수 있습니다. AI note에서는 dynamics가 fixed physical model로 simulate되는지, neural model로 learned되는지, 아니면 post hoc analysis로만 쓰이는지를 구분하는 것이 중요합니다.
 
 ## Checks
 
-- Is time discrete, continuous, learned, or just an ordering variable?
-- Is the state a vector, sequence, graph, coordinate set, or distribution?
-- Is the dynamics deterministic or stochastic?
-- Does the model learn a score, vector field, transition kernel, or policy?
-- Is numerical integration part of the method or only a conceptual analogy?
-- For molecular dynamics, are force field, time step, initialization, and analyzed frames stated?
+- time이 discrete, continuous, learned, 또는 단순 ordering variable 중 무엇인가?
+- state가 vector, sequence, graph, coordinate set, distribution 중 무엇인가?
+- dynamics가 deterministic인가 stochastic인가?
+- model이 score, vector field, transition kernel, policy 중 무엇을 학습하는가?
+- numerical integration이 method의 일부인가, 아니면 conceptual analogy인가?
+- molecular dynamics라면 force field, time step, initialization, analyzed frame이 명시되어 있는가?
 
 ## Related
 

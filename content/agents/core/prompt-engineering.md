@@ -13,7 +13,7 @@ $$
 p^\ast = \arg\max_p \mathbb{E}[U(y, g) \mid p, C, M]
 $$
 
-where $p$ is the prompt, $C$ is context, $M$ is model behavior, and $U$ is task utility.
+여기서 $p$는 prompt, $C$는 context, $M$은 model behavior, $U$는 task utility입니다.
 
 ## 기본 구조
 

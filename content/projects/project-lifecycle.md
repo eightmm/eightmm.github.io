@@ -29,10 +29,10 @@ $$
 
 ## Stages
 
-| Stage | Meaning | Required evidence |
+| Stage | 의미 | 필요한 evidence |
 | --- | --- | --- |
 | `idea` | 추적할 가치가 있는 problem | public problem statement |
-| `draft` | shape가 명확함 | artifact boundary와 design sketch |
+| `draft` | 형태가 명확함 | artifact boundary와 design sketch |
 | `artifact` | 실제 산출물이 있음 | interface, workflow, reproducible output |
 | `verified` | claim이 확인됨 | build, test, benchmark, review, run artifact |
 | `maintained` | 시간이 지나도 유용함 | versioning, changelog, known limit |

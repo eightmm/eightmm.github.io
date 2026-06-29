@@ -14,7 +14,7 @@ $$
 m^\ast = \operatorname{retrieve}(M, g, C_t)
 $$
 
-where $M$ is stored memory, $g$ is the current goal, and $C_t$ is the current context.
+여기서 $M$은 stored memory, $g$는 current goal, $C_t$는 current context입니다.
 
 ## 구분
 

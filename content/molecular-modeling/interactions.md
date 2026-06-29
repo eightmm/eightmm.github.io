@@ -58,10 +58,10 @@ $$
 
 | Side | Examples | Check |
 | --- | --- | --- |
-| Ligand | SMILES, molecular graph, fingerprint, conformer, docked pose | standardized before deduplication and split |
-| Protein | sequence, protein embedding, structure, pocket graph, surface | sequence identity and structure source recorded |
-| Assay | endpoint, organism, construct, units, threshold, source | not collapsed into a generic label |
-| Context | pocket, template, species, mutation, conformer source | available at inference time |
+| Ligand | SMILES, molecular graph, fingerprint, conformer, docked pose | deduplication과 split 전에 standardized되어야 함 |
+| Protein | sequence, protein embedding, structure, pocket graph, surface | sequence identity와 structure source를 기록해야 함 |
+| Assay | endpoint, organism, construct, units, threshold, source | generic label 하나로 뭉개면 안 됨 |
+| Context | pocket, template, species, mutation, conformer source | inference time에 사용 가능한 정보여야 함 |
 
 Pair model에서 feature map은 보통 아래처럼 씁니다.
 
@@ -77,25 +77,25 @@ Fusion method는 concatenation, cross-attention, graph construction, interaction
 
 Interaction score는 하나의 숫자처럼 보여도 의미가 다릅니다.
 
-| Score | Meaning | 혼동하지 말 것 |
+| Score | 의미 | 혼동하지 말 것 |
 | --- | --- | --- |
-| activity probability | active/inactive decision under assay threshold | binding affinity |
-| affinity value | $K_d$, $K_i$, IC50, $\Delta G$ style measurement | pose quality |
-| docking score | ranking or heuristic energy proxy | calibrated probability |
+| activity probability | assay threshold 아래의 active/inactive decision | binding affinity |
+| affinity value | $K_d$, $K_i$, IC50, $\Delta G$ 형태의 measurement | pose quality |
+| docking score | ranking 또는 heuristic energy proxy | calibrated probability |
 | enrichment score | early retrieval success | absolute affinity |
 | selectivity margin | target panel difference | single-target activity |
 
 ## Split and Leakage
 
-Interaction claims need at least one explicit holdout axis.
+Interaction claim에는 최소 하나의 explicit holdout axis가 필요합니다.
 
-| Claim | Split Needed |
+| Claim | 필요한 split |
 | --- | --- |
-| New molecule against known targets | scaffold or chemical-series split |
-| Known molecule against new protein | protein-family or sequence-identity split |
-| New molecule and new protein | scaffold split plus protein-family split |
-| New assay/source | assay, source, or campaign split |
-| New structure template | template-aware and homolog-aware structure split |
+| known target에 대한 new molecule | scaffold 또는 chemical-series split |
+| new protein에 대한 known molecule | protein-family 또는 sequence-identity split |
+| new molecule과 new protein | scaffold split과 protein-family split |
+| new assay/source | assay, source, campaign split |
+| new structure template | template-aware 및 homolog-aware structure split |
 
 Random row split에서 broad interaction generalization을 주장하면 안 됩니다. Row split은 train/test 사이에 같은 ligand series, homologous protein, related assay, 거의 같은 complex template을 남길 수 있습니다.
 

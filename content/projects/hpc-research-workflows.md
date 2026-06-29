@@ -8,42 +8,42 @@ tags:
 
 # HPC Research Workflows
 
-This project collects public, generalized patterns for running research workloads on shared GPU and HPC systems. It focuses on reproducibility, debugging, and safe operations rather than private cluster details.
+이 project는 shared GPU/HPC system에서 research workload를 실행할 때 필요한 공개 가능한 일반 패턴을 모읍니다. Private cluster detail이 아니라 reproducibility, debugging, safe operation에 초점을 둡니다.
 
 ## Artifact
 
-The artifact is a reusable workflow for designing, submitting, monitoring, and closing research compute runs.
+Artifact는 research compute run을 설계, 제출, 모니터링, 종료하는 재사용 가능한 workflow입니다.
 
 ## Problem
 
-Research runs often fail because the workflow around the model is weak: unclear resource requests, missing checkpoints, untracked environments, and poor failure logs.
+Research run은 model 자체보다 주변 workflow가 약해서 실패하는 경우가 많습니다. 예를 들면 resource request가 불명확하거나, checkpoint가 없거나, environment가 추적되지 않거나, failure log가 부족한 경우입니다.
 
 ## Public Boundary
 
-Keep the note generic. Do not include real server names, IPs, account names, SSH ports, private mount paths, queue names that reveal infrastructure, user lists, or private job IDs.
+Note는 일반화된 형태로 유지합니다. 실제 server name, IP, account name, SSH port, private mount path, infrastructure를 드러내는 queue name, user list, private job ID는 넣지 않습니다.
 
 ## Workflow
 
-1. Run a local or small-batch smoke test.
-2. Submit a constrained job with explicit CPU, GPU, memory, and time assumptions.
-3. Save checkpoints and logs in a reproducible layout.
-4. Record code commit, environment, seed, and dataset version.
-5. Debug failures from scheduler state, application logs, and hardware symptoms.
+1. Local 또는 small-batch smoke test를 먼저 실행합니다.
+2. CPU, GPU, memory, time assumption을 명시한 constrained job을 제출합니다.
+3. Checkpoint와 log를 재현 가능한 layout으로 저장합니다.
+4. Code commit, environment, seed, dataset version을 기록합니다.
+5. Scheduler state, application log, hardware symptom을 기준으로 failure를 디버깅합니다.
 
 ## Artifact Release
 
 - Run record schema: public.
-- Generic Slurm and HPC patterns: public.
-- Private cluster topology, account names, job IDs, hostnames, paths, and live metrics: not released.
-- Results from unpublished experiments: not released unless converted into a public-safe method note.
+- Generic Slurm/HPC pattern: public.
+- Private cluster topology, account name, job ID, hostname, path, live metric: not released.
+- Unpublished experiment result: public-safe method note로 변환하기 전에는 not released.
 
 ## Checks
 
-- Can the run be reproduced from public information without private infrastructure details?
-- Are resource assumptions explicit enough to explain failures?
-- Are checkpoints frequent enough for the expected wall time?
-- Is the result a public method note, a private experiment, or a post candidate?
-- Is every released artifact sanitized through [[projects/project-artifact-release|Project artifact release]]?
+- private infrastructure detail 없이 public information만으로 run을 재현할 수 있는가?
+- resource assumption이 failure를 설명할 만큼 명시되어 있는가?
+- checkpoint 주기가 expected wall time에 비해 충분한가?
+- 결과가 public method note, private experiment, post candidate 중 무엇인가?
+- 공개하는 artifact가 [[projects/project-artifact-release|Project artifact release]] 기준으로 sanitized되었는가?
 
 ## Related
 

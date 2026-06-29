@@ -154,7 +154,7 @@ $$
 y = Wx + b
 $$
 
-upstream gradient가 $\bar{y}=\partial \mathcal{L}/\partial y$이면:
+위쪽에서 전달된 gradient가 $\bar{y}=\partial \mathcal{L}/\partial y$이면:
 
 $$
 \frac{\partial \mathcal{L}}{\partial W}

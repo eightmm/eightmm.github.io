@@ -14,7 +14,7 @@ $$
 C_t = \operatorname{select}(D, q_t, B)
 $$
 
-where $D$ is the document collection, $q_t$ is the current query, and $B$ is the context budget.
+여기서 $D$는 document collection, $q_t$는 current query, $B$는 context budget입니다.
 
 ## 사용 패턴
 

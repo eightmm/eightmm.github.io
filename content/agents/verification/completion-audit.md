@@ -26,7 +26,7 @@ $$
 1. 실제 objective를 completed work에 맞춰 좁히지 않고 다시 적습니다.
 2. explicit deliverable, command, invariant, safety rule, reporting requirement를 나열합니다.
 3. 각 requirement를 증명할 evidence가 무엇인지 적습니다.
-4. current file, command output, rendered artifact, external state를 inspect합니다.
+4. 현재 파일, command output, rendered artifact, external state를 inspect합니다.
 5. 각 requirement를 `proved`, `contradicted`, `incomplete`, `weak evidence`, `missing` 중 하나로 표시합니다.
 6. 모든 required item이 proved가 아니면 계속 작업합니다.
 

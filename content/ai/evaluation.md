@@ -134,7 +134,7 @@ Paper를 wiki note나 post로 바꿀 때는 결과를 해석 가능하게 만드
 | Uncertainty or variance | 작은 score difference를 과해석하지 않게 합니다. initialization, split, prompt, sampler가 다르면 [Seed variance](/concepts/evaluation/seed-variance)를 봅니다 |
 | Failure modes | score를 재사용 가능한 lesson으로 바꿉니다 |
 
-If a paper does not provide one of these fields, mark it as `to verify` instead of filling the gap from memory.
+Paper가 이 항목 중 하나를 제공하지 않는다면 기억으로 빈칸을 채우지 말고 `to verify`로 표시합니다.
 
 ## Related
 
