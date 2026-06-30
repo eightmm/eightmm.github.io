@@ -259,6 +259,7 @@ Dense attention is more flexible, but it pays for all pairwise interactions. Lon
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | baseline dense Transformer attention |
 | [Transformer-XL](/papers/architectures/transformer-xl) | long context through recurrence and segment memory |
 | [BigBird](/papers/architectures/bigbird) | long context through local, global, and random sparse attention |
+| [Reformer](/papers/architectures/reformer) | long sequence efficiency through LSH attention and reversible layers |
 | [ALiBi](/papers/architectures/alibi) | length extrapolation through attention logit bias |
 | [Performer](/papers/architectures/performer) | approximate softmax attention with linear complexity |
 | [FlashAttention](/papers/architectures/flashattention) | exact dense attention with IO-aware kernel optimization |

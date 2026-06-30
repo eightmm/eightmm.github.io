@@ -150,6 +150,7 @@ The mask $M$ changes the allowed information flow:
 | padding | ignores padded keys | variable-length batches |
 | local/window | attends only nearby positions | long sequence efficiency; see [Longformer](/papers/architectures/longformer) |
 | block/sparse | attends selected blocks or patterns | scalable long context; see [BigBird](/papers/architectures/bigbird) |
+| hash bucket | attends to tokens sharing approximate similarity buckets | efficient approximate attention; see [Reformer](/papers/architectures/reformer) |
 | graph/structure | attends only permitted neighbors or relations | graph and structure models |
 
 Masking is part of the task contract. A model with future-token access is not solving the same autoregressive task as a causal model.
@@ -177,6 +178,14 @@ O(BHTwd_k),
 $$
 
 which is linear in $T$ if $w$ is fixed. [[papers/architectures/longformer|Longformer]] is the canonical local-plus-global sparse attention paper note, while [[papers/architectures/bigbird|BigBird]] is the canonical local-plus-global-plus-random sparse attention paper note.
+
+Hash-based attention chooses candidates by approximate similarity rather than fixed position:
+
+$$
+\mathcal{N}(i)=\{j:h(q_i)=h(k_j)\}.
+$$
+
+[[papers/architectures/reformer|Reformer]] is the canonical LSH attention note here.
 
 ## Attention Is Not Explanation
 

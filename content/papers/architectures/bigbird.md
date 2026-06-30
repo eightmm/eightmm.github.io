@@ -305,6 +305,7 @@ The practical failure mode is treating "linear attention" as a single category. 
 | --- | --- |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | dense Transformer baseline |
 | [Longformer](/papers/architectures/longformer) | closest local/global sparse-attention neighbor |
+| [Reformer](/papers/architectures/reformer) | approximate similarity buckets through LSH attention plus reversible layers |
 | [Transformer-XL](/papers/architectures/transformer-xl) | long context through segment recurrence rather than sparse attention |
 | [Performer](/papers/architectures/performer) | linear attention through kernel feature approximation |
 | [FlashAttention](/papers/architectures/flashattention) | exact dense attention with IO-aware implementation |
