@@ -155,10 +155,10 @@ Xception is useful for the architecture shelf because it gives a conceptual brid
 
 | Paper | Main Design Axis |
 | --- | --- |
-| [[papers/architectures/inception|Inception]] | manually allocated multi-branch receptive fields |
+| [Inception](/papers/architectures/inception) | manually allocated multi-branch receptive fields |
 | Xception | extreme channel-wise tower factorization |
-| [[papers/architectures/mobilenets|MobileNets]] | efficient depthwise separable backbone for deployment |
-| [[papers/architectures/mobilenetv2|MobileNetV2]] | inverted residual with linear bottleneck |
+| [MobileNets](/papers/architectures/mobilenets) | efficient depthwise separable backbone for deployment |
+| [MobileNetV2](/papers/architectures/mobilenetv2) | inverted residual with linear bottleneck |
 
 The idea later appears in efficient vision backbones and encoder blocks where spatial mixing and channel mixing are separated.
 
