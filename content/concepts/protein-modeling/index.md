@@ -19,6 +19,35 @@ $$
 
 단위가 바뀌면 representation, split, metric, leakage risk가 같이 바뀝니다.
 
+## Protein Modeling Contract
+
+Protein modeling note는 sequence, structure, context, target을 분리해서 적어야 합니다.
+
+$$
+\mathcal{P}_{\mathrm{model}}
+=
+(u,\ s,\ X,\ c,\ r,\ y,\ m,\ \Delta)
+$$
+
+| Part | Meaning | Typical question |
+| --- | --- | --- |
+| $u$ | biological unit | residue, domain, chain, family, pocket, complex, assay row? |
+| $s$ | sequence | isoform, mutation, construct, truncation, residue indexing? |
+| $X$ | structure or coordinates | experimental, predicted, apo, holo, complex, template-derived? |
+| $c$ | context | MSA, template, pocket, ligand, species, assay, family? |
+| $r$ | representation | token embedding, pooled chain embedding, residue graph, pocket graph? |
+| $y$ | target | residue label, function, contact, coordinate, binding, affinity, design? |
+| $m$ | metric | likelihood, accuracy, contact precision, RMSD, ranking, calibration? |
+| $\Delta$ | split boundary | sequence identity, protein family, fold, target, complex, time? |
+
+This contract prevents a common error:
+
+$$
+\text{good protein representation}
+\not\Rightarrow
+\text{good structure, function, binding, or design claim}
+$$
+
 ## Route Map
 
 | Need | Start | Risk |
@@ -62,6 +91,21 @@ where $s_{1:L}$ is the residue sequence, $X$ is optional structure or coordinate
 | predicted structure | structure-aware downstream model | circular evidence and model-bias transfer |
 | pocket or ligand context | binding, docking, interaction prediction | ligand-defined pocket leakage |
 
+## Claim Separation
+
+Protein papers often move between sequence, structure, function, and binding. Keep the claim at the evidence level.
+
+| Claim | Evidence needed | Does not prove alone |
+| --- | --- | --- |
+| sequence modeling | held-out sequence likelihood, family split, downstream probe | structure accuracy or biological function |
+| representation transfer | fixed representation, downstream task, split, baseline | mechanistic understanding |
+| structure prediction | coordinates, contact/distance, template policy, confidence | ligand-ready pocket geometry |
+| binding-site prediction | pocket definition, apo/holo policy, localization metric | ligand pose or affinity |
+| protein-ligand modeling | pair representation, complex split, ligand scaffold control | protein-only or ligand-only generalization |
+| design or generation | validity, novelty, diversity, downstream assay or structural evidence | expression, stability, activity, selectivity |
+
+When a method uses MSA, templates, predicted structures, or ligand context, state whether those inputs are available at deployment time. Otherwise the benchmark may be easier than the intended use case.
+
 ## Evidence Strength
 
 Do not read all protein metrics as the same type of evidence.
@@ -73,6 +117,19 @@ Do not read all protein metrics as the same type of evidence.
 | backbone accuracy | fold-level structure quality | side-chain placement or docking quality |
 | pocket localization | site-finding under a stated definition | affinity or pose scoring |
 | downstream benchmark score | task-specific performance | broad biological generalization |
+
+## Split and Leakage Controls
+
+| Control | Why |
+| --- | --- |
+| sequence identity threshold | prevents near-identical proteins from crossing train/test |
+| family or domain split | tests transfer across homologous groups |
+| template date and database policy | controls structure-prediction leakage |
+| MSA source and depth | changes available evolutionary signal |
+| chain and construct policy | prevents silent task changes from truncations or isoforms |
+| complex-pair split | prevents memorizing a protein-ligand or protein-partner pair |
+| pocket definition | ligand-defined pockets may use unavailable test information |
+| assay/source split | controls label-source shortcuts in functional or binding tasks |
 
 ## Core Concepts
 
