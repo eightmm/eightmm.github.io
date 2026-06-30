@@ -288,6 +288,7 @@ $$
 | [Mamba](/papers/architectures/mamba) | selective SSM state |
 | [Mamba-2](/papers/architectures/mamba-2) | structured state-space dual matrix view |
 | [GLA](/papers/architectures/gated-linear-attention) | gated linear-attention matrix state |
+| [DeltaNet](/papers/architectures/deltanet) | delta-rule matrix memory update |
 
 The useful comparison is not "which one replaces Transformers." The useful comparison is:
 
@@ -334,7 +335,7 @@ $$
 \text{modern recurrent-linear sequence backbones}.
 $$
 
-It is especially useful before reading newer linear-attention and Transformer-to-RNN papers such as delta-rule variants, gated slot attention, and hybrid SSM/attention models.
+It is especially useful before reading newer linear-attention and Transformer-to-RNN papers such as [[papers/architectures/deltanet|DeltaNet]], gated slot attention, and hybrid SSM/attention models.
 
 ## Related
 
@@ -347,6 +348,7 @@ It is especially useful before reading newer linear-attention and Transformer-to
 - [[papers/architectures/linformer|Linformer]]
 - [[papers/architectures/performer|Performer]]
 - [[papers/architectures/flashattention|FlashAttention]]
+- [[papers/architectures/deltanet|DeltaNet]]
 - [[papers/architectures/mega|Mega]]
 - [[papers/architectures/retnet|RetNet]]
 - [[papers/architectures/mamba|Mamba]]

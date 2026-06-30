@@ -239,6 +239,16 @@ k_t^\top v_t,
 o_t=q_tS_t.
 $$
 
+[[papers/architectures/deltanet|DeltaNet]] is the canonical delta-rule linear Transformer note. It changes the recurrent memory update from simple additive writing toward error-correcting memory updates:
+
+$$
+S_t
+=
+S_{t-1}
++
+\eta_t k_t^\top (v_t-k_tS_{t-1}).
+$$
+
 ## Gated and Moving-Average Attention
 
 Some attention variants keep content-dependent mixing but add a local sequential bias before or inside the attention block. [[papers/architectures/mega|Mega]] is the canonical paper note here.
@@ -330,6 +340,7 @@ They do not by themselves prove causal importance. Value vectors, later layers, 
 - [[papers/architectures/linformer|Linformer]]
 - [[papers/architectures/performer|Performer]]
 - [[papers/architectures/gated-linear-attention|Gated Linear Attention]]
+- [[papers/architectures/deltanet|DeltaNet]]
 - [[papers/architectures/mega|Mega]]
 - [[papers/architectures/mamba-2|Mamba-2]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
