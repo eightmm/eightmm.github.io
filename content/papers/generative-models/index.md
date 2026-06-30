@@ -92,7 +92,9 @@ $$
 
 - [[papers/architectures/auto-encoding-variational-bayes|Auto-Encoding Variational Bayes]]
 - [[papers/architectures/generative-adversarial-nets|Generative Adversarial Nets]]
+- [[papers/architectures/stylegan|StyleGAN]]
 - [[papers/architectures/real-nvp|Real NVP]]
+- [[papers/architectures/glow|Glow]]
 - [[papers/architectures/ddpm|Denoising Diffusion Probabilistic Models]]
 - [[papers/architectures/latent-diffusion-models|Latent Diffusion Models]]
 - [[papers/architectures/wavenet|WaveNet]]
