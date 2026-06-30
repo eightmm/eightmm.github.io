@@ -26,6 +26,20 @@ A limitation taxonomy gives consistent names to the weak points in a paper. It k
 - Domain limitation: chemistry, biology, structure, assay, or operational assumptions are underspecified.
 - Interpretation limitation: mechanistic or scientific explanation is broader than the evidence.
 
+## Severity
+
+Not every limitation blocks the same kind of use.
+
+| Severity | Meaning | Action |
+| --- | --- | --- |
+| blocking | main claim is not supported | do not cite as evidence for that claim |
+| major | claim must be narrowed | record narrower scope |
+| moderate | result is useful but incomplete | add follow-up check |
+| minor | does not change main interpretation | note briefly |
+| unknown | evidence missing | mark `to verify` |
+
+Severity should be tied to the paper's claim, not to personal preference.
+
 ## Narrowing a Claim
 
 When a limitation is found, narrow the claim:
@@ -38,6 +52,18 @@ $$
 
 For example, "method improves docking" should become "method improves pose-quality metric on benchmark $B$ under protocol $P$ compared with baseline $C$" if that is what the evidence supports.
 
+## Limitation to Follow-Up
+
+Each important limitation should map to a concrete next check:
+
+| Limitation | Follow-up |
+| --- | --- |
+| weak split | rerun or inspect grouped split |
+| missing baseline | compare with simple strong baseline |
+| missing ablation | map component to ablation |
+| missing artifact | check code/data/config availability |
+| domain ambiguity | update concept note with assumption |
+
 ## Checks
 
 - Is the limitation about data, method, evaluation, compute, or interpretation?
@@ -45,6 +71,8 @@ For example, "method improves docking" should become "method improves pose-quali
 - Can the paper's claim be narrowed instead of rejected?
 - Is the limitation specific enough to guide a follow-up experiment?
 - Should a related concept note be updated with this failure mode?
+- Is the limitation tied to a specific claim, table, figure, or protocol?
+- Does the note narrow the claim instead of only criticizing broadly?
 
 ## Related
 
@@ -53,4 +81,5 @@ For example, "method improves docking" should become "method improves pose-quali
 - [[papers/reproducibility/checklist|Reproducibility checklist]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]
+- [[concepts/evaluation/claim-evidence-boundary|Claim-evidence boundary]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
