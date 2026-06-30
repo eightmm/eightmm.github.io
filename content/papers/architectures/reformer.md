@@ -293,6 +293,7 @@ This is an implementation-level memory saving. It should not change the numerica
 | [Longformer](/papers/architectures/longformer) | sparse local/global attention | hand-designed local and task-global pattern |
 | [BigBird](/papers/architectures/bigbird) | sparse local/global/random attention | graph connectivity through random sparse links |
 | Reformer | LSH attention plus reversibility | approximate nearest-neighbor attention and activation reconstruction |
+| [Linformer](/papers/architectures/linformer) | low-rank sequence projection | compresses keys and values before attention |
 | [Performer](/papers/architectures/performer) | kernel feature approximation | approximates softmax attention algebraically |
 | [FlashAttention](/papers/architectures/flashattention) | IO-aware exact attention | keeps dense attention exact but avoids materializing full matrix in HBM |
 

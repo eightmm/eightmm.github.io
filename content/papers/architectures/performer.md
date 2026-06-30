@@ -340,7 +340,7 @@ $$
 | --- | --- | --- |
 | local attention | attend only nearby tokens | misses distant relations unless stacked or shifted |
 | block sparse attention | attend selected blocks | pattern design matters |
-| low-rank attention | compress attention matrix | rank assumption may fail |
+| [Linformer](/papers/architectures/linformer) | compress keys and values along sequence length | rank assumption may fail |
 | Performer | random-feature kernel approximation | approximation variance and kernel mismatch |
 
 The reading point is that "efficient attention" is not one method family. Each method changes the connectivity or approximation contract differently.

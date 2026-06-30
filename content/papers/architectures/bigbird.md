@@ -307,6 +307,7 @@ The practical failure mode is treating "linear attention" as a single category. 
 | [Longformer](/papers/architectures/longformer) | closest local/global sparse-attention neighbor |
 | [Reformer](/papers/architectures/reformer) | approximate similarity buckets through LSH attention plus reversible layers |
 | [Transformer-XL](/papers/architectures/transformer-xl) | long context through segment recurrence rather than sparse attention |
+| [Linformer](/papers/architectures/linformer) | long context through low-rank key/value sequence projection |
 | [Performer](/papers/architectures/performer) | linear attention through kernel feature approximation |
 | [FlashAttention](/papers/architectures/flashattention) | exact dense attention with IO-aware implementation |
 | [ALiBi](/papers/architectures/alibi) | length extrapolation by attention bias rather than sparse graph design |

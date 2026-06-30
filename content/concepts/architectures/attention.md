@@ -151,6 +151,7 @@ The mask $M$ changes the allowed information flow:
 | local/window | attends only nearby positions | long sequence efficiency; see [Longformer](/papers/architectures/longformer) |
 | block/sparse | attends selected blocks or patterns | scalable long context; see [BigBird](/papers/architectures/bigbird) |
 | hash bucket | attends to tokens sharing approximate similarity buckets | efficient approximate attention; see [Reformer](/papers/architectures/reformer) |
+| low-rank projection | compresses keys and values along the sequence axis | linear attention through compression; see [Linformer](/papers/architectures/linformer) |
 | graph/structure | attends only permitted neighbors or relations | graph and structure models |
 
 Masking is part of the task contract. A model with future-token access is not solving the same autoregressive task as a causal model.
@@ -186,6 +187,28 @@ $$
 $$
 
 [[papers/architectures/reformer|Reformer]] is the canonical LSH attention note here.
+
+Low-rank attention compresses the sequence axis before attention:
+
+$$
+\tilde K=EK,\qquad \tilde V=FV,
+\qquad
+E,F\in\mathbb{R}^{k\times T}.
+$$
+
+Then the score matrix changes from $T\times T$ to $T\times k$:
+
+$$
+\operatorname{Attention}_{\text{low-rank}}(Q,K,V)
+=
+\operatorname{softmax}
+\left(
+\frac{Q\tilde K^\top}{\sqrt{d_k}}
+\right)
+\tilde V.
+$$
+
+[[papers/architectures/linformer|Linformer]] is the canonical low-rank attention paper note here.
 
 ## Attention Is Not Explanation
 
