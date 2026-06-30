@@ -50,7 +50,7 @@ This means the current shelf can contain seed notes while the most important pap
 | Paper | Main Architecture | Why it is here |
 | --- | --- | --- |
 | [ImageNet Classification with Deep CNNs](/papers/architectures/alexnet) | AlexNet | large-scale deep CNN vision milestone; full note started |
-| [Very Deep Convolutional Networks](/papers/architectures/vgg) | VGG | depth and small-filter CNN design |
+| [Very Deep Convolutional Networks](/papers/architectures/vgg) | VGG | depth and small-filter CNN design; full note started |
 | [Going Deeper with Convolutions](/papers/architectures/inception) | Inception | multi-branch compute-aware CNN module |
 | [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | dense skip connectivity and feature reuse |
 | [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | compound scaling for CNN families |
