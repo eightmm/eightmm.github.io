@@ -34,6 +34,18 @@ For papers that combine AI methods, computational biology objects, and mathemati
 - Reproduction plan: smallest follow-up experiment, if the paper is worth checking directly.
 - Connections: links to concepts, research maps, and projects.
 
+## Depth Levels
+
+Not every paper note needs the same length.
+
+| Depth | Target | Required Content |
+| --- | --- | --- |
+| Seed note | 5-10 min read | citation, question, claim, method, one equation if relevant, evidence table, limits, links |
+| Full note | 15-25 min read | seed note plus architecture walkthrough, tensor/object contracts, ablations, benchmark details, later variants, implementation risks |
+| Longform review | 25-40 min read | explanatory Korean article or synthesis post; keep the paper note as the canonical reference |
+
+Architecture papers should usually start as seed notes and be promoted to full notes if they anchor a reusable model family.
+
 ## Formula Slot
 
 When a method depends on a mathematical object, include the canonical equation and define symbols. For example, a supervised objective is:

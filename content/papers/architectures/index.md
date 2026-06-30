@@ -12,15 +12,38 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 
 논문의 오래 남는 기여가 재사용 가능한 architecture나 block이면 이 묶음에 둡니다. 같은 논문이 language-model history에서도 중요하면 노트를 복제하지 말고 [[concepts/llm/index|LLM concepts]]나 [[agents/index|Agents]]로 cross-link합니다.
 
+## Depth Standard
+
+Architecture papers are long-term assets, so a finished note should be more than a short abstract. Short notes are acceptable as first-pass index entries, but canonical architecture papers should eventually reach `full note` depth.
+
+| Depth | Target Length | Use |
+| --- | --- | --- |
+| Seed note | 5-10 min read | metadata, core claim, equation, method sketch, links |
+| Full note | 15-25 min read | architecture walkthrough, equations, diagrams or block tables, evidence, ablations, limits |
+| Longform review | 25-40 min read | Korean explanatory post or synthesis, not this paper shelf |
+
+For a full architecture note, include:
+
+- the exact input/output contract and tensor shapes when useful;
+- the core equations with symbols defined;
+- the architecture block decomposition;
+- the benchmark/evidence table and what each result actually supports;
+- ablations that separate architecture from data, objective, and compute;
+- limitations, failure modes, and later variants;
+- links back to reusable concepts rather than long duplicated explanations.
+
+This means the current shelf can contain seed notes while the most important papers are expanded over time.
+
 ## Shelves
 
 | Shelf | Read For | Anchor Papers |
 | --- | --- | --- |
-| Sequence and recurrent models | recurrence, gated memory, token mixing, long-range dependency | [Long Short-Term Memory](/papers/architectures/long-short-term-memory), [RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder), [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [Layer Normalization](/papers/architectures/layer-normalization), [Mamba](/papers/architectures/mamba) |
-| Vision backbones | locality, depth, width, dense prediction, patch tokenization, hierarchy | [AlexNet](/papers/architectures/alexnet), [VGG](/papers/architectures/vgg), [Inception](/papers/architectures/inception), [Deep Residual Learning](/papers/architectures/deep-residual-learning), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer), [Swin Transformer](/papers/architectures/swin-transformer) |
+| Sequence and recurrent models | recurrence, gated memory, token mixing, language-model backbone design | [Long Short-Term Memory](/papers/architectures/long-short-term-memory), [RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder), [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [BERT](/papers/architectures/bert), [GPT-2](/papers/architectures/gpt-2), [Layer Normalization](/papers/architectures/layer-normalization), [Mamba](/papers/architectures/mamba) |
+| Vision backbones | locality, depth, width, connectivity, dense prediction, patch tokenization, hierarchy | [AlexNet](/papers/architectures/alexnet), [VGG](/papers/architectures/vgg), [Inception](/papers/architectures/inception), [ResNet](/papers/architectures/deep-residual-learning), [DenseNet](/papers/architectures/densenet), [EfficientNet](/papers/architectures/efficientnet), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer), [Swin Transformer](/papers/architectures/swin-transformer) |
 | Graphs, sets, and multimodal arrays | permutation behavior, message passing, unordered inputs, latent bottlenecks | [GCN](/papers/architectures/gcn), [Graph Attention Networks](/papers/architectures/graph-attention-networks), [Deep Sets](/papers/architectures/deep-sets), [Set Transformer](/papers/architectures/set-transformer), [Perceiver IO](/papers/architectures/perceiver-io) |
 | Conditional compute | sparse routing, expert capacity, scaling under fixed token compute | [Switch Transformer](/papers/architectures/switch-transformer) |
 | Training-time architecture blocks | normalization, activation scale, residual stability | [Batch Normalization](/papers/architectures/batch-normalization), [Layer Normalization](/papers/architectures/layer-normalization) |
+| Continuous-depth models | residual dynamics, adaptive compute, ODE solvers as layers | [Neural ODE](/papers/architectures/neural-ode) |
 
 ## Current Notes
 
@@ -29,7 +52,11 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 | [ImageNet Classification with Deep CNNs](/papers/architectures/alexnet) | AlexNet | large-scale deep CNN vision milestone |
 | [Very Deep Convolutional Networks](/papers/architectures/vgg) | VGG | depth and small-filter CNN design |
 | [Going Deeper with Convolutions](/papers/architectures/inception) | Inception | multi-branch compute-aware CNN module |
+| [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | dense skip connectivity and feature reuse |
+| [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | compound scaling for CNN families |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone |
+| [BERT](/papers/architectures/bert) | encoder-only Transformer | bidirectional language representation backbone |
+| [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer | prompt-conditioned autoregressive LM transfer |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | LSTM | gated recurrent memory |
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU / encoder-decoder | gated recurrent sequence transduction |
 | [Batch Normalization](/papers/architectures/batch-normalization) | BatchNorm | normalization as an architecture component |
@@ -43,6 +70,7 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 | [Deep Sets](/papers/architectures/deep-sets) | Deep Sets | permutation-invariant set function architecture |
 | [Set Transformer](/papers/architectures/set-transformer) | Set Transformer | attention-based permutation-invariant set modeling |
 | [Perceiver IO](/papers/architectures/perceiver-io) | Perceiver IO | latent-bottleneck attention for structured inputs and outputs |
+| [Neural Ordinary Differential Equations](/papers/architectures/neural-ode) | Neural ODE | continuous-depth residual dynamics |
 | [Mamba](/papers/architectures/mamba) | selective SSM | input-dependent state-space sequence modeling |
 | [Switch Transformer](/papers/architectures/switch-transformer) | sparse MoE Transformer | top-1 expert routing and conditional compute |
 
@@ -64,6 +92,8 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 - [[concepts/architectures/computational-complexity|Computational complexity]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/encoder-only-transformer|Encoder-only Transformer]]
+- [[concepts/architectures/decoder-only-transformer|Decoder-only Transformer]]
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/lstm|LSTM]]
 - [[concepts/architectures/gru|GRU]]
@@ -74,6 +104,8 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 - [[concepts/architectures/state-space-model|State-space model]]
 - [[concepts/architectures/mamba|Mamba]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
+- [[concepts/generative-models/autoregressive-model|Autoregressive model]]
+- [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 
 ## Evaluation Risks
