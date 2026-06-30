@@ -34,6 +34,24 @@ $$
 
 Examples include rotating a point cloud, translating an image, permuting graph nodes, or reflecting a molecule.
 
+## Group Action
+
+A group action must be compatible with the group operation:
+
+$$
+e\cdot x = x
+$$
+
+and:
+
+$$
+(g_1\circ g_2)\cdot x
+=
+g_1\cdot(g_2\cdot x)
+$$
+
+This is what lets a model reason about transformations consistently. If preprocessing breaks this relationship, the claimed symmetry is no longer exact.
+
 ## Invariance and Equivariance
 
 An invariant function ignores the transformation:
@@ -50,6 +68,43 @@ $$
 
 where $\rho(g)$ is the representation of the transformation on the output space.
 
+## Representation on Outputs
+
+The output may transform differently from the input.
+
+| Task output | Desired behavior |
+| --- | --- |
+| class label | invariant under allowed transformations |
+| scalar energy or score | invariant under rigid motion |
+| coordinate prediction | equivariant under rotation/translation |
+| vector field or force | rotates with the input frame |
+| graph node labels | permutes with node ordering |
+
+For example, if $x_i\in\mathbb{R}^3$ are coordinates and $R$ is a rotation, a coordinate-predicting model should satisfy:
+
+$$
+f(RX+t)=Rf(X)+t
+$$
+
+while an energy model should satisfy:
+
+$$
+E(RX+t)=E(X)
+$$
+
+## Exact, Approximate, Broken
+
+Not every useful symmetry is exact.
+
+| Symmetry status | Meaning | Example |
+| --- | --- | --- |
+| exact | task definition should respect it | rigid-motion invariance of molecular energy |
+| approximate | data mostly respects it but exceptions exist | image translation with boundary effects |
+| intentionally broken | external frame matters | gravity direction, lab frame, camera view |
+| preprocessing-induced | pipeline chooses a canonical frame | aligned structures or cropped images |
+
+The modeling choice should match the task, not only the data format.
+
 ## Common Groups
 
 - Permutation group: reorders set or graph elements.
@@ -65,6 +120,8 @@ where $\rho(g)$ is the representation of the transformation on the output space.
 - Should the output be invariant, equivariant, or neither?
 - Is the symmetry exact by construction, approximate in data, or broken by the task?
 - Does preprocessing impose a coordinate frame that changes the symmetry assumption?
+- What is the group action on the input and representation on the output?
+- Does augmentation encourage symmetry, or does architecture enforce it?
 
 ## Related
 
