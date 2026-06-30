@@ -98,6 +98,7 @@ $$
 - [[papers/architectures/self-attention-gans|Self-Attention GAN]]
 - [[papers/architectures/biggan|BigGAN]]
 - [[papers/architectures/stylegan|StyleGAN]]
+- [[papers/architectures/stylegan2|StyleGAN2]]
 - [[papers/architectures/real-nvp|Real NVP]]
 - [[papers/architectures/glow|Glow]]
 - [[papers/architectures/ddpm|Denoising Diffusion Probabilistic Models]]
