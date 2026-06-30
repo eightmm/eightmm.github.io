@@ -21,6 +21,40 @@ $$
 
 The model is often trained to predict $\epsilon$, $x_0$, or a related velocity target.
 
+## Forward Process
+
+In discrete-time DDPM notation:
+
+$$
+q(x_t\mid x_{t-1})
+=
+\mathcal{N}
+\left(
+\sqrt{\alpha_t}x_{t-1},
+(1-\alpha_t)I
+\right)
+$$
+
+and the closed-form marginal is:
+
+$$
+q(x_t\mid x_0)
+=
+\mathcal{N}
+\left(
+\sqrt{\bar{\alpha}_t}x_0,
+(1-\bar{\alpha}_t)I
+\right)
+$$
+
+where:
+
+$$
+\bar{\alpha}_t=\prod_{s=1}^{t}\alpha_s
+$$
+
+This marginal is what allows training with randomly sampled timesteps instead of simulating every forward step.
+
 A common noise-prediction objective is:
 
 $$
@@ -80,6 +114,16 @@ $$
 
 Always record which target a paper uses before comparing losses or samplers.
 
+The score associated with the same Gaussian convention is:
+
+$$
+s_\theta(x_t,t)
+\approx
+-\frac{\epsilon_\theta(x_t,t)}{\sigma_t}
+$$
+
+with $\sigma_t^2=1-\bar{\alpha}_t$ in the simple variance-preserving notation. This connects diffusion noise prediction to [[concepts/generative-models/score-based-model|score-based models]].
+
 ## Conditioning
 
 Conditional diffusion adds context $c$:
@@ -89,6 +133,22 @@ $$
 $$
 
 Guidance changes the effective score or denoising direction, which can improve fidelity but reduce diversity.
+
+Classifier-free guidance often combines conditional and unconditional predictions:
+
+$$
+\epsilon_{\mathrm{guided}}
+=
+\epsilon_\theta(x_t,t,\varnothing)
++
+w\left[
+\epsilon_\theta(x_t,t,c)
+-
+\epsilon_\theta(x_t,t,\varnothing)
+\right]
+$$
+
+where $w$ is the guidance scale. Larger $w$ can improve condition satisfaction while reducing diversity or validity.
 
 ## Sampling Budget
 
@@ -101,6 +161,18 @@ x_{t-1} = \operatorname{Step}_\theta(x_t,t,c;\eta)
 $$
 
 where $\eta$ represents sampler settings such as stochasticity, guidance scale, schedule, and step size. A benchmark should report these settings because a model can look better simply by spending more sampling steps or stronger guidance.
+
+## Sampler Families
+
+| Sampler | Shape | Claim Affected |
+| --- | --- | --- |
+| ancestral DDPM | stochastic reverse chain | diversity and baseline comparability |
+| DDIM-style | deterministic or partially stochastic trajectory | fewer steps, different diversity |
+| SDE sampler | stochastic continuous-time reverse process | score quality and noise schedule |
+| probability-flow ODE | deterministic score-derived ODE | likelihood route and solver budget |
+| distilled/consistency sampler | one or few steps | speed at possible quality loss |
+
+NFE, wall time, memory, and invalid-sample denominator should be reported with sample quality.
 
 ## Evaluation Boundary
 
@@ -130,11 +202,12 @@ where $\eta$ represents sampler settings such as stochasticity, guidance scale, 
 - Does the noise schedule fit the data scale?
 - Is conditioning/guidance trading diversity for fidelity?
 - How many sampling steps are needed for acceptable quality?
-- Which prediction target is used: $\epsilon$, $x_0$, score, or velocity?
 - Are sampling steps and guidance scales fixed across comparisons?
 - Is the prediction target $\epsilon$, $x_0$, score, or velocity clearly stated?
 - Are NFE, solver, stochasticity, and guidance scale matched across baselines?
 - Are validity, diversity, novelty, and task utility reported separately?
+- Is the noising convention variance-preserving, variance-exploding, or another schedule?
+- Are filtered or repaired samples counted in the denominator?
 
 ## Related
 

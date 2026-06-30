@@ -28,12 +28,53 @@ $$
 
 $f$ is the drift, $g$ is the diffusion coefficient, $w$ is Brownian motion, and $\nabla_x\log p_t(x)$ is the score at time $t$.
 
+The deterministic velocity is:
+
+$$
+v(x,t)
+=
+f(x,t)
+-
+\frac{1}{2}g(t)^2 s_\theta(x,t)
+$$
+
+where $s_\theta(x,t)\approx\nabla_x\log p_t(x)$. This makes probability flow ODEs a bridge between score models and flow-like deterministic transport.
+
 ## Why It Matters
 
 - Turns stochastic diffusion sampling into deterministic ODE integration.
 - Connects score-based diffusion to continuous normalizing flow views.
 - Enables likelihood computation through instantaneous change of variables when the divergence is tractable or estimated.
 - Makes solver choice part of the sampling contract.
+
+## Change of Variables
+
+For an ODE:
+
+$$
+\frac{dx}{dt}=v_\theta(x,t)
+$$
+
+the log density evolves as:
+
+$$
+\frac{d}{dt}\log p_t(x_t)
+=
+-\nabla_x\cdot v_\theta(x_t,t)
+$$
+
+where $\nabla_x\cdot v$ is the divergence of the velocity field. Integrating this term gives a likelihood route:
+
+$$
+\log p_0(x_0)
+=
+\log p_T(x_T)
++
+\int_0^T
+\nabla_x\cdot v_\theta(x_t,t)\,dt
+$$
+
+depending on time direction convention. The sign should be checked in each paper's notation.
 
 ## Sampling Contract
 
@@ -72,6 +113,26 @@ $$
 
 This makes the learned object explicit: some papers train a score, others train a velocity, and others train a denoiser that is converted to one of these.
 
+## ODE Solver Boundary
+
+The sampler is not only the learned model:
+
+$$
+\text{sample}
+=
+\operatorname{ODESolve}(v_\theta,\ x_T,\ \text{solver},\ \text{tolerance},\ \text{NFE})
+$$
+
+where NFE is the number of function evaluations. Quality, speed, and diversity comparisons are weak unless solver settings are fixed or reported.
+
+| Solver Choice | Claim Affected |
+| --- | --- |
+| NFE / step count | speed-quality tradeoff |
+| adaptive tolerance | wall time and numerical error |
+| time discretization | endpoint detail and stability |
+| stochastic vs deterministic | sample diversity |
+| divergence estimator | likelihood accuracy |
+
 ## Checks
 
 - Which ODE solver, tolerance, and number of function evaluations are used?
@@ -81,6 +142,8 @@ This makes the learned object explicit: some papers train a score, others train 
 - Is the comparison fair against stochastic samplers with different compute budgets?
 - Is the model trained as score prediction, noise prediction, denoising, or velocity prediction?
 - Is likelihood estimation claimed, or only deterministic sampling?
+- Is the sign convention for forward/backward integration stated?
+- Is divergence computed exactly, approximated, or not used?
 
 ## Related
 
@@ -91,3 +154,4 @@ This makes the learned object explicit: some papers train a score, others train 
 - [[concepts/generative-models/normalizing-flow|Normalizing flow]]
 - [[concepts/generative-models/energy-based-model|Energy-based model]]
 - [[concepts/generative-models/sampling|Sampling]]
+- [[math/dynamical-systems|Dynamical systems]]

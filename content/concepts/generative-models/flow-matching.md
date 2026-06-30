@@ -50,6 +50,18 @@ $$
 
 but other paths can be chosen to fit geometry, noise schedules, or conditional constraints.
 
+If the model learns the exact conditional velocity field, sampling follows:
+
+$$
+x_1
+=
+x_0
++
+\int_0^1 v_\theta(x_t,t)\,dt
+$$
+
+where $x_0\sim p_0$ and the integrated endpoint should follow the data distribution.
+
 ## Objective Decomposition
 
 For paper notes, record the path, sampling distribution, and target velocity:
@@ -74,6 +86,40 @@ The notation hides important choices:
 | $u_t$ | target velocity | analytic, simulated, estimated, conditional |
 | $c$ | condition | class, text, property, pocket, protein, partial structure |
 
+## Conditional Flow Matching
+
+A common training view samples paired endpoints and trains on a conditional vector field:
+
+$$
+x_0\sim p_0,
+\qquad
+x_1\sim p_{\mathrm{data}},
+\qquad
+t\sim U(0,1)
+$$
+
+then:
+
+$$
+x_t \sim p_t(\cdot\mid x_0,x_1),
+\qquad
+u_t = u_t(x_t\mid x_0,x_1)
+$$
+
+The model sees $(x_t,t,c)$, not necessarily the endpoints. The learned field approximates the marginal velocity after averaging over possible endpoint pairs.
+
+## Path Choice
+
+The path is not a detail. It defines the target vector field and the difficulty of integration.
+
+| Path | Benefit | Risk |
+| --- | --- | --- |
+| linear interpolation | simple analytic velocity | invalid intermediate objects |
+| diffusion-like path | connects to score/diffusion tooling | schedule and parameterization matter |
+| OT-inspired path | straighter transport and fewer steps | pairing or approximation assumptions |
+| geometry-aware path | respects coordinates or constraints | harder target construction |
+| conditional path | uses class, pocket, scaffold, or prompt | condition leakage or overfitting |
+
 ## Geometry Boundary
 
 For coordinates, the velocity field must transform consistently:
@@ -85,6 +131,8 @@ R\,v_\theta(x,\tau,c)
 $$
 
 when rotations and translations should not change the physical meaning. If the model predicts scalar properties instead, the target is usually invariant rather than equivariant.
+
+For molecular or protein coordinates, also state whether translation, rotation, permutation, chirality, bond constraints, and atom/residue identity are preserved along the path.
 
 ## Design Choices
 
@@ -107,6 +155,7 @@ when rotations and translations should not change the physical meaning. If the m
 - A non-equivariant velocity field can leak coordinate-frame assumptions.
 - Solver cost can erase the benefit of a cleaner objective.
 - Conditional generation can overfit the condition and reduce diversity.
+- Endpoint pairing can leak labels, templates, or target structures if not defined carefully.
 
 ## Checks
 
@@ -117,6 +166,8 @@ when rotations and translations should not change the physical meaning. If the m
 - Is sample quality reported together with solver budget?
 - Are path choice, time sampling, and target velocity matched across baselines?
 - Does the evaluation separate sample validity, condition satisfaction, diversity, and downstream utility?
+- Are endpoint pairing, conditioning context, and target velocity public and reproducible?
+- Does the path keep intermediate states inside a meaningful representation space?
 
 ## Related
 

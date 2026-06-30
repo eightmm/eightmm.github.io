@@ -19,6 +19,18 @@ $$
 
 It points toward regions of higher probability under the noisy distribution at time $t$.
 
+For a small step in $x$, the score gives the local direction of log-density increase:
+
+$$
+\log p_t(x+\Delta x)
+\approx
+\log p_t(x)
++
+s_t(x)^\top \Delta x
+$$
+
+This is why a score field can guide samples from low-density noisy states toward likely data states.
+
 For an energy-based density:
 
 $$
@@ -62,9 +74,70 @@ $$
 
 where $\alpha(t)$ and $\sigma(t)$ define the noising process.
 
+## Score, Noise, and Clean-Data Targets
+
+For a Gaussian noising process:
+
+$$
+x_t = \alpha_t x_0 + \sigma_t \epsilon,
+\qquad
+\epsilon\sim\mathcal{N}(0,I)
+$$
+
+the conditional score is:
+
+$$
+\nabla_{x_t}\log p(x_t\mid x_0)
+=
+-\frac{\epsilon}{\sigma_t}
+$$
+
+So predicting noise, score, or clean data can be converted if the noise convention is known:
+
+$$
+s_\theta(x_t,t)
+\approx
+-\frac{\epsilon_\theta(x_t,t)}{\sigma_t}
+$$
+
+and:
+
+$$
+\hat{x}_{0,\theta}
+=
+\frac{x_t-\sigma_t\epsilon_\theta(x_t,t)}{\alpha_t}
+$$
+
+Papers can look different while learning equivalent fields under a shared noising convention. Always identify the parameterization before comparing objectives.
+
+## Langevin View
+
+A score can be used in Langevin dynamics:
+
+$$
+x_{k+1}
+=
+x_k
++
+\eta s_\theta(x_k,t)
++
+\sqrt{2\eta}\,z_k,
+\qquad
+z_k\sim\mathcal{N}(0,I)
+$$
+
+The gradient term moves toward high-density regions, while the noise term maintains stochastic exploration. Annealed Langevin methods vary $t$ or noise scale from high noise to low noise.
+
 ## Sampling
 
 Score-based models can sample with a stochastic reverse-time SDE or a deterministic probability-flow ODE. The choice changes speed, diversity, and likelihood estimation.
+
+| Sampler | Uses | Tradeoff |
+| --- | --- | --- |
+| reverse SDE | score plus injected noise | stochastic diversity, more sampling choices |
+| probability-flow ODE | deterministic score-derived velocity | deterministic samples, likelihood route |
+| predictor-corrector | ODE/SDE step plus score correction | quality can improve at higher cost |
+| Langevin dynamics | local score ascent plus noise | flexible but step-size sensitive |
 
 ## Why It Matters
 
@@ -87,6 +160,8 @@ Score-based models can sample with a stochastic reverse-time SDE or a determinis
 - Does the noise-level weighting match the data?
 - Is the sampler, step count, and noise schedule fixed for comparisons?
 - Does the score transform correctly under required symmetries?
+- Which target is trained: score, noise, clean data, or velocity?
+- Are score scale and noise convention stated?
 
 ## Related
 
@@ -96,4 +171,5 @@ Score-based models can sample with a stochastic reverse-time SDE or a determinis
 - [[concepts/generative-models/probability-flow-ode|Probability flow ODE]]
 - [[concepts/generative-models/flow-matching|Flow matching]]
 - [[concepts/generative-models/rectified-flow|Rectified flow]]
+- [[concepts/generative-models/sampling|Sampling]]
 - [[concepts/geometric-deep-learning/equivariance|Equivariance]]
