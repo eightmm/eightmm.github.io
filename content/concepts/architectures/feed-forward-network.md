@@ -69,7 +69,7 @@ $$
 
 Here $\odot$ is elementwise multiplication. The gate controls which hidden features pass through, linking FFNs to [[concepts/architectures/gating|gating]] and mixture-style computation.
 
-Common gated variants include GLU-style, GEGLU-style, and SwiGLU-style FFNs:
+Common gated variants include GLU-style, GEGLU-style, and SwiGLU-style FFNs. The paper note [[papers/architectures/glu-variants-improve-transformer|GLU Variants Improve Transformer]] is the canonical reference in this wiki for reading those variants as Transformer architecture blocks:
 
 $$
 \operatorname{SwiGLU}(x)
@@ -108,3 +108,4 @@ The phrase "MLP block" can mean channel-only mixing or token mixing depending on
 - [[concepts/architectures/gating|Gating]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
+- [[papers/architectures/glu-variants-improve-transformer|GLU Variants Improve Transformer]]

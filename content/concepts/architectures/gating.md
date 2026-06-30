@@ -30,7 +30,7 @@ g_t \odot \tilde{h}_{t+1}
 + (1-g_t)\odot h_t
 $$
 
-where $g_t$ controls whether the state changes or is preserved. In GLU-style feed-forward blocks:
+where $g_t$ controls whether the state changes or is preserved. In GLU-style feed-forward blocks such as [[papers/architectures/glu-variants-improve-transformer|GLU Variants Improve Transformer]]:
 
 $$
 \operatorname{GLU}(x)

@@ -287,7 +287,7 @@ For LLaMA-style models, RoPE became a default because it fits causal attention n
 
 ## SwiGLU Feed-Forward Network
 
-The standard Transformer feed-forward block is:
+[[papers/architectures/glu-variants-improve-transformer|GLU Variants Improve Transformer]] is the paper-level reference for the gated FFN family behind SwiGLU. The standard Transformer feed-forward block is:
 
 $$
 \operatorname{FFN}(x)
