@@ -91,12 +91,14 @@ $$
 ## Curated Notes
 
 - [[papers/architectures/auto-encoding-variational-bayes|Auto-Encoding Variational Bayes]]
+- [[papers/architectures/taming-transformers|Taming Transformers for High-Resolution Image Synthesis]]
 - [[papers/architectures/generative-adversarial-nets|Generative Adversarial Nets]]
 - [[papers/architectures/stylegan|StyleGAN]]
 - [[papers/architectures/real-nvp|Real NVP]]
 - [[papers/architectures/glow|Glow]]
 - [[papers/architectures/ddpm|Denoising Diffusion Probabilistic Models]]
 - [[papers/architectures/latent-diffusion-models|Latent Diffusion Models]]
+- [[papers/architectures/scalable-diffusion-models-with-transformers|Scalable Diffusion Models with Transformers]]
 - [[papers/architectures/wavenet|WaveNet]]
 - [[papers/generative-models/molexar|Molexar]]
 
