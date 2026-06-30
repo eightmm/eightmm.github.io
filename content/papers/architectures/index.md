@@ -18,7 +18,8 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 | --- | --- | --- |
 | Sequence and attention | token mixing, position, long-range dependency, attention alternatives | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [Mamba](/papers/architectures/mamba) |
 | Vision backbones | locality, residual depth, dense prediction, patch tokenization | [Deep Residual Learning](/papers/architectures/deep-residual-learning), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer) |
-| Graphs and sets | permutation behavior, message passing, unordered inputs | [GCN](/papers/architectures/gcn), [Deep Sets](/papers/architectures/deep-sets) |
+| Graphs and sets | permutation behavior, message passing, unordered inputs | [GCN](/papers/architectures/gcn), [Graph Attention Networks](/papers/architectures/graph-attention-networks), [Deep Sets](/papers/architectures/deep-sets), [Set Transformer](/papers/architectures/set-transformer) |
+| Conditional compute | sparse routing, expert capacity, scaling under fixed token compute | [Switch Transformer](/papers/architectures/switch-transformer) |
 
 ## Current Notes
 
@@ -29,8 +30,11 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 | [U-Net](/papers/architectures/u-net) | U-Net | encoder-decoder CNN with localization skip paths |
 | [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer | image patches as Transformer tokens |
 | [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | GCN | graph message passing for node classification |
+| [Graph Attention Networks](/papers/architectures/graph-attention-networks) | GAT | learned attention over graph neighborhoods |
 | [Deep Sets](/papers/architectures/deep-sets) | Deep Sets | permutation-invariant set function architecture |
+| [Set Transformer](/papers/architectures/set-transformer) | Set Transformer | attention-based permutation-invariant set modeling |
 | [Mamba](/papers/architectures/mamba) | selective SSM | input-dependent state-space sequence modeling |
+| [Switch Transformer](/papers/architectures/switch-transformer) | sparse MoE Transformer | top-1 expert routing and conditional compute |
 
 ## Reading Axes
 

@@ -92,8 +92,11 @@ Not every paper needs a long review.
 | [U-Net](/papers/architectures/u-net) | dense prediction architecture |
 | [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer |
 | [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | graph neural network |
+| [Graph Attention Networks](/papers/architectures/graph-attention-networks) | graph attention network |
 | [Deep Sets](/papers/architectures/deep-sets) | permutation-invariant set architecture |
+| [Set Transformer](/papers/architectures/set-transformer) | attention-based set architecture |
 | [Mamba](/papers/architectures/mamba) | selective state-space sequence model |
+| [Switch Transformer](/papers/architectures/switch-transformer) | sparse mixture-of-experts architecture |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation |
 | [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | antibody-antigen binding |
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | equivariant peptide modeling |
