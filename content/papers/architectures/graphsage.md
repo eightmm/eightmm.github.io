@@ -2,7 +2,6 @@
 title: Inductive Representation Learning on Large Graphs
 aliases:
   - papers/graphsage
-  - papers/architectures/graphsage
   - papers/inductive-representation-learning-on-large-graphs
 tags:
   - papers
