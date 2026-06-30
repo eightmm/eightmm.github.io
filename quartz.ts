@@ -33,10 +33,6 @@ ExternalPlugin.Explorer({
       "math/formula-patterns",
       "math/formula-explanation-ladder",
       "papers/analysis",
-      "papers/architectures",
-      "papers/computational-biology",
-      "papers/generative-models",
-      "papers/llm",
       "papers/protein-modeling",
       "papers/reproducibility",
       "papers/sbdd",
@@ -128,12 +124,6 @@ ExternalPlugin.Explorer({
     }
     if (displayNames[slug]) {
       node.displayName = displayNames[slug]
-    }
-    if (slug === "papers") {
-      node.isFolder = false
-      if (node.data) {
-        node.data.slug = "papers"
-      }
     }
     if (node.slugSegment === "molecular-modeling") {
       node.displayName = "Computational Biology"
