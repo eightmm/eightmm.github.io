@@ -105,6 +105,7 @@ Do not treat arbitrary input order as meaningful unless the representation contr
 ## Related
 
 - [[concepts/architectures/embedding|Embedding]]
+- [[papers/architectures/roformer|RoFormer]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
