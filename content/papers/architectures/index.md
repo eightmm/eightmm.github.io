@@ -66,7 +66,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Swin Transformer](/papers/architectures/swin-transformer) | Swin Transformer | shifted-window hierarchical vision Transformer; full note started |
 | [Layer Normalization](/papers/architectures/layer-normalization) | LayerNorm | batch-independent normalization for sequence models |
 | [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | GCN | graph message passing for node classification |
-| [Graph Attention Networks](/papers/architectures/graph-attention-networks) | GAT | learned attention over graph neighborhoods |
+| [Graph Attention Networks](/papers/architectures/graph-attention-networks) | GAT | learned attention over graph neighborhoods; full note started |
 | [Deep Sets](/papers/architectures/deep-sets) | Deep Sets | permutation-invariant set function architecture |
 | [Set Transformer](/papers/architectures/set-transformer) | Set Transformer | attention-based permutation-invariant set modeling |
 | [Perceiver IO](/papers/architectures/perceiver-io) | Perceiver IO | latent-bottleneck attention for structured inputs and outputs |
