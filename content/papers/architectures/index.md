@@ -56,7 +56,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | compound scaling for CNN families |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone; full note started |
 | [BERT](/papers/architectures/bert) | encoder-only Transformer | bidirectional language representation backbone; full note started |
-| [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer | prompt-conditioned autoregressive LM transfer |
+| [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer | prompt-conditioned autoregressive LM transfer; full note started |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | LSTM | gated recurrent memory |
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU / encoder-decoder | gated recurrent sequence transduction |
 | [Batch Normalization](/papers/architectures/batch-normalization) | BatchNorm | normalization as an architecture component |
