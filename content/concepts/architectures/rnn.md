@@ -63,6 +63,32 @@ $$
 
 for dense recurrent matrices, with sequential dependence over $t$. This makes RNNs efficient for streaming but harder to parallelize across time than Transformers.
 
+## Transformer-Era Recurrent Models
+
+Modern recurrent language models try to keep the streaming advantage while recovering Transformer-era training scale:
+
+$$
+\text{parallel training}
+\quad+\quad
+\text{recurrent inference state}.
+$$
+
+[[papers/architectures/rwkv|RWKV]] is the canonical paper note here. It can be formulated in a Transformer-like parallel mode for training and an RNN-like recurrent mode for inference:
+
+$$
+s_t = F_\theta(s_{t-1}, x_t),
+\qquad
+y_t=G_\theta(s_t,x_t).
+$$
+
+The practical tradeoff is:
+
+| Benefit | Risk |
+| --- | --- |
+| constant-size recurrent state at inference | compressed state may bottleneck retrieval-heavy tasks |
+| no growing KV cache | less direct pairwise token access than attention |
+| streaming-friendly generation | training and implementation details are architecture-specific |
+
 ## Paper Reading Boundary
 
 | Claim | What To Check |
@@ -89,4 +115,5 @@ for dense recurrent matrices, with sequential dependence over $t$. This makes RN
 - [[concepts/architectures/gru|GRU]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/attention|Attention]]
+- [[papers/architectures/rwkv|RWKV]]
 - [[concepts/learning/index|Learning methods]]

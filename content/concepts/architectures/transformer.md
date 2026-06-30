@@ -119,6 +119,32 @@ $$
 
 memory before optimization. This is why long-context systems use caching, local attention, sparse attention, state-space models, retrieval, or chunking.
 
+## Transformer vs Recurrent Inference
+
+Decoder-only Transformers usually avoid recomputing the full prefix by keeping a KV cache:
+
+$$
+\text{KV cache size}
+\propto
+L\cdot n_{\mathrm{layers}}\cdot d.
+$$
+
+Recurrent alternatives such as [[papers/architectures/rwkv|RWKV]] aim for a constant-size per-layer state:
+
+$$
+\text{recurrent state size}
+\propto
+n_{\mathrm{layers}}\cdot d.
+$$
+
+This does not make recurrence automatically better. It changes the bottleneck: attention keeps explicit past keys and values, while recurrence compresses the prefix into state.
+
+| Model Family | Inference Memory | Main Risk |
+| --- | --- | --- |
+| decoder-only Transformer | grows with context through KV cache | long-context memory cost |
+| recurrent language model | fixed recurrent state | compressed-state bottleneck |
+| SSM/selective SSM | scan state or structured cache | state design and retrieval behavior |
+
 ## Key Ideas
 
 - Self-attention lets each token mix information from other tokens according to learned relevance.
