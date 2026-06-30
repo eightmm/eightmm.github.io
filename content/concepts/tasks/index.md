@@ -103,7 +103,7 @@ The split unit should be stronger than the claim. If the claim is transfer to ne
 | Core ML | [Classification](/concepts/machine-learning/classification), [Regression](/concepts/machine-learning/regression), [Ranking](/concepts/machine-learning/ranking) |
 | Search | [Retrieval](/concepts/tasks/retrieval), [Similarity search](/concepts/tasks/similarity-search), [Reranking](/concepts/tasks/reranking) |
 | Vision and spatial | [Object detection](/concepts/tasks/object-detection), [Localization](/concepts/tasks/localization), [Segmentation](/concepts/tasks/segmentation) |
-| Language | [Captioning](/concepts/tasks/captioning), [Question answering](/concepts/tasks/question-answering), [Sequence generation](/concepts/tasks/sequence-generation) |
+| Language | [Captioning](/concepts/tasks/captioning), [Question answering](/concepts/tasks/question-answering), [Sequence generation](/concepts/tasks/sequence-generation), [Sequence-to-sequence](/concepts/tasks/sequence-to-sequence) |
 | Structured outputs | [Structured prediction](/concepts/tasks/structured-prediction), [Coordinate prediction](/concepts/tasks/coordinate-prediction), [Graph prediction](/concepts/tasks/graph-prediction) |
 | Time and monitoring | [Time-series forecasting](/concepts/tasks/time-series-forecasting), [Anomaly detection](/concepts/tasks/anomaly-detection) |
 
