@@ -217,7 +217,7 @@ The frozen LLM is not taught language from scratch. The bridge is taught to spea
 
 Both models connect pretrained visual and language components, but the connector differs.
 
-| Axis | [[papers/architectures/flamingo|Flamingo]] | BLIP-2 |
+| Axis | [Flamingo](/papers/architectures/flamingo) | BLIP-2 |
 | --- | --- | --- |
 | Visual bridge | Perceiver resampler | Q-Former |
 | LM access pattern | gated cross-attention inserted into LM layers | projected visual query tokens fed to frozen LLM |
