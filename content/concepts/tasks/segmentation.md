@@ -123,3 +123,4 @@ Segmentation errors can come from:
 - [[concepts/architectures/u-net|U-Net]]
 - [[concepts/evaluation/metric|Metric]]
 - [[papers/architectures/mask-r-cnn|Mask R-CNN]]
+- [[papers/architectures/segment-anything|Segment Anything]]
