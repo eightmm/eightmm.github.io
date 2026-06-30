@@ -47,6 +47,18 @@ $$
 h_t = f_\theta(x_t, x_{\setminus t})
 $$
 
+Some encoder-only variants change how position enters this attention equation. [[papers/architectures/deberta|DeBERTa]], for example, separates content vectors from relative position vectors when computing attention logits:
+
+$$
+\operatorname{score}(i,j)
+=
+\text{content-content}
++ \text{content-position}
++ \text{position-content}.
+$$
+
+This keeps the encoder-only contract while changing the position/content factorization inside attention.
+
 ## Objective Fit
 
 Encoder-only models are good when the downstream task needs representations rather than left-to-right generation. Common objectives include:
@@ -78,3 +90,5 @@ For protein and molecule use, readout details matter: pooling over padding, spec
 - [[concepts/architectures/pooling-readout|Pooling and readout]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/protein-modeling/protein-representation|Protein representation]]
+- [[papers/architectures/bert|BERT]]
+- [[papers/architectures/deberta|DeBERTa]]

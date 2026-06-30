@@ -55,6 +55,8 @@ $$
 
 The bias $B$ can encode relative position, graph relation, distance bucket, or a fixed linear distance prior. [[papers/architectures/alibi|ALiBi]] is the canonical linear-bias paper note in this wiki.
 
+Some architectures do more than add a bias. [[papers/architectures/deberta|DeBERTa]] decomposes attention scores into content-content and content-position terms, which is useful when position should not be collapsed into the same embedding vector as token identity.
+
 ## Shape Contract
 
 For batched multi-head attention:
@@ -152,6 +154,7 @@ The mask $M$ changes the allowed information flow:
 | block/sparse | attends selected blocks or patterns | scalable long context; see [BigBird](/papers/architectures/bigbird) |
 | hash bucket | attends to tokens sharing approximate similarity buckets | efficient approximate attention; see [Reformer](/papers/architectures/reformer) |
 | low-rank projection | compresses keys and values along the sequence axis | linear attention through compression; see [Linformer](/papers/architectures/linformer) |
+| disentangled content-position | scores content and relative position with separate terms | position-aware encoder attention; see [DeBERTa](/papers/architectures/deberta) |
 | graph/structure | attends only permitted neighbors or relations | graph and structure models |
 
 Masking is part of the task contract. A model with future-token access is not solving the same autoregressive task as a causal model.

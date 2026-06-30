@@ -302,5 +302,6 @@ That pattern later appears in vision, speech, protein language modeling, and mul
 - [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[concepts/llm/language-model|Language model]]
 - [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]]
+- [[papers/architectures/deberta|DeBERTa]]
 - [[papers/architectures/gpt-2|GPT-2]]
 - [[papers/architectures/index|Architecture papers]]
