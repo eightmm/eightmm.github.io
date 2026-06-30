@@ -37,7 +37,7 @@ $$
 | Formula pattern | common objective or metric pattern before detailed derivation | [Formula pattern catalog](/math/formula-patterns) |
 | AI + computational biology + Math claim | object, representation, model, objective, evidence, public boundary | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Benchmark score | data, task, split, metric, allowed information, reporting | [Benchmark intake](/concepts/data/benchmark-intake) |
-| Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI Computational Biology Math post intake](/posts/ai-molecular-math-post-intake), [Wiki bundle checklist](/posts/wiki-bundle-checklist) |
+| Korean synthesis post | reader question, main axis, minimum formulas, wiki links | [AI Computational Biology Math post intake](/posts/workflows/ai-molecular-math-post-intake), [Wiki bundle checklist](/posts/workflows/wiki-bundle-checklist) |
 | Topic map | reader question, primary axis, object boundary, methods, evidence, next path | [Topic map contract](/concepts/topic-map-contract) |
 | Paper review workflow | metadata, claims, evidence, artifacts, reproduction | [Paper review workflow](/papers/workflows/paper-review-workflow) |
 | Claim route | primary axis, secondary axes, bucket, concept updates | [Claim routing](/papers/workflows/claim-routing) |
@@ -113,8 +113,8 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - One concept-update pass when a paper changes reusable definitions, formulas, contracts, or evidence boundaries: [[papers/workflows/concept-update-contract|Concept update contract]].
 - One readiness gate pass before promoting a multi-axis candidate: [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]].
 - One fillable template pass for mixed AI/computational biology/Math papers: [[papers/workflows/ai-molecular-math-paper-template|AI Computational Biology Math paper template]].
-- One Korean post intake pass when the result is reader-facing: [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]].
-- One post bundle pass before writing a synthesis post: [[posts/wiki-bundle-checklist|Wiki bundle checklist]].
+- One Korean post intake pass when the result is reader-facing: [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math post intake]].
+- One post bundle pass before writing a synthesis post: [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]].
 
 ## Checks
 
@@ -138,7 +138,7 @@ Before promoting a paper cluster into a Korean post, check that the bundle has:
 - [[papers/index|Papers]]
 - [[concepts/topic-map-contract|Topic map contract]]
 - [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]
-- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
-- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
+- [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]

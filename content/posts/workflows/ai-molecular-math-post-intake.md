@@ -1,6 +1,7 @@
 ---
 title: AI Computational Biology Math 포스트 인테이크
 aliases:
+  - posts/ai-molecular-math-post-intake
   - posts/ai-bio-math-post-intake
   - posts/ai-computational-biology-math-post-intake
 tags:
@@ -29,15 +30,15 @@ $$
 
 | Field | Question | Route |
 | --- | --- | --- |
-| Reader question | 이 글이 답하는 한 문장 질문은 무엇인가? | [Blog writing guide](/posts/blog-writing-guide) |
+| Reader question | 이 글이 답하는 한 문장 질문은 무엇인가? | [Blog writing guide](/posts/workflows/blog-writing-guide) |
 | Main axis | AI 방법, computational biology 대상, Math 수식, paper claim 중 무엇이 중심인가? | [AI](/ai), [Computational Biology](/molecular-modeling), [Math](/math) |
 | Cross-axis contract | object, representation, model, objective, evidence가 모두 분리됐는가? | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
 | Required wiki notes | 글 안에서 반복하지 않고 링크할 개념은 무엇인가? | [Concepts](/concepts) |
 | Formula need | 독자 이해에 필요한 최소 수식은 무엇인가? | [Formula intake](/math/formula-intake) |
 | Benchmark boundary | 성능 claim을 어디까지 믿을 수 있는가? | [Benchmark intake](/concepts/data/benchmark-intake) |
 | Coverage check | 연결해야 할 object, data, method, formula, evidence note가 있는가? | [Coverage matrix](/concepts/coverage-matrix) |
-| Wiki bundle | post를 쓰기 전에 최소 support note가 준비됐는가? | [Wiki bundle checklist](/posts/wiki-bundle-checklist) |
-| Post promotion | wiki bundle, reader question, evidence boundary, next path가 충분한가? | [Post promotion gate](/posts/post-promotion-gate) |
+| Wiki bundle | post를 쓰기 전에 최소 support note가 준비됐는가? | [Wiki bundle checklist](/posts/workflows/wiki-bundle-checklist) |
+| Post promotion | wiki bundle, reader question, evidence boundary, next path가 충분한가? | [Post promotion gate](/posts/workflows/post-promotion-gate) |
 | Readiness gate | route, representation, objective, evidence, public boundary가 통과됐는가? | [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 | Public boundary | 공개하면 안 되는 내부 정보가 섞여 있지 않은가? | [Publishing gate](/inbox/publishing-gate) |
 
@@ -69,7 +70,7 @@ $$
 
 ## 추천 구조
 
-실제 초안은 [[posts/synthesis-post-template|Synthesis post template]]을 복사하지 말고 구조만 따라 씁니다.
+실제 초안은 [[posts/workflows/synthesis-post-template|Synthesis post template]]을 복사하지 말고 구조만 따라 씁니다.
 
 ```markdown
 ---
@@ -115,11 +116,11 @@ claim, split, metric, leakage, baseline, uncertainty를 점검.
 
 ## Related
 
-- [[posts/blog-writing-guide|블로그 글 작성 가이드]]
-- [[posts/synthesis-post-template|Synthesis post template]]
-- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
-- [[posts/post-promotion-gate|Post promotion gate]]
-- [[posts/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
+- [[posts/workflows/blog-writing-guide|블로그 글 작성 가이드]]
+- [[posts/workflows/synthesis-post-template|Synthesis post template]]
+- [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]]
+- [[posts/workflows/post-promotion-gate|Post promotion gate]]
+- [[posts/essays/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[ai/paper-intake|AI paper intake]]

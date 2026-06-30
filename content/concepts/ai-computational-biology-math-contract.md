@@ -139,5 +139,5 @@ This keeps the note from becoming a loose summary. Every major statement should 
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/ai-molecular-math-paper-template|AI computational biology math paper template]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI computational biology math readiness gate]]
-- [[posts/ai-molecular-math-post-intake|AI computational biology math post intake]]
+- [[posts/workflows/ai-molecular-math-post-intake|AI computational biology math post intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]

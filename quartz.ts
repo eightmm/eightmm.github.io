@@ -40,6 +40,7 @@ ExternalPlugin.Explorer({
       "papers/learning-methods",
       "papers/systems",
       "papers/essential-ai-reading",
+      "posts/workflows/synthesis-post-template",
       "infra/training",
       "infra/inference",
       "infra/environments",
@@ -103,6 +104,15 @@ ExternalPlugin.Explorer({
       "molecular-modeling/data-evaluation": "Data and Evaluation",
       "research/computational-biology": "Computational Biology",
       "research/architectures": "Architectures",
+      papers: "Papers",
+      "papers/architectures": "Architecture Papers",
+      "papers/llm": "LLM Papers",
+      "papers/generative-models": "Generative Model Papers",
+      "papers/computational-biology": "Computational Biology Papers",
+      posts: "Posts",
+      "posts/essays": "Essays",
+      "posts/reading-notes": "Reading Notes",
+      "posts/workflows": "Post Workflows",
       infra: "Infra",
       "infra/hardware": "Hardware",
       "infra/hpc": "HPC",
@@ -177,6 +187,11 @@ ExternalPlugin.Explorer({
       "generative-models",
       "computational-biology",
     ]
+    const postGroups = [
+      "essays",
+      "reading-notes",
+      "workflows",
+    ]
     const researchGroups = [
       "computational-biology",
       "architectures",
@@ -239,6 +254,14 @@ ExternalPlugin.Explorer({
     if (aSegments[0] === "papers" && bSegments[0] === "papers") {
       const aGroupIndex = paperGroups.indexOf(aSegments[1] ?? "")
       const bGroupIndex = paperGroups.indexOf(bSegments[1] ?? "")
+      if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
+        return aGroupIndex - bGroupIndex
+      }
+    }
+
+    if (aSegments[0] === "posts" && bSegments[0] === "posts") {
+      const aGroupIndex = postGroups.indexOf(aSegments[1] ?? "")
+      const bGroupIndex = postGroups.indexOf(bSegments[1] ?? "")
       if (aGroupIndex !== -1 && bGroupIndex !== -1 && aGroupIndex !== bGroupIndex) {
         return aGroupIndex - bGroupIndex
       }

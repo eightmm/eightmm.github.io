@@ -98,7 +98,7 @@ Not every paper needs a long review.
 
 | Post | Anchor paper |
 | --- | --- |
-| [Attention Is All You Need를 지금 다시 읽는 법](/posts/attention-is-all-you-need-transformer-review) | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) |
+| [[posts/essays/attention-is-all-you-need-transformer-review|Attention Is All You Need를 지금 다시 읽는 법]] | [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]] |
 
 ## 보조 묶음
 

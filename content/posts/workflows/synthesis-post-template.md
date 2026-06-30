@@ -1,5 +1,7 @@
 ---
 title: Synthesis Post Template
+aliases:
+  - posts/synthesis-post-template
 unlisted: true
 tags:
   - posts
@@ -54,7 +56,7 @@ tags:
 | Evidence | 어떤 benchmark, split, metric, baseline을 믿을 수 있는가 | [Coverage matrix](/concepts/coverage-matrix) |
 | Objective | 학습 loss와 reported metric이 같은 claim을 지지하는가 | [Objective-metric alignment](/concepts/machine-learning/objective-metric-alignment) |
 | Cross-axis contract | object, representation, model, objective, evidence가 분리됐는가 | [AI Computational Biology Math contract](/concepts/ai-computational-biology-math-contract) |
-| Wiki bundle | post를 받쳐 줄 object, method, formula, evidence note가 있는가 | [Wiki bundle checklist](/posts/wiki-bundle-checklist) |
+| Wiki bundle | post를 받쳐 줄 object, method, formula, evidence note가 있는가 | [Wiki bundle checklist](/posts/workflows/wiki-bundle-checklist) |
 | Readiness | route, representation, objective, evidence, public boundary가 통과됐는가 | [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate) |
 
 ## 핵심 개념
@@ -115,7 +117,7 @@ $$
 | Reader question | 글이 한 문장 질문에 답한다 |
 | Primary axis | AI, computational biology, Math, paper cluster, project 중 중심축이 분명하다 |
 | Claim routing | multi-axis 주제는 [Claim routing](/papers/workflows/claim-routing)을 통과했다 |
-| Wiki bundle | [Wiki bundle checklist](/posts/wiki-bundle-checklist)를 통과했다 |
+| Wiki bundle | [Wiki bundle checklist](/posts/workflows/wiki-bundle-checklist)를 통과했다 |
 | Readiness gate | 승격 전 [AI Computational Biology Math readiness gate](/papers/workflows/ai-molecular-math-readiness-gate)를 통과했다 |
 | Formula | 필요한 수식과 모든 symbol 설명이 있다 |
 | Formula depth | post는 level 1-2, paper/wiki evidence는 level 3 이상으로 분리했다 |
@@ -133,10 +135,10 @@ $$
 
 ## Related
 
-- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
-- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
-- [[posts/wiki-to-post-workflow|Wiki to post workflow]]
-- [[posts/blog-writing-guide|Blog writing guide]]
+- [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]]
+- [[posts/essays/wiki-to-post-workflow|Wiki to post workflow]]
+- [[posts/workflows/blog-writing-guide|Blog writing guide]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]

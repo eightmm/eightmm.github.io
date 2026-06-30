@@ -68,4 +68,4 @@ Runbook은 agent를 자동화하기 위한 prompt 모음이 아닙니다. 반복
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[agents/workflows/agent-handoff|Agent handoff]]
 - [[agents/verification/verification-loop|Verification loop]]
-- [[posts/blog-writing-guide|블로그 글 작성 가이드]]
+- [[posts/workflows/blog-writing-guide|블로그 글 작성 가이드]]

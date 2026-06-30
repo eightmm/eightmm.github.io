@@ -57,9 +57,9 @@ $$
 - 독자에게 또 하나의 isolated definition보다 map이나 point of view가 필요합니다.
 - post가 답할 clear question이 있습니다.
 - 개념을 복사하지 않고 concept, paper, project, infra note로 link할 수 있습니다.
-- AI, Computational Biology, Math-heavy topic은 [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]와 [[posts/wiki-bundle-checklist|Wiki bundle checklist]]를 통과합니다.
-- Post candidate는 drafting 전에 [[posts/post-promotion-gate|Post promotion gate]]를 통과합니다.
-- 여러 축을 가로지르는 draft는 [[posts/synthesis-post-template|Synthesis post template]]를 따릅니다.
+- AI, Computational Biology, Math-heavy topic은 [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]와 [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]]를 통과합니다.
+- Post candidate는 drafting 전에 [[posts/workflows/post-promotion-gate|Post promotion gate]]를 통과합니다.
+- 여러 축을 가로지르는 draft는 [[posts/workflows/synthesis-post-template|Synthesis post template]]를 따릅니다.
 - content는 [[inbox/publishing-gate|Publishing gate]]와 [[logs/sanitization-checklist|Sanitization checklist]]를 통과합니다.
 
 ## Agent 역할
@@ -95,12 +95,12 @@ Agent는 아래를 해야 합니다.
 - [[inbox/inbox-triage|Inbox triage]]
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/publishing-gate|Publishing gate]]
-- [[posts/blog-writing-guide|Blog writing guide]]
-- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
-- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
-- [[posts/post-promotion-gate|Post promotion gate]]
-- [[posts/synthesis-post-template|Synthesis post template]]
-- [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
+- [[posts/workflows/blog-writing-guide|Blog writing guide]]
+- [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]]
+- [[posts/workflows/post-promotion-gate|Post promotion gate]]
+- [[posts/workflows/synthesis-post-template|Synthesis post template]]
+- [[posts/essays/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
 - [[projects/llm-wiki-blog|LLM Wiki blog]]
 - [[logs/public-log-taxonomy|Public log taxonomy]]
 - [[logs/log-promotion-rule|Log promotion rule]]

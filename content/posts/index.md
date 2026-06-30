@@ -44,26 +44,40 @@ Wiki note 묶음이 충분히 쌓였을 때 post로 승격합니다.
 | Public safety | private path, account, server, unpublished result가 없는가? |
 | Next route | 독자가 다음에 볼 wiki note나 project가 있는가? |
 
-## Published Essays
+## Sections
+
+| Section | Use |
+| --- | --- |
+| [[posts/essays/index|Essays]] | 완성된 한글 longform, topic map, reader-facing explanation |
+| [[posts/reading-notes/index|Reading Notes]] | 특정 기간의 읽기 기록과 이후 승격 후보 |
+| [[posts/workflows/index|Post Workflows]] | 글 작성 기준, promotion gate, template, roadmap |
+
+## Essays
 
 | Post | Topic |
 | --- | --- |
-| [Attention Is All You Need를 지금 다시 읽는 법](/posts/attention-is-all-you-need-transformer-review) | Transformer paper longform review |
-| [AI Wiki를 어떤 축으로 나눠 볼 것인가](/posts/2026-06-26-ai-wiki-map) | AI taxonomy and reading map |
-| [블로그와 위키를 같이 쓰는 방식](/posts/2026-06-25-blog-and-wiki-workflow) | blog/wiki workflow |
-| [구조 기반 모델링을 어떻게 정리할 것인가](/posts/2026-06-25-structure-based-ai-map) | structure-based modeling map |
-| [Wiki에서 Post로 승격하는 방식](/posts/wiki-to-post-workflow) | note-to-post promotion |
+| [[posts/essays/attention-is-all-you-need-transformer-review|Attention Is All You Need를 지금 다시 읽는 법]] | Transformer paper longform review |
+| [[posts/essays/ai-wiki-map|AI Wiki를 어떤 축으로 나눠 볼 것인가]] | AI taxonomy and reading map |
+| [[posts/essays/blog-and-wiki-workflow|블로그와 위키를 같이 쓰는 방식]] | blog/wiki workflow |
+| [[posts/essays/structure-based-modeling-map|구조 기반 모델링을 어떻게 정리할 것인가]] | structure-based modeling map |
+| [[posts/essays/wiki-to-post-workflow|Wiki에서 Post로 승격하는 방식]] | note-to-post promotion |
+
+## Reading Notes
+
+| Note | Topic |
+| --- | --- |
+| [[posts/reading-notes/week-25-molecular-generative-reading-notes|2026년 25주차 Molecular & Generative Modeling 읽기 노트]] | molecular generation and protein modeling reading log |
 
 ## Writing System
 
 | Page | Use |
 | --- | --- |
-| [AI Computational Biology Math 포스트 인테이크](/posts/ai-molecular-math-post-intake) | AI, computational biology, and math synthesis writing |
-| [Wiki bundle checklist](/posts/wiki-bundle-checklist) | minimum support notes before writing a post |
-| [Post promotion gate](/posts/post-promotion-gate) | post readiness checklist |
-| [블로그 글 작성 가이드](/posts/blog-writing-guide) | style and structure |
-| [Synthesis post template](/posts/synthesis-post-template) | reusable post skeleton |
-| [글감 로드맵](/posts/topic-roadmap) | future essay map |
+| [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math 포스트 인테이크]] | AI, computational biology, and math synthesis writing |
+| [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]] | minimum support notes before writing a post |
+| [[posts/workflows/post-promotion-gate|Post promotion gate]] | post readiness checklist |
+| [[posts/workflows/blog-writing-guide|블로그 글 작성 가이드]] | style and structure |
+| [[posts/workflows/synthesis-post-template|Synthesis post template]] | reusable post skeleton |
+| [[posts/workflows/topic-roadmap|글감 로드맵]] | future essay map |
 | [Content promotion workflow](/agents/workflows/content-promotion-workflow) | note-to-public workflow |
 
 ## Candidate Essays

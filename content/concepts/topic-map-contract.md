@@ -72,8 +72,8 @@ A useful topic map should link at least one note from most relevant groups:
 ## Related
 
 - [[concepts/coverage-matrix|Coverage matrix]]
-- [[posts/post-promotion-gate|Post promotion gate]]
-- [[posts/wiki-to-post-workflow|Wiki to post workflow]]
+- [[posts/workflows/post-promotion-gate|Post promotion gate]]
+- [[posts/essays/wiki-to-post-workflow|Wiki to post workflow]]
 - [[papers/workflows/claim-routing|Claim routing]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI-Molecular-Math readiness gate]]

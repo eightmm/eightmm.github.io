@@ -114,7 +114,7 @@ For classification, calibration should be checked after ensembling, not assumed 
 ## Related
 
 - [[concepts/machine-learning/tree-based-model|Tree-based model]]
-- [[concepts/machine-learning/bias-variance-tradeoff|Bias-variance tradeoff]]
+- [[concepts/math/bias-variance-tradeoff|Bias-variance tradeoff]]
 - [[concepts/machine-learning/model-selection|Model selection]]
 - [[concepts/evaluation/baseline|Baseline]]
 - [[concepts/evaluation/ablation-study|Ablation study]]

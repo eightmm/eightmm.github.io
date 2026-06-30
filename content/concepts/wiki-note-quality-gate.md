@@ -94,4 +94,4 @@ Formula, workflow, or decision rule if useful.
 - [[concepts/topic-map-contract|Topic map contract]]
 - [[math/formula-explanation-ladder|Formula explanation ladder]]
 - [[papers/workflows/concept-update-contract|Concept update contract]]
-- [[posts/post-promotion-gate|Post promotion gate]]
+- [[posts/workflows/post-promotion-gate|Post promotion gate]]

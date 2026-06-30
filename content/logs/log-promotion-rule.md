@@ -66,4 +66,4 @@ The log should stay in `logs/` when it is useful but not yet broad enough to bec
 - [[inbox/publishing-gate|Publishing gate]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[projects/project-milestone-format|Project milestone format]]
-- [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
+- [[posts/essays/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]

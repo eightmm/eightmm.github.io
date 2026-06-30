@@ -1,6 +1,9 @@
 ---
 title: Attention Is All You Need를 지금 다시 읽는 법
 date: 2026-06-30
+aliases:
+  - posts/attention-is-all-you-need-transformer-review
+  - papers/architectures/attention-is-all-you-need-longform
 tags:
   - posts
   - ai

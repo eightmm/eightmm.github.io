@@ -47,7 +47,7 @@ $$
 | Computational biology intake | Molecule, ligand, protein, pocket, conformer, complex, genome region, assay, split, and leakage fields are handled when relevant | [Computational Biology paper intake](/molecular-modeling/paper-intake) |
 | Formula intake | Symbols, distributions, objectives, estimators, and metrics are rewritten in local notation | [Formula intake](/math/formula-intake) |
 | Coverage matrix | Missing object, method, math, data, evaluation, system, or agent notes are identified | [Coverage matrix](/concepts/coverage-matrix) |
-| Post route | Korean reader-facing synthesis has one question, one main axis, minimum formulas, and next links | [Synthesis post template](/posts/synthesis-post-template) |
+| Post route | Korean reader-facing synthesis has one question, one main axis, minimum formulas, and next links | [Synthesis post template](/posts/workflows/synthesis-post-template) |
 
 ## Paper Note Minimum
 
@@ -170,5 +170,5 @@ missing_information_defaults_applied: to verify
 - [[math/formula-intake|Formula intake]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
-- [[posts/ai-molecular-math-post-intake|AI computational biology math post intake]]
-- [[posts/synthesis-post-template|Synthesis post template]]
+- [[posts/workflows/ai-molecular-math-post-intake|AI computational biology math post intake]]
+- [[posts/workflows/synthesis-post-template|Synthesis post template]]

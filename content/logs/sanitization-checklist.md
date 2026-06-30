@@ -42,4 +42,4 @@ Sanitization converts private working notes into public notes. The goal is to ke
 - [[inbox/publishing-gate|Publishing gate]]
 - [[agents/verification/human-in-the-loop|Human in the loop]]
 - [[infra/index|Infra]]
-- [[posts/2026-06-25-blog-and-wiki-workflow|Blog and wiki workflow]]
+- [[posts/essays/blog-and-wiki-workflow|Blog and wiki workflow]]

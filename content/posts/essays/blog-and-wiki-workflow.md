@@ -1,6 +1,8 @@
 ---
 title: 블로그와 위키를 같이 쓰는 방식
 date: 2026-06-25
+aliases:
+  - posts/2026-06-25-blog-and-wiki-workflow
 tags:
   - posts
   - llm-wiki

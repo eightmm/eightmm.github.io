@@ -1,5 +1,7 @@
 ---
 title: Wiki Bundle Checklist
+aliases:
+  - posts/wiki-bundle-checklist
 tags:
   - posts
   - writing
@@ -25,7 +27,7 @@ $$
 
 | Part | Required note | Pass when |
 | --- | --- | --- |
-| Reader question | [Blog writing guide](/posts/blog-writing-guide) | 글이 한 문장 질문에 답한다 |
+| Reader question | [Blog writing guide](/posts/workflows/blog-writing-guide) | 글이 한 문장 질문에 답한다 |
 | Route | [Coverage matrix](/concepts/coverage-matrix) | 중심축이 AI, Computational Biology, Math, Papers, Projects, Infra, Agents 중 하나로 정해진다 |
 | Object | [Entities](/entities) or [Computational biology entities](/molecular-modeling/entities) | 무엇을 모델링하는지 명확하다 |
 | Representation | [Representation contract](/concepts/modalities/representation-contract) | raw object가 token, graph, coordinate, embedding, sample로 바뀌는 과정이 보인다 |
@@ -35,7 +37,7 @@ $$
 | Paper source | [Paper review workflow](/papers/workflows/paper-review-workflow) | 특정 논문 claim은 paper note나 evidence table로 분리된다 |
 | Extraction | [Paper to wiki extraction](/papers/workflows/paper-to-wiki-extraction) | paper claim이 object, method, formula, evidence update로 나뉜다 |
 | Public boundary | [Publishing gate](/inbox/publishing-gate) | private server, account, port, path, collaborator, unpublished result가 없다 |
-| Next path | [Post promotion gate](/posts/post-promotion-gate) | 독자가 다음에 볼 3-7개 note가 있다 |
+| Next path | [Post promotion gate](/posts/workflows/post-promotion-gate) | 독자가 다음에 볼 3-7개 note가 있다 |
 
 ## Post Type Bundles
 
@@ -88,9 +90,9 @@ Sequence, structure, molecule, ligand, docking, conformer, genome-level object�
 
 ## Related
 
-- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
-- [[posts/post-promotion-gate|Post promotion gate]]
-- [[posts/synthesis-post-template|Synthesis post template]]
+- [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[posts/workflows/post-promotion-gate|Post promotion gate]]
+- [[posts/workflows/synthesis-post-template|Synthesis post template]]
 - [[papers/workflows/paper-to-wiki-extraction|Paper to wiki extraction]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[concepts/ai-computational-biology-math-contract|AI Computational Biology Math contract]]

@@ -42,7 +42,7 @@ Architecture paper note는 attention, convolution, recurrence, graph neural netw
 | Paper | Why it is here |
 | --- | --- |
 | [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]] | Transformer architecture foundation |
-| [[posts/attention-is-all-you-need-transformer-review|Attention Is All You Need를 지금 다시 읽는 법]] | Korean longform explanation |
+| [[posts/essays/attention-is-all-you-need-transformer-review|Attention Is All You Need를 지금 다시 읽는 법]] | Korean longform explanation |
 
 ## Evaluation Risks
 

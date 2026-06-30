@@ -1,6 +1,8 @@
 ---
 title: AI Wiki를 어떤 축으로 나눠 볼 것인가
 date: 2026-06-26
+aliases:
+  - posts/2026-06-26-ai-wiki-map
 tags:
   - posts
   - ai

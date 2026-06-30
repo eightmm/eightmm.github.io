@@ -1,5 +1,7 @@
 ---
 title: Post Promotion Gate
+aliases:
+  - posts/post-promotion-gate
 tags:
   - posts
   - workflow
@@ -31,7 +33,7 @@ $$
 | Reader question | post가 clear question 하나에 답합니다 |
 | Primary axis | AI, Computational Biology, Math, Paper cluster, Project, Infra, Agents 중 하나가 중심입니다 |
 | Topic map | broad post가 loose link list가 아니라 explicit map contract를 가집니다 |
-| Wiki bundle | required support note가 [Wiki bundle checklist](/posts/wiki-bundle-checklist)를 통과합니다 |
+| Wiki bundle | required support note가 [Wiki bundle checklist](/posts/workflows/wiki-bundle-checklist)를 통과합니다 |
 | Minimum formula | 필요한 equation이 symbol과 함께 포함되거나 Math note로 연결됩니다 |
 | Evidence boundary | paper, benchmark, split, metric, baseline, leakage, uncertainty claim의 scope가 정해져 있습니다 |
 | Personal angle | post가 reading order, interpretation, practical judgment를 더합니다 |
@@ -92,11 +94,11 @@ status: draft
 
 ## Related
 
-- [[posts/wiki-to-post-workflow|Wiki to post workflow]]
-- [[posts/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
-- [[posts/wiki-bundle-checklist|Wiki bundle checklist]]
-- [[posts/synthesis-post-template|Synthesis post template]]
-- [[posts/blog-writing-guide|Blog writing guide]]
+- [[posts/essays/wiki-to-post-workflow|Wiki to post workflow]]
+- [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math post intake]]
+- [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]]
+- [[posts/workflows/synthesis-post-template|Synthesis post template]]
+- [[posts/workflows/blog-writing-guide|Blog writing guide]]
 - [[concepts/topic-map-contract|Topic map contract]]
 - [[concepts/coverage-matrix|Coverage matrix]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]

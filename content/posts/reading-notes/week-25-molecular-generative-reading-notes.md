@@ -1,6 +1,8 @@
 ---
 title: 2026년 25주차 Molecular & Generative Modeling 읽기 노트
 date: 2026-06-27
+aliases:
+  - posts/2026-06-27-week-25-molecular-generative-reading-notes
 tags:
   - blog-post
   - protein-modeling

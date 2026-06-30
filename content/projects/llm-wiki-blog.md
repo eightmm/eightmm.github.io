@@ -25,8 +25,8 @@ Public site에는 generalized knowledge, reusable writing format, verified publi
 ## Design
 
 - [[posts/index|Posts]]는 Korean narrative writing에 사용합니다.
-- [[posts/blog-writing-guide|Blog writing guide]]와 [[posts/topic-roadmap|Topic roadmap]]으로 post가 wiki note와 연결되게 합니다.
-- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]와 [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]으로 wiki cluster가 Korean post가 될 시점을 결정합니다.
+- [[posts/workflows/blog-writing-guide|Blog writing guide]]와 [[posts/workflows/topic-roadmap|Topic roadmap]]으로 post가 wiki note와 연결되게 합니다.
+- [[agents/workflows/content-promotion-workflow|Content promotion workflow]]와 [[posts/essays/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]으로 wiki cluster가 Korean post가 될 시점을 결정합니다.
 - [[concepts/index|Concepts]]는 reusable wiki note에 사용합니다.
 - [[papers/index|Papers]]는 public paper-specific claim에 사용합니다.
 - [[research/index|Research]]는 domain map에 사용합니다.
@@ -64,7 +64,7 @@ Lifecycle status: `active`.
 - [[agents/core/context-engineering|Context engineering]]
 - [[agents/workflows/paper-brief-workflow|Paper brief workflow]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
-- [[posts/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
+- [[posts/essays/wiki-to-post-workflow|Wiki에서 post로 승격하는 방식]]
 - [[inbox/inbox-triage|Inbox triage]]
 - [[logs/sanitization-checklist|Sanitization checklist]]
 - [[projects/project-note-format|Project note format]]
