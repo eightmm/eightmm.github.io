@@ -81,7 +81,7 @@ The paper reports a family of dense language models from 7B to 65B parameters. T
 | Training objective | autoregressive next-token prediction |
 | Main scaling route | more tokens for smaller models, public data mixture |
 
-The core interface is the same as [[papers/architectures/gpt-2|GPT-2]]:
+The core interface is the same as [[papers/architectures/gpt-2|GPT-2]] and [[papers/architectures/gpt-3|GPT-3]]:
 
 $$
 p_\theta(x)
@@ -477,8 +477,8 @@ This comparison is important. LLaMA did not replace the decoder-only Transformer
 
 | Model | Architecture Contract | Main Use |
 | --- | --- | --- |
-| [[papers/architectures/bert|BERT]] | encoder-only masked language model | representation learning and fine-tuning |
-| [[papers/architectures/t5|T5]] | encoder-decoder text-to-text model | supervised and multitask seq2seq transfer |
+| [BERT](/papers/architectures/bert) | encoder-only masked language model | representation learning and fine-tuning |
+| [T5](/papers/architectures/t5) | encoder-decoder text-to-text model | supervised and multitask seq2seq transfer |
 | LLaMA | decoder-only causal language model | generative continuation, prompting, instruction tuning base |
 
 LLaMA is not a general replacement for encoder-only or encoder-decoder architectures. It is the canonical path for open autoregressive foundation models.

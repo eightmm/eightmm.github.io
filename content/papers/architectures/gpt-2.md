@@ -256,7 +256,7 @@ The paper should not be cited as proving that decoder-only Transformers are univ
 
 | Paper | Backbone | Objective | Natural Use |
 | --- | --- | --- | --- |
-| [[papers/architectures/bert|BERT]] | encoder-only Transformer | masked token reconstruction | representation and understanding tasks |
+| [BERT](/papers/architectures/bert) | encoder-only Transformer | masked token reconstruction | representation and understanding tasks |
 | GPT-2 | decoder-only Transformer | next-token prediction | generation and prompt-conditioned transfer |
 
 BERT asks: can bidirectional pre-training create reusable representations?
@@ -337,4 +337,5 @@ This pattern later becomes the base for instruction-tuned LLMs, chat models, cod
 - [[agents/tools/tool-use|Tool use]]
 - [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]]
 - [[papers/architectures/bert|BERT]]
+- [[papers/architectures/gpt-3|GPT-3]]
 - [[papers/architectures/index|Architecture papers]]

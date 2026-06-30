@@ -10,6 +10,8 @@ tags:
 
 A decoder-only Transformer uses causal self-attention and predicts the next token autoregressively. It is the standard architecture pattern for many large language models and sequence generators.
 
+Canonical paper notes in this wiki include [[papers/architectures/gpt-2|GPT-2]], [[papers/architectures/gpt-3|GPT-3]], and [[papers/architectures/llama|LLaMA]].
+
 The causal mask is:
 
 $$
