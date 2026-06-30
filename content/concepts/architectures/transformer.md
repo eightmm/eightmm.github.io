@@ -129,7 +129,7 @@ $$
 L\cdot n_{\mathrm{layers}}\cdot d.
 $$
 
-Recurrent alternatives such as [[papers/architectures/rwkv|RWKV]] aim for a constant-size per-layer state:
+Recurrent or retention-based alternatives such as [[papers/architectures/rwkv|RWKV]] and [[papers/architectures/retnet|RetNet]] aim for a compact per-layer state:
 
 $$
 \text{recurrent state size}
@@ -137,12 +137,19 @@ $$
 n_{\mathrm{layers}}\cdot d.
 $$
 
-This does not make recurrence automatically better. It changes the bottleneck: attention keeps explicit past keys and values, while recurrence compresses the prefix into state.
+RetNet frames this as retention state:
+
+$$
+S_t = \gamma S_{t-1}+k_t^\top v_t.
+$$
+
+This does not make recurrence automatically better. It changes the bottleneck: attention keeps explicit past keys and values, while recurrence or retention compresses the prefix into state.
 
 | Model Family | Inference Memory | Main Risk |
 | --- | --- | --- |
 | decoder-only Transformer | grows with context through KV cache | long-context memory cost |
 | recurrent language model | fixed recurrent state | compressed-state bottleneck |
+| retention model | decayed key-value state | retention horizon and normalization details |
 | SSM/selective SSM | scan state or structured cache | state design and retrieval behavior |
 
 ## Key Ideas
@@ -172,6 +179,7 @@ This does not make recurrence automatically better. It changes the bottleneck: a
 - [[concepts/architectures/tokenization|Tokenization]]
 - [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
 - [[concepts/architectures/state-space-model|State-space model]]
+- [[papers/architectures/retnet|RetNet]]
 - [[entities/protein|Protein]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[agents/workflows/coding-agents|Coding agents]]

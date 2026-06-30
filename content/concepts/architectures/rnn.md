@@ -73,12 +73,20 @@ $$
 \text{recurrent inference state}.
 $$
 
-[[papers/architectures/rwkv|RWKV]] is the canonical paper note here. It can be formulated in a Transformer-like parallel mode for training and an RNN-like recurrent mode for inference:
+[[papers/architectures/rwkv|RWKV]] and [[papers/architectures/retnet|RetNet]] are canonical paper notes here. They can be formulated in parallel-friendly modes for training and recurrent modes for inference:
 
 $$
 s_t = F_\theta(s_{t-1}, x_t),
 \qquad
 y_t=G_\theta(s_t,x_t).
+$$
+
+RetNet makes this explicit with retention:
+
+$$
+S_t = \gamma S_{t-1} + k_t^\top v_t,
+\qquad
+y_t=q_tS_t.
 $$
 
 The practical tradeoff is:
@@ -116,4 +124,5 @@ The practical tradeoff is:
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/attention|Attention]]
 - [[papers/architectures/rwkv|RWKV]]
+- [[papers/architectures/retnet|RetNet]]
 - [[concepts/learning/index|Learning methods]]
