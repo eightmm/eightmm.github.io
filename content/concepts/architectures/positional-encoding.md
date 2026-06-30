@@ -39,6 +39,16 @@ $$
 \right)V
 $$
 
+[[papers/architectures/alibi|ALiBi]] is a fixed relative bias variant. For causal attention, it adds a head-specific distance penalty:
+
+$$
+A_{h,i,j}
+=
+\frac{q_{h,i}^{\top}k_{h,j}}{\sqrt{d_k}}
+-m_h(i-j),
+\qquad j\leq i.
+$$
+
 Rotary position embeddings apply a position-dependent rotation to query and key vectors:
 
 $$
@@ -53,6 +63,7 @@ This makes attention depend on relative offsets through the rotated inner produc
 
 - Absolute learned positions attach one vector to each index.
 - Relative position bias modifies attention scores based on distance.
+- ALiBi adds a fixed head-specific linear distance bias to attention logits.
 - Rotary position embeddings rotate query/key features as a function of position.
 - Structural encodings can use graph distance, residue separation, 3D distance, or chain identity.
 
@@ -62,6 +73,7 @@ This makes attention depend on relative offsets through the rotated inner produc
 | --- | --- | --- | --- |
 | absolute index | token position $t$ | fixed-length sequences | weak length extrapolation |
 | relative bias | offset $i-j$ | local and long sequence patterns | offset bucket choices matter |
+| ALiBi | linear distance penalty | train-short test-long language modeling | fixed recency prior may not fit all tasks |
 | rotary | relative phase in query/key space | long-context language models | extrapolation depends on scaling |
 | segment/chain id | boundary or component identity | paired sequences, proteins, documents | missing boundaries cause leakage |
 | graph distance | shortest path or edge distance | graphs and molecules | graph construction affects meaning |
@@ -78,6 +90,14 @@ p_t \quad \text{for} \quad t > L_{\mathrm{train}}
 $$
 
 Absolute learned embeddings may be undefined or extrapolated poorly. Relative or rotary methods often behave better, but still need empirical checks at the target context length.
+
+ALiBi avoids a learned position lookup for unseen indices because the distance rule:
+
+$$
+B(d)=-m_hd
+$$
+
+is defined for arbitrary distance $d$. This helps length extrapolation, but dense attention still has the usual long-context compute and memory cost.
 
 ## Structured Position
 
@@ -106,6 +126,7 @@ Do not treat arbitrary input order as meaningful unless the representation contr
 
 - [[concepts/architectures/embedding|Embedding]]
 - [[papers/architectures/roformer|RoFormer]]
+- [[papers/architectures/alibi|ALiBi]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]

@@ -43,6 +43,18 @@ $$
 
 Here $M$ is an optional mask. In causal attention, future positions receive $-\infty$ before softmax so each token only attends to previous tokens.
 
+Additive attention bias is another common way to inject structure:
+
+$$
+A_{b,h,i,j}
+=
+\frac{q_{b,h,i}^{\top}k_{b,h,j}}{\sqrt{d_k}}
++M_{i,j}
++B_{h,i,j}.
+$$
+
+The bias $B$ can encode relative position, graph relation, distance bucket, or a fixed linear distance prior. [[papers/architectures/alibi|ALiBi]] is the canonical linear-bias paper note in this wiki.
+
 ## Shape Contract
 
 For batched multi-head attention:
@@ -175,6 +187,7 @@ They do not by themselves prove causal importance. Value vectors, later layers, 
 - Cross-attention mixes information across two sets, such as encoded inputs and generated outputs.
 - Attention weights are useful debugging signals, but they are not always faithful explanations.
 - Positional or structural encodings matter because plain attention is permutation-aware but not order-aware by itself.
+- Attention biases are part of the architecture contract: a causal mask, relative position bias, ALiBi bias, graph mask, or structure mask changes which interactions are easy or possible.
 
 ## Practical Checks
 
