@@ -35,6 +35,7 @@ Computational Biology paper note는 structure-based modeling, protein modeling, 
 | [AlphaFold2](/papers/architectures/alphafold2) | protein structure prediction | MSA-pair architecture, geometric structure module, recycling, and confidence |
 | [AlphaFold3](/papers/architectures/alphafold3) | biomolecular complex prediction | diffusion-based joint structure prediction for proteins, nucleic acids, ligands, ions, and modified residues |
 | [ProteinMPNN](/papers/architectures/proteinmpnn) | protein inverse folding | structure-conditioned sequence design for fixed protein backbones |
+| [NequIP](/papers/architectures/nequip) | molecular and materials potentials | E(3)-equivariant interatomic potential for energy-force modeling |
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | protein and geometric modeling | equivariant peptide modeling |
 | [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | protein interaction modeling | antibody-antigen binding evaluation |
 | [Molexar](/papers/generative-models/molexar) | molecular generation | molecule-focused generation and representation |

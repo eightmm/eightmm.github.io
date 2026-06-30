@@ -74,6 +74,16 @@ The architecture is only as equivariant as the features and preprocessing suppli
 | equivariant attention | attention over scalar and geometric features | masking, frames, and pair features define symmetry |
 | local-frame models | represent geometry in residue or pocket frames | frame construction can leak or break equivariance |
 
+## Representative Paper Notes
+
+| Note | Why it matters |
+| --- | --- |
+| [[papers/architectures/tensor-field-networks|Tensor Field Networks]] | establishes typed tensor features and spherical-harmonic filters for 3D equivariant layers |
+| [[papers/architectures/se3-transformer|SE(3)-Transformer]] | adds attention-style weighting to equivariant 3D representations |
+| [[papers/architectures/egnn|EGNN]] | gives a simpler coordinate-update view of equivariant graph networks |
+| [[papers/architectures/painn|PaiNN]] | uses scalar and vector atom features for molecular tensorial properties |
+| [[papers/architectures/nequip|NequIP]] | applies E(3)-equivariant tensor features to interatomic potentials and force learning |
+
 ## Role in Molecular Modeling
 
 - Encode atoms, residues, and interactions as graphs.
