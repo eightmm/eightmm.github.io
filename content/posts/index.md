@@ -48,6 +48,7 @@ Wiki note 묶음이 충분히 쌓였을 때 post로 승격합니다.
 
 | Post | Topic |
 | --- | --- |
+| [Attention Is All You Need를 지금 다시 읽는 법](/posts/attention-is-all-you-need-transformer-review) | Transformer paper longform review |
 | [AI Wiki를 어떤 축으로 나눠 볼 것인가](/posts/2026-06-26-ai-wiki-map) | AI taxonomy and reading map |
 | [블로그와 위키를 같이 쓰는 방식](/posts/2026-06-25-blog-and-wiki-workflow) | blog/wiki workflow |
 | [구조 기반 모델링을 어떻게 정리할 것인가](/posts/2026-06-25-structure-based-ai-map) | structure-based modeling map |

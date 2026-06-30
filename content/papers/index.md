@@ -89,11 +89,16 @@ Not every paper needs a long review.
 | 논문 노트 | 영역 |
 | --- | --- |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer architecture |
-| [Attention Is All You Need longform review](/papers/architectures/attention-is-all-you-need-longform) | Transformer architecture longform |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation |
 | [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | antibody-antigen binding |
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | equivariant peptide modeling |
 | [Molexar](/papers/generative-models/molexar) | molecular generation |
+
+## Longform Posts
+
+| Post | Anchor paper |
+| --- | --- |
+| [Attention Is All You Need를 지금 다시 읽는 법](/posts/attention-is-all-you-need-transformer-review) | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) |
 
 ## 보조 묶음
 
