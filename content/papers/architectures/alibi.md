@@ -231,7 +231,7 @@ This creates a spread of attention distance priors across heads without learning
 | sinusoidal position | add fixed vector to token embedding | analytic but still mixed into token state |
 | learned absolute position | add learned vector to token embedding | tied to trained position range |
 | relative position bias | add learned or bucketed bias to logits | depends on buckets and maximum distance |
-| [[papers/architectures/roformer|RoPE]] | rotate query/key vectors | relative phase, later often scaled for longer context |
+| [RoPE](/papers/architectures/roformer) | rotate query/key vectors | relative phase, later often scaled for longer context |
 | ALiBi | add fixed linear distance bias to logits | distance rule naturally extends |
 
 The key distinction:
