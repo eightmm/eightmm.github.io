@@ -54,7 +54,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Going Deeper with Convolutions](/papers/architectures/inception) | Inception | multi-branch compute-aware CNN module |
 | [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | dense skip connectivity and feature reuse |
 | [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | compound scaling for CNN families |
-| [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone |
+| [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone; full note started |
 | [BERT](/papers/architectures/bert) | encoder-only Transformer | bidirectional language representation backbone; full note started |
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer | prompt-conditioned autoregressive LM transfer |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | LSTM | gated recurrent memory |
