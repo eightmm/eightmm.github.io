@@ -87,6 +87,7 @@ Not every paper needs a long review.
 
 | 논문 노트 | 영역 |
 | --- | --- |
+| [Gradient-Based Learning Applied to Document Recognition](/papers/architectures/gradient-based-learning-applied-to-document-recognition) | LeNet-5 and early CNN document recognition |
 | [ImageNet Classification with Deep CNNs](/papers/architectures/alexnet) | large-scale CNN vision architecture |
 | [Very Deep Convolutional Networks](/papers/architectures/vgg) | deep small-filter CNN architecture |
 | [Network In Network](/papers/architectures/network-in-network) | $1\times1$ convolution and global average pooling |
