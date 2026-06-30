@@ -33,6 +33,8 @@ $$
 
 Lower is better.
 
+For a deterministic hard classifier that predicts $p_i\in\{0,1\}$, binary Brier score becomes the error rate. For probabilistic models, it also rewards being less overconfident when uncertain.
+
 ## Interpretation
 
 Brier score penalizes both:
@@ -49,6 +51,41 @@ $$
 $$
 
 This bounded scale can make Brier score easier to communicate than NLL, but it may be less sensitive to extremely overconfident mistakes.
+
+## Decomposition
+
+For binary forecasts grouped into probability bins, Brier score can be decomposed into calibration and refinement terms:
+
+$$
+\operatorname{BS}
+=
+\text{reliability}
+-
+\text{resolution}
++
+\text{uncertainty}
+$$
+
+Informally:
+
+| Term | Meaning |
+| --- | --- |
+| reliability | predicted probabilities match observed frequencies |
+| resolution | predictions separate high-risk and low-risk cases |
+| uncertainty | base-rate difficulty of the event |
+
+This is why two models with similar Brier scores can behave differently: one may be well-calibrated but uninformative, while another may separate cases well but need calibration.
+
+## Comparison With NLL
+
+| Metric | Rewards | Risk |
+| --- | --- | --- |
+| Brier score | squared probability accuracy | less sensitive to extreme overconfidence |
+| negative log-likelihood | probability assigned to true label | unbounded penalty for confident errors |
+| accuracy | hard decision correctness | ignores probability quality |
+| expected calibration error | calibration bins | depends on binning and ignores sharpness |
+
+If probabilities drive decisions, use Brier or NLL with calibration plots. If only hard decisions matter, also report thresholded metrics.
 
 ## Relation to Calibration
 
@@ -73,6 +110,8 @@ when confidence is part of the decision.
 - Are class imbalance and prevalence changes considered?
 - Is the model evaluated with both probability metrics and thresholded decision metrics?
 - Is the score used only when probabilities are meaningful?
+- Are probability outputs clipped, rounded, or post-hoc calibrated before scoring?
+- Is the event definition consistent across train, validation, and test?
 
 ## Related
 
@@ -80,5 +119,6 @@ when confidence is part of the decision.
 - [[concepts/evaluation/proper-scoring-rule|Proper scoring rule]]
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/reliability-diagram|Reliability diagram]]
+- [[concepts/machine-learning/negative-log-likelihood|Negative log-likelihood]]
 - [[concepts/evaluation/classification-metrics|Classification metrics]]
 - [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
