@@ -87,10 +87,14 @@ Not every paper needs a long review.
 
 | 논문 노트 | 영역 |
 | --- | --- |
+| [ImageNet Classification with Deep CNNs](/papers/architectures/alexnet) | large-scale CNN vision architecture |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer architecture |
+| [Batch Normalization](/papers/architectures/batch-normalization) | normalization architecture block |
 | [Deep Residual Learning](/papers/architectures/deep-residual-learning) | residual CNN architecture |
 | [U-Net](/papers/architectures/u-net) | dense prediction architecture |
 | [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer |
+| [Swin Transformer](/papers/architectures/swin-transformer) | hierarchical vision Transformer |
+| [Layer Normalization](/papers/architectures/layer-normalization) | sequence-model normalization |
 | [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | graph neural network |
 | [Graph Attention Networks](/papers/architectures/graph-attention-networks) | graph attention network |
 | [Deep Sets](/papers/architectures/deep-sets) | permutation-invariant set architecture |

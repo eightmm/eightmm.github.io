@@ -16,19 +16,24 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 
 | Shelf | Read For | Anchor Papers |
 | --- | --- | --- |
-| Sequence and attention | token mixing, position, long-range dependency, attention alternatives | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [Mamba](/papers/architectures/mamba) |
-| Vision backbones | locality, residual depth, dense prediction, patch tokenization | [Deep Residual Learning](/papers/architectures/deep-residual-learning), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer) |
+| Sequence and attention | token mixing, position, long-range dependency, attention alternatives | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [Layer Normalization](/papers/architectures/layer-normalization), [Mamba](/papers/architectures/mamba) |
+| Vision backbones | locality, residual depth, dense prediction, patch tokenization, hierarchy | [AlexNet](/papers/architectures/alexnet), [Deep Residual Learning](/papers/architectures/deep-residual-learning), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer), [Swin Transformer](/papers/architectures/swin-transformer) |
 | Graphs and sets | permutation behavior, message passing, unordered inputs | [GCN](/papers/architectures/gcn), [Graph Attention Networks](/papers/architectures/graph-attention-networks), [Deep Sets](/papers/architectures/deep-sets), [Set Transformer](/papers/architectures/set-transformer) |
 | Conditional compute | sparse routing, expert capacity, scaling under fixed token compute | [Switch Transformer](/papers/architectures/switch-transformer) |
+| Training-time architecture blocks | normalization, activation scale, residual stability | [Batch Normalization](/papers/architectures/batch-normalization), [Layer Normalization](/papers/architectures/layer-normalization) |
 
 ## Current Notes
 
 | Paper | Main Architecture | Why it is here |
 | --- | --- | --- |
+| [ImageNet Classification with Deep CNNs](/papers/architectures/alexnet) | AlexNet | large-scale deep CNN vision milestone |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone |
+| [Batch Normalization](/papers/architectures/batch-normalization) | BatchNorm | normalization as an architecture component |
 | [Deep Residual Learning](/papers/architectures/deep-residual-learning) | ResNet | residual learning and deep CNN optimization |
 | [U-Net](/papers/architectures/u-net) | U-Net | encoder-decoder CNN with localization skip paths |
 | [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer | image patches as Transformer tokens |
+| [Swin Transformer](/papers/architectures/swin-transformer) | Swin Transformer | shifted-window hierarchical vision Transformer |
+| [Layer Normalization](/papers/architectures/layer-normalization) | LayerNorm | batch-independent normalization for sequence models |
 | [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | GCN | graph message passing for node classification |
 | [Graph Attention Networks](/papers/architectures/graph-attention-networks) | GAT | learned attention over graph neighborhoods |
 | [Deep Sets](/papers/architectures/deep-sets) | Deep Sets | permutation-invariant set function architecture |
