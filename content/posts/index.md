@@ -50,7 +50,6 @@ Wiki note 묶음이 충분히 쌓였을 때 post로 승격합니다.
 | --- | --- |
 | [[posts/essays/index|Essays]] | 완성된 한글 longform, topic map, reader-facing explanation |
 | [[posts/reading-notes/index|Reading Notes]] | 특정 기간의 읽기 기록과 이후 승격 후보 |
-| [[posts/workflows/index|Post Workflows]] | 글 작성 기준, promotion gate, template, roadmap |
 
 ## Essays
 
@@ -67,18 +66,6 @@ Wiki note 묶음이 충분히 쌓였을 때 post로 승격합니다.
 | Note | Topic |
 | --- | --- |
 | [[posts/reading-notes/week-25-molecular-generative-reading-notes|2026년 25주차 Molecular & Generative Modeling 읽기 노트]] | molecular generation and protein modeling reading log |
-
-## Writing System
-
-| Page | Use |
-| --- | --- |
-| [[posts/workflows/ai-molecular-math-post-intake|AI Computational Biology Math 포스트 인테이크]] | AI, computational biology, and math synthesis writing |
-| [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]] | minimum support notes before writing a post |
-| [[posts/workflows/post-promotion-gate|Post promotion gate]] | post readiness checklist |
-| [[posts/workflows/blog-writing-guide|블로그 글 작성 가이드]] | style and structure |
-| [[posts/workflows/synthesis-post-template|Synthesis post template]] | reusable post skeleton |
-| [[posts/workflows/topic-roadmap|글감 로드맵]] | future essay map |
-| [Content promotion workflow](/agents/workflows/content-promotion-workflow) | note-to-public workflow |
 
 ## Candidate Essays
 
