@@ -66,6 +66,22 @@ $$
 
 The choice changes similarity and model behavior. Count features can matter for repeated motifs, while binary features are often robust and compact.
 
+## Fingerprint Contract
+
+A reproducible fingerprint is defined by settings, not only by a name.
+
+| Field | Examples |
+| --- | --- |
+| molecule state | standardized, tautomer policy, protonation, stereo |
+| algorithm | Morgan/ECFP, MACCS, path-based, pharmacophore |
+| radius/depth | local environment size |
+| bit size | 1024, 2048, 4096, sparse vector |
+| chirality | included, ignored, enumerated |
+| count mode | binary bit, count vector, sparse count |
+| toolkit/version | RDKit version and generator settings |
+
+Without this contract, “ECFP” is underspecified.
+
 ## Collisions
 
 Hashed fingerprints can map different substructures to the same bit:
@@ -75,6 +91,19 @@ H(a)=H(b),\quad a\neq b
 $$
 
 Larger bit sizes reduce collision probability but increase memory and compute. Because RDKit versions and fingerprint settings can change behavior, the featurizer contract should record radius, bit size, chirality, feature flags, and software version.
+
+## Fingerprints and Splits
+
+Fingerprints are often used both as input features and as split diagnostics. Keep those roles separate:
+
+| Role | Use | Risk |
+| --- | --- | --- |
+| model input | property prediction, screening model | benchmark may reward memorized chemistry |
+| similarity baseline | nearest-neighbor or kernel method | baseline omitted or under-tuned |
+| clustering | diversity or scaffold-like grouping | clusters depend on threshold and representation |
+| leakage audit | detect near-duplicates across splits | misses non-fingerprint leakage |
+
+If a split is built with a fingerprint similarity threshold, report that threshold and representation beside the benchmark metric.
 
 ## Baseline Role
 
@@ -101,6 +130,8 @@ If a deep model does not beat this baseline on a domain-appropriate split, the a
 - Is the same fingerprint contract used for train and inference?
 - Are activity cliffs and near-neighbor errors inspected separately?
 - Is a property-only or fingerprint-only decoy baseline exposing benchmark bias?
+- Are fingerprint settings identical across training, validation, test, and inference?
+- Is the fingerprint used for both input features and split construction disclosed?
 
 ## Related
 
@@ -111,6 +142,7 @@ If a deep model does not beat this baseline on a domain-appropriate split, the a
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/activity-cliff|Activity cliff]]
 - [[concepts/evaluation/negative-set|Negative set]]
+- [[concepts/evaluation/leakage|Leakage]]
 - [[concepts/machine-learning/feature-engineering|Feature engineering]]
 - [[concepts/sbdd/virtual-screening|Virtual screening]]
 - [[entities/molecule|Molecule]]

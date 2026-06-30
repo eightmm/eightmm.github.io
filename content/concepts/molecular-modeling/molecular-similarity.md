@@ -47,6 +47,50 @@ $$
 
 where $f$ is the molecular representation and $T$ is a similarity function.
 
+## Similarity Is Representation-Relative
+
+Similarity should always be written as a function of representation:
+
+$$
+s(m_i,m_j)
+=
+\operatorname{sim}(f_\pi(m_i), f_\pi(m_j))
+$$
+
+where $\pi$ includes standardization, fingerprint settings, 3D conformer policy, or embedding model.
+
+| Representation | Similarity captures | Misses |
+| --- | --- | --- |
+| fingerprint | local substructure overlap | 3D pose and target context |
+| graph edit / MCS | explicit topology relation | pharmacophore similarity |
+| descriptor vector | global physicochemical profile | substructure detail |
+| conformer/shape | 3D volume and geometry | alternate conformers and protonation |
+| learned embedding | task-conditioned relation | interpretability and domain shift |
+
+Changing $f_\pi$ changes the meaning of the number, even if the metric name stays the same.
+
+## Thresholds
+
+A threshold is not portable across representations:
+
+$$
+\mathbb{1}[s(m_i,m_j)\ge \tau]
+$$
+
+The same $\tau$ can mean near-duplicate for one fingerprint and weak similarity for another embedding. State whether the threshold is used for retrieval, clustering, split construction, novelty filtering, or applicability-domain checks.
+
+## Activity Cliff Boundary
+
+Similarity can expose cases where smoothness assumptions fail:
+
+$$
+s(m_i,m_j)\ \text{high},
+\quad
+|y_i-y_j|\ \text{large}
+$$
+
+These pairs should be inspected separately because a model can have good average performance while failing on the chemistry that matters most.
+
 ## Practical Checks
 
 - What representation defines similarity?
@@ -54,6 +98,8 @@ where $f$ is the molecular representation and $T$ is a similarity function.
 - Are stereochemistry, protonation, tautomers, and salts handled consistently?
 - Is the threshold chosen for retrieval, clustering, splitting, or diversity?
 - Does a simple nearest-neighbor baseline explain the reported performance?
+- Is similarity used as evidence of same mechanism, or only as a retrieval heuristic?
+- Are activity cliffs reported separately from average nearest-neighbor behavior?
 
 ## Failure Modes
 
@@ -68,6 +114,7 @@ where $f$ is the molecular representation and $T$ is a similarity function.
 - [[concepts/molecular-modeling/molecular-fingerprint|Molecular fingerprint]]
 - [[concepts/molecular-modeling/molecular-graph|Molecular graph]]
 - [[concepts/molecular-modeling/molecular-standardization|Molecular standardization]]
+- [[concepts/molecular-modeling/substructure-search|Substructure search]]
 - [[concepts/evaluation/activity-cliff|Activity cliff]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
