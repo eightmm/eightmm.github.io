@@ -21,6 +21,34 @@ $$
 
 여기서 $\rho(g)$는 output representation이 어떻게 변환되어야 하는지 설명합니다.
 
+## Geometric Model Contract
+
+Geometric deep learning note는 수학 정의, 모델 구조, 생물학적 object를 섞지 않고 아래 contract를 먼저 고정합니다.
+
+$$
+\mathcal{G}_{\mathrm{model}}
+=
+(\mathcal{O},\ X,\ G,\ \rho,\ y,\ \mathcal{L},\ m)
+$$
+
+| Part | Meaning | Typical question |
+| --- | --- | --- |
+| $\mathcal{O}$ | modeled object | molecule, protein, complex, point cloud, graph, field? |
+| $X$ | geometric representation | coordinates, distances, frames, graph with coordinates? |
+| $G$ | transformation group | permutation, SO(3), SE(3), E(3), reflection, translation? |
+| $\rho$ | output representation | scalar, vector, tensor, coordinate, distribution? |
+| $y$ | target | property, force, pose, coordinate update, generated structure? |
+| $\mathcal{L}$ | objective | scalar loss, vector loss, coordinate loss, denoising, score, velocity? |
+| $m$ | metric | RMSD, force error, property metric, validity, clash, strain? |
+
+The core consistency condition is:
+
+$$
+f_\theta(g\cdot X)=\rho(g)f_\theta(X)
+$$
+
+If $\rho(g)$ is identity, the model is invariant. If $\rho(g)$ rotates, translates, or permutes the output, the model is equivariant.
+
 ## 결정 패턴
 
 Geometric model에서는 architecture를 고르기 전에 contract를 먼저 정합니다.
@@ -37,6 +65,31 @@ $$
 - Split: 필요하면 ligand scaffold, protein family, complex pair, assay/source, time.
 
 Group 선택은 data와 deployment setting에 모두 맞아야 합니다. Preprocessing으로 강제한 symmetry는 inference time에도 같은 정보가 있을 때만 유효합니다.
+
+## Target Type Map
+
+Target type determines the required symmetry behavior.
+
+| Target | Required behavior | Example |
+| --- | --- | --- |
+| scalar property | invariant | energy, affinity, class score, molecular property |
+| set or graph label | permutation invariant or equivariant | node classification, graph property, residue label |
+| vector field | rotationally equivariant | force, displacement, velocity field |
+| coordinate update | SE(3)/E(3)-equivariant | denoising coordinates, pose refinement |
+| distance or contact | invariant to rigid motion | contact map, distance matrix, pair feature |
+| distribution over structures | equivariant sampler or invariant density | diffusion over conformers, pose generation |
+
+This is why a structure model cannot be judged only by architecture name. The output type, loss, and metric decide what symmetry must be preserved.
+
+$$
+\text{scalar}
+\rightarrow
+\text{invariant}
+\qquad
+\text{coordinate/vector}
+\rightarrow
+\text{equivariant}
+$$
 
 ## 수학 배경
 
@@ -78,6 +131,39 @@ Group 선택은 data와 deployment setting에 모두 맞아야 합니다. Prepro
 | --- | --- |
 | choose a geometric model family | [Geometric architecture](/concepts/geometric-deep-learning/geometric-architecture) |
 | graph neural network with symmetry constraints | [Equivariant GNN](/concepts/geometric-deep-learning/equivariant-gnn) |
+
+## Boundary With Other Sections
+
+| If the note is about | Put it in |
+| --- | --- |
+| group action, metric space, distance, representation theory | [[math/geometry-symmetry|Geometry and Symmetry]], [[concepts/math/symmetry-group|Symmetry group]] |
+| layer, message passing, coordinate update, equivariant architecture | this section |
+| protein, ligand, pocket, complex geometry and leakage | [[molecular-modeling/geometry-for-structure-modeling|Geometry for Structure Modeling]] |
+| docking pose, scoring, binding interaction | [[molecular-modeling/structure-based/index|Structure-based modeling]], [[concepts/sbdd/index|SBDD concepts]] |
+| objective, sampler, diffusion, flow matching | [[concepts/generative-models/index|Generative models]] |
+| benchmark metric, split, validity, uncertainty | [[concepts/evaluation/index|Evaluation]] |
+
+## Claim Controls
+
+Geometric model claims are easy to overstate. Compare methods only after checking:
+
+| Control | Why |
+| --- | --- |
+| coordinate source | experimental, predicted, docked, generated, and minimized coordinates are not equivalent |
+| graph construction | edges can leak target geometry or test-time information |
+| target representation | scalar, vector, coordinate, distance, and distribution require different equivariance |
+| alignment and atom mapping | RMSD and pose metrics depend on correspondence and alignment rule |
+| chirality and reflection policy | E(3) and SE(3) assumptions differ for chiral chemistry |
+| split unit | scaffold, protein family, complex pair, and time splits support different claims |
+| compute budget | equivariant tensor features can change parameter and memory cost |
+
+Minimal claim form:
+
+$$
+(\text{object},\ X,\ G,\ \rho,\ \mathcal{L},\ m,\ \text{split})
+\rightarrow
+\text{geometric claim}
+$$
 
 ## 공개 가능한 check
 
