@@ -69,6 +69,30 @@ $$
 
 with kernel terms derived from powers of $\bar{A}$. This is why some SSMs can train with parallel convolution-like computation while still offering recurrent scanning for inference.
 
+## Matrix Mixer View
+
+Modern SSM papers often reason about the whole sequence transformation as a structured matrix:
+
+$$
+Y = MX.
+$$
+
+For a recurrent SSM:
+
+$$
+M_{t,i}
+=
+C_t
+\left(
+\prod_{j=i+1}^{t}A_j
+\right)
+B_i,
+\qquad
+i\le t.
+$$
+
+[[papers/architectures/mamba-2|Mamba-2]] is the canonical paper note for structured state space duality: it relates SSMs and attention-like mixers through structured semiseparable matrices and uses that view to design a faster Mamba-style layer.
+
 ## Comparison Contract
 
 | Family | Sequence Mixing | Strength | Risk |
@@ -80,6 +104,7 @@ with kernel terms derived from powers of $\bar{A}$. This is why some SSMs can tr
 | Retention | decayed key-value state with parallel and recurrent forms | low-cost decoding without a growing KV cache | retention horizon and normalization details matter |
 | SSM | structured state or convolution kernel | long sequence efficiency | parameterization and stability details matter |
 | Selective SSM | input-dependent state update | content-aware recurrence | harder to compare with fixed linear SSMs |
+| SSD / Mamba-2 | structured matrix mixer with recurrent and block algorithms | bridges SSM and attention views | assumptions on matrix structure must be explicit |
 
 ## Protein and Long Sequence Use
 
@@ -119,6 +144,7 @@ but a sequence model alone does not prove structure or function. For protein cla
 | [Hyena](/papers/architectures/hyena) | gated implicit long convolution as a dense-attention-free sequence mixer |
 | [RetNet](/papers/architectures/retnet) | retention mechanism with parallel, recurrent, and chunkwise recurrent forms |
 | [Mamba](/papers/architectures/mamba) | selective state-space scan with input-dependent parameters |
+| [Mamba-2](/papers/architectures/mamba-2) | structured state space duality and a faster SSD/Mamba-style core layer |
 
 ## Related
 
@@ -127,6 +153,7 @@ but a sequence model alone does not prove structure or function. For protein cla
 - [[concepts/architectures/attention|Attention]]
 - [[papers/architectures/mega|Mega]]
 - [[papers/architectures/retnet|RetNet]]
+- [[papers/architectures/mamba-2|Mamba-2]]
 - [[concepts/architectures/computational-complexity|Computational complexity]]
 - [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

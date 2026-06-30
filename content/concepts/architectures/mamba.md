@@ -61,6 +61,23 @@ $$
 
 Implementations exploit associative scan-style structure rather than treating every step as an independent matrix multiplication. The practical claim is efficient long-sequence mixing with linear or near-linear scaling in sequence length.
 
+## Structured State Space Duality
+
+[[papers/architectures/mamba-2|Mamba-2]] adds a matrix-mixer view of the family. A selective SSM recurrence can be expanded into a causal mixing matrix:
+
+$$
+y_t
+=
+\sum_{i\le t}
+C_t
+\left(
+\prod_{j=i+1}^{t}A_j
+\right)
+B_i x_i.
+$$
+
+This matters because the same sequence transformation can sometimes be viewed as recurrence, structured matrix multiplication, or attention-like mixing. For paper reading, this is the bridge between [[concepts/architectures/state-space-model|state-space models]] and [[concepts/architectures/attention|attention]].
+
 ## Causal and Bidirectional Use
 
 A left-to-right Mamba block is naturally causal:
@@ -100,5 +117,8 @@ This design choice matters because a causal sequence model and a bidirectional r
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/gating|Gating]]
+- [[concepts/architectures/attention|Attention]]
+- [[papers/architectures/mamba|Mamba]]
+- [[papers/architectures/mamba-2|Mamba-2]]
 - [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

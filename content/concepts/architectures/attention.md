@@ -237,6 +237,22 @@ $$
 
 This differs from a pure attention bias. A bias changes attention scores, while EMA adds a stateful local sequence operator.
 
+## Attention and State-Space Duality
+
+Some modern sequence papers compare attention and state-space models through the matrix they apply over sequence positions:
+
+$$
+Y = MX.
+$$
+
+In attention, $M$ is usually a content-dependent token-token matrix. In SSMs, $M$ can arise from expanding a recurrent state update across the whole prefix. [[papers/architectures/mamba-2|Mamba-2]] is the canonical note here for structured state space duality, which relates SSMs and attention-like mixers through structured semiseparable matrices.
+
+This does not mean every Transformer is literally the same as every SSM. It means the right comparison often starts with:
+
+$$
+\text{what structure does the sequence mixing matrix have?}
+$$
+
 ## Vision Attention Papers
 
 | Paper | Why It Matters |
@@ -286,5 +302,6 @@ They do not by themselves prove causal importance. Value vectors, later layers, 
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[papers/architectures/mega|Mega]]
+- [[papers/architectures/mamba-2|Mamba-2]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[agents/index|Agents]]

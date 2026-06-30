@@ -298,6 +298,31 @@ So the question is not only efficiency. It is also about memory layout:
 | quadratic dense form unless approximated | linear sequence scaling |
 | easy to inspect attention weights, though not always faithful | harder to interpret hidden state memory |
 
+## Relation to Mamba-2
+
+[[papers/architectures/mamba-2|Mamba-2]] reframes the comparison between SSMs and attention through structured state space duality. The useful shift is from "attention vs recurrence" to "what structured sequence mixing matrix is being computed?"
+
+Mamba can be expanded into a causal matrix mixer:
+
+$$
+y_t
+=
+\sum_{i\le t}
+C_t
+\left(
+\prod_{j=i+1}^{t}A_j
+\right)
+B_i x_i.
+$$
+
+Mamba-2 studies this matrix view more directly and uses it to design a faster SSD/Mamba-style layer. For reading follow-up papers, separate:
+
+| Axis | Mamba | Mamba-2 |
+| --- | --- | --- |
+| core contribution | selective SSM block | structured state space duality and SSD layer |
+| main question | can input-dependent SSMs compete with attention? | how are SSMs and attention-like mixers related? |
+| implementation angle | selective scan | faster block/chunk algorithms |
+
 ## Benchmark Reading
 
 Mamba's benchmark claims should be read in three separate layers.
@@ -379,8 +404,8 @@ This matters for architecture reading because it creates a third major branch:
 
 | Branch | Anchor |
 | --- | --- |
-| attention sequence models | [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]] |
-| decoder-only LMs | [[papers/architectures/gpt-2|GPT-2]] |
+| attention sequence models | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) |
+| decoder-only LMs | [GPT-2](/papers/architectures/gpt-2) |
 | selective state-space models | Mamba |
 
 Mamba should be read as a serious alternative sequence primitive, especially when sequence length and throughput are first-order constraints.
@@ -399,4 +424,5 @@ Mamba should be read as a serious alternative sequence primitive, especially whe
 - [[concepts/systems/scaling-claim-contract|Scaling claim contract]]
 - [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]]
 - [[papers/architectures/gpt-2|GPT-2]]
+- [[papers/architectures/mamba-2|Mamba-2]]
 - [[papers/architectures/index|Architecture papers]]
