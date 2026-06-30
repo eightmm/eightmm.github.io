@@ -268,7 +268,7 @@ The durable lesson is that activation choice can be an architectural capacity de
 | Architecture family | feed-forward activation/block |
 | Core primitive | max over learned affine pieces |
 | Main concept | [Activation function](/concepts/architectures/activation-function) |
-| Regularization partner | [Dropout](/concepts/architectures/dropout) |
+| Regularization partner | [Dropout concept](/concepts/architectures/dropout), [Dropout paper](/papers/architectures/dropout) |
 | Related local modeling | [Network In Network](/papers/architectures/network-in-network) |
 | Later common alternatives | [GELU](/papers/architectures/gelu), [GLU variants](/papers/architectures/glu-variants-improve-transformer) |
 
@@ -289,6 +289,7 @@ When reading a paper that changes the activation or local block, ask:
 - [[concepts/architectures/activation-function|Activation function]]
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/dropout|Dropout]]
+- [[papers/architectures/dropout|Dropout paper]]
 - [[papers/architectures/network-in-network|Network In Network]]
 - [[papers/architectures/gelu|GELU]]
 - [[papers/architectures/glu-variants-improve-transformer|GLU Variants Improve Transformer]]

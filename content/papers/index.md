@@ -102,6 +102,7 @@ Not every paper needs a long review.
 | [Gated Linear Attention](/papers/architectures/gated-linear-attention) | hardware-aware gated linear attention |
 | [DeltaNet](/papers/architectures/deltanet) | delta-rule linear Transformer |
 | [Griffin](/papers/architectures/griffin) | gated linear recurrence and local attention hybrid |
+| [Dropout](/papers/architectures/dropout) | stochastic activation masking and regularization |
 | [Maxout Networks](/papers/architectures/maxout-networks) | learned piecewise-linear activation block |
 | [Batch Normalization](/papers/architectures/batch-normalization) | normalization architecture block |
 | [Highway Networks](/papers/architectures/highway-networks) | gated skip paths for very deep networks |
