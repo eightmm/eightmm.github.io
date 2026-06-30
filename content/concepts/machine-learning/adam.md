@@ -40,6 +40,69 @@ $$
 
 where $\eta$ is the learning rate, $\beta_1$ controls momentum, $\beta_2$ controls the squared-gradient average, $\epsilon$ prevents division by zero, and $\odot$ is elementwise multiplication.
 
+## What Adam Is Estimating
+
+Adam stores two optimizer-state tensors for each optimized parameter:
+
+| State | Estimate | Effect |
+| --- | --- | --- |
+| $m_t$ | first moment of gradient | smooth update direction |
+| $v_t$ | second raw moment of gradient | scale update by recent gradient magnitude |
+
+The update can be read per coordinate:
+
+$$
+\Delta \theta_{t,i}
+=
+-\eta
+\frac{\hat{m}_{t,i}}{\sqrt{\hat{v}_{t,i}}+\epsilon}
+$$
+
+Coordinates with consistently large squared gradients get smaller effective steps. Coordinates with small squared gradients get larger effective steps. This is why Adam is often robust early in training, but it also means that optimizer choice, learning-rate schedule, and parameter grouping are part of the model claim.
+
+## Bias Correction
+
+At the start of training, $m_t$ and $v_t$ are biased toward zero because they are initialized at zero. Bias correction compensates for this:
+
+$$
+\mathbb{E}[m_t]
+\approx
+(1-\beta_1^t)\mathbb{E}[g_t]
+$$
+
+so dividing by $1-\beta_1^t$ makes the early estimate comparable in scale. Without bias correction, the first updates can be too small or behave differently across implementations.
+
+## Epsilon and Numerical Boundary
+
+The $\epsilon$ term is not just cosmetic:
+
+$$
+\sqrt{\hat{v}_{t,i}}+\epsilon
+$$
+
+sets a lower bound on the denominator. If $\hat{v}_{t,i}$ is tiny, $\epsilon$ controls the effective step size. Different frameworks or fused kernels may place $\epsilon$ inside or outside the square root, which can change behavior in low-precision or small-gradient regimes.
+
+## Adam vs AdamW
+
+Adam with an $L_2$ penalty and [[concepts/machine-learning/adamw|AdamW]] are not the same for adaptive updates.
+
+| Choice | Update Meaning |
+| --- | --- |
+| Adam + $L_2$ penalty | decay term is mixed into $g_t$ and rescaled by adaptive moments |
+| AdamW | decay term is applied directly to parameters |
+
+Use Adam when describing the adaptive moment mechanism. Use AdamW when the training recipe depends on decoupled weight decay.
+
+## Checkpoint Boundary
+
+A faithful resume needs:
+
+$$
+(\theta_t, m_t, v_t, t, \eta_t, \text{scheduler state})
+$$
+
+Saving only $\theta_t$ changes the next update because bias correction, scheduler phase, and moment estimates are lost. This matters for long training, interrupted HPC jobs, and paper reproduction.
+
 ## Why It Matters
 
 - Adam adapts update sizes per parameter.
@@ -54,12 +117,18 @@ where $\eta$ is the learning rate, $\beta_1$ controls momentum, $\beta_2$ contro
 - Is optimizer state saved with model checkpoints?
 - Are comparisons fair when optimizer and schedule differ?
 - Is gradient clipping applied before or after the optimizer sees $g_t$?
+- Is $\epsilon$ placement or fused optimizer behavior relevant?
+- Are bias correction, scheduler state, and step count restored on resume?
+- Are parameter groups using the same learning rate and decay settings?
 
 ## Related
 
 - [[concepts/machine-learning/optimizer|Optimizer]]
 - [[concepts/machine-learning/adamw|AdamW]]
+- [[concepts/machine-learning/weight-decay|Weight decay]]
 - [[concepts/machine-learning/stochastic-gradient|Stochastic gradient]]
 - [[concepts/machine-learning/learning-rate-schedule|Learning rate schedule]]
 - [[concepts/machine-learning/gradient-clipping|Gradient clipping]]
+- [[concepts/machine-learning/training-step-accounting|Training step accounting]]
+- [[concepts/systems/checkpoint-state|Checkpoint state]]
 - [[infra/hpc/checkpointing|Checkpointing]]
