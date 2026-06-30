@@ -77,6 +77,7 @@ Protein papers often mix sequence, structure, and function claims. Read the evid
 
 ## Curated Notes
 
+- [[papers/architectures/alphafold2|AlphaFold2]]
 - [[papers/protein-modeling/meet-equivariant-peptide|MEET]]
 - [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
 
