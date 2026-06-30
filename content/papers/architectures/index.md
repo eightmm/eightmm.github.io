@@ -38,7 +38,7 @@ This means the current shelf can contain seed notes while the most important pap
 
 | Shelf | Read For | Anchor Papers |
 | --- | --- | --- |
-| Sequence and recurrent models | recurrence, gated memory, token mixing, language-model backbone design | [Long Short-Term Memory](/papers/architectures/long-short-term-memory), [RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder), [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [BERT](/papers/architectures/bert), [T5](/papers/architectures/t5), [GPT-2](/papers/architectures/gpt-2), [Layer Normalization](/papers/architectures/layer-normalization), [Mamba](/papers/architectures/mamba) |
+| Sequence and recurrent models | recurrence, gated memory, token mixing, language-model backbone design | [Long Short-Term Memory](/papers/architectures/long-short-term-memory), [RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder), [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [BERT](/papers/architectures/bert), [T5](/papers/architectures/t5), [GPT-2](/papers/architectures/gpt-2), [LLaMA](/papers/architectures/llama), [Layer Normalization](/papers/architectures/layer-normalization), [Mamba](/papers/architectures/mamba) |
 | Vision backbones | locality, depth, width, connectivity, dense prediction, patch tokenization, hierarchy | [AlexNet](/papers/architectures/alexnet), [VGG](/papers/architectures/vgg), [Inception](/papers/architectures/inception), [ResNet](/papers/architectures/deep-residual-learning), [DenseNet](/papers/architectures/densenet), [EfficientNet](/papers/architectures/efficientnet), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer), [Swin Transformer](/papers/architectures/swin-transformer) |
 | Detection and set prediction | object queries, bipartite matching, dense prediction without NMS | [DETR](/papers/architectures/detr) |
 | Multimodal encoders | dual encoders, contrastive alignment, prompt-defined classifiers | [CLIP](/papers/architectures/clip) |
@@ -60,6 +60,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [BERT](/papers/architectures/bert) | encoder-only Transformer | bidirectional language representation backbone; full note started |
 | [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer](/papers/architectures/t5) | T5 | encoder-decoder Transformer with unified text-to-text task interface; full note started |
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer | prompt-conditioned autoregressive LM transfer; full note started |
+| [LLaMA](/papers/architectures/llama) | modern decoder-only Transformer | open foundation model recipe with RMSNorm, RoPE, SwiGLU, and public-data scaling; full note started |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | LSTM | gated recurrent memory; full note started |
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU / encoder-decoder | gated recurrent sequence transduction; full note started |
 | [Batch Normalization](/papers/architectures/batch-normalization) | BatchNorm | normalization as an architecture component; full note started |
