@@ -37,6 +37,13 @@ Architecture paper note는 attention, convolution, recurrence, graph neural netw
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 
+## Notes
+
+| Paper | Why it is here |
+| --- | --- |
+| [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]] | Transformer architecture foundation |
+| [[papers/architectures/attention-is-all-you-need-longform|Attention Is All You Need longform review]] | 20-30 minute explanatory review |
+
 ## Evaluation Risks
 
 - Architecture gain이 parameter, token, data, training step, tuning budget 증가에서 온 것일 수 있습니다.
