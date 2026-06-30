@@ -64,12 +64,12 @@ $$
 
 | If the paper mainly contributes | Route |
 | --- | --- |
-| architecture or inductive bias | [Architecture papers](/papers/architectures), then [[concepts/architectures/index|Architectures]] |
-| learning objective or supervision setup | [Learning method papers](/papers/learning-methods), then [[ai/learning-methods|Learning methods]] |
+| architecture or inductive bias | [Architecture papers](/papers/architectures), then [Architectures](/concepts/architectures) |
+| learning objective or supervision setup | [Learning method papers](/papers/learning-methods), then [Learning methods](/ai/learning-methods) |
 | molecular/protein/structure modeling | [Computational Biology papers](/papers/computational-biology) |
-| benchmark or evaluation protocol | [Paper analysis](/papers/analysis), [[ai/evaluation|Evaluation]] |
-| reproducible implementation target | [Paper reproducibility](/papers/reproducibility), then [[projects/index|Projects]] |
-| agent/tool/workflow behavior | [[agents/index|Agents]] and paper workflow notes |
+| benchmark or evaluation protocol | [Paper analysis](/papers/analysis), [Evaluation](/ai/evaluation) |
+| reproducible implementation target | [Paper reproducibility](/papers/reproducibility), then [Projects](/projects) |
+| agent/tool/workflow behavior | [Agents](/agents) and paper workflow notes |
 
 ## Reading Depth
 
@@ -110,6 +110,7 @@ Not every paper needs a long review.
 | [Perceiver IO](/papers/architectures/perceiver-io) | structured input/output attention architecture |
 | [Neural Ordinary Differential Equations](/papers/architectures/neural-ode) | continuous-depth architecture |
 | [Mamba](/papers/architectures/mamba) | selective state-space sequence model |
+| [Jamba](/papers/architectures/jamba) | hybrid Transformer-Mamba-MoE language model |
 | [Switch Transformer](/papers/architectures/switch-transformer) | sparse mixture-of-experts architecture |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation |
 | [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | antibody-antigen binding |

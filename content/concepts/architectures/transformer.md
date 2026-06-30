@@ -151,6 +151,21 @@ This does not make recurrence automatically better. It changes the bottleneck: a
 | recurrent language model | fixed recurrent state | compressed-state bottleneck |
 | retention model | decayed key-value state | retention horizon and normalization details |
 | SSM/selective SSM | scan state or structured cache | state design and retrieval behavior |
+| hybrid Transformer-SSM | fewer attention layers need KV cache | allocation and implementation details matter |
+
+Hybrid models such as [[papers/architectures/jamba|Jamba]] keep some attention layers for explicit token-token retrieval while using Mamba-style layers to reduce long-context cache pressure:
+
+$$
+L_{\mathrm{attn}}
+<
+L_{\mathrm{total}}
+\quad\Rightarrow\quad
+M_{\mathrm{KV}}
+=
+O(L_{\mathrm{attn}}Td).
+$$
+
+This is not a free replacement for attention. It is an architecture allocation choice.
 
 ## Key Ideas
 
@@ -180,6 +195,7 @@ This does not make recurrence automatically better. It changes the bottleneck: a
 - [[concepts/architectures/mixture-of-experts|Mixture of Experts]]
 - [[concepts/architectures/state-space-model|State-space model]]
 - [[papers/architectures/retnet|RetNet]]
+- [[papers/architectures/jamba|Jamba]]
 - [[entities/protein|Protein]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[agents/workflows/coding-agents|Coding agents]]

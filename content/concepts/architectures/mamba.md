@@ -99,6 +99,7 @@ This design choice matters because a causal sequence model and a bidirectional r
 - Mamba belongs to the [[concepts/architectures/state-space-model|state-space model]] family but makes the state update input-dependent.
 - Selective updates let the model decide what to keep, forget, or emphasize as it scans a sequence.
 - The architecture is often studied as an efficient alternative or complement to [[concepts/architectures/transformer|Transformers]] for long contexts.
+- Hybrid backbones such as [[papers/architectures/jamba|Jamba]] use Mamba layers alongside attention and MoE rather than treating Mamba as an all-or-nothing Transformer replacement.
 - It is especially relevant when sequences are long and full attention cost is a practical bottleneck.
 - In protein modeling notes, treat Mamba-style modules as sequence mixers unless the paper adds explicit structure or geometry.
 
@@ -120,5 +121,6 @@ This design choice matters because a causal sequence model and a bidirectional r
 - [[concepts/architectures/attention|Attention]]
 - [[papers/architectures/mamba|Mamba]]
 - [[papers/architectures/mamba-2|Mamba-2]]
+- [[papers/architectures/jamba|Jamba]]
 - [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

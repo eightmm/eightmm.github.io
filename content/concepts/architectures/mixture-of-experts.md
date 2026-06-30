@@ -109,6 +109,7 @@ where $N$ is tokens, $k$ is top-k routing, $M$ is number of experts, and $c$ is 
 | [GShard](/papers/architectures/gshard) | connects MoE Transformer architecture to automatic sharding and large-scale distributed training |
 | [Switch Transformer](/papers/architectures/switch-transformer) | simplifies sparse Transformer MoE with top-1 routing |
 | [GLaM](/papers/architectures/glam) | applies sparse expert routing to large autoregressive language-model scaling |
+| [Jamba](/papers/architectures/jamba) | combines sparse MoE feed-forward layers with a hybrid Transformer-Mamba language-model backbone |
 
 ## Where MoE Fits
 
