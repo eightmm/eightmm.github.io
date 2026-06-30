@@ -31,6 +31,37 @@ Paper discovery agent는 candidate paper를 모을 수 있지만, public wiki는
 11. Public promotion은 [[inbox/publishing-gate|Publishing gate]]를 통과합니다.
 12. Weekly/monthly synthesis는 [[posts/index|Posts]]가 됩니다.
 
+## Brief Schema
+
+Daily candidate가 바로 paper note가 되면 품질이 무너집니다. 최소 schema는 아래 정도가 필요합니다.
+
+| Field | Meaning |
+| --- | --- |
+| source | arXiv, journal, conference, repository, manual find |
+| metadata | title, authors, date, identifier, link |
+| axis | architecture, training, evaluation, comp-bio, infra, agents |
+| candidate claim | paper가 주장하는 핵심 기여 |
+| evidence pointer | abstract, figure, table, experiment section, artifact |
+| route | ignore, inbox, paper stub, concept update, project idea |
+| risk | hype, weak eval, leakage, missing artifact, off-scope |
+| next action | read, verify, compare, implement, summarize |
+
+Missing field는 채워 넣지 말고 `to verify`로 남깁니다.
+
+## Promotion Gate
+
+Paper candidate가 public wiki로 올라가려면 아래 gate 중 하나를 통과해야 합니다.
+
+| Gate | Promote to |
+| --- | --- |
+| reusable idea exists | [[concepts/index|Concepts]] update |
+| domain claim is relevant | [[papers/index|Papers]] note |
+| implementation is plausible | [[projects/index|Projects]] idea or task |
+| broad lesson is readable | [[posts/index|Posts]] synthesis |
+| evidence is too weak | keep in [[inbox/index|Inbox]] |
+
+이 gate는 paper 수를 늘리는 장치가 아니라, public wiki의 signal-to-noise를 유지하는 장치입니다.
+
 ## 규칙
 
 - DOI, arXiv ID, metric, dataset, claim을 지어내지 않습니다.
@@ -39,6 +70,9 @@ Paper discovery agent는 candidate paper를 모을 수 있지만, public wiki는
 - code, data, split, config, weight, log, prediction, environment artifact가 없으면 있다고 가정하지 말고 `to verify`로 표시합니다.
 - paper log를 쌓기보다 concept growth를 우선합니다.
 - raw 또는 uncertain entry는 polished post에 넣지 않습니다.
+- benchmark 수치보다 split, metric, baseline, artifact availability를 먼저 확인합니다.
+- paper-specific result를 reusable concept page에 일반 사실처럼 쓰지 않습니다.
+- agent가 만든 요약은 source를 대조하기 전까지 `draft`로 취급합니다.
 
 ## Related
 

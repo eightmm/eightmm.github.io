@@ -28,6 +28,40 @@ Orchestration은 agent 수를 늘리는 기술이 아니라, artifact flow와 re
 - Debate or council: independent agent들이 synthesis 전에 의견을 냅니다.
 - Human gate: human이 high-risk transition을 승인합니다.
 
+## Artifact Flow
+
+Orchestration의 핵심은 agent 수가 아니라 artifact contract입니다.
+
+$$
+a_{t+1} = F_i(a_t, c_i, e_i)
+$$
+
+여기서 $a_t$는 artifact, $c_i$는 step context, $e_i$는 evidence 또는 tool result입니다.
+
+| Artifact | Producer | Consumer | Check |
+| --- | --- | --- | --- |
+| candidate list | discovery agent | curator | source and scope |
+| draft note | writer agent | editor | links and uncertainty |
+| diff or patch | coding agent | reviewer | scope and tests |
+| review finding | reviewer | owner | reproducibility |
+| verification log | verifier | publisher | commands and outputs |
+
+If the artifact cannot be inspected, orchestration becomes conversation, not workflow.
+
+## Control Plane
+
+The controller should decide:
+
+| Decision | Why |
+| --- | --- |
+| task split | prevents agents from duplicating work |
+| context budget | limits irrelevant history and prompt contamination |
+| write permission | prevents uncontrolled repository edits |
+| acceptance criteria | tells reviewers what evidence matters |
+| conflict resolution | avoids merging incompatible outputs |
+
+For public wiki work, the owner should prefer small deterministic handoffs: one note, one route, one verifier.
+
 ## When to Use
 
 | 상황 | orchestration이 유용한 이유 |
@@ -52,6 +86,8 @@ Orchestration은 agent 수를 늘리는 기술이 아니라, artifact flow와 re
 - 다른 agent의 confidence를 믿지 않고 각 step을 verify할 수 있는가?
 - orchestration이 single well-scoped agent loop보다 실제 value를 더하는가?
 - delegated output을 current repository나 source state에 다시 맞춰 확인하는가?
+- artifact가 inspect 가능한 파일, diff, table, command output 중 하나인가?
+- human gate가 필요한 공개/보안/연구 claim 전환이 있는가?
 
 ## Related
 
