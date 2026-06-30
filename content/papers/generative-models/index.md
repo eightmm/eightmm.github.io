@@ -95,6 +95,7 @@ $$
 - [[papers/architectures/real-nvp|Real NVP]]
 - [[papers/architectures/ddpm|Denoising Diffusion Probabilistic Models]]
 - [[papers/architectures/latent-diffusion-models|Latent Diffusion Models]]
+- [[papers/architectures/wavenet|WaveNet]]
 - [[papers/generative-models/molexar|Molexar]]
 
 ## Related
