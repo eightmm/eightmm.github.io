@@ -62,7 +62,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Batch Normalization](/papers/architectures/batch-normalization) | BatchNorm | normalization as an architecture component |
 | [Deep Residual Learning](/papers/architectures/deep-residual-learning) | ResNet | residual learning and deep CNN optimization; full note started |
 | [U-Net](/papers/architectures/u-net) | U-Net | encoder-decoder CNN with localization skip paths |
-| [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer | image patches as Transformer tokens |
+| [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer | image patches as Transformer tokens; full note started |
 | [Swin Transformer](/papers/architectures/swin-transformer) | Swin Transformer | shifted-window hierarchical vision Transformer |
 | [Layer Normalization](/papers/architectures/layer-normalization) | LayerNorm | batch-independent normalization for sequence models |
 | [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | GCN | graph message passing for node classification |
