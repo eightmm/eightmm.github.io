@@ -38,6 +38,13 @@ where $\mathcal{A}$ is an [[concepts/learning/augmentation-policy|augmentation p
 | Autoregressive prediction | future or next token/state | teacher-forcing mismatch and context leakage |
 | Reconstruction or denoising | clean input from corrupted input | reconstructing nuisance detail instead of useful abstraction |
 
+Canonical paper examples:
+
+| Route | Paper |
+| --- | --- |
+| teacher-student self-distillation | [DINO](/papers/architectures/emerging-properties-in-self-supervised-vision-transformers) |
+| masked image reconstruction | [MAE](/papers/architectures/masked-autoencoders-are-scalable-vision-learners) |
+
 ## Pretraining Data Boundary
 
 SSL is often limited by data construction rather than architecture. Record:
@@ -99,6 +106,7 @@ Different evaluation protocols answer different questions:
 - [[concepts/learning/masked-modeling|Masked modeling]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
 - [[concepts/learning/jepa|JEPA]]
+- [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/augmentation-policy|Augmentation policy]]
 - [[concepts/learning/representation-collapse|Representation collapse]]
 - [[concepts/learning/representation-evaluation|Representation evaluation]]
