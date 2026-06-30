@@ -108,6 +108,42 @@ The dangerous step is fitting or choosing preprocessing on all data before split
 | missing or filtered examples | denominator and deployment readiness |
 | unreconstructable version | reproducibility |
 
+## Boundary With Other Sections
+
+| If the note is about | Put it in |
+| --- | --- |
+| example unit, label, schema, split, preprocessing, provenance | this section |
+| metric, baseline, uncertainty, threshold, evaluation protocol | [[concepts/evaluation/index|Evaluation]] |
+| checkpoint, artifact, environment, serving, run reproducibility | [[concepts/systems/index|AI systems]] |
+| molecule, protein, assay, pocket, structure-specific data rules | [[molecular-modeling/index|Computational Biology]] |
+| architecture, objective, optimizer, representation learning | [[concepts/machine-learning/index|Machine Learning]] |
+| paper-specific dataset claim or benchmark table | [[papers/index|Papers]] |
+
+Data notes answer “what examples and labels exist?” Evaluation notes answer “what claim does a score support?” Systems notes answer “can the artifact and run be reconstructed?”
+
+## Public Data Note Template
+
+| Field | Write |
+| --- | --- |
+| Source | public source, collection rule, version or date |
+| Example unit | row, molecule, protein, document, complex, query, task trace |
+| Identity key | deduplication key, grouping key, near-duplicate policy |
+| Label | endpoint, unit, direction, threshold, censoring, annotation source |
+| Metadata | source, time, protocol, target, species, assay, structure context |
+| Split | split unit, train/validation/test rule, leakage controls |
+| Preprocessing | fit-on-train-only parameters, deterministic transforms, filters |
+| Denominator | raw records, excluded records, valid records, evaluated records |
+| Public boundary | private IDs, paths, collaborators, unpublished labels removed |
+
+For generated or filtered data, preserve the denominator:
+
+$$
+\text{reported rate}
+=
+\frac{\#\text{kept or valid examples}}
+{\#\text{attempted or raw examples}}
+$$
+
 ## 주제 묶음
 
 | 그룹 | 노트 |
