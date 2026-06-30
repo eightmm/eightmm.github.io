@@ -99,6 +99,7 @@ Not every paper needs a long review.
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU and encoder-decoder architecture |
 | [Gated Linear Attention](/papers/architectures/gated-linear-attention) | hardware-aware gated linear attention |
 | [DeltaNet](/papers/architectures/deltanet) | delta-rule linear Transformer |
+| [Griffin](/papers/architectures/griffin) | gated linear recurrence and local attention hybrid |
 | [Batch Normalization](/papers/architectures/batch-normalization) | normalization architecture block |
 | [Deep Residual Learning](/papers/architectures/deep-residual-learning) | residual CNN architecture |
 | [U-Net](/papers/architectures/u-net) | dense prediction architecture |

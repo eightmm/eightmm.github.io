@@ -159,6 +159,16 @@ The mask $M$ changes the allowed information flow:
 
 Masking is part of the task contract. A model with future-token access is not solving the same autoregressive task as a causal model.
 
+Local attention can also be used as one part of a hybrid recurrent backbone. [[papers/architectures/griffin|Griffin]] mixes gated linear recurrence with local attention:
+
+$$
+\text{local attention}
+\quad+\quad
+\text{fixed-size recurrent state}.
+$$
+
+This gives nearby tokens explicit softmax interaction while recurrent state carries compressed context.
+
 ## Compute and Memory
 
 Dense attention forms a $T_q\times T_k$ score matrix. For self-attention with $T_q=T_k=T$:
@@ -341,6 +351,7 @@ They do not by themselves prove causal importance. Value vectors, later layers, 
 - [[papers/architectures/performer|Performer]]
 - [[papers/architectures/gated-linear-attention|Gated Linear Attention]]
 - [[papers/architectures/deltanet|DeltaNet]]
+- [[papers/architectures/griffin|Griffin]]
 - [[papers/architectures/mega|Mega]]
 - [[papers/architectures/mamba-2|Mamba-2]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
