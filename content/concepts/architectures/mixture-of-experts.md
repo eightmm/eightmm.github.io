@@ -101,6 +101,13 @@ where $N$ is tokens, $k$ is top-k routing, $M$ is number of experts, and $c$ is 
 | scalable training | expert parallelism, all-to-all overhead, load balance |
 | efficient serving | latency at realistic batch size, cache behavior, and routing overhead |
 
+## Canonical Papers
+
+| Paper | Why It Matters |
+| --- | --- |
+| [Sparsely-Gated MoE](/papers/architectures/sparsely-gated-moe) | defines sparse expert routing, noisy top-$k$ gates, and load-balancing as part of the layer contract |
+| [Switch Transformer](/papers/architectures/switch-transformer) | simplifies sparse Transformer MoE with top-1 routing |
+
 ## Where MoE Fits
 
 MoE is not a replacement for choosing a base architecture. It is usually a routing layer inserted into a Transformer, MLP block, multimodal system, or task-specific model.
