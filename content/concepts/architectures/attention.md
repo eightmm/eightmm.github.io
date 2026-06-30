@@ -148,8 +148,8 @@ The mask $M$ changes the allowed information flow:
 | none | every query attends to every key | bidirectional encoder |
 | causal | only current and previous positions | autoregressive decoder |
 | padding | ignores padded keys | variable-length batches |
-| local/window | attends only nearby positions | long sequence efficiency |
-| block/sparse | attends selected blocks or patterns | scalable long context |
+| local/window | attends only nearby positions | long sequence efficiency; see [[papers/architectures/longformer|Longformer]] |
+| block/sparse | attends selected blocks or patterns | scalable long context; see [[papers/architectures/longformer|Longformer]] |
 | graph/structure | attends only permitted neighbors or relations | graph and structure models |
 
 Masking is part of the task contract. A model with future-token access is not solving the same autoregressive task as a causal model.
@@ -169,6 +169,14 @@ O(BHT^2d_k)
 $$
 
 This is why long-context models use sparse attention, chunking, recurrence, state-space models, retrieval, or KV caching.
+
+Sparse attention changes which entries of the $T\times T$ attention graph are computed. For a window size $w$, a local attention pattern has the rough cost:
+
+$$
+O(BHTwd_k),
+$$
+
+which is linear in $T$ if $w$ is fixed. [[papers/architectures/longformer|Longformer]] is the canonical local-plus-global sparse attention paper note here.
 
 ## Attention Is Not Explanation
 
