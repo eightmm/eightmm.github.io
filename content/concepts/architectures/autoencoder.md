@@ -58,7 +58,7 @@ where $\mathcal{M}$ can be all positions or only masked or corrupted positions.
 | bottleneck autoencoder | reconstruct through low-dimensional $z$ | compression, representation learning |
 | denoising autoencoder | reconstruct $x$ from corrupted $\tilde{x}$ | robust features, score-like intuition |
 | sparse autoencoder | add sparsity penalty on $z$ | interpretable or disentangled features |
-| masked autoencoder | reconstruct hidden tokens or patches | self-supervised pretraining |
+| masked autoencoder | reconstruct hidden tokens or patches | self-supervised pretraining; see [MAE](/papers/architectures/masked-autoencoders-are-scalable-vision-learners) |
 | variational autoencoder | reconstruction plus latent regularization | probabilistic latent generation |
 
 For a denoising autoencoder:
@@ -100,3 +100,4 @@ Good reconstruction does not automatically imply a useful representation. A mode
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
 - [[concepts/architectures/mlp|MLP]]
 - [[concepts/architectures/u-net|U-Net]]
+- [[papers/architectures/masked-autoencoders-are-scalable-vision-learners|MAE]]

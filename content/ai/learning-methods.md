@@ -102,6 +102,7 @@ $$
 - representation 평가는 frozen probe, fine-tuning, retrieval 중 무엇으로 했는가?
 - objective가 downstream evaluation과 같은 정보를 요구하는가?
 - positive, negative, mask, context, target view가 downstream 의미를 보존하는가?
+- masked reconstruction이라면 encoder가 mask token까지 보는지, visible subset만 보는지 확인했는가? 예: [[papers/architectures/masked-autoencoders-are-scalable-vision-learners|MAE]]
 - pretraining corpus와 downstream test set 사이에 duplicate, scaffold, family, source leakage가 없는가?
 - evaluation budget이 linear probe, kNN, full fine-tuning, low-data fine-tuning 중 무엇인가?
 - reward나 preference signal이 실제 목표와 proxy mismatch를 일으키지 않는가?

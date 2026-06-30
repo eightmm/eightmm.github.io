@@ -307,6 +307,7 @@ The most important ablation lesson is that architecture and data scale interact.
 | [[papers/architectures/alexnet|AlexNet]] | makes deep CNNs practical at ImageNet scale |
 | [[papers/architectures/deep-residual-learning|ResNet]] | makes very deep CNNs trainable |
 | ViT | replaces convolutional backbone with patch-token Transformer |
+| [[papers/architectures/masked-autoencoders-are-scalable-vision-learners|MAE]] | pre-trains a ViT encoder through masked patch reconstruction |
 | [[papers/architectures/swin-transformer|Swin Transformer]] | reintroduces hierarchy and local windows into vision Transformers |
 
 ViT is the cleanest baseline for asking whether an image can be treated as a token sequence.
@@ -360,10 +361,13 @@ This pattern matters beyond images. It is the same abstraction used when turning
 - [[concepts/architectures/inductive-bias|Inductive bias]]
 - [[concepts/architectures/computational-complexity|Computational complexity]]
 - [[concepts/learning/augmentation-policy|Augmentation policy]]
+- [[concepts/learning/masked-modeling|Masked modeling]]
+- [[concepts/learning/self-supervised-learning|Self-supervised learning]]
 - [[concepts/data/benchmark|Benchmark]]
 - [[concepts/evaluation/benchmark-claim-contract|Benchmark claim contract]]
 - [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]]
 - [[papers/architectures/alexnet|AlexNet]]
 - [[papers/architectures/deep-residual-learning|Deep Residual Learning]]
+- [[papers/architectures/masked-autoencoders-are-scalable-vision-learners|MAE]]
 - [[papers/architectures/swin-transformer|Swin Transformer]]
 - [[papers/architectures/index|Architecture papers]]
