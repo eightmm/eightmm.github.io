@@ -55,7 +55,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | dense skip connectivity and feature reuse |
 | [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | compound scaling for CNN families |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone |
-| [BERT](/papers/architectures/bert) | encoder-only Transformer | bidirectional language representation backbone |
+| [BERT](/papers/architectures/bert) | encoder-only Transformer | bidirectional language representation backbone; full note started |
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer | prompt-conditioned autoregressive LM transfer |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | LSTM | gated recurrent memory |
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU / encoder-decoder | gated recurrent sequence transduction |
