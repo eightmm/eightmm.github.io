@@ -18,6 +18,35 @@ $$
 
 선택이 달라지면 deduplication key, split assignment, feature, pose, label이 달라질 수 있습니다.
 
+## Molecular ML Contract
+
+Molecular modeling note는 molecule 자체와 measurement context를 분리해서 적어야 합니다.
+
+$$
+\mathcal{M}_{\mathrm{mol}}
+=
+(r,\ I,\ S,\ Y,\ \Delta,\ \phi,\ m,\ A)
+$$
+
+| Part | Meaning | Typical question |
+| --- | --- | --- |
+| $r$ | raw record | SMILES, SDF, assay row, supplier record, database entry? |
+| $I$ | molecular identity | salt, tautomer, stereo, charge, protonation, canonical key? |
+| $S$ | chemical or 3D state | conformer, pH/protonation, force-field/minimization policy? |
+| $Y$ | label context | target, assay, endpoint, unit, censoring, replicate policy? |
+| $\Delta$ | split unit | scaffold, cluster, target, assay, time, complex pair? |
+| $\phi$ | featurizer | fingerprint, graph, descriptor, conformer, pocket-ligand graph? |
+| $m$ | metric | RMSE, Spearman, PR-AUC, enrichment, calibration, AD slice? |
+| $A$ | applicability domain | nearest-neighbor distance, scaffold novelty, out-of-domain flag? |
+
+This prevents a common mistake:
+
+$$
+\text{same raw SMILES}
+\not\Rightarrow
+\text{same modeled molecule, label, split, or feature}
+$$
+
 ## Workflow
 
 공개 ML note에서는 아래 순서를 우선합니다.
@@ -40,6 +69,21 @@ $$
 
 Molecular identity policy가 명확해지기 전에는 label을 split하거나 aggregate하지 않습니다.
 
+## Label and Source Boundary
+
+Public molecular ML claims must say what was measured, not only what molecule appeared in the table.
+
+| Boundary | Ask | Route |
+| --- | --- | --- |
+| endpoint | IC50, Ki, Kd, activity class, property, toxicity, solubility? | [[concepts/data/label-semantics|Label semantics]] |
+| unit and transform | nM, uM, pIC50, logS, fraction, threshold? | [[entities/target-assay-label|Target-assay-label]] |
+| censoring | exact, `<`, `>`, below detection, inactive threshold? | [[concepts/data/censored-label|Censored label]] |
+| source | assay, target, organism, construct, lab, database? | [[concepts/data/metadata-provenance|Metadata provenance]] |
+| replicate policy | mean, median, keep by assay, drop conflicts? | [[concepts/data/annotation-labeling|Annotation and labeling]] |
+| negative set | measured inactive, decoy, random, assumed inactive? | [[concepts/evaluation/negative-set|Negative set]] |
+
+Unmeasured molecule-target pairs are not automatically negative examples. If a dataset uses decoys or assumed negatives, the note should say so and report what that implies for the metric.
+
 ## 이동 지도
 
 | 질문 | 시작점 | 위험 |
@@ -52,6 +96,30 @@ Molecular identity policy가 명확해지기 전에는 label을 split하거나 a
 | Is generation constrained? | [Fragment-SELFIES](/concepts/molecular-modeling/fragment-selfies) | valid strings without useful molecules |
 | Is 3D state involved? | [Conformer](/concepts/molecular-modeling/conformer), [Force field](/concepts/molecular-modeling/force-field), [Energy minimization](/concepts/molecular-modeling/energy-minimization), [Molecular dynamics](/concepts/molecular-modeling/molecular-dynamics) | conformer source and postprocessing dependence |
 | Which chemical variants matter? | [Tautomer](/concepts/molecular-modeling/tautomer), [Protonation state](/concepts/molecular-modeling/protonation-state), [Stereochemistry](/concepts/molecular-modeling/stereochemistry) | train/test leakage through equivalent or near-equivalent raw rows |
+
+## Split and Leakage Controls
+
+| Control | Why |
+| --- | --- |
+| standardize before dedup and split | raw salts, tautomers, and charge variants can leak across splits |
+| scaffold or fingerprint-cluster split | random split memorizes congeneric series |
+| target or assay split | pooled public assays can leak campaign-specific shortcuts |
+| complex-pair split | protein-ligand models can memorize seen pairs |
+| train-only preprocessing fit | scalers, imputers, thresholds, feature selection can leak test statistics |
+| activity-cliff slice | near-identical molecules with large label gaps dominate hard cases |
+| property-only decoy audit | high virtual-screening AUC can come from trivial physchem bias |
+| applicability domain stratification | confident predictions off the training manifold are not equally trustworthy |
+
+## Claim Controls
+
+| Claim | Needs | Common trap |
+| --- | --- | --- |
+| property prediction | label semantics, split, baseline, uncertainty | reporting scaled-space error only |
+| classification | active threshold, class imbalance metric, negative source | ROC-AUC hiding poor early retrieval |
+| virtual screening | candidate pool, measured/decoy negative policy, early enrichment | decoy bias mistaken for binding signal |
+| similarity search | representation, threshold, activity-cliff behavior | similarity treated as biological truth |
+| molecule generation | validity, novelty, diversity, property filter denominator | reporting only kept molecules |
+| 3D conformer or pose use | coordinate source, conformer protocol, minimization policy | postprocessing hides invalid raw output |
 
 ## Geometry와 Physics Protocol
 
