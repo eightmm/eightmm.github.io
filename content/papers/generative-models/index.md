@@ -94,6 +94,7 @@ $$
 - [[papers/architectures/generative-adversarial-nets|Generative Adversarial Nets]]
 - [[papers/architectures/real-nvp|Real NVP]]
 - [[papers/architectures/ddpm|Denoising Diffusion Probabilistic Models]]
+- [[papers/architectures/latent-diffusion-models|Latent Diffusion Models]]
 - [[papers/generative-models/molexar|Molexar]]
 
 ## Related
