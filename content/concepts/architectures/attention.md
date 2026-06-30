@@ -94,6 +94,39 @@ $$
 = \operatorname{Concat}(\operatorname{head}_1,\ldots,\operatorname{head}_H)W_O
 $$
 
+## Key-Value Head Sharing
+
+Modern decoder-only models often keep many query heads but use fewer key/value heads to reduce KV-cache cost during autoregressive decoding. The canonical paper note here is [[papers/architectures/gqa|GQA]].
+
+Let $H_q$ be query heads and $H_{kv}$ be key/value heads:
+
+| Variant | Head Contract | Main Effect |
+| --- | --- | --- |
+| MHA | $H_{kv}=H_q$ | each query head has its own key/value head |
+| MQA | $H_{kv}=1$ | all query heads share one key/value head |
+| GQA | $1 < H_{kv} < H_q$ | groups of query heads share key/value heads |
+
+The attention formula is still dot-product attention, but the tensor shape changes:
+
+$$
+\operatorname{head}_h
+=
+\operatorname{Attention}
+\left(
+Q_h,\,
+K_{g(h)},\,
+V_{g(h)}
+\right).
+$$
+
+This is an architecture decision because it changes the KV cache:
+
+$$
+\text{KV cache size}
+\propto
+L\cdot T\cdot H_{kv}\cdot d_h.
+$$
+
 ## Mask Semantics
 
 The mask $M$ changes the allowed information flow:

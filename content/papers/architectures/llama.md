@@ -592,7 +592,7 @@ When reading later LLaMA-family or open LLM papers, check:
 - Is the model still dense decoder-only, or does it use MoE?
 - Does it keep RMSNorm, RoPE, and gated FFN?
 - Does it change context length?
-- Does it use grouped-query or multi-query attention?
+- Does it use [[papers/architectures/gqa|grouped-query or multi-query attention]]?
 - What data mixture changed?
 - How much of the gain comes from tokenizer changes?
 - Are results for base models, instruction-tuned models, or RLHF/DPO models?

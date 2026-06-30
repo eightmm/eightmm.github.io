@@ -323,7 +323,7 @@ The paper supports the Transformer block as a package: attention, FFN, residuals
 | Kept | Changed Later |
 | --- | --- |
 | scaled dot-product attention | sparse, local, linear, grouped-query, and flash attention variants |
-| multi-head projection pattern | multi-query and grouped-query attention for inference efficiency |
+| multi-head projection pattern | [[papers/architectures/gqa|multi-query and grouped-query attention]] for inference efficiency |
 | residual block structure | pre-norm and other normalization placement choices |
 | feed-forward sublayer | GELU, SwiGLU, gated FFNs, mixture-of-experts FFNs |
 | positional signal | relative position, rotary embeddings, ALiBi, learned position schemes |
