@@ -65,6 +65,7 @@ The output type changes what the GNN claim means:
 - Message passing repeatedly updates node or edge states from local neighborhoods.
 - Readout functions pool graph information for graph-level tasks such as property prediction.
 - [[concepts/architectures/graph-construction|Graph construction]] is a modeling choice: chemical bonds, k-nearest neighbors, radius graphs, contact maps, or learned edges change the problem.
+- [[concepts/architectures/wl-test|Weisfeiler-Lehman Test]] gives a reference point for the expressive power of standard message-passing GNNs.
 - Geometry-aware variants connect message passing to [[concepts/geometric-deep-learning/equivariance|equivariance]] and coordinate updates.
 
 ## Common Failure Modes
@@ -100,6 +101,7 @@ The output type changes what the GNN claim means:
 ## Related
 
 - [[concepts/architectures/graph-construction|Graph construction]]
+- [[concepts/architectures/wl-test|Weisfeiler-Lehman Test]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]]
 - [[concepts/architectures/pooling-readout|Pooling and readout]]
@@ -107,5 +109,6 @@ The output type changes what the GNN claim means:
 - [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
 - [[concepts/evaluation/scaffold-split|Scaffold split]]
 - [[concepts/evaluation/protein-family-split|Protein family split]]
+- [[papers/architectures/graph-isomorphism-network|How Powerful are Graph Neural Networks?]]
 - [[entities/ligand|Ligand]]
 - [[entities/protein-ligand-complex|Protein-ligand complex]]

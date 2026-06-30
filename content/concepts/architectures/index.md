@@ -85,7 +85,7 @@ Architecture family는 어떤 axis를 섞는지로 읽으면 정리가 쉽습니
 | Grid / image / voxel | local spatial structure, image/video, contact maps, spatial grids | [Convolution](/concepts/architectures/convolution), [CNN](/concepts/architectures/cnn), [Residual network](/concepts/architectures/residual-network), [U-Net](/concepts/architectures/u-net), [Vision Transformer](/concepts/architectures/vision-transformer) |
 | Sequence | text, residues, time series, ordered tokens | [RNN](/concepts/architectures/rnn), [LSTM](/concepts/architectures/lstm), [GRU](/concepts/architectures/gru), [Transformer](/concepts/architectures/transformer), [State-space models](/concepts/architectures/state-space-model), [Mamba](/concepts/architectures/mamba) |
 | Attention / encoder-decoder | long-range mixing, conditioning, multimodal fusion | [Attention](/concepts/architectures/attention), [Cross-attention](/concepts/architectures/cross-attention), [Encoder-decoder](/concepts/architectures/encoder-decoder), [Perceiver](/concepts/architectures/perceiver) |
-| Set / graph | unordered sets, molecular graphs, residue graphs, relational objects | [Deep Sets](/concepts/architectures/deep-sets), [Set Transformer](/concepts/architectures/set-transformer), [Graph construction](/concepts/architectures/graph-construction), [GNN](/concepts/architectures/gnn), [Graph Transformer](/concepts/architectures/graph-transformer) |
+| Set / graph | unordered sets, molecular graphs, residue graphs, relational objects | [Deep Sets](/concepts/architectures/deep-sets), [Set Transformer](/concepts/architectures/set-transformer), [Graph construction](/concepts/architectures/graph-construction), [GNN](/concepts/architectures/gnn), [Weisfeiler-Lehman Test](/concepts/architectures/wl-test), [Graph Transformer](/concepts/architectures/graph-transformer) |
 | Geometry-aware | coordinates, forces, poses, protein and molecule structures | [Geometric deep learning](/concepts/geometric-deep-learning), [Equivariant GNN](/concepts/geometric-deep-learning/equivariant-gnn), [Tensor Field Network](/concepts/geometric-deep-learning/tensor-field-network) |
 | Sparse / routed | conditional compute, expert routing, scaling under budget | [Mixture of Experts](/concepts/architectures/mixture-of-experts) |
 
@@ -132,6 +132,7 @@ $$
 - [[concepts/modalities/index|Modalities]]
 - [[concepts/tasks/index|Tasks]]
 - [[concepts/architectures/architecture-objective-fit|Architecture-objective fit]]
+- [[concepts/architectures/wl-test|Weisfeiler-Lehman Test]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
 - [[concepts/learning/index|Learning methods]]
 - [[concepts/generative-models/index|Generative models]]
