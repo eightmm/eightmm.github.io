@@ -28,6 +28,19 @@ f_{\hat{\theta}}(x_j),
 x_j \sim p_{\mathrm{request}}(x)
 $$
 
+## Mode Contract
+
+| Field | Batch inference | Online inference |
+| --- | --- | --- |
+| unit | dataset row, file, molecule, document, shard | request |
+| objective | throughput, reproducibility, cost | latency, availability, UX |
+| failure handling | retry item or shard | timeout, fallback, clear error |
+| ordering | often reorderable | request order may matter |
+| logging | artifact manifest and run id | request log with privacy boundary |
+| versioning | model + data + output version | model + endpoint + client contract |
+
+The same model can be correct in batch mode and unsuitable online if preprocessing, latency, memory, or error handling differs.
+
 ## Batch Inference
 
 Batch mode is optimized for throughput, cost, and reproducibility. It is common for dataset scoring, embedding generation, virtual screening, offline evaluation, and paper-processing pipelines.
@@ -71,6 +84,45 @@ t_{\mathrm{arrival},j}
 $$
 
 Optimizing one can hurt the other.
+
+## Dynamic Batching
+
+Online systems often batch requests briefly to improve GPU utilization:
+
+$$
+B_t
+=
+\{x_j: t_j \in [t, t+\Delta]\}
+$$
+
+This improves throughput when model execution benefits from batching, but increases waiting time by up to the batching window $\Delta$.
+
+| Choice | Effect |
+| --- | --- |
+| larger batch | better hardware utilization, higher latency |
+| shorter timeout | better latency, more partial batches |
+| queue priority | protects interactive users or small requests |
+| max sequence length | controls memory and tail latency |
+
+## Reproducibility Boundary
+
+Batch inference can usually produce a manifest:
+
+$$
+\text{output}
+=
+(\text{input version},\ \text{model version},\ \text{config},\ \text{shard},\ \text{timestamp})
+$$
+
+Online inference is harder to reproduce because requests arrive from a live distribution and logs may be redacted. Public notes should distinguish `same model` from `same operational behavior`.
+
+## Checks
+
+- Can failed batch items be retried without duplicating successful outputs?
+- Is online timeout behavior documented?
+- Does batching change numerical results or output ordering?
+- Are batch outputs tied to input/model/preprocessing versions?
+- Are request logs privacy-safe and sufficient for debugging?
 
 ## Related
 
