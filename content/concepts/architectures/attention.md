@@ -148,8 +148,8 @@ The mask $M$ changes the allowed information flow:
 | none | every query attends to every key | bidirectional encoder |
 | causal | only current and previous positions | autoregressive decoder |
 | padding | ignores padded keys | variable-length batches |
-| local/window | attends only nearby positions | long sequence efficiency; see [[papers/architectures/longformer|Longformer]] |
-| block/sparse | attends selected blocks or patterns | scalable long context; see [[papers/architectures/longformer|Longformer]] |
+| local/window | attends only nearby positions | long sequence efficiency; see [Longformer](/papers/architectures/longformer) |
+| block/sparse | attends selected blocks or patterns | scalable long context; see [BigBird](/papers/architectures/bigbird) |
 | graph/structure | attends only permitted neighbors or relations | graph and structure models |
 
 Masking is part of the task contract. A model with future-token access is not solving the same autoregressive task as a causal model.
@@ -176,7 +176,7 @@ $$
 O(BHTwd_k),
 $$
 
-which is linear in $T$ if $w$ is fixed. [[papers/architectures/longformer|Longformer]] is the canonical local-plus-global sparse attention paper note here.
+which is linear in $T$ if $w$ is fixed. [[papers/architectures/longformer|Longformer]] is the canonical local-plus-global sparse attention paper note, while [[papers/architectures/bigbird|BigBird]] is the canonical local-plus-global-plus-random sparse attention paper note.
 
 ## Attention Is Not Explanation
 

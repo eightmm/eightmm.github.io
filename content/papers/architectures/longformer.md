@@ -256,11 +256,12 @@ Dense attention is more flexible, but it pays for all pairwise interactions. Lon
 
 | Paper | Relation |
 | --- | --- |
-| [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]] | baseline dense Transformer attention |
-| [[papers/architectures/transformer-xl|Transformer-XL]] | long context through recurrence and segment memory |
-| [[papers/architectures/alibi|ALiBi]] | length extrapolation through attention logit bias |
-| [[papers/architectures/performer|Performer]] | approximate softmax attention with linear complexity |
-| [[papers/architectures/flashattention|FlashAttention]] | exact dense attention with IO-aware kernel optimization |
+| [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | baseline dense Transformer attention |
+| [Transformer-XL](/papers/architectures/transformer-xl) | long context through recurrence and segment memory |
+| [BigBird](/papers/architectures/bigbird) | long context through local, global, and random sparse attention |
+| [ALiBi](/papers/architectures/alibi) | length extrapolation through attention logit bias |
+| [Performer](/papers/architectures/performer) | approximate softmax attention with linear complexity |
+| [FlashAttention](/papers/architectures/flashattention) | exact dense attention with IO-aware kernel optimization |
 
 Longformer is a sparse-pattern route, not an exact dense attention kernel route and not a positional extrapolation route.
 
