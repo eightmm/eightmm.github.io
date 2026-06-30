@@ -42,6 +42,45 @@ $$
 
 If any component changes, the run identity changes.
 
+## Public vs Private Fields
+
+Run record는 공개 가능한 정보와 내부 운영 정보를 분리해야 합니다.
+
+| Public field | Private-only field |
+| --- | --- |
+| resource class | host name, node name, account name |
+| artifact type | absolute private path |
+| software stack | internal module path |
+| public dataset/version | private dataset location |
+| failure class | raw log with credentials or user names |
+| commit/hash | SSH endpoint, port, credential |
+
+Public note는 재현 가능한 reasoning을 남기되, infrastructure attack surface나 unpublished result를 노출하지 않습니다.
+
+## Closeout States
+
+| State | Meaning |
+| --- | --- |
+| completed | artifacts checked and recorded |
+| failed | failure class and next action recorded |
+| interrupted | checkpoint or partial output exists |
+| superseded | replaced by a later run |
+| not-for-claim | useful operational record but not evidence for a public claim |
+
+Do not treat an unverified completed process as a completed run.
+
+## Evidence Links
+
+For public wiki, evidence can be generic:
+
+| Evidence | Public-safe form |
+| --- | --- |
+| build result | command name and pass/fail summary |
+| scheduler state | terminal category, not private job identifier |
+| artifact check | artifact type and validation rule |
+| metric | only if already public and non-sensitive |
+| failure | generalized failure mode and fix |
+
 ## Checks
 
 - Can another reader understand the setup without internal paths?
@@ -49,6 +88,8 @@ If any component changes, the run identity changes.
 - Is failure recorded as a useful diagnosis rather than hidden?
 - Is the split policy clear enough to evaluate leakage risk?
 - Is the final outcome supported by logs, artifacts, and scheduler state?
+- Is the record explicit about whether it supports a public claim?
+- Are private operational fields excluded or generalized?
 
 ## Related
 

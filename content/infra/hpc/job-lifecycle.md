@@ -19,6 +19,20 @@ HPC job lifecycle은 workload가 local command에서 scheduled job, running proc
 5. checkpoint와 resumable output을 저장합니다.
 6. completion, failure, cancellation을 public 또는 private run record로 reconcile합니다.
 
+## State Model
+
+Job state는 scheduler 상태와 artifact 상태를 함께 봐야 합니다.
+
+| Scheduler state | Artifact question | Next action |
+| --- | --- | --- |
+| pending | resource request가 합리적인가? | request, partition, dependency 확인 |
+| running | expected throughput과 storage growth가 보이는가? | monitor and sample logs |
+| completed | output과 marker가 완전한가? | reconcile and record |
+| failed | failure class가 분류됐는가? | diagnose before relaunch |
+| cancelled/preempted | resume 가능한 checkpoint가 있는가? | resume or mark superseded |
+
+Scheduler가 `COMPLETED`를 보여도 output이 complete라는 뜻은 아닙니다. Artifact closeout이 별도로 필요합니다.
+
 ## 최소 public record
 
 - workload의 purpose.
@@ -33,6 +47,20 @@ HPC job lifecycle은 workload가 local command에서 scheduled job, running proc
 - Runtime issue: dependency, CUDA, memory, data loading, shape error.
 - Data issue: missing file, corrupted input, split leakage, inconsistent label.
 - Storage issue: quota, slow I/O, checkpoint write failure.
+
+## Launch Contract
+
+Launch 전에 아래를 고정합니다.
+
+| Field | Public-safe wording |
+| --- | --- |
+| workload | training, inference, docking batch, evaluation, preprocessing |
+| resource class | CPU, single GPU, multi GPU, memory-heavy, IO-heavy |
+| expected artifact | checkpoint, metrics table, generated candidates, logs |
+| resume rule | fresh, resume from checkpoint, rerun failed shards |
+| stop rule | time limit, convergence, all shards complete, smoke test only |
+
+Private queue names, hostnames, user names, paths, and project identifiers are not part of the public record.
 
 ## Closeout
 
@@ -56,6 +84,7 @@ $$
 - [[infra/hpc/slurm-job-script|Slurm job script]]
 - [[infra/hpc/job-reconciliation|Job reconciliation]]
 - [[infra/hpc/checkpointing|Checkpointing]]
+- [[infra/hpc/preemption-resume|Preemption and resume]]
 - [[infra/reproducibility/run-record|Reproducible run record]]
 - [[infra/io/data-loading|Data loading and IO]]
 - [[infra/gpu/index|GPU]]
