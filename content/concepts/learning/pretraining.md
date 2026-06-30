@@ -44,6 +44,64 @@ $$
 - Denoising, reconstruction, or representation prediction.
 - Multitask supervised pretraining over a broad source dataset.
 
+## Source and Target Contract
+
+Pretraining is incomplete without the source distribution and the downstream target distribution:
+
+$$
+p_{\mathrm{source}}(x)
+\quad\rightarrow\quad
+p_{\mathrm{target}}(x,y)
+$$
+
+The transfer claim depends on the relationship between them.
+
+| Contract Part | Question |
+| --- | --- |
+| source examples | what raw objects were used before adaptation? |
+| source objective | what signal was optimized during pretraining? |
+| source filtering | what examples were removed, deduplicated, or upweighted? |
+| target examples | what downstream task and split define success? |
+| overlap rule | how are near-duplicates, homologs, scaffolds, templates, or documents removed? |
+| adaptation rule | frozen probe, full fine-tune, adapter, LoRA, or retrieval use? |
+
+If source and target overlap, the claim is no longer clean transfer. It may still be useful, but the evidence should be described as system performance rather than out-of-distribution generalization.
+
+## Objective Families
+
+| Family | Training Signal | Typical Evaluation |
+| --- | --- | --- |
+| autoregressive | predict next token or state | generation, perplexity, downstream adaptation |
+| masked modeling | predict hidden token, patch, residue, atom, or region | linear probe, fine-tune, retrieval |
+| contrastive | identify positive view among candidates | retrieval, neighborhood quality, transfer |
+| joint embedding | predict target representation | representation evaluation and downstream tasks |
+| denoising | recover clean object from corruption | generation, reconstruction, representation transfer |
+| supervised multitask | many labeled source tasks | target transfer and robustness |
+
+The objective can be useful even when it is not the final task. Record the evidence that connects pretraining loss to downstream behavior.
+
+## Pretraining Contamination
+
+For public notes, state the contamination boundary without listing private datasets or paths:
+
+$$
+\mathcal{D}_{\mathrm{pre}}
+\cap
+\mathcal{D}_{\mathrm{test}}
+=
+\varnothing
+$$
+
+In practice, exact set disjointness is often too weak. The relevant exclusion unit may be:
+
+| Domain | Exclusion Unit |
+| --- | --- |
+| text or code | document, repository, benchmark item, paraphrase cluster |
+| molecule | standardized molecule, scaffold, assay source |
+| protein | sequence identity cluster, family, structure/template source |
+| structure | PDB entry, chain, complex, template neighborhood |
+| agent trace | task instance, tool state, benchmark item |
+
 ## Why It Matters
 
 - Reduces labeled data requirements for downstream tasks.
@@ -58,6 +116,8 @@ $$
 - Does the pretraining objective match downstream evaluation?
 - Could downstream test examples or close homologs/duplicates appear in pretraining?
 - Is adaptation done by [[concepts/learning/linear-probing|probing]], [[concepts/learning/fine-tuning-protocol|full fine-tuning]], or parameter-efficient fine-tuning?
+- Is the comparison controlled for source data scale, training tokens/examples, architecture, and adaptation budget?
+- Is the claim representation quality, sample efficiency, robustness, or final system performance?
 
 ## Related
 
@@ -70,3 +130,5 @@ $$
 - [[concepts/learning/linear-probing|Linear probing]]
 - [[concepts/learning/fine-tuning-protocol|Fine-tuning protocol]]
 - [[concepts/data/data-distribution|Data distribution]]
+- [[concepts/evaluation/test-set-contamination|Test set contamination]]
+- [[concepts/data/data-lineage|Data lineage]]
