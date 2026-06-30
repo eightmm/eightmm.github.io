@@ -88,7 +88,11 @@ Not every paper needs a long review.
 | 논문 노트 | 영역 |
 | --- | --- |
 | [ImageNet Classification with Deep CNNs](/papers/architectures/alexnet) | large-scale CNN vision architecture |
+| [Very Deep Convolutional Networks](/papers/architectures/vgg) | deep small-filter CNN architecture |
+| [Going Deeper with Convolutions](/papers/architectures/inception) | Inception CNN module |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer architecture |
+| [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | gated recurrent memory |
+| [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU and encoder-decoder architecture |
 | [Batch Normalization](/papers/architectures/batch-normalization) | normalization architecture block |
 | [Deep Residual Learning](/papers/architectures/deep-residual-learning) | residual CNN architecture |
 | [U-Net](/papers/architectures/u-net) | dense prediction architecture |
@@ -99,6 +103,7 @@ Not every paper needs a long review.
 | [Graph Attention Networks](/papers/architectures/graph-attention-networks) | graph attention network |
 | [Deep Sets](/papers/architectures/deep-sets) | permutation-invariant set architecture |
 | [Set Transformer](/papers/architectures/set-transformer) | attention-based set architecture |
+| [Perceiver IO](/papers/architectures/perceiver-io) | structured input/output attention architecture |
 | [Mamba](/papers/architectures/mamba) | selective state-space sequence model |
 | [Switch Transformer](/papers/architectures/switch-transformer) | sparse mixture-of-experts architecture |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation |
