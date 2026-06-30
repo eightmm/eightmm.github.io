@@ -60,7 +60,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | LSTM | gated recurrent memory |
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU / encoder-decoder | gated recurrent sequence transduction |
 | [Batch Normalization](/papers/architectures/batch-normalization) | BatchNorm | normalization as an architecture component |
-| [Deep Residual Learning](/papers/architectures/deep-residual-learning) | ResNet | residual learning and deep CNN optimization |
+| [Deep Residual Learning](/papers/architectures/deep-residual-learning) | ResNet | residual learning and deep CNN optimization; full note started |
 | [U-Net](/papers/architectures/u-net) | U-Net | encoder-decoder CNN with localization skip paths |
 | [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer | image patches as Transformer tokens |
 | [Swin Transformer](/papers/architectures/swin-transformer) | Swin Transformer | shifted-window hierarchical vision Transformer |
