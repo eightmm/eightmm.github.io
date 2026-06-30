@@ -11,6 +11,14 @@ tags:
 
 Systems paper note는 infrastructure, training efficiency, inference serving, distributed execution, agent tooling, reproducibility를 다룹니다.
 
+## Related Architecture Primitives
+
+Some systems-heavy papers are kept in [[papers/architectures/index|Architecture Papers]] when the contribution changes a core model primitive. Use this section as a bridge rather than duplicating the note.
+
+| Paper | Why it matters for systems |
+| --- | --- |
+| [FlashAttention](/papers/architectures/flashattention) | exact attention with lower HBM traffic and activation memory |
+
 ## Reading Axes
 
 - What bottleneck is addressed: memory, compute, communication, I/O, latency, or reliability?
