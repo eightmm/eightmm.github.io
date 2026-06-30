@@ -34,6 +34,49 @@ $$
 
 where $g$ is a learned projection and $\Delta_t$ controls the input-dependent discretization or update scale.
 
+## State-Space Boundary
+
+Mamba should be read as a member of the [[concepts/architectures/state-space-model|state-space model]] family:
+
+$$
+h_t = F_t h_{t-1} + G_t x_t,
+\qquad
+y_t = H_t h_t
+$$
+
+The selective part means $F_t,G_t,H_t$ can depend on the input token. This differs from a fixed linear time-invariant SSM, where transition matrices are shared across positions.
+
+## Scan View
+
+The recurrence can be evaluated as a scan over sequence positions:
+
+$$
+h_t
+=
+\left(\prod_{i=1}^{t}F_i\right)h_0
++
+\sum_{j=1}^{t}
+\left(\prod_{i=j+1}^{t}F_i\right)G_jx_j
+$$
+
+Implementations exploit associative scan-style structure rather than treating every step as an independent matrix multiplication. The practical claim is efficient long-sequence mixing with linear or near-linear scaling in sequence length.
+
+## Causal and Bidirectional Use
+
+A left-to-right Mamba block is naturally causal:
+
+$$
+y_t = f(x_{\le t})
+$$
+
+For classification, protein representation, or structure-related tasks, papers may add bidirectional scanning, pooling, attention, convolution, or task-specific heads:
+
+$$
+z = \operatorname{pool}(Y_{\rightarrow}, Y_{\leftarrow})
+$$
+
+This design choice matters because a causal sequence model and a bidirectional representation model have different information access.
+
 ## Key Ideas
 
 - Mamba belongs to the [[concepts/architectures/state-space-model|state-space model]] family but makes the state update input-dependent.
@@ -48,10 +91,14 @@ where $g$ is a learned projection and $\Delta_t$ controls the input-dependent di
 - Track whether outputs are token-level states, pooled representations, or generative logits.
 - Look for how bidirectional context is handled when the task is not causal generation.
 - For protein papers, separate architectural claims from dataset, split, and evaluation choices.
+- Check whether the paper compares against attention under matched parameter count, context length, and training tokens.
+- Check whether long-context benefit is due to architecture, data curriculum, implementation, or evaluation setting.
 
 ## Related
 
 - [[concepts/architectures/state-space-model|State-space models]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[concepts/architectures/rnn|RNN]]
+- [[concepts/architectures/gating|Gating]]
 - [[molecular-modeling/protein-modeling|Protein modeling]]
 - [[concepts/learning/self-supervised-learning|Self-supervised learning]]

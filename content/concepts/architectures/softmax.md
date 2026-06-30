@@ -34,6 +34,32 @@ p_i
 {\sum_{j=1}^{K}\exp(z_j-\max_j z_j)}
 $$
 
+## Log-Softmax
+
+Many losses use log probabilities directly:
+
+$$
+\log p_i
+=
+z_i
+-
+\log\sum_{j=1}^{K}\exp(z_j)
+$$
+
+The stable form uses log-sum-exp:
+
+$$
+\log p_i
+=
+z_i-c
+-
+\log\sum_j \exp(z_j-c),
+\qquad
+c=\max_j z_j
+$$
+
+This avoids overflow and is why implementations often combine log-softmax with negative log-likelihood or cross-entropy.
+
 ## Temperature
 
 A temperature rescales logits:
@@ -80,6 +106,25 @@ $$
 
 where $m_i=0$ for valid positions and $m_i=-\infty$ for invalid positions.
 
+## Attention Interpretation
+
+In attention, softmax normalizes scores over keys for each query:
+
+$$
+\alpha_{ij}
+=
+\frac{\exp(s_{ij})}
+{\sum_{k}\exp(s_{ik})}
+$$
+
+$$
+o_i
+=
+\sum_j \alpha_{ij}v_j
+$$
+
+The axis matters: normalizing over keys answers “where should this query attend?” Normalizing over queries would mean a different operation.
+
 ## Where It Appears
 
 - Attention weights in [[concepts/architectures/attention|Attention]].
@@ -95,6 +140,8 @@ where $m_i=0$ for valid positions and $m_i=-\infty$ for invalid positions.
 - Probabilities can still be poorly calibrated; see [[concepts/evaluation/calibration|Calibration]].
 - Check the axis: class dimension, token dimension, expert dimension, or candidate list.
 - Check whether logits are raw scores, normalized similarities, or temperature-scaled scores.
+- Use log-softmax or fused cross-entropy for training losses when possible.
+- Confirm that masked positions are impossible after normalization, not merely small.
 
 ## Related
 
