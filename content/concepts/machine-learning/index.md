@@ -19,6 +19,34 @@ $$
 
 여기서 $f_\theta$는 model, $\mathcal{L}$은 loss, $\mathcal{D}=\{(x_i,y_i)\}_{i=1}^n$는 training set입니다.
 
+## Machine Learning Contract
+
+Machine learning note는 데이터에서 claim까지 이어지는 계약을 분리해서 써야 합니다.
+
+$$
+\mathcal{M}
+=
+(\mathcal{D},\ \phi,\ f_\theta,\ \mathcal{Y},\ \mathcal{L},\ O,\ E)
+$$
+
+| Part | Meaning | Typical question |
+| --- | --- | --- |
+| $\mathcal{D}$ | dataset and sampling process | example unit, label semantics, split unit이 무엇인가? |
+| $\phi$ | representation or preprocessing | raw input이 feature, token, graph, coordinate, embedding 중 무엇이 되는가? |
+| $f_\theta$ | model family | 어떤 function class와 inductive bias를 쓰는가? |
+| $\mathcal{Y}$ | output space | class, scalar, ranking, distribution, embedding, action 중 무엇인가? |
+| $\mathcal{L}$ | training objective | parameter update가 실제로 줄이는 quantity는 무엇인가? |
+| $O$ | optimizer and training state | gradient, batch, learning rate, checkpoint state가 어떻게 관리되는가? |
+| $E$ | evaluation protocol | metric, split, baseline, uncertainty가 claim을 지지하는가? |
+
+이 계약이 명확하지 않으면 모델 이름이 같아도 서로 다른 문제를 푸는 것입니다.
+
+$$
+\text{model comparison}
+\Rightarrow
+\text{same data, task, objective, and evaluation boundary}
+$$
+
 ## 핵심 구성
 
 - Data: example, label, feature, split, sampling process.
@@ -27,6 +55,36 @@ $$
 - Optimization: model parameter를 업데이트하는 절차.
 - Evaluation: generalization을 추정하는 절차.
 - Generalization: claim의 대상이 되는 held-out 또는 deployment behavior.
+
+## Prediction, Objective, Decision
+
+Prediction, training objective, decision rule은 서로 다른 층입니다.
+
+$$
+x
+\xrightarrow{f_\theta}
+\hat{p}_\theta(y\mid x)
+\xrightarrow{\mathcal{L}}
+\text{parameter update}
+$$
+
+Deployment에서는 prediction을 action으로 바꿉니다.
+
+$$
+\hat{a}
+=
+\delta(\hat{p}_\theta(y\mid x),\ \tau,\ C)
+$$
+
+여기서 $\delta$는 decision rule, $\tau$는 threshold, $C$는 cost 또는 constraint입니다.
+
+| Layer | Example | Main risk |
+| --- | --- | --- |
+| Prediction | class probability, score, regression value, embedding | output semantics가 불명확함 |
+| Objective | cross-entropy, MSE, NLL, ranking loss | metric 또는 utility와 불일치 |
+| Optimization | SGD, Adam, AdamW, schedule, clipping | instability 또는 hidden state 누락 |
+| Decision | threshold, top-k, reject option, calibration policy | probability를 action처럼 오해 |
+| Evaluation | held-out metric, calibration, uncertainty, failure slice | selection leakage 또는 weak split |
 
 ## 이동 지도
 
@@ -40,6 +98,21 @@ $$
 | how are parameters updated? | [Optimization](/concepts/machine-learning/optimization), [Gradient descent](/concepts/machine-learning/gradient-descent), [Backpropagation](/concepts/machine-learning/backpropagation) | learning rate, batch size, gradient scale |
 | how is generalization estimated? | [Generalization](/concepts/machine-learning/generalization), [Model selection](/concepts/machine-learning/model-selection) | [Train/validation/test split](/concepts/evaluation/train-validation-test-split), [Leakage](/concepts/evaluation/leakage) |
 | why did training fail? | [Training stability](/concepts/machine-learning/training-stability), [Loss landscape](/concepts/machine-learning/loss-landscape) | gradients, optimizer state, data scale |
+
+## Boundary With Other Sections
+
+| If the note is about | Put it in |
+| --- | --- |
+| architecture internals, layers, attention, SSM, GNN | [[concepts/architectures/index|Architectures]] |
+| supervision style, SSL, transfer, active learning, curriculum | [[concepts/learning/index|Learning methods]] |
+| sampling from a modeled distribution | [[concepts/generative-models/index|Generative models]] |
+| task definition and output semantics | [[concepts/tasks/index|Tasks]] |
+| dataset construction, split, label provenance | [[concepts/data/index|Data]] |
+| metric, baseline, uncertainty, leakage, OOD claim | [[concepts/evaluation/index|Evaluation]] |
+| run artifact, checkpoint, environment, serving | [[concepts/systems/index|AI systems]] |
+| domain-specific object like molecule, protein, pocket | [[molecular-modeling/index|Computational Biology]] |
+
+Machine learning is the shared grammar across these sections. Keep it focused on prediction, objective, optimization, model selection, and generalization.
 
 ## 기반
 
