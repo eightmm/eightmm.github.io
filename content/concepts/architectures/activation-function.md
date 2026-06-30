@@ -138,6 +138,8 @@ Gating lets the network modulate information flow, connecting activations to [[c
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/gating|Gating]]
 - [[concepts/architectures/transformer|Transformer]]
+- [[papers/architectures/gelu|GELU]]
+- [[papers/architectures/glu-variants-improve-transformer|GLU Variants Improve Transformer]]
 - [[concepts/machine-learning/optimization|Optimization]]
 - [[concepts/machine-learning/backpropagation|Backpropagation]]
 - [[concepts/machine-learning/loss-function|Loss function]]
