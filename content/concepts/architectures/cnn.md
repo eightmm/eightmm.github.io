@@ -78,7 +78,7 @@ For molecular or protein work, the choice often depends on the representation:
 | --- | --- |
 | image, contact map, distance map | strong fit if local grid patterns matter |
 | voxelized 3D structure | possible, but resolution and rotation handling matter |
-| molecular graph | usually prefer [[concepts/architectures/gnn|GNN]] or graph transformer |
+| molecular graph | usually prefer [GNN](/concepts/architectures/gnn) or graph transformer |
 | raw sequence | 1D CNN can be a baseline, but long-range dependency may need attention or SSM |
 
 ## Design Knobs
@@ -101,6 +101,15 @@ For molecular or protein work, the choice often depends on the representation:
 | efficient model | wall time, memory, resolution, and batch size |
 | structure-aware CNN | whether rotation, translation, and coordinate frame issues are handled |
 | better than GNN | whether graph construction or voxelization changes the information available |
+
+## Canonical Papers
+
+| Paper | Why It Matters |
+| --- | --- |
+| [Deep Residual Learning](/papers/architectures/deep-residual-learning) | residual CNN backbone design and deep optimization |
+| [EfficientNet](/papers/architectures/efficientnet) | compound scaling for CNN families |
+| [CoAtNet](/papers/architectures/coatnet) | staged hybrid of convolutional bias and attention capacity |
+| [ConvNeXt](/papers/architectures/convnext) | modernized pure ConvNet after Transformer-era design lessons |
 
 ## Practical Checks
 

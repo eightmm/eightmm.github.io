@@ -213,6 +213,14 @@ $$
 
 [[papers/architectures/linformer|Linformer]] is the canonical low-rank attention paper note here.
 
+## Vision Attention Papers
+
+| Paper | Why It Matters |
+| --- | --- |
+| [Vision Transformer](/papers/architectures/vision-transformer) | applies Transformer self-attention to image patches |
+| [Swin Transformer](/papers/architectures/swin-transformer) | uses shifted local windows and hierarchy for vision attention |
+| [CoAtNet](/papers/architectures/coatnet) | stages convolution and relative attention to balance bias and capacity |
+
 ## Attention Is Not Explanation
 
 Attention weights show how values are mixed in a particular layer and head:
