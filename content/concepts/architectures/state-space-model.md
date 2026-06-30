@@ -76,6 +76,7 @@ with kernel terms derived from powers of $\bar{A}$. This is why some SSMs can tr
 | RNN/GRU/LSTM | recurrent hidden update | streaming and compact state | hidden bottleneck, sequential training |
 | Transformer | pairwise attention | direct token-token interaction | $O(L^2)$ attention cost |
 | Long convolution | implicit or explicit convolution kernel | long context without pairwise attention matrix | filter/gating design and kernel implementation matter |
+| Moving average attention | EMA local memory plus gated attention | local inductive bias while preserving content mixing | EMA horizon and chunk boundaries matter |
 | Retention | decayed key-value state with parallel and recurrent forms | low-cost decoding without a growing KV cache | retention horizon and normalization details matter |
 | SSM | structured state or convolution kernel | long sequence efficiency | parameterization and stability details matter |
 | Selective SSM | input-dependent state update | content-aware recurrence | harder to compare with fixed linear SSMs |
@@ -114,6 +115,7 @@ but a sequence model alone does not prove structure or function. For protein cla
 | Paper | Why It Matters |
 | --- | --- |
 | [S4](/papers/architectures/s4) | structured state-space kernel for practical long-range sequence modeling |
+| [Mega](/papers/architectures/mega) | moving-average local sequence memory inside gated attention |
 | [Hyena](/papers/architectures/hyena) | gated implicit long convolution as a dense-attention-free sequence mixer |
 | [RetNet](/papers/architectures/retnet) | retention mechanism with parallel, recurrent, and chunkwise recurrent forms |
 | [Mamba](/papers/architectures/mamba) | selective state-space scan with input-dependent parameters |
@@ -123,6 +125,7 @@ but a sequence model alone does not prove structure or function. For protein cla
 - [[concepts/architectures/mamba|Mamba]]
 - [[concepts/architectures/rnn|RNN]]
 - [[concepts/architectures/attention|Attention]]
+- [[papers/architectures/mega|Mega]]
 - [[papers/architectures/retnet|RetNet]]
 - [[concepts/architectures/computational-complexity|Computational complexity]]
 - [[molecular-modeling/protein-modeling|Protein modeling]]

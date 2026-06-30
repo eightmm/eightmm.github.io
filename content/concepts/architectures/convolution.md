@@ -139,6 +139,21 @@ $$
 
 the model can represent long filters without storing an independent parameter for every offset. [[papers/architectures/hyena|Hyena]] is the canonical paper note here for gated implicit long convolution as a dense-attention-free sequence mixer.
 
+Exponential moving average is a related sequence-memory pattern:
+
+$$
+z_t
+=
+\alpha x_t
++
+(1-\alpha)z_{t-1}
+=
+\sum_{i=1}^{t}
+\alpha(1-\alpha)^{t-i}x_i.
+$$
+
+It behaves like a decayed causal filter. [[papers/architectures/mega|Mega]] uses this moving-average bias inside a gated attention block rather than as a standalone convolutional sequence model.
+
 ## Design Parameters
 
 - Kernel size: local window size.
@@ -165,6 +180,7 @@ the model can represent long filters without storing an independent parameter fo
 | Paper | Why It Matters |
 | --- | --- |
 | [WaveNet](/papers/architectures/wavenet) | dilated causal convolution for autoregressive sequence generation |
+| [Mega](/papers/architectures/mega) | exponential moving average as local sequence memory inside gated attention |
 | [Hyena](/papers/architectures/hyena) | implicit long convolution plus gating for long-context sequence modeling |
 | [ConvNeXt](/papers/architectures/convnext) | depthwise convolution as modern vision token mixing |
 
@@ -172,6 +188,7 @@ the model can represent long filters without storing an independent parameter fo
 
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/attention|Attention]]
+- [[papers/architectures/mega|Mega]]
 - [[concepts/architectures/parameter-sharing|Parameter sharing]]
 - [[concepts/architectures/inductive-bias|Inductive bias]]
 - [[concepts/modalities/image|Image]]

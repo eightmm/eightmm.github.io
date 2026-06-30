@@ -213,6 +213,30 @@ $$
 
 [[papers/architectures/linformer|Linformer]] is the canonical low-rank attention paper note here.
 
+## Gated and Moving-Average Attention
+
+Some attention variants keep content-dependent mixing but add a local sequential bias before or inside the attention block. [[papers/architectures/mega|Mega]] is the canonical paper note here.
+
+An exponential moving average gives each token a decayed local memory:
+
+$$
+z_t
+=
+\alpha x_t
++
+(1-\alpha)z_{t-1}.
+$$
+
+Mega combines this moving-average path with gated attention:
+
+$$
+\tilde{X}=\operatorname{EMA}(X),
+\qquad
+Y=\operatorname{GatedAttention}(\tilde{X}).
+$$
+
+This differs from a pure attention bias. A bias changes attention scores, while EMA adds a stateful local sequence operator.
+
 ## Vision Attention Papers
 
 | Paper | Why It Matters |
@@ -257,8 +281,10 @@ They do not by themselves prove causal importance. Value vectors, later layers, 
 - [[concepts/math/vector-norm-similarity|Vector norm and similarity]]
 - [[concepts/architectures/softmax|Softmax]]
 - [[concepts/architectures/cross-attention|Cross-attention]]
+- [[concepts/architectures/gating|Gating]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder architectures]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
+- [[papers/architectures/mega|Mega]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
 - [[agents/index|Agents]]

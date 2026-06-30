@@ -48,7 +48,7 @@ The multiplicative path gives the model a data-dependent way to suppress, pass, 
 | state update gate | $h' = g\odot \tilde{h} + (1-g)\odot h$ | GRU, LSTM-like memory |
 | routing gate | $p(e\mid x)=\operatorname{softmax}(W_rx)$ | mixture-of-experts |
 | selective scan gate | input-dependent transition or mixing | state-space models |
-| attention gate | content-dependent weighted aggregation | attention variants |
+| attention gate | content-dependent weighted aggregation | attention variants, Mega |
 
 The shared idea is multiplicative control. The difference is what is being controlled: feature magnitude, memory update, expert choice, or sequence dynamics.
 
@@ -104,6 +104,7 @@ Both can be content-dependent, but they answer different questions:
 - LSTM and GRU update gates in [[concepts/architectures/rnn|RNNs]].
 - Selective updates in [[concepts/architectures/mamba|Mamba]] and other state-space models.
 - Gated linear units in [[concepts/architectures/feed-forward-network|feed-forward networks]].
+- Gated attention blocks in [[papers/architectures/mega|Mega]], where moving-average memory is combined with gated content mixing.
 - Routing weights in [[concepts/architectures/mixture-of-experts|Mixture of experts]].
 
 ## Checks
@@ -123,5 +124,6 @@ Both can be content-dependent, but they answer different questions:
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/state-space-model|State-space model]]
 - [[concepts/architectures/attention|Attention]]
+- [[papers/architectures/mega|Mega]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
 - [[concepts/architectures/normalization|Normalization]]
