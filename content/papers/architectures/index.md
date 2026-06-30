@@ -46,6 +46,7 @@ This means the current shelf can contain seed notes while the most important pap
 | Scientific structure models | domain-specialized architectures for 3D scientific objects | [AlphaFold2](/papers/architectures/alphafold2), [AlphaFold3](/papers/architectures/alphafold3) |
 | Generative architectures | denoising, latent variables, adversarial games, invertible flows, iterative sampling, latent-space generation, distribution modeling | [Auto-Encoding Variational Bayes](/papers/architectures/auto-encoding-variational-bayes), [Generative Adversarial Nets](/papers/architectures/generative-adversarial-nets), [Real NVP](/papers/architectures/real-nvp), [DDPM](/papers/architectures/ddpm), [Latent Diffusion Models](/papers/architectures/latent-diffusion-models) |
 | Conditional compute | sparse routing, expert capacity, scaling under fixed token compute | [Switch Transformer](/papers/architectures/switch-transformer) |
+| Adaptation blocks | frozen backbones, low-rank updates, trainable parameter efficiency | [LoRA](/papers/architectures/lora) |
 | Training-time architecture blocks | normalization, activation scale, residual stability | [Batch Normalization](/papers/architectures/batch-normalization), [Layer Normalization](/papers/architectures/layer-normalization) |
 | Continuous-depth models | residual dynamics, adaptive compute, ODE solvers as layers | [Neural ODE](/papers/architectures/neural-ode) |
 
@@ -96,6 +97,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Neural Ordinary Differential Equations](/papers/architectures/neural-ode) | Neural ODE | continuous-depth residual dynamics; full note started |
 | [Mamba](/papers/architectures/mamba) | selective SSM | input-dependent state-space sequence modeling; full note started |
 | [Switch Transformer](/papers/architectures/switch-transformer) | sparse MoE Transformer | top-1 expert routing and conditional compute; full note started |
+| [LoRA](/papers/architectures/lora) | low-rank adaptation block | frozen pretrained weights with trainable low-rank residual updates for parameter-efficient adaptation; full note started |
 
 ## Reading Axes
 

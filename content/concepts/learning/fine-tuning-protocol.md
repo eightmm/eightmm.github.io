@@ -161,6 +161,7 @@ Two methods with different budgets are not evidence-equivalent.
 ## Related
 
 - [[concepts/learning/fine-tuning|Fine-tuning]]
+- [[papers/architectures/lora|LoRA]]
 - [[concepts/learning/linear-probing|Linear probing]]
 - [[concepts/learning/transfer-learning|Transfer learning]]
 - [[concepts/learning/pretraining|Pretraining]]
