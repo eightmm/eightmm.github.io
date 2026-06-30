@@ -24,6 +24,54 @@ Project page는 목표, interface, 설계 결정, 검증 방법, 공개 artifact
 | reusable concept or formula | [Concepts](/concepts) |
 | operational lesson without an artifact | [Infra](/infra) or [Logs](/logs) |
 
+## Project Boundary
+
+Project로 승격하려면 반복해서 실행하거나 공개 artifact로 설명할 수 있는 단위가 있어야 합니다. 단순 아이디어, 읽은 논문, 개념 설명만으로는 project가 아닙니다.
+
+$$
+\text{project}
+=
+\text{goal}
++ \text{artifact}
++ \text{interface}
++ \text{verification}
++ \text{status}
+$$
+
+| Requirement | Question |
+| --- | --- |
+| Goal | 무엇을 만들거나 운영하려는가? |
+| Artifact | 코드, 문서 묶음, pipeline, report, workflow 중 무엇이 남는가? |
+| Interface | 누가 어떻게 사용하거나 재실행하는가? |
+| Verification | 성공을 어떤 test, build, report, public evidence로 확인하는가? |
+| Status | active, draft, archived 중 어디인가? |
+
+이 다섯 항목 중 artifact와 verification이 없으면 먼저 [[research/index|Research]], [[posts/index|Posts]], [[papers/index|Papers]], 또는 [[concepts/index|Concepts]]에 둡니다.
+
+## Promotion Flow
+
+Project page는 보통 아래 흐름으로 생깁니다.
+
+$$
+\text{question}
+\rightarrow
+\text{prototype}
+\rightarrow
+\text{artifact}
+\rightarrow
+\text{project note}
+\rightarrow
+\text{release or post}
+$$
+
+| Starting point | Promote to project when |
+| --- | --- |
+| Research note | a concrete experiment, pipeline, or tool exists |
+| Infra runbook | reusable utility, dashboard, or automation exists |
+| Agent workflow | repeatable workflow has inputs, tools, outputs, and verification |
+| Paper review | implementation or reproduction plan becomes active |
+| Blog post | post describes a maintained artifact or workflow |
+
 ## 묶음
 
 | 묶음 | 용도 |
@@ -51,6 +99,16 @@ Project page는 목표, interface, 설계 결정, 검증 방법, 공개 artifact
 | `draft` | artifact boundary는 있지만 검증이나 공개 범위가 더 필요함 |
 | `idea` | 아직 project page가 아니라 후보 질문 또는 방향 |
 | `archived` | 더 이상 진행하지 않지만 reference로 보관 |
+
+## Project Note Quality Gate
+
+| Gate | Pass condition |
+| --- | --- |
+| Public-safe | internal path, account, server, collaborator, unpublished result removed |
+| Reproducible enough | reader can understand inputs, outputs, and verification without private context |
+| Linked | relevant concept, paper, infra, and post pages are connected |
+| Scoped | project does not claim broader research results than it verifies |
+| Current | status and next public action are explicit |
 
 ## 형식
 

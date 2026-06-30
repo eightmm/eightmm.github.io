@@ -19,6 +19,41 @@ Research page는 결과를 주장하는 곳이 아니라 질문을 좁히는 곳
 
 예를 들어 "structure-based generative model에서 pose validity를 어떻게 평가할까?"는 Research입니다. "pose evaluation report generator를 만든다"는 Projects입니다.
 
+## Research Boundary
+
+Research는 현재의 전문 관심사를 공개 가능한 질문 형태로 정리하는 곳입니다. 내부 과제명, 미공개 결과, collaborator-specific detail 없이도 설명 가능한 질문만 둡니다.
+
+$$
+\text{research note}
+=
+\text{question}
++ \text{hypothesis}
++ \text{scope}
++ \text{evidence plan}
++ \text{handoff}
+$$
+
+| Field | Meaning |
+| --- | --- |
+| Question | 무엇을 알고 싶은가? |
+| Hypothesis | 틀릴 수 있는 예상은 무엇인가? |
+| Scope | entity, task, data, metric, baseline을 어디까지 제한하는가? |
+| Evidence plan | 어떤 공개 논문, benchmark, 최소 실험으로 확인할 수 있는가? |
+| Handoff | paper note, project, post 중 어디로 이어질 수 있는가? |
+
+## What Not To Put Here
+
+| Avoid | Put instead |
+| --- | --- |
+| general concept definition | [[concepts/index|Concepts]] |
+| full paper summary | [[papers/index|Papers]] |
+| implemented artifact | [[projects/index|Projects]] |
+| private experiment result | private notes only |
+| server/HPC operations detail | [[infra/index|Infra]] |
+| Korean reader-facing essay | [[posts/index|Posts]] |
+
+Research note가 너무 구현 중심으로 변하면 project로 옮기고, 너무 일반 개념 중심이면 concept note로 쪼갭니다.
+
 ## 현재 위치
 
 | Need | Route |
