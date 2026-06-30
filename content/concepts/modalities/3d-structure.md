@@ -103,6 +103,7 @@ $$
 
 - [[concepts/modalities/modality-representation|Modality representation]]
 - [[papers/architectures/pointnet|PointNet]]
+- [[papers/architectures/nerf|NeRF]]
 - [[concepts/geometric-deep-learning/coordinate-modeling-contract|Coordinate modeling contract]]
 - [[concepts/math/geometry|Geometry]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
