@@ -125,6 +125,18 @@ ExternalPlugin.Explorer({
     if (displayNames[slug]) {
       node.displayName = displayNames[slug]
     }
+    const paperCategoryLinks = [
+      "papers/architectures",
+      "papers/llm",
+      "papers/generative-models",
+      "papers/computational-biology",
+    ]
+    if (paperCategoryLinks.includes(slug)) {
+      node.isFolder = false
+      if (node.data) {
+        node.data.slug = slug
+      }
+    }
     if (node.slugSegment === "molecular-modeling") {
       node.displayName = "Computational Biology"
     }
