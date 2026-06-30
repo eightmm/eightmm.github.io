@@ -11,6 +11,35 @@ Structure-based drug discovery는 3D molecular structure를 사용해 target-lig
 
 이 wiki에서 SBDD concept는 [[molecular-modeling/structure-based/index|Structure-based modeling]]을 받쳐주는 층입니다. 구체적인 project나 thesis direction이 생기면 Research page가 여기로 다시 연결됩니다.
 
+## SBDD Contract
+
+SBDD note는 protein-ligand system을 아래 계약으로 고정한 뒤 method와 claim을 읽습니다.
+
+$$
+\mathcal{S}_{\mathrm{SBDD}}
+=
+(P,\ B,\ L,\ X,\ Q,\ s,\ m,\ \Delta)
+$$
+
+| Part | Meaning | Typical question |
+| --- | --- | --- |
+| $P$ | protein or receptor | structure source, chain, missing residues, cofactors, protonation? |
+| $B$ | binding site or pocket | known, predicted, ligand-defined, blind, template-derived? |
+| $L$ | ligand or candidate set | stereo, tautomer, charge, conformer policy, library source? |
+| $X$ | pose or complex geometry | reference, docked, generated, minimized, noisy, refined? |
+| $Q$ | pose quality rule | RMSD, clash, strain, interaction, geometry validity? |
+| $s$ | score or predictor | pose score, affinity, ranking score, filter, uncertainty? |
+| $m$ | metric | pose success, enrichment, correlation, calibration, validity, utility? |
+| $\Delta$ | split and leakage boundary | scaffold, protein family, complex pair, template, time, assay source? |
+
+The first reading question is not whether a method is AI-based. It is which part of the contract it changes.
+
+$$
+\text{method}
+\in
+\{\text{preparation}, \text{pocket}, \text{pose generation}, \text{scoring}, \text{ranking}, \text{evaluation}\}
+$$
+
 ## Route Map
 
 | Question | Start | Then Check |
@@ -51,6 +80,53 @@ $$
 $$
 
 where $P$ is a protein or pocket and $L$ is a ligand.
+
+## Claim Separation
+
+SBDD papers often use similar inputs but make different claims. Keep the claim narrow.
+
+| Claim | Evidence needed | Do not confuse with |
+| --- | --- | --- |
+| pose generation | reference pose, symmetry-aware RMSD, pose plausibility | affinity or enrichment |
+| pose plausibility | clash, strain, interaction, chemical geometry | correct binding free energy |
+| scoring | score separates better/worse poses or ligands | calibrated affinity |
+| affinity prediction | assay-aware labels, split, uncertainty, baseline | docking score |
+| virtual screening | candidate pool, negative set, early enrichment | absolute activity |
+| structure-aware generation | generated validity, novelty, conditioning, filters | synthesizability or selectivity |
+
+Denominators matter:
+
+$$
+\text{useful hit rate}
+=
+\frac{\#\text{valid and useful candidates}}
+{\#\text{attempted candidates before filtering}}
+$$
+
+Filtering invalid poses or molecules before reporting ranking metrics changes the claim and must be stated.
+
+## Evaluation Denominators
+
+| Evaluation | Numerator | Denominator |
+| --- | --- | --- |
+| pose success | poses within threshold and passing plausibility checks | all generated or docked poses attempted |
+| docking enrichment | actives recovered in early ranked set | full screened library or declared candidate pool |
+| affinity correlation | examples with valid label and prediction | declared benchmark after preprocessing |
+| generation validity | samples passing chemistry and geometry rules | raw generated samples before repair/filtering |
+| interaction recovery | contacts or fingerprints matching reference | evaluated complexes with defined pocket and pose |
+
+## Public Note Template
+
+| Field | Write |
+| --- | --- |
+| System | protein, pocket, ligand, complex, structure source |
+| Preparation | receptor cleanup, ligand state, conformer policy, pocket rule |
+| Method | docking, scoring, diffusion, refinement, screening, generation |
+| Output | pose, score, rank, affinity, candidate set, generated molecule |
+| Metric | RMSD, clash, strain, enrichment, correlation, calibration, validity |
+| Split | scaffold, protein family, complex pair, template, assay/source, time |
+| Leakage audit | ligand-defined pocket, template similarity, benchmark overlap |
+| Public boundary | no private structures, internal target names, unpublished results, server paths |
 
 ## Checks
 
