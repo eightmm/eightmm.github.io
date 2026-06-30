@@ -84,6 +84,7 @@ Evaluation should report whether the model actually uses multiple modalities or 
 ## Patterns
 
 - Image-text alignment for retrieval, captioning, and visual question answering.
+- Visual-language bridges that connect pretrained image encoders to language models.
 - Video-audio-text alignment for temporal understanding.
 - Molecule-protein or ligand-pocket modeling for structure-based modeling.
 - Text-tool-state fusion in agent systems.
@@ -109,4 +110,7 @@ Evaluation should report whether the model actually uses multiple modalities or 
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder]]
+- [[papers/architectures/clip|CLIP]]
+- [[papers/architectures/flamingo|Flamingo]]
+- [[papers/architectures/blip-2|BLIP-2]]
 - [[concepts/sbdd/index|Structure-based drug discovery]]
