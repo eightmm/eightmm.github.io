@@ -42,7 +42,7 @@ This means the current shelf can contain seed notes while the most important pap
 | Vision backbones | locality, depth, width, connectivity, dense prediction, patch tokenization, hierarchy | [AlexNet](/papers/architectures/alexnet), [VGG](/papers/architectures/vgg), [Inception](/papers/architectures/inception), [ResNet](/papers/architectures/deep-residual-learning), [DenseNet](/papers/architectures/densenet), [EfficientNet](/papers/architectures/efficientnet), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer), [Swin Transformer](/papers/architectures/swin-transformer) |
 | Detection and set prediction | object queries, bipartite matching, dense prediction without NMS | [DETR](/papers/architectures/detr) |
 | Multimodal encoders | dual encoders, contrastive alignment, prompt-defined classifiers | [CLIP](/papers/architectures/clip) |
-| Graphs, sets, geometric models, and multimodal arrays | permutation behavior, message passing, structural bias, expressivity, equivariance, unordered inputs, latent bottlenecks | [GCN](/papers/architectures/gcn), [Graph Attention Networks](/papers/architectures/graph-attention-networks), [GIN](/papers/architectures/graph-isomorphism-network), [Graphormer](/papers/architectures/graphormer), [E(n) Equivariant GNN](/papers/architectures/egnn), [SE(3)-Transformer](/papers/architectures/se3-transformer), [Deep Sets](/papers/architectures/deep-sets), [Set Transformer](/papers/architectures/set-transformer), [Perceiver IO](/papers/architectures/perceiver-io) |
+| Graphs, sets, point clouds, geometric models, and multimodal arrays | permutation behavior, message passing, structural bias, expressivity, equivariance, unordered inputs, latent bottlenecks | [GCN](/papers/architectures/gcn), [Graph Attention Networks](/papers/architectures/graph-attention-networks), [GIN](/papers/architectures/graph-isomorphism-network), [Graphormer](/papers/architectures/graphormer), [PointNet](/papers/architectures/pointnet), [E(n) Equivariant GNN](/papers/architectures/egnn), [SE(3)-Transformer](/papers/architectures/se3-transformer), [Deep Sets](/papers/architectures/deep-sets), [Set Transformer](/papers/architectures/set-transformer), [Perceiver IO](/papers/architectures/perceiver-io) |
 | Scientific structure models | domain-specialized architectures for 3D scientific objects | [AlphaFold2](/papers/architectures/alphafold2), [AlphaFold3](/papers/architectures/alphafold3) |
 | Generative architectures | denoising, latent variables, adversarial games, invertible flows, iterative sampling, distribution modeling | [Auto-Encoding Variational Bayes](/papers/architectures/auto-encoding-variational-bayes), [Generative Adversarial Nets](/papers/architectures/generative-adversarial-nets), [Real NVP](/papers/architectures/real-nvp), [DDPM](/papers/architectures/ddpm) |
 | Conditional compute | sparse routing, expert capacity, scaling under fixed token compute | [Switch Transformer](/papers/architectures/switch-transformer) |
@@ -78,6 +78,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Graph Attention Networks](/papers/architectures/graph-attention-networks) | GAT | learned attention over graph neighborhoods; full note started |
 | [How Powerful are Graph Neural Networks?](/papers/architectures/graph-isomorphism-network) | GIN | 1-WL expressivity, injective multiset aggregation, and graph-level readout; full note started |
 | [Do Transformers Really Perform Bad for Graph Representation?](/papers/architectures/graphormer) | Graphormer | graph Transformer with centrality, shortest-path, and edge encodings; full note started |
+| [PointNet](/papers/architectures/pointnet) | PointNet | direct point-cloud architecture with shared point-wise MLPs and symmetric pooling; full note started |
 | [E(n) Equivariant Graph Neural Networks](/papers/architectures/egnn) | EGNN | geometric graph message passing with E(n)-equivariant coordinate updates; full note started |
 | [SE(3)-Transformers](/papers/architectures/se3-transformer) | SE(3)-Transformer | roto-translation equivariant attention for 3D point clouds and graphs; full note started |
 | [Highly accurate protein structure prediction with AlphaFold](/papers/architectures/alphafold2) | AlphaFold2 | MSA-pair reasoning, Evoformer, invariant point attention, recycling, and confidence for protein structure prediction; full note started |
@@ -122,6 +123,7 @@ This means the current shelf can contain seed notes while the most important pap
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/wl-test|Weisfeiler-Lehman Test]]
 - [[concepts/architectures/graph-transformer|Graph transformer]]
+- [[concepts/modalities/3d-structure|3D structure]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNNs]]
 - [[concepts/architectures/perceiver|Perceiver]]
 - [[concepts/learning/contrastive-learning|Contrastive learning]]
