@@ -119,7 +119,7 @@ The main difference between normalization families is not the formula shape, but
 | --- | --- | --- | --- |
 | BatchNorm | batch and often spatial axes | channel/feature axis | yes, running stats at eval |
 | LayerNorm | feature axis inside one example/token | batch and token positions | usually no |
-| RMSNorm | feature axis, RMS only | batch and token positions | usually no |
+| [[papers/architectures/root-mean-square-layer-normalization|RMSNorm]] | feature axis, RMS only | batch and token positions | usually no |
 | GroupNorm | groups of channels | batch and spatial positions | usually no |
 | InstanceNorm | spatial axes per example/channel | batch and channel | usually no |
 
@@ -290,7 +290,7 @@ LayerNorm is usually the safer default for sequence models because each token ca
 
 ## LayerNorm vs RMSNorm
 
-RMSNorm removes mean subtraction:
+[[papers/architectures/root-mean-square-layer-normalization|RMSNorm]] removes mean subtraction:
 
 $$
 \operatorname{RMSNorm}(x)

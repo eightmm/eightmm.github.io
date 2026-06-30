@@ -190,7 +190,7 @@ This is the same basic next-token contract as GPT-style models, but LLaMA's bloc
 
 ## RMSNorm
 
-LayerNorm normalizes by subtracting the mean and dividing by the standard deviation:
+[[papers/architectures/root-mean-square-layer-normalization|RMSNorm]] is one of the small but important block choices in the LLaMA recipe. LayerNorm normalizes by subtracting the mean and dividing by the standard deviation:
 
 $$
 \operatorname{LayerNorm}(x)
