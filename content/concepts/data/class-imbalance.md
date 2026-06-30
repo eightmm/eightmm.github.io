@@ -30,6 +30,27 @@ $$
 
 When $\hat{\pi}$ is very small, a model can achieve high accuracy by predicting the majority class while missing the examples that matter.
 
+## Prevalence Shift
+
+Training, validation, test, and deployment can have different base rates:
+
+$$
+\pi_{\mathrm{train}}
+\ne
+\pi_{\mathrm{deploy}}
+$$
+
+This matters because precision depends on prevalence:
+
+$$
+\operatorname{PPV}
+=
+\frac{\operatorname{TPR}\pi}
+{\operatorname{TPR}\pi+\operatorname{FPR}(1-\pi)}
+$$
+
+Even if sensitivity and specificity stay fixed, deployment precision can drop sharply when positives are rare.
+
 ## Why It Matters
 
 - Accuracy can be misleading when one class dominates.
@@ -59,6 +80,28 @@ $$
 
 where $w_1$ and $w_0$ control the cost of positive and negative errors.
 
+## Sampling vs Evaluation
+
+Balanced training batches change the training distribution:
+
+$$
+q_{\mathrm{batch}}(y)
+\ne
+p_{\mathrm{eval}}(y)
+$$
+
+This can help optimization but can also distort probability calibration. If training uses balanced sampling, evaluate metrics and calibration on the target prevalence or recalibrate probabilities on a representative validation set.
+
+## Metric Boundary
+
+| Metric | Useful when | Caveat |
+| --- | --- | --- |
+| accuracy | classes are balanced and costs similar | hides rare-class failure |
+| AUROC | ranking across thresholds | can look good with poor precision |
+| AUPRC | positive class is rare | depends strongly on prevalence |
+| balanced accuracy | both classes should matter equally | ignores probability quality |
+| calibrated probability | decisions use risk thresholds | needs representative calibration data |
+
 ## Checks
 
 - What is the class prevalence in each split?
@@ -67,6 +110,8 @@ where $w_1$ and $w_0$ control the cost of positive and negative errors.
 - Are positives rare because of true prevalence or collection bias?
 - Are missing labels being treated as negatives?
 - Does batch sampling differ from evaluation sampling?
+- Are precision/recall reported at a useful operating point?
+- Is probability calibration checked under deployment-like prevalence?
 
 ## Related
 

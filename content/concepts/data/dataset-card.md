@@ -32,6 +32,33 @@ $$
 - Evaluation: supported tasks and metrics.
 - Limitations: sampling bias, coverage gaps, label noise, and domain shift.
 
+## Claim Boundary
+
+A dataset card should state what claims the dataset can and cannot support:
+
+| Claim type | Card should specify |
+| --- | --- |
+| interpolation | duplicate, near-neighbor, and source coverage |
+| new chemistry | scaffold or cluster split policy |
+| new protein/family | sequence identity or family split policy |
+| future deployment | time split and source drift |
+| probabilistic decision | calibration set and label uncertainty |
+| generation quality | validity, novelty, diversity, and filter policy |
+
+The card is not just documentation; it constrains how benchmark results may be interpreted.
+
+## Versioned Identity
+
+Dataset identity should include data and processing versions:
+
+$$
+\operatorname{id}(\mathcal{D})
+=
+H(\text{raw source}, \text{filters}, \text{labels}, \text{splits}, \text{preprocessing})
+$$
+
+If any of these change, results should not be treated as directly comparable without an update note.
+
 ## Checks
 
 - Can the dataset be reconstructed from public information?
@@ -41,6 +68,8 @@ $$
 - Does the card avoid private sources, paths, or unpublished results?
 - Are preprocessing and split decisions versioned?
 - Is the intended evaluation protocol stated, not only the metric?
+- Does the card distinguish raw data, curated data, features, and benchmark splits?
+- Does the card state unsupported or out-of-scope claims?
 
 ## Minimum Public Card
 
@@ -59,6 +88,8 @@ For a public wiki note, a minimal dataset card should include:
 ## Related
 
 - [[concepts/data/dataset-construction-checklist|Dataset construction checklist]]
+- [[concepts/data/data-versioning|Data versioning]]
+- [[concepts/data/metadata-provenance|Metadata and provenance]]
 - [[concepts/data/data-lineage|Data lineage]]
 - [[concepts/data/example-unit|Example unit]]
 - [[concepts/data/split-unit|Split unit]]
