@@ -205,6 +205,7 @@ YOLO has many later versions. This note is about the original YOLOv1 architectur
 
 - [[concepts/tasks/object-detection|Object detection]]
 - [[concepts/architectures/cnn|CNN]]
+- [[papers/architectures/ssd|SSD]]
 - [[papers/architectures/feature-pyramid-networks|Feature Pyramid Networks]]
 - [[papers/architectures/faster-r-cnn|Faster R-CNN]]
 - [[papers/architectures/detr|DETR]]

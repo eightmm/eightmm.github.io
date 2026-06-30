@@ -172,6 +172,8 @@ The important architectural point is that scale handling moves from external ima
 - [[concepts/tasks/object-detection|Object detection]]
 - [[concepts/tasks/segmentation|Segmentation]]
 - [[concepts/architectures/cnn|CNN]]
+- [[papers/architectures/retinanet|RetinaNet]]
+- [[papers/architectures/ssd|SSD]]
 - [[papers/architectures/faster-r-cnn|Faster R-CNN]]
 - [[papers/architectures/mask-r-cnn|Mask R-CNN]]
 - [[papers/architectures/detr|DETR]]
