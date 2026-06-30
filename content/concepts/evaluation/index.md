@@ -21,6 +21,36 @@ $$
 
 이 값은 held-out set이 의도한 generalization claim과 맞을 때만 의미가 있습니다.
 
+## Evaluation Contract
+
+Evaluation note는 score 하나가 아니라 claim을 지지하는 증거 계약입니다.
+
+$$
+\mathcal{E}
+=
+(c,\ \mathcal{T},\ \mathcal{D}_{\mathrm{eval}},\ \pi_{\mathrm{select}},\ M,\ U,\ B)
+$$
+
+| Part | Meaning | Typical question |
+| --- | --- | --- |
+| $c$ | claim | 무엇이 더 낫거나 충분하다고 말하는가? |
+| $\mathcal{T}$ | task contract | input, output, allowed context, invalid output은 무엇인가? |
+| $\mathcal{D}_{\mathrm{eval}}$ | evaluation set | 어떤 population, split unit, exclusion rule을 대표하는가? |
+| $\pi_{\mathrm{select}}$ | selection rule | checkpoint, threshold, prompt, sampler, hyperparameter를 어떻게 골랐는가? |
+| $M$ | metric | error, utility, calibration, ranking, generation quality 중 무엇을 측정하는가? |
+| $U$ | uncertainty | confidence interval, seed variance, paired comparison, subgroup variance가 있는가? |
+| $B$ | baseline | 비교 대상이 같은 data, budget, allowed information을 쓰는가? |
+
+This is the practical rule:
+
+$$
+\text{score}
+\not\Rightarrow
+\text{claim}
+\quad
+\text{unless task, split, protocol, uncertainty, and baseline are explicit}
+$$
+
 ## 이동 지도
 
 | 질문 | 시작점 | 이어서 확인할 것 |
@@ -118,6 +148,30 @@ Evaluation은 먼저 어떤 unit이 train/test를 가르면 안 되는지 정해
 | agent task | task trace | environment, tool set, workflow template |
 
 Wrong split unit makes even a clean metric misleading.
+
+## Decision-Oriented Metrics
+
+Metric은 최종 decision과 맞아야 합니다. 같은 model output이라도 decision이 다르면 primary metric도 달라집니다.
+
+| Decision | Prefer | Watch |
+| --- | --- | --- |
+| classify all examples | accuracy, macro/micro F1, calibration | class imbalance and threshold policy |
+| find rare positives | PR-AUC, recall at fixed precision, enrichment | ROC-AUC can look good under imbalance |
+| rank candidates | NDCG, MAP, top-k success, enrichment | incomplete labels and candidate pool definition |
+| estimate continuous value | RMSE, MAE, Spearman/Pearson, calibration | unit transform and within-series ranking |
+| produce probabilities | NLL, Brier score, reliability diagram | probability quality differs from hard accuracy |
+| generate samples | validity, novelty, diversity, utility, cost | filtering and attempted denominator |
+| decide when not to answer | coverage-risk, selective prediction, conformal coverage | abstention threshold selected on test |
+
+When the decision has asymmetric cost, include the decision rule:
+
+$$
+\hat{a}
+=
+\delta(\hat{p}, \tau, C)
+$$
+
+where $\tau$ is the chosen threshold and $C$ is the cost or constraint model.
 
 ## Common Traps
 
