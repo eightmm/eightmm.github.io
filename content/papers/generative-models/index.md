@@ -90,6 +90,7 @@ $$
 
 ## Curated Notes
 
+- [[papers/architectures/ddpm|Denoising Diffusion Probabilistic Models]]
 - [[papers/generative-models/molexar|Molexar]]
 
 ## Related
