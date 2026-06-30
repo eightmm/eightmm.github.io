@@ -13,6 +13,14 @@ $$
 y = x + F(x)
 $$
 
+The residual stream is the running representation that every block reads from and writes back to. The branch $F$ is an update, not a replacement:
+
+$$
+\Delta x = F(x),
+\qquad
+y=x+\Delta x
+$$
+
 In a pre-norm Transformer block:
 
 $$
@@ -49,6 +57,19 @@ $$
 
 The identity term gives gradients a direct route through the network. This does not guarantee stability, but it reduces the need for every layer to preserve information through a nonlinear transformation.
 
+For a deep stack:
+
+$$
+x_L
+=
+x_0
++
+\sum_{\ell=0}^{L-1}
+F_\ell(x_\ell)
+$$
+
+so residual networks can be read as iterative refinement of a shared representation.
+
 ## Shape Contract
 
 Residual addition requires the branch output to match the residual stream:
@@ -67,6 +88,8 @@ $$
 
 where $P$ may be a linear layer, convolution, pooling, or graph-compatible projection.
 
+For coordinate or equivariant features, residual addition is only valid between objects with the same transformation type. A scalar invariant feature and a vector equivariant feature should not be added directly.
+
 ## Variants
 
 | Variant | Form | Use |
@@ -79,6 +102,26 @@ where $P$ may be a linear layer, convolution, pooling, or graph-compatible proje
 
 In papers, changes to residual scaling or gating can be as important as the named architecture family.
 
+## Stability Boundary
+
+Residual branches can still grow too large. Deep models often combine residuals with:
+
+| Stabilizer | Role |
+| --- | --- |
+| normalization | controls branch input or output scale |
+| residual scaling | reduces update magnitude |
+| careful initialization | starts blocks near identity |
+| dropout or stochastic depth | regularizes branch updates |
+| gradient clipping | handles occasional large updates |
+
+For scaled residuals:
+
+$$
+y=x+\alpha F(x)
+$$
+
+small $\alpha$ keeps early updates close to identity. Some architectures learn or schedule $\alpha$.
+
 ## Checks
 
 - Confirm that dimensions match before addition.
@@ -87,6 +130,8 @@ In papers, changes to residual scaling or gating can be as important as the name
 - Watch hidden-state magnitude growth in very deep networks.
 - Check whether the residual stream represents tokens, nodes, pixels, residues, or coordinates.
 - For equivariant models, confirm the residual path adds features of the same representation type.
+- Check whether residual scaling, gating, or stochastic depth changes between train and inference.
+- Check whether projection shortcuts change the claim by mixing or downsampling the input.
 
 ## Related
 
@@ -96,3 +141,5 @@ In papers, changes to residual scaling or gating can be as important as the name
 - [[concepts/architectures/feed-forward-network|Feed-forward network]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/mlp|MLP]]
+- [[concepts/machine-learning/training-stability|Training stability]]
+- [[concepts/geometric-deep-learning/equivariant-feature|Equivariant feature]]
