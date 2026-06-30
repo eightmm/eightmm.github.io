@@ -25,6 +25,56 @@ $$
 4. [[agents/verification/reflection-and-critique|Reflection and critique]]로 빠진 failure mode를 찾습니다.
 5. 넓은 목표를 완료했다고 말하기 전에는 [[agents/verification/completion-audit|Completion audit]]를 수행합니다.
 
+## Claim Scope
+
+Verification은 claim의 범위를 먼저 정해야 합니다. 같은 evidence라도 좁은 claim에는 충분하고 넓은 claim에는 부족할 수 있습니다.
+
+| Claim | Useful evidence | Not enough |
+| --- | --- | --- |
+| Markdown syntax is valid | static build or parser result | content is correct |
+| Wikilinks resolve | link checker over content tree | rendered UX is good |
+| Code compiles | build or typecheck | behavior meets user need |
+| Deployment succeeded | remote run status and published artifact | every page is visually correct |
+| Summary is faithful | source inspection and cited lines | model memory of prior text |
+| Public note is safe | sanitization scan and manual review | absence of obvious secrets in one query |
+
+Verification should state both sides:
+
+$$
+E \Rightarrow c_{\mathrm{narrow}}
+\quad \not\Rightarrow \quad
+c_{\mathrm{broad}}
+$$
+
+This prevents `build passed` from silently becoming `the whole task is done`.
+
+## Verification Ladder
+
+Agent 작업은 risk에 따라 verification을 넓힙니다.
+
+| Risk level | Minimum check | Broader check |
+| --- | --- | --- |
+| Text-only note edit | diff review, link check | site build, rendered page spot check |
+| Navigation or sidebar change | build and route check | browser inspection across key pages |
+| Code behavior change | focused test | integration or end-to-end test |
+| Deployment change | local build | remote workflow and published page |
+| Public safety change | secret/sensitive-term scan | manual review of changed pages |
+
+The ladder is not bureaucracy. It matches verification cost to possible blast radius.
+
+## Evidence Ledger Shape
+
+A useful ledger records what was checked and what remains outside the check.
+
+| Field | Write |
+| --- | --- |
+| Claim | exact statement being verified |
+| Evidence | command, file, rendered page, source, review |
+| Result | pass, fail, warning, not checked |
+| Scope | what the evidence covers |
+| Gap | what it does not cover |
+| Next action | fix, widen check, or report not verified |
+
 ## Notes
 
 - [[agents/verification/verification-loop|Verification loop]]
@@ -44,6 +94,7 @@ $$
 - skipped, impossible, too narrow check가 있는가?
 - 출력이 private infrastructure, collaborator, credential, unpublished result를 노출하는가?
 - final summary가 verified fact와 assumption을 분리하는가?
+- broad objective를 완료했다고 말하기 전에 completion audit가 있는가?
 
 ## Related
 

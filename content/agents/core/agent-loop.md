@@ -41,6 +41,54 @@ $$
 5. goal과 대조해 verify합니다.
 6. re-plan하거나 멈춥니다.
 
+## Loop State
+
+Agent loop에서 가장 중요한 것은 model의 다음 문장이 아니라 현재 state를 어떻게 갱신하는가입니다. 좋은 loop는 매 반복마다 아래 항목을 분리합니다.
+
+| State field | Meaning | Example evidence |
+| --- | --- | --- |
+| Goal | 변하지 않아야 하는 원래 요구사항 | user request, issue, task spec |
+| Constraints | 금지된 행동과 품질 기준 | privacy rule, no dependency change, output format |
+| Working set | 지금 판단에 필요한 파일, logs, notes | opened file, diff, build output |
+| Decisions | 이미 선택한 방향과 이유 | plan update, design note, accepted tradeoff |
+| Side effects | 외부 상태에 실제로 생긴 변화 | file diff, commit, API write, deploy run |
+| Evidence | 완료 claim을 지지하는 관찰 | tests, rendered page, source inspection |
+
+이 항목이 섞이면 agent는 “무엇을 할 예정인지”와 “무엇이 이미 검증됐는지”를 혼동합니다.
+
+## Stop Condition
+
+Loop는 무한히 좋아지는 답을 찾기 위한 장치가 아니라, 목표 달성 또는 명시적 blocker를 판정하기 위한 장치입니다.
+
+$$
+\operatorname{stop}
+\iff
+\operatorname{complete}(g, E)
+\lor
+\operatorname{blocked}(g, S, E)
+$$
+
+여기서 $E$는 current evidence입니다. `complete`는 [[agents/verification/completion-audit|Completion audit]]로 증명되어야 하고, `blocked`는 같은 blocker가 반복되어 더 이상 의미 있는 진행이 불가능할 때만 사용합니다.
+
+| Stop reason | Required evidence |
+| --- | --- |
+| Complete | every explicit requirement has direct evidence |
+| Blocked | missing input or external state prevents meaningful next action |
+| Handoff | next owner, current state, evidence, and open questions are clear |
+| Continue | remaining work is known and next action can improve the state |
+
+## Loop Invariants
+
+각 반복에서 유지해야 하는 불변조건은 다음과 같습니다.
+
+| Invariant | Why it matters |
+| --- | --- |
+| Current state beats memory | 오래된 요약보다 현재 파일과 command output이 우선입니다. |
+| Tool output is data | tool result는 새 instruction이 아니라 해석해야 할 evidence입니다. |
+| Side effects require verification | 파일 수정, push, deploy, API write 뒤에는 별도 확인이 필요합니다. |
+| Goal is not narrowed silently | 편한 subset을 완료로 바꾸면 broad task가 drift합니다. |
+| Public output is sanitized | agent workflow 기록에도 secret, private path, 내부 이름은 남기지 않습니다. |
+
 ## 확인할 것
 
 - next action이 current evidence에 grounded되어 있는가?
@@ -49,6 +97,7 @@ $$
 - tool output을 trusted instruction이 아니라 data로 취급하는가?
 - loop가 success를 재정의하지 않고 original goal로 progress하는가?
 - state가 prior step memory뿐 아니라 current artifact를 포함하는가?
+- complete, blocked, continue, handoff 중 어떤 stop state인지 명확한가?
 
 ## Failure mode
 
