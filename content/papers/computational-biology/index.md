@@ -33,6 +33,7 @@ Computational Biology paper note는 structure-based modeling, protein modeling, 
 | --- | --- | --- |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation | pose plausibility and docking evaluation |
 | [AlphaFold2](/papers/architectures/alphafold2) | protein structure prediction | MSA-pair architecture, geometric structure module, recycling, and confidence |
+| [AlphaFold3](/papers/architectures/alphafold3) | biomolecular complex prediction | diffusion-based joint structure prediction for proteins, nucleic acids, ligands, ions, and modified residues |
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | protein and geometric modeling | equivariant peptide modeling |
 | [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | protein interaction modeling | antibody-antigen binding evaluation |
 | [Molexar](/papers/generative-models/molexar) | molecular generation | molecule-focused generation and representation |

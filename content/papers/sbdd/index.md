@@ -23,6 +23,7 @@ Structure-based modeling paper note는 docking, conformer, pose generation, scor
 ## Curated Notes
 
 - [[papers/sbdd/posebusters|PoseBusters]]
+- [[papers/architectures/alphafold3|AlphaFold3]]
 
 ## Concepts
 

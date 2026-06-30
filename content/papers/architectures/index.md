@@ -43,7 +43,7 @@ This means the current shelf can contain seed notes while the most important pap
 | Detection and set prediction | object queries, bipartite matching, dense prediction without NMS | [DETR](/papers/architectures/detr) |
 | Multimodal encoders | dual encoders, contrastive alignment, prompt-defined classifiers | [CLIP](/papers/architectures/clip) |
 | Graphs, sets, geometric models, and multimodal arrays | permutation behavior, message passing, structural bias, equivariance, unordered inputs, latent bottlenecks | [GCN](/papers/architectures/gcn), [Graph Attention Networks](/papers/architectures/graph-attention-networks), [Graphormer](/papers/architectures/graphormer), [E(n) Equivariant GNN](/papers/architectures/egnn), [SE(3)-Transformer](/papers/architectures/se3-transformer), [Deep Sets](/papers/architectures/deep-sets), [Set Transformer](/papers/architectures/set-transformer), [Perceiver IO](/papers/architectures/perceiver-io) |
-| Scientific structure models | domain-specialized architectures for 3D scientific objects | [AlphaFold2](/papers/architectures/alphafold2) |
+| Scientific structure models | domain-specialized architectures for 3D scientific objects | [AlphaFold2](/papers/architectures/alphafold2), [AlphaFold3](/papers/architectures/alphafold3) |
 | Conditional compute | sparse routing, expert capacity, scaling under fixed token compute | [Switch Transformer](/papers/architectures/switch-transformer) |
 | Training-time architecture blocks | normalization, activation scale, residual stability | [Batch Normalization](/papers/architectures/batch-normalization), [Layer Normalization](/papers/architectures/layer-normalization) |
 | Continuous-depth models | residual dynamics, adaptive compute, ODE solvers as layers | [Neural ODE](/papers/architectures/neural-ode) |
@@ -78,6 +78,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [E(n) Equivariant Graph Neural Networks](/papers/architectures/egnn) | EGNN | geometric graph message passing with E(n)-equivariant coordinate updates; full note started |
 | [SE(3)-Transformers](/papers/architectures/se3-transformer) | SE(3)-Transformer | roto-translation equivariant attention for 3D point clouds and graphs; full note started |
 | [Highly accurate protein structure prediction with AlphaFold](/papers/architectures/alphafold2) | AlphaFold2 | MSA-pair reasoning, Evoformer, invariant point attention, recycling, and confidence for protein structure prediction; full note started |
+| [Accurate structure prediction of biomolecular interactions with AlphaFold 3](/papers/architectures/alphafold3) | AlphaFold3 | unified biomolecular complex prediction with atom-level diffusion coordinate generation; full note started |
 | [Deep Sets](/papers/architectures/deep-sets) | Deep Sets | permutation-invariant set function architecture; full note started |
 | [Set Transformer](/papers/architectures/set-transformer) | Set Transformer | attention-based permutation-invariant set modeling; full note started |
 | [Perceiver IO](/papers/architectures/perceiver-io) | Perceiver IO | latent-bottleneck attention for structured inputs and outputs; full note started |
