@@ -48,11 +48,34 @@ Compared with CNNs, ViTs encode less hard locality and more global token mixing.
 - Useful as a reference for patch, voxel, contact-map, or grid tokenization.
 - Often requires more data or stronger pretraining than CNNs when locality is not hard-coded.
 
+## Architecture Decomposition
+
+A ViT block can be read as one instance of a broader MetaFormer-style pattern:
+
+$$
+X
+\rightarrow
+\text{token mixer}
+\rightarrow
+\text{channel MLP}.
+$$
+
+For ViT, the token mixer is self-attention. Other vision backbones replace that slot with pooling, convolution, window attention, or token-axis MLPs. The canonical paper note for this scaffold view is [[papers/architectures/metaformer|MetaFormer]].
+
+| Backbone | Token Mixer |
+| --- | --- |
+| ViT | global self-attention |
+| Swin Transformer | shifted-window attention |
+| MLP-Mixer | token-axis MLP |
+| PoolFormer | pooling |
+| ConvNeXt | depthwise convolution |
+
 ## Checks
 
 - What is the patch size, and what spatial detail is lost?
 - Are positional encodings absolute, relative, or learned?
 - Is locality recovered through hybrid CNN stems, window attention, or data scale?
+- Is the paper changing attention itself, or changing the broader block scaffold and training recipe?
 
 ## Related
 

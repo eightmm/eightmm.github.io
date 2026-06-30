@@ -37,14 +37,14 @@ $a$ is a candidate architecture, $\widehat{R}(a)$ is validation risk, $C(a)$ is 
 
 | First question | If yes | Start with |
 | --- | --- | --- |
-| Is the input a fixed feature vector? | feature order has no spatial or graph meaning | [[concepts/architectures/mlp|MLP]], linear baseline, tree baseline |
-| Is the input a dense grid? | neighbors have stable spatial meaning | [[concepts/architectures/cnn|CNN]], [[concepts/architectures/u-net|U-Net]], [[concepts/architectures/vision-transformer|Vision Transformer]] |
-| Is the input an ordered sequence? | token order and context matter | [[concepts/architectures/rnn|RNN]], [[concepts/architectures/transformer|Transformer]], [[concepts/architectures/state-space-model|State-space model]] |
-| Is the input an unordered set? | permutation should not change output | [[concepts/architectures/deep-sets|Deep Sets]], [[concepts/architectures/set-transformer|Set Transformer]] |
-| Is the input a graph? | edges define local relations | [[concepts/architectures/gnn|GNN]], [[concepts/architectures/graph-transformer|Graph Transformer]] |
-| Are 3D coordinates essential? | rotations/translations should be handled explicitly | [[concepts/geometric-deep-learning/equivariance|Equivariance]], [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNN]] |
-| Is capacity large but active compute constrained? | not every input needs all parameters | [[concepts/architectures/mixture-of-experts|Mixture of experts]] |
-| Are multiple modalities fused? | timing and alignment between modalities matter | [[concepts/architectures/cross-attention|Cross-attention]], [[concepts/architectures/perceiver|Perceiver]] |
+| Is the input a fixed feature vector? | feature order has no spatial or graph meaning | [MLP](/concepts/architectures/mlp), linear baseline, tree baseline |
+| Is the input a dense grid? | neighbors have stable spatial meaning | [CNN](/concepts/architectures/cnn), [U-Net](/concepts/architectures/u-net), [Vision Transformer](/concepts/architectures/vision-transformer) |
+| Is the input an ordered sequence? | token order and context matter | [RNN](/concepts/architectures/rnn), [Transformer](/concepts/architectures/transformer), [State-space model](/concepts/architectures/state-space-model) |
+| Is the input an unordered set? | permutation should not change output | [Deep Sets](/concepts/architectures/deep-sets), [Set Transformer](/concepts/architectures/set-transformer) |
+| Is the input a graph? | edges define local relations | [GNN](/concepts/architectures/gnn), [Graph Transformer](/concepts/architectures/graph-transformer) |
+| Are 3D coordinates essential? | rotations/translations should be handled explicitly | [Equivariance](/concepts/geometric-deep-learning/equivariance), [Equivariant GNN](/concepts/geometric-deep-learning/equivariant-gnn) |
+| Is capacity large but active compute constrained? | not every input needs all parameters | [Mixture of experts](/concepts/architectures/mixture-of-experts) |
+| Are multiple modalities fused? | timing and alignment between modalities matter | [Cross-attention](/concepts/architectures/cross-attention), [Perceiver](/concepts/architectures/perceiver) |
 
 ## Rough Mapping
 
@@ -98,6 +98,28 @@ $$
 | maintenance | implementation complexity, dependency risk, reproducibility |
 
 For public notes, report hardware class and measurement protocol without private hostnames or live cluster details.
+
+## Architecture Claim Decomposition
+
+Modern backbones often differ in several places at once. Before accepting an architecture claim, separate the scaffold from the operator being advertised.
+
+| Axis | Example Question |
+| --- | --- |
+| token mixer | attention, convolution, pooling, MLP, SSM, graph message passing? |
+| channel mixer | plain MLP, gated FFN, MoE, bottleneck block? |
+| scaffold | Transformer block, MetaFormer block, residual CNN stage, encoder-decoder? |
+| stage layout | flat sequence, pyramid, U-shape, early conv then late attention? |
+| training recipe | same augmentation, optimizer, schedule, data, and epochs? |
+
+The [[papers/architectures/metaformer|MetaFormer]] paper is the canonical note here for the warning that a new token mixer may be riding on a strong shared scaffold:
+
+$$
+\text{observed gain}
+\neq
+\text{token mixer gain}
+$$
+
+unless scaffold, scale, data, and recipe are controlled.
 
 ## Failure Modes
 
