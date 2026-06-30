@@ -83,6 +83,50 @@ $$
 
 This is why singular values measure how strongly a linear map stretches directions, even when $A$ is not square.
 
+## Spectral Norm and Conditioning
+
+The largest singular value is the spectral norm:
+
+$$
+\lVert A\rVert_2=\sigma_{\max}(A)
+$$
+
+For a full-rank square matrix, the condition number is:
+
+$$
+\kappa(A)
+=
+\frac{\sigma_{\max}(A)}{\sigma_{\min}(A)}
+$$
+
+A large condition number means some directions are amplified much more than others. This can make optimization, linear solves, and representation inversion numerically fragile.
+
+## PCA Connection
+
+For centered data matrix $X_c\in\mathbb{R}^{n\times d}$:
+
+$$
+X_c = U\Sigma V^\top
+$$
+
+The covariance matrix is:
+
+$$
+\hat{\Sigma}
+=
+\frac{1}{n-1}X_c^\top X_c
+=
+V\frac{\Sigma^\top\Sigma}{n-1}V^\top
+$$
+
+Thus PCA directions are right singular vectors of centered data, and explained variances are:
+
+$$
+\lambda_i
+=
+\frac{\sigma_i^2}{n-1}
+$$
+
 ## Representation Diagnostics
 
 For an embedding matrix $Z\in\mathbb{R}^{n\times d}$, singular values can reveal whether information is spread across dimensions:
@@ -108,6 +152,8 @@ A rapid collapse of $\sigma_i$ may indicate redundant dimensions or representati
 - Are singular values used for compression, diagnostics, PCA, or numerical stability?
 - Does a low-rank approximation preserve the task-relevant signal?
 - Are small singular values numerical noise or meaningful low-variance directions?
+- Is the matrix raw, centered, normalized, whitened, or batched?
+- Is the conclusion based on singular values alone or validated by downstream behavior?
 
 ## Related
 

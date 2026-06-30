@@ -95,6 +95,32 @@ $$
 
 Correlation is useful when feature scales are arbitrary, but it can hide absolute variance differences that matter for optimization or measurement noise.
 
+## Whitening
+
+Whitening transforms features so their covariance is close to identity:
+
+$$
+z
+=
+\Sigma^{-1/2}(x-\mu)
+$$
+
+Then:
+
+$$
+\operatorname{Cov}(z)\approx I
+$$
+
+In practice, $\Sigma^{-1/2}$ may be regularized:
+
+$$
+z
+=
+(\Sigma+\epsilon I)^{-1/2}(x-\mu)
+$$
+
+Whitening can help analysis, but it can also amplify noise in low-variance directions.
+
 ## Representation Analysis
 
 Embedding covariance is often used to detect collapse or redundancy. If all embeddings become similar, the covariance spectrum becomes low-rank:
@@ -121,6 +147,8 @@ where $\lambda_j$ are eigenvalues of $\hat{\Sigma}$. This can indicate that a re
 - Covariance depends on scale; correlation removes scale but not bias.
 - Pairwise correlation can miss nonlinear dependence.
 - Dataset shift can change covariance even when means look stable.
+- High correlation between features can destabilize coefficient interpretation.
+- Correlation computed over pooled data can hide subgroup-specific behavior.
 
 ## Related
 

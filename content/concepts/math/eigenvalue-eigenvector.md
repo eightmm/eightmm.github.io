@@ -71,6 +71,50 @@ $$
 
 This is the basis of PCA-style dimensionality reduction.
 
+## Stability View
+
+Eigenvalues describe repeated application of a linear update:
+
+$$
+h_{t+1}=Ah_t
+$$
+
+If $A=V\Lambda V^{-1}$, then:
+
+$$
+h_t=A^th_0=V\Lambda^tV^{-1}h_0
+$$
+
+The spectral radius controls growth:
+
+$$
+\rho(A)=\max_i|\lambda_i|
+$$
+
+| Condition | Behavior |
+| --- | --- |
+| $\rho(A)<1$ | perturbations shrink |
+| $\rho(A)=1$ | marginal stability depends on structure |
+| $\rho(A)>1$ | some directions grow |
+
+This is why eigenvalues appear in optimization stability, recurrent models, and state-space models.
+
+## Curvature View
+
+For a twice-differentiable loss near a point $\theta$:
+
+$$
+\mathcal{L}(\theta+\delta)
+\approx
+\mathcal{L}(\theta)
++
+\nabla\mathcal{L}(\theta)^\top\delta
++
+\frac{1}{2}\delta^\top H\delta
+$$
+
+Eigenvalues of the Hessian $H$ describe curvature directions. Large positive eigenvalues indicate sharp directions; negative eigenvalues indicate local descent directions away from a saddle or maximum.
+
 ## Common Equation
 
 Eigenvalues are roots of the characteristic equation:
@@ -90,6 +134,8 @@ where $I$ is the identity matrix.
 - Is the matrix diagonalizable, symmetric, positive semidefinite, or arbitrary?
 - Do large eigenvalues imply explained variance, unstable dynamics, or sharp curvature in this context?
 - Are eigenvectors meaningful, or only the subspace spanned by them?
+- Is the eigenbasis stable under small perturbations, especially near repeated eigenvalues?
+- Is the analysis about eigenvalues of $A$, singular values of $A$, or eigenvalues of $A^\top A$?
 
 ## Related
 

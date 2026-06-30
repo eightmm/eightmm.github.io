@@ -72,6 +72,46 @@ $$
 
 The likelihood term rewards explaining the observation. The prior term encodes assumptions before seeing the observation.
 
+## Log Form
+
+Bayes rule is often used in log space:
+
+$$
+\log p(z\mid x)
+=
+\log p(x\mid z)
++
+\log p(z)
+-
+\log p(x)
+$$
+
+For optimization over $z$, the evidence term can be dropped because it is constant with respect to $z$:
+
+$$
+\arg\max_z \log p(z\mid x)
+=
+\arg\max_z
+\left[
+\log p(x\mid z)+\log p(z)
+\right]
+$$
+
+This is the bridge between Bayesian notation and regularized objective functions.
+
+## Odds Form
+
+For two hypotheses $z_1$ and $z_2$:
+
+$$
+\frac{p(z_1\mid x)}{p(z_2\mid x)}
+=
+\frac{p(x\mid z_1)}{p(x\mid z_2)}
+\frac{p(z_1)}{p(z_2)}
+$$
+
+The posterior odds equal likelihood ratio times prior odds. This form is useful for reading classifier calibration, diagnostic tests, and evidence updates.
+
 ## Posterior Predictive
 
 Bayesian prediction averages over posterior uncertainty:
@@ -100,6 +140,8 @@ Practical ML systems often approximate this integral with ensembles, variational
 - Is posterior inference exact, approximate, amortized, or ignored?
 - Does the uncertainty estimate reflect data uncertainty, model uncertainty, or both?
 - Is the reported prediction a posterior mean, MAP estimate, sample, or calibrated score?
+- Is the evidence term estimated, ignored, or only used for normalization?
+- Are posterior probabilities calibrated against held-out outcomes?
 
 ## Related
 
@@ -107,6 +149,7 @@ Practical ML systems often approximate this integral with ensembles, variational
 - [[concepts/math/bayesian-inference|Bayesian inference]]
 - [[concepts/math/maximum-likelihood|Maximum likelihood]]
 - [[concepts/math/expectation|Expectation]]
+- [[concepts/math/entropy-kl|Entropy and KL divergence]]
 - [[concepts/generative-models/vae|VAE]]
 - [[concepts/evaluation/uncertainty-estimation|Uncertainty estimation]]
 - [[concepts/evaluation/calibration|Calibration]]
