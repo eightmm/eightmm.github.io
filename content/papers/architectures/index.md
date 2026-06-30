@@ -40,6 +40,7 @@ This means the current shelf can contain seed notes while the most important pap
 | --- | --- | --- |
 | Sequence and recurrent models | recurrence, gated memory, token mixing, language-model backbone design | [Long Short-Term Memory](/papers/architectures/long-short-term-memory), [RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder), [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [BERT](/papers/architectures/bert), [T5](/papers/architectures/t5), [GPT-2](/papers/architectures/gpt-2), [Layer Normalization](/papers/architectures/layer-normalization), [Mamba](/papers/architectures/mamba) |
 | Vision backbones | locality, depth, width, connectivity, dense prediction, patch tokenization, hierarchy | [AlexNet](/papers/architectures/alexnet), [VGG](/papers/architectures/vgg), [Inception](/papers/architectures/inception), [ResNet](/papers/architectures/deep-residual-learning), [DenseNet](/papers/architectures/densenet), [EfficientNet](/papers/architectures/efficientnet), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer), [Swin Transformer](/papers/architectures/swin-transformer) |
+| Detection and set prediction | object queries, bipartite matching, dense prediction without NMS | [DETR](/papers/architectures/detr) |
 | Multimodal encoders | dual encoders, contrastive alignment, prompt-defined classifiers | [CLIP](/papers/architectures/clip) |
 | Graphs, sets, geometric models, and multimodal arrays | permutation behavior, message passing, structural bias, equivariance, unordered inputs, latent bottlenecks | [GCN](/papers/architectures/gcn), [Graph Attention Networks](/papers/architectures/graph-attention-networks), [Graphormer](/papers/architectures/graphormer), [E(n) Equivariant GNN](/papers/architectures/egnn), [SE(3)-Transformer](/papers/architectures/se3-transformer), [Deep Sets](/papers/architectures/deep-sets), [Set Transformer](/papers/architectures/set-transformer), [Perceiver IO](/papers/architectures/perceiver-io) |
 | Conditional compute | sparse routing, expert capacity, scaling under fixed token compute | [Switch Transformer](/papers/architectures/switch-transformer) |
@@ -67,6 +68,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer | image patches as Transformer tokens; full note started |
 | [Swin Transformer](/papers/architectures/swin-transformer) | Swin Transformer | shifted-window hierarchical vision Transformer; full note started |
 | [Learning Transferable Visual Models From Natural Language Supervision](/papers/architectures/clip) | CLIP | dual-encoder vision-language contrastive architecture; full note started |
+| [End-to-End Object Detection with Transformers](/papers/architectures/detr) | DETR | object detection as set prediction with object queries and bipartite matching; full note started |
 | [Layer Normalization](/papers/architectures/layer-normalization) | LayerNorm | batch-independent normalization for sequence models; full note started |
 | [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | GCN | graph message passing for node classification; full note started |
 | [Graph Attention Networks](/papers/architectures/graph-attention-networks) | GAT | learned attention over graph neighborhoods; full note started |
@@ -104,6 +106,8 @@ This means the current shelf can contain seed notes while the most important pap
 - [[concepts/architectures/lstm|LSTM]]
 - [[concepts/architectures/gru|GRU]]
 - [[concepts/architectures/cnn|CNN]]
+- [[concepts/tasks/object-detection|Object detection]]
+- [[concepts/tasks/segmentation|Segmentation]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/graph-transformer|Graph transformer]]
 - [[concepts/geometric-deep-learning/equivariant-gnn|Equivariant GNNs]]
