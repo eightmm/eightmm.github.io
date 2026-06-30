@@ -102,6 +102,7 @@ Not every paper needs a long review.
 | [DeltaNet](/papers/architectures/deltanet) | delta-rule linear Transformer |
 | [Griffin](/papers/architectures/griffin) | gated linear recurrence and local attention hybrid |
 | [Batch Normalization](/papers/architectures/batch-normalization) | normalization architecture block |
+| [Highway Networks](/papers/architectures/highway-networks) | gated skip paths for very deep networks |
 | [Deep Residual Learning](/papers/architectures/deep-residual-learning) | residual CNN architecture |
 | [U-Net](/papers/architectures/u-net) | dense prediction architecture |
 | [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer |
