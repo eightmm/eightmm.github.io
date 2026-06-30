@@ -97,6 +97,7 @@ Not every paper needs a long review.
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer language model |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | gated recurrent memory |
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU and encoder-decoder architecture |
+| [Sequence to Sequence Learning with Neural Networks](/papers/architectures/sequence-to-sequence-learning) | LSTM encoder-decoder sequence transduction |
 | [Gated Linear Attention](/papers/architectures/gated-linear-attention) | hardware-aware gated linear attention |
 | [DeltaNet](/papers/architectures/deltanet) | delta-rule linear Transformer |
 | [Griffin](/papers/architectures/griffin) | gated linear recurrence and local attention hybrid |
