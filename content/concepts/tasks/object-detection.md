@@ -106,3 +106,6 @@ where $p(r)$ is precision as a function of recall. AP depends on confidence scor
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/architectures/cnn|CNN]]
 - [[concepts/architectures/vision-transformer|Vision Transformer]]
+- [[papers/architectures/faster-r-cnn|Faster R-CNN]]
+- [[papers/architectures/mask-r-cnn|Mask R-CNN]]
+- [[papers/architectures/detr|DETR]]

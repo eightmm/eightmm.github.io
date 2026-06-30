@@ -342,7 +342,7 @@ The decoder query interaction also lets slots coordinate.
 
 ## Comparison to Faster R-CNN Style Detectors
 
-| Property | Two-stage / anchor-based detector | DETR |
+| Property | [Faster R-CNN](/papers/architectures/faster-r-cnn) style detector | DETR |
 | --- | --- | --- |
 | Candidate generation | anchors/proposals | learned object queries |
 | Duplicate removal | NMS | bipartite matching loss |
