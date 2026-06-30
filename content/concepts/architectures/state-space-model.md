@@ -75,6 +75,7 @@ with kernel terms derived from powers of $\bar{A}$. This is why some SSMs can tr
 | --- | --- | --- | --- |
 | RNN/GRU/LSTM | recurrent hidden update | streaming and compact state | hidden bottleneck, sequential training |
 | Transformer | pairwise attention | direct token-token interaction | $O(L^2)$ attention cost |
+| Long convolution | implicit or explicit convolution kernel | long context without pairwise attention matrix | filter/gating design and kernel implementation matter |
 | SSM | structured state or convolution kernel | long sequence efficiency | parameterization and stability details matter |
 | Selective SSM | input-dependent state update | content-aware recurrence | harder to compare with fixed linear SSMs |
 
@@ -106,6 +107,14 @@ but a sequence model alone does not prove structure or function. For protein cla
 - For protein tasks, verify whether residue order alone is modeled or whether structure, contacts, or family splits are also used.
 - Are speed and memory claims measured on the same sequence length, hardware, and batch size?
 - Is Mamba or another selective variant separated from linear SSM assumptions?
+
+## Canonical Papers
+
+| Paper | Why It Matters |
+| --- | --- |
+| [S4](/papers/architectures/s4) | structured state-space kernel for practical long-range sequence modeling |
+| [Hyena](/papers/architectures/hyena) | gated implicit long convolution as a dense-attention-free sequence mixer |
+| [Mamba](/papers/architectures/mamba) | selective state-space scan with input-dependent parameters |
 
 ## Related
 

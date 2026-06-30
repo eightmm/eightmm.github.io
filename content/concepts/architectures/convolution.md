@@ -120,6 +120,25 @@ Pooling, stride, and dilation change this faster. The key question is whether th
 
 This is why convolution remains useful even when Transformers dominate many sequence tasks: it encodes a strong local prior cheaply.
 
+## Long Convolution
+
+For sequence models, convolution does not have to be local. A long convolution can use a kernel over the full context:
+
+$$
+y_t
+=
+\sum_{\tau=0}^{t}
+k_\tau x_{t-\tau}.
+$$
+
+If the kernel is implicitly parameterized,
+
+$$
+k_\tau=f_\theta(\tau),
+$$
+
+the model can represent long filters without storing an independent parameter for every offset. [[papers/architectures/hyena|Hyena]] is the canonical paper note here for gated implicit long convolution as a dense-attention-free sequence mixer.
+
 ## Design Parameters
 
 - Kernel size: local window size.
@@ -140,6 +159,14 @@ This is why convolution remains useful even when Transformers dominate many sequ
 - Does the convolution encode the right symmetry for the data?
 - Is the receptive field large enough without destroying resolution?
 - Are local interactions enough, or is attention/graph message passing needed?
+
+## Canonical Papers
+
+| Paper | Why It Matters |
+| --- | --- |
+| [WaveNet](/papers/architectures/wavenet) | dilated causal convolution for autoregressive sequence generation |
+| [Hyena](/papers/architectures/hyena) | implicit long convolution plus gating for long-context sequence modeling |
+| [ConvNeXt](/papers/architectures/convnext) | depthwise convolution as modern vision token mixing |
 
 ## Related
 
