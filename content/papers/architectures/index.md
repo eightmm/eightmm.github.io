@@ -8,9 +8,29 @@ tags:
 
 # Architecture Papers
 
-Architecture paper note는 attention, convolution, recurrence, graph neural network, state-space model, Mamba-style selective recurrence, mixture of experts, set model, geometric architecture 같은 model family와 structural design choice를 다룹니다.
+Architecture paper note는 오래 남는 model family, block, inductive bias, scaling route를 다룹니다. 이 페이지는 개별 논문을 모두 펼치는 곳이 아니라, architecture를 읽기 위한 paper shelf입니다.
 
 논문의 오래 남는 기여가 재사용 가능한 architecture나 block이면 이 묶음에 둡니다. 같은 논문이 language-model history에서도 중요하면 노트를 복제하지 말고 [[concepts/llm/index|LLM concepts]]나 [[agents/index|Agents]]로 cross-link합니다.
+
+## Shelves
+
+| Shelf | Read For | Anchor Papers |
+| --- | --- | --- |
+| Sequence and attention | token mixing, position, long-range dependency, attention alternatives | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need), [Mamba](/papers/architectures/mamba) |
+| Vision backbones | locality, residual depth, dense prediction, patch tokenization | [Deep Residual Learning](/papers/architectures/deep-residual-learning), [U-Net](/papers/architectures/u-net), [Vision Transformer](/papers/architectures/vision-transformer) |
+| Graphs and sets | permutation behavior, message passing, unordered inputs | [GCN](/papers/architectures/gcn), [Deep Sets](/papers/architectures/deep-sets) |
+
+## Current Notes
+
+| Paper | Main Architecture | Why it is here |
+| --- | --- | --- |
+| [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone |
+| [Deep Residual Learning](/papers/architectures/deep-residual-learning) | ResNet | residual learning and deep CNN optimization |
+| [U-Net](/papers/architectures/u-net) | U-Net | encoder-decoder CNN with localization skip paths |
+| [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer | image patches as Transformer tokens |
+| [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | GCN | graph message passing for node classification |
+| [Deep Sets](/papers/architectures/deep-sets) | Deep Sets | permutation-invariant set function architecture |
+| [Mamba](/papers/architectures/mamba) | selective SSM | input-dependent state-space sequence modeling |
 
 ## Reading Axes
 
@@ -36,12 +56,6 @@ Architecture paper note는 attention, convolution, recurrence, graph neural netw
 - [[concepts/architectures/mamba|Mamba]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
 - [[concepts/geometric-deep-learning/index|Geometric deep learning]]
-
-## Notes
-
-| Paper | Why it is here |
-| --- | --- |
-| [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer architecture foundation |
 
 ## Evaluation Risks
 

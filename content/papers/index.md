@@ -88,6 +88,12 @@ Not every paper needs a long review.
 | 논문 노트 | 영역 |
 | --- | --- |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer architecture |
+| [Deep Residual Learning](/papers/architectures/deep-residual-learning) | residual CNN architecture |
+| [U-Net](/papers/architectures/u-net) | dense prediction architecture |
+| [An Image is Worth 16x16 Words](/papers/architectures/vision-transformer) | Vision Transformer |
+| [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | graph neural network |
+| [Deep Sets](/papers/architectures/deep-sets) | permutation-invariant set architecture |
+| [Mamba](/papers/architectures/mamba) | selective state-space sequence model |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation |
 | [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | antibody-antigen binding |
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | equivariant peptide modeling |
