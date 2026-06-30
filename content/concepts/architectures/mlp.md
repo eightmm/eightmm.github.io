@@ -56,6 +56,13 @@ This is why width and depth change both capacity and memory cost even when the i
 | Readout head | graph-level or sequence-level scalar prediction |
 | Adapter | small trainable module on top of frozen embeddings |
 
+## Canonical Papers
+
+| Paper | Why It Matters |
+| --- | --- |
+| [MLP-Mixer](/papers/architectures/mlp-mixer) | separates token-mixing and channel-mixing MLPs in a vision backbone |
+| [GLU Variants Improve Transformer](/papers/architectures/glu-variants-improve-transformer) | shows how gated MLP variants change Transformer feed-forward blocks |
+
 ## Practical Checks
 
 - Check what features enter the MLP and whether they leak target information.

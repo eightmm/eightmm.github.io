@@ -91,6 +91,13 @@ The gate changes both capacity and parameter count, so comparisons should state 
 
 The phrase "MLP block" can mean channel-only mixing or token mixing depending on the architecture. State the axis.
 
+## Canonical Papers
+
+| Paper | Why It Matters |
+| --- | --- |
+| [MLP-Mixer](/papers/architectures/mlp-mixer) | makes token-axis and channel-axis MLP mixing explicit in a vision backbone |
+| [GLU Variants Improve Transformer](/papers/architectures/glu-variants-improve-transformer) | canonical note for gated Transformer FFN variants |
+
 ## Checks
 
 - Does the block mix tokens, or only transform each token independently?
@@ -108,4 +115,5 @@ The phrase "MLP block" can mean channel-only mixing or token mixing depending on
 - [[concepts/architectures/gating|Gating]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/mixture-of-experts|Mixture of experts]]
+- [[papers/architectures/mlp-mixer|MLP-Mixer]]
 - [[papers/architectures/glu-variants-improve-transformer|GLU Variants Improve Transformer]]
