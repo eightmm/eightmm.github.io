@@ -40,6 +40,68 @@ $$
 
 Deep Sets are often the simplest baseline before using [[concepts/architectures/set-transformer|Set Transformer]], [[concepts/architectures/gnn|Graph neural networks]], or cross-attention over candidates.
 
+## Invariance vs Equivariance
+
+Deep Sets are mainly used for permutation-invariant outputs:
+
+$$
+f(\pi X)=f(X)
+$$
+
+For per-element outputs, the model should be permutation-equivariant:
+
+$$
+g(\pi X)=\pi g(X)
+$$
+
+An equivariant Deep Sets-style layer can be written as:
+
+$$
+h_i
+=
+\psi\left(x_i,\ \sum_j \phi(x_j)\right)
+$$
+
+Each element receives its own feature $x_i$ plus a shared summary of the whole set.
+
+## Pooling Choice
+
+| Pooling | Preserves | Loses or risks |
+| --- | --- | --- |
+| sum | count and aggregate magnitude | scale grows with set size |
+| mean | average property independent of size | count information |
+| max | strongest evidence | weak distributed evidence |
+| attention pooling | learned importance | may become order-sensitive if implemented incorrectly |
+
+If set size itself matters, mean pooling alone may be insufficient. If only composition matters, sum pooling may introduce unwanted size dependence.
+
+## Expressivity Boundary
+
+The basic form
+
+$$
+\rho\left(\sum_i \phi(x_i)\right)
+$$
+
+captures interactions only through the pooled summary. It is a strong baseline, but it can be weak when the task depends on pairwise or higher-order relations.
+
+| Needed structure | Better candidate |
+| --- | --- |
+| pairwise distances or contacts | [[concepts/architectures/gnn|Graph neural networks]] |
+| learned interactions among set elements | [[concepts/architectures/set-transformer|Set Transformer]] |
+| query-specific reading from a set | [[concepts/architectures/cross-attention|Cross-attention]] |
+| geometric equivariance | [[concepts/geometric-deep-learning/equivariance|Equivariance]] |
+
+## Useful Applications
+
+| Input set | Possible output |
+| --- | --- |
+| retrieved evidence chunks | answer support score or reranked context |
+| molecular atoms without bonds | pooled molecular descriptor baseline |
+| point cloud | object-level classification |
+| candidate poses | best-pose or uncertainty summary |
+| multiple observations | aggregate prediction under missing order |
+
 ## Why It Matters
 
 - Encodes permutation invariance by construction.
@@ -51,11 +113,15 @@ Deep Sets are often the simplest baseline before using [[concepts/architectures/
 - Should the output be invariant or equivariant to permutation?
 - Is sum, mean, max, or attention pooling used?
 - Does the model need pairwise interactions beyond independent element embeddings?
+- Does set size carry signal, or should it be normalized away?
+- Is any positional/order information accidentally leaking into the set representation?
 
 ## Related
 
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/gnn|Graph neural networks]]
 - [[concepts/architectures/set-transformer|Set Transformer]]
+- [[concepts/architectures/cross-attention|Cross-attention]]
 - [[concepts/architectures/pooling-readout|Pooling and readout]]
 - [[concepts/geometric-deep-learning/invariance|Invariance]]
+- [[concepts/geometric-deep-learning/equivariance|Equivariance]]

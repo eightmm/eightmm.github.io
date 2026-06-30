@@ -31,6 +31,28 @@ $$
 
 The filter mixes local spatial neighborhoods and input channels.
 
+## Cross-Correlation vs Convolution
+
+Deep learning libraries usually implement cross-correlation rather than mathematically flipped convolution:
+
+$$
+y_i
+=
+\sum_{r=-R}^{R}
+w_r x_{i+r}
+$$
+
+instead of
+
+$$
+y_i
+=
+\sum_{r=-R}^{R}
+w_r x_{i-r}
+$$
+
+The distinction rarely matters for learning because $w$ is learned, but it matters when comparing formulas with signal-processing texts.
+
 ## Locality and Equivariance
 
 Before boundary effects, convolution is translation equivariant:
@@ -43,6 +65,61 @@ $$
 
 $T_a$ shifts the input by offset $a$. This means shifting the input shifts the output in the same way.
 
+## Shape Formula
+
+For one spatial dimension, output length is:
+
+$$
+L_{\mathrm{out}}
+=
+\left\lfloor
+\frac{L_{\mathrm{in}} + 2P - D(K-1) - 1}{S}
++ 1
+\right\rfloor
+$$
+
+where $K$ is kernel size, $P$ padding, $D$ dilation, and $S$ stride.
+
+| Parameter | Effect | Tradeoff |
+| --- | --- | --- |
+| kernel size $K$ | local receptive field | larger kernels cost more and smooth locality |
+| stride $S$ | downsampling | loses resolution but reduces compute |
+| padding $P$ | boundary treatment | can create artificial edge context |
+| dilation $D$ | sparse larger field | can miss fine local patterns |
+| groups | channel factorization | cheaper but less cross-channel mixing |
+
+## Receptive Field
+
+Stacked convolutions increase receptive field. For stride-1 layers with kernel size $K$, a rough receptive field after $L$ layers is:
+
+$$
+R_L
+=
+1 + L(K-1)
+$$
+
+Pooling, stride, and dilation change this faster. The key question is whether the receptive field covers the dependency scale required by the task.
+
+| Data | Useful convolution view |
+| --- | --- |
+| image | local texture and spatial hierarchy |
+| audio | local temporal waveform pattern |
+| sequence | local motif or n-gram-like feature |
+| contact map | local 2D pattern over residue pairs |
+| voxel grid | local 3D occupancy or density pattern |
+
+## Convolution vs Attention
+
+| Property | Convolution | Attention |
+| --- | --- | --- |
+| connectivity | local by default | global or masked |
+| weight sharing | fixed offsets share weights | content-dependent weights |
+| inductive bias | locality and translation equivariance | flexible pairwise interaction |
+| compute pattern | dense local stencil | pairwise token interaction |
+| good baseline for | images, grids, local signals | long-range dependencies and variable relations |
+
+This is why convolution remains useful even when Transformers dominate many sequence tasks: it encodes a strong local prior cheaply.
+
 ## Design Parameters
 
 - Kernel size: local window size.
@@ -51,6 +128,8 @@ $T_a$ shifts the input by offset $a$. This means shifting the input shifts the o
 - Dilation: spacing between kernel positions.
 - Groups: whether channels are split into independent convolution groups.
 - Dimension: 1D sequence, 2D image/contact map, or 3D voxel/grid.
+- Receptive field: whether stacked layers can cover the dependency scale.
+- Boundary policy: whether padding is physically meaningful for the data.
 
 ## Checks
 
@@ -59,10 +138,13 @@ $T_a$ shifts the input by offset $a$. This means shifting the input shifts the o
 - Does stride or pooling discard resolution needed by the task?
 - Is a dense grid representation appropriate, or is the object naturally a graph or point cloud?
 - Does the convolution encode the right symmetry for the data?
+- Is the receptive field large enough without destroying resolution?
+- Are local interactions enough, or is attention/graph message passing needed?
 
 ## Related
 
 - [[concepts/architectures/cnn|CNN]]
+- [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/parameter-sharing|Parameter sharing]]
 - [[concepts/architectures/inductive-bias|Inductive bias]]
 - [[concepts/modalities/image|Image]]
