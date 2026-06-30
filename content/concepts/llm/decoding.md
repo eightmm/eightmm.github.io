@@ -44,6 +44,72 @@ where $z_x$ is the token logit and $T$ is temperature.
 - Beam search explores multiple high-probability sequences but can favor generic outputs.
 - Decoding changes output behavior without changing model weights.
 
+## Common Decoders
+
+| Decoder | Rule | Use when | Risk |
+| --- | --- | --- | --- |
+| Greedy | choose $\arg\max$ each step | deterministic extraction, simple constrained output | local optimum, repetition |
+| Temperature sampling | sample from softened logits | brainstorming or diverse text | variance and unsupported claims |
+| Top-$k$ | sample from $k$ highest-probability tokens | limit tail noise | fixed $k$ ignores distribution shape |
+| Nucleus top-$p$ | sample from smallest set with cumulative mass $p$ | adaptive diversity | unstable with poor calibration |
+| Beam search | keep multiple high-probability partial sequences | translation or short sequence search | generic output, length bias |
+
+Top-$k$ defines a candidate set:
+
+$$
+S_k
+=
+\operatorname{TopK}_{x} z_x
+$$
+
+Nucleus sampling defines the smallest set whose probability mass exceeds $p$:
+
+$$
+S_p
+=
+\min_{S}
+\left\{
+S:
+\sum_{x\in S} p(x\mid x_{<t}) \ge p
+\right\}
+$$
+
+Sampling then renormalizes over the chosen set.
+
+## Length and Stop Rules
+
+Decoding is also controlled by maximum tokens and stop criteria.
+
+$$
+\operatorname{stop}
+\iff
+x_t \in \mathcal{S}_{\mathrm{stop}}
+\lor
+t \ge T_{\max}
+\lor
+\operatorname{valid}(x_{\le t})=1
+$$
+
+| Control | Purpose | Failure mode |
+| --- | --- | --- |
+| max tokens | bound cost and context use | truncates reasoning or JSON |
+| stop sequence | end at known delimiter | stops inside quoted text |
+| schema validation | accept only valid structure | valid syntax with wrong content |
+| repetition penalty | reduce loops | can distort technical wording |
+| multiple samples | expose uncertainty | increases verification cost |
+
+## Decoding vs Verification
+
+Decoding parameters affect variability, but they do not verify truth.
+
+| Task | Typical decoding | Still needs |
+| --- | --- | --- |
+| JSON extraction | low temperature, schema constraint | semantic validation against source |
+| factual answer | low temperature or deterministic | citation and source support |
+| code generation | low-to-moderate sampling | tests and review |
+| brainstorming | higher diversity | filtering and human selection |
+| agent tool call | constrained output | tool result handling and side-effect check |
+
 ## Practical Checks
 
 - Is the task deterministic extraction or creative generation?
@@ -51,6 +117,8 @@ where $z_x$ is the token logit and $T$ is temperature.
 - Does the decoder preserve required structure or schema?
 - Are multiple samples needed to estimate variability?
 - Is the selected answer verified after decoding?
+- Is output variability part of the claim, or just hidden noise?
+- Are stop rules tested against the intended output format?
 
 ## Related
 
