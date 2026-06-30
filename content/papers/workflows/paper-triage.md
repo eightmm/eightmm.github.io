@@ -43,11 +43,10 @@ where $p$ is a candidate paper.
 
 | Bucket | Use For |
 | --- | --- |
-| [Architecture papers](/papers/architectures) | Transformer, GNN, SSM/Mamba, MoE, geometric architecture design |
-| [LLM papers](/papers/llm) | language modeling, context, retrieval, instruction tuning, alignment, tool use |
+| [Architecture papers](/papers/architectures) | Transformer, GNN, SSM/Mamba, MoE, geometric architecture design, language-model backbone papers |
 | [Generative model papers](/papers/generative-models) | diffusion, flow, molecule/protein generation, sampling objectives |
 | [Computational Biology papers](/papers/computational-biology) | structure-based modeling, protein modeling, molecular generation, domain evaluation |
-| [Learning method papers](/papers/learning-methods) | use when the strongest claim is the training signal itself; otherwise route through Architecture, LLM, Generative, or Computational Biology papers |
+| [Learning method papers](/papers/learning-methods) | use when the strongest claim is the training signal itself; otherwise route through Architecture, Generative, Computational Biology, or Agents |
 | [Systems papers](/papers/systems) | use when the strongest claim is runtime, tooling, or reproducibility; otherwise route through the domain paper shelf |
 | Concept update only | math-heavy or method-definition paper where no paper-specific note is needed |
 

@@ -15,7 +15,7 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 
 | Topic | Candidate Papers | Route |
 | --- | --- | --- |
-| Transformer and attention | Attention Is All You Need, BERT, GPT-style decoder-only models | [Architecture papers](/papers/architectures), [LLM papers](/papers/llm) |
+| Transformer and attention | Attention Is All You Need, BERT, GPT-style decoder-only models | [Architecture papers](/papers/architectures) |
 | Vision and convolution | AlexNet, ResNet, U-Net, Vision Transformer | [Architecture papers](/papers/architectures) |
 | Graph and geometry | GCN, GAT, SchNet, EGNN, SE(3)-Transformer, AlphaFold-style structure modules | [Architecture papers](/papers/architectures), [Computational Biology papers](/papers/computational-biology) |
 | Sequence alternatives | S4, Mamba, linear attention variants | [Architecture papers](/papers/architectures) |
@@ -26,7 +26,7 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 | Topic | Candidate Papers | Route |
 | --- | --- | --- |
 | Self-supervised learning | SimCLR, MoCo, BYOL, MAE, DINO, JEPA-style objectives | [Learning method papers](/papers/learning-methods) |
-| Language-model pretraining | GPT, BERT, T5, instruction tuning, RLHF-style alignment | [LLM papers](/papers/llm), [Learning method papers](/papers/learning-methods) |
+| Language-model pretraining | GPT, BERT, T5, instruction tuning, RLHF-style alignment | [Learning method papers](/papers/learning-methods) |
 | Representation learning | contrastive learning, masked modeling, metric learning, probing papers | [Learning method papers](/papers/learning-methods) |
 
 ## Generative Models
@@ -43,7 +43,7 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 | --- | --- | --- |
 | Scaling and efficiency | scaling laws, Chinchilla-style compute/data tradeoff, efficient inference | [Systems papers](/papers/systems) |
 | Evaluation and reproducibility | benchmark design, leakage audits, artifact papers | [Paper reproducibility](/papers/reproducibility), [Paper analysis](/papers/analysis) |
-| Agents and tools | tool use, ReAct-style reasoning, retrieval, agent evaluation | [LLM papers](/papers/llm), [Agents](/agents) |
+| Agents and tools | tool use, ReAct-style reasoning, retrieval, agent evaluation | [Agents](/agents) |
 
 ## Computational Biology
 

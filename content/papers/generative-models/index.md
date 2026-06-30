@@ -34,7 +34,7 @@ where $c$ can be text, class label, protein pocket, scaffold, structure constrai
 | molecule or protein generator | yes, if generation is the core contribution | [Computational Biology papers](/papers/computational-biology) |
 | docking or pose search with generative component | sometimes | [Structure-based modeling papers](/papers/sbdd) |
 | architecture block for many tasks | no, unless generation evidence is central | [Architecture papers](/papers/architectures) |
-| LLM decoding or instruction generation | usually no | [LLM papers](/papers/llm) |
+| LLM decoding or instruction generation | usually no | [Architecture papers](/papers/architectures) |
 
 ## Evaluation Boundary
 

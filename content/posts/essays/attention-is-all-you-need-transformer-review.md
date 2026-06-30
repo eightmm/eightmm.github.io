@@ -491,4 +491,4 @@ Transformer 계열 논문을 읽을 때는 이 질문들을 반복해서 쓰면 
 - [[concepts/architectures/softmax|Softmax]]
 - [[concepts/architectures/computational-complexity|Computational complexity]]
 - [[papers/architectures/index|Architecture papers]]
-- [[papers/llm/index|LLM papers]]
+- [[agents/index|Agents]]

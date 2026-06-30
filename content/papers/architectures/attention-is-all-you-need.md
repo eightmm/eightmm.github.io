@@ -133,7 +133,7 @@ This paper is the anchor for modern Transformer-based systems. For this wiki, it
 - an [[papers/architectures/index|architecture paper]];
 - a prerequisite for [[concepts/architectures/transformer|Transformer]];
 - a bridge from [[concepts/architectures/attention|Attention]] to [[concepts/architectures/encoder-decoder|encoder-decoder architectures]];
-- a historical foundation for [[papers/llm/index|LLM papers]], while not itself being a modern LLM paper.
+- a historical foundation for [[agents/index|Agents]], while not itself being a modern LLM paper.
 
 ## Connections
 

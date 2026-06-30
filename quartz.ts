@@ -107,7 +107,6 @@ ExternalPlugin.Explorer({
       "research/architectures": "Architectures",
       papers: "Papers",
       "papers/architectures": "Architecture Papers",
-      "papers/llm": "LLM Papers",
       "papers/generative-models": "Generative Model Papers",
       "papers/computational-biology": "Computational Biology Papers",
       posts: "Posts",
@@ -127,7 +126,6 @@ ExternalPlugin.Explorer({
     }
     const paperCategoryLinks = [
       "papers/architectures",
-      "papers/llm",
       "papers/generative-models",
       "papers/computational-biology",
     ]
@@ -196,7 +194,6 @@ ExternalPlugin.Explorer({
     const agentGroups = ["core", "features", "tools", "workflows", "models", "verification"]
     const paperGroups = [
       "architectures",
-      "llm",
       "generative-models",
       "computational-biology",
     ]
