@@ -90,6 +90,7 @@ $$
 
 ## Curated Notes
 
+- [[papers/architectures/auto-encoding-variational-bayes|Auto-Encoding Variational Bayes]]
 - [[papers/architectures/ddpm|Denoising Diffusion Probabilistic Models]]
 - [[papers/generative-models/molexar|Molexar]]
 

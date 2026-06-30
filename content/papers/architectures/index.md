@@ -44,7 +44,7 @@ This means the current shelf can contain seed notes while the most important pap
 | Multimodal encoders | dual encoders, contrastive alignment, prompt-defined classifiers | [CLIP](/papers/architectures/clip) |
 | Graphs, sets, geometric models, and multimodal arrays | permutation behavior, message passing, structural bias, equivariance, unordered inputs, latent bottlenecks | [GCN](/papers/architectures/gcn), [Graph Attention Networks](/papers/architectures/graph-attention-networks), [Graphormer](/papers/architectures/graphormer), [E(n) Equivariant GNN](/papers/architectures/egnn), [SE(3)-Transformer](/papers/architectures/se3-transformer), [Deep Sets](/papers/architectures/deep-sets), [Set Transformer](/papers/architectures/set-transformer), [Perceiver IO](/papers/architectures/perceiver-io) |
 | Scientific structure models | domain-specialized architectures for 3D scientific objects | [AlphaFold2](/papers/architectures/alphafold2), [AlphaFold3](/papers/architectures/alphafold3) |
-| Generative architectures | denoising, latent variables, iterative sampling, distribution modeling | [DDPM](/papers/architectures/ddpm) |
+| Generative architectures | denoising, latent variables, iterative sampling, distribution modeling | [Auto-Encoding Variational Bayes](/papers/architectures/auto-encoding-variational-bayes), [DDPM](/papers/architectures/ddpm) |
 | Conditional compute | sparse routing, expert capacity, scaling under fixed token compute | [Switch Transformer](/papers/architectures/switch-transformer) |
 | Training-time architecture blocks | normalization, activation scale, residual stability | [Batch Normalization](/papers/architectures/batch-normalization), [Layer Normalization](/papers/architectures/layer-normalization) |
 | Continuous-depth models | residual dynamics, adaptive compute, ODE solvers as layers | [Neural ODE](/papers/architectures/neural-ode) |
@@ -83,6 +83,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Deep Sets](/papers/architectures/deep-sets) | Deep Sets | permutation-invariant set function architecture; full note started |
 | [Set Transformer](/papers/architectures/set-transformer) | Set Transformer | attention-based permutation-invariant set modeling; full note started |
 | [Perceiver IO](/papers/architectures/perceiver-io) | Perceiver IO | latent-bottleneck attention for structured inputs and outputs; full note started |
+| [Auto-Encoding Variational Bayes](/papers/architectures/auto-encoding-variational-bayes) | VAE | amortized inference, reparameterization trick, and ELBO training for neural latent-variable generative models; full note started |
 | [Denoising Diffusion Probabilistic Models](/papers/architectures/ddpm) | DDPM | iterative denoising architecture and objective for diffusion generative models; full note started |
 | [Neural Ordinary Differential Equations](/papers/architectures/neural-ode) | Neural ODE | continuous-depth residual dynamics; full note started |
 | [Mamba](/papers/architectures/mamba) | selective SSM | input-dependent state-space sequence modeling; full note started |
