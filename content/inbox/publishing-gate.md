@@ -55,6 +55,6 @@ $$
 - [[logs/sanitization-checklist|Sanitization checklist]]
 - [[inbox/curation-queue|Curation queue]]
 - [[inbox/inbox-triage|Inbox triage]]
-- [[posts/blog-writing-guide|블로그 글 작성 가이드]]
+- [[posts/workflows/blog-writing-guide|블로그 글 작성 가이드]]
 - [[agents/workflows/content-promotion-workflow|Content promotion workflow]]
 - [[papers/reproducibility/implementation-readiness|Implementation readiness]]
