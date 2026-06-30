@@ -89,6 +89,7 @@ Not every paper needs a long review.
 | --- | --- |
 | [ImageNet Classification with Deep CNNs](/papers/architectures/alexnet) | large-scale CNN vision architecture |
 | [Very Deep Convolutional Networks](/papers/architectures/vgg) | deep small-filter CNN architecture |
+| [Network In Network](/papers/architectures/network-in-network) | $1\times1$ convolution and global average pooling |
 | [Going Deeper with Convolutions](/papers/architectures/inception) | Inception CNN module |
 | [Densely Connected Convolutional Networks](/papers/architectures/densenet) | dense CNN connectivity |
 | [EfficientNet](/papers/architectures/efficientnet) | CNN compound scaling |
