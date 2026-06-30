@@ -133,3 +133,5 @@ where $D$ is the decoding algorithm and $\eta$ contains temperature, top-$k$, to
 - [[concepts/generative-models/conditional-generation|Conditional generation]]
 - [[concepts/generative-models/vae|VAE]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
+- [[papers/architectures/pixel-recurrent-neural-networks|PixelRNN / PixelCNN]]
+- [[papers/architectures/neural-discrete-representation-learning|VQ-VAE]]
