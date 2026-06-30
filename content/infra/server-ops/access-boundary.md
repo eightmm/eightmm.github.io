@@ -28,6 +28,35 @@ where $u$ is a user, $G(u)$ is the set of groups for that user, and `policy` rec
 - Admin boundary: who can change users, groups, quotas, drivers, or services.
 - Publish boundary: what can leave the private environment and enter public notes.
 
+## Public Network Boundary
+
+Network and login notes are useful, but they are also where public pages most easily leak operational detail. Keep topology and exact endpoints private.
+
+| Topic | Public-safe wording | Do not publish |
+| --- | --- | --- |
+| SSH access | login aggregation pattern or access class | host, IP, port, username, source IP |
+| NAT/outbound access | placeholder interface and purpose | real interface, subnet, router policy |
+| firewall change | state-changing boundary and rollback requirement | actual allowlist, exposed service, rule order |
+| monitoring endpoint | signal class and owner | dashboard URL, port, hostname |
+| auth logs | aggregated count after anonymization | raw `/var/log/auth.log` lines |
+
+For example, publish the normalized aggregation idea, not a site-specific parser:
+
+```bash
+grep "Accepted" /var/log/auth.log \
+  | awk '{print "<minute>", "<user>", "(<source-ip>)"}' \
+  | sort \
+  | uniq -c
+```
+
+For NAT examples, use placeholders only:
+
+```bash
+sudo iptables -t nat -A POSTROUTING -o <public-interface> -j MASQUERADE
+```
+
+The useful public claim is that outbound access required a controlled boundary change and a rollback path, not which machine or interface was used.
+
 ## Decision Table
 
 | Resource | Main Risk | Public Check |
@@ -46,6 +75,8 @@ where $u$ is a user, $G(u)$ is the set of groups for that user, and `policy` rec
 - Does public documentation remove usernames, group names, private paths, hostnames, and ports?
 - Is there an offboarding path that removes access without breaking reproducibility?
 - Are public artifacts checked against [[logs/sanitization-checklist|Sanitization checklist]] before publishing?
+- Are network examples reduced to placeholders rather than real endpoints?
+- Is every auth-log example aggregated and anonymized?
 
 ## Failure Pattern
 

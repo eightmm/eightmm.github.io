@@ -68,6 +68,45 @@ $$
 
 이 흐름을 지키면 private runbook의 구체적인 값은 내부에 남기고, public note에는 원리와 판단 기준만 남길 수 있습니다.
 
+## Change Protocol
+
+운영 명령 중 가장 조심해야 하는 것은 `sudo`, `sacctmgr`, firewall/NAT, account/group 변경처럼 shared state를 바꾸는 명령입니다. Public note에는 command shape만 남기고, 실제 적용 전후 기록은 private runbook에 둡니다.
+
+$$
+\text{read-only evidence}
+\rightarrow
+\text{intended policy}
+\rightarrow
+\text{state-changing command}
+\rightarrow
+\text{verification}
+\rightarrow
+\text{rollback note}
+$$
+
+| Step | Public-safe record | Private-only record |
+| --- | --- | --- |
+| Evidence | symptom class, command family, affected resource axis | raw log, real user, host, job, account, path |
+| Intent | quota class, access class, or routing purpose | exact quota, exact role, internal approval |
+| Command | placeholder command with `<user>`, `<account>`, `<interface>` | command with real values |
+| Verify | read-only verification command family | raw output and before/after diff |
+| Rollback | rollback exists and owner is known | exact rollback command and incident timeline |
+
+State-changing examples should therefore read like policy patterns, not administrative transcripts. If the value itself matters, keep it private unless it is already an official public policy.
+
+## Evidence Pairing
+
+한 가지 command만 보고 바로 결론을 내리면 원인을 잘못 잡기 쉽습니다. Public runbook에는 가능한 한 evidence pair를 남깁니다.
+
+| Symptom | Pair evidence before deciding |
+| --- | --- |
+| GPU allocated but idle | `nvidia-smi` utilization + dataloader/IO signal |
+| Xid appears | kernel log class + GPU UUID/PCI mapping in private note |
+| Disk feels slow | process IO + storage/controller health class |
+| Network storage stalls | interface counters + IO wait or filesystem latency |
+| Slurm queue is unfair | `squeue`/`sprio` + `sshare`/association policy |
+| User cannot submit | submit error class + association/QOS limits |
+
 ## Where Each Command Belongs
 
 | Command family | Put under | Public wording |
