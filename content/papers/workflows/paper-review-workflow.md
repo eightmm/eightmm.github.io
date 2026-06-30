@@ -37,7 +37,7 @@ A paper review workflow turns a public paper into a verified note, reusable conc
 21. Extract reusable concepts with [[papers/workflows/concept-update-contract|Concept update contract]] into [[concepts/index|Concepts]].
 22. Link research relevance into [[research/index|Research]].
 23. Synthesize related work with [[concepts/research-methodology/literature-synthesis|Literature synthesis]] when a topic has enough papers.
-24. Promote mature themes into Korean [[posts/index|Posts]].
+24. Promote mature themes through the Posts workflow only after the paper notes are stable.
 
 ## Evidence Levels
 

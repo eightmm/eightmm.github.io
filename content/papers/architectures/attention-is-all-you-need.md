@@ -25,7 +25,6 @@ tags:
 | arXiv | [1706.03762](https://arxiv.org/abs/1706.03762) |
 | NeurIPS | [Proceedings page](https://papers.nips.cc/paper/7181-attention-is-all-you-need) |
 | Status | verified |
-| Korean longform | [[posts/essays/attention-is-all-you-need-transformer-review|Attention Is All You Need를 지금 다시 읽는 법]] |
 
 ## Question
 
@@ -137,7 +136,6 @@ This paper is the anchor for modern Transformer-based systems. For this wiki, it
 
 ## Connections
 
-- [[posts/essays/attention-is-all-you-need-transformer-review|Attention Is All You Need를 지금 다시 읽는 법]]
 - [[concepts/architectures/attention|Attention]]
 - [[concepts/architectures/transformer|Transformer]]
 - [[concepts/architectures/encoder-decoder|Encoder-decoder architectures]]

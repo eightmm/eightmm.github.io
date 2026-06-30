@@ -34,7 +34,7 @@ $$
 | Evidence | metric, baseline, ablation, uncertainty, strongest/weakest result | [Evidence table](/papers/analysis/evidence-table), [Benchmark claim contract](/concepts/evaluation/benchmark-claim-contract) |
 | Artifact | code, data, split, weight, config, environment, reproducibility status | [Reproducibility checklist](/papers/reproducibility/checklist) |
 | Public boundary | private information, unpublished results, collaborator details | [Publishing gate](/inbox/publishing-gate) |
-| Post route | reader question, next path, minimum support notes | [Wiki bundle checklist](/posts/workflows/wiki-bundle-checklist) |
+| Post route | reader question, next path, minimum support notes | move to the Posts workflow only after paper and concept notes are stable |
 
 ## Claim Decomposition
 
@@ -99,4 +99,3 @@ Do not let one axis hide the others. A protein-ligand paper can be a computation
 - [[papers/workflows/concept-update-contract|Concept update contract]]
 - [[papers/workflows/ai-molecular-math-readiness-gate|AI Computational Biology Math readiness gate]]
 - [[concepts/coverage-matrix|Coverage matrix]]
-- [[posts/workflows/wiki-bundle-checklist|Wiki bundle checklist]]

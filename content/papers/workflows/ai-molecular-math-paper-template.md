@@ -199,7 +199,7 @@ Use `not applicable` only when the paper is not about computational biology.
 - Math note to update: `to verify`
 - Constraint/objective note to update: [[concepts/math/constrained-optimization|Constrained optimization]], [[concepts/generative-models/energy-based-model|Energy-based model]], or `not applicable`
 - Evaluation or benchmark note to update: `to verify`
-- Potential Korean post route: [[posts/workflows/ai-molecular-math-post-intake|AI computational biology math post intake]]
+- Potential Korean post route: use the post workflow from the Posts section when a reader-facing essay is needed.
 - Promotion readiness: [[papers/workflows/ai-molecular-math-readiness-gate|AI computational biology math readiness gate]]
 
 ## Related

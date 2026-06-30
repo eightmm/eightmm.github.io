@@ -87,7 +87,7 @@ Use this only when the paper actually changes how the concept should be understo
 4. Decide which facts remain paper-specific.
 5. Update the smallest useful concept page.
 6. Link the concept update back to the paper note or paper-analysis note.
-7. If several concept notes now form a reader-facing path, consider [[posts/workflows/synthesis-post-template|Synthesis post template]].
+7. If several concept notes now form a reader-facing path, consider promoting them through the Posts workflow.
 
 ## Related
 

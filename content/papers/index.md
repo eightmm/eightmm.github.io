@@ -93,12 +93,6 @@ Not every paper needs a long review.
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | equivariant peptide modeling |
 | [Molexar](/papers/generative-models/molexar) | molecular generation |
 
-## Longform Posts
-
-| Post | Anchor paper |
-| --- | --- |
-| [[posts/essays/attention-is-all-you-need-transformer-review|Attention Is All You Need를 지금 다시 읽는 법]] | [[papers/architectures/attention-is-all-you-need|Attention Is All You Need]] |
-
 ## 보조 묶음
 
 아래 묶음은 좁은 논문군을 잃지 않기 위한 보조 선반입니다. 처음 읽을 때는 더 큰 paper shelf에서 시작하고, 특정 분야로 좁힐 때 들어갑니다.
