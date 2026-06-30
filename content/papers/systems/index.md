@@ -18,6 +18,7 @@ Some systems-heavy papers are kept in [[papers/architectures/index|Architecture 
 | Paper | Why it matters for systems |
 | --- | --- |
 | [FlashAttention](/papers/architectures/flashattention) | exact attention with lower HBM traffic and activation memory |
+| [GShard](/papers/architectures/gshard) | sparse MoE architecture whose claims depend on automatic sharding, compiler partitioning, and distributed execution |
 
 ## Reading Axes
 

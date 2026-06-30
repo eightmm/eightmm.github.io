@@ -106,6 +106,7 @@ where $N$ is tokens, $k$ is top-k routing, $M$ is number of experts, and $c$ is 
 | Paper | Why It Matters |
 | --- | --- |
 | [Sparsely-Gated MoE](/papers/architectures/sparsely-gated-moe) | defines sparse expert routing, noisy top-$k$ gates, and load-balancing as part of the layer contract |
+| [GShard](/papers/architectures/gshard) | connects MoE Transformer architecture to automatic sharding and large-scale distributed training |
 | [Switch Transformer](/papers/architectures/switch-transformer) | simplifies sparse Transformer MoE with top-1 routing |
 | [GLaM](/papers/architectures/glam) | applies sparse expert routing to large autoregressive language-model scaling |
 
