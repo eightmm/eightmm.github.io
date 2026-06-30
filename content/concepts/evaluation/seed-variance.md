@@ -36,6 +36,50 @@ $$
 
 If $|\Delta|$ is comparable to $s_M$, the paper should not be read as strong evidence that one method is better without a paired or repeated-run analysis.
 
+## Difference Distribution
+
+For paired runs where both methods share seed or split $k$:
+
+$$
+d_k=M_{A,k}-M_{B,k}
+$$
+
+summarize:
+
+$$
+\bar{d}
+=
+\frac{1}{K}\sum_{k=1}^{K}d_k,
+\qquad
+s_d^2
+=
+\frac{1}{K-1}\sum_{k=1}^{K}(d_k-\bar{d})^2
+$$
+
+This is usually more informative than comparing two independent standard deviations because it controls shared randomness.
+
+## Confidence Interval
+
+A simple repeated-run interval for the mean score is:
+
+$$
+\bar{M}
+\pm
+t_{K-1,1-\alpha/2}
+\frac{s_M}{\sqrt{K}}
+$$
+
+For method differences, use the paired differences $d_k$:
+
+$$
+\bar{d}
+\pm
+t_{K-1,1-\alpha/2}
+\frac{s_d}{\sqrt{K}}
+$$
+
+With very small $K$, this interval is noisy; report the individual run values as well.
+
 ## Sources
 
 | Source | Example |
@@ -58,6 +102,18 @@ If $|\Delta|$ is comparable to $s_M$, the paper should not be read as strong evi
 | Failed runs | whether crashed, diverged, or excluded runs are counted |
 | Compute budget | whether all compared methods received the same number of attempts |
 
+## Best-Seed Trap
+
+Reporting the best seed estimates a different quantity:
+
+$$
+\max_k M_k
+\neq
+\mathbb{E}[M]
+$$
+
+If one method receives more attempts, it has a higher chance of a lucky run. Compare equal attempt budgets or report both mean and best-seed behavior explicitly.
+
 ## Checks
 
 - Is the reported value mean, median, best seed, or a single run?
@@ -66,6 +122,8 @@ If $|\Delta|$ is comparable to $s_M$, the paper should not be read as strong evi
 - Are failed or unstable runs included in the summary?
 - Is variance over seeds, data splits, prompts, decoders, or test examples?
 - Was the test set used repeatedly to choose a seed or checkpoint?
+- Are method differences paired by seed or split where possible?
+- Is the number of attempts equal across compared methods?
 
 ## Related
 

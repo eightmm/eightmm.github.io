@@ -49,7 +49,16 @@ s_i
 s(x_i,y_i)
 $$
 
-Choose a quantile threshold $\hat{q}_{1-\alpha}$ from the calibration scores. The prediction set is:
+Choose a finite-sample quantile threshold from the calibration scores:
+
+$$
+\hat{q}_{1-\alpha}
+=
+\operatorname{Quantile}_{\lceil (n+1)(1-\alpha)\rceil/n}
+\left(\{s_i\}_{i=1}^{n}\right)
+$$
+
+The prediction set is:
 
 $$
 C_\alpha(x)
@@ -86,6 +95,35 @@ $$
 
 This does not guarantee conditional coverage for every subgroup, scaffold, protein family, domain slice, or OOD region.
 
+## Classification Set Size
+
+For classification, conformal prediction can return multiple labels or no useful decision:
+
+$$
+|C_\alpha(x)| \in \{0,1,\ldots,K\}
+$$
+
+| Set size | Interpretation |
+| --- | --- |
+| $0$ | nonconformity rule or calibration may be broken |
+| $1$ | single label prediction with coverage wrapper |
+| $>1$ | ambiguity remains |
+| $K$ | set is uninformative |
+
+Coverage should be read together with set size and task cost.
+
+## Exchangeability Boundary
+
+The guarantee relies on calibration and test examples being exchangeable:
+
+$$
+(X_i,Y_i)_{\mathrm{cal}}
+\overset{d}{\sim}
+(X,Y)_{\mathrm{test}}
+$$
+
+If test data come from a new scaffold, protein family, lab, time period, or source, marginal coverage can fail. In that case, report slice coverage or use a calibration strategy aligned with deployment.
+
 ## Evaluation
 
 Coverage alone is not enough. A trivial huge set can cover everything. Report:
@@ -103,6 +141,8 @@ Coverage alone is not enough. A trivial huge set can cover everything. Report:
 - Is coverage reported with set size or interval width?
 - Are important slices checked for undercoverage?
 - Is conformal prediction being used for uncertainty communication, abstention, or decision support?
+- Is the quantile rule stated, including finite-sample correction?
+- Are empty, singleton, and large-set rates reported?
 
 ## Related
 
@@ -110,6 +150,7 @@ Coverage alone is not enough. A trivial huge set can cover everything. Report:
 - [[concepts/evaluation/calibration|Calibration]]
 - [[concepts/evaluation/selective-prediction|Selective prediction]]
 - [[concepts/evaluation/train-validation-test-split|Train/validation/test split]]
+- [[concepts/evaluation/evaluation-set-design|Evaluation set design]]
 - [[concepts/evaluation/ood-generalization|OOD generalization]]
 - [[concepts/evaluation/applicability-domain|Applicability domain]]
 - [[concepts/machine-learning/probabilistic-prediction|Probabilistic prediction]]
