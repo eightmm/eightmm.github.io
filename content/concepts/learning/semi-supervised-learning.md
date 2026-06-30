@@ -64,6 +64,49 @@ $$
 
 where $\tau$ is a confidence threshold selected without using the final test set.
 
+## Consistency Regularization
+
+Consistency methods ask predictions to be stable under perturbations:
+
+$$
+\mathcal{L}_{\mathrm{cons}}
+=
+\mathbb{E}_{x\sim\mathcal{D}_U}
+\left[
+d\left(
+p_\theta(\cdot\mid a_1(x)),
+p_\theta(\cdot\mid a_2(x))
+\right)
+\right]
+$$
+
+where $a_1,a_2$ are augmentations and $d$ is a divergence or distance.
+
+This only helps if augmentations preserve the label. In molecular, protein, or scientific data, augmentation validity must be domain-aware.
+
+## Data Contract
+
+Semi-supervised learning should keep label sources separate.
+
+| Set | Contains | Use |
+| --- | --- | --- |
+| clean labeled | human/assay/verified labels | supervised loss and validation/test |
+| unlabeled | inputs without labels | consistency, pseudo-labeling, pretraining |
+| weak labeled | heuristic/noisy labels | auxiliary signal |
+| pseudo-labeled | model-generated labels | training only, not final truth |
+
+Do not merge these into one label column without a label-source field.
+
+## Failure Modes
+
+| Failure | Symptom |
+| --- | --- |
+| confirmation bias | pseudo-label errors become stronger over training |
+| threshold bias | only easy examples enter pseudo-label set |
+| distribution mismatch | unlabeled pool changes representation in wrong direction |
+| false negative pool | unknown positives treated as unlabeled negatives |
+| evaluation contamination | unlabeled pool contains test near-duplicates |
+
 ## Risks
 
 - Confirmation bias: the model reinforces its own wrong predictions.
@@ -80,6 +123,8 @@ where $\tau$ is a confidence threshold selected without using the final test set
 - Is final evaluation done on clean labels?
 - Are weak negatives separated from true negatives?
 - Can the method leak information through duplicate unlabeled examples?
+- Is label source preserved in the schema?
+- Are pseudo-labels evaluated against clean labels before being trusted?
 
 ## Related
 
@@ -88,6 +133,7 @@ where $\tau$ is a confidence threshold selected without using the final test set
 - [[concepts/learning/knowledge-distillation|Knowledge distillation]]
 - [[concepts/learning/active-learning|Active learning]]
 - [[concepts/data/weak-label|Weak label]]
+- [[concepts/data/data-schema|Data schema]]
 - [[concepts/data/missing-data|Missing data]]
 - [[concepts/data/label-noise|Label noise]]
 - [[concepts/data/sampling-bias|Sampling bias]]

@@ -54,6 +54,54 @@ $$
 
 where $\alpha\in[0,1]$ controls the hard-label versus teacher-signal tradeoff.
 
+## Distillation Targets
+
+Distillation is broader than class-probability matching.
+
+| Target | Example | Main check |
+| --- | --- | --- |
+| logits/probabilities | classifier compression | calibration and class slices |
+| embeddings | representation transfer | retrieval or downstream task quality |
+| sequences | language/model output imitation | exactness, diversity, hallucination |
+| rankings | reranker or recommender distillation | ranking metrics and hard negatives |
+| trajectories | agent/tool traces | completion and side-effect correctness |
+| preferences | policy optimization | reward hacking and held-out preference data |
+
+The target determines the loss and verifier.
+
+## Teacher Boundary
+
+The teacher is a data source. Its provenance matters.
+
+$$
+\text{student claim}
+\le
+\text{teacher evidence}
++ \text{student evaluation evidence}
+$$
+
+| Teacher property | Why it matters |
+| --- | --- |
+| training data | may include benchmark or private data |
+| calibration | soft labels may be overconfident |
+| domain coverage | student inherits teacher blind spots |
+| generation policy | synthetic outputs depend on decoding |
+| hidden tools/retrieval | teacher answer may use unavailable evidence |
+
+Public notes should not imply ground truth if the teacher signal is only a model-generated label.
+
+## Evaluation Boundary
+
+| Metric | What it proves |
+| --- | --- |
+| teacher agreement | student imitates teacher |
+| ground-truth metric | student solves task |
+| calibration metric | probabilities remain meaningful |
+| slice/OOD metric | rare cases and transfer behavior |
+| cost/latency metric | compression or deployment benefit |
+
+Distillation is successful only if it improves the intended tradeoff, not merely agreement.
+
 ## Uses
 
 - Compress a large model into a smaller deployable model.
@@ -76,6 +124,8 @@ where $\alpha\in[0,1]$ controls the hard-label versus teacher-signal tradeoff.
 - Are temperature, loss weights, and teacher checkpoint documented?
 - Does distillation preserve calibration and out-of-distribution behavior?
 - Are private teacher prompts, hidden datasets, or unpublished results omitted from public notes?
+- Is teacher agreement separated from task correctness?
+- Does the student improve the claimed cost, latency, or deployment constraint?
 
 ## Related
 

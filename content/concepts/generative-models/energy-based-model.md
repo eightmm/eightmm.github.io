@@ -29,6 +29,27 @@ $$
 
 For discrete data, the integral becomes a sum over states.
 
+## Conditional Energy
+
+Energy functions can also score a candidate output under a condition:
+
+$$
+p_\theta(y\mid x)
+=
+\frac{\exp(-E_\theta(x,y))}
+{Z_\theta(x)}
+$$
+
+where:
+
+$$
+Z_\theta(x)
+=
+\sum_{y'} \exp(-E_\theta(x,y'))
+$$
+
+or an integral for continuous $y$. This form appears in structured prediction, compatibility scoring, docking-like scoring, and reranking.
+
 ## Energy, Score, and Force
 
 The score of an energy-based distribution is:
@@ -76,6 +97,32 @@ $$
 
 This expectation over model samples is often expensive. Practical methods use contrastive divergence, negative sampling, score matching, noise-contrastive estimation, or diffusion-style denoising objectives.
 
+## Positive and Negative Samples
+
+Many practical EBMs learn by contrasting observed examples with negatives:
+
+$$
+\Delta E
+=
+E_\theta(x^+) - E_\theta(x^-)
+$$
+
+The model should assign lower energy to positives:
+
+$$
+E_\theta(x^+) < E_\theta(x^-)
+$$
+
+Negative sampling defines the task. Easy negatives may make the model look good without learning useful structure; false negatives can corrupt the signal.
+
+| Negative source | Risk |
+| --- | --- |
+| random samples | too easy |
+| corrupted examples | corruption may be unrealistic |
+| model samples | expensive or unstable |
+| in-batch negatives | unmarked positives may appear |
+| hard negatives | improves discrimination but can introduce bias |
+
 ## Sampling
 
 Sampling can be done by Langevin dynamics:
@@ -93,6 +140,20 @@ x_t
 $$
 
 This moves samples toward lower energy while retaining stochastic exploration.
+
+## Energy Calibration
+
+Low energy is not automatically a calibrated probability, physical energy, or valid score.
+
+| Claim | Need |
+| --- | --- |
+| ranks candidates | pairwise or ranking evaluation |
+| defines likelihood | tractable or estimated partition behavior |
+| generates samples | sampling procedure and validity checks |
+| approximates physical energy | units, reference state, force/energy benchmark |
+| supports decisions | calibration or threshold validation |
+
+For molecular modeling, a learned pseudo-energy should not be presented as a physical potential unless trained and validated for that claim.
 
 ## When It Appears
 
@@ -112,6 +173,8 @@ This moves samples toward lower energy while retaining stochastic exploration.
 - Does sampling use Langevin, MCMC, ODE/SDE sampling, or deterministic optimization?
 - Are low-energy samples valid under task constraints?
 - In molecular settings, is energy evaluated before or after [[concepts/molecular-modeling/energy-minimization|Energy minimization]]?
+- Are negatives realistic and free of hidden positives?
+- Is energy used as ranking score, probability model, generator, or physical quantity?
 
 ## Related
 
@@ -120,5 +183,6 @@ This moves samples toward lower energy while retaining stochastic exploration.
 - [[concepts/generative-models/score-based-model|Score-based model]]
 - [[concepts/generative-models/score-matching|Score matching]]
 - [[concepts/generative-models/diffusion-model|Diffusion model]]
+- [[concepts/machine-learning/ranking|Ranking]]
 - [[concepts/molecular-modeling/force-field|Force field]]
 - [[concepts/molecular-modeling/energy-minimization|Energy minimization]]
