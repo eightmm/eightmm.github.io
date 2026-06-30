@@ -200,5 +200,7 @@ For modern reading, it is useful because it contrasts sharply with [[papers/arch
 - [[concepts/tasks/object-detection|Object detection]]
 - [[concepts/tasks/localization|Localization]]
 - [[concepts/architectures/cnn|CNN]]
+- [[papers/architectures/feature-pyramid-networks|Feature Pyramid Networks]]
+- [[papers/architectures/yolo|YOLO]]
 - [[papers/architectures/mask-r-cnn|Mask R-CNN]]
 - [[papers/architectures/detr|DETR]]

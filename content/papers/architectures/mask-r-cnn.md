@@ -220,5 +220,6 @@ Mask R-CNN is still useful to read before modern promptable segmentation systems
 - [[concepts/tasks/segmentation|Segmentation]]
 - [[concepts/tasks/localization|Localization]]
 - [[concepts/architectures/cnn|CNN]]
+- [[papers/architectures/feature-pyramid-networks|Feature Pyramid Networks]]
 - [[papers/architectures/faster-r-cnn|Faster R-CNN]]
 - [[papers/architectures/detr|DETR]]

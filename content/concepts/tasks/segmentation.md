@@ -122,5 +122,6 @@ Segmentation errors can come from:
 - [[concepts/evaluation/failure-mode-taxonomy|Failure mode taxonomy]]
 - [[concepts/architectures/u-net|U-Net]]
 - [[concepts/evaluation/metric|Metric]]
+- [[papers/architectures/feature-pyramid-networks|Feature Pyramid Networks]]
 - [[papers/architectures/mask-r-cnn|Mask R-CNN]]
 - [[papers/architectures/segment-anything|Segment Anything]]
