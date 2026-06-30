@@ -213,6 +213,32 @@ $$
 
 [[papers/architectures/linformer|Linformer]] is the canonical low-rank attention paper note here.
 
+Kernel linear attention avoids the $T\times T$ matrix by rewriting attention through feature maps:
+
+$$
+\kappa(q,k)
+=
+\phi(q)^\top\phi(k),
+$$
+
+$$
+Y
+\approx
+\Phi(Q)(\Phi(K)^\top V).
+$$
+
+[[papers/architectures/performer|Performer]] is the canonical random-feature approximation note. [[papers/architectures/gated-linear-attention|Gated Linear Attention]] is the canonical hardware-aware gated linear attention note; it reads linear attention as a parallel training form and a recurrent inference form:
+
+$$
+S_t
+=
+g_t\odot S_{t-1}
++
+k_t^\top v_t,
+\qquad
+o_t=q_tS_t.
+$$
+
 ## Gated and Moving-Average Attention
 
 Some attention variants keep content-dependent mixing but add a local sequential bias before or inside the attention block. [[papers/architectures/mega|Mega]] is the canonical paper note here.
@@ -301,6 +327,9 @@ They do not by themselves prove causal importance. Value vectors, later layers, 
 - [[concepts/architectures/encoder-decoder|Encoder-decoder architectures]]
 - [[concepts/architectures/graph-transformer|Graph Transformer]]
 - [[concepts/architectures/state-space-model|State-space models]]
+- [[papers/architectures/linformer|Linformer]]
+- [[papers/architectures/performer|Performer]]
+- [[papers/architectures/gated-linear-attention|Gated Linear Attention]]
 - [[papers/architectures/mega|Mega]]
 - [[papers/architectures/mamba-2|Mamba-2]]
 - [[concepts/modalities/multimodal-learning|Multimodal learning]]
