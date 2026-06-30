@@ -19,6 +19,35 @@ $$
 
 where $I$ is instruction, $C$ is context, $T$ is optional tool or retrieval evidence, and $F$ is output format or constraint.
 
+## LLM Contract
+
+LLM note는 prompt trick이 아니라, 입력과 증거와 출력 제약을 분리한 contract로 써야 합니다.
+
+$$
+\mathcal{L}_{\mathrm{LLM}}
+=
+(I,\ C,\ R,\ D,\ F,\ V)
+$$
+
+| Part | Meaning | Typical question |
+| --- | --- | --- |
+| $I$ | instruction | 무엇을 하라고 했는가? |
+| $C$ | context | 모델이 볼 수 있는 user data, files, history, examples는 무엇인가? |
+| $R$ | retrieved evidence | 검색된 문서는 어떤 query, chunk, ranking으로 왔는가? |
+| $D$ | decoding policy | temperature, top-p, beam, sampling budget은 무엇인가? |
+| $F$ | output format | free text, markdown, JSON schema, citation, tool call 중 무엇인가? |
+| $V$ | verifier | 출력이 맞다는 외부 증거는 무엇인가? |
+
+This makes a useful separation:
+
+$$
+\text{fluent answer}
+\neq
+\text{grounded answer}
+\neq
+\text{verified answer}
+$$
+
 ## Route Map
 
 | Question | Start | Main Risk |
@@ -66,6 +95,49 @@ $$
 x \rightarrow a_t \rightarrow o_t \rightarrow s_{t+1}
 $$
 
+## Context-Evidence Pipeline
+
+For LLM Wiki writing, the important path is not only token generation. It is evidence selection and claim verification.
+
+$$
+\text{source}
+\rightarrow
+\text{chunk}
+\rightarrow
+\text{retrieve}
+\rightarrow
+\text{pack context}
+\rightarrow
+\text{generate}
+\rightarrow
+\text{verify}
+$$
+
+| Stage | Note | Failure mode |
+| --- | --- | --- |
+| Source | [[concepts/llm/retrieval-augmented-generation|Retrieval-augmented generation]] | stale, private, or irrelevant source |
+| Chunk | [[concepts/llm/chunking|Chunking]] | chunk breaks the evidence needed for a claim |
+| Retrieve | [[concepts/llm/embedding-retrieval|Embedding retrieval]], [[concepts/llm/hybrid-retrieval|Hybrid retrieval]] | high similarity but wrong evidence |
+| Rewrite | [[concepts/llm/query-rewriting|Query rewriting]] | query changes the user's intent |
+| Pack | [[concepts/llm/context-packing|Context packing]], [[concepts/llm/token-budget|Token budget]] | important evidence is excluded |
+| Generate | [[concepts/llm/decoding|Decoding]], [[concepts/llm/prompting|Prompting]] | fluent unsupported claim |
+| Verify | [[concepts/llm/evidence-grounded-generation|Evidence-grounded generation]], [[concepts/llm/citation-grounding|Citation grounding]] | citation does not entail the answer |
+
+## RAG and Grounding Template
+
+RAG note should preserve enough detail to debug retrieval and generation separately.
+
+| Field | Write |
+| --- | --- |
+| Question | exact information need or task |
+| Source set | document collection, freshness, public/private boundary |
+| Unit | page, paragraph, section, chunk, table, code block |
+| Retrieval | sparse, dense, hybrid, reranking, query rewrite |
+| Context packing | what was included, truncated, summarized, or excluded |
+| Generation | output format, citation style, decoding policy |
+| Verification | evidence supports exact claim, not just related topic |
+| Failure slices | missing source, stale source, conflicting source, unsupported citation |
+
 ## Claim Types
 
 | Claim | Evidence |
@@ -76,6 +148,18 @@ $$
 | structured output is reliable | schema validity and semantic validation |
 | tool calling works | tool result handling, side-effect boundary, completion audit |
 | agent workflow succeeds | state/action trace and external verification |
+
+## Common Failure Modes
+
+| Failure | Why it matters |
+| --- | --- |
+| treating context as truth | provided text can be stale, wrong, or adversarial |
+| treating retrieved text as instruction | retrieval content can override the intended task if not bounded |
+| citing a related source | citation may not support the exact claim |
+| hiding decoding settings | sampling variance makes behavior hard to compare |
+| using prompt examples as evaluation | prompt demonstration is not a held-out test |
+| confusing product feature with model concept | UI behavior, memory, tools, and model capability are different layers |
+| moving side effects into an LLM-only note | once tools execute, the topic belongs closer to Agents |
 
 ## Checks
 
