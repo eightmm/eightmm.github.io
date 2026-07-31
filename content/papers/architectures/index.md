@@ -109,7 +109,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [MobileNets](/papers/architectures/mobilenets) | MobileNetV1 | depthwise separable backbone, width/resolution multipliers, resource budgets, Pareto evaluation, and deployment measurement; full paper note |
 | [MobileNetV2](/papers/architectures/mobilenetv2) | inverted residual CNN | expanded depthwise transform, thin residual interface, linear bottleneck, activation placement, dense-prediction interface, and deployment trade-offs; full paper note |
 | [Squeeze-and-Excitation Networks](/papers/architectures/squeeze-and-excitation-networks) | SENet | channel-wise squeeze-and-excitation recalibration block for CNNs; seed note started |
-| [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | compound scaling for CNN families; full note started |
+| [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | NAS baseline, MBConv family, compound depth/width/resolution scaling, discrete rounding, Pareto evaluation, and deployment claim boundaries; full paper note |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone; full note started |
 | [Pointer Networks](/papers/architectures/pointer-networks) | pointer decoder | attention distribution over variable-length input positions as the output vocabulary; full note started |
 | [Dynamic Routing Between Capsules](/papers/architectures/dynamic-routing-between-capsules) | capsule network | vector-valued entity representations and iterative routing-by-agreement; full note started |

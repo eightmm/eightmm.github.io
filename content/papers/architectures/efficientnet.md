@@ -25,7 +25,7 @@ tags:
 | Venue | ICML 2019 |
 | arXiv | [1905.11946](https://arxiv.org/abs/1905.11946) |
 | PMLR | [v97/tan19a](https://proceedings.mlr.press/v97/tan19a.html) |
-| Status | verified |
+| Status | full paper note |
 
 ## Question
 
@@ -207,6 +207,200 @@ For larger $\phi$, the model gets deeper, wider, and uses higher input resolutio
 
 The core design move is that scaling is not arbitrary per model. Once $\alpha,\beta,\gamma$ are chosen, the family follows a structured rule.
 
+## Deriving the Scaling Constraint
+
+For a convolutional backbone, changing depth, width, and resolution affects compute at different rates:
+
+$$
+C(d,w,r)
+\approx
+d\,w^2\,r^2 C_0.
+$$
+
+If the compound coefficient increases by one unit, EfficientNet chooses:
+
+$$
+d\leftarrow\alpha d,
+\qquad
+w\leftarrow\beta w,
+\qquad
+r\leftarrow\gamma r.
+$$
+
+The approximate compute multiplier is:
+
+$$
+\frac{C_{\text{new}}}{C_{\text{old}}}
+\approx
+\alpha\beta^2\gamma^2.
+$$
+
+The paper chooses the constants so this multiplier is close to a target increase, commonly expressed as roughly two times the compute for each additional unit of $\phi$:
+
+$$
+\alpha\beta^2\gamma^2\approx 2.
+$$
+
+This is a planning approximation. Real compute also depends on downsampling, depthwise operations, padding, classifier cost, rounding, and implementation. The constraint is valuable because it exposes the intended budget allocation, not because it predicts exact runtime.
+
+## Why Width and Resolution Are Coupled
+
+Increasing resolution creates more spatial evidence, but a narrow or shallow network may not have enough capacity to use it:
+
+$$
+\text{high resolution}
++
+\text{insufficient capacity}
+\rightarrow
+\text{underused detail}.
+$$
+
+Increasing width without resolution can add channels to already coarse evidence:
+
+$$
+\text{wide low-resolution features}
+\rightarrow
+\text{capacity without new spatial information}.
+$$
+
+Increasing depth without width or resolution can create a longer transformation path without enough feature diversity or input detail. Compound scaling encodes the hypothesis that the three axes should grow together, with ratios selected from a small search.
+
+## Baseline Search Contract
+
+EfficientNet-B0 is not an arbitrary MobileNetV2 clone. The paper first searches for a baseline under a resource constraint and then applies the scaling rule. That creates a two-stage contract:
+
+| Stage | Input | Output | Main question |
+| --- | --- | --- | --- |
+| baseline search | search space, operator choices, target budget | B0 architecture | which block/stage arrangement is strong? |
+| compound scaling | B0 and coefficient $\phi$ | B1-B7-style family | how should the same family grow? |
+
+The baseline search space and objective influence every later variant. A scaling rule found on one family should not be assumed to transfer unchanged to an unrelated architecture.
+
+The distinction can be formalized as:
+
+$$
+\theta_0
+=
+\operatorname{NAS}(\mathcal{S},B),
+$$
+
+where $\mathcal{S}$ is the search space and $B$ the resource budget. The scaled family is then:
+
+$$
+\theta_\phi
+=
+\operatorname{Scale}(\theta_0;\alpha^\phi,\beta^\phi,\gamma^\phi).
+$$
+
+Changing the search space changes $\theta_0$; changing $\phi$ changes the family member.
+
+## Scaling Families as Operating Points
+
+The B-family is better understood as a set of operating points than as a strict ranking:
+
+| Variant direction | Depth | Width | Resolution | Typical use |
+| --- | --- | --- | --- | --- |
+| smaller baseline | lower | lower | lower | constrained deployment or fast iteration |
+| middle variants | balanced increase | balanced increase | balanced increase | general-purpose accuracy/efficiency |
+| larger variants | higher | higher | higher | high-budget offline or server inference |
+
+The exact variant name is insufficient for a fair comparison. A report should include input resolution, parameter count, MAdds/FLOPs, precision, and measured latency when deployment matters.
+
+## Scaling Versus Search
+
+Compound scaling is not the same as neural architecture search:
+
+| Method | What is selected | Cost profile |
+| --- | --- | --- |
+| NAS baseline | block types, stage arrangement, widths, repeats | expensive search and evaluation |
+| compound scaling | depth/width/resolution ratios after baseline selection | cheap family generation once constants are known |
+| manual scaling | designer-selected changes per variant | flexible but less systematic |
+| hardware-aware NAS | architecture under measured device constraints | expensive but deployment-specific |
+
+EfficientNet combines the first two. Its contribution is not that NAS is unnecessary; it is that a strong baseline can be expanded with a simple, reusable rule.
+
+## MBConv and Squeeze-Excitation Interface
+
+The baseline uses mobile inverted bottleneck-style blocks. A generic MBConv block has:
+
+$$
+x
+\rightarrow
+\text{pointwise expansion}
+\rightarrow
+\text{depthwise spatial filtering}
+\rightarrow
+\text{channel recalibration}
+\rightarrow
+\text{pointwise projection}
+\rightarrow
+\text{shortcut if valid}.
+$$
+
+The block's local architecture and the family-level scaling rule should be analyzed separately:
+
+| Level | Main variable |
+| --- | --- |
+| block | expansion ratio, kernel size, squeeze-excitation, activation, projection |
+| stage | repeat count, output channels, stride |
+| family | depth, width, resolution multipliers |
+| deployment | precision, runtime, batch size, memory |
+
+This hierarchy prevents a common attribution error where a gain from squeeze-excitation or a searched block is credited to compound scaling.
+
+## Rounding and Discrete Architecture
+
+The equations produce continuous multipliers, but networks use integer channel counts, integer repeat counts, and discrete input sizes. In practice:
+
+$$
+\hat{L}_i=\operatorname{round}(dL_i),
+\qquad
+\hat{C}_i=\operatorname{round}_{\text{divisor}}(wC_i).
+$$
+
+The rounding policy can change the actual compute budget and sometimes the accuracy. A faithful reproduction must record:
+
+- channel divisor or rounding rule;
+- minimum channel width;
+- repeat-count rounding;
+- input resolution rounding;
+- whether stage transitions are rounded before or after scaling;
+- the resulting actual MAdds, not only the theoretical multiplier.
+
+The intended scaling law and the realized discrete architecture are related but not identical:
+
+$$
+\text{continuous scaling rule}
+\rightarrow
+\text{discrete rounding}
+\rightarrow
+\text{actual model}.
+$$
+
+## Data and Recipe Scaling
+
+Larger models are often trained with different regularization, augmentation, resolution, and training duration. This creates a system-level scaling path:
+
+$$
+\text{model scale}
++
+\text{data/recipe scale}
+\rightarrow
+\text{observed accuracy}.
+$$
+
+When comparing variants, separate:
+
+| Factor | Example question |
+| --- | --- |
+| architecture scale | did depth, width, and resolution change? |
+| data exposure | did the number of training examples or epochs change? |
+| regularization | did augmentation, dropout, or stochastic depth change? |
+| optimization | did batch size, learning rate, or schedule change? |
+| evaluation | is the test resolution and preprocessing comparable? |
+
+The architecture paper's scaling claim is strongest when these factors are reported and controlled or intentionally defined as part of the scaling recipe.
+
 ## Baseline And Scaling Are Separate
 
 EfficientNet-B0 is found with neural architecture search. The larger EfficientNet variants are produced by compound scaling.
@@ -276,6 +470,90 @@ The paper's architectural importance is in the family-level scaling rule, not on
 | B0 is a good base | NAS-derived baseline performance | search found a strong starting point | search space and cost matter |
 
 This is a scaling claim. It should be evaluated with the [[concepts/systems/scaling-claim-contract|scaling claim contract]]: compute, data, recipe, and metric must be explicit.
+
+## Ablation Matrix
+
+| Comparison | Tests | Required control |
+| --- | --- | --- |
+| compound versus depth-only scaling | whether balanced growth helps | same baseline, data, and compute budget |
+| compound versus width-only scaling | value of coordinated feature capacity | same resolution and training recipe |
+| compound versus resolution-only scaling | whether capacity is needed to use detail | same target compute and augmentation |
+| searched B0 versus hand-designed baseline | value of baseline architecture | matched parameters and training budget |
+| scaled B0 versus independently searched larger model | value of scaling versus fresh search | same search/resource objective |
+| FLOPs versus measured latency | systems validity | same device, runtime, batch, and precision |
+| ImageNet versus transfer tasks | generalization of the scaling rule | task-specific heads and fine-tuning recipe |
+
+The most important experiment is not a single B7 headline. It is a family of controlled curves showing how accuracy changes as the resource budget increases under different scaling rules.
+
+## Pareto Frontier and Dominance
+
+Let $A(m)$ be accuracy and $C(m)$ be a chosen cost metric for model $m$. Model $m_1$ dominates $m_2$ when:
+
+$$
+C(m_1)\le C(m_2),
+\qquad
+A(m_1)\ge A(m_2),
+$$
+
+with at least one strict inequality. The useful family is the non-dominated set:
+
+$$
+\mathcal{P}
+=
+\{m:\nexists m'\text{ that dominates }m\}.
+$$
+
+The frontier depends on the cost metric. A model can be Pareto-efficient in FLOPs but dominated in batch-1 latency or peak memory. EfficientNet should therefore be plotted against the resource that the intended user actually pays for.
+
+## Hardware and Runtime Boundary
+
+The compound rule controls architecture-level scaling, but runtime behavior depends on the execution system:
+
+| Runtime factor | Possible effect |
+| --- | --- |
+| depthwise/pointwise kernel support | changes whether MBConv is actually fast |
+| memory bandwidth | can dominate low-arithmetic operations |
+| operator fusion | reduces intermediate memory and launch overhead |
+| precision | changes throughput and memory footprint |
+| batch size | changes utilization and latency |
+| input pipeline | can hide or dominate model time |
+| accelerator shape | favors some channel and resolution multiples |
+
+Thus:
+
+$$
+\text{FLOPs/accuracy efficiency}
+\ne
+\text{end-to-end deployment efficiency}.
+$$
+
+An architecture note should state which one is being claimed.
+
+## Failure Modes
+
+1. **Baseline leakage**: crediting compound scaling for gains caused by the NAS-designed B0 block.
+2. **Rounding drift**: using continuous formulas while the implementation changes stage widths or repeats differently.
+3. **One-axis comparison**: comparing a compound model to a depth-only model at unequal compute or data budgets.
+4. **Resolution shortcut**: increasing input resolution without updating augmentation, crop policy, or evaluation protocol.
+5. **FLOPs overclaim**: treating fewer operations as guaranteed lower latency.
+6. **Recipe confounding**: changing regularization and training duration together with architecture scale.
+7. **Transfer overgeneralization**: treating classification scaling as proof for dense prediction or scientific tasks.
+8. **Variant ambiguity**: reporting only “EfficientNet” without B-variant, resolution, precision, or preprocessing.
+
+## Reproduction Checklist
+
+- [ ] record the exact baseline architecture and search-space assumptions;
+- [ ] record $\alpha$, $\beta$, $\gamma$, and compound coefficient $\phi$;
+- [ ] record depth, width, resolution, and rounding rules;
+- [ ] report actual parameters and MAdds/FLOPs after discretization;
+- [ ] record MBConv, squeeze-excitation, activation, and regularization details;
+- [ ] compare against depth-only, width-only, and resolution-only scaling;
+- [ ] match data, optimizer, augmentation, and training budgets;
+- [ ] report the metric used for efficiency: FLOPs, latency, memory, or energy;
+- [ ] measure batch-1 latency and throughput separately when deployment matters;
+- [ ] evaluate transfer tasks with task-specific heads and explicit output stride;
+- [ ] plot the non-dominated accuracy/resource frontier;
+- [ ] distinguish NAS baseline gains from compound scaling gains.
 
 ## Benchmark Card
 
