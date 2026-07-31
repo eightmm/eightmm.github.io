@@ -27,7 +27,7 @@ tags:
 | Venue | ICCV 2021 |
 | arXiv | [2104.14294](https://arxiv.org/abs/2104.14294) |
 | CVF | [ICCV 2021 open access](https://openaccess.thecvf.com/content/ICCV2021/html/Caron_Emerging_Properties_in_Self-Supervised_Vision_Transformers_ICCV_2021_paper.html) |
-| Status | seed note |
+| Status | full note |
 
 ## One-Line Takeaway
 
@@ -254,6 +254,463 @@ For this wiki, MAE lives near autoencoding and masked modeling; DINO lives near 
 | momentum teacher matters | ablations | stable target network improves SSL | exact schedule and temperature matter |
 | multi-crop training matters | ablations | local/global view matching improves representation | augmentation semantics can fail in other domains |
 | small patches help ViTs | backbone comparisons | finer patch tokens improve dense visual behavior | patch size increases sequence length and compute |
+
+## Projection head and output space
+
+The student and teacher do not necessarily compare the raw class-token embedding. Each backbone can be followed by a projection head:
+
+$$
+z_s
+=
+h_s\left(f_{\theta_s}(v_s)\right),
+\qquad
+z_t
+=
+h_t\left(f_{\theta_t}(v_t)\right).
+$$
+
+The output is a vector of logits in a shared prototype space:
+
+$$
+z_s,z_t\in\mathbb{R}^{K}.
+$$
+
+The softmax distributions are:
+
+$$
+p_s(k\mid v_s)
+=
+\frac{
+\exp(z_s^{(k)}/\tau_s)
+}{
+\sum_{j=1}^{K}
+\exp(z_s^{(j)}/\tau_s)
+},
+$$
+
+$$
+p_t(k\mid v_t)
+=
+\frac{
+\exp((z_t^{(k)}-c^{(k)})/\tau_t)
+}{
+\sum_{j=1}^{K}
+\exp((z_t^{(j)}-c^{(j)})/\tau_t)
+}.
+$$
+
+The projection head is discarded or bypassed for many downstream evaluations. This creates two representation interfaces:
+
+| Interface | Used for |
+| --- | --- |
+| projection output | self-distillation target and optimization |
+| backbone output | kNN, linear evaluation, dense transfer, or fine-tuning |
+
+A result should state which interface is evaluated. High quality in the projection space does not automatically imply identical quality in the backbone feature.
+
+## Multi-view cross-entropy
+
+Let $\mathcal{V}_g$ be the set of global views and $\mathcal{V}_\ell$ the local views. The teacher usually processes only global views, while the student processes all views. A generalized loss is:
+
+$$
+\mathcal{L}
+=
+\frac{1}{|\mathcal{V}_s||\mathcal{V}_t|}
+\sum_{v_s\in\mathcal{V}_s}
+\sum_{v_t\in\mathcal{V}_t}
+\mathbf{1}[v_s\ne v_t]\,
+\mathcal{H}
+\left(
+p_t(\cdot\mid v_t),
+p_s(\cdot\mid v_s)
+\right),
+$$
+
+where:
+
+$$
+\mathcal{H}(p_t,p_s)
+=
+-\sum_{k=1}^{K}
+p_t(k)\log p_s(k).
+$$
+
+The exclusion of identical view pairs is a protocol detail in common DINO implementations. It avoids spending all of the objective on trivial self-matching.
+
+The training signal can be summarized as:
+
+$$
+\text{same image}
+\Rightarrow
+\text{same semantic distribution}
+$$
+
+across changes in crop, scale, color, and other augmentation factors.
+
+This is different from pixel-level invariance. The student is not asked to reconstruct the pixels of a local crop. It is asked to predict a teacher distribution that summarizes the global image.
+
+## Centering and sharpening
+
+The teacher output can collapse when one prototype dimension dominates every image. DINO centers teacher logits using a running statistic:
+
+$$
+c_t
+=
+m c_{t-1}
++
+(1-m)\,
+\frac{1}{B}
+\sum_{i=1}^{B}z_{t,i}.
+$$
+
+The exact aggregation can be distributed across workers, but the contract is a moving estimate of teacher output statistics.
+
+Centering shifts the teacher distribution:
+
+$$
+z_t\rightarrow z_t-c_t.
+$$
+
+Sharpening uses a lower teacher temperature:
+
+$$
+\tau_t<\tau_s
+$$
+
+so that the teacher distribution is more concentrated. The two mechanisms have different effects:
+
+| Mechanism | Main effect |
+| --- | --- |
+| centering | prevents persistent dominance by one output dimension |
+| sharpening | makes the teacher target more selective |
+| momentum | slows target movement and reduces feedback instability |
+
+Collapse diagnostics should inspect entropy and marginal prototype usage rather than only the loss value.
+
+For batch-averaged teacher marginal:
+
+$$
+\bar p_t(k)
+=
+\frac{1}{B}
+\sum_{i=1}^{B}p_t(k\mid x_i),
+$$
+
+track:
+
+$$
+\mathcal{H}(\bar p_t)
+=
+-\sum_k\bar p_t(k)\log\bar p_t(k).
+$$
+
+A low marginal entropy can indicate that the teacher uses only a few output dimensions, though entropy alone is not a complete collapse test.
+
+## Momentum teacher dynamics
+
+The teacher is updated after the student optimization step:
+
+$$
+\theta_t^{(q+1)}
+=
+\lambda_q\theta_t^{(q)}
++
+(1-\lambda_q)\theta_s^{(q+1)}.
+$$
+
+The momentum coefficient can be scheduled over training. A cosine schedule may move it toward one:
+
+$$
+\lambda_q
+=
+1-
+(1-\lambda_{\mathrm{base}})
+\frac{
+\cos(\pi q/Q)+1
+}{2},
+$$
+
+for a suitable training horizon $Q$ and base coefficient.
+
+The teacher is not updated by the self-distillation gradient:
+
+$$
+\nabla_{\theta_t}\mathcal{L}=0
+$$
+
+for the teacher branch during the student update. The teacher changes through the EMA rule. Accidentally backpropagating through the teacher changes the optimization problem and can destabilize training.
+
+The teacher is a low-pass filtered student:
+
+$$
+\theta_t
+\approx
+\operatorname{EMA}(\theta_s).
+$$
+
+This creates a slowly evolving target without an external pretrained checkpoint.
+
+## Why view prediction is non-trivial
+
+Global and local crops have different information content:
+
+$$
+\operatorname{Info}(v_{\mathrm{local}})
+\subseteq
+\operatorname{Info}(v_{\mathrm{global}})
+$$
+
+in the usual crop construction. The local student must infer a distribution compatible with a teacher that sees more of the image.
+
+This creates a pressure toward object-level and context-robust features:
+
+$$
+\text{local patch evidence}
+\rightarrow
+\text{global semantic prototype}.
+$$
+
+It can also create shortcuts if augmentations are weak or if the data contains consistent backgrounds. The augmentation policy therefore defines the invariances that the model is asked to learn.
+
+## Augmentation contract
+
+The typical view generator includes transformations such as:
+
+| Augmentation | Intended pressure |
+| --- | --- |
+| random resized crop | scale and partial-view invariance |
+| horizontal flip | reflection invariance where valid |
+| color jitter | color and illumination robustness |
+| grayscale | reduced dependence on color |
+| Gaussian blur | frequency robustness |
+| solarization | stronger appearance variation on selected views |
+
+For scientific images or biological structures, copying these transforms blindly can destroy the label-free identity relation. An augmentation is valid only if:
+
+$$
+\text{semantic identity}(x)
+=
+\text{semantic identity}(\mathcal{A}(x))
+$$
+
+under the intended task.
+
+For a molecular graph, random atom deletion may not preserve identity; for a protein structure, arbitrary coordinate noise may break stereochemistry; for a microscopy image, cropping may remove the object of interest. DINO's objective is generic, but its view contract is domain-specific.
+
+## Backbone interaction
+
+DINO can use ViTs or convolutional backbones, but the paper highlights a synergy with ViT. The interaction can be decomposed:
+
+| Component | ViT contribution | DINO contribution |
+| --- | --- | --- |
+| input unit | patch token | multi-view consistency over patch-token representations |
+| global context | self-attention | teacher target can summarize full-image context |
+| dense behavior | class-to-patch attention | self-supervision yields object-localized attention patterns |
+| scaling | depth, width, patch size | momentum teacher and multi-crop training |
+
+The main architectural lesson is not that DINO replaces ViT. It shows that the learning signal can expose properties of the backbone that are less visible under supervised training.
+
+## Attention map extraction
+
+For a ViT, let $A_{\ell,h}$ be the attention matrix at layer $\ell$ and head $h$. The class-token attention to patch tokens is:
+
+$$
+a_{\ell,h}
+=
+A_{\ell,h}[0,1:N+1].
+$$
+
+To aggregate heads:
+
+$$
+\bar a_\ell
+=
+\frac{1}{H}
+\sum_{h=1}^{H}a_{\ell,h}.
+$$
+
+The vector can be reshaped from length $N$ to the patch grid and upsampled to image resolution. Choices matter:
+
+- which layer is used;
+- whether heads are averaged or selected;
+- whether attention is averaged before or after normalization;
+- whether residual attention is included;
+- how the map is thresholded for segmentation metrics.
+
+The attention map is evidence of a representation behavior, not a complete explanation of the classifier's decision.
+
+## Evaluation layers
+
+DINO uses multiple evaluation interfaces:
+
+### kNN evaluation
+
+Store normalized features from a reference set:
+
+$$
+\tilde z_i
+=
+\frac{z_i}{\|z_i\|_2}.
+$$
+
+For a query $z_q$, cosine similarity is:
+
+$$
+s(q,i)
+=
+\tilde z_q^\top\tilde z_i.
+$$
+
+The kNN prediction aggregates labels of the nearest reference features. This tests whether the geometry is useful without fitting a new linear classifier.
+
+### Linear evaluation
+
+Freeze the backbone and fit a classifier:
+
+$$
+\hat y
+=
+\operatorname{softmax}(Wz+b).
+$$
+
+This tests linearly accessible information, not the quality of the frozen feature under every downstream head.
+
+### Fine-tuning
+
+Update the backbone and head jointly. This tests initialization quality under adaptation, not frozen representation quality.
+
+### Dense transfer
+
+Use patch-level or spatial features for detection or segmentation. This is particularly relevant to the paper's object-localization observation.
+
+These evaluations answer different questions and should not be combined into one “representation quality” number.
+
+## What the paper establishes
+
+The arXiv abstract reports that DINO-trained ViT features show explicit semantic segmentation information in attention maps, strong kNN behavior, and strong ImageNet linear evaluation. It also emphasizes the importance of momentum encoders, multi-crop training, and small patches.
+
+The reported ImageNet linear evaluation result for ViT-Base is 80.1% top-1 in the cited setup. The result supports a specific package:
+
+$$
+\text{ViT}
++
+\text{DINO objective}
++
+\text{training recipe}
+\rightarrow
+\text{strong frozen representation}.
+$$
+
+It does not establish that the DINO objective alone causes the gain independent of backbone, data, augmentation, or compute.
+
+## Ablation questions
+
+- What changes when the teacher is not an EMA of the student?
+- How much do centering and sharpening contribute separately?
+- What is the effect of removing local crops while keeping global crops?
+- How does patch size change dense transfer and attention localization?
+- Does DINO remain stable with a convolutional backbone under the same view policy?
+- Does kNN performance predict linear or dense transfer performance?
+- How sensitive are results to teacher temperature and momentum schedule?
+- Does the projection head improve backbone features or only stabilize its own output space?
+- Which attention layer and head aggregation method best supports localization?
+- Do domain-preserving augmentations produce the same emergent behavior outside natural images?
+
+These questions distinguish architecture, target dynamics, view generation, and evaluation protocol.
+
+## Relation to other self-supervised methods
+
+| Method | Target | Main architectural pressure |
+| --- | --- | --- |
+| DINO | EMA teacher distribution | view-invariant semantic representation |
+| MAE | masked input reconstruction | visible-token encoder and lightweight decoder |
+| SimCLR | augmented-view contrastive logits | large negative set and projection geometry |
+| BYOL | EMA target representation | bootstrap without explicit negatives |
+| iBOT | teacher targets on masked patch tokens | patch-level self-distillation |
+
+DINO's important boundary is teacher-student distillation without labels and without explicit negative pairs. It should be routed to [[ai/learning-methods|Learning Methods]] for the objective taxonomy, while its ViT interaction remains in Architecture Papers.
+
+## Failure modes
+
+### Representation collapse
+
+All views produce nearly the same output:
+
+$$
+p_s(\cdot\mid v)
+\approx
+p_t(\cdot\mid v')
+\approx
+\text{constant}.
+$$
+
+Monitor feature variance, prototype usage, marginal entropy, and downstream performance.
+
+### Teacher instability
+
+If the teacher follows the student too quickly, the target can move faster than the student can learn. If it moves too slowly, adaptation may lag behind the data distribution.
+
+### View shortcut
+
+The student may predict crop or augmentation artifacts instead of semantic content. This is especially likely when local and global views have systematic differences.
+
+### Attention over-interpretation
+
+Attention maps may correlate with object regions while not being sufficient causal explanations. Use perturbation or dense evaluation when making stronger interpretability claims.
+
+### Evaluation leakage
+
+Using labels during model selection, augmentation tuning, or feature normalization can turn a nominally self-supervised comparison into a partially supervised one.
+
+## Computational biology transfer
+
+The teacher-student contract can be useful for sequences, structures, and molecules:
+
+$$
+\text{object}
+\xrightarrow{\text{two valid views}}
+(v_1,v_2)
+\xrightarrow{\text{shared backbone}}
+(z_1,z_2)
+\xrightarrow{\text{EMA target}}
+\text{invariant representation}.
+$$
+
+But the view generator must respect the entity and geometry:
+
+| Object | Possible view | Guardrail |
+| --- | --- | --- |
+| protein sequence | masking, cropping, homolog-aware perturbation | avoid family leakage and invalid biological edits |
+| protein structure | coordinate noise, residue masking, rigid transform | preserve or explicitly test E(3) symmetry |
+| molecule graph | atom masking, bond-preserving augmentation | preserve valence and chemical validity |
+| ligand pose | rigid-frame transform or local perturbation | distinguish physical pose variation from a new state |
+
+For a geometric object, a rigid transform should satisfy the intended invariance/equivariance:
+
+$$
+f(RX+t)=f(X)
+$$
+
+for an invariant representation, or:
+
+$$
+f(RX+t)=Rf(X)+t
+$$
+
+for an equivariant coordinate output. A DINO-style loss does not enforce this automatically.
+
+## Reproduction checklist
+
+- [ ] State the backbone, patch size, projection-head dimension, and output prototypes.
+- [ ] Record global/local crop counts, sizes, and augmentation probabilities.
+- [ ] Specify student and teacher temperatures and the teacher momentum schedule.
+- [ ] State the centering update, distributed aggregation, and initialization.
+- [ ] Ensure teacher gradients are disabled and EMA update order is explicit.
+- [ ] Report kNN, linear probe, fine-tuning, and dense metrics separately.
+- [ ] Record feature layer, normalization, and attention-map extraction procedure.
+- [ ] Monitor feature variance, prototype usage, entropy, and collapse indicators.
+- [ ] Match data, training steps, batch size, and compute when comparing backbones.
+- [ ] For biological data, define valid views, split policy, leakage controls, and symmetry contract.
 
 ## Implementation Reading
 
