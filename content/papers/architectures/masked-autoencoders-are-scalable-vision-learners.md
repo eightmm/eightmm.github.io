@@ -26,7 +26,7 @@ tags:
 | Year | 2021 preprint; 2022 conference |
 | Venue | CVPR 2022 |
 | arXiv | [2111.06377](https://arxiv.org/abs/2111.06377) |
-| Status | seed note |
+| Status | full paper note |
 
 ## One-Line Takeaway
 
@@ -240,6 +240,206 @@ The decoder sees all positions, but it is intentionally lightweight:
 | decoder | visible latents plus mask tokens | lightweight | reconstruct pixels |
 
 This is why MAE is not just a denoising autoencoder copied into vision. Its asymmetric compute allocation is central.
+
+## Exact Masking Contract
+
+The masking operation should be treated as part of the model interface, not as an informal augmentation. Let the patch sequence be indexed by:
+
+$$
+\mathcal{I}=\{1,\ldots,N\}.
+$$
+
+A random permutation $\pi$ determines the visible prefix and masked suffix:
+
+$$
+\mathcal{V}=\{\pi_1,\ldots,\pi_{(1-r)N}\},
+\qquad
+\mathcal{M}=\{\pi_{(1-r)N+1},\ldots,\pi_N\}.
+$$
+
+The encoder receives an ordered sequence of visible patches, while the decoder restores the original spatial positions. A faithful implementation therefore has to preserve both pieces of information:
+
+1. which patches survived the random mask;
+2. where every visible and masked patch belongs in the original grid.
+
+An implementation that drops the restore indices or applies positional embeddings after an incorrect reorder is no longer implementing the same architecture. The usual data path is:
+
+$$
+X
+\xrightarrow{\text{patchify}}
+E
+\xrightarrow{\text{shuffle and gather}}
+E_{\mathcal{V}}
+\xrightarrow{\text{encoder}}
+Z_{\mathcal{V}}
+\xrightarrow{\text{append mask tokens and unshuffle}}
+Z_{\text{full}}.
+$$
+
+The mask ratio changes both the learning problem and the compute budget. It should therefore be logged as a first-class experiment parameter, alongside patch size, image resolution, and decoder width.
+
+## Decoder Assembly
+
+Let $m$ be a learned decoder mask token. The encoder output is projected to the decoder width when the two widths differ:
+
+$$
+\tilde{Z}_{\mathcal{V}}=Z_{\mathcal{V}}W_{\text{enc}\rightarrow\text{dec}}.
+$$
+
+For each masked position, insert a copy of $m$ and then restore the original patch order:
+
+$$
+U_i=
+\begin{cases}
+\tilde{z}_i, & i\in\mathcal{V},\\
+m, & i\in\mathcal{M}.
+\end{cases}
+$$
+
+The decoder input is:
+
+$$
+Z_{\text{dec}}=U+P_{\text{dec}}.
+$$
+
+The position embedding is important because a masked token by itself carries no location. The decoder must infer content at a known spatial coordinate, not merely produce an unordered set of plausible patches.
+
+The decoder is intentionally smaller than the encoder. This gives the reconstruction target enough capacity to provide a learning signal without making the pretraining helper the dominant computation:
+
+$$
+\text{large encoder}\;\gg\;\text{light decoder}.
+$$
+
+This asymmetry also explains why the decoder is discarded after pretraining. It is optimized for exposing missing-patch information, while the encoder is optimized for a reusable representation.
+
+## Target Normalization
+
+The reconstruction target can be formed from raw patch pixels or normalized patch pixels. With per-patch normalization:
+
+$$
+\bar{x}_i=\frac{x_i-\mu_i}{\sqrt{\sigma_i^2+\epsilon}},
+$$
+
+the loss becomes:
+
+$$
+\mathcal{L}_{\text{masked}}
+=
+\frac{1}{|\mathcal{M}|}
+\sum_{i\in\mathcal{M}}
+\left\lVert
+\hat{x}_i-\bar{x}_i
+\right\rVert_2^2.
+$$
+
+This choice changes what the decoder is asked to model. Raw pixels preserve absolute brightness and color statistics; normalized targets emphasize the patch's local structure. When reproducing a result, target normalization cannot be treated as a cosmetic preprocessing detail.
+
+## Pretraining to Downstream Interface
+
+MAE has two distinct model graphs:
+
+| Stage | Graph | Output used |
+| --- | --- | --- |
+| pretraining | visible-only encoder plus full-sequence lightweight decoder | masked-patch reconstruction loss |
+| transfer | encoder on the complete patch sequence | class token or pooled representation |
+
+During transfer, the encoder normally sees all patches because there is no reconstruction mask. A classification head is attached for fine-tuning, or the encoder output is frozen for a linear probe. Comparing these settings matters:
+
+$$
+\text{linear probe}\neq\text{partial fine-tuning}\neq\text{full fine-tuning}.
+$$
+
+The pretraining decoder should not accidentally remain in the downstream graph. Keeping it can inflate memory and obscure whether the encoder itself learned a useful representation.
+
+## Why the Architecture Scales
+
+The efficiency argument has two parts. First, the encoder's quadratic attention sees fewer tokens:
+
+$$
+\frac{C_{\text{enc,MAE}}}{C_{\text{enc,dense}}}
+\approx
+(1-r)^2
+$$
+
+for the attention-dominated component. Second, the encoder does not spend layers transforming mask tokens that carry no observed content. The decoder pays a smaller full-sequence cost once, with fewer layers and a narrower hidden size.
+
+This allocation is especially useful as the backbone grows. If the decoder were as large as the encoder, masked reconstruction would lose much of its computational advantage. If the decoder were too weak, the target would provide a poor gradient signal. Decoder width and depth are therefore meaningful scaling variables, not arbitrary implementation choices.
+
+## Ablations Worth Reproducing
+
+| Ablation | Question | Expected interpretation |
+| --- | --- | --- |
+| mask ratio | Is the task too easy or too underdetermined? | low ratios permit local copying; very high ratios may remove too much context |
+| decoder capacity | Is the reconstruction head bottlenecking learning? | a small decoder should work, but an excessively weak one can underfit targets |
+| pixel normalization | What information should the target emphasize? | normalized targets alter the balance between local texture and global structure |
+| encoder visibility | Does the encoder receive mask tokens? | visible-only input is the central compute-saving design |
+| patch size | How coarse is the prediction unit? | smaller patches increase sequence length and detail; larger patches reduce tokens |
+| fine-tuning protocol | Is the representation or recipe responsible for the gain? | probe and fine-tune results answer different questions |
+
+The most informative baseline is not only a different loss. It is a dense ViT with a comparable optimizer, augmentation policy, training budget, and downstream recipe. Otherwise the comparison confounds architecture with compute and tuning.
+
+## Failure Modes
+
+1. **Mask leakage**: masked patch values reach the encoder through an incorrect gather, residual input, or augmentation cache.
+2. **Position mismatch**: visible tokens are restored in the wrong order, so the decoder receives content at the wrong coordinates.
+3. **Visible-patch loss**: the loss includes unmasked patches and rewards copying rather than inference.
+4. **Decoder dominance**: a decoder close in size to the encoder erases the intended compute asymmetry.
+5. **Target mismatch**: normalized targets are used in one run and raw pixels in another without being recorded.
+6. **Transfer confusion**: a full fine-tuning result is described as evidence from a frozen representation.
+
+For debugging, first visualize the mask and restored patch order, then overfit a tiny batch. A correct implementation should reduce masked reconstruction loss on the tiny batch before large-scale training is attempted.
+
+## Comparison with DINO
+
+MAE and DINO use related ViT backbones but impose different learning signals:
+
+| Axis | MAE | DINO |
+| --- | --- | --- |
+| observed input | visible subset | multiple augmented views |
+| target | masked pixels | teacher representation distribution |
+| decoder | lightweight reconstruction decoder | projection heads for teacher and student |
+| central difficulty | infer missing spatial content | align views without collapse |
+| encoder efficiency | fewer tokens during pretraining | repeated crops and teacher-student passes |
+| transferred signal | reconstruction-trained encoder | self-distilled semantic representation |
+
+The comparison prevents a common category error: masked reconstruction and self-distillation are both self-supervised, but they shape representations through different target spaces. See [[papers/architectures/emerging-properties-in-self-supervised-vision-transformers|DINO]] and [[concepts/learning/self-supervised-learning|Self-supervised learning]].
+
+## Transfer Beyond Natural Images
+
+The MAE pattern can be transferred when an input has meaningful local units and a valid partial-observation task:
+
+$$
+\text{structured object}
+\rightarrow
+\text{mask units}
+\rightarrow
+\text{encode observed units}
+\rightarrow
+\text{reconstruct hidden units}.
+$$
+
+For molecular or structural data, the unit might be a residue neighborhood, atom neighborhood, spatial crop, or modality-specific token. The transfer is not automatic. A random mask must preserve a meaningful conditional prediction problem, and the reconstruction target should not reward trivial coordinate or padding shortcuts. Useful checks include:
+
+- whether masked units are spatially connected or randomly scattered;
+- whether the target has symmetries that require invariant or equivariant decoding;
+- whether the mask can be reconstructed from leakage in ordering or metadata;
+- whether the downstream split is family-, scaffold-, or time-separated;
+- whether reconstruction quality correlates with the intended downstream property.
+
+The reusable idea is the asymmetric information bottleneck, not the literal image-pixel target.
+
+## Reproduction Checklist
+
+- [ ] confirm the patchification convention and number of patches;
+- [ ] record mask ratio, random seed, and mask sampling implementation;
+- [ ] verify that the encoder receives visible patches only;
+- [ ] verify that decoder tokens are restored to original positions;
+- [ ] record decoder depth, width, and projection layer;
+- [ ] record raw versus normalized reconstruction targets;
+- [ ] verify that the loss is masked-only;
+- [ ] separate pretraining, linear-probe, and fine-tuning code paths;
+- [ ] compare compute and data budgets with the baseline;
+- [ ] run a tiny-batch overfit test before a full run.
 
 ## Why High Mask Ratio Works
 
