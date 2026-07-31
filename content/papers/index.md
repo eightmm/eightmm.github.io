@@ -98,6 +98,8 @@ Not every paper needs a long review.
 | [BERT](/papers/architectures/bert) | encoder-only Transformer language representation |
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer language model |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | gated recurrent memory |
+| [Neural Turing Machines](/papers/architectures/neural-turing-machines) | differentiable external memory and soft read/write heads |
+| [Hopfield Networks is All You Need](/papers/architectures/hopfield-networks-is-all-you-need) | continuous associative memory and attention-like retrieval |
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU and encoder-decoder architecture |
 | [Sequence to Sequence Learning with Neural Networks](/papers/architectures/sequence-to-sequence-learning) | LSTM encoder-decoder sequence transduction |
 | [Gated Linear Attention](/papers/architectures/gated-linear-attention) | hardware-aware gated linear attention |

@@ -15,7 +15,8 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 
 | Topic | Candidate Papers | Route |
 | --- | --- | --- |
-| Transformer and attention | Attention Is All You Need, BERT, GPT-style decoder-only models | [Architecture papers](/papers/architectures) |
+| Transformer and attention | Attention Is All You Need, BERT, GPT-style decoder-only models, Hopfield Networks is All You Need | [Architecture papers](/papers/architectures) |
+| Memory and recurrence | LSTM, Neural Turing Machines, modern Hopfield networks, Transformer-XL | [Architecture papers](/papers/architectures) |
 | Vision and convolution | AlexNet, ResNet, U-Net, Vision Transformer | [Architecture papers](/papers/architectures) |
 | Graph and geometry | GCN, GAT, SchNet, EGNN, SE(3)-Transformer, AlphaFold-style structure modules | [Architecture papers](/papers/architectures), [Computational Biology papers](/papers/computational-biology) |
 | Sequence alternatives | S4, Mamba, linear attention variants | [Architecture papers](/papers/architectures) |
