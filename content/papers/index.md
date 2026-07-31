@@ -95,6 +95,8 @@ Not every paper needs a long review.
 | [Densely Connected Convolutional Networks](/papers/architectures/densenet) | dense CNN connectivity |
 | [EfficientNet](/papers/architectures/efficientnet) | CNN compound scaling |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer architecture |
+| [Pointer Networks](/papers/architectures/pointer-networks) | attention-based variable-output pointer decoder |
+| [Dynamic Routing Between Capsules](/papers/architectures/dynamic-routing-between-capsules) | vector-valued entities and routing-by-agreement |
 | [BERT](/papers/architectures/bert) | encoder-only Transformer language representation |
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer language model |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | gated recurrent memory |
