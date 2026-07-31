@@ -26,6 +26,8 @@ Paper note는 공개 논문을 요약하고, 논문 안의 claim을 재사용 �
 
 Paper note는 논문 하나의 주장, 방법, 실험, 한계를 읽기 위한 페이지입니다. 논문을 핑계로 전체 개념을 설명하려면 해당 설명은 [[concepts/index|Concepts]]로 분리합니다.
 
+논문은 여러 주제와 겹칠 수 있지만 canonical note는 가장 강한 claim을 기준으로 한 선반에만 둡니다. 다른 선반에서는 중복 문서를 만들지 않고 cross-link합니다. 따라서 Architecture에 있는 구조 논문이 Computational Biology나 Generative Models에서 다시 등장해도 이는 중복 보관이 아니라 독서 경로 연결입니다.
+
 $$
 \text{paper note}
 =

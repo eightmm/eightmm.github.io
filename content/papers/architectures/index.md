@@ -12,6 +12,18 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 
 논문의 오래 남는 기여가 재사용 가능한 architecture나 block이면 이 묶음에 둡니다. 같은 논문이 language-model history에서도 중요하면 노트를 복제하지 말고 [[concepts/llm/index|LLM concepts]]나 [[agents/index|Agents]]로 cross-link합니다.
 
+## Primary Shelf Rule
+
+한 논문은 기본적으로 가장 강한 기여 축 하나에 canonical note를 둡니다.
+
+| 질문 | Primary shelf |
+| --- | --- |
+| reusable block, backbone, connectivity, inductive bias, or scaling rule이 핵심인가? | Architecture |
+| distribution, denoising, flow, latent variable, or sampling objective가 핵심인가? | Generative Models |
+| protein, molecule, ligand, pocket, complex, or domain-specific split/evaluation이 핵심인가? | Computational Biology |
+
+다른 축에서 읽을 필요가 있으면 문서를 복제하지 않고 해당 선반의 index에서 링크합니다. 예를 들어 AlphaFold는 architecture 관점의 canonical note를 유지하면서 [[papers/computational-biology/index|Computational Biology papers]]에서 domain route로 연결할 수 있습니다. 반대로 분자 생성 논문은 생성 objective가 중심이면 [[papers/generative-models/index|Generative model papers]]가 primary이고, 분자 object와 assay/evaluation이 중심이면 Computational Biology가 primary입니다.
+
 ## Start Here
 
 전체 선반을 처음부터 순서대로 읽을 필요는 없습니다. 아래의 `Core canon`은 architecture를 비교하기 위한 최소 경로이고, 세부 변형은 각 route와 shelf에서 확장합니다.
@@ -166,7 +178,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Masked Autoencoders Are Scalable Vision Learners](/papers/architectures/masked-autoencoders-are-scalable-vision-learners) | masked autoencoder ViT | visible-only ViT encoder, high-ratio masking, lightweight decoder, masked-only reconstruction, and transfer interface; full paper note |
 | [Swin Transformer](/papers/architectures/swin-transformer) | Swin Transformer | shifted-window hierarchical vision Transformer; full note started |
 | [CoAtNet](/papers/architectures/coatnet) | convolution-attention hybrid backbone | staged MBConv and relative-attention blocks for data-efficient and scalable vision backbones; full note started |
-| [A ConvNet for the 2020s](/papers/architectures/convnext) | ConvNeXt | modernized pure ConvNet backbone after ViT/Swin design lessons; full note started |
+| [A ConvNet for the 2020s](/papers/architectures/convnext) | ConvNeXt | modernized pure ConvNet backbone after ViT/Swin design lessons, with block contract, scaling, ablations, and transfer limits; full paper note |
 | [Learning Transferable Visual Models From Natural Language Supervision](/papers/architectures/clip) | CLIP | dual-encoder vision-language contrastive architecture; full note started |
 | [FaceNet](/papers/architectures/facenet) | shared-weight metric embedding | parameter-tied encoder branches, triplet geometry, online mining, and open-set retrieval; full note started |
 | [Siamese Neural Networks for One-shot Image Recognition](/papers/architectures/siamese-neural-networks-for-one-shot-image-recognition) | Siamese verifier | tied convolutional branches, pairwise energy, verification-to-one-shot transfer, and support/query evaluation; full note started |
