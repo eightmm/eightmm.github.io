@@ -222,7 +222,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Glow](/papers/architectures/glow) | Glow | normalizing flow with actnorm, affine coupling, and learned invertible $1\times1$ channel mixing; seed note started |
 | [Denoising Diffusion Probabilistic Models](/papers/architectures/ddpm) | DDPM | iterative denoising architecture and objective for diffusion generative models; full note started |
 | [High-Resolution Image Synthesis with Latent Diffusion Models](/papers/architectures/latent-diffusion-models) | Latent Diffusion Model | autoencoder latent-space diffusion with cross-attention conditioning for efficient high-resolution generation; full note started |
-| [Scalable Diffusion Models with Transformers](/papers/architectures/scalable-diffusion-models-with-transformers) | DiT | Transformer denoising backbone over latent image patches for scalable diffusion; seed note started |
+| [Scalable Diffusion Models with Transformers](/papers/architectures/scalable-diffusion-models-with-transformers) | DiT | Transformer denoising backbone over latent image patches, adaptive conditioning, token-count scaling, and U-Net comparison; full note |
 | [Neural Ordinary Differential Equations](/papers/architectures/neural-ode) | Neural ODE | continuous-depth residual dynamics; full note started |
 | [Efficiently Modeling Long Sequences with Structured State Spaces](/papers/architectures/s4) | S4 | structured state-space sequence layer for practical long-range modeling; full note started |
 | [Hyena Hierarchy](/papers/architectures/hyena) | gated long-convolution sequence model | implicit long convolutions and data-controlled gating as a dense-attention-free sequence operator; full note started |
