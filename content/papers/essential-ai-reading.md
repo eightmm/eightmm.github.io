@@ -24,6 +24,7 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 | Conditional compute | Mixture of Experts, Switch Transformer, routed sparse models | [Architecture papers](/papers/architectures), [Systems papers](/papers/systems) |
 | Agent and control architectures | Deep Q-Network, World Models, model-based control, value-based control | [Architecture papers](/papers/architectures), [Agents](/agents) |
 | Iterative and adaptive computation | Universal Transformers, recurrent depth, early exit, adaptive halting | [Architecture papers](/papers/architectures), [Adaptive computation](/concepts/architectures/adaptive-computation) |
+| Shared-weight representations | FaceNet, Siamese/triplet embeddings, CLIP-style dual encoders | [Architecture papers](/papers/architectures), [Learning method papers](/papers/learning-methods) |
 
 ## Learning Methods
 

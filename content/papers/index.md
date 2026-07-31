@@ -100,6 +100,7 @@ Not every paper needs a long review.
 | [Human-level control through deep reinforcement learning](/papers/architectures/human-level-control-through-deep-reinforcement-learning) | CNN observation encoder and action-value control architecture |
 | [World Models](/papers/architectures/world-models) | latent visual state, probabilistic dynamics, and imagined control |
 | [Universal Transformers](/papers/architectures/universal-transformers) | recurrent-depth Transformer with adaptive computation |
+| [FaceNet](/papers/architectures/facenet) | shared-weight embedding architecture and triplet-distance geometry |
 | [BERT](/papers/architectures/bert) | encoder-only Transformer language representation |
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer language model |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | gated recurrent memory |
