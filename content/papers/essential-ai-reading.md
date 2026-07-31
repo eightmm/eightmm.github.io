@@ -25,6 +25,7 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 | Agent and control architectures | Deep Q-Network, World Models, model-based control, value-based control | [Architecture papers](/papers/architectures), [Agents](/agents) |
 | Iterative and adaptive computation | Universal Transformers, recurrent depth, early exit, adaptive halting | [Architecture papers](/papers/architectures), [Adaptive computation](/concepts/architectures/adaptive-computation) |
 | Shared-weight representations | FaceNet, Siamese/triplet embeddings, CLIP-style dual encoders | [Architecture papers](/papers/architectures), [Learning method papers](/papers/learning-methods) |
+| Architecture design automation | Neural Architecture Search with Reinforcement Learning, EfficientNet, search-space and budget design | [Architecture papers](/papers/architectures) |
 
 ## Learning Methods
 
