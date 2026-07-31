@@ -12,6 +12,23 @@ Architecture paper note는 오래 남는 model family, block, inductive bias, sc
 
 논문의 오래 남는 기여가 재사용 가능한 architecture나 block이면 이 묶음에 둡니다. 같은 논문이 language-model history에서도 중요하면 노트를 복제하지 말고 [[concepts/llm/index|LLM concepts]]나 [[agents/index|Agents]]로 cross-link합니다.
 
+## Start Here
+
+전체 선반을 처음부터 순서대로 읽을 필요는 없습니다. 아래의 `Core canon`은 architecture를 비교하기 위한 최소 경로이고, 세부 변형은 각 route와 shelf에서 확장합니다.
+
+| Core canon | 먼저 읽을 논문 | 이 경로에서 얻는 것 |
+| --- | --- | --- |
+| Sequence backbone | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | token mixing, attention, residual stream, encoder-decoder contract |
+| Recurrent and iterative computation | [Long Short-Term Memory](/papers/architectures/long-short-term-memory), [Universal Transformers](/papers/architectures/universal-transformers) | state, shared depth, recurrence, adaptive computation |
+| Vision backbone | [Deep Residual Learning](/papers/architectures/deep-residual-learning), [Vision Transformer](/papers/architectures/vision-transformer) | locality, residual optimization, patch tokenization, data regime |
+| Graph and geometry | [Neural Message Passing](/papers/architectures/neural-message-passing-for-quantum-chemistry), [E(n) Equivariant GNN](/papers/architectures/egnn) | relational inductive bias, coordinates, invariance and equivariance |
+| Generative architecture | [Auto-Encoding Variational Bayes](/papers/architectures/auto-encoding-variational-bayes), [Denoising Diffusion Probabilistic Models](/papers/architectures/ddpm) | latent variables, denoising dynamics, sampling and likelihood boundaries |
+| Conditional capacity | [Sparsely-Gated MoE](/papers/architectures/sparsely-gated-moe), [Switch Transformer](/papers/architectures/switch-transformer) | routing, expert capacity, active versus total parameters |
+| Agent and control | [Human-level control through deep reinforcement learning](/papers/architectures/human-level-control-through-deep-reinforcement-learning), [World Models](/papers/architectures/world-models) | value control, learned dynamics, imagined rollouts |
+| Scientific structure | [Highly accurate protein structure prediction with AlphaFold](/papers/architectures/alphafold2), [E(n) Equivariant GNN](/papers/architectures/egnn) | domain objects, geometric representation, confidence and evaluation boundary |
+
+`Core canon`에 있는 논문은 단순 citation 목록이 아니라, 이후 논문을 읽을 때 비교 기준으로 사용하는 anchor입니다. 새 논문은 이 anchor 중 어떤 구조를 바꾸는지 먼저 적고, domain-specific contribution은 [[papers/computational-biology/index|Computational Biology papers]]나 [[papers/generative-models/index|Generative model papers]]로 연결합니다.
+
 ## Depth Standard
 
 Architecture papers are long-term assets, so a finished note should be more than a short abstract. Short notes are acceptable as first-pass index entries, but canonical architecture papers should eventually reach `full note` depth.
