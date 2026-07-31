@@ -102,6 +102,7 @@ Not every paper needs a long review.
 | [Universal Transformers](/papers/architectures/universal-transformers) | recurrent-depth Transformer with adaptive computation |
 | [FaceNet](/papers/architectures/facenet) | shared-weight embedding architecture and triplet-distance geometry |
 | [Neural Architecture Search with Reinforcement Learning](/papers/architectures/neural-architecture-search-with-reinforcement-learning) | controller-generated architectures and search-budget contract |
+| [Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm](/papers/architectures/mastering-chess-and-shogi-by-self-play) | policy/value network, MCTS, and self-play agent architecture |
 | [BERT](/papers/architectures/bert) | encoder-only Transformer language representation |
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer language model |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | gated recurrent memory |
