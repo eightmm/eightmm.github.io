@@ -99,6 +99,9 @@ Not every paper needs a long review.
 | [Language Models are Unsupervised Multitask Learners](/papers/architectures/gpt-2) | decoder-only Transformer language model |
 | [Long Short-Term Memory](/papers/architectures/long-short-term-memory) | gated recurrent memory |
 | [Neural Turing Machines](/papers/architectures/neural-turing-machines) | differentiable external memory and soft read/write heads |
+| [Memory Networks](/papers/architectures/memory-networks) | modular long-term memory for multi-step inference |
+| [End-To-End Memory Networks](/papers/architectures/end-to-end-memory-networks) | recurrent multi-hop attention over external memory |
+| [Hybrid Computing Using a Neural Network with Dynamic External Memory](/papers/architectures/differentiable-neural-computer) | dynamic memory allocation and temporal-link traversal |
 | [Hopfield Networks is All You Need](/papers/architectures/hopfield-networks-is-all-you-need) | continuous associative memory and attention-like retrieval |
 | [Learning Phrase Representations using RNN Encoder-Decoder](/papers/architectures/rnn-encoder-decoder) | GRU and encoder-decoder architecture |
 | [Sequence to Sequence Learning with Neural Networks](/papers/architectures/sequence-to-sequence-learning) | LSTM encoder-decoder sequence transduction |
