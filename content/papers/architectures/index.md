@@ -105,7 +105,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Going Deeper with Convolutions](/papers/architectures/inception) | Inception | multi-branch compute-aware CNN module; full note started |
 | [Xception](/papers/architectures/xception) | Xception | depthwise separable convolution, Inception factorization, residual flows, compute decomposition, and deployment caveats; full paper note |
 | [ResNeXt](/papers/architectures/resnext) | ResNeXt | homogeneous aggregated transformations, grouped-convolution implementation, cardinality/width/depth trade-offs, and systems caveats; full paper note |
-| [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | dense skip connectivity and feature reuse; full note started |
+| [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | concatenative dense blocks, growth rate, bottleneck/compression, gradient paths, activation memory, and feature-reuse diagnostics; full paper note |
 | [MobileNets](/papers/architectures/mobilenets) | MobileNetV1 | depthwise separable backbone, width/resolution multipliers, resource budgets, Pareto evaluation, and deployment measurement; full paper note |
 | [MobileNetV2](/papers/architectures/mobilenetv2) | inverted residual CNN | expanded depthwise transform, thin residual interface, linear bottleneck, activation placement, dense-prediction interface, and deployment trade-offs; full paper note |
 | [Squeeze-and-Excitation Networks](/papers/architectures/squeeze-and-excitation-networks) | SENet | channel-wise squeeze-and-excitation recalibration block for CNNs; seed note started |

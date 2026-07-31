@@ -24,7 +24,7 @@ tags:
 | Venue | CVPR 2017 |
 | arXiv | [1608.06993](https://arxiv.org/abs/1608.06993) |
 | CVF | [CVPR 2017 paper](https://openaccess.thecvf.com/content_cvpr_2017/html/Huang_Densely_Connected_Convolutional_CVPR_2017_paper.html) |
-| Status | verified |
+| Status | full paper note |
 
 ## Question
 
@@ -206,6 +206,174 @@ under typical downsampling.
 
 Transition layers matter because dense concatenation would otherwise grow activation width too aggressively.
 
+## Dense Block Tensor Contract
+
+Let a dense block start with:
+
+$$
+X_0\in\mathbb{R}^{B\times H\times W\times C_0}.
+$$
+
+Each layer produces exactly $k$ new channels:
+
+$$
+X_\ell
+=
+H_\ell([X_0;X_1;\ldots;X_{\ell-1}]),
+\qquad
+X_\ell\in\mathbb{R}^{B\times H\times W\times k}.
+$$
+
+The complete state after layer $\ell$ is:
+
+$$
+S_\ell
+=
+[X_0;X_1;\ldots;X_\ell]
+\in
+\mathbb{R}^{B\times H\times W\times(C_0+(\ell+1)k)}.
+$$
+
+The next layer consumes $S_\ell$, but contributes only $k$ channels. This is the key difference between feature state and newly computed feature output:
+
+$$
+\text{state width grows}
+\quad\text{while}\quad
+\text{per-layer contribution stays fixed}.
+$$
+
+An implementation should distinguish the list of historical tensors from the final concatenated tensor. Repeatedly copying the full state at every layer can introduce avoidable memory traffic.
+
+## Connectivity and Path Length
+
+For a dense block with $L$ layers, layer $j$ directly consumes the output of every earlier layer $i<j$. The number of directed layer-to-layer paths is:
+
+$$
+\sum_{j=1}^{L}j
+=
+\frac{L(L+1)}{2},
+$$
+
+under the convention that the initial block input is included in the sequence. The important property is not only the number of edges but their length. An early feature can reach a late layer through a direct concatenation rather than passing through every intermediate transform.
+
+For an early feature $X_i$ and later layer $j$:
+
+$$
+\frac{\partial X_j}{\partial X_i}
+=
+\frac{\partial H_j}{\partial X_i}
+
+\quad\text{through the direct input path}.
+$$
+
+The gradient still passes through $H_j$, but it does not have to traverse all transformations between $i$ and $j$. This is the feature-propagation argument behind DenseNet.
+
+## Memory and Compute Accounting
+
+The input width to layer $\ell$ is:
+
+$$
+C_{\text{in},\ell}=C_0+\ell k.
+$$
+
+For a dense $3\times3$ convolution producing $k$ channels, its approximate cost is:
+
+$$
+C_{\text{3x3},\ell}
+\propto
+HWK^2(C_0+\ell k)k.
+$$
+
+Summed over a block:
+
+$$
+C_{\text{block}}
+\propto
+HWK^2k
+\sum_{\ell=0}^{L-1}(C_0+\ell k).
+$$
+
+The state width grows linearly, and the total stored feature volume is also approximately:
+
+$$
+V_{\text{state}}
+\propto
+HW\sum_{\ell=0}^{L}(C_0+\ell k).
+$$
+
+This yields a central tradeoff:
+
+| Benefit | Cost |
+| --- | --- |
+| direct feature reuse | more activation storage |
+| short gradient routes | increasing input width for later layers |
+| small growth rate | concatenation and memory movement |
+| fewer repeated feature extractors | transition-layer and checkpointing complexity |
+
+Parameter efficiency and activation efficiency are different objectives. DenseNet can use fewer weights while requiring more memory bandwidth.
+
+## Bottleneck and Compression Choices
+
+The bottleneck version inserts a $1\times1$ transform before the $3\times3$ transform. If the bottleneck width is $b$ (often proportional to $k$), the cost becomes approximately:
+
+$$
+C_{\text{bottleneck},\ell}
+\propto
+HW(C_{\text{in},\ell}b+K^2bk).
+$$
+
+Compared with a direct $3\times3$ operation from $C_{\text{in},\ell}$ to $k$ channels:
+
+$$
+HWK^2C_{\text{in},\ell}k,
+$$
+
+the bottleneck can reduce the expensive spatial mixing term. But it introduces an additional pointwise operation and another activation boundary.
+
+At a transition, the compression factor $\theta$ controls the next block's starting width:
+
+$$
+C_{\text{next},0}
+=
+\lfloor\theta(C_0+Lk)\rfloor.
+$$
+
+The architecture therefore has two coupled width controls:
+
+1. growth rate $k$ inside a dense block;
+2. compression $\theta$ between blocks.
+
+Reporting only one of them is insufficient to reconstruct the channel schedule.
+
+## Dense Block and Transition Sequence
+
+A complete backbone can be written as:
+
+$$
+\text{stem}
+\rightarrow
+\text{dense block}_1
+\rightarrow
+\text{transition}_1
+\rightarrow
+\text{dense block}_2
+\rightarrow
+\cdots
+\rightarrow
+\text{pool/head}.
+$$
+
+The dense block preserves spatial resolution while adding feature channels. The transition changes both width and resolution. This division of responsibilities makes the model easier to analyze:
+
+| Component | Spatial resolution | Channel width |
+| --- | --- | --- |
+| dense layer | usually unchanged | adds $k$ |
+| dense block | unchanged | grows by $Lk$ |
+| transition convolution | unchanged | compresses by $\theta$ |
+| transition pooling | downsampled | unchanged after projection |
+
+The exact order of normalization, activation, convolution, and pooling is part of the implementation contract.
+
 ## Block View
 
 | Component | Role | Architecture Implication |
@@ -304,6 +472,101 @@ This does not remove optimization difficulty, but it gives many direct routes fo
 | Dense features transfer well | vision benchmark behavior | reusable features are useful | modern transfer settings differ |
 
 Read DenseNet as a connectivity and feature reuse paper, not as a universal replacement for ResNet.
+
+## Ablation Matrix
+
+| Ablation | Question | Confound to control |
+| --- | --- | --- |
+| dense versus residual addition | is concatenative reuse beneficial? | equal depth, width, and training recipe |
+| growth rate $k$ | how many new features should each layer add? | total parameter and activation budget |
+| bottleneck versus direct $3\times3$ | does pointwise compression improve efficiency? | same output width and normalization |
+| compression $\theta$ | how much history should cross transitions? | output stride and total capacity |
+| dense block depth | how does path count affect reuse? | growth rate and memory |
+| activation checkpointing | is memory the actual bottleneck? | same numerical training path |
+| parameter-matched comparison | does reuse reduce weights? | report activation memory separately |
+| latency benchmark | does connectivity translate to speed? | tensor layout, compiler, batch size |
+
+The cleanest comparison uses a tuned residual baseline, because a weak baseline can make any connectivity change look stronger than it is.
+
+## Feature Reuse Diagnostics
+
+The feature-reuse hypothesis can be inspected rather than accepted as a slogan. Useful diagnostics include:
+
+| Diagnostic | What it asks |
+| --- | --- |
+| channel ablation | which historical feature groups are still used? |
+| layer-wise activation similarity | are later layers relearning or transforming existing features? |
+| gradient norm by source layer | do early features receive direct supervision? |
+| transition compression sweep | how much history can be discarded? |
+| linear probe by depth | when do features become useful for the target task? |
+
+If all historical channels are equally necessary, compression may harm performance. If many channels are redundant, DenseNet's explicit history can expose opportunities for pruning or learned compression.
+
+## Implementation Pitfalls
+
+1. **Addition instead of concatenation**: replacing `[X_0;\ldots;X_{\ell-1}]` with a sum creates a ResNet-like block, not a DenseNet block.
+2. **Incorrect growth accounting**: each layer adds $k$ output channels, but its input width increases with every earlier layer.
+3. **Repeated materialization**: building a new full concatenated tensor unnecessarily at every operation can dominate runtime.
+4. **Transition mismatch**: compression and pooling change the next block's shape and must be reflected in the channel schedule.
+5. **Memory underestimation**: parameter count hides the stored history of feature maps.
+6. **Normalization mismatch**: DenseNet variants differ in pre-activation and bottleneck ordering.
+7. **Unfair parameter comparison**: comparing weights without activation memory or input resolution gives an incomplete efficiency picture.
+8. **Overstated gradient claim**: direct paths help propagation but do not remove all optimization or conditioning issues.
+
+For a minimal test, construct a two- or three-layer block and verify:
+
+$$
+\operatorname{channels}(S_\ell)=C_0+(\ell+1)k.
+$$
+
+Then compare a list-based implementation with a fused or optimized implementation for equal forward values and gradients.
+
+## Relation to Other Connectivity Patterns
+
+| Pattern | State update | Width behavior |
+| --- | --- | --- |
+| plain CNN | $x_{\ell}=H_\ell(x_{\ell-1})$ | usually fixed within stage |
+| ResNet | $x_{\ell}=x_{\ell-1}+H_\ell(x_{\ell-1})$ | fixed residual width |
+| DenseNet | $S_\ell=[S_{\ell-1};H_\ell(S_{\ell-1})]$ | grows with depth |
+| Highway/gated skip | learned mixture of transformed and carried state | depends on gate and projection |
+| feature pyramid | multi-scale lateral aggregation | width and resolution vary by level |
+
+DenseNet's distinctive choice is to preserve the entire feature history within a block. Later architectures often approximate this idea with selective skips, learned aggregation, or memory-efficient feature reuse.
+
+## Transfer Beyond Image Classification
+
+The dense connectivity pattern can be useful when intermediate features at different abstraction levels should remain available to later computation. But the cost profile changes with the task:
+
+- dense prediction may benefit from preserved localization features;
+- high-resolution inputs make activation storage expensive;
+- 3D volumes multiply the spatial activation cost;
+- graph or molecular inputs require a domain-valid aggregation operation rather than ordinary channel concatenation;
+- multimodal features may need typed projections before concatenation.
+
+The general principle is:
+
+$$
+\text{preserve useful intermediate states}
+\rightarrow
+\text{reuse them explicitly}
+\rightarrow
+\text{compress only when the memory budget requires it}.
+$$
+
+This principle transfers more safely than the literal DenseNet block.
+
+## Reproduction Checklist
+
+- [ ] record growth rate $k$ and dense-block layer counts;
+- [ ] record bottleneck width and normalization/activation order;
+- [ ] record transition compression $\theta$ and pooling stride;
+- [ ] verify concatenation axis and channel schedule;
+- [ ] calculate both parameter count and activation-memory requirements;
+- [ ] compare against residual addition with matched budgets;
+- [ ] measure concatenation/runtime overhead on target hardware;
+- [ ] report whether checkpointing or tensor fusion is used;
+- [ ] evaluate feature reuse with depth/gradient or ablation diagnostics;
+- [ ] distinguish classification accuracy from dense-prediction and deployment claims.
 
 ## Benchmark Card
 
