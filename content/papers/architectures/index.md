@@ -106,7 +106,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Xception](/papers/architectures/xception) | Xception | depthwise separable convolution, Inception factorization, residual flows, compute decomposition, and deployment caveats; full paper note |
 | [ResNeXt](/papers/architectures/resnext) | ResNeXt | homogeneous aggregated transformations, grouped-convolution implementation, cardinality/width/depth trade-offs, and systems caveats; full paper note |
 | [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | dense skip connectivity and feature reuse; full note started |
-| [MobileNets](/papers/architectures/mobilenets) | MobileNetV1 | depthwise separable convolution and width/resolution multipliers for mobile CNNs; seed note started |
+| [MobileNets](/papers/architectures/mobilenets) | MobileNetV1 | depthwise separable backbone, width/resolution multipliers, resource budgets, Pareto evaluation, and deployment measurement; full paper note |
 | [MobileNetV2](/papers/architectures/mobilenetv2) | inverted residual CNN | efficient mobile CNN block with depthwise convolution, expansion, and linear bottleneck; full note started |
 | [Squeeze-and-Excitation Networks](/papers/architectures/squeeze-and-excitation-networks) | SENet | channel-wise squeeze-and-excitation recalibration block for CNNs; seed note started |
 | [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | compound scaling for CNN families; full note started |
