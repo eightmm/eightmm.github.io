@@ -22,7 +22,7 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 | Graph and geometry | GCN, GAT, SchNet, EGNN, SE(3)-Transformer, AlphaFold-style structure modules | [Architecture papers](/papers/architectures), [Computational Biology papers](/papers/computational-biology) |
 | Sequence alternatives | S4, Mamba, linear attention variants | [Architecture papers](/papers/architectures) |
 | Conditional compute | Mixture of Experts, Switch Transformer, routed sparse models | [Architecture papers](/papers/architectures), [Systems papers](/papers/systems) |
-| Agent and control architectures | Deep Q-Network, AlphaZero, World Models, model-based control, value-based control, tree search | [Architecture papers](/papers/architectures), [Agents](/agents) |
+| Agent and control architectures | Deep Q-Network, AlphaZero, World Models, Dreamer, model-based control, value-based control, tree search, latent imagination | [Architecture papers](/papers/architectures), [Agents](/agents) |
 | Iterative and adaptive computation | Universal Transformers, recurrent depth, early exit, adaptive halting | [Architecture papers](/papers/architectures), [Adaptive computation](/concepts/architectures/adaptive-computation) |
 | Shared-weight representations | FaceNet, Siamese/triplet embeddings, CLIP-style dual encoders | [Architecture papers](/papers/architectures), [Learning method papers](/papers/learning-methods) |
 | Architecture design automation | Neural Architecture Search with Reinforcement Learning, EfficientNet, search-space and budget design | [Architecture papers](/papers/architectures) |
