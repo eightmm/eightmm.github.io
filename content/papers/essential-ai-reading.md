@@ -22,6 +22,7 @@ This page is a placeholder queue for papers that may deserve future notes. Keep 
 | Graph and geometry | GCN, GAT, SchNet, EGNN, SE(3)-Transformer, AlphaFold-style structure modules | [Architecture papers](/papers/architectures), [Computational Biology papers](/papers/computational-biology) |
 | Sequence alternatives | S4, Mamba, linear attention variants | [Architecture papers](/papers/architectures) |
 | Conditional compute | Mixture of Experts, Switch Transformer, routed sparse models | [Architecture papers](/papers/architectures), [Systems papers](/papers/systems) |
+| Agent and control architectures | Deep Q-Network, World Models, model-based control, value-based control | [Architecture papers](/papers/architectures), [Agents](/agents) |
 
 ## Learning Methods
 
