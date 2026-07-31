@@ -25,7 +25,7 @@ $$
 | --- | --- | --- |
 | Transformer | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | [Universal Transformers](/papers/architectures/universal-transformers), [Mamba](/papers/architectures/mamba) |
 | CNN and vision | [Deep Residual Learning](/papers/architectures/deep-residual-learning) | [Vision Transformer](/papers/architectures/vision-transformer), [ConvNeXt](/papers/architectures/convnext) |
-| Shared representation | [FaceNet](/papers/architectures/facenet) | [CLIP](/papers/architectures/clip), [Contrastive learning](/concepts/learning/contrastive-learning) |
+| Shared representation | [Siamese Neural Networks](/papers/architectures/siamese-neural-networks-for-one-shot-image-recognition) | [FaceNet](/papers/architectures/facenet), [CLIP](/papers/architectures/clip), [Contrastive learning](/concepts/learning/contrastive-learning) |
 | Graph and geometry | [E(n) Equivariant GNN](/papers/architectures/egnn) | [Neural Message Passing](/papers/architectures/neural-message-passing-for-quantum-chemistry), [AlphaFold2](/papers/architectures/alphafold2) |
 | Generative | [Denoising Diffusion Probabilistic Models](/papers/architectures/ddpm) | [Latent Diffusion Models](/papers/architectures/latent-diffusion-models), [DiT](/papers/architectures/scalable-diffusion-models-with-transformers) |
 | Agent and control | [DQN](/papers/architectures/human-level-control-through-deep-reinforcement-learning) | [World Models](/papers/architectures/world-models), [Dreamer](/papers/architectures/dream-to-control-learning-behaviors-by-latent-imagination), [MuZero](/papers/architectures/mastering-atari-go-chess-and-shogi-by-planning-with-a-learned-model), [AlphaZero](/papers/architectures/mastering-chess-and-shogi-by-self-play) |

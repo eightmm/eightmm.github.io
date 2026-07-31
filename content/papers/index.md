@@ -103,6 +103,7 @@ Not every paper needs a long review.
 | [Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model](/papers/architectures/mastering-atari-go-chess-and-shogi-by-planning-with-a-learned-model) | MuZero latent model, reward/policy/value prediction, and MCTS planning |
 | [Universal Transformers](/papers/architectures/universal-transformers) | recurrent-depth Transformer with adaptive computation |
 | [FaceNet](/papers/architectures/facenet) | shared-weight embedding architecture and triplet-distance geometry |
+| [Siamese Neural Networks for One-shot Image Recognition](/papers/architectures/siamese-neural-networks-for-one-shot-image-recognition) | tied branches, pairwise verification, and one-shot support/query transfer |
 | [Neural Architecture Search with Reinforcement Learning](/papers/architectures/neural-architecture-search-with-reinforcement-learning) | controller-generated architectures and search-budget contract |
 | [Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm](/papers/architectures/mastering-chess-and-shogi-by-self-play) | policy/value network, MCTS, and self-play agent architecture |
 | [BERT](/papers/architectures/bert) | encoder-only Transformer language representation |
