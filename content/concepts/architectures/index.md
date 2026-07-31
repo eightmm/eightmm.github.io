@@ -17,6 +17,20 @@ $$
 
 같은 training objective라도 $\mathcal{F}_{\text{arch}}$가 locality, order, graph structure, symmetry 중 무엇을 encode하는지에 따라 전혀 다르게 동작할 수 있습니다.
 
+## Paper Shelf
+
+이 개념 페이지에서 정의를 읽은 뒤, 실제 architecture가 그 가정을 어떻게 구현했는지는 [Architecture Papers](/papers/architectures)의 anchor note에서 확인합니다.
+
+| Concept route | Anchor paper |
+| --- | --- |
+| Attention and Transformer | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) |
+| Recurrent and iterative depth | [Universal Transformers](/papers/architectures/universal-transformers) |
+| Shared embedding geometry | [FaceNet](/papers/architectures/facenet) |
+| Graph and equivariance | [E(n) Equivariant GNN](/papers/architectures/egnn) |
+| Generative architecture | [Denoising Diffusion Probabilistic Models](/papers/architectures/ddpm) |
+| Agent control | [Human-level control through deep reinforcement learning](/papers/architectures/human-level-control-through-deep-reinforcement-learning) |
+| Architecture design automation | [Neural Architecture Search with Reinforcement Learning](/papers/architectures/neural-architecture-search-with-reinforcement-learning) |
+
 ## Architecture Contract
 
 Architecture note는 모델명을 외우는 것이 아니라, 입력 구조와 정보 흐름을 계약으로 고정합니다.

@@ -17,6 +17,20 @@ $$
 
 예를 들어 CNN은 locality와 translation equivariance를 강하게 가정하고, GNN은 graph connectivity와 permutation invariance/equivariance를 가정합니다.
 
+## Paper Shelf
+
+개념을 먼저 읽은 뒤 대표 논문으로 내려가려면 아래의 anchor를 시작점으로 사용합니다. 전체 논문 목록은 [Architecture Papers](/papers/architectures)에서 route와 shelf별로 확인할 수 있습니다.
+
+| Family | Paper anchor | 다음에 비교할 것 |
+| --- | --- | --- |
+| Transformer | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | [Universal Transformers](/papers/architectures/universal-transformers), [Mamba](/papers/architectures/mamba) |
+| CNN and vision | [Deep Residual Learning](/papers/architectures/deep-residual-learning) | [Vision Transformer](/papers/architectures/vision-transformer), [ConvNeXt](/papers/architectures/convnext) |
+| Shared representation | [FaceNet](/papers/architectures/facenet) | [CLIP](/papers/architectures/clip), [Contrastive learning](/concepts/learning/contrastive-learning) |
+| Graph and geometry | [E(n) Equivariant GNN](/papers/architectures/egnn) | [Neural Message Passing](/papers/architectures/neural-message-passing-for-quantum-chemistry), [AlphaFold2](/papers/architectures/alphafold2) |
+| Generative | [Denoising Diffusion Probabilistic Models](/papers/architectures/ddpm) | [Latent Diffusion Models](/papers/architectures/latent-diffusion-models), [DiT](/papers/architectures/scalable-diffusion-models-with-transformers) |
+| Agent and control | [DQN](/papers/architectures/human-level-control-through-deep-reinforcement-learning) | [World Models](/papers/architectures/world-models) |
+| Architecture search | [Neural Architecture Search with Reinforcement Learning](/papers/architectures/neural-architecture-search-with-reinforcement-learning) | [EfficientNet](/papers/architectures/efficientnet), [Architecture search](/concepts/architectures/architecture-search) |
+
 ## 고르는 기준
 
 아키텍처를 볼 때는 "유명한 모델인가"보다 "어떤 입력 구조와 대칭성을 가정하는가"를 먼저 봐야 합니다.
