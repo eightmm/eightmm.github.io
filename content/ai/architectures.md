@@ -28,7 +28,7 @@ $$
 | Shared representation | [FaceNet](/papers/architectures/facenet) | [CLIP](/papers/architectures/clip), [Contrastive learning](/concepts/learning/contrastive-learning) |
 | Graph and geometry | [E(n) Equivariant GNN](/papers/architectures/egnn) | [Neural Message Passing](/papers/architectures/neural-message-passing-for-quantum-chemistry), [AlphaFold2](/papers/architectures/alphafold2) |
 | Generative | [Denoising Diffusion Probabilistic Models](/papers/architectures/ddpm) | [Latent Diffusion Models](/papers/architectures/latent-diffusion-models), [DiT](/papers/architectures/scalable-diffusion-models-with-transformers) |
-| Agent and control | [DQN](/papers/architectures/human-level-control-through-deep-reinforcement-learning) | [World Models](/papers/architectures/world-models), [Dreamer](/papers/architectures/dream-to-control-learning-behaviors-by-latent-imagination), [AlphaZero](/papers/architectures/mastering-chess-and-shogi-by-self-play) |
+| Agent and control | [DQN](/papers/architectures/human-level-control-through-deep-reinforcement-learning) | [World Models](/papers/architectures/world-models), [Dreamer](/papers/architectures/dream-to-control-learning-behaviors-by-latent-imagination), [MuZero](/papers/architectures/mastering-atari-go-chess-and-shogi-by-planning-with-a-learned-model), [AlphaZero](/papers/architectures/mastering-chess-and-shogi-by-self-play) |
 | Architecture search | [Neural Architecture Search with Reinforcement Learning](/papers/architectures/neural-architecture-search-with-reinforcement-learning) | [EfficientNet](/papers/architectures/efficientnet), [Architecture search](/concepts/architectures/architecture-search) |
 
 ## 고르는 기준

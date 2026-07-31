@@ -100,6 +100,7 @@ Not every paper needs a long review.
 | [Human-level control through deep reinforcement learning](/papers/architectures/human-level-control-through-deep-reinforcement-learning) | CNN observation encoder and action-value control architecture |
 | [World Models](/papers/architectures/world-models) | latent visual state, probabilistic dynamics, and imagined control |
 | [Dream to Control: Learning Behaviors by Latent Imagination](/papers/architectures/dream-to-control-learning-behaviors-by-latent-imagination) | RSSM, latent imagination, and actor-critic learning through imagined trajectories |
+| [Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model](/papers/architectures/mastering-atari-go-chess-and-shogi-by-planning-with-a-learned-model) | MuZero latent model, reward/policy/value prediction, and MCTS planning |
 | [Universal Transformers](/papers/architectures/universal-transformers) | recurrent-depth Transformer with adaptive computation |
 | [FaceNet](/papers/architectures/facenet) | shared-weight embedding architecture and triplet-distance geometry |
 | [Neural Architecture Search with Reinforcement Learning](/papers/architectures/neural-architecture-search-with-reinforcement-learning) | controller-generated architectures and search-budget contract |
