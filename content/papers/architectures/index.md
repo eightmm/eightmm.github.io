@@ -104,7 +104,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [Network In Network](/papers/architectures/network-in-network) | NiN / mlpconv | local micro-networks, $1\times1$ channel mixing, and global average pooling for CNNs; full note started |
 | [Going Deeper with Convolutions](/papers/architectures/inception) | Inception | multi-branch compute-aware CNN module; full note started |
 | [Xception](/papers/architectures/xception) | Xception | depthwise separable convolution, Inception factorization, residual flows, compute decomposition, and deployment caveats; full paper note |
-| [ResNeXt](/papers/architectures/resnext) | ResNeXt | cardinality as a CNN scaling axis through aggregated residual transformations; seed note started |
+| [ResNeXt](/papers/architectures/resnext) | ResNeXt | homogeneous aggregated transformations, grouped-convolution implementation, cardinality/width/depth trade-offs, and systems caveats; full paper note |
 | [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | dense skip connectivity and feature reuse; full note started |
 | [MobileNets](/papers/architectures/mobilenets) | MobileNetV1 | depthwise separable convolution and width/resolution multipliers for mobile CNNs; seed note started |
 | [MobileNetV2](/papers/architectures/mobilenetv2) | inverted residual CNN | efficient mobile CNN block with depthwise convolution, expansion, and linear bottleneck; full note started |
