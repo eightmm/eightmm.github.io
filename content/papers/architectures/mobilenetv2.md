@@ -26,7 +26,7 @@ tags:
 | Venue | CVPR 2018 |
 | arXiv | [1801.04381](https://arxiv.org/abs/1801.04381) |
 | CVF | [CVPR 2018 paper](https://openaccess.thecvf.com/content_cvpr_2018/html/Sandler_MobileNetV2_Inverted_Residuals_CVPR_2018_paper.html) |
-| Status | verified |
+| Status | full paper note |
 
 ## Question
 
@@ -286,6 +286,287 @@ $$
 \quad
 \text{linear narrow bottleneck output}.
 $$
+
+## Activation Placement Contract
+
+The location of nonlinearities is part of the block definition. A common MobileNetV2 implementation uses a bounded ReLU-style activation after the expansion and depthwise operations, but no activation after the final projection:
+
+$$
+x
+\xrightarrow{1\times1}
+\operatorname{ReLU6}
+\xrightarrow{\text{depthwise}}
+\operatorname{ReLU6}
+\xrightarrow{1\times1}
+y.
+$$
+
+The final output is then either added to the shortcut or passed to the next block. Replacing the final linear projection with ReLU6 changes the information path at the narrow interface:
+
+$$
+\operatorname{ReLU6}(W_{\text{proj}}h)
+\ne
+W_{\text{proj}}h.
+$$
+
+When reproducing MobileNetV2, record activation type, clipping range, normalization order, and whether the projection output is activated. “Uses an inverted residual block” does not specify these details completely.
+
+## Tensor Shape Walkthrough
+
+Let:
+
+$$
+x\in\mathbb{R}^{B\times H\times W\times C_{\mathrm{in}}}.
+$$
+
+For an expansion factor $t$, stride $s$, and output width $C_{\mathrm{out}}$:
+
+| Step | Tensor shape | Operation |
+| --- | --- | --- |
+| input bottleneck | $B\times H\times W\times C_{\mathrm{in}}$ | thin residual representation |
+| expansion | $B\times H\times W\times tC_{\mathrm{in}}$ | pointwise channel mixing plus nonlinearity |
+| spatial filtering | $B\times H'\times W'\times tC_{\mathrm{in}}$ | depthwise convolution with stride $s$ |
+| projection | $B\times H'\times W'\times C_{\mathrm{out}}$ | linear pointwise projection |
+| output | same as projection | add shortcut only when shape matches |
+
+The spatial dimensions satisfy approximately:
+
+$$
+H'\approx\frac{H}{s},
+\qquad
+W'\approx\frac{W}{s},
+$$
+
+subject to padding and rounding conventions. The residual condition is:
+
+$$
+\text{use }x+y
+\quad\Longleftrightarrow\quad
+s=1
+\;\land\;
+C_{\mathrm{in}}=C_{\mathrm{out}}.
+$$
+
+At a stage transition, the block still uses the expand-depthwise-project path but omits the identity addition because the spatial or channel shape changes.
+
+## Why Expand Before Spatial Filtering
+
+The depthwise convolution applies one spatial filter per channel, so the expanded width determines how many independently filtered feature channels are available:
+
+$$
+tC
+\rightarrow
+\{\text{spatially filtered channels}}_{1}^{tC}
+\rightarrow
+C'.
+$$
+
+If depthwise filtering were applied directly in the narrow bottleneck, the block would have fewer channels in which to represent distinct local patterns. Expansion creates a richer intermediate feature space while keeping the residual interface and spatial operation relatively efficient.
+
+The tradeoff is explicit in the compute expression:
+
+$$
+C_{\text{block}}
+\approx
+HWtC^2
++
+HWK^2tC
++
+HWtCC'.
+$$
+
+Increasing $t$ improves internal capacity but raises both pointwise costs linearly. The depthwise term remains cheap relative to dense spatial convolution, but the pointwise projections can become the actual bottleneck.
+
+## Linear Bottlenecks and Information Geometry
+
+The paper's intuition is often described using a low-dimensional manifold. Suppose useful features lie near a lower-dimensional set embedded in the expanded representation space. A nonlinear map in the expanded space can transform the manifold, but an activation applied after projection to a narrow space can collapse distinct points:
+
+$$
+u\ne v
+\quad\text{but}\quad
+\operatorname{ReLU}(W u)
+=
+\operatorname{ReLU}(W v).
+$$
+
+Once two inputs map to the same bottleneck state, a later deterministic block cannot recover the lost distinction. The linear projection does not guarantee information preservation, but it removes one avoidable source of rank and sign collapse.
+
+This should be stated as design intuition rather than a universal theorem:
+
+$$
+\text{expanded nonlinear transform}
+\rightarrow
+\text{linear narrow interface}
+$$
+
+is a favorable default when the narrow state is intended to carry a reusable residual representation.
+
+## Block Family and Stage Parameters
+
+A MobileNetV2 network is defined by a sequence of block specifications rather than one repeated block:
+
+$$
+\mathcal{B}
+=
+\{(t_i,c_i,n_i,s_i)\}_{i=1}^{S},
+$$
+
+where $t_i$ is expansion ratio, $c_i$ output channels, $n_i$ repeat count, and $s_i$ the stride of the first block in a stage.
+
+| Parameter | Effect |
+| --- | --- |
+| expansion ratio $t$ | internal feature capacity and pointwise cost |
+| output width $c$ | residual interface width and next-stage input |
+| repeat count $n$ | sequential depth at a spatial scale |
+| first-block stride $s$ | spatial downsampling and output stride |
+| input resolution | activation area at every stage |
+
+This representation makes the architecture reproducible and supports controlled variants. Changing only one stage's expansion ratio is a different experiment from applying a global width multiplier.
+
+## Residual Stream and Memory
+
+The narrow residual path reduces the size of activations that must be carried between blocks:
+
+$$
+\text{residual storage}
+\propto
+HW C_{\text{bottleneck}}
+$$
+
+while the expanded activation exists only inside the block:
+
+$$
+\text{temporary expansion storage}
+\propto
+HW(tC_{\text{bottleneck}}).
+$$
+
+The peak memory still depends on implementation and operator scheduling. A compiler may fuse operations or materialize intermediate tensors differently. The architectural intent is to keep long-lived block interfaces thin, not to guarantee a fixed memory footprint under every runtime.
+
+## Comparison with a Classic Bottleneck
+
+The two blocks differ in where the wide representation lives:
+
+| Property | Classic residual bottleneck | MobileNetV2 inverted residual |
+| --- | --- | --- |
+| skip representation | usually wider stage representation | thin bottleneck representation |
+| internal transform | compressed relative to input stage width | expanded relative to input bottleneck |
+| spatial convolution | often dense | depthwise |
+| final activation | may be nonlinear depending on variant | linear at narrow projection |
+| main concern | optimize deep dense CNNs | minimize mobile cost while preserving local capacity |
+
+The adjective “inverted” refers to this width placement, not to reversing the order of all operations.
+
+## Detection and Segmentation Interface
+
+MobileNetV2 was evaluated beyond classification, including lightweight detection and segmentation routes. The backbone/head boundary matters:
+
+| Task | Backbone output requirement | Additional concern |
+| --- | --- | --- |
+| classification | global semantic feature | final pooling and classifier cost |
+| detection | multi-scale or selected feature maps | output stride and localization detail |
+| segmentation | spatial feature maps and decoder interface | preserving resolution and boundary information |
+
+An efficient backbone can look strong on classification while losing small-object or boundary performance after downsampling. For dense prediction, record the feature pyramid or decoder and do not attribute the complete system result to the MobileNetV2 block alone.
+
+## Evidence and Claim Boundaries
+
+The paper reports accuracy/operation/parameter tradeoffs and demonstrates mobile models for classification, object detection, and semantic segmentation. Read the evidence at the level of the claim:
+
+| Claim | Evidence | Boundary |
+| --- | --- | --- |
+| inverted residual is an effective block | controlled block and network comparisons | not a proof of universal optimality |
+| linear bottlenecks preserve useful capacity | activation-placement ablations and intuition | not a theorem for every width or activation |
+| model is efficient | MAdd and parameter comparisons | MAdd is not identical to latency |
+| block transfers to detection/segmentation | SSDLite and mobile DeepLab-style systems | head/decoder contributes to the result |
+| architecture scales across model sizes | multiple width/resource operating points | data and training recipe also scale |
+
+The strongest durable contribution is the block contract. Benchmark superiority depends on hardware, task, input resolution, and training configuration.
+
+## Ablation Matrix
+
+| Ablation | Isolates | Expected diagnostic |
+| --- | --- | --- |
+| final activation versus linear projection | value of the linear bottleneck | narrow output with activation may lose information |
+| expansion ratio $t$ | internal capacity versus pointwise cost | too small underfits; too large wastes compute |
+| depthwise versus dense spatial convolution | spatial factorization benefit | separates operator efficiency from width placement |
+| inverted versus classic bottleneck | residual interface geometry | tests where the wide representation should live |
+| stride-1 versus stride-2 block | downsampling behavior | distinguishes block quality from resolution loss |
+| width and resolution scaling | global resource controls | reveals task-specific sensitivity |
+| classification versus dense prediction | transfer behavior | exposes output-stride and localization limits |
+| theoretical MAdd versus measured latency | systems validity | detects memory-bound or unsupported kernels |
+
+The key ablation is not only “ReLU or no ReLU.” It is the interaction among projection width, expansion ratio, nonlinearity placement, and residual addition.
+
+## Implementation Pitfalls
+
+1. **Activating the projection**: adding ReLU6 after the narrow projection changes the linear bottleneck contract.
+2. **Adding a shortcut on shape mismatch**: residual addition requires equal spatial and channel shapes.
+3. **Using the wrong stride location**: stride in the depthwise operation changes output resolution and aliasing.
+4. **Confusing width and expansion**: a width multiplier changes stage interfaces; $t$ changes temporary internal width.
+5. **Counting only depthwise cost**: pointwise convolutions often dominate MAdd and memory traffic.
+6. **Comparing classification heads**: a large head can hide or reverse backbone efficiency.
+7. **Ignoring output stride**: dense prediction depends on where downsampling occurs.
+8. **Treating MAdd as latency**: runtime support, precision, and kernel fusion determine actual speed.
+9. **Changing normalization silently**: batch statistics and ordering affect small-batch mobile training.
+
+For a minimal block test:
+
+1. verify the shape after expansion and projection;
+2. verify no activation is applied after the linear projection;
+3. verify the shortcut is used only for matching shapes;
+4. compare gradients with and without the final activation;
+5. benchmark pointwise and depthwise operations separately.
+
+## Relation to EfficientNet and NAS
+
+MobileNetV2 supplies a reusable block, while later systems choose how to scale and arrange such blocks:
+
+| Family | Reuses or changes |
+| --- | --- |
+| MBConv | keeps inverted bottleneck, depthwise convolution, and squeeze/activation variants |
+| EfficientNet | combines mobile blocks with compound depth/width/resolution scaling |
+| neural architecture search | searches stage repeats, widths, kernel sizes, and expansion ratios |
+| hardware-aware NAS | optimizes measured latency or energy rather than only MAdd |
+| modern mobile ViTs | replaces or mixes convolutional blocks with token mixers/attention |
+
+The general design pattern is:
+
+$$
+\text{thin interface}
+\rightarrow
+\text{wide cheap transform}
+\rightarrow
+\text{thin linear interface}
+$$
+
+This pattern can be evaluated independently of the exact MobileNetV2 stage table.
+
+## Transfer to Scientific Workloads
+
+The inverted residual idea can be useful for image-like scientific data when a narrow representation must be preserved across many blocks but local feature computation needs temporary capacity. However, the same domain checks as MobileNetV1 still apply:
+
+- channel mixing must respect the meaning of modalities or feature types;
+- spatial downsampling must preserve the scale of the scientific signal;
+- vector/tensor channels require representation-aware operations;
+- graph or molecular inputs need permutation/geometric guarantees that ordinary convolution does not provide;
+- measured latency and memory must reflect the actual scientific pipeline.
+
+The block can be a resource-efficient encoder component, but its use in computational biology requires a separate argument about entities, symmetries, and target resolution.
+
+## Reproduction Checklist
+
+- [ ] record stage tuples $(t,c,n,s)$ and input resolution;
+- [ ] verify expand-depthwise-project order;
+- [ ] verify activation placement, especially the linear projection;
+- [ ] verify shortcut conditions for stride and channel equality;
+- [ ] record kernel size, padding, normalization, and precision;
+- [ ] calculate pointwise and depthwise costs separately;
+- [ ] compare expansion ratio and width multiplier as different variables;
+- [ ] report MAdd, parameters, peak memory, batch-1 latency, and throughput;
+- [ ] evaluate classification and dense prediction interfaces separately;
+- [ ] run a tiny forward/gradient test before training;
+- [ ] compare against MobileNetV1 and a dense residual baseline under matched budgets.
 
 ## Why the Residual Is Inverted
 

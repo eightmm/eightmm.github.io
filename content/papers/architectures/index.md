@@ -107,7 +107,7 @@ This means the current shelf can contain seed notes while the most important pap
 | [ResNeXt](/papers/architectures/resnext) | ResNeXt | homogeneous aggregated transformations, grouped-convolution implementation, cardinality/width/depth trade-offs, and systems caveats; full paper note |
 | [Densely Connected Convolutional Networks](/papers/architectures/densenet) | DenseNet | dense skip connectivity and feature reuse; full note started |
 | [MobileNets](/papers/architectures/mobilenets) | MobileNetV1 | depthwise separable backbone, width/resolution multipliers, resource budgets, Pareto evaluation, and deployment measurement; full paper note |
-| [MobileNetV2](/papers/architectures/mobilenetv2) | inverted residual CNN | efficient mobile CNN block with depthwise convolution, expansion, and linear bottleneck; full note started |
+| [MobileNetV2](/papers/architectures/mobilenetv2) | inverted residual CNN | expanded depthwise transform, thin residual interface, linear bottleneck, activation placement, dense-prediction interface, and deployment trade-offs; full paper note |
 | [Squeeze-and-Excitation Networks](/papers/architectures/squeeze-and-excitation-networks) | SENet | channel-wise squeeze-and-excitation recalibration block for CNNs; seed note started |
 | [EfficientNet](/papers/architectures/efficientnet) | EfficientNet | compound scaling for CNN families; full note started |
 | [Attention Is All You Need](/papers/architectures/attention-is-all-you-need) | Transformer | attention-only sequence transduction backbone; full note started |
