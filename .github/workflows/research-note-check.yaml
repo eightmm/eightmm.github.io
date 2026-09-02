@@ -1,0 +1,58 @@
+name: Research Note Check
+
+on:
+  pull_request:
+    branches:
+      - v5
+    paths:
+      - "content/**"
+      - ".github/workflows/research-note-check.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: research-note-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Quartz plugins
+        run: npx quartz plugin install
+
+      - name: Check changed-file whitespace
+        run: git diff --check "origin/${{ github.base_ref }}...HEAD"
+
+      - name: Check paper frontmatter
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(git diff --name-only --diff-filter=ACMRT "origin/${{ github.base_ref }}...HEAD" -- 'content/papers/**/*.md')
+          for file in "${files[@]}"; do
+            [[ -f "$file" ]] || continue
+            first_line="$(head -n 1 "$file")"
+            if [[ "$first_line" != "---" ]]; then
+              echo "Missing YAML frontmatter: $file" >&2
+              exit 1
+            fi
+          done
+
+      - name: Build Quartz
+        run: npx quartz build -d docs
