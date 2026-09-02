@@ -37,8 +37,25 @@ jobs:
       - name: Install Quartz plugins
         run: npx quartz plugin install
 
-      - name: Check types and style
-        run: npm run check
+      - name: Check changed-file whitespace
+        run: git diff --check "origin/${{ github.base_ref }}...HEAD"
+
+      - name: Check TypeScript
+        run: npx tsc --noEmit
+
+      - name: Check paper frontmatter
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(git diff --name-only --diff-filter=ACMRT "origin/${{ github.base_ref }}...HEAD" -- 'content/papers/**/*.md')
+          for file in "${files[@]}"; do
+            [[ -f "$file" ]] || continue
+            first_line="$(head -n 1 "$file")"
+            if [[ "$first_line" != "---" ]]; then
+              echo "Missing YAML frontmatter: $file" >&2
+              exit 1
+            fi
+          done
 
       - name: Build Quartz
         run: npx quartz build -d docs
