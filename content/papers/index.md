@@ -132,6 +132,7 @@ Not every paper needs a long review.
 | [Layer Normalization](/papers/architectures/layer-normalization) | sequence-model normalization |
 | [Semi-Supervised Classification with GCNs](/papers/architectures/gcn) | graph neural network |
 | [Graph Attention Networks](/papers/architectures/graph-attention-networks) | graph attention network |
+| [Equivariant Sheaf Neural Networks](/papers/architectures/equivariant-sheaf-neural-networks) | directed matrix-valued geometric transport with exact Euclidean equivariance |
 | [Deep Sets](/papers/architectures/deep-sets) | permutation-invariant set architecture |
 | [Set Transformer](/papers/architectures/set-transformer) | attention-based set architecture |
 | [Perceiver IO](/papers/architectures/perceiver-io) | structured input/output attention architecture |
