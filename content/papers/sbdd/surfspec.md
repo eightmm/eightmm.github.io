@@ -862,19 +862,19 @@ Paper appendix가 여러 값을 제공하더라도, exact pipeline script와 pro
 
 공식 implementation이 공개되기 전이라면 full reproduction보다 다음 순서가 안전합니다.
 
-1. **Metric-only reproduction**  
+1. **Metric-only reproduction**
    CrossDock reference pairs에서 surface measure와 $d_{\mathrm{gm}}$을 구현하고 geometry–Vina calibration curve를 재현합니다.
 
-2. **Certificate analysis**  
+2. **Certificate analysis**
    Random off-target pairs와 similarity-stratified pairs에서 positive margin fraction을 확인합니다.
 
-3. **Naive growth controls**  
+3. **Naive growth controls**
    ligand size extension이 mismatch를 낮추지만 clash/specificity를 악화시키는지 확인합니다.
 
-4. **Surface-directed growth without custom recovery**  
+4. **Surface-directed growth without custom recovery**
    DiffLinker + standard DiffSBDD edit로 geometry signal 자체의 value를 분리합니다.
 
-5. **Full low-noise recovery**  
+5. **Full low-noise recovery**
    마지막에 SurfSpec-specific recovery를 추가해 attribution을 봅니다.
 
 이 순서면 full system이 안 맞을 때 어느 component가 문제인지 알 수 있습니다.
