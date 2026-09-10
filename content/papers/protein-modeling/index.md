@@ -79,6 +79,7 @@ Protein papers often mix sequence, structure, and function claims. Read the evid
 
 - [[papers/architectures/alphafold2|AlphaFold2]]
 - [[papers/architectures/alphafold3|AlphaFold3]]
+- [[papers/protein-modeling/backflip-2|BackFlip-2 — Predicting directional flexibility in proteins]]
 - [[papers/protein-modeling/meet-equivariant-peptide|MEET]]
 - [[papers/protein-modeling/multi-scale-antibody-binding|Multi-scale ML for Antibody-Antigen Binding]]
 
