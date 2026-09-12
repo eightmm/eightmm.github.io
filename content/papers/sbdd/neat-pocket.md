@@ -1136,7 +1136,7 @@ README 기준으로 현재 arbitrary PDB generation은 reference ligand가 pocke
 
 ## 26. 다른 개념과의 연결
 
-### [[concepts/generative-models/autoregressive-generation|Autoregressive generation]]
+### [[concepts/generative-models/autoregressive-model|Autoregressive Model]]
 
 NEAT-POCKET은 canonical sequence보다 set frontier를 autoregress한다는 점에서 일반 sequence AR과 다릅니다.
 
