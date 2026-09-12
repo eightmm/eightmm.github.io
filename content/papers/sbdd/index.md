@@ -25,6 +25,7 @@ Structure-based modeling paper note는 docking, conformer, pose generation, scor
 - [[papers/sbdd/posebusters|PoseBusters]]
 - [[papers/sbdd/surfspec|SurfSpec]]
 - [[papers/sbdd/adaptiveflow|AdaptiveFlow]]
+- [[papers/sbdd/neat-pocket|NEAT-POCKET]]
 - [[papers/architectures/alphafold3|AlphaFold3]]
 
 ## Concepts
