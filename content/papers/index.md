@@ -140,6 +140,11 @@ Not every paper needs a long review.
 | [Mamba](/papers/architectures/mamba) | selective state-space sequence model |
 | [Jamba](/papers/architectures/jamba) | hybrid Transformer-Mamba-MoE language model |
 | [Switch Transformer](/papers/architectures/switch-transformer) | sparse mixture-of-experts architecture |
+| [SurfSpec](/papers/sbdd/surfspec) | off-target-agnostic specificity via pocket-ligand geometric mismatch bounds |
+| [AdaptiveFlow](/papers/sbdd/adaptiveflow) | adaptive compute allocation for ultra-large virtual screening |
+| [NEAT-POCKET](/papers/sbdd/neat-pocket) | pocket-conditioned autoregressive 3D molecular generation with local flow matching |
+| [BackFlip-2](/papers/protein-modeling/backflip-2) | directional protein flexibility and dynamic coupling from static structures |
+| [Controllable Molecular Generation with Fine-Tuned Flow Matching](/papers/generative-models/flow-matching-rl) | reward-guided post-training for controllable 3D molecular flow models |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation |
 | [Multi-scale ML for Antibody-Antigen Binding](/papers/protein-modeling/multi-scale-antibody-binding) | antibody-antigen binding |
 | [MEET](/papers/protein-modeling/meet-equivariant-peptide) | equivariant peptide modeling |
