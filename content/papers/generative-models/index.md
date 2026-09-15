@@ -106,6 +106,7 @@ $$
 - [[papers/architectures/latent-diffusion-models|Latent Diffusion Models]]
 - [[papers/architectures/scalable-diffusion-models-with-transformers|Scalable Diffusion Models with Transformers]]
 - [[papers/architectures/wavenet|WaveNet]]
+- [[papers/generative-models/flow-matching-rl|Controllable Molecular Generation with Fine-Tuned Flow Matching]]
 - [[papers/generative-models/lift|LiFT — Language-Informed Flow Matching for Trend-Guided Structure-Based 3D Molecular Generation]]
 - [[papers/generative-models/molexar|Molexar]]
 
