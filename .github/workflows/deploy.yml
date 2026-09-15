@@ -38,6 +38,9 @@ jobs:
       - name: Patch Explorer sidebar
         run: node scripts/patch-explorer-sidebar.mjs
 
+      - name: Sanitize research note self-aliases
+        run: node scripts/self-alias-guard.mjs --write
+
       - name: Build Quartz
         run: npx quartz build
 
