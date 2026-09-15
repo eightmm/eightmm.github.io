@@ -39,6 +39,15 @@ AI, computational biology, research infrastructure를 정리하는 개인 연구
 
 Research는 아이디어와 질문의 공간이고, Projects는 구현과 산출물의 공간입니다. 하나의 일이 둘 다 가질 수는 있지만, 페이지의 중심이 hypothesis면 Research, artifact면 Projects에 둡니다.
 
+## 최근 Research Notes
+
+- [[papers/generative-models/flow-matching-rl|Controllable Molecular Generation with Fine-Tuned Flow Matching]]
+- [[papers/sbdd/neat-pocket|NEAT-POCKET — Pocket-Conditioned Autoregressive 3D Molecular Generation]]
+- [[papers/protein-modeling/backflip-2|BackFlip-2 — Predicting Directional Flexibility in Proteins]]
+- [[papers/sbdd/adaptiveflow|AdaptiveFlow — Adaptive Ultra-Large Virtual Screening]]
+- [[papers/sbdd/surfspec|SurfSpec — Off-Target-Agnostic Specificity by Geometric Mismatch]]
+- [[papers/architectures/equivariant-sheaf-neural-networks|Equivariant Sheaf Neural Networks]]
+
 ## 최근 글
 
 - [[posts/essays/ai-wiki-map|AI Wiki를 어떤 축으로 나눠 볼 것인가]]
