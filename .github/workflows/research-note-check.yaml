@@ -7,6 +7,8 @@ on:
     paths:
       - "content/**"
       - ".github/workflows/research-note-check.yaml"
+      - ".github/workflows/deploy.yml"
+      - "scripts/self-alias-guard.mjs"
   workflow_dispatch:
 
 permissions:
@@ -53,6 +55,12 @@ jobs:
               exit 1
             fi
           done
+
+      - name: Reject self-aliases in changed paper notes
+        run: node scripts/self-alias-guard.mjs --check-changed "origin/${{ github.base_ref }}"
+
+      - name: Sanitize legacy self-aliases for build
+        run: node scripts/self-alias-guard.mjs --write
 
       - name: Build Quartz
         run: npx quartz build -d docs
