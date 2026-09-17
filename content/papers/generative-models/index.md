@@ -7,7 +7,7 @@ tags:
 
 # Generative Model Papers
 
-Generative model paper note는 sample, transform, denoise, decode, structured object generation을 다루는 논문을 모읍니다.
+Generative model paper note는 sample, transform, denoise, decode, structured object generation을 다룹니다.
 
 이 선반의 기준은 "새 sample을 만들거나 distribution을 모델링하는가"입니다.
 
@@ -106,6 +106,7 @@ $$
 - [[papers/architectures/latent-diffusion-models|Latent Diffusion Models]]
 - [[papers/architectures/scalable-diffusion-models-with-transformers|Scalable Diffusion Models with Transformers]]
 - [[papers/architectures/wavenet|WaveNet]]
+- [[papers/generative-models/ensemble-conditioned-molecular-design|Ensemble-Conditioned Molecular Design]]
 - [[papers/generative-models/flow-matching-rl|Controllable Molecular Generation with Fine-Tuned Flow Matching]]
 - [[papers/generative-models/lift|LiFT — Language-Informed Flow Matching for Trend-Guided Structure-Based 3D Molecular Generation]]
 - [[papers/generative-models/molexar|Molexar]]
