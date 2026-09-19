@@ -1133,13 +1133,13 @@ OpenDDE를 “open AlphaFold3 clone with bigger compute”로만 읽으면 struc
 
 ## Three durable takeaways
 
-1. **Representation resolution은 architecture primitive다.**  
+1. **Representation resolution은 architecture primitive다.**
    Residue pair state에서 atom coordinate로 곧바로 내려가기보다 structural-role single/pair state를 두는 것은 global context와 local chemistry 사이의 명시적 bridge가 된다.
 
-2. **Sample generation과 sample selection을 따로 평가해야 한다.**  
+2. **Sample generation과 sample selection을 따로 평가해야 한다.**
    Test-time scaling에서 oracle이 ranked performance보다 훨씬 빠르게 올라간다면 다음 bottleneck은 sampler가 아니라 confidence/ranker일 수 있다.
 
-3. **Broad biomolecular architecture claim과 task-specific evidence를 분리하라.**  
+3. **Broad biomolecular architecture claim과 task-specific evidence를 분리하라.**
    OpenDDE의 현재 가장 강한 evidence는 antibody–antigen co-folding이다. Protein–ligand docking, screening, affinity에는 별도 data/post-training/evaluation이 필요하며, architecture transfer와 evidence transfer는 같은 것이 아니다.
 
 ---
