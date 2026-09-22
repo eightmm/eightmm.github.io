@@ -26,6 +26,7 @@ Structure-based modeling paper note는 docking, conformer, pose generation, scor
 - [[papers/sbdd/surfspec|SurfSpec]]
 - [[papers/sbdd/adaptiveflow|AdaptiveFlow]]
 - [[papers/sbdd/neat-pocket|NEAT-POCKET]]
+- [[papers/sbdd/lddm|LDDM — Unified 3D Generative Model for Synthesizable SBDD]]
 - [[papers/architectures/alphafold3|AlphaFold3]]
 
 ## Concepts
