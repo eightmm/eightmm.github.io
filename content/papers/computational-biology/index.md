@@ -31,6 +31,7 @@ Computational Biology paper note는 structure-based modeling, protein modeling, 
 
 | Paper note | Main route | 여기 두는 이유 |
 | --- | --- | --- |
+| [Chemical Dice Integrator](/papers/computational-biology/chemical-dice-integrator) | molecular representation learning | multimodal chemistry teacher distilled into a deployable SMILES-only embedding model |
 | [PoseBusters](/papers/sbdd/posebusters) | structure-based evaluation | pose plausibility and docking evaluation |
 | [AlphaFold2](/papers/architectures/alphafold2) | protein structure prediction | MSA-pair architecture, geometric structure module, recycling, and confidence |
 | [AlphaFold3](/papers/architectures/alphafold3) | biomolecular complex prediction | diffusion-based joint structure prediction for proteins, nucleic acids, ligands, ions, and modified residues |
